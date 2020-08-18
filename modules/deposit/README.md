@@ -4,10 +4,12 @@
 
 ## Introduction
 
-This module is designed and implemented for storing the information related to the deposits made by an address. The amount that has been deposited by an address can't be transferred to a bank account using a transaction. The deposit can be only spend on the VPN subscription-related payments. With this module, you can perform the following actions.
+This module is designed and developed for storing the information related to the deposits made by an address. The amount that has been deposited by an address can't be transferred to a bank module account using a transaction. The deposit can be only spend on the VPN subscription-related payments.
 
-- Send coins from a bank account to the deposit account of the same or any address.
-- Send coins from a deposit account to the bank account of the same or any address.
+With this module, you can perform the following actions.
+
+- Send coins from a bank module account to the deposit account of the same or any address.
+- Send coins from a deposit account to the bank module account of the same or any address.
 - Query the deposit of an address.
 - Query all the deposits.
 
@@ -17,10 +19,10 @@ This module is designed and implemented for storing the information related to t
 
 A deposit type contains the following information.
 
-| Key     | Description                                                         |
-|---------|---------------------------------------------------------------------|
-| Address | The depositor address which is similar to the bank account address. |
-| Coins   | The deposit amount which is similar to the bank account balance.    |
+| Key     | Description            |
+|---------|------------------------|
+| Address | The depositor address. |
+| Coins   | The deposit amount.    |
 
 ```go
 type Deposit struct {
@@ -50,7 +52,7 @@ type Deposits []Deposit
 
 ## Keeper
 
-SetDeposit is for inserting a deposit into KVStore.
+SetDeposit is for inserting a deposit into the KVStore.
 
 - Parameters
     | Key     | Type          | Description |
@@ -65,7 +67,7 @@ SetDeposit is for inserting a deposit into KVStore.
 func(k Keeper) SetDeposit(ctx sdk.Context, deposit types.Deposit)
 ```
 
-GetDeposit is for getting the deposit of an address from KVStore.
+GetDeposit is for getting the deposit of an address from the KVStore.
 
 - Parameters
     | Key     | Type           | Description |
@@ -82,7 +84,7 @@ GetDeposit is for getting the deposit of an address from KVStore.
 func(k Keeper) GetDeposit(ctx sdk.Context, address sdk.AccAddress) (deposit types.Deposit, found bool)
 ```
 
-GetDeposits is for getting the deposits from KVStore.
+GetDeposits is for getting the deposits from the KVStore.
 
 - Parameters
     | Key | Type        | Description |
@@ -97,7 +99,7 @@ GetDeposits is for getting the deposits from KVStore.
 func(k Keeper) GetDeposits(ctx sdk.Context) (items types.Deposits)
 ```
 
-Add is for adding the amount to the deposit account from the bank account of an address.
+Add is for adding the amount to the deposit account from the bank module account of an address.
 
 - Parameters
     | Key     | Type           | Description |
@@ -114,7 +116,7 @@ Add is for adding the amount to the deposit account from the bank account of an 
 func(k Keeper) Add(ctx sdk.Context, address sdk.AccAddress, coins sdk.Coins) sdk.Error
 ```
 
-Subtract is for adding the amount to the bank account from the deposit account of an address.
+Subtract is for adding the amount to the bank module account from the deposit account of an address.
 
 - Parameters
     | Key     | Type           | Description |
@@ -131,7 +133,7 @@ Subtract is for adding the amount to the bank account from the deposit account o
 func(k Keeper) Subtract(ctx sdk.Context, address sdk.AccAddress, coins sdk.Coins) sdk.Error
 ```
 
-SendCoinsFromDepositToAccount is for sending the amount from the deposit account of from address to the bank account of to address.
+SendCoinsFromDepositToAccount is for sending the amount from the deposit account of from address to the bank module account of to address.
 
 - Parameters
     | Key   | Type           | Description |
@@ -149,7 +151,7 @@ SendCoinsFromDepositToAccount is for sending the amount from the deposit account
 func(k Keeper) SendCoinsFromDepositToAccount(ctx sdk.Context, from, to sdk.AccAddress, coins sdk.Coins) sdk.Error
 ```
 
-SendCoinsFromAccountToDeposit is for sending the amount from the bank account of from address to the deposit account of to address.
+SendCoinsFromAccountToDeposit is for sending the amount from the bank module account of from address to the deposit account of to address.
 
 - Parameters
     | Key   | Type           | Description |
@@ -180,4 +182,29 @@ IterateDeposits is for iterating over all the deposits to perform an action.
 
 ```go
 func(k Keeper) IterateDeposits(ctx sdk.Context, fn func(index int64, item types.Deposit) (stop bool))
+```
+
+## Messages
+
+## Queries
+
+### QueryDepositParams
+
+QueryDepositParams is the request parameters for querying a deposit.
+
+```go
+type QueryDepositParams struct {
+    Address sdk.AccAddress `json:"address"`
+}
+```
+
+QueryDepositsParams is the request parameters for querying the deposits.
+
+### QueryDepositsParams
+
+```go
+type QueryDepositsParams struct {
+    Page  int `json:"page"`
+    Limit int `json:"limit"`
+}
 ```
