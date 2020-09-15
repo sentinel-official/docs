@@ -27,7 +27,7 @@ Minimum machine configuration required
 3. Install Golang and other required packages
 
     ``` sh
-    sudo apt-get install -y git golang-go make
+    sudo apt-get install -y git golang-go make wget
     ```
 
 4. Export Golang environment variables
@@ -39,7 +39,7 @@ Minimum machine configuration required
     export PATH=${PATH}:${GOROOT}/bin:${GOBIN}
     ```
 
-    You can also append the above lines to the file *${HOME}/.bashrc* and run the following command to reflect in the current Terminal session
+    You can also append the above lines to the file `${HOME}/.bashrc` and run the following command to reflect in the current Terminal session
 
     ``` sh
     source ${HOME}/.bashrc
