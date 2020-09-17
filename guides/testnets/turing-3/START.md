@@ -18,6 +18,8 @@
     sha256sum ${HOME}/genesis.json
     ```
 
+    Note: The checksum should be TODO
+
 4. Move the genesis to the hub configuration directory
 
     ``` sh

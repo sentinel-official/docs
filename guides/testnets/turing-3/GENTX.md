@@ -36,7 +36,7 @@
 
     ``` sh
     sentinel-hubd gentx --name <name> \
-        --amount <amount> \
+        --amount 1000000000000tsent \
         --commission-rate 0.1 \
         --commission-max-rate 0.2 \
         --commission-max-change-rate 0.01

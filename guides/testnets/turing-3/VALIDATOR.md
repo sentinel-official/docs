@@ -3,7 +3,7 @@
 1. Create an account
 
     ``` sh
-    setinel-hubcli keys add <name>
+    sentinel-hubcli keys add <name>
     ```
 
 2. Find the consensus public key
