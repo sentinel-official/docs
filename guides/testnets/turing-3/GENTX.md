@@ -11,7 +11,7 @@
 3. Initialize the chain configuration files
 
     ``` sh
-    sentinel-hubd init <moniker> --chain-id sentinel-turing-3
+    sentinel-hubd init <moniker> --chain-id sentinel-turing-3a
     ```
 
 4. Copy the genesis to the hub configuration directory

@@ -3,7 +3,7 @@
 1. Initialize the chain configuration files
 
     ``` sh
-    sentinel-hubd init <moniker> --chain-id sentinel-turing-3
+    sentinel-hubd init <moniker> --chain-id sentinel-turing-3a
     ```
 
 2. Download the genesis file
