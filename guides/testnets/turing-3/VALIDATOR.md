@@ -3,7 +3,7 @@
 1. Create an account
 
     ``` sh
-    sentinel-hubcli keys add <name>
+    sentinel-hub-cli keys add <name>
     ```
 
 2. Find the consensus public key
@@ -15,7 +15,7 @@
 3. Make a transaction
 
     ``` sh
-    sentinel-hubcli tx staking create-validator \
+    sentinel-hub-cli tx staking create-validator \
         --moniker <moniker> \
         --amount <amount> \
         --fees <transaction fee> \
