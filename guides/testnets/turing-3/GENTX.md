@@ -23,7 +23,7 @@
 5. Create an account
 
     ``` sh
-    setinel-hubcli keys add <name>
+    sentinel-hub-cli keys add <name>
     ```
 
 6. Add the account to the genesis
