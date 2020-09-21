@@ -62,7 +62,7 @@ Minimum machine configuration required
 3. Checkout to the version that you want to install
 
     ``` sh
-    git checkout v0.3.1
+    git checkout v0.3.3
     ```
 
 4. Build and install the software
