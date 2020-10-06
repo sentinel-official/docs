@@ -63,9 +63,9 @@
     
 *If you have a sync delay,try start the chain with command:*
 
-    ``` sh
+``` sh
     sentinel-hubd start \
     --log_level "main:info,state:info,x/node:info,x/subscription:info,x/session:info,*:error"
-    ```
+```
 
 9. Detach from the virtual Terminal session by pressing Ctrl+A D
