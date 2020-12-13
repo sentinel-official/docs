@@ -62,3 +62,25 @@ Restart the machine if required
         --no-cache \
         --compress .
     ```
+
+## Step 3 - Create self-signed TLS certificate
+
+1. Install OpenSSL package
+
+    ``` sh
+    sudo apt-get install --yes openssl
+    ```
+
+2. Create certificate
+
+    ``` sh
+    openssl req -new \
+        -newkey ec \
+        -pkeyopt ec_paramgen_curve:prime256v1 \
+        -x509 \
+        -sha256 \
+        -days 365 \
+        -nodes \
+        -out tls.crt \
+        -keyout tls.key
+    ```
