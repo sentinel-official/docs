@@ -11,7 +11,7 @@
 | Gas            | Gas limit to set per-transaction            | 100000                               |
 | Gas Prices     | Gas prices to determine the transaction fee | 0.01tsent                            |
 | ID             | The network chain ID                        | sentinel-turing-3a                   |
-| RPC Address    | Tendermint RCP interface for the chain      | <https://rpc.turing.sentinel.co:443> |
+| RPC Address    | Tendermint RPC interface for the chain      | <https://rpc.turing.sentinel.co:443> |
 | Trust Node     | Trust connected full node                   | false                                |
 
 ### Handshake
