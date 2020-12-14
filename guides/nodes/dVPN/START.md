@@ -88,7 +88,9 @@ mv ${HOME}/tls.key ${HOME}/.sentinel/node/tls.key
 ``` sh
 docker run --rm \
     --volume ${HOME}/.sentinel:/root/.sentinel \
+    --volume /lib/modules:/lib/modules \
     --cap-add=NET_ADMIN \
+    --cap-add=SYS_MODULE \
     --publish 8585:8585/tcp \
     --publish 60299:60299/udp \
     --sysctl net.ipv4.ip_forward=1 \
