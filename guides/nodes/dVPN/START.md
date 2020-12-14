@@ -7,7 +7,7 @@
 ``` sh
 docker run --rm \
     --volume ${HOME}/.sentinel:/root/.sentinel \
-    node sentinel-dvpn-node keys add KEY_NAME
+    sentinel-dvpn-node run keys add KEY_NAME
 ```
 
 ### Recover an account key
@@ -15,7 +15,7 @@ docker run --rm \
 ``` sh
 docker run --rm \
     --volume ${HOME}/.sentinel:/root/.sentinel \
-    node sentinel-dvpn-node keys add KEY_NAME --recover MNEMONIC
+    sentinel-dvpn-node run keys add KEY_NAME --recover MNEMONIC
 ```
 
 ## Step 2 - Initialize/Edit the configuration
@@ -25,7 +25,7 @@ docker run --rm \
     ``` sh
     docker run --rm \
         --volume ${HOME}/.sentinel:/root/.sentinel \
-        node sentinel-dvpn-node config init
+        sentinel-dvpn-node run config init
     ```
 
 2. Edit the configuration file _${HOME}/.sentinel/node/config.toml_ if required
@@ -50,7 +50,7 @@ docker run --rm \
     from = "key_1"
     interval_sessions = 480000000000
     interval_status = 240000000000
-    listen_on = "127.0.0.1:8585"
+    listen_on = "0.0.0.0:8585"
     moniker = "1.wireguard"
     price = "50tsent"
     provider = ""
@@ -63,7 +63,7 @@ docker run --rm \
     ``` sh
     docker run --rm \
         --volume ${HOME}/.sentinel:/root/.sentinel \
-        node sentinel-dvpn-node wireguard config init
+        sentinel-dvpn-node run wireguard config init
     ```
 
 4. Edit the configuration file _${HOME}/.sentinel/node/wireguard.toml_ if required
@@ -95,5 +95,5 @@ docker run --rm \
     --sysctl net.ipv6.conf.all.forwarding=1 \
     --sysctl net.ipv6.conf.all.disable_ipv6=0 \
     --sysctl net.ipv6.conf.default.forwarding=1 \
-    node sentinel-dvpn-node start
+    sentinel-dvpn-node run start
 ```

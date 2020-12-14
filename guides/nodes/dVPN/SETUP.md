@@ -53,7 +53,7 @@ Restart the machine if required
     cd ${HOME}/dvpn-node
     ```
 
-3. Checkout the specific branch/commit/tag if requried
+3. Checkout to the specific branch/commit/tag if requried
 
     ``` sh
     git checkout BRANCH/COMMIT/TAG
