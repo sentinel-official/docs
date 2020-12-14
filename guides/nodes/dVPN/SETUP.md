@@ -53,7 +53,13 @@ Restart the machine if required
     cd ${HOME}/dvpn-node
     ```
 
-3. Build the image
+3. Checkout the specific branch/commit/tag if requried
+
+    ``` sh
+    git checkout BRANCH/COMMIT/TAG
+    ```
+
+4. Build the image
 
     ``` sh
     docker build --file Dockerfile \
@@ -63,7 +69,7 @@ Restart the machine if required
         --compress .
     ```
 
-## Step 3 - Create self-signed TLS certificate
+## Step 3 - Create a self-signed TLS certificate
 
 1. Install OpenSSL package
 
@@ -81,6 +87,6 @@ Restart the machine if required
         -sha256 \
         -days 365 \
         -nodes \
-        -out tls.crt \
-        -keyout tls.key
+        -out ${HOME}/tls.crt \
+        -keyout ${HOME}/tls.key
     ```
