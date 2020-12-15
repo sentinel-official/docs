@@ -7,7 +7,7 @@
 ``` sh
 docker run --rm \
     --volume ${HOME}/.sentinel:/root/.sentinel \
-    sentinel-dvpn-node run keys add KEY_NAME
+    sentinel-dvpn-node run keys add <KEY_NAME>
 ```
 
 ### Recover an account key
@@ -15,7 +15,9 @@ docker run --rm \
 ``` sh
 docker run --rm \
     --volume ${HOME}/.sentinel:/root/.sentinel \
-    sentinel-dvpn-node run keys add KEY_NAME --recover MNEMONIC
+    --interactive \
+    --tty \
+    sentinel-dvpn-node run keys add --recover <KEY_NAME>
 ```
 
 ## Step 2 - Initialize/Edit the configuration
@@ -91,8 +93,8 @@ docker run --rm \
     --volume /lib/modules:/lib/modules \
     --cap-add=NET_ADMIN \
     --cap-add=SYS_MODULE \
-    --publish 8585:8585/tcp \
-    --publish 60299:60299/udp \
+    --publish <API_PORT>:<API_PORT>/tcp \
+    --publish <WIREGUARD_PORT>:<WIREGUARD_PORT>/udp \
     --sysctl net.ipv4.ip_forward=1 \
     --sysctl net.ipv6.conf.all.forwarding=1 \
     --sysctl net.ipv6.conf.all.disable_ipv6=0 \

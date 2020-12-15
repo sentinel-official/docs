@@ -56,7 +56,7 @@ Restart the machine if required
 3. Checkout to the specific branch/commit/tag if requried
 
     ``` sh
-    git checkout BRANCH/COMMIT/TAG
+    git checkout <BRANCH/COMMIT/TAG>
     ```
 
 4. Build the image
