@@ -47,16 +47,18 @@ Minimum machine configuration required
 
 ## Step 2 - Installing the Sentinel hub software
 
-1. Download the source code from the official Sentinel hub repository
+1. Clone the source code from the official Sentinel hub repository
 
     ``` sh
-    go get -u -d github.com/sentinel-official/hub
+    mkdir -p ${GOPATH}/src/github.com/sentinel-official/ && \
+    cd ${GOPATH}/src/github.com/sentinel-official/ && \
+    git clone https://github.com/sentinel-official/hub.git
     ```
 
 2. Navigate to the *hub* folder
 
     ``` sh
-    cd ${GOPATH}/src/github.com/sentinel-official/hub
+    cd ${GOPATH}/src/github.com/sentinel-official/hub/
     ```
 
 3. Checkout to the version that you want to install
