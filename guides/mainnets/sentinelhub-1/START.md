@@ -18,7 +18,7 @@
     sha256sum ${HOME}/genesis.json
     ```
 
-    Note: The checksum should be `TBU`
+    Note: The checksum should be `79a2b73ed7ef35f767d1591a78086d594b11c65af75945e615371d35b94b613d`
 
 4. Move the genesis to the hub configuration directory
 
