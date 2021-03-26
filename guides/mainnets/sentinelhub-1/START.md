@@ -33,7 +33,7 @@
     * Insert the below node addresses
 
         ``` text
-        TBU
+        c7859082468bcb21c914e9cedac4b9a7850347de@167.71.28.11:26656
         ```
 
     * Save the file
