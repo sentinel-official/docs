@@ -73,10 +73,11 @@ Minimum machine configuration required
 
 ```
     $: sentinelhub version --long
-    name: sentinel
-    server_name: sentinelhub
-    version: 0.6.0
-    commit: 0c7964060c17daf3767c3025c076ee2ce761cf90
-    build_tags: netgo,ledger
-    go: go version go1.16 darwin/amd64
+      name: sentinel
+      server_name: sentinelhub
+      version: 0.6.0
+      commit: 66a6687d0daba21ea26f89e355eb48f748f21061
+      build_tags: netgo,ledger
+      go: go version go1.16.3 linux/amd64
+      build_deps:
 ```
