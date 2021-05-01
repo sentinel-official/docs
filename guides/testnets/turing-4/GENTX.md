@@ -35,11 +35,7 @@
 7. Create an offline genesis transaction
 
    ```sh
-   sentinelhub gentx --name <name> \
-       --amount 1000000000000tsent \
-       --commission-rate 0.1 \
-       --commission-max-rate 0.2 \
-       --commission-max-change-rate 0.01
+      sentinelhub gentx <key name> 1000000000000tsent --moniker <your moniker> --commission-rate 0.1 --commission-max-rate 0.2 --commission-max-change-rate 0.01 --chain-id sentinel-turing-4
    ```
 
 8. Copy the gentx file to the testnets folder
