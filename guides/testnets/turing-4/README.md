@@ -12,12 +12,12 @@ Full article: https://medium.com/sentinel/sentinel-initiates-bandwidth-sharing-o
 
 To partecipate in the testnet as genesis validators
 
-Preparation, must be done by `Sunday May 4th @ 22:00 UTC`
+Preparation, must be done by `Sunday May 2th @ 22:00 UTC`
 
 - [Setup](https://github.com/sentinel-official/docs/tree/master/guides/testnets/turing-4/SETUP.md "Setup")
 - [GenTx](https://github.com/sentinel-official/docs/tree/master/guides/testnets/turing-4/GENTX.md "GenTx")
 
-Validator start `Monday May 5th @ 10:00 UTC`
+Validator start `Monday May 3th @ 10:00 UTC`
 
 - [Start](https://github.com/sentinel-official/docs/tree/master/guides/testnets/turing-4/START.md "Start")
 

@@ -20,36 +20,43 @@
    cp ${HOME}/testnets/turing-4/genesis.json ${HOME}/.sentinelhub/config/
    ```
 
-5. Create an account
+5. Compare sha256sum to be like this
+
+   ```sh
+   :~$ sha256sum ${HOME}/testnets/turing-4/genesis.json
+   8561c380ed15d2b202d2ae533b77bea4a4dc935cda8efd417bd9a545de623614
+   ```
+
+6. Create an account
 
    ```sh
    sentinelhub keys add <name>
    ```
 
-6. Add the account to the genesis
+7. Add the account to the genesis
 
    ```sh
    sentinelhub add-genesis-account <name> 1000000000000tsent
    ```
 
-7. Create an offline genesis transaction
+8. Create an offline genesis transaction
 
    ```sh
       sentinelhub gentx <key name> 1000000000000tsent --moniker <your moniker> --commission-rate 0.1 --commission-max-rate 0.2 --commission-max-change-rate 0.01 --chain-id sentinel-turing-4
    ```
 
-8. Copy the gentx file to the testnets folder
+9. Copy the gentx file to the testnets folder
 
    ```sh
    cp ${HOME}/.sentinelhub/config/gentx/gentx-*.json ${HOME}/testnets/turing-4/gentx/
    ```
 
-9. Commit and push it to forked Github repository
+10. Commit and push it to forked Github repository
 
-   ```sh
-   cd ${HOME}/testnets && \
-   git add . && \
-   git commit -m <message>
-   ```
+    ```sh
+    cd ${HOME}/testnets && \
+    git add . && \
+    git commit -m <message>
+    ```
 
-10. Create a pull request from the forked repository to the official repository
+11. Create a pull request from the forked repository to the official repository
