@@ -64,7 +64,7 @@
 sudo vim /etc/systemd/system/sentinel.service
 ```
 
-11. Copy inside (modify for exact location of the binary, can found the binary with `which sentinelhub` modify the `USER` for your user)
+11. Copy inside *(modify for exact location of the binary, can found the binary with `which sentinelhub` modify the `USER` for your user)*
 
 ```sh
 [Unit]
