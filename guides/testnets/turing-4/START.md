@@ -18,7 +18,7 @@
    sha256sum ${HOME}/genesis.json
    ```
 
-   Note: The checksum should be `{Will be shared later}`
+   Note: The checksum should be `21a9cb30cc3756b0bbd3942e3c2e9282222546291213338231a1d6d5a2f48d8b`
 
 4. Move the genesis to the hub configuration directory
 
@@ -33,10 +33,7 @@
    - Insert the below node addresses
 
      ```text
-     091715cf98995180a6da44bd28d3c11f8636a962@51.158.189.149:26656
-     790026684d76c66347941e1c21a904b141014568@3.8.10.143:26656
-     b34f0b79731365b1cb89b9791dc0e1392ced77c9@206.189.253.224:26656
-     835b12099f5869ac9160376d60ab58060169a9c6@128.199.31.151:26656
+     0c196abb62842d75b9db5a9e8ea467d9956a9817@65.21.159.37:26656
      ```
 
    - Save the file
