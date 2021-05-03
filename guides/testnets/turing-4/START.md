@@ -57,3 +57,47 @@
    ```
 
 9. Detach from the virtual Terminal session by pressing Ctrl+A D
+
+10. Create a system service for the node
+
+```sh
+sudo vim /etc/systemd/system/sentinel.service
+```
+
+11. Copy inside (modify for exact location of the binary, can found the binary with `which sentinelhub` modify the `USER` for your user)
+
+```sh
+[Unit]
+Description=Sentinel Node
+After=network.target
+ 
+[Service]
+Type=simple
+User=USER
+WorkingDirectory=/home/USER
+ExecStart=/home/USER/go/bin/sentinelhubd start
+Restart=on-failure
+RestartSec=3
+LimitNOFILE=4096
+ 
+[Install]
+WantedBy=multi-user.target
+```
+
+12. Start the service
+
+```sh
+sudo systemctl start sentinel.service
+```
+
+13. Enable the service
+
+```sh
+sudo systemctl enable sentinel.service
+```
+
+14. Check the logs and status for service
+
+```sh
+sudo systemctl status sentinel.service
+```
