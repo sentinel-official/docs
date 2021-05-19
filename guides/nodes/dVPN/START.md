@@ -1,26 +1,6 @@
 # Start
 
-## Step 1 - Add/Recover an account key
-
-### Add a new account key
-
-``` sh
-docker run --rm \
-    --volume ${HOME}/.sentinel:/root/.sentinel \
-    sentinel-dvpn-node run keys add <KEY_NAME>
-```
-
-### Recover an account key
-
-``` sh
-docker run --rm \
-    --volume ${HOME}/.sentinel:/root/.sentinel \
-    --interactive \
-    --tty \
-    sentinel-dvpn-node run keys add --recover <KEY_NAME>
-```
-
-## Step 2 - Initialize/Edit the configuration
+## Step 1 - Initialize/Edit the configuration
 
 1. Initialize the application configuration
 
@@ -36,17 +16,19 @@ docker run --rm \
 
     ``` text
     [chain]
-    fees = ""
-    gas_adjustment = 0
+    gas_adjustment = 1.05
     gas = 100000
-    gas_prices = "0.01tsent"
-    id = "sentinel-turing-3a"
+    gas_prices = "0.1tsent"
+    id = "sentinel-turing-4"
     rpc_address = "https://rpc.turing.sentinel.co:443"
-    trust_node = false
+    simulate_and_execute = true
 
     [handshake]
     enable = true
     peers = 8
+
+    [keyring]
+    backend = "file"
 
     [node]
     from = "key_1"
@@ -57,7 +39,7 @@ docker run --rm \
     price = "50tsent"
     provider = ""
     remote_url = "https://1.wireguard.sentinel.co:8585"
-    type = "WireGuard"
+    type = 1
     ```
 
 3. Initialize the WireGuard configuration
@@ -78,6 +60,28 @@ docker run --rm \
     private_key = "O9efCDKZO8hS0U+4iZWkZp6fyfU3Kb3ReytcREFq3s0="
     ```
 
+## Step 2 - Add/Recover an account key
+
+### Add a new account key
+
+``` sh
+docker run --rm \
+    --interactive \
+    --tty \
+    --volume ${HOME}/.sentinel:/root/.sentinel \
+    sentinel-dvpn-node run keys add <KEY_NAME>
+```
+
+### Recover an account key
+
+``` sh
+docker run --rm \
+    --interactive \
+    --tty \
+    --volume ${HOME}/.sentinel:/root/.sentinel \
+    sentinel-dvpn-node run keys add --recover <KEY_NAME>
+```
+
 ## Step 3 - Move created TLS keys
 
 ``` sh
@@ -89,6 +93,8 @@ mv ${HOME}/tls.key ${HOME}/.sentinel/node/tls.key
 
 ``` sh
 docker run --rm \
+    --interactive \
+    --tty \
     --volume ${HOME}/.sentinel:/root/.sentinel \
     --volume /lib/modules:/lib/modules \
     --cap-add=NET_ADMIN \

@@ -3,8 +3,8 @@
 Minimum machine configuration required
 
 | Key              | Value        |
-|------------------|--------------|
-| CPU cores        | 1            |
+| ---------------- | ------------ |
+| CPU cores        | 2GHz, 1      |
 | RAM              | 1 Gigabyte   |
 | Disk space       | 10 Gigabytes |
 | Disk type        | HDD          |
@@ -53,7 +53,7 @@ Restart the machine if required
     cd ${HOME}/dvpn-node
     ```
 
-3. Checkout to the specific branch/commit/tag if requried
+3. Checkout to the specific branch/commit/tag if required
 
     ``` sh
     git checkout <BRANCH/COMMIT/TAG>
@@ -77,7 +77,7 @@ Restart the machine if required
     sudo apt-get install --yes openssl
     ```
 
-2. Create certificate
+2. Create a certificate
 
     ``` sh
     openssl req -new \
