@@ -27,7 +27,7 @@ Minimum machine configuration required
 3. Install Golang and other required packages
 
     ``` sh
-    sudo apt-get install -y git golang-go make wget
+    sudo apt-get install -y git golang-go build-essential wget
     ```
 
 4. Export Golang environment variables
