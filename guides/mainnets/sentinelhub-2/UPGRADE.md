@@ -95,7 +95,7 @@ __NOTE: Follow the next steps only after chain halt!__
     jq -cSM '' ${HOME}/genesis.json | sha256sum
     ```
 
-    Hash: `TBU`
+    Hash: `1dbcd7d58845b4b0696d31daafa2096bb3d729e51f8e8fa17e9e73eda1376382`
 
 ## Setup
 
