@@ -125,7 +125,7 @@ __NOTE: Follow the next steps only after chain halt!__
     * Change the value to `minimum-gas-prices = "0.1udvpn"`
     * Save the file
 
-5. Set peers
+5. Set peers and seeds
 
     * Open the file `${HOME}/.sentinelhub/config/config.toml`
     * Go to the line which contains the field `persistent_peers = ""`
@@ -133,6 +133,13 @@ __NOTE: Follow the next steps only after chain halt!__
 
         ``` text
         TBU
+        ```
+
+    * Go to the line which contains the field `seeds = ""`
+    * Insert the below node addresses
+
+        ``` text
+        c3aa0ff9b3eb17be1b0a26d7c8a5683e8e528e1a@159.89.192.105:26656
         ```
 
     * Save the file
