@@ -85,7 +85,7 @@ __NOTE: Follow the next steps only after chain halt!__
     sentinelhub migrate \
         --chain-id="sentinelhub-2" \
         --genesis-time="2021-05-29T14:30:00Z" \
-        --initial-height=901801
+        --initial-height=901801 \
         901800.json > ${HOME}/genesis.json
     ```
 
