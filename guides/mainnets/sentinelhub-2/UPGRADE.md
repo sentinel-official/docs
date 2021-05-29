@@ -84,7 +84,7 @@ __NOTE: Follow the next steps only after chain halt!__
     ``` sh
     sentinelhub migrate \
         --chain-id="sentinelhub-2" \
-        --genesis-time="TBU" \
+        --genesis-time="2021-05-29T14:30:00Z" \
         --initial-height=901801
         901800.json > ${HOME}/genesis.json
     ```
