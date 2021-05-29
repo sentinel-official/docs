@@ -38,7 +38,7 @@ __NOTE: Follow the next steps only after chain halt!__
     jq -cSM '' ${HOME}/901800.json | sha256sum
     ```
 
-    Hash: `TBU`
+    Hash: `e519a0dbb7e7e177c72965c0f7cd8507a537548f56e696c44bd01360424137ad`
 
 ## Install
 
