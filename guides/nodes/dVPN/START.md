@@ -14,13 +14,15 @@
 
     Contents of the sample configuration file
 
+    __DO NOT USE__
+
     ``` text
     [chain]
     gas_adjustment = 1.05
-    gas = 100000
-    gas_prices = "0.1tsent"
-    id = "sentinel-turing-4"
-    rpc_address = "https://rpc.turing.sentinel.co:443"
+    gas = 200000
+    gas_prices = "0.1udvpn"
+    id = "sentinelhub-2"
+    rpc_address = "https://rpc.sentinel.co:443"
     simulate_and_execute = true
 
     [handshake]
@@ -29,17 +31,16 @@
 
     [keyring]
     backend = "file"
+    from = "1.wireguard"
 
     [node]
-    from = "key_1"
-    interval_sessions = 480000000000
-    interval_status = 240000000000
+    interval_sessions = "1h48m0s"
+    interval_status = "54m0s"
     listen_on = "0.0.0.0:8585"
     moniker = "1.wireguard"
-    price = "50tsent"
+    price = "250000udvpn"
     provider = ""
-    remote_url = "https://1.wireguard.sentinel.co:8585"
-    type = 1
+    remote_url = "https://1.wireguard.sentinel.co"
     ```
 
 3. Initialize the WireGuard configuration
@@ -53,6 +54,8 @@
 4. Edit the configuration file _${HOME}/.sentinel/node/wireguard.toml_ if required
 
     Contents of the sample configuration file
+
+    __DO NOT USE__
 
     ``` text
     device = "wg0"
@@ -102,8 +105,8 @@ docker run --rm \
     --publish <API_PORT>:<API_PORT>/tcp \
     --publish <WIREGUARD_PORT>:<WIREGUARD_PORT>/udp \
     --sysctl net.ipv4.ip_forward=1 \
-    --sysctl net.ipv6.conf.all.forwarding=1 \
     --sysctl net.ipv6.conf.all.disable_ipv6=0 \
+    --sysctl net.ipv6.conf.all.forwarding=1 \
     --sysctl net.ipv6.conf.default.forwarding=1 \
     sentinel-dvpn-node run start
 ```
