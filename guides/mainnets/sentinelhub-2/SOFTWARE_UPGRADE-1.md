@@ -7,7 +7,7 @@ __At block height `1272000` the Blockchain will stop producing the blocks. Follo
 1. Check the latest block height. It must match with upgrade height
 
     ``` sh
-    sentinelhub status 2>&1 | jq -r '.SyncInfo.latest_block_height'
+    curl --silent https://rpc.sentinel.co:443/status | jq -r '.result.sync_info.latest_block_height'
     ```
 
 2. Stop the `sentinelhub` process
@@ -27,7 +27,7 @@ __At block height `1272000` the Blockchain will stop producing the blocks. Follo
 2. Checkout to the required version
 
     ``` sh
-    git checkout <TBU>
+    git checkout v0.7.0
     ```
 
 3. Build and install the software
@@ -44,7 +44,7 @@ __At block height `1272000` the Blockchain will stop producing the blocks. Follo
     sentinelhub version --long
     ```
 
-    Commit: `TBU`
+    Commit: `600fd5f8b71f60332656b826df2e3fa3bc6c5e5e`
 
 2. Start the `sentinelhub` process
 
