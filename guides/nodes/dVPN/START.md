@@ -6,11 +6,11 @@
 
     ``` sh
     docker run --rm \
-        --volume ${HOME}/.sentinel:/root/.sentinel \
-        sentinel-dvpn-node run config init
+        --volume ${HOME}/.sentinelnode:/root/.sentinelnode \
+        sentinel-dvpn-node process config init
     ```
 
-2. Edit the configuration file _${HOME}/.sentinel/node/config.toml_ if required
+2. Edit the configuration file _${HOME}/.sentinelnode/config.toml_ if required
 
     Contents of the sample configuration file
 
@@ -34,11 +34,12 @@
     from = "1.wireguard"
 
     [node]
-    interval_sessions = "1h48m0s"
-    interval_status = "54m0s"
+    interval_set_sessions = "2m0s"
+    interval_update_sessions = "1h48m0s"
+    interval_update_status = "54m0s"
     listen_on = "0.0.0.0:8585"
     moniker = "1.wireguard"
-    price = "250000udvpn"
+    price = "250udvpn"
     provider = ""
     remote_url = "https://1.wireguard.sentinel.co"
     ```
@@ -47,11 +48,11 @@
 
     ``` sh
     docker run --rm \
-        --volume ${HOME}/.sentinel:/root/.sentinel \
-        sentinel-dvpn-node run wireguard config init
+        --volume ${HOME}/.sentinelnode:/root/.sentinelnode \
+        sentinel-dvpn-node process wireguard config init
     ```
 
-4. Edit the configuration file _${HOME}/.sentinel/node/wireguard.toml_ if required
+4. Edit the configuration file _${HOME}/.sentinelnode/wireguard.toml_ if required
 
     Contents of the sample configuration file
 
@@ -71,8 +72,8 @@
 docker run --rm \
     --interactive \
     --tty \
-    --volume ${HOME}/.sentinel:/root/.sentinel \
-    sentinel-dvpn-node run keys add <KEY_NAME>
+    --volume ${HOME}/.sentinelnode:/root/.sentinelnode \
+    sentinel-dvpn-node process keys add <KEY_NAME>
 ```
 
 ### Recover an account key
@@ -81,15 +82,15 @@ docker run --rm \
 docker run --rm \
     --interactive \
     --tty \
-    --volume ${HOME}/.sentinel:/root/.sentinel \
-    sentinel-dvpn-node run keys add --recover <KEY_NAME>
+    --volume ${HOME}/.sentinelnode:/root/.sentinelnode \
+    sentinel-dvpn-node process keys add --recover <KEY_NAME>
 ```
 
 ## Step 3 - Move created TLS keys
 
 ``` sh
-mv ${HOME}/tls.crt ${HOME}/.sentinel/node/tls.crt
-mv ${HOME}/tls.key ${HOME}/.sentinel/node/tls.key
+mv ${HOME}/tls.crt ${HOME}/.sentinelnode/tls.crt
+mv ${HOME}/tls.key ${HOME}/.sentinelnode/tls.key
 ```
 
 ## Step 4 - Run the node
@@ -98,7 +99,7 @@ mv ${HOME}/tls.key ${HOME}/.sentinel/node/tls.key
 docker run --rm \
     --interactive \
     --tty \
-    --volume ${HOME}/.sentinel:/root/.sentinel \
+    --volume ${HOME}/.sentinelnode:/root/.sentinelnode \
     --volume /lib/modules:/lib/modules \
     --cap-add=NET_ADMIN \
     --cap-add=SYS_MODULE \
@@ -108,5 +109,5 @@ docker run --rm \
     --sysctl net.ipv6.conf.all.disable_ipv6=0 \
     --sysctl net.ipv6.conf.all.forwarding=1 \
     --sysctl net.ipv6.conf.default.forwarding=1 \
-    sentinel-dvpn-node run start
+    sentinel-dvpn-node process start
 ```
