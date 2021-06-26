@@ -65,22 +65,18 @@ Restart the machine if required
 
     ``` sh
     git clone https://github.com/sentinel-official/dvpn-node.git \
-        ${HOME}/dvpn-node
+        ${HOME}/dvpn-node/
     ```
 
-2. Change the working directory
+2. Change the working directory and checkout to the latest tag
 
     ``` sh
-    cd ${HOME}/dvpn-node
+    cd ${HOME}/dvpn-node/ && \
+    commit=$(git rev-list --tags --max-count=1) && \
+    git checkout $(git describe --tags ${commit})
     ```
 
-3. Checkout to the specific branch/commit/tag if required
-
-    ``` sh
-    git checkout <BRANCH/COMMIT/TAG>
-    ```
-
-4. Build the image
+3. Build the image
 
     ``` sh
     docker build --file Dockerfile \
