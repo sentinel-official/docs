@@ -101,7 +101,9 @@ docker run --rm \
     --tty \
     --volume ${HOME}/.sentinelnode:/root/.sentinelnode \
     --volume /lib/modules:/lib/modules \
+    --cap-drop=ALL \
     --cap-add=NET_ADMIN \
+    --cap-add=NET_RAW \
     --cap-add=SYS_MODULE \
     --publish <API_PORT>:<API_PORT>/tcp \
     --publish <WIREGUARD_PORT>:<WIREGUARD_PORT>/udp \

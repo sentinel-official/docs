@@ -38,7 +38,28 @@ Minimum machine configuration required
 
 Restart the machine if required
 
-## Step 2 - Build the Docker image of dVPN node
+## Step 2 - Enable IPv6 support for Docker
+
+1. Open the file `/etc/docker/daemon.json` with a text editor
+
+2. Paste the following configuration
+
+    ```text
+    {
+        "ipv6": true,
+        "fixed-cidr-v6": "2001:db8:1::/64"
+    }
+    ```
+
+3. Save the file
+
+4. Restart the Docker process
+
+    ```sh
+    systemctl restart docker
+    ```
+
+## Step 3 - Build the Docker image of dVPN node
 
 1. Clone the GitHub repository
 
@@ -69,7 +90,7 @@ Restart the machine if required
         --compress .
     ```
 
-## Step 3 - Create a self-signed TLS certificate
+## Step 4 - Create a self-signed TLS certificate
 
 1. Install OpenSSL package
 
