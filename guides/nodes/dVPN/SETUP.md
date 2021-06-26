@@ -36,15 +36,21 @@ Minimum machine configuration required
     sudo sh ${HOME}/get-docker.sh
     ```
 
-Restart the machine if required
+5. Add user to Docker group
 
-## Step 2 - Enable IPv6 support for Docker
+    ``` sh
+    sudo usermod -aG docker $(whoami)
+    ```
+
+6. Reboot the machine
+
+## Step 2 - Enable IPv6 support for Docker (optional)
 
 1. Open the file `/etc/docker/daemon.json` with a text editor
 
 2. Paste the following configuration
 
-    ```text
+    ``` text
     {
         "ipv6": true,
         "fixed-cidr-v6": "2001:db8:1::/64"
@@ -55,8 +61,23 @@ Restart the machine if required
 
 4. Restart the Docker process
 
-    ```sh
-    systemctl restart docker
+    ``` sh
+    sudo systemctl restart docker
+    ```
+
+5. Install `iptables-persistent` package
+
+    ``` sh
+    sudo apt-get install --yes iptables-persistent
+    ```
+
+6. Enable NAT for the private Docker subnet on the host
+
+    ``` sh
+    rule="POSTROUTING -s 2001:db8:1::/64 ! -o docker0 -j MASQUERADE" && \
+    sudo ip6tables -t nat -C ${rule} || \
+    sudo ip6tables -t nat -A ${rule} && \
+    sudo ip6tables-save > /etc/iptables/rules.v6
     ```
 
 ## Step 3 - Build the Docker image of dVPN node
@@ -88,7 +109,7 @@ Restart the machine if required
 
 ## Step 4 - Create a self-signed TLS certificate
 
-1. Install OpenSSL package
+1. Install `openssl` package
 
     ``` sh
     sudo apt-get install --yes openssl

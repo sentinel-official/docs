@@ -35,8 +35,8 @@
 
     [node]
     interval_set_sessions = "2m0s"
-    interval_update_sessions = "1h48m0s"
-    interval_update_status = "54m0s"
+    interval_update_sessions = "1h55m0s"
+    interval_update_status = "55m0s"
     listen_on = "0.0.0.0:8585"
     moniker = "1.wireguard"
     price = "250udvpn"
