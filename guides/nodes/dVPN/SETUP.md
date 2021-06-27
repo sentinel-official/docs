@@ -82,14 +82,20 @@ Minimum machine configuration required
 
 ## Step 3 - Build the Docker image of dVPN node
 
-1. Clone the GitHub repository
+1. Install Git package
+
+    ``` sh
+    sudo apt-get install --yes git
+    ```
+    
+2. Clone the GitHub repository
 
     ``` sh
     git clone https://github.com/sentinel-official/dvpn-node.git \
         ${HOME}/dvpn-node/
     ```
 
-2. Change the working directory and checkout to the latest tag
+3. Change the working directory and checkout to the latest tag
 
     ``` sh
     cd ${HOME}/dvpn-node/ && \
@@ -97,7 +103,7 @@ Minimum machine configuration required
     git checkout $(git describe --tags ${commit})
     ```
 
-3. Build the image
+4. Build the image
 
     ``` sh
     docker build --file Dockerfile \
