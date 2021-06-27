@@ -2,13 +2,13 @@
 
 Minimum machine configuration required
 
-| Key              | Value        |
-| ---------------- | ------------ |
-| CPU cores        | 2GHz, 1      |
-| RAM              | 1 Gigabyte   |
-| Disk space       | 10 Gigabytes |
-| Disk type        | HDD          |
-| Operating System | Ubuntu       |
+| Key              | Value                         |
+| ---------------- | ------------------------------|
+| CPU cores        | 2GHz, 1                       |
+| RAM              | 1 Gigabyte                    |
+| Disk space       | 10 Gigabytes                  |
+| Disk type        | HDD                           |
+| Operating System | Ubuntu (preferable 20.04)     |
 
 ## Step 1 - Install Docker
 
