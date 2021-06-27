@@ -38,7 +38,7 @@
 | Moniker                  | Name of the node                                            |         |
 | Price                    | Per Gigabyte price to charge against the provided bandwidth |         |
 | Provider                 | Address of the provider the node wants to operate under     |         |
-| Remote URL               | Public URL of the node                                      |         |
+| Remote URL               | Public URL of the node  ( https://<PUBLIC_IP>:<API_PORT> )  |         |
 
 ## WireGuard
 
