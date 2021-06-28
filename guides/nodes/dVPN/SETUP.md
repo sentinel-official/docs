@@ -77,7 +77,7 @@ Minimum machine configuration required
     rule="POSTROUTING -s 2001:db8:1::/64 ! -o docker0 -j MASQUERADE" && \
     sudo ip6tables -t nat -C ${rule} || \
     sudo ip6tables -t nat -A ${rule} && \
-    sudo ip6tables-save > /etc/iptables/rules.v6
+    sudo sh -c "ip6tables-save > /etc/iptables/rules.v6"
     ```
 
 ## Step 3 - Build the Docker image of dVPN node
