@@ -2,13 +2,13 @@
 
 Minimum machine configuration required
 
-| Key              | Value                         |
-| ---------------- | ------------------------------|
-| CPU cores        | 2GHz, 1                       |
-| RAM              | 1 Gigabyte                    |
-| Disk space       | 10 Gigabytes                  |
-| Disk type        | HDD                           |
-| Operating System | Ubuntu (preferable 20.04)     |
+| Key              | Value        |
+| ---------------- | ------------ |
+| CPU cores        | 2GHz, 1      |
+| RAM              | 1 Gigabyte   |
+| Disk space       | 10 Gigabytes |
+| Disk type        | HDD          |
+| Operating System | Ubuntu 20.04 |
 
 ## Step 1 - Install Docker
 
@@ -87,7 +87,7 @@ Minimum machine configuration required
     ``` sh
     sudo apt-get install --yes git
     ```
-    
+
 2. Clone the GitHub repository
 
     ``` sh

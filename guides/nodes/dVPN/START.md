@@ -12,11 +12,9 @@
 
 2. Edit the configuration file _${HOME}/.sentinelnode/config.toml_ if required
 
-    Contents of the sample configuration file
-    
-    In this example 8585 is the API port. You'll need it later on in step 4 as <API_PORT>
-    
-    __DO NOT USE__
+    In the sample below, 8585 is the API port. You will need it later on in step 4 as <API_PORT>.
+
+    Sample configuration file contents. __DO NOT USE__
 
     ``` text
     [chain]
@@ -41,7 +39,7 @@
     interval_update_status = "55m0s"
     listen_on = "0.0.0.0:8585"
     moniker = "1.wireguard"
-    price = "250udvpn"
+    price = "30000udvpn"
     provider = ""
     remote_url = "https://1.wireguard.sentinel.co"
     ```
@@ -56,11 +54,9 @@
 
 4. Edit the configuration file _${HOME}/.sentinelnode/wireguard.toml_ if required
 
-    Contents of the sample configuration file
+    In the sample below, 60299 is the WireGuard port. You will need it later on in step 4 as <WIREGUARD_PORT>.
 
-    In this example 60299 is the Wireguard port. You'll need it later on in step 4 as <WIREGUARD_PORT>
-
-    __DO NOT USE__
+    Sample configuration file contents. __DO NOT USE__
 
     ``` text
     device = "wg0"
@@ -70,13 +66,8 @@
 
 ## Step 2 - Add/Recover an account key
 
-You'll see <KEY_NAME>, this is the name you also used in your config.toml file as 'from' down below the [keyring] section in the config.toml
+The <KEY_NAME> is the value you set in the file config.toml for field `from` under the section `keyring`
 
-Choose one of the below methods to add an account:
-
-### Add a new account key
-
-    
 ``` sh
 docker run --rm \
     --interactive \
@@ -85,15 +76,7 @@ docker run --rm \
     sentinel-dvpn-node process keys add <KEY_NAME>
 ```
 
-### Recover an account key
-
-``` sh
-docker run --rm \
-    --interactive \
-    --tty \
-    --volume ${HOME}/.sentinelnode:/root/.sentinelnode \
-    sentinel-dvpn-node process keys add --recover <KEY_NAME>
-```
+Pass flag `--recover` to recover the account with Mnemonic.
 
 ## Step 3 - Move created TLS keys
 
@@ -115,11 +98,11 @@ docker run --rm \
     --cap-add NET_BIND_SERVICE \
     --cap-add NET_RAW \
     --cap-add SYS_MODULE \
-    --publish <API_PORT>:<API_PORT>/tcp \
-    --publish <WIREGUARD_PORT>:<WIREGUARD_PORT>/udp \
     --sysctl net.ipv4.ip_forward=1 \
     --sysctl net.ipv6.conf.all.disable_ipv6=0 \
     --sysctl net.ipv6.conf.all.forwarding=1 \
     --sysctl net.ipv6.conf.default.forwarding=1 \
+    --publish <API_PORT>:<API_PORT>/tcp \
+    --publish <WIREGUARD_PORT>:<WIREGUARD_PORT>/udp \
     sentinel-dvpn-node process start
 ```
