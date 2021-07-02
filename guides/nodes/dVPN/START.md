@@ -13,7 +13,9 @@
 2. Edit the configuration file _${HOME}/.sentinelnode/config.toml_ if required
 
     Contents of the sample configuration file
-
+    
+    In this example 8585 is the API port. You'll need it later on in step 4 as <API_PORT>
+    
     __DO NOT USE__
 
     ``` text
@@ -31,7 +33,7 @@
 
     [keyring]
     backend = "file"
-    from = "1.wireguard"
+    from = "1.wireguard"        
 
     [node]
     interval_set_sessions = "2m0s"
@@ -56,6 +58,8 @@
 
     Contents of the sample configuration file
 
+    In this example 60299 is the Wireguard port. You'll need it later on in step 4 as <WIREGUARD_PORT>
+
     __DO NOT USE__
 
     ``` text
@@ -66,8 +70,13 @@
 
 ## Step 2 - Add/Recover an account key
 
+You'll see <KEY_NAME>, this is the name you also used in your config.toml file as 'from' down below the [keyring] section in the config.toml
+
+Choose one of the below methods to add an account:
+
 ### Add a new account key
 
+    
 ``` sh
 docker run --rm \
     --interactive \
