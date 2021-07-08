@@ -108,3 +108,11 @@ docker run --rm \
     --publish <WIREGUARD_PORT>:<WIREGUARD_PORT>/udp \
     sentinel-dvpn-node process start
 ```
+When no error appears and the log is scrolling you can disconnect safely without closing the docker using CTRL+P and then CTRL+Q.
+
+Use ```docker ps -a``` to show the docker CONTAINER ID
+
+Use ```docker logs <CONTAINER ID> --tail 40 -f``` to see the docker logs
+    
+Press CTRL+C to exit viewing the logs.
+    
