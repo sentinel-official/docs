@@ -25,68 +25,77 @@ markdown_extensions:
   - pymdownx.details
 nav:
   - Home: index.md
-  - Modules:
-      - Deposit:
-          - Introduction: modules/deposit/introduction.md
-          - Types: modules/deposit/types.md
-          - Keeper: modules/deposit/keeper.md
-          - Messages: modules/deposit/messages.md
-          - Queries: modules/deposit/queries.md
-          - ABCI: modules/deposit/ABCI.md
-          - Commands: modules/deposit/commands.md
-      - Provider:
-          - Introduction: modules/provider/introduction.md
-          - Types: modules/provider/types.md
-          - Keeper: modules/provider/keeper.md
-          - Messages: modules/provider/messages.md
-          - Queries: modules/provider/queries.md
-          - ABCI: modules/provider/ABCI.md
-          - Commands: modules/provider/commands.md
-      - Node:
-          - Introduction: modules/node/introduction.md
-          - Types: modules/node/types.md
-          - Keeper: modules/node/keeper.md
-          - Messages: modules/node/messages.md
-          - Queries: modules/node/queries.md
-          - ABCI: modules/node/ABCI.md
-          - Commands: modules/node/commands.md
-      - Plan:
-          - Introduction: modules/plan/introduction.md
-          - Types: modules/plan/types.md
-          - Keeper: modules/plan/keeper.md
-          - Messages: modules/plan/messages.md
-          - Queries: modules/plan/queries.md
-          - ABCI: modules/plan/ABCI.md
-          - Commands: modules/plan/commands.md
-      - Subscription:
-          - Introduction: modules/subscription/introduction.md
-          - Types: modules/subscription/types.md
-          - Keeper: modules/subscription/keeper.md
-          - Messages: modules/subscription/messages.md
-          - Queries: modules/subscription/queries.md
-          - ABCI: modules/subscription/ABCI.md
-          - Commands: modules/subscription/commands.md
-      - Session:
-          - Introduction: modules/session/introduction.md
-          - Types: modules/session/types.md
-          - Keeper: modules/session/keeper.md
-          - Messages: modules/session/messages.md
-          - Queries: modules/session/queries.md
-          - ABCI: modules/session/ABCI.md
-          - Commands: modules/session/commands.md
+  - Sentinel Hub:
+    - Installation: sentinelhub/installation.md
+    - Running a full node: sentinelhub/full-node.md
+    - Become a validator: sentinelhub/validator.md
+    - GenTx: sentinelhub/gentx.md
+    - Upgrades:
+      - Software Upgrade-1: sentinelhub/upgrades/software-upgrade-1.md
+    - Modules:
+        - Deposit:
+            - Introduction: sentinelhub/modules/deposit/introduction.md
+            - Types: sentinelhub/modules/deposit/types.md
+            - Keeper: sentinelhub/modules/deposit/keeper.md
+            - Messages: sentinelhub/modules/deposit/messages.md
+            - Queries: sentinelhub/modules/deposit/queries.md
+            - ABCI: sentinelhub/modules/deposit/ABCI.md
+            - Commands: sentinelhub/modules/deposit/commands.md
+        - Provider:
+            - Introduction: sentinelhub/modules/provider/introduction.md
+            - Types: sentinelhub/modules/provider/types.md
+            - Keeper: sentinelhub/modules/provider/keeper.md
+            - Messages: sentinelhub/modules/provider/messages.md
+            - Queries: sentinelhub/modules/provider/queries.md
+            - ABCI: sentinelhub/modules/provider/ABCI.md
+            - Commands: sentinelhub/modules/provider/commands.md
+        - Node:
+            - Introduction: sentinelhub/modules/node/introduction.md
+            - Types: sentinelhub/modules/node/types.md
+            - Keeper: sentinelhub/modules/node/keeper.md
+            - Messages: sentinelhub/modules/node/messages.md
+            - Queries: sentinelhub/modules/node/queries.md
+            - ABCI: sentinelhub/modules/node/ABCI.md
+            - Commands: sentinelhub/modules/node/commands.md
+        - Plan:
+            - Introduction: sentinelhub/modules/plan/introduction.md
+            - Types: sentinelhub/modules/plan/types.md
+            - Keeper: sentinelhub/modules/plan/keeper.md
+            - Messages: sentinelhub/modules/plan/messages.md
+            - Queries: sentinelhub/modules/plan/queries.md
+            - ABCI: sentinelhub/modules/plan/ABCI.md
+            - Commands: sentinelhub/modules/plan/commands.md
+        - Subscription:
+            - Introduction: sentinelhub/modules/subscription/introduction.md
+            - Types: sentinelhub/modules/subscription/types.md
+            - Keeper: sentinelhub/modules/subscription/keeper.md
+            - Messages: sentinelhub/modules/subscription/messages.md
+            - Queries: sentinelhub/modules/subscription/queries.md
+            - ABCI: sentinelhub/modules/subscription/ABCI.md
+            - Commands: sentinelhub/modules/subscription/commands.md
+        - Session:
+            - Introduction: sentinelhub/modules/session/introduction.md
+            - Types: sentinelhub/modules/session/types.md
+            - Keeper: sentinelhub/modules/session/keeper.md
+            - Messages: sentinelhub/modules/session/messages.md
+            - Queries: sentinelhub/modules/session/queries.md
+            - ABCI: sentinelhub/modules/session/ABCI.md
+            - Commands: sentinelhub/modules/session/commands.md
   - dVPN node:
-      - Setup: nodes/dVPN/setup.md
+      - Setup: dVPN-node/setup.md
       - Configuration:
-          - Application: nodes/dVPN/configuration/application.md
-          - WireGuard: nodes/dVPN/configuration/wireguard.md
-      - Start: nodes/dVPN/start.md
-      - Troubleshoot: nodes/dVPN/troubleshoot.md
-      - API: nodes/dVPN/API.md
+          - Application: dVPN-node/configuration/application.md
+          - WireGuard: dVPN-node/configuration/wireguard.md
+      - Start: dVPN-node/start.md
+      - Troubleshoot: dVPN-node/troubleshoot.md
+      - API: dVPN-node/API.md
   - CLI client:
-      - Keys: clients/CLI/keys.md
-      - Queries: clients/CLI/queries.md
-      - Transactions: clients/CLI/transactions.md
-      - VPN: clients/CLI/VPN.md
+      - Installation: clients/CLI/installation.md
+      - Commands:
+        - Keys: clients/CLI/commands/keys.md
+        - Queries: clients/CLI/commands/queries.md
+        - Transactions: clients/CLI/commands/transactions.md
+        - VPN: clients/CLI/commands/VPN.md
       - API: clients/CLI/API.md
 plugins:
   - minify:
