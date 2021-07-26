@@ -1,4 +1,4 @@
-# SOFTWARE UPGRADE-1
+# SOFTWARE UPGRADE - 1
 
 ???+ warning "Warning"
 
@@ -41,7 +41,9 @@
     sentinelhub version --long
     ```
 
-    Commit: `600fd5f8b71f60332656b826df2e3fa3bc6c5e5e`
+    ???+ note "Note"
+
+        Commit hash must be `600fd5f8b71f60332656b826df2e3fa3bc6c5e5e`
 
 2. Start the `sentinelhub` process
 

@@ -31,7 +31,8 @@ nav:
     - Become a validator: sentinelhub/validator.md
     - GenTx: sentinelhub/gentx.md
     - Upgrades:
-      - Software Upgrade-1: sentinelhub/upgrades/software-upgrade-1.md
+      - Sentinel Hub - 2: sentinelhub/upgrades/sentinelhub-2.md
+      - Software Upgrade - 1: sentinelhub/upgrades/software-upgrade-1.md
     - Modules:
         - Deposit:
             - Introduction: sentinelhub/modules/deposit/introduction.md
