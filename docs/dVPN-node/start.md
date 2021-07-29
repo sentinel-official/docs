@@ -67,14 +67,10 @@ docker run --rm \
     --interactive \
     --tty \
     --volume ${HOME}/.sentinelnode:/root/.sentinelnode \
-    sentinel-dvpn-node process keys add <KEY_NAME>
+    sentinel-dvpn-node process keys add
 ```
 
 Pass flag `--recover` to recover the account with Mnemonic
-
-???+ tip "Tip"
-
-    The `<KEY_NAME>` is the value set for the field `from` under the section `keyring` in the application configuration
 
 ???+ warning "Warning"
 
