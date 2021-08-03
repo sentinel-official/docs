@@ -9,7 +9,7 @@ sentinelcli keys add \
     <KEY_NAME>
 ```
 
-Pass flag `--recover` to recover the key
+Pass flag `--recover` to recover the key with Mnemonic
 
 ## List keys
 

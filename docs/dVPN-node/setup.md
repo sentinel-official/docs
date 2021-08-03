@@ -80,7 +80,23 @@ Minimum machine configuration required
     sudo sh -c "ip6tables-save > /etc/iptables/rules.v6"
     ```
 
-## Build the Docker image
+## Preparing the Docker image
+
+### Prebuilt
+
+1. Pull the image
+
+    ``` sh
+    docker pull ghcr.io/sentinel-official/dvpn-node:latest
+    ```
+
+2. Tag the image
+
+    ``` sh
+    docker tag ghcr.io/sentinel-official/dvpn-node:latest sentinel-dvpn-node
+    ```
+
+### From source
 
 1. Install Git package
 
