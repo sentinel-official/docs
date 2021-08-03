@@ -70,7 +70,7 @@ docker run --rm \
     sentinel-dvpn-node process keys add
 ```
 
-Pass flag `--recover` to recover the account with Mnemonic
+Pass flag `--recover` to recover the key with Mnemonic
 
 ???+ warning "Warning"
 

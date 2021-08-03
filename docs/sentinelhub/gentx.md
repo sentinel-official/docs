@@ -18,7 +18,8 @@
     ``` sh
     MONIKER=
 
-    sentinelhub init ${MONIKER} --chain-id ${CHAIN_ID}
+    sentinelhub init ${MONIKER} \
+        --chain-id ${CHAIN_ID}
     ```
 
 4. Unzip the Genesis to the blockchain configuration directory

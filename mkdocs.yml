@@ -27,12 +27,12 @@ nav:
   - Home: index.md
   - Sentinel Hub:
     - Installation: sentinelhub/installation.md
-    - Running a full node: sentinelhub/full-node.md
-    - Become a validator: sentinelhub/validator.md
+    - Running a full node: sentinelhub/running-a-full-node.md
+    - Become a validator: sentinelhub/become-a-validator.md
     - GenTx: sentinelhub/gentx.md
     - Upgrades:
-      - Sentinel Hub - 2: sentinelhub/upgrades/sentinelhub-2.md
-      - Software Upgrade - 1: sentinelhub/upgrades/software-upgrade-1.md
+      - SentinelHub - 2: sentinelhub/upgrades/sentinelhub-2.md
+      - Software upgrade - 1: sentinelhub/upgrades/software-upgrade-1.md
     - Modules:
         - Deposit:
             - Introduction: sentinelhub/modules/deposit/introduction.md

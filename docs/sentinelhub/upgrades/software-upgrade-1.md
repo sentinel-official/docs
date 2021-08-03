@@ -1,4 +1,4 @@
-# SOFTWARE UPGRADE - 1
+# Software upgrade - 1
 
 ???+ warning "Warning"
 

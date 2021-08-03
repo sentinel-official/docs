@@ -1,4 +1,4 @@
-# Sentinel Hub - 2
+# SentinelHub - 2
 
 Hardfork upgrade from blockchain `sentinelhub-1` to `sentinelhub-2`
 

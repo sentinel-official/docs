@@ -1,5 +1,9 @@
 # Installation
 
+## Prebuilt
+
+TBU
+
 ## From source
 
 ### Install the dependencies
@@ -40,7 +44,7 @@
 ``` sh
 CHAIN_ID=
 BASE_DIRECTORY=${GOPATH}/src/github.com/sentinel-official
-VERSION=$(curl -fsLS https://raw.githubusercontent.com/sentinel-official/master/networks/${CHAIN_ID}/version.txt)
+VERSION=$(curl -fsLS https://raw.githubusercontent.com/sentinel-official/networks/main/${CHAIN_ID}/version.txt)
 
 rm -rf ${BASE_DIRECTORY}/hub/ && mkdir -p ${BASE_DIRECTORY} && cd ${BASE_DIRECTORY}/ && \
 git clone https://github.com/sentinel-official/hub.git && cd ${BASE_DIRECTORY}/hub/ && \
@@ -52,7 +56,3 @@ git checkout ${VERSION}
 ``` sh
 make install
 ```
-
-## Prebuilt binaries
-
-TBU
