@@ -41,25 +41,32 @@
 
         Pass flag `--recover` to recover the key
 
-6. Create an offline Genesis transaction
+6. Add the Genesis account
 
     ``` sh
+    ADDRESS=$(sentinelhub keys show --address ${KEY_NAME})
     STAKING_DENOM=
 
+    sentinelhub add-genesis-account ${ADDRESS} 1000000000${STAKING_DENOM}
+    ```
+
+7. Create an offline Genesis transaction
+
+    ``` sh
     sentinelhub gentx --name ${KEY_NAME} \
-        --amount 1000000000${STAKING_DENOM} \
+        --amount 100000000${STAKING_DENOM} \
         --commission-rate 0.1 \
         --commission-max-rate 0.2 \
         --commission-max-change-rate 0.01
     ```
 
-7. Copy the GenTx file to the folder `networks`
+8. Copy the GenTx file to the folder `networks`
 
     ``` sh
     cp ${HOME}/.sentinelhub/config/gentx/gentx-*.json ${HOME}/networks/${CHAIN_ID}/gentx/
     ```
 
-8. Commit and push it to the forked GitHub repository
+9. Commit and push it to the forked GitHub repository
 
     ``` sh
     cd ${HOME}/networks/ && \
@@ -68,4 +75,4 @@
     git push origin ${CHAIN_ID}
     ```
 
-9. Create a pull request from the forked repository to the official repository
+10. Create a pull request from the forked repository to the official repository
