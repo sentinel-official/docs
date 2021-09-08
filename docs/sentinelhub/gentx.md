@@ -53,8 +53,7 @@
 7. Create an offline Genesis transaction
 
     ``` sh
-    sentinelhub gentx --name ${KEY_NAME} \
-        --amount 100000000${STAKING_DENOM} \
+    sentinelhub gentx ${KEY_NAME} 100000000${STAKING_DENOM} \
         --commission-rate 0.1 \
         --commission-max-rate 0.2 \
         --commission-max-change-rate 0.01
