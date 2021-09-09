@@ -18,7 +18,7 @@
     ``` sh
     MONIKER=
 
-    sentinelhub init ${MONIKER} \
+    sentinelhub init "${MONIKER}" \
         --chain-id ${CHAIN_ID}
     ```
 
