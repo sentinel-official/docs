@@ -54,6 +54,7 @@
 
     ``` sh
     sentinelhub gentx ${KEY_NAME} 100000000${STAKING_DENOM} \
+        --chain-id ${CHAIN_ID} \
         --commission-rate 0.1 \
         --commission-max-rate 0.2 \
         --commission-max-change-rate 0.01
