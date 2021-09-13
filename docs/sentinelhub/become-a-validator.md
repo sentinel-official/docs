@@ -29,7 +29,7 @@
     MONIKER=
     TX_FEES=
 
-    sentinelhubcli tx staking create-validator \
+    sentinelhub tx staking create-validator \
         --broadcast-mode block \
         --min-self-delegation 1 \
         --amount ${DELEGATION_AMOUNT} \
@@ -38,8 +38,8 @@
         --commission-max-rate ${COMMISION_MAX_RATE} \
         --commission-rate ${COMMISSION_RATE} \
         --fees ${TX_FEES} \
-        --from ${KEY_NAME}
+        --from ${KEY_NAME} \
         --gas ${TX_GAS} \
         --moniker ${MONIKER} \
-        --pubkey ${CONSENSUS_PUBLIC_KEY} \
+        --pubkey ${CONSENSUS_PUBLIC_KEY}
     ```
