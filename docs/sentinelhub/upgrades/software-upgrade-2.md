@@ -19,7 +19,7 @@
 1. Clone the source code
 
     ``` sh
-    VERSION=v0.8.0
+    VERSION=v0.8.1
     BASE_DIRECTORY=${GOPATH}/src/github.com/sentinel-official
 
     rm -rf ${BASE_DIRECTORY}/hub/ && mkdir -p ${BASE_DIRECTORY} && cd ${BASE_DIRECTORY}/ && \
@@ -43,7 +43,7 @@
 
     ???+ note "Note"
 
-        Commit hash must be `ea4f1055628b7d6a959d4dc602d4da4c7c885e07`
+        Commit hash must be `fee0aca717b76b8a47eb35e3b435933013501a6d`
 
 2. Start the `sentinelhub` process
 
