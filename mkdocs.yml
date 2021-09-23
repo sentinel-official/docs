@@ -33,6 +33,7 @@ nav:
     - Upgrades:
       - SentinelHub - 2: sentinelhub/upgrades/sentinelhub-2.md
       - Software upgrade - 1: sentinelhub/upgrades/software-upgrade-1.md
+      - Software upgrade - 2: sentinelhub/upgrades/software-upgrade-2.md
     - Modules:
         - Deposit:
             - Introduction: sentinelhub/modules/deposit/introduction.md
