@@ -67,7 +67,7 @@ docker run --rm \
     --interactive \
     --tty \
     --volume ${HOME}/.sentinelnode:/root/.sentinelnode \
-    sentinel-dvpn-node process keys add
+    sentinel-dvpn-node process keys add <yourAccountName>
 ```
 
 Pass flag `--recover` to recover the key with Mnemonic
