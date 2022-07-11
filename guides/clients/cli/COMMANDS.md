@@ -7,7 +7,7 @@
 ```sh
 sentinelcli keys add \
     --home "${HOME}/.sentinelcli" \
-    --keyring-backend file \
+    --keyring-backend os \
     <KEY_NAME>
 ```
 
@@ -100,7 +100,7 @@ sentinelcli query session \
 ```sh
 sentinelcli tx subscription subscribe-to-node \
     --home "${HOME}/.sentinelcli" \
-    --keyring-backend file \
+    --keyring-backend os \
     --chain-id sentinelhub-2 \
     --node https://rpc.sentinel.co:443 \
     --from <KEY_NAME> <NODE_ADDRESS> <DEPOSIT>
@@ -111,7 +111,7 @@ sentinelcli tx subscription subscribe-to-node \
 ```sh
 sudo sentinelcli connect \
     --home "${HOME}/.sentinelcli" \
-    --keyring-backend file \
+    --keyring-backend os \
     --chain-id sentinelhub-2 \
     --node https://rpc.sentinel.co:443 \
     --yes \

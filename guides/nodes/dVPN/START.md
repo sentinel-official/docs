@@ -41,7 +41,7 @@
     moniker = "1.wireguard"
     price = "30000udvpn"
     provider = ""
-    remote_url = "https://1.wireguard.sentinel.co"
+    remote_url = "https://1.wireguard.sentinel.co:8585"
     ```
 
 3. Initialize the WireGuard configuration
@@ -78,11 +78,28 @@ docker run --rm \
 
 Pass flag `--recover` to recover the account with Mnemonic.
 
+__WARNING:__ Please write the Mnemonic phrase in a safe place. It is the only way to recover your account.
+
+__NOTE:__ The account must have some $DVPNs to start the node.
+
+You can get the list of keys by executing the below command.
+
+``` sh
+docker run --rm \
+    --interactive \
+    --tty \
+    --volume ${HOME}/.sentinelnode:/root/.sentinelnode \
+    sentinel-dvpn-node process keys list
+```
+
 ## Step 3 - Move created TLS keys
 
 ``` sh
-mv ${HOME}/tls.crt ${HOME}/.sentinelnode/tls.crt
+mv ${HOME}/tls.crt ${HOME}/.sentinelnode/tls.crt && \
 mv ${HOME}/tls.key ${HOME}/.sentinelnode/tls.key
+
+sudo chown root:root ${HOME}/.sentinelnode/tls.crt && \
+sudo chown root:root ${HOME}/.sentinelnode/tls.key
 ```
 
 ## Step 4 - Run the node
