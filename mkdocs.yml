@@ -1,0 +1,131 @@
+edit_uri: ""
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/sentinel-official
+    - icon: fontawesome/brands/medium
+      link: https://sentinel.medium.com
+    - icon: fontawesome/brands/telegram
+      link: https://t.me/sentinel_co
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/Sentinel_co
+markdown_extensions:
+  - admonition
+  - abbr
+  - attr_list
+  - codehilite
+  - def_list
+  - footnotes
+  - meta
+  - md_in_html
+  - toc:
+      permalink: true
+  - pymdownx.highlight
+  - pymdownx.superfences
+  - pymdownx.details
+nav:
+  - Home: index.md
+  - Sentinel Hub:
+    - Installation: sentinelhub/installation.md
+    - Running a full node: sentinelhub/running-a-full-node.md
+    - Become a validator: sentinelhub/become-a-validator.md
+    - GenTx: sentinelhub/gentx.md
+    - Upgrades:
+      - SentinelHub - 2: sentinelhub/upgrades/sentinelhub-2.md
+      - Software upgrade - 1: sentinelhub/upgrades/software-upgrade-1.md
+      - Software upgrade - 2: sentinelhub/upgrades/software-upgrade-2.md
+      - Software upgrade - 3: sentinelhub/upgrades/software-upgrade-3.md
+      - Software upgrade - 4: sentinelhub/upgrades/software-upgrade-4.md
+    - Modules:
+        - Deposit:
+            - Introduction: sentinelhub/modules/deposit/introduction.md
+            - Types: sentinelhub/modules/deposit/types.md
+            - Keeper: sentinelhub/modules/deposit/keeper.md
+            - Messages: sentinelhub/modules/deposit/messages.md
+            - Queries: sentinelhub/modules/deposit/queries.md
+            - ABCI: sentinelhub/modules/deposit/ABCI.md
+            - Commands: sentinelhub/modules/deposit/commands.md
+        - Provider:
+            - Introduction: sentinelhub/modules/provider/introduction.md
+            - Types: sentinelhub/modules/provider/types.md
+            - Keeper: sentinelhub/modules/provider/keeper.md
+            - Messages: sentinelhub/modules/provider/messages.md
+            - Queries: sentinelhub/modules/provider/queries.md
+            - ABCI: sentinelhub/modules/provider/ABCI.md
+            - Commands: sentinelhub/modules/provider/commands.md
+        - Node:
+            - Introduction: sentinelhub/modules/node/introduction.md
+            - Types: sentinelhub/modules/node/types.md
+            - Keeper: sentinelhub/modules/node/keeper.md
+            - Messages: sentinelhub/modules/node/messages.md
+            - Queries: sentinelhub/modules/node/queries.md
+            - ABCI: sentinelhub/modules/node/ABCI.md
+            - Commands: sentinelhub/modules/node/commands.md
+        - Plan:
+            - Introduction: sentinelhub/modules/plan/introduction.md
+            - Types: sentinelhub/modules/plan/types.md
+            - Keeper: sentinelhub/modules/plan/keeper.md
+            - Messages: sentinelhub/modules/plan/messages.md
+            - Queries: sentinelhub/modules/plan/queries.md
+            - ABCI: sentinelhub/modules/plan/ABCI.md
+            - Commands: sentinelhub/modules/plan/commands.md
+        - Subscription:
+            - Introduction: sentinelhub/modules/subscription/introduction.md
+            - Types: sentinelhub/modules/subscription/types.md
+            - Keeper: sentinelhub/modules/subscription/keeper.md
+            - Messages: sentinelhub/modules/subscription/messages.md
+            - Queries: sentinelhub/modules/subscription/queries.md
+            - ABCI: sentinelhub/modules/subscription/ABCI.md
+            - Commands: sentinelhub/modules/subscription/commands.md
+        - Session:
+            - Introduction: sentinelhub/modules/session/introduction.md
+            - Types: sentinelhub/modules/session/types.md
+            - Keeper: sentinelhub/modules/session/keeper.md
+            - Messages: sentinelhub/modules/session/messages.md
+            - Queries: sentinelhub/modules/session/queries.md
+            - ABCI: sentinelhub/modules/session/ABCI.md
+            - Commands: sentinelhub/modules/session/commands.md
+  - dVPN node:
+      - Setup: dVPN-node/setup.md
+      - Configuration:
+          - Application: dVPN-node/configuration/application.md
+          - V2Ray: dVPN-node/configuration/v2ray.md
+          - WireGuard: dVPN-node/configuration/wireguard.md
+      - Start: dVPN-node/start.md
+      - Troubleshoot: dVPN-node/troubleshoot.md
+      - API: dVPN-node/API.md
+  - CLI client:
+      - Installation: clients/CLI/installation.md
+      - Commands:
+        - Keys: clients/CLI/commands/keys.md
+        - Queries: clients/CLI/commands/queries.md
+        - Transactions: clients/CLI/commands/transactions.md
+        - VPN: clients/CLI/commands/VPN.md
+      - API: clients/CLI/API.md
+plugins:
+  - minify:
+      minify_html: true
+  - search
+site_name: Sentinel Docs
+site_url: https://docs.sentinel.co
+strict: true
+repo_name: sentinel-official/docs
+repo_url: https://github.com/sentinel-official/docs
+theme:
+  favicon: assets/favicon.svg
+  features:
+    - content.code.annotate
+    - content.code.copy
+    - content.tabs.link
+    - navigation.indexes
+    - navigation.instant
+    - navigation.tabs
+    - navigation.top
+    - navigation.tracking
+    - search.highlight
+    - search.share
+    - search.suggest
+  logo: assets/logo.svg
+  name: material
+  palette:
+    primary: black
