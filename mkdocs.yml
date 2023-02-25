@@ -107,7 +107,6 @@ plugins:
       minify_html: true
   - search
 site_name: Sentinel Docs
-site_url: https://docs.sentinel.co
 strict: true
 repo_name: sentinel-official/docs
 repo_url: https://github.com/sentinel-official/docs
