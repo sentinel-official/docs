@@ -1,327 +1,327 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-         <loc>https://docs.sentinel.co/</loc>
+         <loc>None</loc>
          <lastmod>2023-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.sentinel.co/clients/CLI/API/</loc>
+         <loc>None</loc>
          <lastmod>2023-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.sentinel.co/clients/CLI/installation/</loc>
+         <loc>None</loc>
          <lastmod>2023-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.sentinel.co/clients/CLI/commands/VPN/</loc>
+         <loc>None</loc>
          <lastmod>2023-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.sentinel.co/clients/CLI/commands/keys/</loc>
+         <loc>None</loc>
          <lastmod>2023-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.sentinel.co/clients/CLI/commands/queries/</loc>
+         <loc>None</loc>
          <lastmod>2023-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.sentinel.co/clients/CLI/commands/transactions/</loc>
+         <loc>None</loc>
          <lastmod>2023-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.sentinel.co/dVPN-node/API/</loc>
+         <loc>None</loc>
          <lastmod>2023-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.sentinel.co/dVPN-node/setup/</loc>
+         <loc>None</loc>
          <lastmod>2023-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.sentinel.co/dVPN-node/start/</loc>
+         <loc>None</loc>
          <lastmod>2023-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.sentinel.co/dVPN-node/troubleshoot/</loc>
+         <loc>None</loc>
          <lastmod>2023-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.sentinel.co/dVPN-node/configuration/application/</loc>
+         <loc>None</loc>
          <lastmod>2023-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.sentinel.co/dVPN-node/configuration/v2ray/</loc>
+         <loc>None</loc>
          <lastmod>2023-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.sentinel.co/dVPN-node/configuration/wireguard/</loc>
+         <loc>None</loc>
          <lastmod>2023-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.sentinel.co/sentinelhub/become-a-validator/</loc>
+         <loc>None</loc>
          <lastmod>2023-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.sentinel.co/sentinelhub/gentx/</loc>
+         <loc>None</loc>
          <lastmod>2023-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.sentinel.co/sentinelhub/installation/</loc>
+         <loc>None</loc>
          <lastmod>2023-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.sentinel.co/sentinelhub/running-a-full-node/</loc>
+         <loc>None</loc>
          <lastmod>2023-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.sentinel.co/sentinelhub/modules/deposit/ABCI/</loc>
+         <loc>None</loc>
          <lastmod>2023-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.sentinel.co/sentinelhub/modules/deposit/commands/</loc>
+         <loc>None</loc>
          <lastmod>2023-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.sentinel.co/sentinelhub/modules/deposit/introduction/</loc>
+         <loc>None</loc>
          <lastmod>2023-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.sentinel.co/sentinelhub/modules/deposit/keeper/</loc>
+         <loc>None</loc>
          <lastmod>2023-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.sentinel.co/sentinelhub/modules/deposit/messages/</loc>
+         <loc>None</loc>
          <lastmod>2023-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.sentinel.co/sentinelhub/modules/deposit/queries/</loc>
+         <loc>None</loc>
          <lastmod>2023-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.sentinel.co/sentinelhub/modules/deposit/types/</loc>
+         <loc>None</loc>
          <lastmod>2023-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.sentinel.co/sentinelhub/modules/node/ABCI/</loc>
+         <loc>None</loc>
          <lastmod>2023-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.sentinel.co/sentinelhub/modules/node/commands/</loc>
+         <loc>None</loc>
          <lastmod>2023-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.sentinel.co/sentinelhub/modules/node/introduction/</loc>
+         <loc>None</loc>
          <lastmod>2023-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.sentinel.co/sentinelhub/modules/node/keeper/</loc>
+         <loc>None</loc>
          <lastmod>2023-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.sentinel.co/sentinelhub/modules/node/messages/</loc>
+         <loc>None</loc>
          <lastmod>2023-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.sentinel.co/sentinelhub/modules/node/queries/</loc>
+         <loc>None</loc>
          <lastmod>2023-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.sentinel.co/sentinelhub/modules/node/types/</loc>
+         <loc>None</loc>
          <lastmod>2023-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.sentinel.co/sentinelhub/modules/plan/ABCI/</loc>
+         <loc>None</loc>
          <lastmod>2023-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.sentinel.co/sentinelhub/modules/plan/commands/</loc>
+         <loc>None</loc>
          <lastmod>2023-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.sentinel.co/sentinelhub/modules/plan/introduction/</loc>
+         <loc>None</loc>
          <lastmod>2023-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.sentinel.co/sentinelhub/modules/plan/keeper/</loc>
+         <loc>None</loc>
          <lastmod>2023-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.sentinel.co/sentinelhub/modules/plan/messages/</loc>
+         <loc>None</loc>
          <lastmod>2023-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.sentinel.co/sentinelhub/modules/plan/queries/</loc>
+         <loc>None</loc>
          <lastmod>2023-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.sentinel.co/sentinelhub/modules/plan/types/</loc>
+         <loc>None</loc>
          <lastmod>2023-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.sentinel.co/sentinelhub/modules/provider/ABCI/</loc>
+         <loc>None</loc>
          <lastmod>2023-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.sentinel.co/sentinelhub/modules/provider/commands/</loc>
+         <loc>None</loc>
          <lastmod>2023-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.sentinel.co/sentinelhub/modules/provider/introduction/</loc>
+         <loc>None</loc>
          <lastmod>2023-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.sentinel.co/sentinelhub/modules/provider/keeper/</loc>
+         <loc>None</loc>
          <lastmod>2023-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.sentinel.co/sentinelhub/modules/provider/messages/</loc>
+         <loc>None</loc>
          <lastmod>2023-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.sentinel.co/sentinelhub/modules/provider/queries/</loc>
+         <loc>None</loc>
          <lastmod>2023-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.sentinel.co/sentinelhub/modules/provider/types/</loc>
+         <loc>None</loc>
          <lastmod>2023-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.sentinel.co/sentinelhub/modules/session/ABCI/</loc>
+         <loc>None</loc>
          <lastmod>2023-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.sentinel.co/sentinelhub/modules/session/commands/</loc>
+         <loc>None</loc>
          <lastmod>2023-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.sentinel.co/sentinelhub/modules/session/introduction/</loc>
+         <loc>None</loc>
          <lastmod>2023-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.sentinel.co/sentinelhub/modules/session/keeper/</loc>
+         <loc>None</loc>
          <lastmod>2023-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.sentinel.co/sentinelhub/modules/session/messages/</loc>
+         <loc>None</loc>
          <lastmod>2023-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.sentinel.co/sentinelhub/modules/session/queries/</loc>
+         <loc>None</loc>
          <lastmod>2023-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.sentinel.co/sentinelhub/modules/session/types/</loc>
+         <loc>None</loc>
          <lastmod>2023-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.sentinel.co/sentinelhub/modules/subscription/ABCI/</loc>
+         <loc>None</loc>
          <lastmod>2023-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.sentinel.co/sentinelhub/modules/subscription/commands/</loc>
+         <loc>None</loc>
          <lastmod>2023-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.sentinel.co/sentinelhub/modules/subscription/introduction/</loc>
+         <loc>None</loc>
          <lastmod>2023-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.sentinel.co/sentinelhub/modules/subscription/keeper/</loc>
+         <loc>None</loc>
          <lastmod>2023-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.sentinel.co/sentinelhub/modules/subscription/messages/</loc>
+         <loc>None</loc>
          <lastmod>2023-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.sentinel.co/sentinelhub/modules/subscription/queries/</loc>
+         <loc>None</loc>
          <lastmod>2023-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.sentinel.co/sentinelhub/modules/subscription/types/</loc>
+         <loc>None</loc>
          <lastmod>2023-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.sentinel.co/sentinelhub/upgrades/sentinelhub-2/</loc>
+         <loc>None</loc>
          <lastmod>2023-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.sentinel.co/sentinelhub/upgrades/software-upgrade-1/</loc>
+         <loc>None</loc>
          <lastmod>2023-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.sentinel.co/sentinelhub/upgrades/software-upgrade-2/</loc>
+         <loc>None</loc>
          <lastmod>2023-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.sentinel.co/sentinelhub/upgrades/software-upgrade-3/</loc>
+         <loc>None</loc>
          <lastmod>2023-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.sentinel.co/sentinelhub/upgrades/software-upgrade-4/</loc>
+         <loc>None</loc>
          <lastmod>2023-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
