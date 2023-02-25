@@ -8,7 +8,7 @@ Minimum machine configuration required
 | RAM              | 1 Gigabyte   |
 | Disk space       | 10 Gigabytes |
 | Disk type        | HDD          |
-| Operating System | Ubuntu 20.04 |
+| Operating System | Ubuntu 22.04 |
 
 ## Install Docker
 

@@ -34,6 +34,8 @@ nav:
       - SentinelHub - 2: sentinelhub/upgrades/sentinelhub-2.md
       - Software upgrade - 1: sentinelhub/upgrades/software-upgrade-1.md
       - Software upgrade - 2: sentinelhub/upgrades/software-upgrade-2.md
+      - Software upgrade - 3: sentinelhub/upgrades/software-upgrade-3.md
+      - Software upgrade - 4: sentinelhub/upgrades/software-upgrade-4.md
     - Modules:
         - Deposit:
             - Introduction: sentinelhub/modules/deposit/introduction.md
@@ -87,6 +89,7 @@ nav:
       - Setup: dVPN-node/setup.md
       - Configuration:
           - Application: dVPN-node/configuration/application.md
+          - V2Ray: dVPN-node/configuration/v2ray.md
           - WireGuard: dVPN-node/configuration/wireguard.md
       - Start: dVPN-node/start.md
       - Troubleshoot: dVPN-node/troubleshoot.md
@@ -112,6 +115,7 @@ theme:
   favicon: assets/favicon.svg
   features:
     - content.code.annotate
+    - content.code.copy
     - content.tabs.link
     - navigation.indexes
     - navigation.instant

@@ -1,5 +1,8 @@
 # Application
 
+???+ tip "Tip"
+    To know the public IP execute the command `curl --silent ifconfig.me`
+
 ## Chain
 
 | Name                 | Description                                     | Default                       |
@@ -13,31 +16,34 @@
 
 ## Handshake
 
-| Name   | Description                   | Default |
-| ------ | ----------------------------- | ------- |
-| Enable | Enable Handshake DNS resolver | true    |
-| Peers  | Number of peers               | 8       |
+| Name   | Description                                                                          | Default |
+| ------ | ------------------------------------------------------------------------------------ | ------- |
+| Enable | Enable Handshake DNS resolver. <br/> Must be disabled incase the VPN type is `v2ray` | true    |
+| Peers  | Number of peers                                                                      | 8       |
 
 ## Keyring
 
-| Name    | Description                                                           | Default |
-| ------- | --------------------------------------------------------------------- | ------- |
-| Backend | Underlying keyring type for key management <br/> Values: [file, test] | file    |
-| From    | Name of the key with which to sign                                    |         |
+| Name    | Description                                                           | Default  |
+| ------- | --------------------------------------------------------------------- | -------- |
+| Backend | Underlying keyring type for key management <br/> Values: [file, test] | file     |
+| From    | Name of the key with which to sign                                    | operator |
 
 ## Node
 
-| Name                     | Description                                                                         | Default |
-| ------------------------ | ----------------------------------------------------------------------------------- | ------- |
-| Interval Set Sessions    | Time interval between each set_sessions operation                                   | 2m0s    |
-| Interval Update Sessions | Time interval between each update_session transactions                              | 1h48m0s |
-| Interval Update Status   | Time interval between each update_status transaction                                | 54m0s   |
-| Listen On                | API listen-address. <br/> Format: `0.0.0.0:<API_PORT>`                              |         |
-| Moniker                  | Name of the node                                                                    |         |
-| Price                    | Per Gigabyte price to charge against the provided bandwidth                         |         |
-| Provider                 | Address of the provider the node wants to operate under                             |         |
-| Remote URL               | Publicly accessible URL of the node. <br/> Format: `https://<PUBLIC_IP>:<API_PORT>` |         |
+| Name                     | Description                                                                         | Default   |
+| ------------------------ | ----------------------------------------------------------------------------------- | --------- |
+| Interval Set Sessions    | Time interval between each set_sessions operation                                   | 2m0s      |
+| Interval Update Sessions | Time interval between each update_session transactions                              | 1h48m0s   |
+| Interval Update Status   | Time interval between each update_status transaction                                | 54m0s     |
+| Listen On                | API listen-address. <br/> Format: `0.0.0.0:<API_PORT>`                              |           |
+| Moniker                  | Name of the node                                                                    |           |
+| Price                    | Per Gigabyte price to charge against the provided bandwidth                         |           |
+| Provider                 | Address of the provider the node wants to operate under                             |           |
+| Remote URL               | Publicly accessible URL of the node. <br/> Format: `https://<PUBLIC_IP>:<API_PORT>` |           |
+| Type                     | VPN type <br/> Values: [wireguard, v2ray]                                           | wireguard |
 
-???+ tip "Tip"
+## QOS
 
-    To know the public IP execute the command `curl --silent ifconfig.me`
+| Name      | Description                        | Default |
+| --------- | ---------------------------------- | ------- |
+| Max Peers | Maximum number of concurrent peers | 250     |
