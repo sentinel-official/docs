@@ -32,9 +32,10 @@
 
 | Name                     | Description                                                                         | Default   |
 | ------------------------ | ----------------------------------------------------------------------------------- | --------- |
-| Interval Set Sessions    | Time interval between each set_sessions operation                                   | 2m0s      |
-| Interval Update Sessions | Time interval between each update_session transactions                              | 1h48m0s   |
-| Interval Update Status   | Time interval between each update_status transaction                                | 54m0s     |
+| Interval Set Sessions    | Time interval between each set_sessions operation                                   | 10s       |
+| Interval Update Sessions | Time interval between each update_session transactions                              | 1h55m0s   |
+| Interval Update Status   | Time interval between each update_status transaction                                | 55m0s     |
+| IPv4 Address             | IPv4 address to replace the public IPv4 address with                                |           |
 | Listen On                | API listen-address. <br/> Format: `0.0.0.0:<API_PORT>`                              |           |
 | Moniker                  | Name of the node                                                                    |           |
 | Price                    | Per Gigabyte price to charge against the provided bandwidth                         |           |

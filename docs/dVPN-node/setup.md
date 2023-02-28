@@ -6,7 +6,7 @@ Minimum machine configuration required
 | ---------------- | ------------ |
 | CPU cores        | 2GHz, 1      |
 | RAM              | 1 Gigabyte   |
-| Disk space       | 10 Gigabytes |
+| Disk space       | 2 Gigabytes  |
 | Disk type        | HDD          |
 | Operating System | Ubuntu 22.04 |
 
@@ -74,10 +74,10 @@ Minimum machine configuration required
 6. Enable NAT for the private Docker subnet on the host
 
     ``` sh
-    rule="POSTROUTING -s 2001:db8:1::/64 ! -o docker0 -j MASQUERADE" && \
-    sudo ip6tables -t nat -C ${rule} || \
-    sudo ip6tables -t nat -A ${rule} && \
-    sudo sh -c "ip6tables-save > /etc/iptables/rules.v6"
+    rule=(POSTROUTING -s 2001:db8:1::/64 ! -o docker0 -j MASQUERADE) && \
+    sudo ip6tables -t nat -C "${rule[@]}" 2>/dev/null || \
+    sudo ip6tables -t nat -A "${rule[@]}" && \
+    sudo ip6tables-save >/etc/iptables/rules.v6
     ```
 
 ## Preparing the Docker image
@@ -143,10 +143,11 @@ Minimum machine configuration required
     openssl req -new \
         -newkey ec \
         -pkeyopt ec_paramgen_curve:prime256v1 \
+        -subj "/C=NA/ST=NA/L=./O=NA/OU=./CN=." \
         -x509 \
         -sha256 \
         -days 365 \
         -nodes \
-        -out ${HOME}/tls.crt \
-        -keyout ${HOME}/tls.key
+        -out "${HOME}/tls.crt" \
+        -keyout "${HOME}/tls.key"
     ```

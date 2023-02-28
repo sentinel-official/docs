@@ -6,7 +6,7 @@
 
     ``` sh
     docker run --rm \
-        --volume ${HOME}/.sentinelnode:/root/.sentinelnode \
+        --volume "${HOME}/.sentinelnode:/root/.sentinelnode" \
         sentinel-dvpn-node process config init
     ```
 
@@ -31,9 +31,10 @@
         from = "operator"
 
         [node]
-        interval_set_sessions = "2m0s"
+        interval_set_sessions = "10s"
         interval_update_sessions = "1h55m0s"
         interval_update_status = "55m0s"
+        ipv4_address = ""
         listen_on = "0.0.0.0:8585"
         moniker = "Example"
         price = "1000000udvpn"
@@ -49,7 +50,7 @@
 
     ``` sh
     docker run --rm \
-        --volume ${HOME}/.sentinelnode:/root/.sentinelnode \
+        --volume "${HOME}/.sentinelnode:/root/.sentinelnode" \
         sentinel-dvpn-node process v2ray config init
     ```
 
@@ -57,6 +58,7 @@
 
     ??? example "Example"
         ``` text
+        [vmess]
         listen_port = 60299
         transport = "grpc"
         ```
@@ -65,7 +67,7 @@
 
     ``` sh
     docker run --rm \
-        --volume ${HOME}/.sentinelnode:/root/.sentinelnode \
+        --volume "${HOME}/.sentinelnode:/root/.sentinelnode" \
         sentinel-dvpn-node process wireguard config init
     ```
 
@@ -87,7 +89,7 @@
 docker run --rm \
     --interactive \
     --tty \
-    --volume ${HOME}/.sentinelnode:/root/.sentinelnode \
+    --volume "${HOME}/.sentinelnode:/root/.sentinelnode" \
     sentinel-dvpn-node process keys add
 ```
 
@@ -99,18 +101,18 @@ Get the list of keys by executing the below command
 docker run --rm \
     --interactive \
     --tty \
-    --volume ${HOME}/.sentinelnode:/root/.sentinelnode \
+    --volume "${HOME}/.sentinelnode:/root/.sentinelnode" \
     sentinel-dvpn-node process keys list
 ```
 
 ## Move created TLS keys
 
 ``` sh
-mv ${HOME}/tls.crt ${HOME}/.sentinelnode/tls.crt && \
-mv ${HOME}/tls.key ${HOME}/.sentinelnode/tls.key
+mv "${HOME}/tls.crt" "${HOME}/.sentinelnode/tls.crt" && \
+mv "${HOME}/tls.key" "${HOME}/.sentinelnode/tls.key"
 
-sudo chown root:root ${HOME}/.sentinelnode/tls.crt && \
-sudo chown root:root ${HOME}/.sentinelnode/tls.key
+sudo chown root:root "${HOME}/.sentinelnode/tls.crt" && \
+sudo chown root:root "${HOME}/.sentinelnode/tls.key"
 ```
 
 ## Run the node
@@ -132,7 +134,7 @@ or [Tmux](https://github.com/tmux/tmux/wiki "Tmux") to run the process in the ba
 docker run --rm \
     --interactive \
     --tty \
-    --volume ${HOME}/.sentinelnode:/root/.sentinelnode \
+    --volume "${HOME}/.sentinelnode:/root/.sentinelnode" \
     --publish <API_PORT>:<API_PORT>/tcp \
     --publish <V2RAY_PORT>:<V2RAY_PORT>/tcp \
     sentinel-dvpn-node process start
@@ -144,7 +146,7 @@ docker run --rm \
 docker run --rm \
     --interactive \
     --tty \
-    --volume ${HOME}/.sentinelnode:/root/.sentinelnode \
+    --volume "${HOME}/.sentinelnode:/root/.sentinelnode" \
     --volume /lib/modules:/lib/modules \
     --cap-drop ALL \
     --cap-add NET_ADMIN \
