@@ -1,4 +1,3 @@
-edit_uri: ""
 extra:
   social:
     - icon: fontawesome/brands/github
@@ -102,7 +101,12 @@ nav:
       - API: clients/CLI/API.md
 plugins:
   - minify:
+      cache_safe: true
+      htmlmin_opts:
+        remove_comments: true
+      minify_css: true
       minify_html: true
+      minify_js: true
   - search
 site_name: Sentinel Docs
 site_url: https://docs.sentinel.co
