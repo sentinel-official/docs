@@ -12,13 +12,13 @@ sudo sh -c "curl -fsLS https://raw.githubusercontent.com/v2fly/fhs-install-v2ray
 
 ### Mac
 
+???+ tip "Tip"
+    To install the dependencies you can also use [MacPorts](https://www.macports.org "MacPorts")
+
 ``` sh
 /bin/bash -c "$(curl -fsLS https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" && \
 brew install v2ray wireguard-tools
 ```
-
-???+ tip "Tip"
-    To install the dependencies you can also use [MacPorts](https://www.macports.org "MacPorts")
 
 ## Prebuilt binaries
 

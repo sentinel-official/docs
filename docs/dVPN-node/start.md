@@ -1,8 +1,34 @@
 # Start
 
-## Initialize the configuration
+???+ note "Note"
+    The account must have some $DVPN to start the node
 
-1. Initialize the application configuration
+???+ warning "Warning"
+    Please write the Mnemonic phrase in a safe place. It is the only way to recover your account.
+
+## With script
+
+### Initialize the config and keys
+
+???+ tip "Tip"
+    Pass flag `--force` for forcing the initialization process in case of error
+
+``` sh
+wget https://raw.githubusercontent.com/sentinel-official/dvpn-node/development/scripts/runner.sh -O "${HOME}/node.sh" && \
+bash "${HOME}/node.sh" init all
+```
+
+### Start the node
+
+``` sh
+bash "${HOME}/node.sh" start --attach
+```
+
+## Without script
+
+### Initialize the config
+
+1. Initialize the application config
 
     ``` sh
     docker run --rm \
@@ -10,7 +36,7 @@
         sentinel-dvpn-node process config init
     ```
 
-2. Edit the configuration file _${HOME}/.sentinelnode/config.toml_ if required
+2. Edit the config file _${HOME}/.sentinelnode/config.toml_ if required
 
     ??? example "Example"
         ``` text
@@ -46,7 +72,7 @@
         max_peers = 250
         ```
 
-3. Initialize the V2Ray configuration
+3. Initialize the V2Ray config
 
     ``` sh
     docker run --rm \
@@ -54,7 +80,7 @@
         sentinel-dvpn-node process v2ray config init
     ```
 
-4. Edit the configuration file _${HOME}/.sentinelnode/v2ray.toml_ if required
+4. Edit the config file _${HOME}/.sentinelnode/v2ray.toml_ if required
 
     ??? example "Example"
         ``` text
@@ -63,7 +89,7 @@
         transport = "grpc"
         ```
 
-5. Initialize the WireGuard configuration
+5. Initialize the WireGuard config
 
     ``` sh
     docker run --rm \
@@ -71,7 +97,7 @@
         sentinel-dvpn-node process wireguard config init
     ```
 
-6. Edit the configuration file _${HOME}/.sentinelnode/wireguard.toml_ if required
+6. Edit the config file _${HOME}/.sentinelnode/wireguard.toml_ if required
 
     ??? example "Example"
         ``` text
@@ -80,10 +106,10 @@
         private_key = "O9efCDKZO8hS0U+4iZWkZp6fyfU3Kb3ReytcREFq3s0="
         ```
 
-## Add an account key
+### Add an account key
 
-???+ warning "Warning"
-    Please write the Mnemonic phrase in a safe place. It is the only way to recover your account.
+???+ tip "Tip"
+    Pass flag `--recover` to recover the key with Mnemonic
 
 ``` sh
 docker run --rm \
@@ -92,8 +118,6 @@ docker run --rm \
     --volume "${HOME}/.sentinelnode:/root/.sentinelnode" \
     sentinel-dvpn-node process keys add
 ```
-
-Pass flag `--recover` to recover the key with Mnemonic
 
 Get the list of keys by executing the below command
 
@@ -105,7 +129,7 @@ docker run --rm \
     sentinel-dvpn-node process keys list
 ```
 
-## Move created TLS keys
+### Move created TLS keys
 
 ``` sh
 mv "${HOME}/tls.crt" "${HOME}/.sentinelnode/tls.crt" && \
@@ -115,20 +139,17 @@ sudo chown root:root "${HOME}/.sentinelnode/tls.crt" && \
 sudo chown root:root "${HOME}/.sentinelnode/tls.key"
 ```
 
-## Run the node
+### Run the node
 
 Use software like [GNU Screen](https://www.gnu.org/software/screen "GNU Screen")
 or [Tmux](https://github.com/tmux/tmux/wiki "Tmux") to run the process in the background
 
-???+ note "Note"
-    The account must have some $DVPN to start the node
-
 ???+ tip "Tip"
-    - The `<API_PORT>` is the port number set for the field `remote_url` under the section `node` in the application configuration
-    - The `<V2RAY_PORT>` is the value set for the field `listen_port` in the V2Ray configuration
-    - The `<WIREGUARD_PORT>` is the value set for the field `listen_port` in the WireGaurd configuration
+    - The `<API_PORT>` is the port number set for the field `remote_url` under the section `node` in the application config
+    - The `<V2RAY_VMESS_PORT>` is the value set for the field `listen_port` under the secion `vmess` in the V2Ray config
+    - The `<WIREGUARD_PORT>` is the value set for the field `listen_port` in the WireGaurd config
 
-### V2Ray
+#### V2Ray
 
 ``` sh
 docker run --rm \
@@ -136,18 +157,18 @@ docker run --rm \
     --tty \
     --volume "${HOME}/.sentinelnode:/root/.sentinelnode" \
     --publish <API_PORT>:<API_PORT>/tcp \
-    --publish <V2RAY_PORT>:<V2RAY_PORT>/tcp \
+    --publish <V2RAY_VMESS_PORT>:<V2RAY_VMESS_PORT>/tcp \
     sentinel-dvpn-node process start
 ```
 
-### WireGuard
+#### WireGuard
 
 ``` sh
 docker run --rm \
     --interactive \
     --tty \
-    --volume "${HOME}/.sentinelnode:/root/.sentinelnode" \
     --volume /lib/modules:/lib/modules \
+    --volume "${HOME}/.sentinelnode:/root/.sentinelnode" \
     --cap-drop ALL \
     --cap-add NET_ADMIN \
     --cap-add NET_BIND_SERVICE \

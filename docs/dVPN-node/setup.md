@@ -10,7 +10,16 @@ Minimum machine configuration required
 | Disk type        | HDD          |
 | Operating System | Ubuntu 22.04 |
 
-## Install Docker
+## With script
+
+``` sh
+wget https://raw.githubusercontent.com/sentinel-official/dvpn-node/development/scripts/runner.sh -O "${HOME}/node.sh" && \
+bash "${HOME}/node.sh" setup
+```
+
+## Without script
+
+### Install Docker
 
 1. Update the list of available software packages
 
@@ -44,7 +53,7 @@ Minimum machine configuration required
 
 6. Reboot the machine
 
-## Enable IPv6 support for Docker (optional)
+### Enable IPv6 support for Docker (optional)
 
 1. Open the file `/etc/docker/daemon.json` with a text editor
 
@@ -80,9 +89,9 @@ Minimum machine configuration required
     sudo ip6tables-save >/etc/iptables/rules.v6
     ```
 
-## Preparing the Docker image
+### Preparing the Docker image
 
-### Prebuilt
+#### Prebuilt
 
 1. Pull the image
 
@@ -96,7 +105,7 @@ Minimum machine configuration required
     docker tag ghcr.io/sentinel-official/dvpn-node:latest sentinel-dvpn-node
     ```
 
-### From source
+#### From source
 
 1. Install Git package
 
@@ -129,7 +138,7 @@ Minimum machine configuration required
         --compress .
     ```
 
-## Create a self-signed TLS certificate
+### Create a self-signed TLS certificate
 
 1. Install `openssl` package
 

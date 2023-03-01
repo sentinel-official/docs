@@ -18,8 +18,6 @@ markdown_extensions:
   - footnotes
   - meta
   - md_in_html
-  - toc:
-      permalink: true
   - pymdownx.highlight
   - pymdownx.superfences
   - pymdownx.details
@@ -125,6 +123,7 @@ theme:
     - search.highlight
     - search.share
     - search.suggest
+    - toc.integrate
   logo: assets/logo.svg
   name: material
   palette:
