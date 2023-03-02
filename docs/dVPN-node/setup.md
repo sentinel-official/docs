@@ -86,7 +86,7 @@ bash "${HOME}/node.sh" setup
     rule=(POSTROUTING -s 2001:db8:1::/64 ! -o docker0 -j MASQUERADE) && \
     sudo ip6tables -t nat -C "${rule[@]}" 2>/dev/null || \
     sudo ip6tables -t nat -A "${rule[@]}" && \
-    sudo ip6tables-save >/etc/iptables/rules.v6
+    sudo sh -c 'ip6tables-save >/etc/iptables/rules.v6'
     ```
 
 ### Preparing the Docker image
