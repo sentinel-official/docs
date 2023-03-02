@@ -132,8 +132,8 @@ docker run --rm \
 ### Move created TLS keys
 
 ``` sh
-mv "${HOME}/tls.crt" "${HOME}/.sentinelnode/tls.crt" && \
-mv "${HOME}/tls.key" "${HOME}/.sentinelnode/tls.key"
+sudo mv "${HOME}/tls.crt" "${HOME}/.sentinelnode/tls.crt" && \
+sudo mv "${HOME}/tls.key" "${HOME}/.sentinelnode/tls.key"
 
 sudo chown root:root "${HOME}/.sentinelnode/tls.crt" && \
 sudo chown root:root "${HOME}/.sentinelnode/tls.key"
