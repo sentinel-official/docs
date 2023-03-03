@@ -24,18 +24,16 @@ nav:
   - Home: index.md
   - Sentinel Hub:
     - Running a Node:
-      - Block Sync: sentinelhub/state-sync.md
+      - Block Sync: sentinelhub/block-sync.md
       - State Sync: sentinelhub/state-sync.md
-    - Installation: sentinelhub/installation.md
-    - Running a full node: sentinelhub/running-a-full-node.md
-    - Become a validator: sentinelhub/become-a-validator.md
-    - GenTx: sentinelhub/gentx.md
     - Upgrades:
       - SentinelHub - 2: sentinelhub/upgrades/sentinelhub-2.md
       - Software upgrade - 1: sentinelhub/upgrades/software-upgrade-1.md
       - Software upgrade - 2: sentinelhub/upgrades/software-upgrade-2.md
       - Software upgrade - 3: sentinelhub/upgrades/software-upgrade-3.md
       - Software upgrade - 4: sentinelhub/upgrades/software-upgrade-4.md
+    - Become a validator: sentinelhub/become-a-validator.md
+    - GenTx: sentinelhub/gentx.md
     - Modules:
         - Deposit:
             - Introduction: sentinelhub/modules/deposit/introduction.md
