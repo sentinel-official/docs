@@ -23,6 +23,9 @@ markdown_extensions:
 nav:
   - Home: index.md
   - Sentinel Hub:
+    - Running a Node:
+      - Block Sync: sentinelhub/state-sync.md
+      - State Sync: sentinelhub/state-sync.md
     - Installation: sentinelhub/installation.md
     - Running a full node: sentinelhub/running-a-full-node.md
     - Become a validator: sentinelhub/become-a-validator.md
@@ -48,6 +51,7 @@ nav:
             - Keeper: sentinelhub/modules/provider/keeper.md
             - Messages: sentinelhub/modules/provider/messages.md
             - Queries: sentinelhub/modules/provider/queries.md
+            - Transactions: sentinelhub/modules/provider/tx.md
             - ABCI: sentinelhub/modules/provider/ABCI.md
             - Commands: sentinelhub/modules/provider/commands.md
         - Node:
@@ -56,6 +60,7 @@ nav:
             - Keeper: sentinelhub/modules/node/keeper.md
             - Messages: sentinelhub/modules/node/messages.md
             - Queries: sentinelhub/modules/node/queries.md
+            - Transactions: sentinelhub/modules/node/tx.md
             - ABCI: sentinelhub/modules/node/ABCI.md
             - Commands: sentinelhub/modules/node/commands.md
         - Plan:
@@ -64,6 +69,7 @@ nav:
             - Keeper: sentinelhub/modules/plan/keeper.md
             - Messages: sentinelhub/modules/plan/messages.md
             - Queries: sentinelhub/modules/plan/queries.md
+            - Transactions: sentinelhub/modules/plan/tx.md
             - ABCI: sentinelhub/modules/plan/ABCI.md
             - Commands: sentinelhub/modules/plan/commands.md
         - Subscription:
@@ -72,6 +78,7 @@ nav:
             - Keeper: sentinelhub/modules/subscription/keeper.md
             - Messages: sentinelhub/modules/subscription/messages.md
             - Queries: sentinelhub/modules/subscription/queries.md
+            - Transactions: sentinelhub/modules/subscription/tx.md
             - ABCI: sentinelhub/modules/subscription/ABCI.md
             - Commands: sentinelhub/modules/subscription/commands.md
         - Session:
@@ -80,6 +87,7 @@ nav:
             - Keeper: sentinelhub/modules/session/keeper.md
             - Messages: sentinelhub/modules/session/messages.md
             - Queries: sentinelhub/modules/session/queries.md
+            - Transactions: sentinelhub/modules/session/tx.md
             - ABCI: sentinelhub/modules/session/ABCI.md
             - Commands: sentinelhub/modules/session/commands.md
   - dVPN node:
