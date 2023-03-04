@@ -14,7 +14,7 @@ Minimum machine configuration required
 
 ``` sh
 wget https://raw.githubusercontent.com/sentinel-official/dvpn-node/development/scripts/runner.sh -O "${HOME}/node.sh" && \
-bash "${HOME}/node.sh" setup
+sudo bash "${HOME}/node.sh" setup
 ```
 
 ## Without script
