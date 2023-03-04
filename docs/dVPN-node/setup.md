@@ -12,10 +12,17 @@ Minimum machine configuration required
 
 ## With script
 
-``` sh
-wget https://raw.githubusercontent.com/sentinel-official/dvpn-node/development/scripts/runner.sh -O "${HOME}/node.sh" && \
-bash "${HOME}/node.sh" setup
-```
+1. Download the script
+
+    ``` sh
+    wget -O "${HOME}/dvpn-node.sh" https://scripts.sentinel.co/dvpn-node.sh
+    ```
+
+2. Run the setup command
+
+    ``` sh
+    bash "${HOME}/dvpn-node.sh" setup
+    ```
 
 ## Without script
 
