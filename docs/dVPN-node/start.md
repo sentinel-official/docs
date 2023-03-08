@@ -25,8 +25,11 @@
 
 3. Start the node
 
+    Use software like [GNU Screen](https://www.gnu.org/software/screen "GNU Screen")
+    or [Tmux](https://github.com/tmux/tmux/wiki "Tmux") to run the process in the background
+
     ``` sh
-    bash "${HOME}/dvpn-node.sh" start --attach
+    bash "${HOME}/dvpn-node.sh" start
     ```
 
 ## Without script
