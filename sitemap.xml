@@ -81,16 +81,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.sentinel.co/sentinelhub/installation/</loc>
-         <lastmod>2023-03-08</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.sentinel.co/sentinelhub/running-a-full-node/</loc>
-         <lastmod>2023-03-08</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://docs.sentinel.co/sentinelhub/modules/deposit/ABCI/</loc>
          <lastmod>2023-03-08</lastmod>
          <changefreq>daily</changefreq>
@@ -156,6 +146,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://docs.sentinel.co/sentinelhub/modules/node/tx/</loc>
+         <lastmod>2023-03-08</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://docs.sentinel.co/sentinelhub/modules/node/types/</loc>
          <lastmod>2023-03-08</lastmod>
          <changefreq>daily</changefreq>
@@ -187,6 +182,11 @@
     </url>
     <url>
          <loc>https://docs.sentinel.co/sentinelhub/modules/plan/queries/</loc>
+         <lastmod>2023-03-08</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.sentinel.co/sentinelhub/modules/plan/tx/</loc>
          <lastmod>2023-03-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -226,6 +226,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://docs.sentinel.co/sentinelhub/modules/provider/tx/</loc>
+         <lastmod>2023-03-08</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://docs.sentinel.co/sentinelhub/modules/provider/types/</loc>
          <lastmod>2023-03-08</lastmod>
          <changefreq>daily</changefreq>
@@ -257,6 +262,11 @@
     </url>
     <url>
          <loc>https://docs.sentinel.co/sentinelhub/modules/session/queries/</loc>
+         <lastmod>2023-03-08</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.sentinel.co/sentinelhub/modules/session/tx/</loc>
          <lastmod>2023-03-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -296,7 +306,27 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://docs.sentinel.co/sentinelhub/modules/subscription/tx/</loc>
+         <lastmod>2023-03-08</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://docs.sentinel.co/sentinelhub/modules/subscription/types/</loc>
+         <lastmod>2023-03-08</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.sentinel.co/sentinelhub/running-a-node/</loc>
+         <lastmod>2023-03-08</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.sentinel.co/sentinelhub/running-a-node/block-sync/</loc>
+         <lastmod>2023-03-08</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.sentinel.co/sentinelhub/running-a-node/state-sync/</loc>
          <lastmod>2023-03-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
