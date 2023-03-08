@@ -5,16 +5,14 @@
 
 ## Chain
 
-| Name                 | Description                                                         | Default                       |
-| -------------------- | ------------------------------------------------------------------- | ----------------------------- |
-| Gas                  | Gas limit to set per transaction                                    | 200000                        |
-| Gas Adjustment       | Gas adjustment factor                                               | 1.05                          |
-| Gas Prices           | Gas prices to determine the transaction fee                         | 0.1udvpn                      |
-| ID                   | The network chain ID                                                | sentinelhub-2                 |
-| RPC Addresses        | Comma separated Tendermint RPC addresses for the chain              | <https://rpc.sentinel.co:443> |
-| RPC Query Timeout    | Timeout seconds for querying the data from the RPC server           | 10                            |
-| RPC Tx Timeout       | Timeout seconds for broadcasting the transaction through RPC server | 30                            |
-| Simulate And Execute | Calculate the approx gas units before broadcast                     | true                          |
+| Name                 | Description                                     | Default                       |
+| -------------------- | ----------------------------------------------- | ----------------------------- |
+| Gas Adjustment       | Gas adjustment factor                           | 1.05                          |
+| Gas                  | Gas limit to set per transaction                | 200000                        |
+| Gas Prices           | Gas prices to determine the transaction fee     | 0.1udvpn                      |
+| ID                   | The network chain ID                            | sentinelhub-2                 |
+| RPC Address          | Tendermint RPC interface for the chain          | <https://rpc.sentinel.co:443> |
+| Simulate And Execute | Calculate the approx gas units before broadcast | true                          |
 
 ## Handshake
 
