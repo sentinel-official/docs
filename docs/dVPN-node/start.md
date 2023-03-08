@@ -8,21 +8,29 @@
 
 ## With script
 
-### Initialize the config and keys
+1. Download the script
 
-???+ tip "Tip"
-    Pass flag `--force` for forcing the initialization process in case of error
+    ``` sh
+    wget -O "${HOME}/dvpn-node.sh" https://scripts.sentinel.co/dvpn-node.sh
+    ```
 
-``` sh
-wget https://raw.githubusercontent.com/sentinel-official/dvpn-node/development/scripts/runner.sh -O "${HOME}/node.sh" && \
-bash "${HOME}/node.sh" init all
-```
+2. Initialize the config and keys
 
-### Start the node
+    ???+ tip "Tip"
+        Pass flag `--force` for forcing the initialization process in case of error
 
-``` sh
-bash "${HOME}/node.sh" start --attach
-```
+    ``` sh
+    bash "${HOME}/dvpn-node.sh" init all
+    ```
+
+3. Start the node
+
+    Use software like [GNU Screen](https://www.gnu.org/software/screen "GNU Screen")
+    or [Tmux](https://github.com/tmux/tmux/wiki "Tmux") to run the process in the background
+
+    ``` sh
+    bash "${HOME}/dvpn-node.sh" start
+    ```
 
 ## Without script
 
