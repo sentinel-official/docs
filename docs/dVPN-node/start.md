@@ -49,11 +49,13 @@
     ??? example "Example"
         ``` text
         [chain]
-        gas_adjustment = 1.05
         gas = 200000
+        gas_adjustment = 1.05
         gas_prices = "0.1udvpn"
         id = "sentinelhub-2"
-        rpc_address = "https://rpc.sentinel.co:443"
+        rpc_addresses = "https://rpc.sentinel.co:443,https://rpc.sentinel.quokkastake.io:443,https://sentinel-rpc.badgerbite.io:443"
+        rpc_query_timeout = 10
+        rpc_tx_timeout = 30
         simulate_and_execute = true
 
         [handshake]

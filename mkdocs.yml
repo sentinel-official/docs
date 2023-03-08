@@ -23,71 +23,72 @@ markdown_extensions:
 nav:
   - Home: index.md
   - Sentinel Hub:
-    - Running a Node:
-      - Block Sync: sentinelhub/block-sync.md
-      - State Sync: sentinelhub/state-sync.md
-    - Upgrades:
-      - SentinelHub - 2: sentinelhub/upgrades/sentinelhub-2.md
-      - Software upgrade - 1: sentinelhub/upgrades/software-upgrade-1.md
-      - Software upgrade - 2: sentinelhub/upgrades/software-upgrade-2.md
-      - Software upgrade - 3: sentinelhub/upgrades/software-upgrade-3.md
-      - Software upgrade - 4: sentinelhub/upgrades/software-upgrade-4.md
-    - Become a validator: sentinelhub/become-a-validator.md
-    - GenTx: sentinelhub/gentx.md
-    - Modules:
-        - Deposit:
-            - Introduction: sentinelhub/modules/deposit/introduction.md
-            - Types: sentinelhub/modules/deposit/types.md
-            - Keeper: sentinelhub/modules/deposit/keeper.md
-            - Messages: sentinelhub/modules/deposit/messages.md
-            - Queries: sentinelhub/modules/deposit/queries.md
-            - ABCI: sentinelhub/modules/deposit/ABCI.md
-            - Commands: sentinelhub/modules/deposit/commands.md
-        - Provider:
-            - Introduction: sentinelhub/modules/provider/introduction.md
-            - Types: sentinelhub/modules/provider/types.md
-            - Keeper: sentinelhub/modules/provider/keeper.md
-            - Messages: sentinelhub/modules/provider/messages.md
-            - Queries: sentinelhub/modules/provider/queries.md
-            - Transactions: sentinelhub/modules/provider/tx.md
-            - ABCI: sentinelhub/modules/provider/ABCI.md
-            - Commands: sentinelhub/modules/provider/commands.md
-        - Node:
-            - Introduction: sentinelhub/modules/node/introduction.md
-            - Types: sentinelhub/modules/node/types.md
-            - Keeper: sentinelhub/modules/node/keeper.md
-            - Messages: sentinelhub/modules/node/messages.md
-            - Queries: sentinelhub/modules/node/queries.md
-            - Transactions: sentinelhub/modules/node/tx.md
-            - ABCI: sentinelhub/modules/node/ABCI.md
-            - Commands: sentinelhub/modules/node/commands.md
-        - Plan:
-            - Introduction: sentinelhub/modules/plan/introduction.md
-            - Types: sentinelhub/modules/plan/types.md
-            - Keeper: sentinelhub/modules/plan/keeper.md
-            - Messages: sentinelhub/modules/plan/messages.md
-            - Queries: sentinelhub/modules/plan/queries.md
-            - Transactions: sentinelhub/modules/plan/tx.md
-            - ABCI: sentinelhub/modules/plan/ABCI.md
-            - Commands: sentinelhub/modules/plan/commands.md
-        - Subscription:
-            - Introduction: sentinelhub/modules/subscription/introduction.md
-            - Types: sentinelhub/modules/subscription/types.md
-            - Keeper: sentinelhub/modules/subscription/keeper.md
-            - Messages: sentinelhub/modules/subscription/messages.md
-            - Queries: sentinelhub/modules/subscription/queries.md
-            - Transactions: sentinelhub/modules/subscription/tx.md
-            - ABCI: sentinelhub/modules/subscription/ABCI.md
-            - Commands: sentinelhub/modules/subscription/commands.md
-        - Session:
-            - Introduction: sentinelhub/modules/session/introduction.md
-            - Types: sentinelhub/modules/session/types.md
-            - Keeper: sentinelhub/modules/session/keeper.md
-            - Messages: sentinelhub/modules/session/messages.md
-            - Queries: sentinelhub/modules/session/queries.md
-            - Transactions: sentinelhub/modules/session/tx.md
-            - ABCI: sentinelhub/modules/session/ABCI.md
-            - Commands: sentinelhub/modules/session/commands.md
+      - Running a Node:
+          - Home: sentinelhub/running-a-node/index.md
+          - Block sync: sentinelhub/running-a-node/block-sync.md
+          - State sync: sentinelhub/running-a-node/state-sync.md
+      - Upgrades:
+          - SentinelHub - 2: sentinelhub/upgrades/sentinelhub-2.md
+          - Software upgrade - 1: sentinelhub/upgrades/software-upgrade-1.md
+          - Software upgrade - 2: sentinelhub/upgrades/software-upgrade-2.md
+          - Software upgrade - 3: sentinelhub/upgrades/software-upgrade-3.md
+          - Software upgrade - 4: sentinelhub/upgrades/software-upgrade-4.md
+      - Become a validator: sentinelhub/become-a-validator.md
+      - GenTx: sentinelhub/gentx.md
+      - Modules:
+          - Deposit:
+              - Introduction: sentinelhub/modules/deposit/introduction.md
+              - Types: sentinelhub/modules/deposit/types.md
+              - Keeper: sentinelhub/modules/deposit/keeper.md
+              - Messages: sentinelhub/modules/deposit/messages.md
+              - Queries: sentinelhub/modules/deposit/queries.md
+              - ABCI: sentinelhub/modules/deposit/ABCI.md
+              - Commands: sentinelhub/modules/deposit/commands.md
+          - Provider:
+              - Introduction: sentinelhub/modules/provider/introduction.md
+              - Types: sentinelhub/modules/provider/types.md
+              - Keeper: sentinelhub/modules/provider/keeper.md
+              - Messages: sentinelhub/modules/provider/messages.md
+              - Queries: sentinelhub/modules/provider/queries.md
+              - Transactions: sentinelhub/modules/provider/tx.md
+              - ABCI: sentinelhub/modules/provider/ABCI.md
+              - Commands: sentinelhub/modules/provider/commands.md
+          - Node:
+              - Introduction: sentinelhub/modules/node/introduction.md
+              - Types: sentinelhub/modules/node/types.md
+              - Keeper: sentinelhub/modules/node/keeper.md
+              - Messages: sentinelhub/modules/node/messages.md
+              - Queries: sentinelhub/modules/node/queries.md
+              - Transactions: sentinelhub/modules/node/tx.md
+              - ABCI: sentinelhub/modules/node/ABCI.md
+              - Commands: sentinelhub/modules/node/commands.md
+          - Plan:
+              - Introduction: sentinelhub/modules/plan/introduction.md
+              - Types: sentinelhub/modules/plan/types.md
+              - Keeper: sentinelhub/modules/plan/keeper.md
+              - Messages: sentinelhub/modules/plan/messages.md
+              - Queries: sentinelhub/modules/plan/queries.md
+              - Transactions: sentinelhub/modules/plan/tx.md
+              - ABCI: sentinelhub/modules/plan/ABCI.md
+              - Commands: sentinelhub/modules/plan/commands.md
+          - Subscription:
+              - Introduction: sentinelhub/modules/subscription/introduction.md
+              - Types: sentinelhub/modules/subscription/types.md
+              - Keeper: sentinelhub/modules/subscription/keeper.md
+              - Messages: sentinelhub/modules/subscription/messages.md
+              - Queries: sentinelhub/modules/subscription/queries.md
+              - Transactions: sentinelhub/modules/subscription/tx.md
+              - ABCI: sentinelhub/modules/subscription/ABCI.md
+              - Commands: sentinelhub/modules/subscription/commands.md
+          - Session:
+              - Introduction: sentinelhub/modules/session/introduction.md
+              - Types: sentinelhub/modules/session/types.md
+              - Keeper: sentinelhub/modules/session/keeper.md
+              - Messages: sentinelhub/modules/session/messages.md
+              - Queries: sentinelhub/modules/session/queries.md
+              - Transactions: sentinelhub/modules/session/tx.md
+              - ABCI: sentinelhub/modules/session/ABCI.md
+              - Commands: sentinelhub/modules/session/commands.md
   - dVPN node:
       - Setup: dVPN-node/setup.md
       - Configuration:
@@ -100,10 +101,10 @@ nav:
   - CLI client:
       - Installation: clients/CLI/installation.md
       - Commands:
-        - Keys: clients/CLI/commands/keys.md
-        - Queries: clients/CLI/commands/queries.md
-        - Transactions: clients/CLI/commands/transactions.md
-        - VPN: clients/CLI/commands/VPN.md
+          - Keys: clients/CLI/commands/keys.md
+          - Queries: clients/CLI/commands/queries.md
+          - Transactions: clients/CLI/commands/transactions.md
+          - VPN: clients/CLI/commands/VPN.md
       - API: clients/CLI/API.md
 plugins:
   - minify:
