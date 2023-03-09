@@ -23,7 +23,7 @@
 4. Export Golang environment variables
 
     ???+ tip "Tip"
-        Append the above lines to the file `${HOME}/.bashrc` and execute the command `source ${HOME}/.bashrc` to reflect in the current Terminal session
+        Append the below lines to the file `${HOME}/.bashrc` and execute the command `source ${HOME}/.bashrc` to reflect in the current Terminal session
 
     ``` sh
     export GOROOT=/usr/lib/go
