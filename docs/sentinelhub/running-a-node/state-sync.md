@@ -12,7 +12,6 @@ While following the [setup](../setup.md) process, please install the [latest](ht
     TRUST_HEIGHT=$((LATEST_HEIGHT - 3600))
     TRUST_HASH=$(curl -s "$RPC_ADDRESS/block?height=$TRUST_HEIGHT" | jq -r '.result.block_id.hash')
 
-    # Print trusted block height and hash
     echo ${TRUST_HEIGHT}
     echo ${TRUST_HASH}
     ```
