@@ -23,8 +23,8 @@ markdown_extensions:
 nav:
   - Home: index.md
   - Sentinel Hub:
+      - Setup: sentinelhub/setup.md
       - Running a Node:
-          - Home: sentinelhub/running-a-node/index.md
           - Block sync: sentinelhub/running-a-node/block-sync.md
           - State sync: sentinelhub/running-a-node/state-sync.md
       - Upgrades:
