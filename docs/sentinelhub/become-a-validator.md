@@ -26,7 +26,7 @@
         --commission-max-rate=0.2 \
         --commission-rate=0.05 \
         --gas=500000 \
-        --gas.prices=0.1udvpn \
+        --gas-prices=0.1udvpn \
         --amount=${DELEGATION_AMOUNT} \
         --from="${KEY_NAME}" \
         --moniker="${MONIKER}" \
