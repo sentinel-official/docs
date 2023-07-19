@@ -2,357 +2,357 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://docs.sentinel.co/</loc>
-         <lastmod>2023-07-03</lastmod>
+         <lastmod>2023-07-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.sentinel.co/clients/CLI/API/</loc>
-         <lastmod>2023-07-03</lastmod>
+         <lastmod>2023-07-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.sentinel.co/clients/CLI/installation/</loc>
-         <lastmod>2023-07-03</lastmod>
+         <lastmod>2023-07-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.sentinel.co/clients/CLI/commands/VPN/</loc>
-         <lastmod>2023-07-03</lastmod>
+         <lastmod>2023-07-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.sentinel.co/clients/CLI/commands/keys/</loc>
-         <lastmod>2023-07-03</lastmod>
+         <lastmod>2023-07-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.sentinel.co/clients/CLI/commands/queries/</loc>
-         <lastmod>2023-07-03</lastmod>
+         <lastmod>2023-07-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.sentinel.co/clients/CLI/commands/transactions/</loc>
-         <lastmod>2023-07-03</lastmod>
+         <lastmod>2023-07-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.sentinel.co/dVPN-node/API/</loc>
-         <lastmod>2023-07-03</lastmod>
+         <lastmod>2023-07-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.sentinel.co/dVPN-node/setup/</loc>
-         <lastmod>2023-07-03</lastmod>
+         <lastmod>2023-07-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.sentinel.co/dVPN-node/start/</loc>
-         <lastmod>2023-07-03</lastmod>
+         <lastmod>2023-07-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.sentinel.co/dVPN-node/troubleshoot/</loc>
-         <lastmod>2023-07-03</lastmod>
+         <lastmod>2023-07-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.sentinel.co/dVPN-node/configuration/application/</loc>
-         <lastmod>2023-07-03</lastmod>
+         <lastmod>2023-07-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.sentinel.co/dVPN-node/configuration/v2ray/</loc>
-         <lastmod>2023-07-03</lastmod>
+         <lastmod>2023-07-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.sentinel.co/dVPN-node/configuration/wireguard/</loc>
-         <lastmod>2023-07-03</lastmod>
+         <lastmod>2023-07-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.sentinel.co/sentinelhub/become-a-validator/</loc>
-         <lastmod>2023-07-03</lastmod>
+         <lastmod>2023-07-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.sentinel.co/sentinelhub/gentx/</loc>
-         <lastmod>2023-07-03</lastmod>
+         <lastmod>2023-07-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.sentinel.co/sentinelhub/setup/</loc>
-         <lastmod>2023-07-03</lastmod>
+         <lastmod>2023-07-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.sentinel.co/sentinelhub/modules/deposit/ABCI/</loc>
-         <lastmod>2023-07-03</lastmod>
+         <lastmod>2023-07-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.sentinel.co/sentinelhub/modules/deposit/commands/</loc>
-         <lastmod>2023-07-03</lastmod>
+         <lastmod>2023-07-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.sentinel.co/sentinelhub/modules/deposit/introduction/</loc>
-         <lastmod>2023-07-03</lastmod>
+         <lastmod>2023-07-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.sentinel.co/sentinelhub/modules/deposit/keeper/</loc>
-         <lastmod>2023-07-03</lastmod>
+         <lastmod>2023-07-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.sentinel.co/sentinelhub/modules/deposit/messages/</loc>
-         <lastmod>2023-07-03</lastmod>
+         <lastmod>2023-07-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.sentinel.co/sentinelhub/modules/deposit/queries/</loc>
-         <lastmod>2023-07-03</lastmod>
+         <lastmod>2023-07-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.sentinel.co/sentinelhub/modules/deposit/types/</loc>
-         <lastmod>2023-07-03</lastmod>
+         <lastmod>2023-07-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.sentinel.co/sentinelhub/modules/node/ABCI/</loc>
-         <lastmod>2023-07-03</lastmod>
+         <lastmod>2023-07-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.sentinel.co/sentinelhub/modules/node/commands/</loc>
-         <lastmod>2023-07-03</lastmod>
+         <lastmod>2023-07-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.sentinel.co/sentinelhub/modules/node/introduction/</loc>
-         <lastmod>2023-07-03</lastmod>
+         <lastmod>2023-07-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.sentinel.co/sentinelhub/modules/node/keeper/</loc>
-         <lastmod>2023-07-03</lastmod>
+         <lastmod>2023-07-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.sentinel.co/sentinelhub/modules/node/messages/</loc>
-         <lastmod>2023-07-03</lastmod>
+         <lastmod>2023-07-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.sentinel.co/sentinelhub/modules/node/queries/</loc>
-         <lastmod>2023-07-03</lastmod>
+         <lastmod>2023-07-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.sentinel.co/sentinelhub/modules/node/tx/</loc>
-         <lastmod>2023-07-03</lastmod>
+         <lastmod>2023-07-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.sentinel.co/sentinelhub/modules/node/types/</loc>
-         <lastmod>2023-07-03</lastmod>
+         <lastmod>2023-07-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.sentinel.co/sentinelhub/modules/plan/ABCI/</loc>
-         <lastmod>2023-07-03</lastmod>
+         <lastmod>2023-07-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.sentinel.co/sentinelhub/modules/plan/commands/</loc>
-         <lastmod>2023-07-03</lastmod>
+         <lastmod>2023-07-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.sentinel.co/sentinelhub/modules/plan/introduction/</loc>
-         <lastmod>2023-07-03</lastmod>
+         <lastmod>2023-07-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.sentinel.co/sentinelhub/modules/plan/keeper/</loc>
-         <lastmod>2023-07-03</lastmod>
+         <lastmod>2023-07-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.sentinel.co/sentinelhub/modules/plan/messages/</loc>
-         <lastmod>2023-07-03</lastmod>
+         <lastmod>2023-07-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.sentinel.co/sentinelhub/modules/plan/queries/</loc>
-         <lastmod>2023-07-03</lastmod>
+         <lastmod>2023-07-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.sentinel.co/sentinelhub/modules/plan/tx/</loc>
-         <lastmod>2023-07-03</lastmod>
+         <lastmod>2023-07-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.sentinel.co/sentinelhub/modules/plan/types/</loc>
-         <lastmod>2023-07-03</lastmod>
+         <lastmod>2023-07-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.sentinel.co/sentinelhub/modules/provider/ABCI/</loc>
-         <lastmod>2023-07-03</lastmod>
+         <lastmod>2023-07-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.sentinel.co/sentinelhub/modules/provider/commands/</loc>
-         <lastmod>2023-07-03</lastmod>
+         <lastmod>2023-07-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.sentinel.co/sentinelhub/modules/provider/introduction/</loc>
-         <lastmod>2023-07-03</lastmod>
+         <lastmod>2023-07-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.sentinel.co/sentinelhub/modules/provider/keeper/</loc>
-         <lastmod>2023-07-03</lastmod>
+         <lastmod>2023-07-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.sentinel.co/sentinelhub/modules/provider/messages/</loc>
-         <lastmod>2023-07-03</lastmod>
+         <lastmod>2023-07-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.sentinel.co/sentinelhub/modules/provider/queries/</loc>
-         <lastmod>2023-07-03</lastmod>
+         <lastmod>2023-07-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.sentinel.co/sentinelhub/modules/provider/tx/</loc>
-         <lastmod>2023-07-03</lastmod>
+         <lastmod>2023-07-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.sentinel.co/sentinelhub/modules/provider/types/</loc>
-         <lastmod>2023-07-03</lastmod>
+         <lastmod>2023-07-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.sentinel.co/sentinelhub/modules/session/ABCI/</loc>
-         <lastmod>2023-07-03</lastmod>
+         <lastmod>2023-07-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.sentinel.co/sentinelhub/modules/session/commands/</loc>
-         <lastmod>2023-07-03</lastmod>
+         <lastmod>2023-07-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.sentinel.co/sentinelhub/modules/session/introduction/</loc>
-         <lastmod>2023-07-03</lastmod>
+         <lastmod>2023-07-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.sentinel.co/sentinelhub/modules/session/keeper/</loc>
-         <lastmod>2023-07-03</lastmod>
+         <lastmod>2023-07-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.sentinel.co/sentinelhub/modules/session/messages/</loc>
-         <lastmod>2023-07-03</lastmod>
+         <lastmod>2023-07-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.sentinel.co/sentinelhub/modules/session/queries/</loc>
-         <lastmod>2023-07-03</lastmod>
+         <lastmod>2023-07-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.sentinel.co/sentinelhub/modules/session/tx/</loc>
-         <lastmod>2023-07-03</lastmod>
+         <lastmod>2023-07-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.sentinel.co/sentinelhub/modules/session/types/</loc>
-         <lastmod>2023-07-03</lastmod>
+         <lastmod>2023-07-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.sentinel.co/sentinelhub/modules/subscription/ABCI/</loc>
-         <lastmod>2023-07-03</lastmod>
+         <lastmod>2023-07-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.sentinel.co/sentinelhub/modules/subscription/commands/</loc>
-         <lastmod>2023-07-03</lastmod>
+         <lastmod>2023-07-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.sentinel.co/sentinelhub/modules/subscription/introduction/</loc>
-         <lastmod>2023-07-03</lastmod>
+         <lastmod>2023-07-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.sentinel.co/sentinelhub/modules/subscription/keeper/</loc>
-         <lastmod>2023-07-03</lastmod>
+         <lastmod>2023-07-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.sentinel.co/sentinelhub/modules/subscription/messages/</loc>
-         <lastmod>2023-07-03</lastmod>
+         <lastmod>2023-07-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.sentinel.co/sentinelhub/modules/subscription/queries/</loc>
-         <lastmod>2023-07-03</lastmod>
+         <lastmod>2023-07-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.sentinel.co/sentinelhub/modules/subscription/tx/</loc>
-         <lastmod>2023-07-03</lastmod>
+         <lastmod>2023-07-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.sentinel.co/sentinelhub/modules/subscription/types/</loc>
-         <lastmod>2023-07-03</lastmod>
+         <lastmod>2023-07-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.sentinel.co/sentinelhub/running-a-node/block-sync/</loc>
-         <lastmod>2023-07-03</lastmod>
+         <lastmod>2023-07-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.sentinel.co/sentinelhub/running-a-node/state-sync/</loc>
-         <lastmod>2023-07-03</lastmod>
+         <lastmod>2023-07-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.sentinel.co/sentinelhub/upgrades/sentinelhub-2/</loc>
-         <lastmod>2023-07-03</lastmod>
+         <lastmod>2023-07-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.sentinel.co/sentinelhub/upgrades/software-upgrade-1/</loc>
-         <lastmod>2023-07-03</lastmod>
+         <lastmod>2023-07-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.sentinel.co/sentinelhub/upgrades/software-upgrade-2/</loc>
-         <lastmod>2023-07-03</lastmod>
+         <lastmod>2023-07-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.sentinel.co/sentinelhub/upgrades/software-upgrade-3/</loc>
-         <lastmod>2023-07-03</lastmod>
+         <lastmod>2023-07-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.sentinel.co/sentinelhub/upgrades/software-upgrade-4/</loc>
-         <lastmod>2023-07-03</lastmod>
+         <lastmod>2023-07-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>
