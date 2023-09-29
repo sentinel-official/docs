@@ -1,0 +1,103 @@
+---
+title: gRPC Go
+sidebar_position: 3
+---
+
+
+### Interacting with Go
+
+The following snippet shows how to query the state using gRPC inside a Go program. The idea is to create a gRPC connection, and use the Protobuf-generated client code to query the gRPC server.
+
+#### Install Cosmos SDK
+
+
+```bash
+go get github.com/cosmos/cosmos-sdk@main
+```
+
+```go
+import (
+    "context"
+    "fmt"
+
+    "google.golang.org/grpc"
+
+    "github.com/cosmos/cosmos-sdk/codec"
+    sdk "github.com/cosmos/cosmos-sdk/types"
+    banktypes "github.com/cosmos/cosmos-sdk/x/bank/types"
+)
+
+func queryState() error {
+    myAddress, err := sdk.AccAddressFromBech32("cosmos1...")
+    if err != nil {
+        return err
+    }
+
+    // Create a connection to the gRPC server.
+    grpcConn, err := grpc.Dial(
+        "127.0.0.1:9090", // your gRPC server address.
+        grpc.WithInsecure(), // The Cosmos SDK doesn't support any transport security mechanism. 
+        // This instantiates a general gRPC codec which handles proto bytes. We pass in a nil interface registry
+        // if the request/response types contain interface instead of 'nil' you should pass the application specific codec.
+		grpc.WithDefaultCallOptions(grpc.ForceCodec(codec.NewProtoCodec(nil).GRPCCodec())),
+	)
+    if err != nil {
+        return err
+    }
+    defer grpcConn.Close()
+
+    // This creates a gRPC client to query the x/bank service.
+    bankClient := banktypes.NewQueryClient(grpcConn)
+    bankRes, err := bankClient.Balance(
+        context.Background(),
+        &banktypes.QueryBalanceRequest{Address: myAddress.String(), Denom: "atom"},
+    )
+    if err != nil {
+        return err
+    }
+
+    fmt.Println(bankRes.GetBalance()) // Prints the account balance
+
+    return nil
+}
+```
+
+You can replace the query client (here we are using `x/bank`'s) with one generated from any other Protobuf service. The list of all available gRPC query endpoints is [coming soon](https://github.com/cosmos/cosmos-sdk/issues/7786).
+
+#### Query for historical state using Go
+
+Querying for historical blocks is done by adding the block height metadata in the gRPC request.
+
+```go
+import (
+    "context"
+    "fmt"
+
+    "google.golang.org/grpc"
+    "google.golang.org/grpc/metadata"
+
+    "github.com/cosmos/cosmos-sdk/codec"
+    sdk "github.com/cosmos/cosmos-sdk/types"
+    grpctypes "github.com/cosmos/cosmos-sdk/types/grpc"
+    banktypes "github.com/cosmos/cosmos-sdk/x/bank/types"
+)
+
+func queryState() error {
+    // --snip--
+
+    var header metadata.MD
+    bankRes, err = bankClient.Balance(
+        metadata.AppendToOutgoingContext(context.Background(), grpctypes.GRPCBlockHeightHeader, "12"), // Add metadata to request
+        &banktypes.QueryBalanceRequest{Address: myAddress.String(), Denom: "atom"},
+        grpc.Header(&header), // Retrieve header from response
+    )
+    if err != nil {
+        return err
+    }
+    blockHeight := header.Get(grpctypes.GRPCBlockHeightHeader)
+
+    fmt.Println(blockHeight) // Prints the block height (12)
+
+    return nil
+}
+```

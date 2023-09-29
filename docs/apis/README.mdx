@@ -1,0 +1,50 @@
+---
+title: Sentinel Public APIs
+sidebar_position: 1
+---
+import {
+  HomepageCard as Card,
+  HomepageSection as Section,
+} from '../../src/components/HomepageComponents';
+import Link from '@docusaurus/Link';
+
+# Sentinel Public APIs
+
+There are currently 3 public APIs provided by Sentinel: LCD, RPC and the historical data API.  
+
+<Section title="APIs" id="apis"  >
+
+  <Card
+    title="RPC endpoints"
+    description="Sentinel RPC endpoints"
+    to="/api/?v=RPC"
+    icon={<Tscodegen />}
+    svgFile="/icons/api.svg"
+  />   
+    <Card
+    title="gRPC"
+    description="Sentinel high performance, universal RPC framework"
+    to="/apis/grpc"
+    icon={<Tscodegen />}
+    svgFile="/icons/api.svg"
+  />   
+  <Card
+    title="LCD"
+    description="State queries, legacy transactions endpoints"
+    to="/api/?v=LCD"
+    icon={<Tscodegen />}
+      svgFile="/icons/api.svg"
+  />   
+    <Card
+    title="Historical Data"
+    description="Historical data API used by the Sentinel site"
+    to="/api/?v=DATA"
+    icon={<Tscodegen />}
+     svgFile="/icons/api.svg"
+  />   
+  </Section>
+
+
+:::info 
+Please note that for maximun reliability and speed, LCD or RPC can be hosted by anyone by simple running a node and [configuring the API service](https://docs.cosmos.network/master/core/grpc_rest.html).
+:::

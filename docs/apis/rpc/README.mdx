@@ -1,0 +1,58 @@
+---
+title: RPC Gateway
+sidebar_position: 3
+---
+
+import {
+  HomepageCard as Card,
+  HomepageSection as Section,
+} from '../../../src/components/HomepageComponents';
+import Link from '@docusaurus/Link';
+import {
+  ChainIcon,
+  TerminalIcon,
+  ModulesIcon,
+  RelayerIcon,
+  AssetIcon,
+  Createapp,
+  Cosmoskit,
+  Tscodegen,
+  Chain
+} from '../../../src/icons';
+
+
+## Interacting with the RPC endpoints
+
+
+
+### RPC Specifications
+
+
+<Section title="Frontend SDK Libraries & Utilities" id="web-sdks" hasSubSections >
+
+   <Section>
+  <Card
+    title="RPC ednpoints"
+    description="Osmosis Tendermint RPC endpoints"
+    to="/api/?v=RPC"
+    icon={<Tscodegen />}
+    svgFile="/icons/api.svg"
+  />
+  <Card
+    title="Getting Started"
+    description="How to interact with RPC endpoints"
+    to="/apis/rpc/interact-rpc"
+    icon={<Tscodegen />}
+    svgFile="/icons/api.svg"
+  />
+  </Section>
+
+  </Section>
+
+
+## Generating docs
+
+```
+brew install protobuf
+brew install protoc-gen-go-grpc
+```

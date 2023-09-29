@@ -1,0 +1,25 @@
+.chainButton {
+    background-color: #322dc2;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    border-radius: 8px;
+    transition: background-color 0.2s ease-in-out;
+  }
+  
+  .chainButton:hover {
+    background-color: #5f4bea;
+  }
+
+  .tab-buttons {
+    display: flex;
+  }
+  
+  .active {
+    background-color: #5f4bea;
+  }

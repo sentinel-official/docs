@@ -1,0 +1,24 @@
+name: Build and Deploy Docs Beta Branch
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    if: true # disable the workflow temporarily
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v4
+
+      - name: Install and Build 🔧 # This will create version inside the 'build' folder.
+        run: |
+          yarn install
+          yarn build
+
+      - name: Deploy to Beta Branch 🚀
+        uses: JamesIves/github-pages-deploy-action@v4.4.3
+        with:
+          branch: beta-build # The branch the action should deploy to.
+          folder: build
