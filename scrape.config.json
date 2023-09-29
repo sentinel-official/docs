@@ -3,7 +3,7 @@
 {
     "index_name": "Docs",
     "start_urls": [
-      "https://trinityprivacy.github.io/sentinel-docs"
+      "https://docs.sentinel.co"
     ],
     "stop_urls": [],
     "selectors": {
