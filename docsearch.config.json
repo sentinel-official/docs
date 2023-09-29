@@ -1,43 +1,43 @@
 {
   "index_name": "Docs",
-  "sitemap_urls": ["https://trinityprivacy.github.io/sentinel-docs/sitemap.xml"],
+  "sitemap_urls": ["https://docs.sentinel.co/sitemap.xml"],
   "start_urls": [
     {
-      "url": "https://trinityprivacy.github.io/sentinel-docs/guides",
+      "url": "https://docs.sentinel.co/guides",
       "tags": "guides",
       "selectors_key": "guides"
     },
     {
-      "url": "https://trinityprivacy.github.io/sentinel-docs/sentinel-core",
+      "url": "https://docs.sentinel.co/sentinel-core",
       "tags": "sentinel-core",
       "selectors_key": "sentinel-core"
     },
     {
-      "url": "https://trinityprivacy.github.io/sentinel-docs/networks",
+      "url": "https://docs.sentinel.co/networks",
       "tags": "networks",
       "selectors_key": "networks"
     },
     {
-      "url": "https://trinityprivacy.github.io/sentinel-docs/overview",
+      "url": "https://docs.sentinel.co/overview",
       "tags": "overview",
       "selectors_key": "overview"
     },
     {
-      "url": "https://trinityprivacy.github.io/sentinel-docs/node-setup",
+      "url": "https://docs.sentinel.co/node-setup",
       "tags": "node-setup",
       "selectors_key": "node-setup"
     },
     {
-      "url": "https://trinityprivacy.github.io/sentinel-docs/node-akash",
+      "url": "https://docs.sentinel.co/node-akash",
       "tags": "node-akash",
       "selectors_key": "node-akash"
     },
     {
-      "url": "https://trinityprivacy.github.io/sentinel-docs/validator-setup",
+      "url": "https://docs.sentinel.co/validator-setup",
       "tags": "validator-setup",
       "selectors_key": "validator-setup"
     },
-    "https://trinityprivacy.github.io/sentinel-docs"
+    "https://docs.sentinel.co"
   ],
   "stop_urls": [],
 
