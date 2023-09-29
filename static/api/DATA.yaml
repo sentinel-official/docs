@@ -1,0 +1,1137 @@
+openapi: 3.0.2
+info:
+  title: Osmosis Historical Data
+  description: REST API to get the historical data for Osmosis
+  version: 1.1.1
+servers:
+  - url: https://api.osmosis.zone/
+    description: Osmosis Historical Data
+paths:
+  /health/v1/check:
+    get:
+      tags:
+        - health
+      summary: Check Health
+      operationId: check_health
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+  /overview/v1/metrics:
+    get:
+      tags:
+        - overview
+      summary: Metrics
+      operationId: metrics
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+  /overview/v1/message:
+    get:
+      tags:
+        - overview
+      summary: Message
+      operationId: message
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+  /ibc/v1/info:
+    get:
+      tags:
+        - ibc
+      summary: Ibc Info
+      description: List all existing paths that have been manually set up on the config
+      operationId: ibc_info
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+  /ibc/v1/all:
+    get:
+      tags:
+        - ibc
+      summary: Ibc All
+      description: |-
+        List all existing paths with pending packets, last tx and since when (in minutes)
+           
+        optionnal: filter by dex
+      operationId: ibc_all
+      parameters:
+        - required: false
+          schema:
+            title: Dex
+            type: string
+          name: dex
+          in: query
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /ibc/v1/source/{source}/destination{destination}:
+    get:
+      tags:
+        - ibc
+      summary: Ibc Source Destination
+      description: List chosen source and destination paths with pending packets, last tx and since when (in minutes) strictly superior to trigger option
+      operationId: ibc_source_destination
+      parameters:
+        - required: true
+          schema:
+            title: Source
+            type: string
+          name: source
+          in: path
+        - required: true
+          schema:
+            title: Destination
+            type: string
+          name: destination
+          in: path
+        - required: true
+          schema:
+            title: Minutes Trigger
+            type: integer
+          name: minutes_trigger
+          in: query
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /ibc/v1/source/{source}:
+    get:
+      tags:
+        - ibc
+      summary: Ibc Source
+      description: List chosen source paths with pending packets, last tx and since when (in minutes) strictly superior to trigger option
+      operationId: ibc_source
+      parameters:
+        - required: true
+          schema:
+            title: Source
+            type: string
+          name: source
+          in: path
+        - required: true
+          schema:
+            title: Minutes Trigger
+            type: integer
+          name: minutes_trigger
+          in: query
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /ibc/v1/destination/{destination}:
+    get:
+      tags:
+        - ibc
+      summary: Ibc Destination
+      operationId: ibc_destination
+      parameters:
+        - required: true
+          schema:
+            title: Destination
+            type: string
+          name: destination
+          in: path
+        - required: true
+          schema:
+            title: Minutes Trigger
+            type: integer
+          name: minutes_trigger
+          in: query
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /ibc/v1/raw:
+    get:
+      tags:
+        - ibc
+      summary: Ibc Raw
+      operationId: ibc_raw
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+  /pairs/v1/summary:
+    get:
+      tags:
+        - pairs
+      summary: Pairs Summary
+      operationId: pairs_summary
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+  /pairs/v1/historical/{pool_id}/chart:
+    get:
+      tags:
+        - pairs
+      summary: Pairs Historical Chart
+      description: |-
+        - **pool_id**: ID of pool to return
+        - **asset_in**: First name asset of PAIR (ex for ATOM/USDT, asset_out=ATOM (symbol) or asset_out=ibc/1XX (denom))
+        - **asset_out**: Second name asset of PAIR (ex for ATOM/USDT, asset_out=USDT (symbol) or asset_out=ibc/2XX (denom))
+        - **range**: Range of historical Data (Available values : 7d, 1mo, 1y, all)
+        - **asset_type**: Type of asset in asset_in and asset_out (Available values : symbol, denom)
+      operationId: pairs_historical_chart
+      parameters:
+        - required: true
+          schema:
+            title: Pool Id
+            type: integer
+          name: pool_id
+          in: path
+        - required: true
+          schema:
+            title: Asset In
+            type: string
+          name: asset_in
+          in: query
+        - required: true
+          schema:
+            title: Asset Out
+            type: string
+          name: asset_out
+          in: query
+        - required: true
+          schema:
+            title: Range
+            type: string
+          name: range
+          in: query
+        - required: true
+          schema:
+            title: Asset Type
+            type: string
+          name: asset_type
+          in: query
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /pools/v2/all:
+    get:
+      tags:
+        - pools
+      summary: Pools All
+      operationId: pools_all
+      parameters:
+        - required: true
+          schema:
+            title: Low Liquidity
+            type: boolean
+          name: low_liquidity
+          in: query
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /pools/v2/{pool_id}:
+    get:
+      tags:
+        - pools
+      summary: Pool By Id
+      description: '- **pool_id**: ID of pool to return'
+      operationId: pool_by_id
+      parameters:
+        - required: true
+          schema:
+            title: Pool Id
+            type: integer
+          name: pool_id
+          in: path
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /pools/v2/liquidity/{pool_id}/chart:
+    get:
+      tags:
+        - pools
+      summary: Liquidity By Pools
+      operationId: liquidity_by_pools
+      parameters:
+        - required: true
+          schema:
+            title: Pool Id
+            type: integer
+          name: pool_id
+          in: path
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /pools/v2/volume/{pool_id}/chart:
+    get:
+      tags:
+        - pools
+      summary: Volume By Pools
+      operationId: volume_by_pools
+      parameters:
+        - required: true
+          schema:
+            title: Pool Id
+            type: integer
+          name: pool_id
+          in: path
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /tokens/v2/all:
+    get:
+      tags:
+        - tokens
+      summary: Tokens All
+      operationId: tokens_all
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+  /tokens/v2/mcap:
+    get:
+      tags:
+        - tokens
+      summary: Tokens Mcap
+      operationId: tokens_mcap
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+  /tokens/v2/{symbol}:
+    get:
+      tags:
+        - tokens
+      summary: Tokens By Symbol
+      operationId: tokens_by_symbol
+      parameters:
+        - required: true
+          schema:
+            title: Symbol
+            type: string
+          name: symbol
+          in: path
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /tokens/v2/historical/{symbol}/chart:
+    get:
+      tags:
+        - tokens
+      summary: Token Price Historical Chart V2
+      description: |-
+        - **symbol**: Symbol of token to return
+        - **range**: Range of historical Data (Available values : 5,15,30,60,120,240,720,1440,10080,43800)
+      operationId: token_price_historical_chart_v2
+      parameters:
+        - required: true
+          schema:
+            title: Symbol
+            type: string
+          name: symbol
+          in: path
+        - required: true
+          schema:
+            title: Tf
+            type: integer
+          name: tf
+          in: query
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /tokens/v2/liquidity/{symbol}/chart:
+    get:
+      tags:
+        - tokens
+      summary: Liquidity By Tokens V2
+      operationId: liquidity_by_tokens_v2
+      parameters:
+        - required: true
+          schema:
+            title: Symbol
+            type: string
+          name: symbol
+          in: path
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /tokens/v2/volume/{symbol}/chart:
+    get:
+      tags:
+        - tokens
+      summary: Volume By Tokens
+      operationId: volume_by_tokens
+      parameters:
+        - required: true
+          schema:
+            title: Symbol
+            type: string
+          name: symbol
+          in: path
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /tokens/v2/price/{symbol}:
+    get:
+      tags:
+        - tokens
+      summary: Tokens Price
+      description: |-
+        Available tokens are:
+        - ** SYMBOL : https://info.osmosis.zone/tokens**
+      operationId: tokens_price
+      parameters:
+        - required: true
+          schema:
+            title: Symbol
+            type: string
+          name: symbol
+          in: path
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /tokens/v2/top/{type}:
+    get:
+      tags:
+        - tokens
+      summary: Tokens Top Gainers Or Losers
+      description: 'type can be either ''gainers'' or ''losers'' '
+      operationId: tokens_top_gainers_or_losers
+      parameters:
+        - required: true
+          schema:
+            title: Type
+            type: string
+          name: type
+          in: path
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /tokens/v2/count/{pool_id}:
+    get:
+      tags:
+        - tokens
+      summary: Tokens Count V2
+      operationId: tokens_count_v2
+      parameters:
+        - required: true
+          schema:
+            title: Pool Id
+            type: integer
+          name: pool_id
+          in: path
+        - required: true
+          schema:
+            title: Range Start
+            type: string
+          name: range_start
+          in: query
+        - required: true
+          schema:
+            title: Range Stop
+            type: string
+          name: range_stop
+          in: query
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /tokens/v2/volume/global:
+    get:
+      tags:
+        - tokens
+      summary: Tokens Volume Global
+      operationId: tokens_volume_global
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+  /tokens/v2/volume/coin/{symbol}/chart:
+    get:
+      tags:
+        - tokens
+      summary: Volume By Tokens Chart V2
+      operationId: volume_by_tokens_chart_v2
+      parameters:
+        - required: true
+          schema:
+            title: Symbol
+            type: string
+          name: symbol
+          in: path
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /tokens/v2/volume/{pool_id}/coin/chart:
+    get:
+      tags:
+        - tokens
+      summary: Token Volume By Pool
+      operationId: token_volume_by_pool
+      parameters:
+        - required: true
+          schema:
+            title: Pool Id
+            type: integer
+          name: pool_id
+          in: path
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /tokens/v2/dominance/all:
+    get:
+      tags:
+        - tokens
+      summary: Tokens Dominance
+      description: '**REPLACE BY**: Nothing'
+      operationId: tokens_dominance
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+      deprecated: true
+  /liquidity/v2/historical/chart:
+    get:
+      tags:
+        - liquidity
+      summary: Liquidity Historical All Chart
+      operationId: liquidity_historical_all_chart
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+  /volume/v2/historical/chart:
+    get:
+      tags:
+        - volume
+      summary: Volume Historical All Chart V2
+      operationId: volume_historical_all_chart_v2
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+  /volume/v2/total:
+    get:
+      tags:
+        - volume
+      summary: Total Volume
+      operationId: total_volume
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+  /fees/v1/total:
+    get:
+      tags:
+        - fees
+      summary: Fees Total
+      description: 'total fees paid from all pools since beginning '
+      operationId: fees_total
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+  /fees/v1/pools:
+    get:
+      tags:
+        - fees
+      summary: Fees Spent Pools All
+      description: fees paid on 24h and 7d timeframe for all pools
+      operationId: fees_spent_pools_all
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+  /fees/v1/{pool_id}:
+    get:
+      tags:
+        - fees
+      summary: Fees Spent Pool
+      description: fees paid on 24h and 7d timeframe from a choosen pools
+      operationId: fees_spent_pool
+      parameters:
+        - required: true
+          schema:
+            title: Pool Id
+            type: integer
+          name: pool_id
+          in: path
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /fees/v1/total/historical:
+    get:
+      tags:
+        - fees
+      summary: Fees Historical
+      description: total fees historically paid daily since the beginning
+      operationId: fees_historical
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+  /fees/v1/historical/{pool_id}:
+    get:
+      tags:
+        - fees
+      summary: Fees Historical Pool
+      description: total fees historically paid daily since the beginning for a given pool
+      operationId: fees_historical_pool
+      parameters:
+        - required: true
+          schema:
+            title: Pool Id
+            type: integer
+          name: pool_id
+          in: path
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /search/v1/supply/osmo:
+    get:
+      tags:
+        - search
+      summary: Search Amount Total Supply Osmo
+      operationId: search_amount_total_supply_osmo
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+      deprecated: true
+  /search/v1/denom:
+    get:
+      tags:
+        - search
+      summary: Search Denom By Given Symbol
+      description: '- **symbol**: symbol to return in denom'
+      operationId: search_denom_by_given_symbol
+      parameters:
+        - required: true
+          schema:
+            title: Symbol
+            type: string
+          name: symbol
+          in: query
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /search/v1/symbol:
+    get:
+      tags:
+        - search
+      summary: Search Symbol By Given Denom
+      description: '- **denom**: denom to return in symbol'
+      operationId: search_symbol_by_given_denom
+      parameters:
+        - required: true
+          schema:
+            title: Denom
+            type: string
+          name: denom
+          in: query
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /search/v1/exponent:
+    get:
+      tags:
+        - search
+      summary: Search Exponent By Given Symbol
+      description: '- **symbol**: symbol to return is exponent'
+      operationId: search_exponent_by_given_symbol
+      parameters:
+        - required: true
+          schema:
+            title: Symbol
+            type: string
+          name: symbol
+          in: query
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /apr/v2/staking:
+    get:
+      tags:
+        - apr
+      summary: Apr Staking Osmo
+      operationId: apr_staking_osmo
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+  /apr/v2/all:
+    get:
+      tags:
+        - apr
+      summary: Apr All
+      operationId: apr_all
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+  /apr/v2/{pool_id}:
+    get:
+      tags:
+        - apr
+      summary: Apr Per Pool Id
+      operationId: apr_per_pool_id
+      parameters:
+        - required: true
+          schema:
+            title: Pool Id
+            type: integer
+          name: pool_id
+          in: path
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /supply/v1/osmo:
+    get:
+      tags:
+        - supply
+      summary: Supply Osmo
+      operationId: supply_osmo
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+  /supply/v1/ion:
+    get:
+      tags:
+        - supply
+      summary: Supply Ion
+      operationId: supply_ion
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+  /tradingview/v1/authorize:
+    post:
+      tags:
+        - tradingview
+      summary: Token
+      operationId: token
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Body_token_tradingview_v1_authorize_post'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /tradingview/v1/symbol_info:
+    get:
+      tags:
+        - tradingview
+      summary: Get Symbol Info
+      operationId: get_symbol_info
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+      security:
+        - OAuth2PasswordBearer: []
+  /tradingview/v1/history:
+    get:
+      tags:
+        - tradingview
+      summary: Token Price Historical Chart V2
+      operationId: token_price_historical_chart_v2
+      parameters:
+        - required: true
+          schema:
+            title: Symbol
+            type: string
+          name: symbol
+          in: query
+        - required: true
+          schema:
+            title: To
+            type: integer
+          name: to
+          in: query
+        - required: true
+          schema:
+            title: Resolution
+            type: string
+          name: resolution
+          in: query
+        - required: true
+          schema:
+            title: From
+            type: integer
+          name: from
+          in: query
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+        - OAuth2PasswordBearer: []
+  /tradingview/v1/streaming:
+    get:
+      tags:
+        - tradingview
+      summary: Streaming
+      operationId: streaming
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+      security:
+        - OAuth2PasswordBearer: []
+components:
+  schemas:
+    Body_token_tradingview_v1_authorize_post:
+      title: Body_token_tradingview_v1_authorize_post
+      required:
+        - login
+        - password
+      type: object
+      properties:
+        login:
+          title: Login
+          type: string
+        password:
+          title: Password
+          type: string
+        scope:
+          title: Scope
+          type: string
+          default: ''
+    HTTPValidationError:
+      title: HTTPValidationError
+      type: object
+      properties:
+        detail:
+          title: Detail
+          type: array
+          items:
+            $ref: '#/components/schemas/ValidationError'
+    ValidationError:
+      title: ValidationError
+      required:
+        - loc
+        - msg
+        - type
+      type: object
+      properties:
+        loc:
+          title: Location
+          type: array
+          items:
+            type: string
+        msg:
+          title: Message
+          type: string
+        type:
+          title: Error Type
+          type: string
+  securitySchemes:
+    OAuth2PasswordBearer:
+      type: oauth2
+      flows:
+        password:
+          scopes: {}
+          tokenUrl: /tradingview/v1/authorize
+tags:
+  - name: health
+    description: health metrics
+  - name: overview
+    description: Overview metrics
+  - name: ibc
+    description: Returns IBC congestionned routes
+  - name: pairs
+    description: Returns the historical data for pairs
+  - name: pools
+    description: Returns the historical data for pools
+  - name: tokens
+    description: Returns the historical data for tokens
+  - name: liquidity
+    description: Returns the liquidity data
+  - name: volume
+    description: Returns the volume data
+  - name: fees
+    description: Returns the fees data
+  - name: search
+    description: Returns denom, symbol, price native token
+  - name: apr
+    description: Returns APR data for each token for each pool
+  - name: supply
+    description: Returns data related to supply
+  - name: tradingview
+    description: Returns data related to TradingView

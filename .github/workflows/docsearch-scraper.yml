@@ -1,0 +1,32 @@
+name: Scrape Docs Site
+on:
+  push:
+    branches:
+      - master
+  workflow_dispatch:
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    if: true # disable the workflow temporarily
+    steps:
+      - name: check out code 🛎
+        uses: actions/checkout@v4
+      # inject secrets as environment variables
+      # then pass their values into the Docker container using "-e" syntax
+      # and inject config.json contents as another variable
+
+      - name: Sleep for 5 min to allow site to be published.
+        run: |
+          sleep 5m
+
+      - name: Scrape the Site 🧽
+        env:
+          # Algolia Application ID
+          APPLICATION_ID: ${{ secrets.BETA_APPLICATION_ID }}
+          # Algolia Admin API Key
+          API_KEY: ${{ secrets.BETA_API_KEY }}
+        run: |
+          docker run \
+          -e APPLICATION_ID -e API_KEY \
+          -e CONFIG="$(cat docsearch.config.json)" \
+          algolia/docsearch-scraper

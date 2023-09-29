@@ -1,0 +1,82 @@
+---
+title: Interacting with gRPC
+sidebar_position: 3
+---
+
+import {
+  HomepageCard as Card,
+  HomepageSection as Section,
+} from '../../../src/components/HomepageComponents';
+import Link from '@docusaurus/Link';
+import {
+  ChainIcon,
+  TerminalIcon,
+  ModulesIcon,
+  RelayerIcon,
+  AssetIcon,
+  Createapp,
+  Cosmoskit,
+  Tscodegen,
+  Chain
+} from '../../../src/icons';
+
+
+## Interacting with the gRPC Server
+
+As described on the [Network page](../../networks). A gRPC endpoint is availble on the public Osmosis nodes so that you can start playing and intreacting with it right away.
+
+## Enabling gRPC on a node
+If you are running your own node. It's also possible to enable them by editing  `~/.osmosisd/config/app.toml`: 
+
+* `grpc.enable = true|false` field defines if the gRPC server should be enabled. Defaults to `true`.
+* `grpc.address = {string}` field defines the address (really, the port, since the host should be kept at `0.0.0.0`) the server should bind to. Defaults to `0.0.0.0:9090`.
+
+
+
+### Grpc endpoints
+An overview of all available gRPC endpoints shipped with Osmosis is available in the [Osmosis Protobuf documentation](https://buf.build/osmosis-labs/osmosis). There is also a Cosmos SDK is [Protobuf documentation](https://buf.build/cosmos/cosmos-sdk).
+
+You can send requests to the gRPC server using a gRPC client such as [grpcurl](#grpcurl) or from [Buf Studio](./interact-grpc-buf-studio).
+
+
+Since the code generation library largely depends on your own tech stack, we will only present three alternatives:
+
+
+
+<Section title="Frontend SDK Libraries & Utilities" id="web-sdks" hasSubSections >
+
+   <Section>
+  <Card
+    title="grpcurl"
+    description="Ideal for generic debugging and testing"
+    to="/apis/grpc/interact-grpc-curl"
+    icon={<Guide />}
+    svgFile="/icons/go_osmo.svg"
+  />
+  <Card
+    title="Buf Studio"
+    description="An interactive web UI for all the gRPC and Protobuf services"
+    to="/apis/grpc/interact-grpc-buf-studio"
+    icon=""
+    svgFile="/icons/buf.svg"
+  />
+  <Card
+    title="gRPC Go"
+    description="gRPC inside a Go program"
+    to="/apis/grpc/interact-grpc-go"
+    icon={<Guide />}
+    svgFile="/icons/go.svg"
+  />
+
+ 
+  </Section>
+
+  </Section>
+
+
+## Generating docs
+
+```
+brew install protobuf
+brew install protoc-gen-go-grpc
+```
