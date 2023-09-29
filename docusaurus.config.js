@@ -48,7 +48,7 @@ const SECTIONS = [
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Sentinel Docs',
+  title: 'Sentinel',
   tagline: 'Build on the leading decentralized VPN. 🚀',
   // TODO: Update base url
   url: 'https://docs.sentinel.co',
