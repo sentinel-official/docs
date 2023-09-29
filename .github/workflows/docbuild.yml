@@ -2,7 +2,7 @@ name: Build and Deploy Docs Beta Branch
 on:
   push:
     branches:
-      - main
+      - master
   workflow_dispatch:
 jobs:
   build-and-deploy:

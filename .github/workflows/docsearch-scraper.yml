@@ -2,7 +2,7 @@ name: Scrape Docs Site
 on:
   push:
     branches:
-      - main
+      - master
   workflow_dispatch:
 jobs:
   scrape:
