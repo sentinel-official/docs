@@ -123,7 +123,7 @@ const config = {
       navbar: {
         // NOTE: hideOnScroll breaks on `/api`, enable when fixed
         // hideOnScroll: true,
-        title: 'SENTINEL DOCS',
+        title: 'SENTINEL',
         logo: {
           href: 'https://sentinel.co',
           src: '/logo/sentinel.svg',
