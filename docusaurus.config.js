@@ -172,41 +172,42 @@ const config = {
             position: 'right',
           },
           {
-            href: 'https://github.com/sentinel-official',
-            className: 'pseudo-icon github-icon',
+            label: 'Socials 👥',
+            type: 'dropdown',
             position: 'right',
-          },
-          {
-            href: 'https://discord.com/invite/mmAA8qF',
-            className: 'pseudo-icon discord-icon',
-            position: 'right',
-          },
-          {
-            href: 'https://twitter.com/sentinelvpn',
-            className: 'pseudo-icon x-icon',
-            position: 'right',
-          },
-          {
-            href: 'https://commonwealth.im/sentinel/',
-            className: 'pseudo-icon commonwealth-icon',
-            position: 'right',
-          },
-          {
-            href: 'https://medium.com/@sentinel',
-            className: 'pseudo-icon medium-icon',
-            position: 'right',
-          },
-          {
-            href: 'https://t.me/sentinel_co',
-            className: 'pseudo-icon telegram-icon',
-            position: 'right',
+            items: [
+              {
+                href: 'https://github.com/sentinel-official',
+                label: 'GitHub',
+              },
+              {
+                href: 'https://discord.com/invite/mmAA8qF',
+                label: 'Discord',
+              },
+              {
+                href: 'https://x.com/sentinelvpn',
+                label: 'X/Twitter',
+              },
+              {
+                href: 'https://commonwealth.im/sentinel/',
+                label: 'Commonwealth',
+              },
+              {
+                href: 'https://medium.com/@sentinel',
+                label: 'Medium',
+              },
+              {
+                href: 'https://t.me/sentinel_co',
+                label: 'Telegram',
+              },
+            ],
           },
           {
             type: 'search',
             position: 'right',
           },
           {
-            label: 'Node Map Explorer',
+            label: 'Node Explorer',
             href: 'https://map.sentinel.co',
             position: 'right',
             className: 'dev-portal-signup dev-portal-link',
@@ -216,7 +217,7 @@ const config = {
       },
       footer: {
         logo: {
-          href: '/',
+          href: 'http://sentinel.co',
           src: '/logo/sentinel-logo-light.svg',
           srcDark: '/logo/sentinel-logo-dark.svg',
           alt: 'Sentinel Docs',
@@ -239,7 +240,7 @@ const config = {
                 to: 'networks',
               },
               {
-                label: 'Node Map Explorer',
+                label: 'Node Explorer',
                 href: 'https://map.sentinel.co',
               },
             ],
