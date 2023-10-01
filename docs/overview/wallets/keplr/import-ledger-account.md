@@ -1,3 +1,7 @@
+---
+title: Import a Ledger account
+sidebar_position: 4
+---
 
 # Import a Ledger account
 
