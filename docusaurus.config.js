@@ -167,11 +167,6 @@ const config = {
             position: 'left',
           },
           {
-            label: 'Sentinel Website',
-            to: 'https://sentinel.co',
-            position: 'right',
-          },
-          {
             label: 'Socials 👥',
             type: 'dropdown',
             position: 'right',
@@ -207,8 +202,8 @@ const config = {
             position: 'right',
           },
           {
-            label: 'Node Explorer',
-            href: 'https://map.sentinel.co',
+            label: 'Sentinel.co',
+            href: 'https://sentinel.co',
             position: 'right',
             className: 'dev-portal-signup dev-portal-link',
           },
@@ -225,7 +220,7 @@ const config = {
         },
         links: [
           {
-            title: 'Product',
+            title: 'Docs',
             items: [
               {
                 label: 'Overview',
@@ -240,8 +235,8 @@ const config = {
                 to: 'networks',
               },
               {
-                label: 'Node Explorer',
-                href: 'https://map.sentinel.co',
+                label: 'Guides',
+                href: 'guides',
               },
             ],
           },
@@ -249,30 +244,26 @@ const config = {
             title: 'Resources',
             items: [
               {
-                label: 'GitHub',
-                href: 'https://github.com/sentinel-official',
+                label: 'dVPN Apps',
+                href: 'overview/apps',
               },
               {
-                label: 'Discord',
-                href: 'https://discord.com/invite/mmAA8qF',
+                label: 'GitHub',
+                href: 'https://github.com/sentinel-official',
               },
               {
                 label: 'Medium',
                 href: 'https://medium.com/@sentinel',
               },
               {
-                label: 'Guides',
-                href: 'guides',
+                label: 'Sentinel Website',
+                href: 'https://sentinel.co',
               },
             ],
           },
           {
             title: 'Community',
             items: [
-              {
-                label: 'Commonwealth',
-                href: 'https://commonwealth.im/sentinel/',
-              },
               {
                 label: 'Twitter',
                 href: 'https://twitter.com/sentinelvpn',
@@ -281,10 +272,18 @@ const config = {
                 label: 'Telegram',
                 href: 'https://t.me/sentinel_co',
               },
+              {
+                label: 'Discord',
+                href: 'https://discord.com/invite/mmAA8qF',
+              },
+              {
+                label: 'Commonwealth',
+                href: 'https://commonwealth.im/sentinel/',
+              },
             ],
           },
         ],
-        copyright: 'Copyright © Sentinel dVPN since 2017 - Built by Trinity Validator.',
+        copyright: "Copyright © Sentinel dVPN since 2017 - Built by <a href='https://trinityvalidator.com'>Trinity Validator</a>.",
       },
       prism: {
         theme: lightCodeTheme,

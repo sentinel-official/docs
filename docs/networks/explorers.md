@@ -7,7 +7,11 @@ sidebar_position: 5
 
 The explorers in the Cosmos ecosystem are rapidly growing. The following is a list of Sentinel explorers currently available. Please make sure to contribute to this page if any explorers are missing.
 
-## Mainnet
+### Node Explorers
+
+| Explorer Name | URL                                       |
+|---------------|-------------------------------------------|
+| Sentinel Map      | https://map.sentinel.co           |
 
 ### Block Explorers
 

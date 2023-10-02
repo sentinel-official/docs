@@ -1,5 +1,5 @@
 ---
-title: Available Wallets
+title: Wallets
 sidebar_position: 5.5
 ---
 import DocCardList from '@theme/DocCardList';
