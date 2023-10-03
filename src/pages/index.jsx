@@ -36,7 +36,7 @@ export default function Homepage() {
             <p>
             The Sentinel blockchain is a decentralized network, ran by 80+ validators and full nodes, with many front-ends and development teams on it. Explore our docs and examples to quickly learn, develop & integrate with the Sentinel blockchain.
             </p>
-            <DyteButton onClick={() => router.push('overview')}>
+            <DyteButton onClick={() => router.push('getting-started')}>
               Get Started &rarr;
             </DyteButton>
           </div>
@@ -45,19 +45,19 @@ export default function Homepage() {
             <Card
               title="What is Sentinel dVPN?"
               description="Sentinel is a decentralized virtual private network (dVPN) built on top of the Cosmos blockchain. It allows users to connect to the internet privately and securely by routing their traffic through a network of distributed nodes."
-              to="/overview/"
+              to="/getting-started/"
               icon={<SentinelCore />}
             />
             <Card
               title="The DVPN Token"
               description="The DVPN token is a governance token that allows staked token holders to decide the future of the protocol, including every implementation detail. "
-              to="/overview/dvpn"
+              to="/getting-started/dvpn"
               icon={<SentinelCore />}
             />
             <Card
               title="Whitepaper"
               description="For a comprehensive examination of this subject and a detailed analysis, please feel free to review our white paper, which is accessible."
-              to="/overview/whitepaper"
+              to="/getting-started/whitepaper"
               icon={<SentinelCore />}
             />
           </Section>
@@ -66,20 +66,20 @@ export default function Homepage() {
             <Card
               title="Download dVPN apps"
               description="A comprehensive list of decentralized solutions built on top of Sentinel blockchain. These solutions enable you to access hundreds of community-managed nodes worldwide, providing a private and secure gateway to the internet."
-              to="/overview/apps/"
+              to="/getting-started/apps/"
               icon={<Download />}
               svgFile=""
              />
             <Card
               title="Wallets"
               description="Learn about how to start using blockchain apps, stake your tokens and manage them in just one wallet."
-              to="/overview/wallets"
+              to="/getting-started/wallets"
               icon={<Wallet />}
             />
             <Card
               title="Growth DAO"
               description="The Sentinel Growth DAO aims to fund community initiatives and the development of potential VPNs to attract users and, ultimately, generate higher revenues for the Sentinel Network."
-              to="/overview/dao/"
+              to="/getting-started/dao/"
               icon={<GrowthDao />}
               svgFile=""
             />

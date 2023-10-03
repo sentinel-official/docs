@@ -36,7 +36,7 @@ function defineSection(section, options = {}) {
 }
 
 const SECTIONS = [
-  defineSection('overview'),
+  defineSection('getting-started'),
   defineSection('sentinel-core'),
   defineSection('networks'),
   defineSection('guides'),
@@ -134,8 +134,8 @@ const config = {
         },
         items: [
           {
-            label: 'Overview',
-            to: '/overview',
+            label: 'Getting Started',
+            to: '/getting-started',
             position: 'left',
           },
           {
@@ -172,16 +172,16 @@ const config = {
             position: 'right',
             items: [
               {
-                href: 'https://github.com/sentinel-official',
-                label: 'GitHub',
+                href: 'https://x.com/sentinelvpn',
+                label: 'X/Twitter',
+              },
+              {
+                href: 'https://t.me/sentinel_co',
+                label: 'Telegram',
               },
               {
                 href: 'https://discord.com/invite/mmAA8qF',
                 label: 'Discord',
-              },
-              {
-                href: 'https://x.com/sentinelvpn',
-                label: 'X/Twitter',
               },
               {
                 href: 'https://commonwealth.im/sentinel/',
@@ -190,10 +190,6 @@ const config = {
               {
                 href: 'https://medium.com/@sentinel',
                 label: 'Medium',
-              },
-              {
-                href: 'https://t.me/sentinel_co',
-                label: 'Telegram',
               },
             ],
           },
@@ -206,6 +202,11 @@ const config = {
             href: 'https://sentinel.co',
             position: 'right',
             className: 'dev-portal-signup dev-portal-link',
+          },
+          {
+            href: 'https://github.com/sentinel-official',
+            position: 'right',
+            className: 'pseudo-icon github-icon',
           },
         
         ],
@@ -223,8 +224,8 @@ const config = {
             title: 'Docs',
             items: [
               {
-                label: 'Overview',
-                href: 'overview',
+                label: 'Getting Started',
+                href: 'getting-started',
               },
               {
                 label: 'Developer Portal',
@@ -245,7 +246,7 @@ const config = {
             items: [
               {
                 label: 'dVPN Apps',
-                href: 'overview/apps',
+                href: 'getting-started/apps',
               },
               {
                 label: 'GitHub',
