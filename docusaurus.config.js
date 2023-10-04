@@ -184,6 +184,10 @@ const config = {
                 label: 'Discord',
               },
               {
+                href: 'https://www.reddit.com/r/dVPN/',
+                label: 'Reddit',
+              },
+              {
                 href: 'https://commonwealth.im/sentinel/',
                 label: 'Commonwealth',
               },

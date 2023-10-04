@@ -20,9 +20,9 @@ To contribute a change proposal, use the following workflow:
 6. Make sure all tests are passing locally.
 7. Next, rinse and repeat the following:
 
-    1. Commit your changes. Write a simple, straightforward commit message. To learn more, see [How to Write a Git Commit Message](https://chris.beams.io/posts/git-commit/).
-    2. Push your changes to your remote fork.
-    3. Create a PR on the Sentinel repository. There should be a PR template to help you do so.
-    4. Wait for your changes to be reviewed. If you are a maintainer, you can assign your PR to one or more reviewers. If you aren't a maintainer, one of the maintainers will assign a reviewer.
-    5. After you receive feedback from a reviewer, make the requested changes, commit them to your branch, and push them to your remote fork again.
-    6. Once approval is given, feel free to squash & merge!
+    - Commit your changes. Write a simple, straightforward commit message. To learn more, see [How to Write a Git Commit Message](https://chris.beams.io/posts/git-commit/).
+    - Push your changes to your remote fork.    
+    - Create a PR on the Sentinel repository. There should be a PR template to help you do so.
+    - Wait for your changes to be reviewed. If you are a maintainer, you can assign your PR to one or more reviewers. If you aren't a maintainer, one of the maintainers will assign a reviewer.
+    - After you receive feedback from a reviewer, make the requested changes, commit them to your branch, and push them to your remote fork again.
+    - Once approval is given, feel free to squash & merge!
