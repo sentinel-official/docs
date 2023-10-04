@@ -7,7 +7,9 @@ sidebar_position: 3
 
 Sentinel white paper provides an in-depth exploration of its crucial subjects, offering a thorough analysis to enhance your understanding of Sentinel's vision and its pivotal role in decentralizing the VPN industry.
 
+:::tip Download
 Please feel free to review our white paper, which is accessible **[HERE](whitepaper.pdf)**.
+:::
 
 The covered contents are as follows:
 
