@@ -135,7 +135,7 @@ const config = {
         items: [
           {
             label: 'Getting Started',
-            to: '/getting-started',
+            to: 'getting-started',
             position: 'left',
           },
           {
@@ -143,7 +143,7 @@ const config = {
             to: 'sentinel-core',
             position: 'left',
             // className: 'new-badge',
-            activeBaseRegex: '(.*ui-kit|.*web-core)',
+            //activeBaseRegex: '(.*ui-kit|.*web-core)',
           },
           {
             label: 'Networks',

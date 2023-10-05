@@ -69,20 +69,7 @@ const MULTI_SECTIONS = [
       description:
         'Guides to provide bandwidth and validate',
     }
-
   ],
-  [
-    {
-      name: 'Sentinel Core',
-      section: 'mobile-core',
-      description: 'Sentinel Chain Development documentation.',
-    },
-    {
-      name: 'Prebuilt SDK',
-      section: 'mobile-sdk',
-      description: 'Use our pre-built mobile SDK, ready to go',
-    }
-  ]
 ];
 
 export { SECTIONS, MULTI_SECTIONS };
