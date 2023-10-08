@@ -1,5 +1,5 @@
 ---
-title: (d)VPN
+title: VPN vs dVPN
 sidebar_position: 2.1
 ---
 

@@ -1,5 +1,5 @@
 ---
-title: (d)VPN
+title: VPN Protocols
 sidebar_position: 2.2
 ---
 
