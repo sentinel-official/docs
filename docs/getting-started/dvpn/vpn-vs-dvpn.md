@@ -15,7 +15,7 @@ A dVPN is not owned by 1 centralized organization and Sentinel’s code is 100% 
 
 As you can see with a dVPN there is no need to trust a centralized organization to be good as all that power is decentralized over the blockchain or different node owners. By using a dVPN you are free from the world, including the organization that used to provide you that freedom as a service.
 
-# dVPN Alliance
+## dVPN Alliance
 
 With a goal to set standards within the VPN industry and wider privacy sector that moves us towards a free internet for all Sentinel is one of the founders of the dVPN Alliance. All bodies, foundations, companies interested in human rights on the internet are welcome.
 
