@@ -3,8 +3,6 @@ title: VPN Protocols
 sidebar_position: 2.2
 ---
 
-# VPN Protocols
-
 ## V2Ray Networking Tool
 
 Interference, blocking and jamming technologies have been evolving along the years, making traditional VPN, SSH tunneling and other internet access methods gradually recognized. Because of this, great actors, interfere through all different kinds of measures and it’s becoming more and more difficult to access geo-banned websites, forcing development of evasive and masking internet technology. Welcome V2Ray!
@@ -23,13 +21,3 @@ Sentinel dVPN is making use of the V2Ray camouflage to package the traffic throu
 - Multiple platforms: V2Ray runs natively on Windows, Mac OS, Linux, etc. There is also third party support on mobile.
 
 You can find a lot more information on V2Ray on the Project V [website](https://www.v2ray.com/en).
-
-# dVPN Alliance
-
-With a goal to set standards within the VPN industry and wider privacy sector that moves us towards a free internet for all Sentinel is one of the founders of the dVPN Alliance. All bodies, foundations, companies interested in human rights on the internet are welcome.
-
-For more information on the dVPN Alliance visit this dedicated website: [https://dvpnalliance.org](https://dvpnalliance.org)
-
-If you want to get right into the core of this alliance visit the manifesto they have created: [https://dvpnalliance.org/manifesto](https://dvpnalliance.org/manifesto)
-
-![](../../../assets/dvpn-manifesto.png)
