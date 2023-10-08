@@ -2,7 +2,7 @@
 sidebar_position: 2.2
 ---
 
-# VPN Protocols
+## VPN Protocols
 
 ## V2Ray Networking Tool
 
