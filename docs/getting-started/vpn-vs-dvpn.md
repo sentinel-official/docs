@@ -36,7 +36,7 @@ Sentinel dVPN is making use of the V2Ray camouflage to package the traffic throu
 - Reverse proxy: General support of reverse proxy. Can be used to build tunnels to localhost.
 - Multiple platforms: V2Ray runs natively on Windows, Mac OS, Linux, etc. There is also third party support on mobile.
 
-You can find a lot more information on V2Ray on the Project V [https://www.v2ray.com/en](website).
+You can find a lot more information on V2Ray on the Project V [website](https://www.v2ray.com/en).
 
 # dVPN Alliance
 
