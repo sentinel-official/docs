@@ -3,9 +3,9 @@ title: VPN Protocols
 sidebar_position: 2.2
 ---
 
-## VPN Protocols
+# VPN Protocols
 
-### V2Ray Networking Tool
+## V2Ray Networking Tool
 
 Interference, blocking and jamming technologies have been evolving along the years, making traditional VPN, SSH tunneling and other internet access methods gradually recognized. Because of this, great actors, interfere through all different kinds of measures and it’s becoming more and more difficult to access geo-banned websites, forcing development of evasive and masking internet technology. Welcome V2Ray!
 
@@ -13,7 +13,7 @@ Several VPN protocols and proxies have been worked on to further strengthen priv
 
 Sentinel dVPN is making use of the V2Ray camouflage to package the traffic through the firewall with common HTTPS/TLS, which greatly reduces the possibility of V2Ray nodes being blocked or interfered with, while providing a stable Internet experience. V2Ray itself is not a protocol or circumvention system by itself. Rather, as Sentinel dVPN is an ecosystem for dVPN applications, so is V2Ray an open-source framework that allows for one or more proxies to run, with various layered proxy protocols, transports, and obfuscation.
 
-### V2Ray features
+## V2Ray features
 
 - Multiple inbound/outbound proxies: one V2Ray instance supports in parallel multiple inbound and outbound protocols. Each protocol works independently.
 - Customizable routing: incoming traffic can be sent to different outbounds based on routing configuration. It is easy to route traffic by target region or domain.
@@ -24,7 +24,7 @@ Sentinel dVPN is making use of the V2Ray camouflage to package the traffic throu
 
 You can find a lot more information on V2Ray on the Project V [website](https://www.v2ray.com/en).
 
-## dVPN Alliance
+# dVPN Alliance
 
 With a goal to set standards within the VPN industry and wider privacy sector that moves us towards a free internet for all Sentinel is one of the founders of the dVPN Alliance. All bodies, foundations, companies interested in human rights on the internet are welcome.
 
