@@ -51,7 +51,7 @@ export default function Homepage() {
             <Card
               title="The DVPN Token"
               description="The DVPN token is a governance token that allows staked token holders to decide the future of the protocol, including every implementation detail. "
-              to="/getting-started/dvpn"
+              to="/getting-started/dvpn-token"
               icon={<SentinelCore />}
             />
             <Card
