@@ -152,7 +152,7 @@ const config = {
             // className: 'new-badge',
           },
           {
-            label: 'Deploy',
+            label: 'Run a Node',
             to: 'node-setup',
             position: 'left',
           },
