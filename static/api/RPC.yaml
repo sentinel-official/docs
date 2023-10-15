@@ -1,8 +1,8 @@
 openapi: 3.0.0
 info:
-  title: Osmosis Tendermint RPC
+  title: Sentinel RPC
   contact:
-    name: Osmosis Tendermint RPC
+    name: Sentinel RPC
     url: https://github.com/tendermint/tendermint/issues/new/choose
   description: |
     Tendermint supports the following RPC protocols:
@@ -59,12 +59,8 @@ info:
     name: Apache 2.0
     url: https://github.com/tendermint/tendermint/blob/master/LICENSE
 servers:
-  - url: https://rpc.osmosis.zone
-    description: Osmosis mainnet node to interact with the Tendermint RPC
-  - url: https://rpc.testnet.osmosis.zone
-    description: Osmosis testnet node to interact with the Tendermint RPC
-  - url: https://rpc.cosmos.network
-    description: Cosmos mainnet node to interact with the Tendermint RPC
+  - url: https://rpc.sentinel.co
+    description: Sentinel Tendermint RPC
   - url: http://localhost:26657
     description: Interact with the Tendermint RPC locally on your device
 tags:

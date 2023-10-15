@@ -74,9 +74,9 @@ export default function Home() {
         <link rel="stylesheet" href="/assets/css/elements.min.css" />
       </Head>
       <div className="header">
-        <h2>Osmosis {currentVersion} endpoints</h2>
+        <h2>Sentinel {currentVersion} endpoints</h2>
         <div className="aside">
-          <a className="navbar__item navbar__link dev-portal-signup dev-postman-link"  target='_blank' href='https://www.postman.com/flight-astronomer-81853429/workspace/osmosis' rel="noreferrer">Open Postman Collection</a>
+          {/* <a className="navbar__item navbar__link dev-portal-signup dev-postman-link"  target='_blank' href='https://www.postman.com/flight-astronomer-81853429/workspace/osmosis' rel="noreferrer">Open Postman Collection</a> */}
 
           <DyteTooltip
             placement="bottom"
@@ -94,9 +94,9 @@ export default function Home() {
               defaultValue={currentVersion}
               values={[
                 { name: 'RPC', id: 'RPC' },
-                { name: 'LCD', id: 'LCD' },
-                { name: 'DATA', id: 'DATA' },
-                { name: 'IBCGO', id: 'IBCGO' },
+                // { name: 'LCD', id: 'LCD' },
+                // { name: 'DATA', id: 'DATA' },
+                // { name: 'IBCGO', id: 'IBCGO' },
               ]}
               onValueChange={(version) => {
                 if (showV2Tooltip) {

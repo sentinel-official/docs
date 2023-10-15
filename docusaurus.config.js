@@ -43,7 +43,7 @@ const SECTIONS = [
   defineSection('node-setup'),
   defineSection('node-akash'),
   defineSection('validator-setup'),
-  // defineSection('apis'),
+  defineSection('apis'),
 ];
 
 /** @type {import('@docusaurus/types').Config} */
@@ -163,11 +163,11 @@ const config = {
           },
           {
             label: 'API',
-            to: '#',
+            to: 'api?v=RPC',
             position: 'left',
           },
           {
-            label: 'Socials 👥',
+            label: 'Connect 👥',
             type: 'dropdown',
             position: 'right',
             items: [

@@ -12,8 +12,8 @@ These following API's are recommended for development purposes. For maximun cont
 |        | Mainnet                                     |
 |---------------|---------------------------------------------|
 | Chain ID      | sentinelhub-2                                   |
-| Endpoints     | gRPC endpoint: `grpc.sentinel.co:9090`<br/> RPC-gateway: `https://rpc.sentinel.co:443` <br/> LCD endpoint: `http://lcd.sentinel.co:1317` |
+| Endpoints     | RPC-gateway: `https://rpc.sentinel.co` <br/> gRPC endpoint: `grpc.sentinel.co:9090`<br/> LCD endpoint: `https://lcd.sentinel.co` |
 | Explorer      | http://lcd.sentinel.co:1317                   | http://lcd.sentinel.co:1317   | http://lcd.sentinel.co:1317             |
-| API Reference | Visit [API Reference](#) |
+| API Reference |  [RPC API Reference](/api?v=RPC) |
 | Swagger       | Not available |
 | Faucet        | Not Available                                   |
