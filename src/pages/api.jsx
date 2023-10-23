@@ -94,7 +94,7 @@ export default function Home() {
               defaultValue={currentVersion}
               values={[
                 { name: 'RPC', id: 'RPC' },
-                // { name: 'LCD', id: 'LCD' },
+                { name: 'LCD', id: 'LCD' },
                 // { name: 'DATA', id: 'DATA' },
                 // { name: 'IBCGO', id: 'IBCGO' },
               ]}
