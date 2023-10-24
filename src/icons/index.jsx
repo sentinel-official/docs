@@ -9,6 +9,7 @@ export { default as KeysIcon } from './KeysIcon';
 export { default as SentinelCore } from './SentinelCore';
 export { default as Network } from './Network';
 export { default as Createapp } from './Createapp';
+export { default as Cosmoskit } from './Cosmoskit';
 export { default as Guides } from './Guide';
 export { default as Tscodegen } from './Tscodegen';
 export { default as Transaction } from './Transaction';

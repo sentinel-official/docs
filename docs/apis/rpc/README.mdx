@@ -8,46 +8,25 @@ import {
   HomepageSection as Section,
 } from '../../../src/components/HomepageComponents';
 import Link from '@docusaurus/Link';
-import {
-  ChainIcon,
-  TerminalIcon,
-  ModulesIcon,
-  RelayerIcon,
-  AssetIcon,
-  Createapp,
-  Cosmoskit,
-  Tscodegen,
-  Chain
-} from '../../../src/icons';
 
 
-## Interacting with the RPC endpoints
+## RPC Specifications
 
-
-
-### RPC Specifications
-
-
-<Section title="Frontend SDK Libraries & Utilities" id="web-sdks" hasSubSections >
-
-   <Section>
-  <Card
-    title="RPC ednpoints"
-    description="Osmosis Tendermint RPC endpoints"
-    to="/api/?v=RPC"
-    icon={<Tscodegen />}
-    svgFile="/icons/api.svg"
-  />
-  <Card
-    title="Getting Started"
-    description="How to interact with RPC endpoints"
-    to="/apis/rpc/interact-rpc"
-    icon={<Tscodegen />}
-    svgFile="/icons/api.svg"
-  />
+  <Section>
+    <Card
+      title="RPC endpoints"
+      description="Sentinel Tendermint RPC endpoints"
+      to="/api/?v=RPC"
+      icon=""
+      svgFile="/icons/api.svg"
+    />
   </Section>
 
-  </Section>
+## Interacting with RPC endpoints
+
+As shown on the RPC specifications, there are different endpoints to communicate with the Sentinel chain. Unlike the LCD rest api, the RPC endpoints provide generic endpoints to communicate with the various modules available. For example the [ABCI Query](/api?v=RPC#/operations/abci_query) allows you the query different data from Sentinel.
+
+For more information please read [generating, signing and broadcasting transactions](https://docs.cosmos.network/v0.46/run-node/txs.html) on the cosmos-sdk docs.
 
 
 ## Generating docs

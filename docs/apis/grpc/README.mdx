@@ -23,10 +23,10 @@ import {
 
 ## Interacting with the gRPC Server
 
-As described on the [Network page](../../networks). A gRPC endpoint is availble on the public Osmosis nodes so that you can start playing and intreacting with it right away.
+A gRPC endpoint is availble on the public Sentinel Nodes so that you can start playing and intreacting with it right away.
 
 ## Enabling gRPC on a node
-If you are running your own node. It's also possible to enable them by editing  `~/.osmosisd/config/app.toml`: 
+If you are running your own node. It's also possible to enable them by editing  `~/.sentinelhub/config/app.toml`: 
 
 * `grpc.enable = true|false` field defines if the gRPC server should be enabled. Defaults to `true`.
 * `grpc.address = {string}` field defines the address (really, the port, since the host should be kept at `0.0.0.0`) the server should bind to. Defaults to `0.0.0.0:9090`.
@@ -34,9 +34,9 @@ If you are running your own node. It's also possible to enable them by editing  
 
 
 ### Grpc endpoints
-An overview of all available gRPC endpoints shipped with Osmosis is available in the [Osmosis Protobuf documentation](https://buf.build/osmosis-labs/osmosis). There is also a Cosmos SDK is [Protobuf documentation](https://buf.build/cosmos/cosmos-sdk).
+An overview of all available gRPC endpoints shipped with Sentinel will **soon** be available in the Sentinel Protobuf documentation. There is also a Cosmos SDK in [Protobuf documentation](https://buf.build/cosmos/cosmos-sdk).
 
-You can send requests to the gRPC server using a gRPC client such as [grpcurl](#grpcurl) or from [Buf Studio](./interact-grpc-buf-studio).
+You can send requests to the gRPC server using a gRPC client such as [grpcurl](https://github.com/fullstorydev/grpcurl) or from Buf Studio once implemented.
 
 
 Since the code generation library largely depends on your own tech stack, we will only present three alternatives:
@@ -44,34 +44,30 @@ Since the code generation library largely depends on your own tech stack, we wil
 
 
 <Section title="Frontend SDK Libraries & Utilities" id="web-sdks" hasSubSections >
-
-   <Section>
-  <Card
-    title="grpcurl"
-    description="Ideal for generic debugging and testing"
-    to="/apis/grpc/interact-grpc-curl"
-    icon={<Guide />}
-    svgFile="/icons/go_osmo.svg"
-  />
-  <Card
-    title="Buf Studio"
-    description="An interactive web UI for all the gRPC and Protobuf services"
-    to="/apis/grpc/interact-grpc-buf-studio"
-    icon=""
-    svgFile="/icons/buf.svg"
-  />
-  <Card
-    title="gRPC Go"
-    description="gRPC inside a Go program"
-    to="/apis/grpc/interact-grpc-go"
-    icon={<Guide />}
-    svgFile="/icons/go.svg"
-  />
-
- 
+  <Section>
+    <Card
+      title="grpcurl"
+      description="Ideal for generic debugging and testing"
+      to="/apis/grpc/interact-grpc-curl"
+      icon={<Guide />}
+      svgFile="/icons/grpcurl.svg"
+    />
+    <Card
+      title="Buf Studio (not yet implemented)"
+      description="An interactive web UI for all the gRPC and Protobuf services"
+      to="/apis/grpc/interact-grpc-buf-studio"
+      icon=""
+      svgFile="/icons/buf.svg"
+    />
+    <Card
+      title="gRPC Go"
+      description="gRPC inside a Go program"
+      to="/apis/grpc/interact-grpc-go"
+      icon={<Guide />}
+      svgFile="/icons/go.svg"
+    />
   </Section>
-
-  </Section>
+</Section>
 
 
 ## Generating docs

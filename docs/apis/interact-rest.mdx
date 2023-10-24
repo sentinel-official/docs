@@ -5,7 +5,7 @@ sidebar_position: 4
 
 ## Using the REST Endpoints
 
-All gRPC services on the Cosmos SDK  and Osmosis are made available for more convenient REST-based queries through gRPC-gateway. The format of the URL path is based on the Protobuf service method's full-qualified name, but may contain small customizations so that final URLs look more idiomatic. For example, the REST endpoint for the `cosmos.bank.v1beta1.Query/AllBalances` method is `GET /cosmos/bank/v1beta1/balances/{address}`. Request arguments are passed as query parameters.
+All gRPC services on the Cosmos SDK  and Sentinel are made available for more convenient REST-based queries through gRPC-gateway. The format of the URL path is based on the Protobuf service method's full-qualified name, but may contain small customizations so that final URLs look more idiomatic. For example, the REST endpoint for the `cosmos.bank.v1beta1.Query/AllBalances` method is `GET /cosmos/bank/v1beta1/balances/{address}`. Request arguments are passed as query parameters.
 
 As a concrete example, the `curl` command to make balances request is:
 
@@ -13,7 +13,7 @@ As a concrete example, the `curl` command to make balances request is:
 curl \
     -X GET \
     -H "Content-Type: application/json" \
-    https://lcd.osmosis.zone/cosmos/bank/v1beta1/balances/$MY_ADDRESS
+    https://lcd.sentinel.co/cosmos/bank/v1beta1/balances/<your_address>
 ```
 
 The list of all available REST endpoints is available as a Swagger specification file, it can be viewed at `localhost:1317/swagger`. Make sure that the `api.swagger` field is set to true in your [`app.toml`](../run-node/run-node.md#configuring-the-node-using-apptoml) file.
@@ -26,8 +26,8 @@ Querying for historical state is done using the HTTP header `x-cosmos-block-heig
 curl \
     -X GET \
     -H "Content-Type: application/json" \
-    -H "x-cosmos-block-height: 279256"
-    http://localhost:1317/cosmos/bank/v1beta1/balances/$MY_VALIDATOR
+    -H "x-cosmos-block-height: 13000000"
+    http://localhost:1317/cosmos/bank/v1beta1/balances/<your_validator>
 ```
 
 Assuming the state at that block has not yet been pruned by the node, this query should return a non-empty response.

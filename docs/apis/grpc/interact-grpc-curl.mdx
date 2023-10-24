@@ -8,13 +8,14 @@ sidebar_position: 1
 
 [grpcurl](https://github.com/fullstorydev/grpcurl) is like `curl` but for gRPC. It is also available as a Go library, but we will use it only as a CLI command for debugging and testing purposes. Follow the instructions in the previous link to install it.
 
-Assuming you already installed osmosisd with the [installer](../osmosis-core/osmosisd), you should be able to run the following command to list the Protobuf services available (you can replace `grpc.osmosis.zone:9000` by the gRPC server endpoint of another node such as the testnet, another provider or your own node.
+Assuming you already installed sentinelhub, you should be able to run the following command to list the Protobuf services available (you can replace `grpc.sentinel.co:9090` by the gRPC server endpoint of another node such as another provider or your own node).
 
 Listing all the methods from the mainnet
 
 ```bash
-grpcurl -plaintext grpc.osmosis.zone:9090 list
+grpcurl -plaintext grpc.sentinel.co:9090 list
 ```
+
 Output will look like: 
 ```
 cosmos.auth.v1beta1.Query
@@ -25,7 +26,9 @@ cosmos.base.reflection.v2alpha1.ReflectionService
 cosmos.base.tendermint.v1beta1.Service
 cosmos.distribution.v1beta1.Query
 cosmos.evidence.v1beta1.Query
+cosmos.feegrant.v1beta1.Query
 cosmos.gov.v1beta1.Query
+cosmos.mint.v1beta1.Query
 cosmos.params.v1beta1.Query
 cosmos.slashing.v1beta1.Query
 cosmos.staking.v1beta1.Query
@@ -33,41 +36,31 @@ cosmos.tx.v1beta1.Service
 cosmos.upgrade.v1beta1.Query
 cosmwasm.wasm.v1.Query
 grpc.reflection.v1alpha.ServerReflection
+ibc.applications.fee.v1.Query
+ibc.applications.interchain_accounts.controller.v1.Query
 ibc.applications.interchain_accounts.host.v1.Query
 ibc.applications.transfer.v1.Query
 ibc.core.channel.v1.Query
 ibc.core.client.v1.Query
 ibc.core.connection.v1.Query
-osmosis.epochs.v1beta1.Query
-osmosis.gamm.v1beta1.Query
-osmosis.incentives.Query
-osmosis.lockup.Query
-osmosis.mint.v1beta1.Query
-osmosis.poolincentives.v1beta1.Query
-osmosis.superfluid.Query
-osmosis.tokenfactory.v1beta1.Query
-osmosis.twap.v1beta1.Query
-osmosis.txfees.v1beta1.Query
-testdata.Query
+sentinel.deposit.v1.QueryService
+sentinel.node.v2.QueryService
+sentinel.plan.v2.QueryService
+sentinel.provider.v2.QueryService
+sentinel.session.v2.QueryService
+sentinel.subscription.v2.QueryService
+sentinel.swap.v1.QueryService
 ```
 
-
-You should see a list of gRPC services, like `cosmos.bank.v1beta1.Query`. This is called reflection, which is a Protobuf endpoint returning a description of all available endpoints. Each of these represents a different Protobuf service, and each service exposes multiple RPC methods you can query against.
+You should see a list of gRPC services, such as `cosmos.bank.v1beta1.Query`. This is called reflection, which is a Protobuf endpoint returning a description of all available endpoints. Each of these represents a different Protobuf service, and each service exposes multiple RPC methods you can query against.
 
 In order to get a description of the service you can run the following command:
 
 ```bash
 grpcurl  -plaintext \
-    grpc.osmosis.zone:9090 \
-    describe osmosis.gamm.v1beta1.Query               
+    grpc.sentinel.co:9090 \
+    describe sentinel.node.v2.QueryService               
 ```
-
-It's also possible to execute an RPC call to query the node for information:
-
-```bash
-grpcurl -plaintext grpc.dev-osmosis.zone:443 osmosis.gamm.v1beta1.Query.Pools
-```
-
 
 The list of all available gRPC query endpoints and API exploration is possible with the help of buf studio. 
 
@@ -79,11 +72,10 @@ You may also query for historical data by passing some [gRPC metadata](https://g
 ```bash
 grpcurl \
     -plaintext \
-    -H "x-cosmos-block-height: 6312618" \
-    -d '{"address":"osmo19a7pmytd9vk26l57q8chacuprsmx05g23mg6yc"}' \
-    grpc.osmosis.zone:9090 \
+    -H "x-cosmos-block-height: 13000000" \
+    -d '{"address":"sent1uddk4mfqq3uyu2yzhym8spheqatqs30fzh5tmr"}' \
+    grpc.sentinel.co:9090 \
     cosmos.bank.v1beta1.Query/AllBalances
 ```
-Note: This endpoint might change to  grpc.osmosis.zone:443 in the near future. 
 
 Assuming the state at that block has not yet been pruned by the node, this query should return a non-empty response.

@@ -162,8 +162,8 @@ const config = {
             position: 'left',
           },
           {
-            label: 'API',
-            to: 'api?v=RPC',
+            label: 'API Reference',
+            to: 'apis',
             position: 'left',
           },
           {

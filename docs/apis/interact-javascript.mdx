@@ -12,7 +12,6 @@ import {
   ChainIcon,
   TerminalIcon,
   ModulesIcon,
-  RelayerIcon,
   AssetIcon,
   Createapp,
   Cosmoskit,
@@ -21,22 +20,20 @@ import {
 } from '../../src/icons';
 
 
-<Section title="Interacting with Osmosis with Javascript" id="web-sdks" hasSubSections >
+<Section title="Interacting with Sentinel with Javascript" id="web-sdks" hasSubSections >
 
    <Section>
   <Card
     title="Cosmos Kit"
     description="A wallet adapter for react with mobile WalletConnect support for the Cosmos ecosystem."
     to="https://github.com/cosmology-tech/cosmos-kit"
-    icon=""
-    svgFile="/icons/bag.svg"
+    icon={<Cosmoskit />}
   />
   <Card
     title="Create Cosmos App"
     description="Set up a modern Cosmos app by running one command"
     to="https://github.com/cosmology-tech/create-cosmos-app"
     icon={<Createapp />}
-    svgFile="/icons/create-cosmos-app.svg"
   />
   <Card
     title="Chain Registry"
@@ -50,7 +47,6 @@ import {
     description="The quickest and easiest way to interact with CosmWasm Contracts"
     to="https://github.com/CosmWasm/ts-codegen"
     icon={<Tscodegen />}
-    svgFile="/icons/tscodegen.svg"
   />   
   
 
