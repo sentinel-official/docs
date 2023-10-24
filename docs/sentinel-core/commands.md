@@ -28,6 +28,29 @@ Collects genesis transactions and outputs them to `genesis.json`.
 sentinelhub collect-gentxs
 ```
 
+### `config`
+
+```bash
+sentinelhub config
+```
+
+<details><summary>Output</summary>
+<p>
+
+#### This is the output of `sentinelhub config`
+```json
+{
+	"chain-id": "",
+	"keyring-backend": "os",
+	"output": "text",
+	"node": "tcp://localhost:26657",
+	"broadcast-mode": "sync"
+}
+```
+
+</p>
+</details>
+
 ### `debug`
 
 Helps debug the application.
@@ -126,12 +149,62 @@ sentinelhub start
 
 ### `status`
 
-Displays the status of a remote node.
+Displays the status of a remote node (default "tcp://localhost:26657").
 
 **Syntax**
 ```bash
 sentinelhub status
 ```
+
+<details><summary>Output</summary>
+<p>
+
+#### This is the output of `sentinelhub status`
+
+```json
+{
+   "NodeInfo":{
+      "protocol_version":{
+         "p2p":"8",
+         "block":"11",
+         "app":"0"
+      },
+      "id":"fd1c929dc0c2ce6418b6ed31747469de6c7b15bb",
+      "listen_addr":"tcp://0.0.0.0:26656",
+      "network":"sentinelhub-2",
+      "version":"0.34.27",
+      "channels":"40202122233038606100",
+      "moniker":"2-private-node",
+      "other":{
+         "tx_index":"on",
+         "rpc_address":"tcp://0.0.0.0:26657"
+      }
+   },
+   "SyncInfo":{
+      "latest_block_hash":"64012F64E1BD3CDF52E8A68EE4CB8BA42740C7550704800536109DF8C6F24E9A",
+      "latest_app_hash":"B9648EC2A213E81D9FE42932F69113FA9F0965FA3DD0C4E4D15DDB7940DC0C8F",
+      "latest_block_height":"12638588",
+      "latest_block_time":"2023-09-10T02:09:42.963271871Z",
+      "earliest_block_hash":"11E60037E22F6ABDF29DE851063E4C0E0A34E4D3D067EDA55B1674A0257E7D03",
+      "earliest_app_hash":"E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "earliest_block_height":"901801",
+      "earliest_block_time":"2021-05-29T14:30:00Z",
+      "catching_up":false
+   },
+   "ValidatorInfo":{
+      "Address":"6D2F88F51486E74768A85DA4E375F3551F2762A8",
+      "PubKey":{
+         "type":"tendermint/PubKeyEd25519",
+         "value":"S+wi725X8wyDhgEmRlR0xnjuxBDntlBGsLLMmpIFXiY="
+      },
+      "VotingPower":"0"a
+   }
+}
+
+```
+
+</p>
+</details>
 
 ### `tendermint`
 
