@@ -23,4 +23,4 @@ For more information on the dVPN Alliance visit this dedicated website: [https:/
 
 If you want to get right into the core of this alliance visit the manifesto they have created: [https://dvpnalliance.org/manifesto](https://dvpnalliance.org/manifesto)
 
-![](../../assets/dvpn-manifesto.png)
+![](/img/getting-started/dvpn-manifesto.png)

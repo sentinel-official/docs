@@ -9,7 +9,7 @@ sidebar_position: 5
 
 Staked DVPN holders are eligible to vote on governance proposals. Browse the available proposals, and use one's staked tokens to cast a vote.
 
-![](../assets/voting.png)
+![](/img/getting-started/voting.png)
 
 ## Creating a Proposal
 

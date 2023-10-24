@@ -5,4 +5,4 @@ sidebar_position: 3
 
 # Roadmap
 
-![](../assets/roadmap.png)
+![](/img/getting-started/roadmap.png)

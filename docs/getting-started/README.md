@@ -13,7 +13,7 @@ Sentinel is a network of independent dVPN (decentralized virtual private network
 
 Apart from releasing and maintaining the native Sentinel application on Desktop, Android and iOS other organizations will be able to utilize the power of the Sentinel blockchain by using the Sentinel Protocol. Sentinel strongly encourages other organizations to white-label the Sentinel protocol as the code is fully open sourced and transparant.
 
-![](../assets/welcome.jpg)
+![](/img/getting-started/welcome.jpg)
 
 
 ## Why Sentinel?

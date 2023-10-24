@@ -95,8 +95,6 @@ export default function Home() {
               values={[
                 { name: 'RPC', id: 'RPC' },
                 { name: 'LCD', id: 'LCD' },
-                // { name: 'DATA', id: 'DATA' },
-                // { name: 'IBCGO', id: 'IBCGO' },
               ]}
               onValueChange={(version) => {
                 if (showV2Tooltip) {
