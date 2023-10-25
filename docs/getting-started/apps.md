@@ -41,7 +41,7 @@ The following dVPN apps are built on top of the Sentinel Protocol. This is why w
     />
     <Card
         title="Meile dVPN"
-        description=" Meile is a decentralized VPN solution built on top of the Sentinel Blockchain. Utilizing blockchain technology alongside community hosted decentralized nodes creates a private and censorship resistant network for everyone."
+        description=" Meile is a decentralized VPN solution built on top of the Sentinel Blockchain. Utilizing blockchain technology alongside community hosted decentralized nodes creates a private and censorship resistant network for everyone. \n\n Windows - Mac - Linux"
         to="https://mathnodes.com/index.php/meile-dvpn-client-linux-os-x/"
         icon={<Meile />}
         svgFile=""
