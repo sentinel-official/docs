@@ -4,7 +4,7 @@ description: About dVPN Launcher
 sidebar_position: 2
 ---
 
-# dVPN Launcher
+# dVPN Launcher (work in progress)
 
 dVPN launcher is based on HandyOSS which was created by HandyHost, but is now being maintained by a community member 0xbas3d under the name "Frog dVPN launcher".
 Find the latest release on [GitHub](https://github.com/0xbas3d/HandyHost).
