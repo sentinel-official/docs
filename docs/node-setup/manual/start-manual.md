@@ -1,12 +1,12 @@
 ---
-title: Requirements
+title: Overview & Requirements
 description: This guide will lead you to setup a dVPN node manually
 sidebar_position: 1
 ---
 
 # Start Manual Setup
 
-### Requirements
+### Overview & Requirements
 
 This guide is intended for anyone who has some basic Linux experience, wishes to contribute to the Sentinel network and share their bandwidth by setting up a dVPN node manually that utilizes the Sentinel protocol. Each node owner can set their own price for customers using their bandwidth.
 
