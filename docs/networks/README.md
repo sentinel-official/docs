@@ -48,7 +48,7 @@ An Overview of Sentinel Network, including Endpoints, Asset Info, Chain Registry
     <Card
         title="API Reference"
         description="Sentinel RPC and LCD API Reference"
-        to=""
+        to="/apis"
         icon={<APIReferenceIcon />}
     />
 </Section>

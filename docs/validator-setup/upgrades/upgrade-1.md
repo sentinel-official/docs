@@ -5,9 +5,9 @@ sidebar_position: 2
 
 # Software upgrade - 1
 
-???+ warning "Warning"
-
-    At block height `1272000` the Blockchain will stop producing the blocks. Follow the next steps only after the blockchain halt!
+:::danger Warning
+At block height `1272000` the Blockchain will stop producing the blocks. Follow the next steps only after the blockchain halt!
+:::
 
 ## Stop the node
 
@@ -46,17 +46,17 @@ sidebar_position: 2
     sentinelhub version --long
     ```
 
-    ???+ note "Note"
-
-        Commit hash must be `600fd5f8b71f60332656b826df2e3fa3bc6c5e5e`
+    :::note
+    Commit hash must be `600fd5f8b71f60332656b826df2e3fa3bc6c5e5e`
+    :::
 
 2. Start the `sentinelhub` process
 
 ## In case the upgrade fails
 
-???+ warning "Warning"
-
-    Follow the next steps in case the upgrade fails!
+:::danger Warning
+Follow the next steps in case the upgrade fails!
+:::
 
 1. Install the Sentinel Hub software `v0.6.3`
 

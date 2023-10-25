@@ -19,9 +19,9 @@ Hardfork upgrade from blockchain `sentinelhub-1` to `sentinelhub-2`
 
 5. Wait until the blockchain halt
 
-???+ warning "Warning"
-
-    Follow the next steps only after the blockchain halt!
+:::warning Warning
+Follow the next steps only after the blockchain halt!
+:::
 
 ## Export the state
 
@@ -31,9 +31,9 @@ Hardfork upgrade from blockchain `sentinelhub-1` to `sentinelhub-2`
     sentinelhubd version --long
     ```
 
-    ???+ note "Note"
-
-        Commit hash must be `1aed4ffff291f6cec7e3768806bebef4e9f4442c`
+    :::note Note
+    Commit hash must be `1aed4ffff291f6cec7e3768806bebef4e9f4442c`
+    :::
 
 2. Export the Blockchain state
 
@@ -49,9 +49,9 @@ Hardfork upgrade from blockchain `sentinelhub-1` to `sentinelhub-2`
     jq -cSM '' ${HOME}/${HALT_HEIGHT}.json | sha256sum
     ```
 
-    ???+ note "Note"
-
-        Exported Genesis file hash must be `e519a0dbb7e7e177c72965c0f7cd8507a537548f56e696c44bd01360424137ad`
+    :::note Note
+    Exported Genesis file hash must be `e519a0dbb7e7e177c72965c0f7cd8507a537548f56e696c44bd01360424137ad`
+    :::
 
 ## Install the new software
 
@@ -80,9 +80,9 @@ Hardfork upgrade from blockchain `sentinelhub-1` to `sentinelhub-2`
     sentinelhub version --long
     ```
 
-    ???+ note "Note"
-
-        Commit hash must be `4cd6b2bb3609b6ca86414d50216568e90b847c28`
+    :::note Note
+    Commit hash must be `4cd6b2bb3609b6ca86414d50216568e90b847c28`
+    :::
 
 2. Migrate the exported Blockchain state
 
@@ -104,9 +104,9 @@ Hardfork upgrade from blockchain `sentinelhub-1` to `sentinelhub-2`
     jq -cSM '' ${HOME}/genesis.json | sha256sum
     ```
 
-    ???+ note "Note"
-
-        Migreated Genesis file hash must be `1dbcd7d58845b4b0696d31daafa2096bb3d729e51f8e8fa17e9e73eda1376382`
+    :::note Note
+    Migreated Genesis file hash must be `1dbcd7d58845b4b0696d31daafa2096bb3d729e51f8e8fa17e9e73eda1376382`
+    :::
 
 ## Setup
 
