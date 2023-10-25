@@ -23,14 +23,19 @@
       "selectors_key": "getting-started"
     },
     {
-      "url": "https://docs.sentinel.co/node-setup",
-      "tags": "node-setup",
-      "selectors_key": "node-setup"
+      "url": "https://docs.sentinel.co/node-setup/dvpn-launcher",
+      "tags": "dvpn-launcher",
+      "selectors_key": "dvpn-launcher"
     },
     {
-      "url": "https://docs.sentinel.co/node-akash",
-      "tags": "node-akash",
-      "selectors_key": "node-akash"
+      "url": "https://docs.sentinel.co/node-setup/cloudmos-on-akash/start-cloudmos-on-akash",
+      "tags": "start-cloudmos-on-akash",
+      "selectors_key": "start-cloudmos-on-akash"
+    },
+    {
+      "url": "https://docs.sentinel.co/node-setup/manual/start-manual",
+      "tags": "start-manual",
+      "selectors_key": "start-manual"
     },
     {
       "url": "https://docs.sentinel.co/validator-setup",
