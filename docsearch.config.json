@@ -23,19 +23,14 @@
       "selectors_key": "getting-started"
     },
     {
-      "url": "https://docs.sentinel.co/node-setup/dvpn-launcher",
-      "tags": "dvpn-launcher",
-      "selectors_key": "dvpn-launcher"
+      "url": "https://docs.sentinel.co/node-setup",
+      "tags": "node-setup",
+      "selectors_key": "node-setup"
     },
     {
-      "url": "https://docs.sentinel.co/node-setup/cloudmos-on-akash/start-cloudmos-on-akash",
-      "tags": "start-cloudmos-on-akash",
-      "selectors_key": "start-cloudmos-on-akash"
-    },
-    {
-      "url": "https://docs.sentinel.co/node-setup/manual/start-manual",
-      "tags": "start-manual",
-      "selectors_key": "start-manual"
+      "url": "https://docs.sentinel.co/node-akash",
+      "tags": "node-akash",
+      "selectors_key": "node-akash"
     },
     {
       "url": "https://docs.sentinel.co/validator-setup",
@@ -117,11 +112,11 @@
       "lvl6": "article h6",
       "text": "article p, article li, article td:last-child"
     },
-    "dvpn-launcher": {
+    "node-setup": {
       "lvl0": {
         "selector": "",
         "global": true,
-        "default_value": "dvpn-launcher"
+        "default_value": "node-setup"
       },
       "lvl1": "article h1",
       "lvl2": "article h2",
@@ -131,11 +126,11 @@
       "lvl6": "article h6",
       "text": "article p, article li, article td:last-child"
     },
-    "start-cloudmos-on-akash": {
+    "node-akash": {
       "lvl0": {
         "selector": "",
         "global": true,
-        "default_value": "start-cloudmos-on-akash"
+        "default_value": "node-akash"
       },
       "lvl1": "article h1",
       "lvl2": "article h2",
@@ -143,21 +138,8 @@
       "lvl4": "article h4",
       "lvl5": "article h5, article td:first-child",
       "lvl6": "article h6",
-      "text": "article p, article li, article td:last-child"
-    },
-    "start-manual": {
-      "lvl0": {
-        "selector": "",
-        "global": true,
-        "default_value": "start-manual"
-      },
-      "lvl1": "article h1",
-      "lvl2": "article h2",
-      "lvl3": "article h3",
-      "lvl4": "article h4",
-      "lvl5": "article h5, article td:first-child",
-      "lvl6": "article h6",
-      "text": "article p, article li, article td:last-child"
+      "text":
+       "article p, article li, article td:last-child"
     },
     "validator-setup": {
       "lvl0": {

@@ -37,20 +37,8 @@ const SECTIONS = [
     section: 'guides',
   },
   {
-    name: 'dVPN node - dVPN Launcher',
-    id: 'dvpn-launcher',
-    icon: Guides,
-    section: 'guides',
-  },
-  {
-    name: 'dVPN node - Manually',
-    id: 'start-manual',
-    icon: Guides,
-    section: 'guides',
-  },
-  {
-    name: 'dVPN node - Cloudmos on Akash',
-    id: 'start-cloudmos-on-akash',
+    name: 'dVPN Node Setup',
+    id: 'node-setup',
     icon: Guides,
     section: 'guides',
   },
