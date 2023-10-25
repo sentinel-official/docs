@@ -117,11 +117,11 @@
       "lvl6": "article h6",
       "text": "article p, article li, article td:last-child"
     },
-    "node-setup": {
+    "dvpn-launcher": {
       "lvl0": {
         "selector": "",
         "global": true,
-        "default_value": "node-setup"
+        "default_value": "dvpn-launcher"
       },
       "lvl1": "article h1",
       "lvl2": "article h2",
@@ -131,11 +131,11 @@
       "lvl6": "article h6",
       "text": "article p, article li, article td:last-child"
     },
-    "node-akash": {
+    "start-cloudmos-on-akash": {
       "lvl0": {
         "selector": "",
         "global": true,
-        "default_value": "node-akash"
+        "default_value": "start-cloudmos-on-akash"
       },
       "lvl1": "article h1",
       "lvl2": "article h2",
@@ -143,8 +143,21 @@
       "lvl4": "article h4",
       "lvl5": "article h5, article td:first-child",
       "lvl6": "article h6",
-      "text":
-       "article p, article li, article td:last-child"
+      "text": "article p, article li, article td:last-child"
+    },
+    "start-manual": {
+      "lvl0": {
+        "selector": "",
+        "global": true,
+        "default_value": "start-manual"
+      },
+      "lvl1": "article h1",
+      "lvl2": "article h2",
+      "lvl3": "article h3",
+      "lvl4": "article h4",
+      "lvl5": "article h5, article td:first-child",
+      "lvl6": "article h6",
+      "text": "article p, article li, article td:last-child"
     },
     "validator-setup": {
       "lvl0": {
