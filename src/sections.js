@@ -38,19 +38,19 @@ const SECTIONS = [
   },
   {
     name: 'dVPN node - dVPN Launcher',
-    id: '/node-setup/dvpn-launcher',
+    id: 'dvpn-launcher',
     icon: Guides,
     section: 'guides',
   },
   {
     name: 'dVPN node - Manually',
-    id: '/node-setup/manual/start-manual',
+    id: 'start-manual',
     icon: Guides,
     section: 'guides',
   },
   {
     name: 'dVPN node - Cloudmos on Akash',
-    id: '/node-setup/cloudmos-on-akash/start-cloudmos-on-akash',
+    id: 'start-cloudmos-on-akash',
     icon: Guides,
     section: 'guides',
   },
