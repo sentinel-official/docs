@@ -1,5 +1,5 @@
 ---
-title: dVPN Node Rewards
+title: Rewards
 description: Explains how the dVPN node rewards system works
 sidebar_position: 5
 ---
