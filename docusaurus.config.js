@@ -40,8 +40,9 @@ const SECTIONS = [
   defineSection('sentinel-core'),
   defineSection('networks'),
   defineSection('guides'),
-  defineSection('node-setup'),
-  defineSection('node-akash'),
+  defineSection('dvpn-launcher'),
+  defineSection('start-cloudmos-on-akash'),
+  defineSection('start-manual'),
   defineSection('validator-setup'),
   defineSection('apis'),
 ];
