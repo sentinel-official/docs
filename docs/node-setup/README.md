@@ -16,3 +16,10 @@ In order to setup a dVPN node some basic Linux experience will come in handy, ho
 - [Manually](/node-setup/manual/start-manual)
 
 This guide has been created to assist users in understanding all the necessary steps for installing a node.
+
+### dVPN node owners group
+
+If you are running a dVPN node or need some help, please join the dVPN node owners group:
+
+- Sentinel Node Network [Telegram](https://t.me/SentinelNodeNetwork)
+- [Discord](https://discord.gg/mmAA8qF) (#dvpn-nodes channel)
