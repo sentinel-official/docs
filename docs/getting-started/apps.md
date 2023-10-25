@@ -33,7 +33,8 @@ The following dVPN apps are built on top of the Sentinel Protocol. This is why w
             >
     <Card
         title="Solar dVPN"
-        description="SOLAR dVPN is a blockchain-based decentralized VPN service. Using mobile & desktop apps, it allows you to access hundreds of community-managed servers all around the world and use them as your private & secure gateway to the Internet. <br /><br /> Mac - Linux - Android - iOS"
+        description={["SOLAR dVPN is a blockchain-based decentralized VPN service. Using mobile & desktop apps, it allows you to access hundreds of community-managed servers all around the world and use them as your private & secure gateway to the Internet.", 
+        "Mac - Linux - Android - iOS"]}
         to="https://solarlabs.ee/"
         icon={<Solar />}
         svgFile=""
