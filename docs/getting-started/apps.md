@@ -33,24 +33,24 @@ The following dVPN apps are built on top of the Sentinel Protocol. This is why w
             >
     <Card
         title="Solar dVPN"
-        description="Mac - Linux - Android - iOS
-        SOLAR dVPN is a blockchain-based decentralized VPN service. Using mobile & desktop apps, it allows you to access hundreds of community-managed servers all around the world and use them as your private & secure gateway to the Internet."
+        os="Mac - Linux - Android - iOS"
+        description="SOLAR dVPN is a blockchain-based decentralized VPN service. Using mobile & desktop apps, it allows you to access hundreds of community-managed servers all around the world and use them as your private & secure gateway to the Internet."
         to="https://solarlabs.ee/"
         icon={<Solar />}
         svgFile=""
     />
     <Card
         title="Meile dVPN"
-        description="Windows - Mac - Linux.
-        Meile is a decentralized VPN solution built on top of the Sentinel Blockchain. Utilizing blockchain technology alongside community hosted decentralized nodes creates a private and censorship resistant network for everyone."
+        os="Windows - Mac - Linux"
+        description="Meile is a decentralized VPN solution built on top of the Sentinel Blockchain. Utilizing blockchain technology alongside community hosted decentralized nodes creates a private and censorship resistant network for everyone."
         to="https://mathnodes.com/index.php/meile-dvpn-client-linux-os-x/"
         icon={<Meile />}
         svgFile=""
     />
     <Card
         title="BasedVPN"
-        description=" Android.
-        BasedVPN is an entirely free and fully decentralized service created by volunteers who prioritize digital human rights, offering powerful features like WireGuard and V2Ray support to break through internet censorship, even in countries like China."
+        os="Android"
+        description="BasedVPN is an entirely free and fully decentralized service created by volunteers who prioritize digital human rights, offering powerful features like WireGuard and V2Ray support to break through internet censorship, even in countries like China."
         to="https://basedapps.co.uk/"
         icon={<Basedvpn />}
         svgFile=""
