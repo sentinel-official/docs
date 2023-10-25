@@ -58,3 +58,19 @@ sidebar_position: 6
         Commit hash must be `54c28ae02786b62b25303759da761e5ce1226029`
 
 2. Start the `sentinelhub` process
+
+## In case the upgrade fails
+
+???+ warning "Warning"
+
+    Follow the next steps in case the upgrade fails!
+
+1. Install the Sentinel Hub software `v0.10.1`
+
+2. Verfiy the software version commit is `bbe6fab51c81863551a69aeb4977ec4c19fcd60a`
+
+3. Start the `sentinelhub` process with flag `unsafe-skip-upgrades`
+
+    ``` sh
+    sentinelhub start --unsafe-skip-upgrades 12310005
+    ```
