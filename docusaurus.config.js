@@ -41,7 +41,6 @@ const SECTIONS = [
   defineSection('networks'),
   defineSection('guides'),
   defineSection('node-setup'),
-  defineSection('node-akash'),
   defineSection('validator-setup'),
   defineSection('apis'),
 ];
