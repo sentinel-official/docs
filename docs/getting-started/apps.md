@@ -18,7 +18,7 @@ import {
   Solar,
 } from '../../src/icons';
 
-The following dVPN apps are built on top of Sentinel. This is why we refer to Sentinel as a network of independent dVPN (decentralized Virtual Private Network) applications, rather than just a single consumer-facing dVPN.
+The following dVPN apps are built on top of the Sentinel Protocol. This is why we refer to Sentinel as a network of independent dVPN (decentralized Virtual Private Network) applications, rather than just a single consumer-facing dVPN.
 
 <Section id="web-sdks" hasSubSections>
     <Section
@@ -33,7 +33,7 @@ The following dVPN apps are built on top of Sentinel. This is why we refer to Se
             >
     <Card
         title="Solar dVPN"
-        description="SOLAR dVPN is a blockchain-based decentralized VPN service. Using mobile & desktop apps, it allows you to access hundreds of community-managed servers all around the world and use them as your private & secure gateway to the Internet."
+        description="SOLAR dVPN is a blockchain-based decentralized VPN service. Using mobile & desktop apps, it allows you to access hundreds of community-managed servers all around the world and use them as your private & secure gateway to the Internet. <br /><br /> Mac - Linux - Android - iOS"
         to="https://solarlabs.ee/"
         icon={<Solar />}
         svgFile=""
