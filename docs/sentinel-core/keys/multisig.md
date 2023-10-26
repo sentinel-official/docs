@@ -1,3 +1,9 @@
+---
+title: Multisig
+description: How to generate and manage a Multisig Key.
+sidebar_position: 1
+---
+
 # Multisig
 
 A **multisig account** is an Sentinel account with a special key that can require more than one signature to sign transactions. This can be useful for increasing the security of the account or for requiring the consent of multiple parties to make transactions. Multisig accounts can be created by specifying:
@@ -86,10 +92,15 @@ sentinelhub tx bank send \
     --gas=200000 \
     --fees=1000000udvpn \
     --chain-id=sentinelhub-2 \
-    --generate-only > unsignedTx.json
+    --generate-only > unsigned.json
 ```
 
-The file `unsignedTx.json` contains the unsigned transaction encoded in JSON.
+The file `unsigned.json` contains the unsigned transaction encoded in JSON.
+
+<details><summary>unsigned.json</summary>
+<p>
+
+#### This is the content of the `unsigned.json` file
 
 ```json
 {
@@ -130,13 +141,16 @@ The file `unsignedTx.json` contains the unsigned transaction encoded in JSON.
 }
 ```
 
+</p>
+</details>
+
 ### Step 3: Sign individually
 
 Sign with `test1` and `test2` and create individual signatures.
 
 ```sh
 sentinelhub tx sign \
-    unsignedTx.json \
+    unsigned.json \
     --multisig=sent1z5ssqynre0gujda34kekcxhnfxa5eu5uq0wh4n \
     --from=test1 \
     --output-document=test1sig.json \
@@ -145,7 +159,7 @@ sentinelhub tx sign \
 
 ```sh
 sentinelhub tx sign \
-    unsignedTx.json \
+    unsigned.json \
     --multisig=sent1z5ssqynre0gujda34kekcxhnfxa5eu5uq0wh4n \
     --from=test2 \
     --output-document=test2sig.json \
@@ -158,14 +172,19 @@ Combine signatures to sign transaction.
 
 ```sh
 sentinelhub tx multisign \
-    unsignedTx.json \
+    unsigned.json \
     multi \
     test1sig.json test2sig.json \
-    --output-document=signedTx.json \
+    --output-document=signed.json \
     --chain-id=sentinelhub-2
 ```
 
 The TX is now signed:
+
+<details><summary>signed.json</summary>
+<p>
+
+#### This is the content of the `signed.json` file
 
 ```json
 {
@@ -250,10 +269,13 @@ The TX is now signed:
 }
 ```
 
+</p>
+</details>
+
 ### Step 5: Broadcast transaction
 
 ```sh
-sentinelhub tx broadcast signedTx.json \
+sentinelhub tx broadcast signed.json \
     --chain-id=sentinelhub-2 \
     --broadcast-mode=block
 ```

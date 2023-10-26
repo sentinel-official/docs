@@ -5,19 +5,19 @@ sidebar_position: 2
 
 # Build the Source Code
 
+To compile the source code of Sentinel Hun into a binary, two essential steps are necessary: installing Go and executing the build process.
 
-## Install Go 1.21
+## Install Go
 
-Currently, Sentinel uses Go 1.21 to compile the code.
-
-Install [Go 1.21](https://go.dev/doc/install) by following instructions there.
+Install [Go](https://go.dev/doc/install) by following instructions there.
 
 Verify the installation by typing `go version` in your terminal.
 
-```sh
-$ go version
-go version go1.21.1 darwin/amd64
+```bash
+go version
 ```
+
+You should receive this output: `go version go1.xx.x darwin/amd64`
 
 ## Build Sentinel
 
