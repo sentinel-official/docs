@@ -120,6 +120,9 @@ Manages Keyring commands.
 sentinelhub keys <command>
 ```
 
+:::tip
+For more detailed usage instructions for keys, please refer to the related section **[here](/sentinel-core/category/key-management)**
+:::
 
 ### `migrate`
 Migrates the source genesis into the target version and prints to STDOUT.
