@@ -147,7 +147,7 @@ export default function Homepage() {
             <Card
               title="API Reference"
               description="Sentinel RPC and LCD API Reference"
-              to=""
+              to="/apis"
               icon={<APIReferenceIcon />}
             />
           </Section>
