@@ -1,6 +1,6 @@
 ---
 title: Overview & Requirements
-description: This guide will lead you to setup a dVPN node manually
+description: dVPN node manual setup
 sidebar_position: 1
 ---
 
@@ -13,6 +13,6 @@ This guide is intended for anyone who has some basic Linux experience, wishes to
 A Sentinel dVPN node can be installed on:
 - Virtual Private Server (VPS) selecting a provider (check this [list](https://cryptpad.fr/sheet/#/2/sheet/edit/5Exc+RslM-bhp301wGl6i0Ui/) of tested providers)
 - At Home, using a Raspberry Pi 4 or 5
-- Akash: see this specific [guide](/node-akash)
+- Akash: see this specific [guide](/node-setup/category/cloudmos-on-akash)
 
 This guide has been created to assist users in understanding all the necessary steps for installing a node manually.

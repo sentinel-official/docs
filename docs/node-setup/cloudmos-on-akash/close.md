@@ -1,5 +1,6 @@
 ---
 title: Remove the Node
+description: Close your node deployment
 sidebar_position: 4
 ---
 

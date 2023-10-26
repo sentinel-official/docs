@@ -1,4 +1,8 @@
 {
-  "label": "Manual",
-  "position": 4
+  "label": "Manual Setup",
+  "position": 2,
+  "link": {
+    "type": "generated-index",
+    "description": "Intended for anyone inclined to contribute to the Sentinel network and allocate their bandwidth through a dVPN node. Every node operator has the autonomy to determine the price for customers availing their bandwidth."
+  }
 }

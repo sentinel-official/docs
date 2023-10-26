@@ -1,6 +1,6 @@
 ---
 title: Run the Node
-description: Now, after completing all the configuration steps, you can finally run the node.
+description: Start your node
 sidebar_position: 6
 ---
 

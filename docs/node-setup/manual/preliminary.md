@@ -1,6 +1,6 @@
 ---
 title: Preliminary Operations
-description: If you run your node from home, you can skip this section
+description: If you run a residential node, skip this section
 sidebar_position: 2
 ---
 

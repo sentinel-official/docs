@@ -1,6 +1,6 @@
 ---
 title: Overview & Requirements
-description: This guide is intended for anyone who wishes to set up Sentinel dVPN Nodes using the Akash Network"
+description: dVPN node setup on Akash Network"
 sidebar_position: 1
 ---
 

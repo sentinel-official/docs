@@ -1,5 +1,6 @@
 ---
 title: SSH into the Container
+description: Access your container
 sidebar_position: 3
 ---
 

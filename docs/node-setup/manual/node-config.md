@@ -1,5 +1,6 @@
 ---
 title: Node Configuration
+description: config.toml, wireguard.toml, and v2ray.toml
 sidebar_position: 5
 ---
 

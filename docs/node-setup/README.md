@@ -9,17 +9,20 @@ sidebar_position: 1
 ### Overview
 
 If you want to contribute to the Sentinel network and share your bandwidth you can set up a dVPN node that utilizes the Sentinel protocol. Every node owner can set their own price for customers using their bandwidth. Of course it’s up to the user to decide which node they will use as their dVPN.
-In order to setup a dVPN node some basic Linux experience will come in handy, however the process it pretty easy to follow. We recommend to have at least 100 DVPN in your node account. This is needed, as a tiny amount is used to make a transaction to the blockchain letting it know your node is still online. There are 3 ways to get started with setting up a dVPN node:
+In order to setup a dVPN node some basic Linux experience will come in handy, however the process it pretty easy to follow. We recommend to have at least 100 DVPN in your node account. This is needed, as a tiny amount is used to make a transaction to the blockchain letting it know your node is still online.
 
-- [dVPN Launcher](/node-setup/dvpn-launcher) (work in progress)
-- [Cloudmos on Akash](/node-setup/cloudmos-on-akash/start-cloudmos-on-akash)
+There are 2 ways to get started with setting up a dVPN node:
+
 - [Manually](/node-setup/manual/start-manual)
+- [Cloudmos on Akash](/node-setup/category/cloudmos-on-akash)
 
-This guide has been created to assist users in understanding all the necessary steps for installing a node.
+Additionally, a new guide will be coming for the following tool, currently in development:
+- [Frog dVPN Launcher](/node-setup/dvpn-launcher) (work in progress)
 
-### dVPN node owners group
+
+### dVPN node owners groups
 
 If you are running a dVPN node or need some help, please join the dVPN node owners group:
 
-- Sentinel Node Network [Telegram](https://t.me/SentinelNodeNetwork)
-- [Discord](https://discord.gg/mmAA8qF) (#dvpn-nodes channel)
+- Telegram: [Sentinel Node Network](https://t.me/SentinelNodeNetwork)
+- Discord: [#dvpn-nodes](https://discord.com/channels/436630361313640469/436644009369403394)
