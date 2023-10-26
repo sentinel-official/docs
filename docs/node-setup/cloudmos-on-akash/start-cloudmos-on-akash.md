@@ -1,6 +1,6 @@
 ---
 title: Overview & Requirements
-description: dVPN node setup on Akash Network"
+description: dVPN node setup on Akash Network
 sidebar_position: 1
 ---
 

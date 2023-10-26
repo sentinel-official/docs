@@ -1,5 +1,6 @@
 ---
 title: Deploy the Node
+description: The steps to deploy your node
 sidebar_position: 2
 ---
 
