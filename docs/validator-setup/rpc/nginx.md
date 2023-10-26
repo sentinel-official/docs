@@ -1,12 +1,12 @@
 ---
 title: NGINX
-description: Web Server & Reverse Proxy
+description: A popular open-source web server software and reverse proxy server
 sidebar_position: 4
 ---
 
 # NGINX
 
-NGINX (pronounced "engine-x") is a popular open-source web server software and reverse proxy server
+NGINX (pronounced "engine-x") is a high-performance, open-source web server and reverse proxy server. It's known for its efficient handling of web traffic and its ability to serve as a load balancer. NGINX is widely used to improve website performance, security, and scalability. It can also function as a proxy server for applications and offers features like SSL/TLS termination, caching, and content delivery. NGINX is popular for its speed and reliability in serving web content.
 
 ## Installation
 

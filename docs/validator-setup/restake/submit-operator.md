@@ -1,5 +1,6 @@
 ---
 title: Submit Operator
+description: How to submit your operatir to the validator registry
 sidebar_position: 3
 ---
 

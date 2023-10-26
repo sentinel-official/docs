@@ -5,11 +5,33 @@ sidebar_position: 3
 
 # Install Golang
 
+First of all install some required packages
+
+```bash
+sudo apt-get install -y curl git jq make unzip
+```
+
+You now have two methods for installing Golang.
+
+## Debian Based Distributions
+
+To install Go on Debian and its derivatives, you can easily follow the steps provided.
+
+Add the repository
+
+```bash
+sudo add-apt-repository ppa:longsleep/golang-backports
+```
+
+Install Golang
+
+```bash
+sudo apt-get install -y golang-go
+```
+
 ## Manually
 
-This method should work on all Linux systems, although it is intended for more experienced users. If you are using Ubuntu, you may prefer to try a faster method located at the bottom of the page.
-
-### Download & Unpack
+This method should work on all Linux systems, although it is intended for more experienced users.
 
 Get a copy of the last Golang version and unpack it
 
@@ -24,7 +46,9 @@ Move the extracted go into `/usr/local/lib/go`
 sudo mv ${HOME}/go /usr/local/lib/go
 ```
 
-### Export Golang environment variables
+## Export Golang environment variables
+
+Now that you've successfully installed Golang, it's essential to configure its environmental variables.
 
 Open the .bashrc file
 
@@ -45,20 +69,4 @@ Source the file to reflect in the current Terminal session
 
 ```bash
 source ${HOME}/.bashrc
-```
-
-## Ubuntu
-
-If you use Ubuntu and find problems with the manual methos try this alternative one
-
-Add the repository
-
-```bash
-sudo add-apt-repository ppa:longsleep/golang-backports
-```
-
-Install Golang
-
-```bash
-sudo apt-get install -y golang-go
 ```

@@ -1,5 +1,6 @@
 ---
 title: Setup & Configuration
+description: A step-by-step procedure to prepare you REStake service
 sidebar_position: 2
 ---
 

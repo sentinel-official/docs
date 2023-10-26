@@ -1,6 +1,6 @@
 ---
 title: Overview
-description: Why it is imporant to have a reliable monitoring system in place
+description: The importance of implementing a reliable monitoring system
 sidebar_position: 1
 ---
 

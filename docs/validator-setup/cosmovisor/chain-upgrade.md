@@ -1,5 +1,6 @@
 ---
 title: Chain Upgrade
+description: How to use Cosmovisor during a chain upgrade
 sidebar_position: 3
 ---
 

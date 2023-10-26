@@ -1,5 +1,6 @@
 ---
 title: Overview
+description: An essential security measure when running your validator
 sidebar_position: 1
 ---
 

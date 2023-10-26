@@ -1,7 +1,8 @@
 {
-  "label": "Autorestake Setup",
+  "label": "REStake App Setup",
   "position": 11,
   "link": {
-    "type": "generated-index"
+    "type": "generated-index",
+    "description": "An auto-compounding tool that uses the authz module, enabling one wallet to grant authorization to another for executing specific actions on its behalf."
   }
 }

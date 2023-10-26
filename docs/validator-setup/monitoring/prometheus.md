@@ -1,5 +1,6 @@
 ---
 title: Prometheus
+description: A tool that collects your metrics from Node Exporter
 sidebar_position: 3
 ---
 

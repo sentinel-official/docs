@@ -1,5 +1,6 @@
 ---
 title: Setup & Config
+Description: Full TMKMS installation and configuration process
 sidebar_position: 3
 ---
 

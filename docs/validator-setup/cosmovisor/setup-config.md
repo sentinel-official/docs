@@ -1,5 +1,6 @@
 ---
 title: Setup & Config
+description: The necessary steps to implement Cosmovisor
 sidebar_position: 2
 ---
 

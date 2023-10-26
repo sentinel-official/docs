@@ -1,5 +1,6 @@
 ---
 title: Node Exporter
+description: A tool that collects your metrics at the host level
 sidebar_position: 2
 ---
 

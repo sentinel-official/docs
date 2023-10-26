@@ -1,5 +1,6 @@
 ---
 title: Overview
+description: An auto-compounding tool
 sidebar_position: 1
 ---
 

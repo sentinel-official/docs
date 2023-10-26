@@ -1,5 +1,6 @@
 ---
 title: Install Dependencies
+description: Everything you need before installing TMKMS
 sidebar_position: 2
 ---
 

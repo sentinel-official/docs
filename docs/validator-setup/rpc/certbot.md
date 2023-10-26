@@ -1,9 +1,12 @@
 ---
 title: Certbot
+description: A popular tool used for obtaining and renewing SSL/TLS certificates
 sidebar_position: 3
 ---
 
 # Certbot
+
+Certbot is specifically used for obtaining and renewing SSL/TLS certificates for websites. SSL/TLS certificates are cryptographic certificates that enable the encryption of data transmitted between a web server and a user's web browser, preventing eavesdropping, data tampering, and other security threats. Below the required steps.
 
 Install Certbot tool
 

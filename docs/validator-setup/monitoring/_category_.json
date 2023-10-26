@@ -2,6 +2,7 @@
   "label": "Monitoring Tools",
   "position": 10,
   "link": {
-    "type": "generated-index"
+    "type": "generated-index",
+    "description": "The following tools are essential for collecting and displaying your node metrics, and they all work seamlessly together."
   }
 }
