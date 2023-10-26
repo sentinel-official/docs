@@ -1,5 +1,6 @@
 ---
 title: SSH
+description: Setting up SSH for secure remote access and communication
 sidebar_position: 3
 ---
 

@@ -2,6 +2,7 @@
   "label": "Server Setup",
   "position": 2,
   "link": {
-    "description": "What you do need to run a Sentinel dVPN Validator"
+    "type": "generated-index",
+    "description": "These are the requirements for running a Sentinel dVPN Validator"
   }
 }
