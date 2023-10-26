@@ -166,7 +166,7 @@ const config = {
             position: 'left',
           },
           {
-            label: 'Connect 👥',
+            label: 'Socials 👥',
             type: 'dropdown',
             position: 'right',
             items: [
