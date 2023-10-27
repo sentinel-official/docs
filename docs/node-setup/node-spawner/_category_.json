@@ -1,0 +1,8 @@
+{
+    "label": "Node Spawner",
+    "position": 4,
+    "link": {
+      "type": "generated-index",
+      "description": "An incredibly useful component designed for novice users seeking a straightforward way to install a dVPN node."
+    }
+  }
