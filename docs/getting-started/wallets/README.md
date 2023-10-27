@@ -4,8 +4,8 @@ sidebar_position: 5.5
 ---
 import DocCardList from '@theme/DocCardList';
 
-# Wallets that integrates Sentinel
+# Wallets that integrates Sentinel dVPN
 
-Wallet information & configuration.
+Here is a list of wallets supported by Sentinel dVPN. You can select the one that aligns most closely with your specific requirements.
 <DocCardList />
 
