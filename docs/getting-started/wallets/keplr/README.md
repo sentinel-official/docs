@@ -1,5 +1,7 @@
-# Keplr
-
+---
+title: Keplr Wallet 
+sidebar_position: 1
+---
 
 ## Introduction
 

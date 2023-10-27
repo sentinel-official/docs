@@ -1,5 +1,7 @@
-# Leap
-
+---
+title: Leap Wallet 
+sidebar_position: 1
+---
 
 ## Introduction
 
