@@ -136,7 +136,7 @@ export default function Homepage() {
             <Card
               title="Node Spawner"
               description="A dashboard for manage & spawn dvpn-node."
-              to="https://github.com/Tkd-Alex/dvpn-node-spawner"
+              to="tools"
               icon={<NodeSpawner />}
               svgFile=""
             />
