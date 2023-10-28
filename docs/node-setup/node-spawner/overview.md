@@ -1,6 +1,6 @@
 ---
 title: Overview & Setup
-description: What it is, Where to obtain it, and wow to install it
+description: What it is, Where to obtain it, and how to install it
 sidebar_position: 1
 ---
 

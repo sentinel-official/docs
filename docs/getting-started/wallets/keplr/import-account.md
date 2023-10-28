@@ -1,11 +1,12 @@
 ---
-title: Import a Keplr account
+title: Import Wccount
 sidebar_position: 4
 ---
 
-# Import a Keplr account
+# Import a Keplr Wallet
 
 If you are setting up Keplr for the first time: In the initial pop-up window, choose `Import Existing Recovery Phrase`
+
 ![](/img/keplr/import-1.png)
 
 At the following screen select `Recovery Phrase or Private Key`

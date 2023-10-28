@@ -1,16 +1,17 @@
 ---
-title: Create Keplr Wallet
+title: Create a Wallet
 sidebar_position: 3
 ---
 
-# Create Keplr Wallet
+# Create a Keplr Wallet
 
 ## How to create a new Account via Manemonic/Seed Phrase
 
 If you are setting up Keplr for the first time: In the initial pop-up window, choose `Create New Recovery Phrase`
+
 ![](/img/keplr/create-1.png)
 
-You will be prompet to a seed/mnemonic phrase of 24 words
+You will be prompted to a seed/mnemonic phrase of 24 words
 
 ![](/img/keplr/create-2.png)
 
@@ -22,7 +23,7 @@ Click on `I understood. Show my phrase` and you will see your mnemonic phrase. W
 
 ![](/img/keplr/create-3.png)
 
-You will now be prompet to:
+You will now be prompted to:
 - verify your mnemonic phrase
 - add a wallet name
 - add a wallet password

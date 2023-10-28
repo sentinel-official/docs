@@ -1,5 +1,5 @@
 ---
-title: Install Keplr 
+title: Installation 
 sidebar_position: 2
 ---
 
@@ -10,6 +10,7 @@ Go to [https://wallet.keplr.app/](https://wallet.keplr.app/) and click ** Instal
 ![](/img/keplr/install-1.png)
 
 Click the "Add to Chrome" button
+
 ![](/img/keplr/install-2.png)
 
 Here you have to choose [Add Extension]
