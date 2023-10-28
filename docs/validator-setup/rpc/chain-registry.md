@@ -1,5 +1,6 @@
 ---
 title: Add RPC to Chain Registry
+description: How to add your rpc node tochain registry
 sidebar_position: 5
 ---
 

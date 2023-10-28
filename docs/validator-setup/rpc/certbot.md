@@ -1,6 +1,6 @@
 ---
 title: Certbot
-description: A popular tool used for obtaining and renewing SSL/TLS certificates
+description: A popular tool used for SSL/TLS certificates
 sidebar_position: 3
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: NGINX
-description: A popular open-source web server software and reverse proxy server
+description: A popular open-source web server and reverse proxy
 sidebar_position: 4
 ---
 
