@@ -166,10 +166,14 @@ const config = {
             position: 'left',
           },
           {
-            label: 'Socials 👥',
+            label: 'Find us',
             type: 'dropdown',
             position: 'right',
             items: [
+              {
+                href: 'https://github.com/sentinel-official',
+                label: 'GitHub',
+              },
               {
                 href: 'https://x.com/sentinelvpn',
                 label: 'X/Twitter',
@@ -197,21 +201,14 @@ const config = {
             ],
           },
           {
+            label: 'Sentinel',
+            href: 'https://sentinel.co',
+            position: 'right',
+          },
+          {
             type: 'search',
             position: 'right',
           },
-          {
-            label: 'Sentinel.co',
-            href: 'https://sentinel.co',
-            position: 'right',
-            className: 'dev-portal-signup dev-portal-link',
-          },
-          {
-            href: 'https://github.com/sentinel-official',
-            position: 'right',
-            className: 'pseudo-icon github-icon',
-          },
-        
         ],
       },
       footer: {
