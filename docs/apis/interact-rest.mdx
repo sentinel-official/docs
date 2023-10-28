@@ -16,7 +16,7 @@ curl \
     https://lcd.sentinel.co/cosmos/bank/v1beta1/balances/<your_address>
 ```
 
-The list of all available REST endpoints is available as a Swagger specification file, it can be viewed at `localhost:1317/swagger`. Make sure that the `api.swagger` field is set to true in your [`app.toml`](../run-node/run-node.md#configuring-the-node-using-apptoml) file.
+The list of all available REST endpoints is available as a Swagger specification file, it can be viewed at `localhost:1317/swagger`. Make sure that the `api.swagger` field is set to true in your `app.toml` file.
 
 ### Query for historical state using REST
 
@@ -39,7 +39,7 @@ Assuming the state at that block has not yet been pruned by the node, this query
 ### Setting up a public rest server
 If you would like to use the rest-server in a public environment we recommend you provide a reverse proxy. We can share our Terraform infrastructurefor setting up rest servers in DigitalOcean. We will write a guide soon and publish a repo soon. In the meantime feel free to reachout in Discord. s
 
-For testing and development purposes there is an `enabled-unsafe-cors` field inside [`app.toml`](../run-node/run-node.md#configuring-the-node-using-apptoml).
+For testing and development purposes there is an `enabled-unsafe-cors` field inside `app.toml`.
 
 
 ### Signing transactions

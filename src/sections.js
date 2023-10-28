@@ -2,7 +2,28 @@ import {
   SentinelCore,
   Network,
   Guides,
+  NodeSpawner,
 } from './icons';
+
+const MULTI_SECTIONS = [
+  [
+    {
+      name: 'Sentinel Core',
+      section: 'core-sdk',
+      description: 'Sentinel Chain Development documentation.',
+    },
+    {
+      name: 'Guides',
+      section: 'guides',
+      description: 'Guides to provide bandwidth and validate',
+    },
+    {
+      name: 'Tools',
+      section: 'tools',
+      description: 'Tools to facilitate the interaction with the blockchain',
+    }
+  ],
+];
 
 const SECTIONS = [
   // no sections for default section, i.e; home
@@ -48,22 +69,14 @@ const SECTIONS = [
     icon: Guides,
     section: 'guides',
   },
+
+  // Dropdown Tools
+  {
+    name: 'Node Spawner',
+    id: 'tools',
+    icon: NodeSpawner,
+    section: 'tools',
+  },
 ];
 
-const MULTI_SECTIONS = [
-  [
-    {
-      name: 'Sentinel Core',
-      section: 'core-sdk',
-      description: 'Sentinel Chain Development documentation.',
-    },
-    {
-      name: 'Guides',
-      section: 'guides',
-      description:
-        'Guides to provide bandwidth and validate',
-    }
-  ],
-];
-
-export { SECTIONS, MULTI_SECTIONS };
+export { MULTI_SECTIONS, SECTIONS };
