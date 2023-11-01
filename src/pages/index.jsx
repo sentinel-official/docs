@@ -104,7 +104,7 @@ export default function Homepage() {
               <Card
                 title="Sentinel CLI"
                 description="A command line tool to interact with Sentinel Blockchain"
-                to="https://github.com/freQniK/cli-client/releases"
+                to="/sentinel-cli"
                 icon={<TerminalIcon />}
                 svgFile=""
               />
