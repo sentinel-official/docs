@@ -15,7 +15,6 @@ import {
   Chainregistry,
   Network,
   SentinelCore,
-  NodeSpawner,
   Download,
   GrowthDao,
   Wallet,
@@ -34,7 +33,7 @@ export default function Homepage() {
           <div className='margin-bottom--lg'>
             <h2>Sentinel Docs</h2>
             <p>
-            The Sentinel blockchain is a decentralized network, ran by 80+ validators and full nodes, with many front-ends and development teams on it. Explore our docs and examples to quickly learn, develop & integrate with the Sentinel blockchain.
+              The Sentinel blockchain is a decentralized network, ran by 80+ validators and full nodes, with many front-ends and development teams on it. Explore our docs and examples to quickly learn, develop & integrate with the Sentinel blockchain.
             </p>
             <DyteButton onClick={() => router.push('getting-started')}>
               Get Started &rarr;
@@ -69,7 +68,7 @@ export default function Homepage() {
               to="/getting-started/apps/"
               icon={<Download />}
               svgFile=""
-             />
+            />
             <Card
               title="Wallets"
               description="Learn about how to start using blockchain apps, stake your tokens and manage them in just one wallet."
@@ -92,58 +91,41 @@ export default function Homepage() {
               HeadingTag="h4"
               description={
                 <>
-                  Everything that is needed to learn about the Sentinel core chain development. 
+                  Everything that is needed to learn about the Sentinel core chain development.
                 </>
               }
             >
-             <Card
-              title="Sentinel Hub"
-              description="Getting started with Sentinel codebase"
-              to="/sentinel-core/"
-              icon={<SentinelCore />}
-            />
+              <Card
+                title="Sentinel Hub"
+                description="Getting started with Sentinel codebase"
+                to="/sentinel-core/"
+                icon={<SentinelCore />}
+              />
+              <Card
+                title="Sentinel CLI"
+                description="A command line tool to interact with Sentinel Blockchain"
+                to="https://github.com/freQniK/cli-client/releases"
+                icon={<TerminalIcon />}
+                svgFile=""
+              />
+              <Card
+                title="Networks"
+                description="Explore the Sentinel network."
+                to="/networks/"
+                icon={<Network />}
+                svgFile=""
+              />
+            </Section>
+          </Section>
+
+          <Section title="📜 Documentation">
             <Card
-              title="Networks"
-              description="Explore the Sentinel network."
-              to="/networks/"
-              icon={<Network />}
-              svgFile=""
-            />
-            <Card
-              title="Guides"
+              title="User Guides"
               description="Deploy Nodes and Validate the Network"
               to="/guides/"
               icon={<Chainregistry />}
               svgFile=""
             />
-            </Section>
-            <Section title="🛠 Tools"
-            id="core-sdks"
-            HeadingTag="h4"
-            description={
-              <>
-                Tools to interact with Sentinel Blockchain. 
-              </>
-            }
-            >
-            <Card
-              title="Sentinel CLI Client"
-              description="A command line tool to interact with Sentinel Blockchain"
-              to="https://github.com/freQniK/cli-client/releases"
-              icon={<TerminalIcon />}
-              svgFile=""
-            />
-            <Card
-              title="Node Spawner"
-              description="A dashboard for manage & spawn dvpn-node."
-              to="tools"
-              icon={<NodeSpawner />}
-              svgFile=""
-            />
-          </Section>
-          </Section>
-
-          <Section title="📜 API Reference">
             <Card
               title="API Reference"
               description="Sentinel RPC and LCD API Reference"

@@ -38,6 +38,7 @@ function defineSection(section, options = {}) {
 const SECTIONS = [
   defineSection('getting-started'),
   defineSection('sentinel-core'),
+  defineSection('sentinel-cli'),
   defineSection('networks'),
   defineSection('tools'),
   defineSection('guides'),

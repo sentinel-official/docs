@@ -3,6 +3,7 @@ import {
   Network,
   Guides,
   NodeSpawner,
+  TerminalIcon,
 } from './icons';
 
 const MULTI_SECTIONS = [
@@ -13,7 +14,7 @@ const MULTI_SECTIONS = [
       description: 'Sentinel Chain Development documentation.',
     },
     {
-      name: 'Guides',
+      name: 'User Guides',
       section: 'guides',
       description: 'Guides to provide bandwidth and validate',
     },
@@ -44,6 +45,12 @@ const SECTIONS = [
     section: 'core-sdk',
   },
   {
+    name: 'Sentinel CLI',
+    id: 'sentinel-cli',
+    icon: TerminalIcon,
+    section: 'core-sdk',
+  },
+  {
     name: 'Networks',
     id: 'networks',
     icon: Network,
@@ -52,7 +59,7 @@ const SECTIONS = [
 
   // Dropdown Sentinel Guides
   {
-    name: 'Guides',
+    name: 'Overview',
     id: 'guides',
     icon: Guides,
     section: 'guides',

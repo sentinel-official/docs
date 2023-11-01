@@ -1,0 +1,48 @@
+---
+title: Overview
+sidebar_position: 1
+---
+import {
+  HomepageCard as Card,
+  HomepageSection as Section,
+} from '../../src/components/HomepageComponents';
+
+import {
+  TerminalIcon,
+  KeysIcon,
+  SentinelCore,
+  Contribute,
+} from '../../src/icons';
+
+# Sentinel CLI
+
+An Overview of Sentinel CLI.
+
+<Section title="Developers" id="web-sdks" hasSubSections >
+  <Section>
+    <Card
+      title="Build the Source Code"
+      description="Getting started with building and testing Sentinel core"
+      to="/sentinel-cli/build"
+      icon={<SentinelCore />}
+    />
+    <Card
+      title="Commands"
+      description="overview of the main commands of Sentinel Hub"
+      to="/sentinel-cli/commands"
+      icon={<TerminalIcon />}
+    />
+    <Card
+      title="Key Management"
+      description="Managing keys via CLI and advanced operations such as multisig wallets"
+      to="/sentinel-core/category/key-management"
+      icon={<KeysIcon />}
+    />
+    <Card
+      title="Contributing"
+      description=" Guidelines to contributing to Sentinel core development."
+      to="/sentinel-cli/contributing"
+      icon={<Contribute />}
+    />
+  </Section>
+</Section>

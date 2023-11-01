@@ -1,0 +1,8 @@
+{
+  "label": "Key Management",
+  "position": 5,
+  "link": {
+    "type": "generated-index",
+    "description": "A comprehensive view on effectively managing your wallet and validator keys"
+  }
+}
