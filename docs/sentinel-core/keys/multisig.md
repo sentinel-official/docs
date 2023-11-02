@@ -97,7 +97,8 @@ sentinelhub tx bank send \
 
 The file `unsigned.json` contains the unsigned transaction encoded in JSON.
 
-<details><summary>unsigned.json</summary>
+<details>
+<summary>unsigned.json</summary>
 <p>
 
 #### This is the content of the `unsigned.json` file
@@ -181,7 +182,8 @@ sentinelhub tx multisign \
 
 The TX is now signed:
 
-<details><summary>signed.json</summary>
+<details>
+<summary>signed.json</summary>
 <p>
 
 #### This is the content of the `signed.json` file

@@ -34,7 +34,8 @@ sentinelhub collect-gentxs
 sentinelhub config
 ```
 
-<details><summary>Output</summary>
+<details>
+<summary>Output</summary>
 <p>
 
 #### This is the output of `sentinelhub config`
@@ -159,7 +160,8 @@ Displays the status of a remote node (default "tcp://localhost:26657").
 sentinelhub status
 ```
 
-<details><summary>Output</summary>
+<details>
+<summary>Output</summary>
 <p>
 
 #### This is the output of `sentinelhub status`

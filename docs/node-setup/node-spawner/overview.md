@@ -50,7 +50,8 @@ python main.py
 
 You will be guided through the process of setting up your local server:
 
-<details><summary>Local sever fields</summary>
+<details>
+<summary>Local sever fields</summary>
 <p>
 
 ```bash
@@ -68,7 +69,8 @@ You will be guided through the process of setting up your local server:
 
 You will receive the following output, confirming that your local server is now prepared.
 
-<details><summary>Output</summary>
+<details>
+<summary>Output</summary>
 <p>
 
 ```bash

@@ -23,7 +23,8 @@ You can create a new key with the name `default` as in the following example:
 sentinelcli keys add default
 ```
 
-<details><summary>Output</summary>
+<details>
+<summary>Output</summary>
 <p>
 
 #### This is the output of `sentinelcli add key default`
@@ -75,7 +76,8 @@ sentinelcli keys list
 
 Multiple keys can be created when needed. You can list all keys saved under the storage path.
 
-<details><summary>Output</summary>
+<details>
+<summary>Output</summary>
 <p>
 
 #### This is the output of `sentinelcli add key default`
