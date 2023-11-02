@@ -204,8 +204,22 @@ const config = {
           },
           {
             label: 'Sentinel',
-            href: 'https://sentinel.co',
+            type: 'dropdown',
             position: 'right',
+            items: [
+              {
+                href: 'https://sentinel.co',
+                label: 'Website',
+              },
+              {
+                href: 'https://stats.sentinel.co',
+                label: 'Stats',
+              },
+              {
+                href: 'https://map.sentinel.co',
+                label: 'Node Explorer',
+              },
+            ],
           },
           {
             type: 'search',
