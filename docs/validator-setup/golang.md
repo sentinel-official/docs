@@ -56,16 +56,27 @@ Open the .bashrc file
 sudo nano ${HOME}/.bashrc
 ```
 
-Append the below lines to the file
+If you installed Golang via PPA, add this line:
+
+```bash
+export GOROOT=/usr/lib/go
+```
+
+Otherwise, add this line
+
+```bash
+export GOROOT=/usr/local/lib/go
+```
+
+Then add these lines below to the file:
 
 ```bash title=${HOME}/.bashrc
-export GOROOT=/usr/local/lib/go
 export GOPATH=${HOME}/go
 export GOBIN=${GOPATH}/bin
 export PATH=${PATH}:${GOROOT}/bin:${GOBIN}
 ```
 
-Source the file to reflect in the current Terminal session
+Source the file to reflect changes in the current Terminal session.
 
 ```bash
 source ${HOME}/.bashrc
