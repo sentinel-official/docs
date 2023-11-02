@@ -8,7 +8,7 @@ sidebar_position: 1
 
 This guide is intended for anyone who wishes to contribute to the Sentinel Network by participating in the validation of transactions and blocks.
 
-Validators play a crucial role in maintaining the security and integrity of a network by verifying the authenticity of transactions and enforcing network rules and protocols. To participate in the network, validators are required to stake a certain amount of DVPN tokens. Incentivized by the receipt of DVPN tokens as rewards, validators are motivated to act honestly and ensure the network's security
+Validators play a crucial role in maintaining the security and integrity of a network by verifying the authenticity of transactions and enforcing network rules and protocols. To participate in the network, validators are required to stake a certain amount of DVPN coins. Incentivized by the receipt of DVPN coins as rewards, validators are motivated to act honestly and ensure the network's security
 
 To operate as a Sentinel dVPN Validator, you need to have a full node.
 

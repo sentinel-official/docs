@@ -14,7 +14,7 @@ validators that participate in consensus and receive rewards.
 
 ## Air drops
 
-A transfer of free cryptocurrency from a crypto project into users’ wallets in order to increase interest and incentivize the use of a new token.
+A transfer of free cryptocurrency from a crypto project into users’ wallets in order to increase interest and incentivize the use of a new coin/token.
 
 ## Blockchain
 
@@ -43,7 +43,7 @@ The percentage of staking rewards a validator will keep before distributing the 
 
 ## Community pool
 
-A special fund designated for funding community projects. Any community member can create a governance proposal to spend the tokens in the community pool. If the proposal passes, the funds are spent as specified in the proposal.
+A special fund designated for funding community projects. Any community member can create a governance proposal to spend the coins in the community pool. If the proposal passes, the funds are spent as specified in the proposal.
 
 ## Consensus
 
@@ -99,7 +99,7 @@ Validators that are not in the [active set](../getting-started/glossary.md#activ
 ## IBC
 
 The inter-blockchain communication protocol (IBC) creates communication between independent blockchains. IBC achieves this by specifying a set of structures that can be implemented by any distributed ledger that satisfies a small number of requirements.
-IBC facilitates cross-chain applications for token transfers, swaps, multi-chain contracts, and data sharding. Sentinel utilizes IBC for token transfers and will add new features that are made possible through IBC.
+IBC facilitates cross-chain applications for coin transfers, swaps, multi-chain contracts, and data sharding. Sentinel utilizes IBC for coin transfers and will add new features that are made possible through IBC.
 
 
 ## Jailed

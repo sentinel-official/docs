@@ -7,7 +7,7 @@ sidebar_position: 1
 
 Keplr is a non-custodial blockchain wallet for web pages that allow users to interact with blockchain applications.
  
- Keplr Wallet is the first, and leading, IBC-enabled wallet for the Cosmos ecosystem. Stake your tokens, start using blockchain apps, and manage tokens in just one wallet.
+ Keplr Wallet is the first, and leading, IBC-enabled wallet for the Cosmos ecosystem. Stake your coins, start using blockchain apps, and manage coins in just one wallet.
 
 
 ## Why Keplr?

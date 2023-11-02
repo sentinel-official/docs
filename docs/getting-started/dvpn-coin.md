@@ -1,17 +1,17 @@
 ---
-title: DVPN Token
+title: DVPN Coin
 sidebar_position: 2
 ---
 
-# DVPN Token
+# DVPN Coin
 
 ## Purpose
 
-The DVPN token is a governance token that allows staked token holders to decide the future of the protocol, including every implementation detail. DVPN token revolves around its functions as a:
-- Governance and Staking token
+The DVPN coin is a governance coin that allows staked coin holders to decide the future of the protocol, including every implementation detail. DVPN coin revolves around its functions as a:
+- Governance and Staking coin
 - Medium of Payment for dVPN Subscriptions
 - Medium of Payment for Advanced dVPN Services
-- Work Token 
+- Work coin 
 
 Governance is the critical component of how Sentinel evolves. Active stakeholders of the network will be responsible for proposing, vetting, and passing protocol upgrades.
 

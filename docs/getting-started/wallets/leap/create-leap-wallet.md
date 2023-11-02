@@ -23,7 +23,7 @@ Your wallet is now set up and ready to use. You can access it by clicking on the
 
 ![](/img/leap/create-4.png)
 
-You can now use your LEAP wallet to access and interact with the Cosmos Network, including staking native tokens, voting on governance proposals, and accessing NFTs and dApps.
+You can now use your LEAP wallet to access and interact with the Cosmos Network, including staking native coins, voting on governance proposals, and accessing NFTs and dApps.
 
 ![](/img/leap/create-5.png)
 

@@ -56,7 +56,7 @@ const config = {
   baseUrl: '/',
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
-  favicon: '/favicon.ico',
+  favicon: '/logo/sentinel.svg',
   trailingSlash: false,
 
   // GitHub pages deployment config.
@@ -216,8 +216,8 @@ const config = {
       footer: {
         logo: {
           href: 'http://sentinel.co',
-          src: '/logo/sentinel-logo-light.svg',
-          srcDark: '/logo/sentinel-logo-dark.svg',
+          src: '/logo/sentinel.svg',
+          srcDark: '/logo/sentinel.svg',
           alt: 'Sentinel Docs',
           height: '36px',
         },

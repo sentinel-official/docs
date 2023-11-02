@@ -6,7 +6,7 @@ sidebar_position: 1
 
 # Monitoring Tools
 
-If you are running a validator, it is crucial to have a reliable monitoring system in place. Without one, there is always a risk that something will break, and your validator will start skipping blocks. In the best case scenario, someone may notice and let you know so that you can fix it in time. However, in the worst case, the validator may skip the required number of tokens, leading to a slashing of all delegators' tokens and a reputation mark (which everyone you know can see you went to jail). It is also essential to have alerting set up to make you aware of any issues or potential problems.
+If you are running a validator, it is crucial to have a reliable monitoring system in place. Without one, there is always a risk that something will break, and your validator will start skipping blocks. In the best case scenario, someone may notice and let you know so that you can fix it in time. However, in the worst case, the validator may skip the required number of coins, leading to a slashing of all delegators' coins and a reputation mark (which everyone you know can see you went to jail). It is also essential to have alerting set up to make you aware of any issues or potential problems.
 
 To do this we will use 3 popular tools in the field of monitoring and visualization of system metrics.
 

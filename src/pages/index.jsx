@@ -48,9 +48,9 @@ export default function Homepage() {
               icon={<SentinelCore />}
             />
             <Card
-              title="The DVPN Token"
-              description="The DVPN token is a governance token that allows staked token holders to decide the future of the protocol, including every implementation detail. "
-              to="/getting-started/dvpn-token"
+              title="The DVPN Coin"
+              description="The DVPN coin is a governance coin that allows staked coin holders to decide the future of the protocol, including every implementation detail. "
+              to="/getting-started/dvpn-coin"
               icon={<SentinelCore />}
             />
             <Card
@@ -71,7 +71,7 @@ export default function Homepage() {
             />
             <Card
               title="Wallets"
-              description="Learn about how to start using blockchain apps, stake your tokens and manage them in just one wallet."
+              description="Learn about how to start using blockchain apps, stake your coins and manage them in just one wallet."
               to="/getting-started/wallets"
               icon={<Wallet />}
             />

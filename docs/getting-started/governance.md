@@ -7,7 +7,7 @@ sidebar_position: 5
 
 ## Voting
 
-Staked DVPN holders are eligible to vote on governance proposals. Browse the available proposals, and use one's staked tokens to cast a vote.
+Staked DVPN holders are eligible to vote on governance proposals. Browse the available proposals, and use one's staked coins to cast a vote.
 
 ![](/img/getting-started/voting.png)
 

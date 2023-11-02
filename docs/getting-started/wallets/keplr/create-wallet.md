@@ -30,7 +30,7 @@ You will now be prompted to:
 
 ![](/img/keplr/create-4.png)
 
-The account will be created and you will be prompted to add the Cosmos tokens you want to use with the created wallet; make sure to select DVPN.
+The account will be created and you will be prompted to add the Cosmos coins you want to use with the created wallet; make sure to select DVPN.
 
 ![](/img/keplr/create-5.png)
 

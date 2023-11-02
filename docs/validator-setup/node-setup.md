@@ -35,7 +35,7 @@ sudo ln -s "${GOBIN}/sentinelhub" /usr/local/bin/sentinelhub
 ## Configure Sentinel Hub
 
 ### Genesis File
-Let's initialize the Sentinel Hub using the Genesis file, a JSON file which defines the initial state of Sentinel blockchain. The state defined in the genesis file contains all the necessary information, like initial token allocation, genesis time, default parameters, and more
+Let's initialize the Sentinel Hub using the Genesis file, a JSON file which defines the initial state of Sentinel blockchain. The state defined in the genesis file contains all the necessary information, like initial coin allocation, genesis time, default parameters, and more
 
 ```bash
 sentinelhub init --chain-id sentinelhub-2 "Your Validator Name"

@@ -113,7 +113,7 @@ type = "wireguard"
 max_peers = 250
 ```
 
-The fields `gigabyte_prices` and `hourly_prices` **must** encompass the entire string, including the IBC tokens as well separated by commas. Merely incorporating the udvpn price will not suffice. Please refer to the list below for the supported IBC tokens:
+The fields `gigabyte_prices` and `hourly_prices` **must** encompass the entire string, including the IBC coins as well separated by commas. Merely incorporating the udvpn price will not suffice. Please refer to the list below for the supported IBC coins:
 
 ```bash
 ATOM
@@ -215,7 +215,7 @@ docker run --rm \
 
 You will be prompet to select a passphrase
 
-You will be provided with an operator address (sent1), a node address (sentnode1), and a mnemonic phrase that you should write down and store in a secure location. Additionally, before starting, remember to send some DVPN tokens (50 DVPNs should suffice) to the operator address.
+You will be provided with an operator address (sent1), a node address (sentnode1), and a mnemonic phrase that you should write down and store in a secure location. Additionally, before starting, remember to send some DVPN coins (50 DVPNs should suffice) to the operator address.
 
 ## Move created TLS keys
 

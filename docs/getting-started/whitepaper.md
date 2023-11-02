@@ -18,7 +18,7 @@ The covered contents are as follows:
 - Overview of the Sentinel Cosmos-based
 - Blockchain Architecture
 - Overview of the Sentinel dVPN Architecture
-- Token Utility Model
+- Coin Utility Model
 - Hardware Integration
 - Organizational Structure
 

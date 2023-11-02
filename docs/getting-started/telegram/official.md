@@ -15,8 +15,8 @@ sidebar_position: 1
 ## Community
 
 - [Sentinel Growth DAO](https://t.me/SentinelGrowthDAO): A place for everyone to discuss and participate in the Sentinel Growth DAO
-- [Sentinel DVPN Price Chat](https://t.me/dvpnpricediscussion): Price chat and DVPN token discussion
-- [Sentinel Token Governance Group](https://t.me/SentinelGov): Governance and validator discussion
+- [Sentinel DVPN Price Chat](https://t.me/dvpnpricediscussion): Price chat and DVPN coin discussion
+- [Sentinel Coin Governance Group](https://t.me/SentinelGov): Governance and validator discussion
 - [Sentinel Independent News (S.I.N.)](https://t.me/sentinel_independent): Unofficial Sentinel news channel
 - [The S.I.N. Bin](https://t.me/the_sinbin): Submissions, tips, comments, feedback, etc. for S.I.N.
 - [DVPN Degens (Trollbox 2.0)](https://t.me/dvpndegen): Anything goes

@@ -5,7 +5,7 @@ sidebar_position: 6
 
 # Become a Validator
 
-A create-validator transaction is a type of transaction used to create a new validator. In this type of transaction, the validator stakes a certain amount of tokens as collateral.
+A create-validator transaction is a type of transaction used to create a new validator. In this type of transaction, the validator stakes a certain amount of coins as collateral.
 
 Add an operator key and take note of the mnemonic key
 
