@@ -3,8 +3,6 @@ title: Get DVPN
 sidebar_position: 3
 ---
 
-## Get DVPN
-
 You can get DVPN either from Centralized and Decentralized exchanges
 
 ### Centralized Exchanges (CEX)
