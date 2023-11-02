@@ -13,6 +13,11 @@
       "selectors_key": "sentinel-core"
     },
     {
+      "url": "https://docs.sentinel.co/sentinel-cli",
+      "tags": "sentinel-cli",
+      "selectors_key": "sentinel-cli"
+    },
+    {
       "url": "https://docs.sentinel.co/networks",
       "tags": "networks",
       "selectors_key": "networks"
@@ -70,6 +75,20 @@
         "selector": "",
         "global": true,
         "default_value": "sentinel-core"
+      },
+      "lvl1": "article h1",
+      "lvl2": "article h2",
+      "lvl3": "article h3",
+      "lvl4": "article h4",
+      "lvl5": "article h5, article td:first-child",
+      "lvl6": "article h6",
+      "text": "article p, article li, article td:last-child"
+    },
+    "sentinel-cli": {
+      "lvl0": {
+        "selector": "",
+        "global": true,
+        "default_value": "sentinel-cli"
       },
       "lvl1": "article h1",
       "lvl2": "article h2",
