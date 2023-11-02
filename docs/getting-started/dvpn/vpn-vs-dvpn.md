@@ -1,6 +1,6 @@
 ---
 title: VPN vs dVPN
-sidebar_position: 2.1
+sidebar_position: 1
 ---
 
 Since the start of the crypto revolution decentralization has always been a goal to strive for. We want to stop being depended on centralized entities big or small and taking a cut every step in between. By decentralizing the power everyone has a say and we do not have to trust any middleman facilitating any exchange, because there is no need for any middleman anymore. And herein lies the biggest difference between a VPN (centralized) and a dVPN (decentralized VPN). Why do you use a VPN in the first place:

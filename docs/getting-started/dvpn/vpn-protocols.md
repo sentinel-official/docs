@@ -1,6 +1,6 @@
 ---
 title: VPN Protocols
-sidebar_position: 2.2
+sidebar_position: 2
 ---
 
 ## V2Ray Networking Tool
