@@ -1,6 +1,6 @@
 ---
 title: Overview
-description: This guide has been created based on my personal experience of setting up a validator and it is still a work in progress
+description: Intended for anyone who wishes to contribute to the Sentinel Network by participating in the validation of transactions and blocks.
 sidebar_position: 1
 ---
 

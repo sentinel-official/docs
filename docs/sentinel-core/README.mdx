@@ -12,6 +12,7 @@ import {
   KeysIcon,
   SentinelCore,
   Contribute,
+  Chainregistry,
 } from '../../src/icons';
 
 # Sentinel Hub
@@ -39,8 +40,14 @@ An Overview of Sentinel Hub, and how developers can contribue to it.
       icon={<KeysIcon />}
     />
     <Card
+      title="Set up a Validator"
+      description="Participate in the validation of transactions and blocks"
+      to="/validator-setup"
+      icon={<Chainregistry />}
+    />
+    <Card
       title="Contributing"
-      description=" Guidelines to contributing to Sentinel core development."
+      description="Guidelines to contributing to Sentinel core development."
       to="/sentinel-core/contributing"
       icon={<Contribute />}
     />
