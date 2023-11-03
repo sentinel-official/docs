@@ -13,12 +13,11 @@ This list does not include validators who have already communicated their decomm
 - Allnodes: https://t.me/allnodes
 - AutoStake: https://t.me/AutoStake_net
 - Badger Bite: https://t.me/BadgerbiteValidator
-- B-Harvest: https://t.me/b_harvest
 - Bit Cat: https://t.me/bitcat365
 - ChainLayer: https://t.me/chainlayer
 - ChainTools: https://t.me/chaintoolsT
 - ChronoBit: http://t.me/+wtBSntxBFglmMDY0
-- CitadelOne: https://t.me/citadelofficial
+- Citadel.One: https://t.me/citadelofficial
 - CommunityStaking: https://t.me/CommunityStaking
 - Cosmic Validator: https://t.me/cosmicvalidator
 - Cosmostation: https://t.me/cosmostation
@@ -32,10 +31,8 @@ This list does not include validators who have already communicated their decomm
 - Quokka Stake: https://t.me/quokkastake
 - SolarLabs: https://t.me/solarlabs
 - Stakecito: https://t.me/cryptocitos_frens
-- Stakefish: https://t.me/stakefish
 - StakeLab: https://t.me/stakelab_fr
 - Stakewolle: https://t.me/stakewolle
-- Stakin: https://t.me/stakinofficial
 - Strangelove: https://t.me/strangeloveprice
 - Trinity Validator: https://t.me/trinityvalidatorgroup
 - Trivium Network: https://t.me/TriviumNode
