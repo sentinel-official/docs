@@ -13,9 +13,9 @@ sudo apt-get install -y curl git jq make unzip
 
 You now have two methods for installing Golang.
 
-## Debian Based Distributions
+## Ubuntu
 
-To install Go on Debian and its derivatives, you can easily follow the steps provided.
+To install Go on Ubuntu, you can easily follow the steps provided.
 
 Add the repository
 
