@@ -26,7 +26,9 @@ sudo nano ${HOME}/.sentinelnode/config.toml
 
 Edit the required fields
 
-(DO NOT COPY AND PASTE THE ENTIRE BLOCK AS IT MAY DISRUPT THE CONFIGURATION FILE!!! ONLY COPY THE NECESSARY FIELDS OR ADD THEM MANUALLY!)
+:::danger Important
+Do not copy and paste the entire code block as it may disrupt the configuration file!!! Only copy the necessary fields or add them manually!
+:::
 
 ```bash title=${HOME}/.sentinelnode/config.toml
 [chain]
