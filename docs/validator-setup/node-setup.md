@@ -29,6 +29,11 @@ git clone https://github.com/sentinel-official/hub.git "${HOME}/sentinelhub"
 cd "${HOME}/sentinelhub"
 git checkout v0.11.3
 make install
+
+# For Ubuntu installation
+sudo ln -s "${GOBIN}/sentinelhub" /usr/bin/sentinelhub
+
+# For manual installation
 sudo ln -s "${GOBIN}/sentinelhub" /usr/local/bin/sentinelhub
 ```
 

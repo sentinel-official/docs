@@ -56,19 +56,17 @@ Open the .bashrc file
 sudo nano ${HOME}/.bashrc
 ```
 
-If you installed Golang via PPA, add this line:
+Based on your installation type, set the GOROOT environment variable by choosing one of the following lines
 
 ```bash
+# For Ubuntu installation
 export GOROOT=/usr/lib/go
-```
 
-Otherwise, add this line
-
-```bash
+# For Manual installation
 export GOROOT=/usr/local/lib/go
 ```
 
-Then add these lines below to the file:
+After setting the appropriate GOROOT environment variable, you can add the following lines
 
 ```bash title=${HOME}/.bashrc
 export GOPATH=${HOME}/go
