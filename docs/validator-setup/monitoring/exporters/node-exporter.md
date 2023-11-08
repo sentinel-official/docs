@@ -1,12 +1,11 @@
 ---
 title: Node Exporter
-description: A tool that collects your metrics at the host level
-sidebar_position: 2
+sidebar_position: 1
 ---
 
 # Node Exporter
 
-Node Exporter is a monitoring application that must be installed on both your validator and monitoring machines
+Node Exporter is an agent that runs on the machine that is to be monitored. It collects various system-level metrics, such as CPU usage, memory usage, disk usage, network activity, and others.
 
 ## Download & Installation
 
@@ -25,7 +24,7 @@ mv node_exporter-1.5.0.linux-amd64 node_exporter
 
 ## Add a system unit file
 
-Open the .service with a text editor
+Create the .service file with a text editor
 
 ```bash
 sudo nano /etc/systemd/system/node-exporter.service
@@ -74,7 +73,7 @@ sudo systemctl start node-exporter.service
 Use this command to check logs in real time
 
 ```bash
-sudo journalctl -u node-exporter.service -f
+sudo journalctl -u node-exporter.service -f --output cat
 ```
 
 Once the Node Exporter is installed and running, you can verify that `metrics` are being exported by cURLing the /metrics endpoint:
@@ -89,8 +88,10 @@ Success! Node Exporter is now exposing metrics that Prometheus can scrape, inclu
 curl http://localhost:9100/metrics | grep "node_"
 ```
 
-After installing and running Node Exporter, you need to open port 9100 on your Validator firewall (accessible only from your monitor machine) to allow Prometheus to scrape data from Node Exporter.
+:::danger Important
+After successfully installing and launching Node Exporter, the next step is to open port 9100 on your Validator's firewall. This port should be accessible exclusively from your monitoring machine. This action is essential to enable Prometheus to collect data from Node Exporter.
 
 ```bash
 sudo ufw allow from monitor_ip to validator_ip port 9100
 ```
+:::

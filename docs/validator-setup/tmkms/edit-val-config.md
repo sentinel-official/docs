@@ -30,8 +30,10 @@ It is also recommended to comment out the `priv_validator_key_file` line and the
 # priv_validator_state_file = "data/priv_validator_state.json"
 ```
 
-Open the door 26659 on Validator firewall and allow it to accept incoming traffic only from the TMKMS machine:
+:::danger Important
+Open port 26659 on the Validator firewall to accept incoming traffic exclusively from the TMKMS machine.
 
 ```bash
 sudo ufw allow from tmkms_ip to validator_ip port 26659
 ```
+:::
