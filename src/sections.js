@@ -76,6 +76,12 @@ const SECTIONS = [
     icon: Guides,
     section: 'guides',
   },
+  {
+    name: 'Node Monitoring',
+    id: 'node-monitoring',
+    icon: Guides,
+    section: 'guides',
+  },
 
   // Dropdown Tools
   {

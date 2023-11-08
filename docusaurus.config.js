@@ -44,6 +44,7 @@ const SECTIONS = [
   defineSection('guides'),
   defineSection('node-setup'),
   defineSection('validator-setup'),
+  defineSection('node-monitoring'),
   defineSection('apis'),
 ];
 

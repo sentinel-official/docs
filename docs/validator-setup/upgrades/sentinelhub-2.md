@@ -19,7 +19,7 @@ Hardfork upgrade from blockchain `sentinelhub-1` to `sentinelhub-2`
 
 5. Wait until the blockchain halt
 
-:::warning Warning
+:::danger Warning
 Follow the next steps only after the blockchain halt!
 :::
 

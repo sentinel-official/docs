@@ -5,7 +5,7 @@ sidebar_position: 6
 
 # Software upgrade - 5
 
-:::warning Warning
+:::danger Warning
 At block height `12310005` the Blockchain will stop producing the blocks. Follow the next steps only after the blockchain halt!
 :::
 
@@ -61,7 +61,7 @@ At block height `12310005` the Blockchain will stop producing the blocks. Follow
 
 ## In case the upgrade fails
 
-:::warning Warning
+:::danger Warning
 Follow the next steps in case the upgrade fails!
 :::
 
