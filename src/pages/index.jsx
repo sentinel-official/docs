@@ -44,7 +44,7 @@ export default function Homepage() {
             <Card
               title="What is Sentinel dVPN?"
               description="Sentinel is a decentralized virtual private network (dVPN) built on top of the Cosmos blockchain. It allows users to connect to the internet privately and securely by routing their traffic through a network of distributed nodes."
-              to="/getting-started/"
+              to="/getting-started/introduction"
               icon={<SentinelCore />}
             />
             <Card
