@@ -28,7 +28,7 @@ function defineSection(section, options = {}) {
       id: section,
       sidebarPath: require.resolve('./sidebars-default.js'),
       breadcrumbs: false,
-      editUrl: 'https://github.com/sentinel-official/docs/tree/main/',
+      //editUrl: 'https://github.com/sentinel-official/docs/tree/main/',
       ...defaultSettings,
       ...options,
     }),
