@@ -25,4 +25,4 @@ As common on Proof of Stake (PoS) blockchains you can stake your coins and it wi
 
 ### Revenue sharing
 
-On top of the usual PoS staking rewards Sentinel's protocol enables revenue sharing from [dVPN node owners](/node-setup). 20% of the earnings from dVPN node owners are also going to DVPN stakers.
+On top of the usual PoS staking rewards Sentinel's protocol enables revenue sharing from [dVPN node owners](/node-setup). 20% of the earnings from dVPN node owners are also going to DVPN stakers (which can include $DVPN).
