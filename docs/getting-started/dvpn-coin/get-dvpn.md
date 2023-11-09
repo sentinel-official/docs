@@ -21,7 +21,7 @@ For a good overview of liquidity and volume you can check out [CoinGecko markets
 
 ### Earn DVPN through staking
 
-As common on Proof of Stake (PoS) blockchains you can stake your coins and it will earn more coins by inflation and transaction fees. You can find the current APR of the Sentinel chain on this page in the [Onchain Metrics](https://www.mintscan.io/sentinel) section.
+As common on Proof of Stake (PoS) blockchains you can [stake](/getting-started/staking-delegating/) your coins and it will earn more coins by inflation and transaction fees. You can find the current APR of the Sentinel chain on this page in the [Onchain Metrics](https://www.mintscan.io/sentinel) section.
 
 ### Revenue sharing
 
