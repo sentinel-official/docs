@@ -35,7 +35,7 @@ export default function Homepage() {
             <p>
               The Sentinel blockchain is a decentralized network, ran by 80+ validators and full nodes, with many front-ends and development teams on it. Explore our docs and examples to quickly learn, develop & integrate with the Sentinel blockchain.
             </p>
-            <DyteButton onClick={() => router.push('getting-started')}>
+            <DyteButton onClick={() => router.push('getting-started/introduction')}>
               Get Started &rarr;
             </DyteButton>
           </div>

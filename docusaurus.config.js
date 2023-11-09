@@ -46,6 +46,7 @@ const SECTIONS = [
   defineSection('validator-setup'),
   defineSection('node-monitoring'),
   defineSection('apis'),
+  defineSection('support'),
 ];
 
 /** @type {import('@docusaurus/types').Config} */
@@ -166,6 +167,11 @@ const config = {
           {
             label: 'API Reference',
             to: 'apis',
+            position: 'left',
+          },
+          {
+            label: 'Support',
+            to: 'support',
             position: 'left',
           },
           {
