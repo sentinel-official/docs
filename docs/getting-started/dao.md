@@ -1,6 +1,6 @@
 ---
 title: Growth DAO
-sidebar_position: 6
+sidebar_position: 10
 ---
 
 # Sentinel Growth DAO
