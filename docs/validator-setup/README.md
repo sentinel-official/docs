@@ -8,7 +8,7 @@ sidebar_position: 1
 
 This guide is intended for anyone who wishes to contribute to the Sentinel Network by participating in the validation of transactions and blocks.
 
-Validators play a crucial role in maintaining the security and integrity of a network by verifying the authenticity of transactions and enforcing network rules and protocols. To participate in the network, validators are required to stake a certain amount of DVPN coins. Incentivized by the receipt of DVPN coins as rewards, validators are motivated to act honestly and ensure the network's security
+Validators play a crucial role in maintaining the security and integrity of a network by verifying the authenticity of transactions and enforcing network rules and protocols. To participate in the network, validators are required to stake a certain amount of DVPN coins. Incentivized by the receipt of DVPN coins as rewards, validators are motivated to act honestly and ensure the network's security.
 
 To operate as a Sentinel dVPN Validator, you need to set up a full node and create the validator transaction.
 
@@ -24,3 +24,11 @@ Once you've become a Validator, it is strongly recommended to explore the follow
 - [Node Monitoring](/node-monitoring): make sure everything works properly on your Validator machine!
 - [Autorestake](/validator-setup/category/restake-app-setup): a guide to join Restake.app and enable your Validator for autocompound
 - [RPC Exposure](/validator-setup/category/rpc-exposure): enable remote execution of functions and access to node services
+
+### Voting power
+
+In order to become an active Sentinel validator you’ll need to accumulate enough voting power. Voting power is the metric that decides if a technical valid validator is active or not. You will receive voting power by delegating DVPN to your validator or have other people delegate DVPN to your validator. 1 DVPN equals 1 voting power. How much voting power is required to be come active can be seen on the [blockchain explorer](https://www.mintscan.io/sentinel/validators). Sort on voting power and check what the lowest amount is. You’ll need to require more voting power than that in order to become an active validator, sign transactions and get rewarded for it.
+
+### dVPN node
+
+If running a Sentinel validator seems to be unfeasible for you, you can also setup a dVPN node instead. A dVPN node is not bound to a minimum amount of voting power. It will still support the Sentinel network and can be a source of income as well. Read more about it in the "[dVPN node setup](https://docs.sentinel.co/node-setup)" section.
