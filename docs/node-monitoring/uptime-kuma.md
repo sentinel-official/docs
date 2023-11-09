@@ -1,12 +1,15 @@
 ---
-title: Monitoring with Uptime Kuma
+title: Uptime Kuma
 description: How to monitor your running node
-sidebar_position: 7
+sidebar_position: 5
 ---
 
-# Monitoring with Uptime Kuma
+# Uptime Kuma
 
-To ensure constant monitoring of your node to prevent any downtime, we highly recommend using [Uptime Kuma](https://uptime.kuma.pet/). This tool can be self-hosted using a Docker container by executing the following command
+Uptime Kuma ([website](https://uptime.kuma.pet/)) is a tool specifically designed for monitoring the availability and uptime of services and websites. It checks if services are running and responds as expected by sending HTTP requests at regular intervals. In contrast to the Node Exporter/Prometheus/Grafana stack, Uptime Kuma places a greater emphasis on ensuring the accessibility and responsiveness of your services rather than collecting in-depth system metrics.
+
+This is a easy and ideal solution to ensure constant monitoring of your node to prevent any downtime.
+To get started, you can self-host this tool in a Docker container by executing the following command:
 
 ```bash
 docker run -d --restart=always -p 3001:3001 -v uptime-kuma:/app/data --name uptime-kuma louislam/uptime-kuma:1
