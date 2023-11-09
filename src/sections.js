@@ -1,7 +1,7 @@
 import {
   SentinelCore,
   Network,
-  Guides,
+  Guide,
   NodeSpawner,
   TerminalIcon,
 } from './icons';
@@ -61,25 +61,25 @@ const SECTIONS = [
   {
     name: 'Overview',
     id: 'guides',
-    icon: Guides,
+    icon: Guide,
     section: 'guides',
   },
   {
     name: 'dVPN Node Setup',
     id: 'node-setup',
-    icon: Guides,
+    icon: Guide,
     section: 'guides',
   },
   {
     name: 'Validator Setup',
     id: 'validator-setup',
-    icon: Guides,
+    icon: Guide,
     section: 'guides',
   },
   {
     name: 'Node Monitoring',
     id: 'node-monitoring',
-    icon: Guides,
+    icon: Guide,
     section: 'guides',
   },
 

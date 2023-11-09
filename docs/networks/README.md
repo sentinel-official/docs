@@ -10,7 +10,7 @@ import {
 
 import {
   APIReferenceIcon,
-  Chainregistry,
+  Guide,
   AssetIcon,
   ModulesIcon,
   Transaction,
@@ -37,7 +37,7 @@ An Overview of Sentinel Network, including Endpoints, Asset Info, Chain Registry
         title="Chain Registry"
         description="Chain Registry is a GitHub repository containing all the chain.json and assets.json file for every Cosmos based blockchain."
         to="/networks/chain-registry"
-        icon={<Chainregistry />}
+        icon={<Guide />}
     />
     <Card
         title="Explorers"

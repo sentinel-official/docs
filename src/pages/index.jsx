@@ -12,7 +12,7 @@ import {
 import {
   APIReferenceIcon,
   TerminalIcon,
-  Chainregistry,
+  Guide,
   Network,
   SentinelCore,
   Download,
@@ -123,7 +123,7 @@ export default function Homepage() {
               title="User Guides"
               description="Deploy Nodes and Validate the Network"
               to="/guides/"
-              icon={<Chainregistry />}
+              icon={<Guide />}
               svgFile=""
             />
             <Card
