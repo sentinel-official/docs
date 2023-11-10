@@ -47,39 +47,47 @@ export default function SidebarMenu() {
   }
 
   const { currentSection, data } = sections;
-  const activeSectionData = data[currentSection];
-
-  if (!activeSectionData) {
-    // Handle the case where the active section data is not found.
-    return null;
-  }
-
-  const { name, items } = activeSectionData;
-
-  const navigateToFirstSection = () => handleSectionChange(items[0].id);
 
   return (
     <div className={styles.multiSectionContainer}>
-      <div
-        className={clsx(styles.section, styles.sectionActive)}
-        onClick={navigateToFirstSection}
-        onKeyDown={(e) => {
-          if (e.code === 'Space' || e.code === 'Enter') {
-            navigateToFirstSection();
-          }
-        }}
-        tabIndex={0}
-      >
-        <div>{name}</div>
-        <div className={styles.row}>
-          <SectionsMenu
-            defaultValue={id}
-            values={items}
-            onValueChange={handleSectionChange}
-            triggerClassName={styles.sectionsMenu}
-          />
-        </div>
-      </div>
+      {Object.keys(data).map((section) => {
+        const { name, items, description } = data[section];
+
+        const isCurrentSection = currentSection === section;
+
+        const navigateToFirstSection = () => handleSectionChange(items[0].id);
+
+        return (
+          <div
+            className={clsx(styles.section, isCurrentSection && styles.sectionActive)}
+            onClick={navigateToFirstSection}
+            onKeyDown={(e) => {
+              if (e.code === 'Space' || e.code == 'Enter') {
+                navigateToFirstSection();
+              }
+            }}
+            tabIndex={0}
+            key={section}
+          >
+            <div>{name}</div>
+            <div>
+              {isCurrentSection ? (
+                <div className={styles.row}>
+                  <SectionsMenu
+                    defaultValue={isCurrentSection ? id : items[0].id}
+                    values={items}
+                    onValueChange={handleSectionChange}
+                    triggerClassName={styles.sectionsMenu}
+                  />
+            
+                </div>
+              ) : (
+                <p className={styles.description}>{description}</p>
+              )}
+            </div>
+          </div>
+        );
+      })}
     </div>
   );
 }

@@ -37,11 +37,10 @@ function defineSection(section, options = {}) {
 
 const SECTIONS = [
   defineSection('getting-started'),
-  defineSection('sentinel-core'),
+  defineSection('sentinel-hub'),
   defineSection('sentinel-cli'),
   defineSection('networks'),
   defineSection('tools'),
-  defineSection('guides'),
   defineSection('node-setup'),
   defineSection('validator-setup'),
   defineSection('node-monitoring'),
@@ -142,27 +141,45 @@ const config = {
             position: 'left',
           },
           {
-            label: 'Develop',
-            to: 'sentinel-core',
+            label: 'Sentinel Core',
+            type: 'dropdown',
             position: 'left',
+            items: [
+              {
+                to: 'sentinel-hub',
+                label: 'Sentinel HUB',
+              },
+              {
+                to: 'sentinel-cli',
+                label: 'Sentinel CLI',
+              },
+              {
+                to: 'networks',
+                label: 'Networks',
+              },
+            ],
             // className: 'new-badge',
             //activeBaseRegex: '(.*ui-kit|.*web-core)',
           },
           {
-            label: 'Networks',
-            to: '/networks',
+            label: 'User Guides',
+            type: 'dropdown',
             position: 'left',
+            items: [
+              {
+                to: 'node-setup',
+                label: 'Run a Node',
+              },
+              {
+                to: 'validator-setup',
+                label: 'Run a Validator',
+              },
+              {
+                to: 'node-monitoring',
+                label: 'Node Monitoring',
+              },
+            ],
             // className: 'new-badge',
-          },
-          {
-            label: 'Run a Node',
-            to: 'node-setup',
-            position: 'left',
-          },
-          {
-            label: 'Validate',
-            to: 'validator-setup',
-            position: 'left',
           },
           {
             label: 'API Reference',

@@ -40,12 +40,12 @@ const SECTIONS = [
   // Dropdown Sentinel Core
   {
     name: 'Sentinel Hub',
-    id: 'sentinel-core',
+    id: 'sentinel-hub',
     icon: SentinelCore,
     section: 'core-sdk',
   },
   {
-    name: 'Sentinel CLI',
+    name: 'Sentinel Cli',
     id: 'sentinel-cli',
     icon: TerminalIcon,
     section: 'core-sdk',
@@ -58,12 +58,6 @@ const SECTIONS = [
   },
 
   // Dropdown Sentinel Guides
-  {
-    name: 'Overview',
-    id: 'guides',
-    icon: Guide,
-    section: 'guides',
-  },
   {
     name: 'dVPN Node Setup',
     id: 'node-setup',
