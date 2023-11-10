@@ -136,7 +136,7 @@ const config = {
         },
         items: [
           {
-            label: 'Getting Started',
+            label: 'Get Started',
             to: 'getting-started/introduction',
             position: 'left',
           },
