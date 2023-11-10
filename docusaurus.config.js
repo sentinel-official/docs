@@ -197,10 +197,6 @@ const config = {
             position: 'right',
             items: [
               {
-                href: 'https://github.com/sentinel-official',
-                label: 'GitHub',
-              },
-              {
                 href: 'https://x.com/sentinelvpn',
                 label: 'X/Twitter',
               },
@@ -242,6 +238,10 @@ const config = {
               {
                 href: 'https://map.sentinel.co',
                 label: 'Node Explorer',
+              },
+              {
+                href: 'https://github.com/sentinel-official',
+                label: 'GitHub',
               },
             ],
           },
@@ -324,7 +324,7 @@ const config = {
             ],
           },
         ],
-        copyright: "Copyright © Sentinel dVPN since 2017 - Built by <a href='https://trinityvalidator.com'>Trinity Validator</a>. Maintained by <a href='https://x.com/CommunityStakin'>CommunityStaking Validator</a>",
+        copyright: "Copyright © Sentinel dVPN - Built by <a href='https://trinityvalidator.com'>Trinity Validator</a>. Maintained by <a href='https://x.com/CommunityStakin'>CommunityStaking Validator</a>",
       },
       prism: {
         theme: lightCodeTheme,

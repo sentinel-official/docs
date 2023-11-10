@@ -74,7 +74,29 @@ information:
     KWallet     https://github.com/KDE/kwallet
     pass        https://www.passwordstore.org/
 
-The pass backend requires GnuPG: https://gnupg.org/
+The pass backend requires GnuPG: https://gnupg.org
+
+<details>
+<summary>Available subcommands</summary>
+<p>
+
+#### This is the output of `sentinelcli keys`
+```bash
+add         Add an encrypted private key (either newly generated or recovered), encrypt it, and save to <name> file
+delete      Delete the given keys
+export      Export private keys
+import      Import private keys into the local keybase
+list        List all keys
+migrate     Migrate keys from the legacy (db-based) Keybase
+mnemonic    Compute the bip39 mnemonic for some input entropy
+parse       Parse address from hex to bech32 and vice versa
+show        Retrieve key information by name or address
+```
+
+</p>
+</details>
+
+For a more detailed explaination of the subcommand, plese visit the [Basic Key Management](/sentinel-cli/keys/keys-cli) section.
 
 
 ### `tx`
