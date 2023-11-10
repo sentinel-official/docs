@@ -306,8 +306,8 @@ const config = {
             title: 'Community',
             items: [
               {
-                label: 'Twitter',
-                href: 'https://twitter.com/sentinelvpn',
+                label: 'X',
+                href: 'https://x.com/sentinelvpn',
               },
               {
                 label: 'Telegram',
@@ -324,7 +324,7 @@ const config = {
             ],
           },
         ],
-        copyright: "Copyright © Sentinel dVPN - Built by <a href='https://trinityvalidator.com'>Trinity Validator</a>. Maintained by <a href='https://x.com/CommunityStakin'>CommunityStaking Validator</a>",
+        copyright: "Copyright © Sentinel dVPN - Built by <a href='https://trinityvalidator.com'>Trinity Validator</a>, co-maintained with <a href='https://x.com/CommunityStakin'>CommunityStaking Validator</a>",
       },
       prism: {
         theme: lightCodeTheme,
