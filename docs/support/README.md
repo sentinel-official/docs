@@ -24,6 +24,7 @@ If you need support please use the official support media below:
 
 **White-label Discord:**
 
+- [Meile](https://discord.gg/HQrHXZJHQq)
 - [Decentr](https://discord.gg/VMUt7yw92B)
 
 **Website contact page:**
