@@ -18,9 +18,9 @@ If you need support please use the official support media below:
 
 - Meile ➡️ [support@mathnodes.com](mailto:support@mathnodes.com)
 - Solar Labs ➡️ [support@solarlabs.ee](mailto:support@solarlabs.ee)
-- Foxta ➡️ [contactus@kalagato.co](contactus@kalagato.co)
-- BasedVPN ➡️ [support@basedapps.co.uk](support@basedapps.co.uk)
-- Bagimsiz ➡️ [ceo@basedapps.co.uk](ceo@basedapps.co.uk)
+- Foxta ➡️ [contactus@kalagato.co](mailto:contactus@kalagato.co)
+- BasedVPN ➡️ [support@basedapps.co.uk](mailto:support@basedapps.co.uk)
+- Bagimsiz ➡️ [ceo@basedapps.co.uk](mailto:ceo@basedapps.co.uk)
 
 **White-label Discord:**
 
