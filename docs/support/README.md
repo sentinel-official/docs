@@ -12,11 +12,15 @@ If you need support please use the official support media below:
 - [Meile](https://t.me/MathNodes)
 - [Solar Labs](https://t.me/solarlabs)
 - [Decentr](https://t.me/DecentrNet)
+- [Bagimsiz](https://t.me/bagimsizdvpn)
 
 **Email:**
 
 - Meile ➡️ [support@mathnodes.com](mailto:support@mathnodes.com)
 - Solar Labs ➡️ [support@solarlabs.ee](mailto:support@solarlabs.ee)
+- Foxta ➡️ [contactus@kalagato.co](contactus@kalagato.co)
+- BasedVPN ➡️ [support@basedapps.co.uk](support@basedapps.co.uk)
+- Bagimsiz ➡️ [ceo@basedapps.co.uk](ceo@basedapps.co.uk)
 
 **White-label Discord:**
 
@@ -25,3 +29,4 @@ If you need support please use the official support media below:
 **Website contact page:**
 
 - [Decentr](https://decentr.net/#contact)
+- [Foxta](https://kalagato.ai/contact-us)
