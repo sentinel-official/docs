@@ -15,6 +15,7 @@ export { default as Tscodegen } from './Tscodegen';
 export { default as Transaction } from './Transaction';
 export { default as Contribute } from './Contribute';
 export { default as Guide } from './Guide';
+export { default as Whitepaper } from './Whitepaper';
 
 export { default as Decentr } from './Decentr';
 export { default as Carbon } from './Carbon';
@@ -27,3 +28,4 @@ export { default as Keplr } from './Keplr';
 export { default as GrowthDao } from './GrowthDao';
 export { default as Wallet } from './Wallet';
 export { default as Download } from './Download';
+export { default as DvpnCoin } from './DvpnCoin';

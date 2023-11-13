@@ -18,6 +18,8 @@ import {
   Download,
   GrowthDao,
   Wallet,
+  DvpnCoin,
+  Whitepaper,
 } from '../icons';
 
 export default function Homepage() {
@@ -51,13 +53,14 @@ export default function Homepage() {
               title="The DVPN Coin"
               description="The DVPN coin is a governance coin that allows staked coin holders to decide the future of the protocol, including every implementation detail. "
               to="/getting-started/dvpn-coin"
-              icon={<SentinelCore />}
+              icon={<DvpnCoin />}
+              svgFile=""
             />
             <Card
               title="Whitepaper"
               description="For a comprehensive examination of this subject and a detailed analysis, please feel free to review our white paper, which is accessible."
               to="/getting-started/whitepaper"
-              icon={<SentinelCore />}
+              icon={<Whitepaper />}
             />
           </Section>
 

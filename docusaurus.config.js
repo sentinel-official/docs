@@ -268,16 +268,16 @@ const config = {
                 href: 'getting-started',
               },
               {
-                label: 'Developer Portal',
-                href: 'sentinel-core',
+                label: 'Sentinel Hub',
+                href: 'sentinel-hub',
               },
               {
                 label: 'Networks',
                 to: 'networks',
               },
               {
-                label: 'Guides',
-                href: 'guides',
+                label: 'Run a Node',
+                href: '/node-setup',
               },
             ],
           },
