@@ -98,7 +98,7 @@ export default function Homepage() {
               <Card
                 title="Sentinel Hub"
                 description="Getting started with Sentinel codebase"
-                to="/sentinel-core/"
+                to="/sentinel-hub/"
                 icon={<SentinelCore />}
               />
               <Card
@@ -118,11 +118,18 @@ export default function Homepage() {
             </Section>
           </Section>
 
-          <Section title="📜 Documentation">
+          <Section title="📜 User Guides">
             <Card
-              title="User Guides"
-              description="Deploy Nodes and Validate the Network"
-              to="/guides/"
+              title="Run a Node"
+              description="Learn on how deploy a Sentinel Node"
+              to="/node-setup"
+              icon={<Guide />}
+              svgFile=""
+            />
+            <Card
+              title="Run a Validator"
+              description="Set up a full node and Validate the Network"
+              to="/validator-setup"
               icon={<Guide />}
               svgFile=""
             />
