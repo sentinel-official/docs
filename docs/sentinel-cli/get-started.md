@@ -6,14 +6,14 @@ sidebar_position: 2
 # Get Sentinel CLI
 
 :::note
-Please note that the most recent version, **0.3.1**, was released by freQnik of MathNodes and will soon be integrated into the Sentinel repository
+Please note that the most recent version, **0.3.2**, was released by freQnik of MathNodes and will soon be integrated into the Sentinel repository
 :::
 
 To begin using the Sentinel CLI, you have two options
 
 ## Download Binary Packages
 
-Binary packages are available for [Windows](https://github.com/freQniK/cli-client/releases/download/v0.3.1/sentinelcli.exe), [MacOS](https://github.com/freQniK/cli-client/releases/download/v0.3.1/sentinelcli_darwin_arm64) and [Linux](https://github.com/freQniK/cli-client/releases/download/v0.3.1/sentinelcli_linux_x86_64), or you can build the source code, as outlined below.
+Binary packages are available for [Windows](https://github.com/freQniK/cli-client/releases/download/v0.3.2/sentinelcli.exe) and [MacOS](https://github.com/freQniK/cli-client/releases/download/v0.3.2/sentinelcli_darwin_arm64), or you can build the source code, as outlined below.
 
 ## Build the Source Code
 
@@ -42,7 +42,7 @@ Build Sentinel from the source code:
 ```bash
 git clone https://github.com/freQniK/cli-client.git "${HOME}/sentinelcli"
 cd "${HOME}/sentinelcli"
-git checkout v0.3.1 # always make sure it's the latest version
+git checkout v0.3.2 # always make sure it's the latest version
 make install
 sudo ln -s "${HOME}/sentinelcli" /usr/local/bin/sentinelcli
 ```
