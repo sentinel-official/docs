@@ -88,7 +88,7 @@ You will be prompted for a password. Please enter it, and you will be provided w
 
 ```bash
 password: test
-$2b$12$hNf2lSsxfm0.i4a.1kVpSOVyBCfIB51VRjgBUyv6kdnyTlgWj81Ay
+$2a$12$1VqNbIcQya1KjObYiDvFz.024poXtE1S9gQfs0fD8uATCeOv6/PgK
 ```
 
 ### Create the file web.yml
