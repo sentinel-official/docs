@@ -8,7 +8,7 @@ sidebar_position: 8
 
 State Sync helps you free up space on your hard disk and should be performed regularly. You are encouraged to set up a monitoring structure to check when it is time to free up space.
 
-We assume you have Cosmovisor installed, if you do not have it, follow the related [module](https://trinityprivacy.gitbook.io/sentinel-dvpn-validator-setup-guide/cosmovisor).
+We assume you have Cosmovisor installed, if you do not have it, follow the related [module](/validator-setup/category/cosmovisor).
 
 ## Create State Sync script file
 
