@@ -50,9 +50,9 @@ Update the list of available software packages
 sudo apt update && sudo apt upgrade -y
 ```
 
-## Setting up Firewall
+## Setting up the Firewall
 
-On your server machine, install firewall
+On your server machine, install the firewall
 
 ```bash
 sudo apt-get install ufw
