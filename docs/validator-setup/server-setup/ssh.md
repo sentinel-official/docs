@@ -24,11 +24,14 @@ total 2
 -rw-r--r--. 1 user user  size Mar 12 18:08 id_ed25519.pub
 ```
 
-Add your public SSH key to the authorized_keys file on your VPS to enable secure SSH connections
+:::danger Important
+
+Add your **public** SSH key to the `authorized_keys` file on your VPS to enable secure SSH connections. If you don't perform this step you will be locked out and unable to connect to your VPS as it will be refused!
 
 ```bash
 ssh-copy-id -i ~/.ssh/id_ed25519.pub username@server_ip
 ```
+:::
 
 ### Server Side
 
