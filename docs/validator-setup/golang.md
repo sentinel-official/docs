@@ -53,7 +53,7 @@ Now that you've successfully installed Golang, it's essential to configure its e
 Open the .bashrc file
 
 ```bash
-sudo nano ${HOME}/.bashrc
+nano ${HOME}/.bashrc
 ```
 
 Based on your installation type, set the GOROOT environment variable by choosing one of the following lines

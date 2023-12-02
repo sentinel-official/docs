@@ -113,7 +113,7 @@ sudo nano /etc/systemd/system/sentinelhub.service
 
 Paste the below text
 
-```bash title=/etc/systemd/system/sentinelhub.service
+```bash
 [Unit]
 Description=Sentinel Hub Daemon
 After=network.target
@@ -121,7 +121,12 @@ After=network.target
 [Service]
 User=sentinel
 Type=simple
-ExecStart=/home/sentinel/go/bin/sentinelhub start
+
+# For Ubuntu installation
+ExecStart=/usr/bin/sentinelhub start
+# For Manual installation
+ExecStart=/usr/local/bin/sentinelhub start
+
 Restart=on-failure
 StartLimitInterval=0
 RestartSec=5
