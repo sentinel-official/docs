@@ -330,13 +330,11 @@ const config = {
         theme: prismThemes.github,
         darkTheme: prismThemes.dracula,
         additionalLanguages: [
-          'dart',
-          'ruby',
-          'groovy',
-          'kotlin',
-          'java',
-          'swift',
-          'objectivec',
+          'bash',
+          'jsx',
+          'yaml',
+          'python',
+          'markdown'
         ],
       },
       liveCodeBlock: {

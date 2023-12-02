@@ -33,7 +33,7 @@ sudo nano /home/user/prometheus/prometheus.yml
 
 Add your Validator machine and your local machine as well to the list of scrape targets in the configuration file to enable Prometheus to collect metrics from them
 
-```bash title=/home/user/prometheus/prometheus.yml
+```yaml title="/home/user/prometheus/prometheus.yml"
 scrape_configs:
   # Monitoring Node with prometheus installed
   - job_name: "monitor-hardware-metrics"
@@ -69,7 +69,7 @@ sudo nano gen-pass.py
 
 Paste the following text
 
-```bash title gen-pass-py
+```python title="gen-pass.py"
 import getpass
 import bcrypt
 ​
@@ -99,7 +99,7 @@ sudo nano /home/user/prometheus/web.yml
 
 Add your authentication to access Prometheus metrics. Replace `<password>` with the encrypted password you got from your `gen-pass.py`
 
-```bash title=/home/user/prometheus/web.yml
+```yaml title="/home/user/prometheus/web.yml"
 basic_auth_users:
     admin: <password>
 ```
