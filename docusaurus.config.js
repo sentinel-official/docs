@@ -1,7 +1,6 @@
 /* eslint-disable */
 
-const lightCodeTheme = require('prism-react-renderer').themes.github;
-const darkCodeTheme = require('prism-react-renderer').themes.vsDark;
+import {themes as prismThemes} from 'prism-react-renderer';
 
 // const UIKitReferencePlugins = require('./plugins/ui-kit-reference-plugin.cjs');
 const { webpackPlugin } = require('./plugins/webpack-plugin.cjs');
@@ -327,8 +326,8 @@ const config = {
         copyright: "Copyright © Sentinel dVPN - Built by <a href='https://trinityvalidator.com'>Trinity Validator</a>, co-maintained with <a href='https://x.com/CommunityStakin'>CommunityStaking Validator</a>",
       },
       prism: {
-        theme: lightCodeTheme,
-        darkTheme: darkCodeTheme,
+        theme: prismThemes.github,
+        darkTheme: prismThemes.dracula,
         additionalLanguages: [
           'dart',
           'ruby',
