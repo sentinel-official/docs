@@ -6,7 +6,8 @@ import {themes as prismThemes} from 'prism-react-renderer';
 const { webpackPlugin } = require('./plugins/webpack-plugin.cjs');
 const posthogPlugin = require('./plugins/posthog-plugin.cjs');
 
-/** @type {import('@docusaurus/preset-classic').Options} */ defaultSettings = {
+/** @type {import('@docusaurus/preset-classic').Options} */
+const defaultSettings = {
   remarkPlugins: [
     [require('@docusaurus/remark-plugin-npm2yarn'), { sync: true }],
   ],
