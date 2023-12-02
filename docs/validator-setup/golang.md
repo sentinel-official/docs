@@ -68,7 +68,7 @@ export GOROOT=/usr/local/lib/go
 
 After setting the appropriate GOROOT environment variable, you can add the following lines
 
-```bash title=${HOME}/.bashrc
+```bash title="${HOME}/.bashrc"
 export GOPATH=${HOME}/go
 export GOBIN=${GOPATH}/bin
 export PATH=${PATH}:${GOROOT}/bin:${GOBIN}

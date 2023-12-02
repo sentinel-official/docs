@@ -126,7 +126,7 @@ sudo nano /etc/systemd/system/prometheus.service
 
 Paste the below text
 
-```bash title=/etc/systemd/system/prometheus.service
+```bash title="/etc/systemd/system/prometheus.service"
 [Unit]
 Description=Preometheus
 After=network-online.target

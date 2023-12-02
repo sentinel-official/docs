@@ -51,7 +51,7 @@ sudo nano $HOME/tmkms/config/tmkms.toml
 
 In this example, my validator has the IP address of validator_ip and we will be using port 26659 to feed the validator key to the validator. We will also be using chain_id sentinelhub-2
 
-```bash title=$HOME/tmkms/config/tmkms.toml
+```bash title="$HOME/tmkms/config/tmkms.toml"
 # Tendermint KMS configuration file
 
 ## Chain Configuration
@@ -92,7 +92,7 @@ sudo nano /etc/systemd/system/tmkms.service
 
 Paste the below text
 
-```bash title=/etc/systemd/system/tmkms.service
+```bash title="/etc/systemd/system/tmkms.service"
 [Unit]
 Description=TMKMS Daemon
 After=network.target

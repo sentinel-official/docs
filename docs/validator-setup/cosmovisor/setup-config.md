@@ -80,7 +80,7 @@ sudo nano cosmovisor.service
 
 Add the following block:
 
-```bash title=cosmovisor.service
+```bash title="cosmovisor.service"
 [Unit]
 Description=Cosmovisor Daemon
 After=network-online.target

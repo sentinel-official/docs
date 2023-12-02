@@ -29,7 +29,7 @@ sudo nano /etc/systemd/system/cosmos-validator-exporter.service
 
 Paste the below text
 
-```bash title=/etc/systemd/system/cosmos-validator-exporter.service
+```bash title="/etc/systemd/system/cosmos-validator-exporter.service"
 [Unit]
 Description=Cosmos Validator Exporter
 After=network-online.target

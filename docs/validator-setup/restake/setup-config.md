@@ -77,7 +77,7 @@ cp networks.local.json.sample networks.local.json
 
 Replace the file with this code block and, on `restUrl` field, select your desired one from [here](https://cosmos.directory/sentinel/nodes) and click on REST tab:
 
-```bash title=.networks.local.json
+```bash title=".networks.local.json"
 {
   "sentinel": {
     "prettyName": "Sentinel 881",
@@ -131,7 +131,7 @@ sudo nano /etc/systemd/system/restake.service
 
 Add the following code block
 
-```bash title=/etc/systemd/system/restake.service
+```bash title="/etc/systemd/system/restake.service"
 [Unit]
 Description=restake service with docker compose
 Requires=docker.service
@@ -158,7 +158,7 @@ sudo nano /etc/systemd/system/restake.timer
 ```
 
 Add the following code block
-```bash title=/etc/systemd/system/restake.timer
+```bash title="/etc/systemd/system/restake.timer"
 [Unit]
 Description=Restake bot timer
 

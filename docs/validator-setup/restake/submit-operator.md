@@ -36,7 +36,7 @@ sudo nano chains.json
 
 Add the following block
 
-```bash title=chains.json
+```bash title="chains.json"
 {
   "$schema": "../chains.schema.json",
   "name": "<your_validator_name>",
@@ -62,7 +62,7 @@ sudo nano profile.json
 
 Add the following block
 
-```bash title=profile.json
+```bash title="profile.json"
 {
   "$schema": "../profile.schema.json",
   "name": "<your_validator_name>",

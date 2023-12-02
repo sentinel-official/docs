@@ -20,7 +20,7 @@ sudo nano state-sync.sh
 
 Add the following code in it (to add your own or favourite RPC check this list [here](https://cosmos.directory/sentinel/nodes)):
 
-```bash title=state-sinc.sh
+```bash title="state-sinc.sh"
 #!/bin/bash
 
 SNAP_RPC="https://rpc.sentinel.co:443"

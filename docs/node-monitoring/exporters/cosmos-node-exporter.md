@@ -34,7 +34,7 @@ sudo nano /etc/systemd/system/cosmos-node-exporter.service
 
 Paste the below text
 
-```bash title=/etc/systemd/system/cosmos-node-exporter.service
+```bash title="/etc/systemd/system/cosmos-node-exporter.service"
 [Unit]
 Description=Cosmos Node Exporter
 After=network-online.target

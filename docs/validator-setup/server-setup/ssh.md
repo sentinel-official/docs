@@ -80,7 +80,7 @@ sudo nano /etc/ssh/sshd_config
 
 Set the following fields
 
-```bash title=/etc/ssh/sshd_config
+```bash title="/etc/ssh/sshd_config"
 # For security purposes we want to use a port number which is not the default one 22
 Port 2222
 

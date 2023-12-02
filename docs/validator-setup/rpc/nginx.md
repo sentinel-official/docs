@@ -87,7 +87,7 @@ sudo nano rpc.conf
 
 Copy the following template into the `rpc.conf` and replace myvalidator with your domain
 
-```bash title=rpc.conf
+```bash title="rpc.conf"
 server {
     server_name rpc.sentinel.myvalidator.com;
 

@@ -32,7 +32,7 @@ sudo nano /etc/systemd/system/node-exporter.service
 
 Paste the below text
 
-```bash title=/etc/systemd/system/node-exporter.service
+```bash title="/etc/systemd/system/node-exporter.service"
 [Unit]
 Description=Node Exporter
 After=network-online.target

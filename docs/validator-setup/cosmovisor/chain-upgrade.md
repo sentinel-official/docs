@@ -40,7 +40,7 @@ When the designated block height is reached, the blockchain temporarily halts it
 
 The content of this file will be the following, based on the last hub upgrade:
 
-```bash title=.sentinelhub/cosmovisor/upgrades/<upgrade_name>/
+```bash title=".sentinelhub/cosmovisor/upgrades/<upgrade_name>/"
 {"name":"v11","time":"0001-01-01T00:00:00Z","height":12310005}
 ```
 

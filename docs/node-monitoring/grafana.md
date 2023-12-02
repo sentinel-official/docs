@@ -31,7 +31,7 @@ sudo nano /etc/systemd/system/grafana.service
 
 Paste the below text
 
-```bash title=/etc/systemd/system/grafana.service
+```bash title="/etc/systemd/system/grafana.service"
 [Unit]
 Description=Grafana
 After=network-online.target

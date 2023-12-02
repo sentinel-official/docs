@@ -30,7 +30,7 @@ Edit the required fields
 Do not copy and paste the entire code block as it may disrupt the configuration file!!! Only copy the necessary fields or add them manually!
 :::
 
-```bash title=${HOME}/.sentinelnode/config.toml
+```bash title="${HOME}/.sentinelnode/config.toml"
 [chain]
 # Gas limit to set per transaction
 gas = 200000
@@ -153,7 +153,7 @@ sudo nano ${HOME}/.sentinelnode/wireguard.toml
 
 Take note of the WireGuard port
 
-```bash title=${HOME}/.sentinelnode/wireguard.toml
+```bash title="${HOME}/.sentinelnode/wireguard.toml"
 # Name of the network interface
 interface = "wg0"
 
@@ -183,7 +183,7 @@ sudo nano ${HOME}/.sentinelnode/v2ray.toml
 
 Take note of the V2Ray port
 
-```bash title=${HOME}/.sentinelnode/v2ray.toml
+```bash title="${HOME}/.sentinelnode/v2ray.toml"
 [vmess]
 # Port number to accept the incoming connections
 listen_port = <v2ray_tcp_port> #for example 9999
