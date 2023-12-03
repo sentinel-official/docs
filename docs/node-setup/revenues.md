@@ -33,6 +33,6 @@ This check occurs multiple times a day and will test:
 - the node configuration
 - the node connectivity
 
-Doing this the subscription plan will always make sure to add new nodes and remove bad ones (those with problems that need to be fixed)
+By implementing this process, the Subscription Plan ensures a continuous assessment, allowing for the addition of new nodes and the removal of problematic ones that require corrective measures.
 
-As of now there will be access to an online spreadsheet which will represent nodes that did not qualify and nodes that did qualify for the health check. In the upcoming `node dashboard` there is an indicator on the page for each node to show whether the node has passed the health check or not. There will be an alert system setup to assist a node operator in receiving notifications if their node has failed a health check.
+Currently, there is an accessible [online spreadsheet](https://docs.google.com/spreadsheets/d/1rJgW_xjmvtEWjn6eMpkrlXtdpxy-TRPRpxRAHCVE_vs/edit?pli=1#gid=0) delineating nodes that passed the health check and those that did not meet the criteria. In the upcoming `Node Dashboard`, each node will feature an indicator on the page, clearly indicating whether it has successfully passed the health check or not. Furthermore, an alert system will be implemented to promptly notify node operators in the event that their node fails a health check, providing them with timely and actionable information.
