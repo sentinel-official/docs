@@ -1,7 +1,6 @@
 ---
 title: Node Revenue System
-description: Explains how the dVPN node revenue system works
-sidebar_position: 5
+sidebar_position: 6
 ---
 
 # Node Revenue System

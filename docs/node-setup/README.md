@@ -1,6 +1,5 @@
 ---
 title: Overview
-description: This guide is intended for anyone who wishes to contribute to the Sentinel dVPN Network and share their bandwidth by setting up a dVPN node
 sidebar_position: 1
 ---
 
@@ -14,10 +13,11 @@ In order to setup a dVPN node some basic Linux experience will come in handy, ho
 There are currenty 3 ways to get started with setting up a dVPN node:
 
 - [Manually](/node-setup/manual/start-manual)
-- [Cloudmos on Akash](/node-setup/category/cloudmos-on-akash)
-- [Node Spawner](/node-setup/category/node-spawner)
+- [Linux Script](/node-setup/linux-script)
+- [Cloudmos on Akash](/node-setup/cloudmos-on-akash/start-cloudmos-on-akash)
+- [Node Spawner](/node-setup/node-spawner/overview)
 
-Furthermore, we will be introducing a comprehensive guide for the [Frog dVPN Launcher](/node-setup/dvpn-launcher) tool upon its release.
+Furthermore, we will be introducing a comprehensive guide for the [Frog dVPN Launcher](https://t.me/froglauncher) tool upon its release.
 
 ### dVPN Node Owners Groups
 
