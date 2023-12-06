@@ -5,15 +5,11 @@ sidebar_position: 2
 
 # Get Sentinel CLI
 
-:::note
-Please note that the most recent version, **0.3.2**, was released by freQnik of MathNodes and will soon be integrated into the Sentinel repository
-:::
-
-To begin using the Sentinel CLI, you have two options
+To begin using the Sentinel CLI, you have the option to either download the binary packages or build it from the source code.
 
 ## Download Binary Packages
 
-Binary packages are available for [Windows](https://github.com/freQniK/cli-client/releases/download/v0.3.2/sentinelcli.exe) and [MacOS](https://github.com/freQniK/cli-client/releases/download/v0.3.2/sentinelcli_darwin_arm64), or you can build the source code, as outlined below.
+Binary packages and source code can be downloaded from the [Official Repository](https://github.com/sentinel-official/cli-client/releases).
 
 ## Build the Source Code
 
@@ -33,14 +29,14 @@ You should receive this output: `go version go1.xx.x darwin/amd64`
 
 ### Build the binary
 
-In order to build Sentinel CLI you need the source code. Either [download the source of a release](https://github.com/freQniK/cli-client/releases) or [clone the git repository](https://github.com/freQniK/cli-client.git) and make sure you always download the **latest version**.
+In order to build Sentinel CLI you need the source code. Either download the source of a release or clone the Git Repository and make sure it is the **latest version**.
 
-To download Sentinel CLI go to [this](https://github.com/freQniK/cli-client) repository
+To download Sentinel CLI go to [the Official Repository](https://github.com/sentinel-official/cli-client)
 
 Build Sentinel from the source code:
 
 ```bash
-git clone https://github.com/freQniK/cli-client.git "${HOME}/sentinelcli"
+git clone https://github.com/sentinel-official/cli-client.git "${HOME}/sentinelcli"
 cd "${HOME}/sentinelcli"
 git checkout v0.3.2 # always make sure it's the latest version
 make install
