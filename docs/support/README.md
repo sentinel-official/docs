@@ -12,6 +12,7 @@ If you need support please use the official support media below:
 - [Meile](https://t.me/MathNodes)
 - [Solar Labs](https://t.me/solarlabs)
 - [Decentr](https://t.me/DecentrNet)
+- [BasedVPN](https://t.me/BasedVPN)
 - [Bagimsiz](https://t.me/bagimsizdvpn)
 
 **Email:**
