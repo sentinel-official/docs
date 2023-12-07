@@ -57,10 +57,213 @@ You should see a list of gRPC services, such as `cosmos.bank.v1beta1.Query`. Thi
 In order to get a description of the service you can run the following command:
 
 ```bash
-grpcurl  -plaintext \
+grpcurl -plaintext \
     grpc.sentinel.co:9090 \
-    describe sentinel.node.v2.QueryService               
+    describe <grpc_service>              
 ```
+
+The methods for every gRPC service are the followings:
+
+<details>
+<summary>sentinel.deposit.v1.QueryService</summary>
+<p>
+
+#### These are the methods of `sentinel.deposit.v1.QueryService`
+```bash
+service QueryService {
+  rpc QueryDeposit ( .sentinel.deposit.v1.QueryDepositRequest ) returns ( .sentinel.deposit.v1.QueryDepositResponse ) {
+    option (.google.api.http) = { get: "/sentinel/deposits/{address}" };
+  }
+  rpc QueryDeposits ( .sentinel.deposit.v1.QueryDepositsRequest ) returns ( .sentinel.deposit.v1.QueryDepositsResponse ) {
+    option (.google.api.http) = { get: "/sentinel/deposits" };
+  }
+}
+```
+
+</p>
+</details>
+
+<details>
+<summary>sentinel.node.v2.QueryService</summary>
+<p>
+
+#### These are the methods of `sentinel.node.v2.QueryService`
+```bash
+service QueryService {
+  rpc QueryNode ( .sentinel.node.v2.QueryNodeRequest ) returns ( .sentinel.node.v2.QueryNodeResponse ) {
+    option (.google.api.http) = { get: "/sentinel/nodes/{address}" };
+  }
+  rpc QueryNodes ( .sentinel.node.v2.QueryNodesRequest ) returns ( .sentinel.node.v2.QueryNodesResponse ) {
+    option (.google.api.http) = { get: "/sentinel/nodes" };
+  }
+  rpc QueryNodesForPlan ( .sentinel.node.v2.QueryNodesForPlanRequest ) returns ( .sentinel.node.v2.QueryNodesForPlanResponse ) {
+    option (.google.api.http) = { get: "/sentinel/plans/{id}/nodes" };
+  }
+  rpc QueryParams ( .sentinel.node.v2.QueryParamsRequest ) returns ( .sentinel.node.v2.QueryParamsResponse ) {
+    option (.google.api.http) = { get: "/sentinel/modules/node/params" };
+  }
+}
+```
+
+</p>
+</details>
+
+<details>
+<summary>sentinel.plan.v2.QueryService</summary>
+<p>
+
+#### These are the methods of `sentinel.plan.v2.QueryService`
+```bash
+service QueryService {
+  rpc QueryPlan ( .sentinel.plan.v2.QueryPlanRequest ) returns ( .sentinel.plan.v2.QueryPlanResponse ) {
+    option (.google.api.http) = { get: "/sentinel/plans/{id}" };
+  }
+  rpc QueryPlans ( .sentinel.plan.v2.QueryPlansRequest ) returns ( .sentinel.plan.v2.QueryPlansResponse ) {
+    option (.google.api.http) = { get: "/sentinel/plans" };
+  }
+  rpc QueryPlansForProvider ( .sentinel.plan.v2.QueryPlansForProviderRequest ) returns ( .sentinel.plan.v2.QueryPlansForProviderResponse ) {
+    option (.google.api.http) = { get: "/sentinel/providers/{address}/plans" };
+  }
+}
+```
+
+</p>
+</details>
+
+<details>
+<summary>sentinel.sentinel.provider.v2.QueryService</summary>
+<p>
+
+#### These are the methods of `sentinel.provider.v2.QueryService`
+```bash
+service QueryService {
+  rpc QueryParams ( .sentinel.provider.v2.QueryParamsRequest ) returns ( .sentinel.provider.v2.QueryParamsResponse ) {
+    option (.google.api.http) = { get: "/sentinel/params/provider" };
+  }
+  rpc QueryProvider ( .sentinel.provider.v2.QueryProviderRequest ) returns ( .sentinel.provider.v2.QueryProviderResponse ) {
+    option (.google.api.http) = { get: "/sentinel/providers/{address}" };
+  }
+  rpc QueryProviders ( .sentinel.provider.v2.QueryProvidersRequest ) returns ( .sentinel.provider.v2.QueryProvidersResponse ) {
+    option (.google.api.http) = { get: "/sentinel/providers" };
+  }
+}
+```
+
+</p>
+</details>
+
+<details>
+<summary>sentinel.session.v2.QueryService</summary>
+<p>
+
+#### These are the methods of `sentinel.session.v2.QueryService`
+```bash
+service QueryService {
+  rpc QueryParams ( .sentinel.session.v2.QueryParamsRequest ) returns ( .sentinel.session.v2.QueryParamsResponse ) {
+    option (.google.api.http) = { get: "/sentinel/modules/session/params" };
+  }
+  rpc QuerySession ( .sentinel.session.v2.QuerySessionRequest ) returns ( .sentinel.session.v2.QuerySessionResponse ) {
+    option (.google.api.http) = { get: "/sentinel/sessions/{id}" };
+  }
+  rpc QuerySessions ( .sentinel.session.v2.QuerySessionsRequest ) returns ( .sentinel.session.v2.QuerySessionsResponse ) {
+    option (.google.api.http) = { get: "/sentinel/sessions" };
+  }
+  rpc QuerySessionsForAccount ( .sentinel.session.v2.QuerySessionsForAccountRequest ) returns ( .sentinel.session.v2.QuerySessionsForAccountResponse ) {
+    option (.google.api.http) = { get: "/sentinel/accounts/{address}/sessions" };
+  }
+  rpc QuerySessionsForAllocation ( .sentinel.session.v2.QuerySessionsForAllocationRequest ) returns ( .sentinel.session.v2.QuerySessionsForAllocationResponse ) {
+    option (.google.api.http) = {
+      get: "/sentinel/subscriptions/{id}/allocations/{address}/sessions"
+    };
+  }
+  rpc QuerySessionsForNode ( .sentinel.session.v2.QuerySessionsForNodeRequest ) returns ( .sentinel.session.v2.QuerySessionsForNodeResponse ) {
+    option (.google.api.http) = { get: "/sentinel/nodes/{address}/sessions" };
+  }
+  rpc QuerySessionsForSubscription ( .sentinel.session.v2.QuerySessionsForSubscriptionRequest ) returns ( .sentinel.session.v2.QuerySessionsForSubscriptionResponse ) {
+    option (.google.api.http) = { get: "/sentinel/subscriptions/{id}/sessions" };
+  }
+}
+```
+
+</p>
+</details>
+
+<details>
+<summary>sentinel.subscription.v2.QueryService</summary>
+<p>
+
+#### These are the methods of `sentinel.subscription.v2.QueryService`
+```bash
+service QueryService {
+  rpc QueryAllocation ( .sentinel.subscription.v2.QueryAllocationRequest ) returns ( .sentinel.subscription.v2.QueryAllocationResponse ) {
+    option (.google.api.http) = {
+      get: "/sentinel/subscriptions/{id}/allocations/{address}"
+    };
+  }
+  rpc QueryAllocations ( .sentinel.subscription.v2.QueryAllocationsRequest ) returns ( .sentinel.subscription.v2.QueryAllocationsResponse ) {
+    option (.google.api.http) = {
+      get: "/sentinel/subscriptions/{id}/allocations"
+    };
+  }
+  rpc QueryParams ( .sentinel.subscription.v2.QueryParamsRequest ) returns ( .sentinel.subscription.v2.QueryParamsResponse ) {
+    option (.google.api.http) = { get: "/sentinel/modules/subscription/params" };
+  }
+  rpc QueryPayout ( .sentinel.subscription.v2.QueryPayoutRequest ) returns ( .sentinel.subscription.v2.QueryPayoutResponse ) {
+    option (.google.api.http) = { get: "/sentinel/payouts/{id}" };
+  }
+  rpc QueryPayouts ( .sentinel.subscription.v2.QueryPayoutsRequest ) returns ( .sentinel.subscription.v2.QueryPayoutsResponse ) {
+    option (.google.api.http) = { get: "/sentinel/payouts" };
+  }
+  rpc QueryPayoutsForAccount ( .sentinel.subscription.v2.QueryPayoutsForAccountRequest ) returns ( .sentinel.subscription.v2.QueryPayoutsForAccountResponse ) {
+    option (.google.api.http) = { get: "/sentinel/accounts/{address}/payouts" };
+  }
+  rpc QueryPayoutsForNode ( .sentinel.subscription.v2.QueryPayoutsForNodeRequest ) returns ( .sentinel.subscription.v2.QueryPayoutsForNodeResponse ) {
+    option (.google.api.http) = { get: "/sentinel/nodes/{address}/payouts" };
+  }
+  rpc QuerySubscription ( .sentinel.subscription.v2.QuerySubscriptionRequest ) returns ( .sentinel.subscription.v2.QuerySubscriptionResponse ) {
+    option (.google.api.http) = { get: "/sentinel/subscriptions/{id}" };
+  }
+  rpc QuerySubscriptions ( .sentinel.subscription.v2.QuerySubscriptionsRequest ) returns ( .sentinel.subscription.v2.QuerySubscriptionsResponse ) {
+    option (.google.api.http) = { get: "/sentinel/subscriptions" };
+  }
+  rpc QuerySubscriptionsForAccount ( .sentinel.subscription.v2.QuerySubscriptionsForAccountRequest ) returns ( .sentinel.subscription.v2.QuerySubscriptionsForAccountResponse ) {
+    option (.google.api.http) = {
+      get: "/sentinel/accounts/{address}/subscriptions"
+    };
+  }
+  rpc QuerySubscriptionsForNode ( .sentinel.subscription.v2.QuerySubscriptionsForNodeRequest ) returns ( .sentinel.subscription.v2.QuerySubscriptionsForNodeResponse ) {
+    option (.google.api.http) = { get: "/sentinel/nodes/{address}/subscriptions" };
+  }
+  rpc QuerySubscriptionsForPlan ( .sentinel.subscription.v2.QuerySubscriptionsForPlanRequest ) returns ( .sentinel.subscription.v2.QuerySubscriptionsForPlanResponse ) {
+    option (.google.api.http) = { get: "/sentinel/plans/{id}/subscriptions" };
+  }
+}
+```
+
+</p>
+</details>
+
+<details>
+<summary>sentinel.swap.v1.QueryService</summary>
+<p>
+
+#### These are the methods of `sentinel.swap.v1.QueryService`
+```bash
+service QueryService {
+  rpc QueryParams ( .sentinel.swap.v1.QueryParamsRequest ) returns ( .sentinel.swap.v1.QueryParamsResponse ) {
+    option (.google.api.http) = { get: "/sentinel/modules/swap/params" };
+  }
+  rpc QuerySwap ( .sentinel.swap.v1.QuerySwapRequest ) returns ( .sentinel.swap.v1.QuerySwapResponse ) {
+    option (.google.api.http) = { get: "/sentinel/swaps/{tx_hash}" };
+  }
+  rpc QuerySwaps ( .sentinel.swap.v1.QuerySwapsRequest ) returns ( .sentinel.swap.v1.QuerySwapsResponse ) {
+    option (.google.api.http) = { get: "/sentinel/swaps" };
+  }
+}
+```
+
+</p>
+</details>
 
 The list of all available gRPC query endpoints and API exploration is possible with the help of buf studio. 
 
