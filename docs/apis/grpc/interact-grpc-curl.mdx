@@ -72,7 +72,7 @@ You may also query for historical data by passing some [gRPC metadata](https://g
 ```bash
 grpcurl \
     -plaintext \
-    -H "x-cosmos-block-height: 13000000" \
+    -H "x-sentinel-block-height: 13000000" \
     -d '{"address":"sent1uddk4mfqq3uyu2yzhym8spheqatqs30fzh5tmr"}' \
     grpc.sentinel.co:9090 \
     cosmos.bank.v1beta1.Query/AllBalances
