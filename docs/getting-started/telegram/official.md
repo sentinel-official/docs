@@ -17,10 +17,19 @@ sidebar_position: 1
 - [Sentinel Growth DAO](https://t.me/SentinelGrowthDAO): A place for everyone to discuss and participate in the Sentinel Growth DAO
 - [Sentinel DVPN Price Chat](https://t.me/dvpnpricediscussion): Price chat and DVPN coin discussion
 - [Sentinel Coin Governance Group](https://t.me/SentinelGov): Governance and validator discussion
+- [Sentinel dVPN Application Testing](https://t.me/VPNproducttesting): A group where user can report their app testing outcomes.
 - [Sentinel Independent News (S.I.N.)](https://t.me/sentinel_independent): Unofficial Sentinel news channel
 - [The S.I.N. Bin](https://t.me/the_sinbin): Submissions, tips, comments, feedback, etc. for S.I.N.
-- [DVPN Degens (Trollbox 2.0)](https://t.me/dvpndegen): Anything goes
+- [DVPN Degens (Trollbox 3.0)](https://t.me/+EEXWvqA4hho2ZDMx): Anything goes
 - [Sentinel Bureau of Memetic Warfare](https://t.me/Sentinelmemewar): A channel which posts OC Sentinel memes
+
+## Whitelables
+
+- [Solar dVPN](https://t.me/solarlabs):  Announcement channel, but there is also a [Community Group](https://t.me/solarlabs_chat),
+- [Meile dVPN](https://t.me/MathNodes): Everything regarding Meile dVPN is discussed in this very active group
+- [Bagimsiz dVPN](https://t.me/bagimsizdvpn): The Turkish free dVPN that is becoming very popular
+- [BasedVPN](https://t.me/BasedVPN): The first free dVPN App based in UK
+
 
 ## Utility
 
