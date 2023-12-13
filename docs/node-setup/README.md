@@ -17,8 +17,6 @@ There are currenty 4 ways to get started with setting up a dVPN node:
 - [Cloudmos on Akash](/node-setup/cloudmos-on-akash/start-cloudmos-on-akash)
 - [Node Spawner](/node-setup/node-spawner/overview)
 
-Furthermore, we will be introducing a comprehensive guide for the [Frog dVPN Launcher](https://t.me/froglauncher) tool upon its release.
-
 ### dVPN Node Owners Groups
 
 If you are operating a dVPN node and require assistance, we invite you to become a part of the following groups.
