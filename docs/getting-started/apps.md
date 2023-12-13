@@ -1,7 +1,7 @@
 ---
-title: dVPN Apps 
+title: Download dVPN Apps
 description: A list of apps entirely built on Sentinel
-sidebar_position: 7
+sidebar_position: 5
 ---
 
 import {
