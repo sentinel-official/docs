@@ -1,7 +1,7 @@
 ---
 title: Preparing Sentinel Docker image
 description: Choose between prebuilt or from source
-sidebar_position: 4
+sidebar_position: 3
 ---
 
 # Preparing Sentinel Docker Image

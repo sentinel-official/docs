@@ -1,10 +1,14 @@
 ---
 title: Run the Node
 description: Start your node
-sidebar_position: 6
+sidebar_position: 5
 ---
 
 Running a node can be done in two ways: with or without the autorestart function. If you do not want to use it, you need to use a screen session to detach from the node after launching the docker run command.
+
+:::danger Important
+ Before starting the node, remember to send a few DVPN (**50** should suffice) to the operator address otherwise the node will not start!
+:::
 
 ## Enabling Autorestart Function
 To use autorestart function you must have set `backend='test'` on `config.toml` file. This is the easiest way, as it doesn't require the passphrase to be entered every time the node stops for any reason. However, it's worth noting that this solution is not recommended.

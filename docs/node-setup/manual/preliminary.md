@@ -1,10 +1,12 @@
 ---
 title: Preliminary Operations
 description: If you run a residential node, skip this section
-sidebar_position: 2
+sidebar_position: 1
 ---
 
 # Preliminary Operations
+
+This guide is designed for individuals with fundamental Linux proficiency who aspire to contribute to the Sentinel network and extend their bandwidth-sharing capabilities by manually establishing a dVPN node employing the Sentinel protocol. Each node operator has the autonomy to establish their own pricing for customers utilizing their bandwidth.
 
 ## Generate a SSH Key
 

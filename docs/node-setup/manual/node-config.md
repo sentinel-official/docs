@@ -1,7 +1,7 @@
 ---
 title: Node Configuration
 description: config.toml, wireguard.toml, and v2ray.toml
-sidebar_position: 5
+sidebar_position: 4
 ---
 
 # Node Configuration
@@ -217,7 +217,7 @@ docker run --rm \
 
 You will be prompet to select a passphrase
 
-You will be provided with an operator address (sent1), a node address (sentnode1), and a mnemonic phrase that you should write down and store in a secure location. Additionally, before starting, remember to send some DVPN coins (50 DVPNs should suffice) to the operator address.
+You will be provided with an operator address (sent1), a node address (sentnode1), and a mnemonic phrase that you should write down and store in a secure location.
 
 ## Move created TLS keys
 

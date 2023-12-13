@@ -8,10 +8,10 @@ sidebar_position: 2
 After dedicating a considerable amount of time to the Ethereum testnet blockchain, we have transitioned to Cosmos and established our own blockchain seamlessly integrated into the Cosmos network. This transition not only marks a shift in our technological infrastructure but also brings about a transformation in our ecoinomics.
 
 Key metrics:
-- Current supply: 25.64B
-- Bonded DVPNs: 18B
+- Current supply: 25.93B
+- Bonded DVPNs: 18.18B
 - Max Supply: 48B
-- Inflation rate: 14.94%
+- Inflation rate: 14.92%
 
 ## Target Monthly Inflation Rate
 

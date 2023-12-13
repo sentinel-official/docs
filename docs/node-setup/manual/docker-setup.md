@@ -1,7 +1,7 @@
 ---
 title: Install Docker
 description: Sentinel dVPN requires Docker to be installed
-sidebar_position: 3
+sidebar_position: 2
 ---
 
 # Install Docker
