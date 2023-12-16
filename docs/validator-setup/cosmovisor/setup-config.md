@@ -8,10 +8,18 @@ sidebar_position: 2
 
 ## Installation
 
-Install Cosmovisor:
+To install Cosmovisor, use the following command:
 
 ```bash
 go install cosmossdk.io/tools/cosmovisor/cmd/cosmovisor@latest
+```
+
+This command will generate the Cosmovisor binary in the `go/bin/` folder.
+
+Add a symbolic link to the `/usr/local/bin/` directory for system-wide access to Cosmovisor:
+
+```bash
+sudo ln -s /home/sentinel/go/bin/cosmovisor /usr/local/bin/
 ```
 
 (You may also refer to the Cosmovisor [installation instructions](https://github.com/cosmos/cosmos-sdk/tree/main/tools/cosmovisor#installation))
@@ -92,7 +100,7 @@ Environment="DAEMON_ALLOW_DOWNLOAD_BINARIES=false"
 Environment="DAEMON_LOG_BUFFER_SIZE=512"
 Environment="UNSAFE_SKIP_BACKUP=true"
 User=your-user
-ExecStart=/home/your-user/go/bin/cosmovisor run start
+ExecStart=cosmovisor run start
 Restart=always
 RestartSec=3
 LimitNOFILE=infinity
