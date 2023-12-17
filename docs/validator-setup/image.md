@@ -1,6 +1,6 @@
 ---
 title: Add a Validator Image
-sidebar_position: 14
+sidebar_position: 13
 ---
 
 # Add a Validator Image
