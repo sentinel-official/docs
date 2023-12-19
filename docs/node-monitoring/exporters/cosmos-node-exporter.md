@@ -19,9 +19,88 @@ To get started, begin by downloading the most recent [release](https://github.co
 ```bash
 mkdir cosmos-node-exporter
 cd cosmos-node-exporter
-wget https://github.com/QuokkaStake/cosmos-node-exporter/releases/download/v2.4.0/cosmos-node-exporter_2.4.0_linux_amd64.tar.gz
-tar xvfz cosmos-node-exporter_2.4.0_linux_amd64.tar.gz
-sudo rm -f cosmos-node-exporter_2.4.0_linux_amd64.tar.gz
+wget https://github.com/QuokkaStake/cosmos-node-exporter/releases/download/v3.1.0/cosmos-node-exporter_3.1.0_linux_amd64.tar.gz
+tar xvfz cosmos-node-exporter_3.1.0_linux_amd64.tar.gz
+sudo rm -f cosmos-node-exporter_3.1.0_linux_amd64.tar.gz
+```
+
+Add a symbolic link to the `/usr/local/bin/` directory for system-wide access to Cosmos Node Exporter:
+
+```bash
+sudo ln -s /home/<your_user>/cosmos-node-exporter/cosmos-node-exporter /usr/local/bin/
+```
+
+## Create a Config file
+
+Inside your `cosmos-node-exporter` directory create the config file:
+
+```bash
+sudo nano config.toml
+```
+
+Paste the following code in it making sure to add your sentvaloper and sentvalcons addresses:
+
+<details>
+<summary>config.toml</summary>
+<p>
+
+```bash title="/home/<your_user>/cosmos-node-exporter/config.toml"
+# Logging configuration.
+[log]
+# Verbosity level. Set to `debug` or even `trace` to make it more verbose. Defaults to `info`.
+level = "debug"
+# Whether to print logs in JSON format. Useful if you are using centralised logs solutions like ELK.
+# Defaults to false.
+json = false
+
+# Tendermint configuration
+[tendermint]
+# If set to false, the metrics related to Tendermint node would be disabled. Defaults to true.
+enabled = true
+# Tendermint RPC address. Defaults to "http://localhost:26657".
+address = "http://localhost:26657"
+# If set to false, upgrades metrics won't be queried. Useful for chains that use Tendermint
+# but not cosmos-sdk, such as Nomic. Defaults to true.
+query-upgrades = true
+
+[cosmovisor]
+# If set to false, the metrics related to Cosmovisor would be disabled. Defaults to true.
+enabled = true
+# Path to folder storing fullnode data and configs (like ~/.gaia for cosmoshub).
+chain-folder = "/home/<your_user>/.sentinelhub"
+# Binary name (like gaiad for cosmoshub)
+chain-binary-name = "sentinelhub"
+# Cosmovisor path (usually located at ~/go/bin/cosmovisor)
+cosmovisor-path = "/home/<your_user>/go/bin/cosmovisor"
+
+# Github configuration.
+[github]
+# Repository path. Omitting it will result in disabling Github metrics.
+repository = "https://github.com/sentinel-official/hub"
+# Github token. Useful if you want to make requests often, as Github rate-limits requests
+# if no token is specified.
+token = "<your_github_token>"
+```
+
+</p>
+</details>
+
+## Add the Job to Prometheus Config file
+
+Go to your prometheus directory and open your `prometheus.yml` file
+
+```bash
+sudo nano prometheus.yml
+```
+
+Add the cosmos node exporter job into it, under `scrape_configs` block
+
+```bash
+ # Cosmos Node Exporter
+  - job_name: "cosmos-node-exporter"
+
+    static_configs:
+      - targets: ["<your_validator_ip>:9500"]
 ```
 
 ## Add a system unit file
@@ -34,17 +113,21 @@ sudo nano /etc/systemd/system/cosmos-node-exporter.service
 
 Paste the below text
 
+<details>
+<summary>cosmos-node-exporter.service</summary>
+<p>
+
 ```bash title="/etc/systemd/system/cosmos-node-exporter.service"
 [Unit]
 Description=Cosmos Node Exporter
 After=network-online.target
 ​
 [Service]
-User=youruser #modify this field with your user
+User=<your_user> #modify this field with your user
 TimeoutStartSec=0
 CPUWeight=95
 IOWeight=95
-ExecStart=/home/<your-user>cosmos-node-exporter/cosmos-node-exporter --config /home/<your-user>cosmos-node-exporter/config.toml
+ExecStart=cosmos-node-exporter --config /home/<your-user>/cosmos-node-exporter/config.toml
 Restart=always
 RestartSec=2
 LimitNOFILE=800000
@@ -52,6 +135,10 @@ KillSignal=SIGTERM
 ​
 [Install]
 WantedBy=multi-user.target
+```
+
+</p>
+</details>
 ```
 
 Reload the systemd Daemon
