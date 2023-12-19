@@ -5,6 +5,12 @@ sidebar_position: 2
 
 # Tendermint Internal Metrics
 
+## Validator Machine
+
+Execute the following operations on your validator machine
+
+
+
 Tendermint Internal Metrics can be enabled by simply editing your validator `config.toml` file.
 
 Open your config file
@@ -37,3 +43,22 @@ After successfully enabling Tendermint Internal Metrics, the next step is to ope
 sudo ufw allow from monitor_ip to validator_ip port 26660
 ```
 :::
+
+## Monitoring Machine
+
+On your monitoring machine, go to your prometheus directory and open your `prometheus.yml` file
+
+```bash
+sudo nano prometheus.yml
+```
+
+Add the validator internel metrics job into it, under `scrape_configs` block
+
+```bash
+# Validator Internal Metrics
+  - job_name: "validator-internal-metrics"
+​
+    # validator ip and port
+    static_configs:
+      - targets: ["validator_ip:26660"]
+```

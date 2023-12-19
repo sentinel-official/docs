@@ -7,7 +7,11 @@ sidebar_position: 3
 
 [Cosmos Validator Exporter](https://github.com/QuokkaStake/cosmos-validators-exporter) can be used to create a dashboard for one or multiple validators, enabling you to visualize essential metrics such as the total staked amount, delegator count, and more. Additionally, you can set up alerts for various validator metrics, including their status, ranking, total staked amount, and more.
 
-## Download & Installation
+## Validator Machine
+
+Execute the following operations on your validator machine
+
+### Download & Installation
 
 To get started, begin by downloading the most recent [release](https://github.com/QuokkaStake/cosmos-validators-exporter/releases). Once the download is complete, proceed to unzip the file, and you'll be all set to proceed.
 
@@ -25,7 +29,7 @@ Add a symbolic link to the `/usr/local/bin/` directory for system-wide access to
 sudo ln -s /home/<your_user>/cosmos-validator-exporter/cosmos-validator-exporter /usr/local/bin/
 ```
 
-## Create a Config file
+### Create a Config file
 
 Inside your `cosmos-validator-exporter` directory create the config file:
 
@@ -126,25 +130,7 @@ staking-params = true
 </p>
 </details>
 
-## Add the Job to Prometheus Config file
-
-Go to your prometheus directory and open your prometheus.yml file
-
-```bash
-sudo nano prometheus.yml
-```
-
-Add the cosmos validator exporter job into it, under `scrape_configs` block
-
-```bash
- # Cosmos Validator Exporter
-  - job_name: "cosmos-validator-exporter"
-
-    static_configs:
-      - targets: ["<your_validator_ip>:9560"]
-```
-
-## Add a system unit file
+### Add a system unit file
 
 Create the .service file with a text editor
 
@@ -193,7 +179,7 @@ Enable autostart of Cosmos Validator Exporter service
 sudo systemctl enable cosmos-validator-exporter.service
 ```
 
-## Start Cosmos Validator Exporter service
+### Start Cosmos Validator Exporter service
 
 ```bash
 sudo systemctl start cosmos-validator-exporter.service
@@ -213,6 +199,8 @@ curl http://localhost:9560/metrics
 
 Success! Cosmos Validator Exporter is now exposing metrics that Prometheus can scrape, including a wide variety of system metrics further down in the output.
 
+### Open Firewall Port
+
 :::danger Important
 After successfully installing and launching Cosmos Validator Exporter, the next step is to open port 9560 on your Validator's firewall. This port should be accessible exclusively from your monitoring machine. This action is essential to enable Prometheus to collect data from Cosmos Validator Exporter.
 
@@ -220,3 +208,21 @@ After successfully installing and launching Cosmos Validator Exporter, the next 
 sudo ufw allow from monitor_ip to validator_ip port 9560
 ```
 :::
+
+## Monitoring Machine
+
+On your monitoring machine, go to your prometheus directory and open your prometheus.yml file
+
+```bash
+sudo nano prometheus.yml
+```
+
+Add the cosmos validator exporter job into it, under `scrape_configs` block
+
+```bash
+ # Cosmos Validator Exporter
+  - job_name: "cosmos-validator-exporter"
+
+    static_configs:
+      - targets: ["<your_validator_ip>:9560"]
+```

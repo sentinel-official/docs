@@ -12,7 +12,11 @@ sidebar_position: 4
 - Node Synchronization: Stay informed about the progress of your node's synchronization, ensuring that it doesn't fall behind and remains up-to-date with the network.
 - Chain Upgrade Readiness: Receive notifications when chain upgrades are available, but your node lacks the necessary binary files, ensuring that your node is always prepared for network upgrades.
 
-## Download & Installation
+## Validator Machine
+
+Execute the following operations on your validator machine
+
+### Download & Installation
 
 To get started, begin by downloading the most recent [release](https://github.com/QuokkaStake/cosmos-node-exporter/releases). Once the download is complete, proceed to unzip the file, and you'll be all set to proceed.
 
@@ -30,7 +34,7 @@ Add a symbolic link to the `/usr/local/bin/` directory for system-wide access to
 sudo ln -s /home/<your_user>/cosmos-node-exporter/cosmos-node-exporter /usr/local/bin/
 ```
 
-## Create a Config file
+### Create a Config file
 
 Inside your `cosmos-node-exporter` directory create the config file:
 
@@ -38,7 +42,7 @@ Inside your `cosmos-node-exporter` directory create the config file:
 sudo nano config.toml
 ```
 
-Paste the following code in it making sure to add your sentvaloper and sentvalcons addresses:
+Paste the following code in it making sure to edit the fields between `<` and `>` characters
 
 <details>
 <summary>config.toml</summary>
@@ -85,25 +89,7 @@ token = "<your_github_token>"
 </p>
 </details>
 
-## Add the Job to Prometheus Config file
-
-Go to your prometheus directory and open your `prometheus.yml` file
-
-```bash
-sudo nano prometheus.yml
-```
-
-Add the cosmos node exporter job into it, under `scrape_configs` block
-
-```bash
- # Cosmos Node Exporter
-  - job_name: "cosmos-node-exporter"
-
-    static_configs:
-      - targets: ["<your_validator_ip>:9500"]
-```
-
-## Add a system unit file
+### Add a system unit file
 
 Create the .service file with a text editor
 
@@ -139,7 +125,6 @@ WantedBy=multi-user.target
 
 </p>
 </details>
-```
 
 Reload the systemd Daemon
 
@@ -153,7 +138,7 @@ Enable autostart of Cosmos Node Exporter service
 sudo systemctl enable cosmos-node-exporter.service
 ```
 
-## Start Cosmos Node Exporter service
+### Start Cosmos Node Exporter service
 
 ```bash
 sudo systemctl start cosmos-node-exporter.service
@@ -173,6 +158,8 @@ curl http://localhost:9500/metrics
 
 Success! Cosmos Node Exporter is now exposing metrics that Prometheus can scrape, including a wide variety of system metrics further down in the output.
 
+### Open Firewall Port
+
 :::danger Important
 After successfully installing and launching Cosmos Node Exporter, the next step is to open port 9500 on your Validator's firewall. This port should be accessible exclusively from your monitoring machine. This action is essential to enable Prometheus to collect data from Cosmos Node Exporter.
 
@@ -180,3 +167,21 @@ After successfully installing and launching Cosmos Node Exporter, the next step 
 sudo ufw allow from monitor_ip to validator_ip port 9500
 ```
 :::
+
+## Monitoring Machine
+
+On your monitoring machine, go to your prometheus directory and open your `prometheus.yml` file
+
+```bash
+sudo nano prometheus.yml
+```
+
+Add the cosmos node exporter job into it, under `scrape_configs` block
+
+```bash
+ # Cosmos Node Exporter
+  - job_name: "cosmos-node-exporter"
+
+    static_configs:
+      - targets: ["<your_validator_ip>:9500"]
+```

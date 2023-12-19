@@ -10,30 +10,37 @@ Prometheus is a monitoring application that must be installed on a separate moni
 
 ## Download & Installation
 
-On your monitoring machine, download and unpack Prometheus (check the last version [here](https://prometheus.io/download/#prometheus))
+To get started, begin by downloading the most recent [release](https://github.com/prometheus/prometheus/releases). Once the download is complete, proceed to unzip the file, and you'll be all set to proceed.
 
 ```bash
-wget https://github.com/prometheus/prometheus/releases/download/v2.42.0/prometheus-2.42.0.linux-amd64.tar.gz
-tar xvfz prometheus-2.42.0.linux-amd64.tar.gz
+wget https://github.com/prometheus/prometheus/releases/download/v2.48.1/prometheus-2.48.1.linux-amd64.tar.gz
+tar xvfz prometheus-2.48.1.linux-amd64.tar.gz
+sudo rm -f prometheus-2.48.1.linux-amd64.tar.gz
+mv prometheus-2.48.1.linux-amd64/ prometheus/
+cd prometheus/
 ```
 
-Rename the folder
+Add a symbolic link to the `/usr/local/bin/` directory for system-wide access to Prometheus:
 
 ```bash
-mv prometheus-2.42.0.linux-amd64 prometheus
+sudo ln -s /home/<your_user>/prometheus/prometheus /usr/local/bin/
 ```
 
-## Edit the config file
+## Configure Jobs in the Config File
 
-Open the config file .yml
+Inside your `prometheus` directory open the `prometheus.yml` file:
 
 ```bash
-sudo nano /home/user/prometheus/prometheus.yml
+sudo nano prometheus.yml
 ```
 
-Add your Validator machine and your local machine as well to the list of scrape targets in the configuration file to enable Prometheus to collect metrics from them
+Ensure that both your Validator machine and local machine are included in the list of scrape targets in the configuration file. This step enables Prometheus to collect metrics from these sources. I have added all the exported outlined in this guide
 
-```yaml title="/home/user/prometheus/prometheus.yml"
+<details>
+<summary>config.toml</summary>
+<p>
+
+```yaml title="/home/<your_user>/prometheus/prometheus.yml"
 scrape_configs:
   # Monitoring Node with prometheus installed
   - job_name: "monitor-hardware-metrics"
@@ -55,7 +62,28 @@ scrape_configs:
     # validator ip and port
     static_configs:
       - targets: ["validator_ip:26660"]
+  
+ # Cosmos Validator Exporter
+  - job_name: "cosmos-validator-exporter"
+
+    # validator ip and port
+    static_configs:
+      - targets: ["<your_validator_ip>:9560"]
+
+  # Cosmos Node Exporter
+  - job_name: "cosmos-node-exporter"
+    
+    # validator ip and port
+    static_configs:
+      - targets: ["<your_validator_ip>:9500"]
+
+  
 ```
+
+</p>
+</details>
+
+Additionally, when installing any additional exporter, don't forget to update the `prometheus.yml` file by adding the corresponding job configuration.
 
 ## Create the web authentication file
 
@@ -126,6 +154,10 @@ sudo nano /etc/systemd/system/prometheus.service
 
 Paste the below text
 
+<details>
+<summary>prometheus.service</summary>
+<p>
+
 ```bash title="/etc/systemd/system/prometheus.service"
 [Unit]
 Description=Preometheus
@@ -136,7 +168,7 @@ User=youruser #modify this field with your user
 TimeoutStartSec=0
 CPUWeight=95
 IOWeight=95
-ExecStart=/home/youruser/prometheus/prometheus --config.file=/home/youruser/prometheus/prometheus.yml --web.config.file=/home/trinity/prometheus/web.yml --storage.tsdb.path=/home/youruser/prometheus/data
+ExecStart=prometheus --config.file=/home/<your_user>/prometheus/prometheus.yml --web.config.file=/home/<your_user>/prometheus/web.yml --storage.tsdb.path=/home/<your_user>/prometheus/data
 Restart=always
 RestartSec=2
 LimitNOFILE=800000
@@ -145,6 +177,9 @@ KillSignal=SIGTERM
 [Install]
 WantedBy=multi-user.target
 ```
+
+</p>
+</details>
 
 Reload the systemd Daemon
 
@@ -158,7 +193,7 @@ Enable autostart of Node Exporter service
 sudo systemctl enable prometheus.service
 ```
 
-## Start Node Exporter service
+## Start Prometheus service
 
 ```bash
 sudo systemctl start prometheus.service
@@ -188,6 +223,6 @@ Then you can know type this address on your browser
 https://prometheus_ip:9090/graph
 ```
 
-### Node Exporter on Monitoring machine
+## Node Exporter on Monitoring machine
 
 You can also consider installing a Node Exporter on your monitoring machine so that you can monitor it too. This way, if something breaks, you can be alerted about it and take appropriate action

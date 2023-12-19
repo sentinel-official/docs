@@ -7,22 +7,29 @@ sidebar_position: 1
 
 Node Exporter is an agent that runs on the machine that is to be monitored. It collects various system-level metrics, such as CPU usage, memory usage, disk usage, network activity, and others.
 
-## Download & Installation
+## Validator Machine
 
-On both your validator and monitoring machines, download and unpack Node Exporter (check the last version [here](https://prometheus.io/download/#node_exporter))
+Execute the following operations on your validator machine
 
-```bash
-wget https://github.com/prometheus/node_exporter/releases/download/v1.5.0/node_exporter-1.5.0.linux-amd64.tar.gz
-tar xvfz node_exporter-1.5.0.linux-amd64.tar.gz
-```
+### Download & Installation
 
-Rename the folder
+On both your validator and monitoring machines, download and unpack Node Exporter (check the last version [here](https://github.com/prometheus/node_exporter))
 
 ```bash
-mv node_exporter-1.5.0.linux-amd64 node_exporter
+wget https://github.com/prometheus/node_exporter/releases/download/v1.7.0/node_exporter-1.7.0.linux-amd64.tar.gz
+tar xvfz node_exporter-1.7.0.linux-amd64.tar.gz
+sudo rm -f node_exporter-1.7.0.linux-amd64.tar.gz
+mv node_exporter-1.7.0.linux-amd64/ node-exporter/
+cd node-exporter/
 ```
 
-## Add a system unit file
+Add a symbolic link to the `/usr/local/bin/` directory for system-wide access to Node Exporter:
+
+```bash
+sudo ln -s /home/<your_user>/node-exporter/node-exporter /usr/local/bin/
+```
+
+### Add a system unit file
 
 Create the .service file with a text editor
 
@@ -31,6 +38,10 @@ sudo nano /etc/systemd/system/node-exporter.service
 ```
 
 Paste the below text
+
+<details>
+<summary>cosmos-node-exporter.service</summary>
+<p>
 
 ```bash title="/etc/systemd/system/node-exporter.service"
 [Unit]
@@ -42,7 +53,7 @@ User=youruser #modify this field with your user
 TimeoutStartSec=0
 CPUWeight=95
 IOWeight=95
-ExecStart=/home/youruser/node_exporter/node_exporter
+ExecStart=node_exporter
 Restart=always
 RestartSec=2
 LimitNOFILE=800000
@@ -51,6 +62,9 @@ KillSignal=SIGTERM
 [Install]
 WantedBy=multi-user.target
 ```
+
+</p>
+</details>
 
 Reload the systemd Daemon
 
@@ -64,7 +78,7 @@ Enable autostart of Node Exporter service
 sudo systemctl enable node-exporter.service
 ```
 
-## Start Node Exporter service
+### Start Node Exporter service
 
 ```bash
 sudo systemctl start node-exporter.service
@@ -88,6 +102,8 @@ Success! Node Exporter is now exposing metrics that Prometheus can scrape, inclu
 curl http://localhost:9100/metrics | grep "node_"
 ```
 
+### Open Firewall Port
+
 :::danger Important
 After successfully installing and launching Node Exporter, the next step is to open port 9100 on your Validator's firewall. This port should be accessible exclusively from your monitoring machine. This action is essential to enable Prometheus to collect data from Node Exporter.
 
@@ -95,3 +111,22 @@ After successfully installing and launching Node Exporter, the next step is to o
 sudo ufw allow from monitor_ip to validator_ip port 9100
 ```
 :::
+
+## Monitoring Machine
+
+On your monitoring machine, go to your prometheus directory and open your `prometheus.yml` file
+
+```bash
+sudo nano prometheus.yml
+```
+
+Add the cosmos node exporter job into it, under `scrape_configs` block
+
+```bash
+ # Validator Host Hardware Metrics
+  - job_name: "validator-hardware-metrics"
+​
+    # validator ip and port
+    static_configs:
+      - targets: ["validator_ip:9100"]
+```
