@@ -30,7 +30,11 @@ Edit the required fields
 Do not copy and paste the entire code block as it may disrupt the configuration file!!! Only copy the necessary fields or add them manually!
 :::
 
-```bash title="${HOME}/.sentinelnode/config.toml"
+<details>
+<summary>config.toml</summary>
+<p>
+
+```bash
 [chain]
 # Gas limit to set per transaction
 gas = 200000
@@ -115,20 +119,23 @@ type = "wireguard"
 max_peers = 250
 ```
 
+</p>
+</details>
+
 The fields `gigabyte_prices` and `hourly_prices` **must** encompass the entire string, including the IBC coins as well separated by commas. Merely incorporating the udvpn price will not suffice. Please refer to the list below for the supported IBC coins:
 
 ```bash
 ATOM
-8368ibc/A8C2D23A1E6F95DA4E48BA349667E322BD7A6C996D8A4AAE8BA72E190F3D1477
+9204ibc/A8C2D23A1E6F95DA4E48BA349667E322BD7A6C996D8A4AAE8BA72E190F3D1477
 
 OSMOSIS
-111582ibc/ED07A3391A112B175915CD8FAF43A2DA8E4790EDE12566649D0C2F97716B8518
+122740ibc/ED07A3391A112B175915CD8FAF43A2DA8E4790EDE12566649D0C2F97716B8518
 
 SECRET
-47794ibc/31FEE1A2A9F9C01113F90BD0BBCCE8FD6BBB8585FAF109A2101827DD1D5B95B8
+52573ibc/31FEE1A2A9F9C01113F90BD0BBCCE8FD6BBB8585FAF109A2101827DD1D5B95B8
 
 DECENTR
-1073502ibc/B1C0DDB14F25279A2026BC8794E12B259F8BDA546A3C5132CCAEE4431CE36783
+1180852ibc/B1C0DDB14F25279A2026BC8794E12B259F8BDA546A3C5132CCAEE4431CE36783
 ```
 
 ## Node Type
@@ -153,7 +160,11 @@ sudo nano ${HOME}/.sentinelnode/wireguard.toml
 
 Take note of the WireGuard port
 
-```bash title="${HOME}/.sentinelnode/wireguard.toml"
+<details>
+<summary>wireguard.toml</summary>
+<p>
+
+```bash
 # Name of the network interface
 interface = "wg0"
 
@@ -164,6 +175,9 @@ listen_port = <wireguard_udp_port> #for example listen_port = 8888
 # Server private key
 private_key = "TwkdSO6cax3Sbo06mvmMyd2X452usVeVDTK/hdkfOmI="
 ```
+
+</p>
+</details>
 
 ### V2Ray
 
@@ -183,7 +197,11 @@ sudo nano ${HOME}/.sentinelnode/v2ray.toml
 
 Take note of the V2Ray port
 
-```bash title="${HOME}/.sentinelnode/v2ray.toml"
+<details>
+<summary>v2ray.toml</summary>
+<p>
+
+```bash
 [vmess]
 # Port number to accept the incoming connections
 listen_port = <v2ray_tcp_port> #for example 9999
@@ -192,6 +210,9 @@ listen_port = <v2ray_tcp_port> #for example 9999
 # Name of the transport protocol
 transport = "grpc"
 ```
+
+</p>
+</details>
 
 ## Add a Mnemonic
 

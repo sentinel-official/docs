@@ -17,6 +17,10 @@ To use autorestart function you must have set `backend='test'` on `config.toml` 
 
 To run the node, use the following command and remember to include the ports you chose in your `config.toml` and `wireguard.toml` files (in this example, replace `<API_PORT>` with `7777` and `<WIREGUARD_PORT>` with `8888` (without the `'<'` and `'>'`):
 
+<details>
+<summary>Run Command with Autorestart</summary>
+<p>
+
 ```bash
 docker run -d \
     --name sentinel-dvpn-node \
@@ -37,9 +41,16 @@ docker run -d \
     sentinel-dvpn-node process start
 ```
 
+</p>
+</details>
+
 ### V2Ray
 
 To run the node, use the following command and remember to include the ports you chose in your `config.toml` and `v2ray.toml` files (in this example, replace `<API_PORT>` with `7777` and `<V2RAY_PORT>` with `9999` (without the `'<'` and `'>'`):
+
+<details>
+<summary>Run Command with Autorestart</summary>
+<p>
 
 ```bash
 docker run -d \
@@ -49,6 +60,9 @@ docker run -d \
     --publish <V2RAY_PORT>:<V2RAY_PORT>/tcp \
     sentinel-dvpn-node process start
 ```
+
+</p>
+</details>
 
 ## Without Autorestart Function
 
@@ -71,11 +85,16 @@ screen -t dvpn -S dvpn
 Use the appropriate command to run the node based on the node type specified in the config.toml file. Wireguard To run the node, use the following command and remember to include the TCP and UDP ports
 
 ### Run the Node
+
 Depending on the protocol you have selected, run the corresponding command
 
 **Wireguard**
 
 To run the node, use the following command and remember to include the ports you chose in your `config.toml` and `wireguard.toml` files (in this example, replace `<API_PORT>` with `7777` and `<WIREGUARD_PORT>` with `8888` (without the `'<'` and `'>'`):
+
+<details>
+<summary>Run Command without Autorestart</summary>
+<p>
 
 ```bash
 docker run --rm \
@@ -98,9 +117,16 @@ docker run --rm \
     sentinel-dvpn-node process start
 ```
 
+</p>
+</details>
+
 **V2Ray**
 
 To run the node, use the following command and remember to include the ports you chose in your `config.toml` and `v2ray.toml` files (in this example, replace `<API_PORT>` with `7777` and `<V2RAY_PORT>` with `9999` (without the `'<'` and `'>'`):
+
+<details>
+<summary>Run Command without Autorestart</summary>
+<p>
 
 ```bash
 docker run --rm \
@@ -111,6 +137,9 @@ docker run --rm \
     --publish <V2RAY_PORT>:<V2RAY_PORT>/tcp \
     sentinel-dvpn-node process start
 ```
+
+</p>
+</details>
 
 ### Detach from the screen session
 

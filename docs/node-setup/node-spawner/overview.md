@@ -51,7 +51,7 @@ python main.py
 You will be guided through the process of setting up your local server:
 
 <details>
-<summary>Local sever fields</summary>
+<summary>Local Server Fields</summary>
 <p>
 
 ```bash
