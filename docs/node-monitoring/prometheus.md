@@ -164,7 +164,7 @@ Description=Preometheus
 After=network-online.target
 ​
 [Service]
-User=youruser #modify this field with your user
+User=<your_user> #modify this field with your user
 TimeoutStartSec=0
 CPUWeight=95
 IOWeight=95
@@ -222,7 +222,3 @@ Then you can know type this address on your browser
 ```bash
 https://prometheus_ip:9090/graph
 ```
-
-## Node Exporter on Monitoring machine
-
-You can also consider installing a Node Exporter on your monitoring machine so that you can monitor it too. This way, if something breaks, you can be alerted about it and take appropriate action

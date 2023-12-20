@@ -6,19 +6,27 @@ sidebar_position: 4
 
 # Grafana
 
+Grafana is an open-source analytics and monitoring platform that integrates with various data sources, allowing users to visualize and analyze metrics and logs. It provides a flexible and powerful interface for creating, exploring, and sharing dashboards, which are collections of panels that display visualizations of data.
+
+:::warning
+Grafana should not be installed on either a validator node or a monitoring machine. It is recommended to deploy Grafana on a separate dedicated machine or consider using a cloud-based solution.
+:::
+
 ## Download & Installation
 
-On your monitoring machine, download and unpack Prometheus (check the last version [here](https://grafana.com/grafana/download?platform=linux))
+On your monitoring machine, download and unpack Grafana (check the last version [here](https://grafana.com/grafana/download?platform=linux))
 
 ```bash
-wget https://dl.grafana.com/enterprise/release/grafana-enterprise-9.4.3.linux-amd64.tar.gz
-tar -zxvf grafana-enterprise-9.4.3.linux-amd64.tar.gz
+wget https://dl.grafana.com/enterprise/release/grafana-enterprise-10.2.3.linux-amd64.tar.gz
+tar -zxvf grafana-enterprise-10.2.3.linux-amd64.tar.gz
+sudo rm -f grafana-enterprise-10.2.3.linux-amd64.tar.gz
+mv grafana-v10.2.3/ grafana/
+cd grafana/
 ```
-
-Rename the folder
+Add a symbolic link to the `/usr/local/bin/` directory for system-wide access to Prometheus:
 
 ```bash
-mv grafana-enterprise-9.4.3.linux-amd64 grafana
+sudo ln -s /home/<your_user>/grafana/bin/grafana-server /usr/local/bin/
 ```
 
 ## Add a system unit file
@@ -31,18 +39,22 @@ sudo nano /etc/systemd/system/grafana.service
 
 Paste the below text
 
+<details>
+<summary>grafana.service</summary>
+<p>
+
 ```bash title="/etc/systemd/system/grafana.service"
 [Unit]
 Description=Grafana
 After=network-online.target
 
 [Service]
-User=youruser #modify this field with your user
+User=<your_user> #modify this field with your user
 TimeoutStartSec=0
 CPUWeight=95
 IOWeight=95
-WorkingDirectory=/home/youruser/grafana
-ExecStart=/home/youruser/grafana/bin/grafana-server web --config.file=/home/youruser/grafana/conf/default.ini
+WorkingDirectory=/home/<your_user>/grafana
+ExecStart=grafana-server web --config.file=/home/<your_user>/grafana/conf/defaults.ini
 Restart=always
 RestartSec=2
 LimitNOFILE=800000
@@ -51,6 +63,9 @@ KillSignal=SIGTERM
 [Install]
 WantedBy=multi-user.target
 ```
+
+</p>
+</details>
 
 Reload the systemd Daemon
 

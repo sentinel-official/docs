@@ -130,3 +130,19 @@ Add the cosmos node exporter job into it, under `scrape_configs` block
     static_configs:
       - targets: ["validator_ip:9100"]
 ```
+
+### Node Exporter on Monitoring machine
+
+
+While not mandatory, you may want to install a Node Exporter on your monitoring machine as well. This allows you to keep a close eye on its performance. In the event of any issues, you'll receive timely alerts, enabling you to take prompt and appropriate action.
+
+If you opt for this step, remember to update your `prometheus.yml` file once again and add the monitoring node job into it, under `scrape_configs` block
+
+```bash
+# Monitoring Node with prometheus installed
+  - job_name: "monitor-hardware-metrics"
+​
+    # current machine ip and port
+    static_configs:
+      - targets: ["localhost:9100"]
+```
