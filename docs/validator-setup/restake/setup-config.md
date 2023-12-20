@@ -131,6 +131,10 @@ sudo nano /etc/systemd/system/restake.service
 
 Add the following code block
 
+<details>
+<summary>restake.service</summary>
+<p>
+
 ```bash title="/etc/systemd/system/restake.service"
 [Unit]
 Description=restake service with docker compose
@@ -147,6 +151,9 @@ ExecStart=/usr/bin/docker compose run --rm app npm run autostake sentinel
 WantedBy=multi-user.target
 ```
 
+</p>
+</details>
+
 ### Create a systemd timer file
 
 The timer file defines the rules for running the restake service every hour. All rules are described in the [systemd documentation](https://www.freedesktop.org/software/systemd/man/systemd.timer.html).
@@ -158,6 +165,11 @@ sudo nano /etc/systemd/system/restake.timer
 ```
 
 Add the following code block
+
+<details>
+<summary>restake.timer</summary>
+<p>
+
 ```bash title="/etc/systemd/system/restake.timer"
 [Unit]
 Description=Restake bot timer
@@ -169,6 +181,9 @@ OnCalendar=*-*-* *:00:00
 [Install]
 WantedBy=timers.target
 ```
+
+</p>
+</details>
 
 ### Enable and start the 2 created services
 

@@ -113,7 +113,11 @@ sudo nano /etc/systemd/system/sentinelhub.service
 
 Paste the below text
 
-```bash
+<details>
+<summary>sentinelhub.service</summary>
+<p>
+
+```bash title="/etc/systemd/system/sentinelhub.service"
 [Unit]
 Description=Sentinel Hub Daemon
 After=network.target
@@ -136,6 +140,9 @@ LimitMEMLOCK=2048132
 [Install]
 WantedBy=multi-user.target
 ```
+
+</p>
+</details>
 
 Let's make sure to assign ownership of all sentinelhub files to the current user (in our case, 'sentinel')
 

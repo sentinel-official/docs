@@ -87,7 +87,11 @@ sudo nano rpc.conf
 
 Copy the following template into the `rpc.conf` and replace myvalidator with your domain
 
-```bash title="rpc.conf"
+<details>
+<summary>rpc.conf</summary>
+<p>
+
+```bash
 server {
     server_name rpc.sentinel.myvalidator.com;
 
@@ -105,6 +109,9 @@ server {
     listen 80;
 }
 ```
+
+</p>
+</details>
 
 Now, install the Certbot plugin and apply it to the above file to enable redirection to HTTPS
 

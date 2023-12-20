@@ -37,6 +37,10 @@ mkdir -p ~/.sentinelhub/cosmovisor/upgrades
 
 Set the environment variables based on your shell type (can be `~/.profile` or `~/.bashrc`):
 
+<details>
+<summary>.bashrc</summary>
+<p>
+
 ```bash
 echo "# Setup Cosmovisor" >> ~/.bashrc
 echo "export DAEMON_NAME=sentinelhub" >> ~/.bashrc
@@ -47,6 +51,9 @@ echo "export DAEMON_RESTART_AFTER_UPGRADE=true" >> ~/.bashrc
 echo "export UNSAFE_SKIP_BACKUP=true" >> ~/.bashrc
 source ~/.bashrc
 ```
+
+</p>
+</details>
 
 You may leave out `UNSAFE_SKIP_BACKUP=true`, however the backup takes a decent amount of time and public snapshots of old states are available.
 
@@ -86,12 +93,17 @@ Set up a service to allow Cosmovisor to run in the background as well as restart
 sudo nano cosmovisor.service
 ```
 
-Add the following block:
+Add the following block
 
-```bash title="cosmovisor.service"
+<details>
+<summary>cosmovisor.service</summary>
+<p>
+
+```bash title="/etc/systemd/system/cosmovisor.service"
 [Unit]
 Description=Cosmovisor Daemon
 After=network-online.target
+
 [Service]
 Environment="DAEMON_NAME=sentinelhub"
 Environment="DAEMON_HOME=/home/your-user/.sentinelhub"
@@ -105,9 +117,13 @@ Restart=always
 RestartSec=3
 LimitNOFILE=infinity
 LimitNPROC=infinity
+
 [Install]
 WantedBy=multi-user.target
 ```
+
+</p>
+</details>
 
 ## Start Cosmovisor Service
 

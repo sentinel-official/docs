@@ -27,7 +27,11 @@ sudo nano state-sync.sh
 
 Add the following code in it (to add your own or favourite RPC check this list [here](https://cosmos.directory/sentinel/nodes)):
 
-```bash title="state-sync.sh"
+<details>
+<summary>state-sync.sh</summary>
+<p>
+
+```bash
 #!/bin/bash
 
 SNAP_RPC="https://rpc.sentinel.co:443"
@@ -42,6 +46,9 @@ s|^(rpc_servers[[:space:]]+=[[:space:]]+).*$|\1\"$SNAP_RPC,$SNAP_RPC2\"| ; \
 s|^(trust_height[[:space:]]+=[[:space:]]+).*$|\1$BLOCK_HEIGHT| ; \
 s|^(trust_hash[[:space:]]+=[[:space:]]+).*$|\1\"$TRUST_HASH\"|" $HOME/.sentinelhub/config/config.toml
 ```
+
+</p>
+</details>
 
 This script ensures that the new synchronization process starts from a point slightly before the absolute latest block. This provides a margin of safety and avoid potential synchronization issues that might occur due to due network delays or other factors.
 
@@ -89,13 +96,34 @@ If everything goes well, your node should start syncing within 10 minutes.
 
 This step should be performed regularly, as the hard disk tends to fill up over time. It is advisable to establish a monitoring structure to determine when it is necessary to free up space.
 
-To get started, edit the `state-sync.sh` file and add the following lines
+To get started, edit the `state-sync.sh` file and and include the final three lines
 
-```bash title="state-sync.sh"
+<details>
+<summary>state-sync.sh</summary>
+<p>
+
+```bash
+#!/bin/bash
+
+SNAP_RPC="https://rpc.sentinel.co:443"
+SNAP_RPC2="https://rpc-sentinel.whispernode.com:443"
+
+LATEST_HEIGHT=$(curl -s $SNAP_RPC/block | jq -r .result.block.header.height); \
+BLOCK_HEIGHT=$((LATEST_HEIGHT - 1000)); \
+TRUST_HASH=$(curl -s "$SNAP_RPC/block?height=$BLOCK_HEIGHT" | jq -r .result.block_id.hash)
+
+sed -i.bak -E "s|^(enable[[:space:]]+=[[:space:]]+).*$|\1true| ; \
+s|^(rpc_servers[[:space:]]+=[[:space:]]+).*$|\1\"$SNAP_RPC,$SNAP_RPC2\"| ; \
+s|^(trust_height[[:space:]]+=[[:space:]]+).*$|\1$BLOCK_HEIGHT| ; \
+s|^(trust_hash[[:space:]]+=[[:space:]]+).*$|\1\"$TRUST_HASH\"|" $HOME/.sentinelhub/config/config.toml
+
 mv $HOME/.sentinelhub/data $HOME/.sentinelhub/data-old
 mkdir -p $HOME/.sentinelhub/data
 cp $HOME/.sentinelhub/data-old/priv_validator_state.json $HOME/.sentinelhub/data
 ```
+
+</p>
+</details>
 
 Stop the node
 
@@ -107,16 +135,6 @@ Launch the state-sync script
 
 ```bash
 ./state-sync.sh
-```
-
-Reset the node
-
-```bash
-# On some tendermint chains
-sentinelhub unsafe-reset-all
-
-# On other tendermint chains
-sentinelhub tendermint unsafe-reset-all --home $HOME/.sentinelhub --keep-addr-book
 ```
 
 Start the node
@@ -131,4 +149,10 @@ Use this command to check logs in real time
 sudo journalctl -u sentinelhub.service -f --output=cat
 ```
 
-If everything goes well, your node should start syncing within 10 minutes.
+If everything goes well, your node will commence syncing and should complete the process in approximately 10-15 minutes.
+
+Once your node is fully synced, you may safely delete the `data-old/` folder.
+
+```bash
+sudo rm -fr ~/.sentinelhub/data-old
+```

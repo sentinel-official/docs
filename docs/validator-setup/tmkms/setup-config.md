@@ -19,6 +19,12 @@ tmkms init config
 tmkms softsign keygen ./config/secrets/secret_connection_key
 ```
 
+Add a symbolic link to the `/usr/local/bin/` directory for system-wide access to TMKMS:
+
+```bash
+sudo ln -s /home/<your_user>/.cargo/bin/tmkms /usr/local/bin/
+```
+
 ## Transfer Private Validator Key
 
 Now we will transfer your validator private key from your validator to your machine running TMKMS. To do this we will use scp command, but it can also be done manually:
@@ -46,12 +52,16 @@ sudo rm -f /home/myuser/tmkms/config/secrets/priv_validator_key.json
 Open the tmkms config file
 
 ```bash
-sudo nano $HOME/tmkms/config/tmkms.toml
+sudo nano ~/tmkms/config/tmkms.toml
 ```
 
 In this example, my validator has the IP address of validator_ip and we will be using port 26659 to feed the validator key to the validator. We will also be using chain_id sentinelhub-2
 
-```bash title="$HOME/tmkms/config/tmkms.toml"
+<details>
+<summary>tmkms.toml</summary>
+<p>
+
+```bash title="~/tmkms/config/tmkms.toml"
 # Tendermint KMS configuration file
 
 ## Chain Configuration
@@ -61,7 +71,7 @@ In this example, my validator has the IP address of validator_ip and we will be 
 [[chain]]
 id = "sentinelhub-2"
 key_format = { type = "bech32", account_key_prefix = "sentpub", consensus_key_prefix = "sentvalconspub" }
-state_file = "home/myuser/tmkms/config/state/priv_validator_state.json"
+state_file = "home/<your_user>/tmkms/config/state/priv_validator_state.json"
 
 ## Signing Provider Configuration
 
@@ -70,17 +80,20 @@ state_file = "home/myuser/tmkms/config/state/priv_validator_state.json"
 [[providers.softsign]]
 chain_ids = ["sentinelhub-2"]
 key_type = "consensus"
-path = "/home/myuser/tmkms/config/secrets/priv_validator_key"
+path = "/home/<your_user>/tmkms/config/secrets/priv_validator_key"
 
 ## Validator Configuration
 
 [[validator]]
 chain_id = "sentinelhub-2"
 addr = "tcp://validator_ip:26659" #insert validator ip
-secret_key = "/home/myuser/tmkms/config/secrets/kms-identity.key"
+secret_key = "/home/<your_user>/tmkms/config/secrets/kms-identity.key"
 protocol_version = "v0.34" #check the version match with the one of your validator
 reconnect = true
 ```
+
+</p>
+</details>
 
 ## Add a system unit file
 
@@ -92,15 +105,19 @@ sudo nano /etc/systemd/system/tmkms.service
 
 Paste the below text
 
+<details>
+<summary>tmkms.service</summary>
+<p>
+
 ```bash title="/etc/systemd/system/tmkms.service"
 [Unit]
 Description=TMKMS Daemon
 After=network.target
 
 [Service]
-User=trinity
+User=<your_user>
 Type=simple
-ExecStart=/home/trinity/.cargo/bin/tmkms start -c /home/trinity/tmkms/config/tmkms.toml
+ExecStart=tmkms start -c /home/<your_user>/tmkms/config/tmkms.toml
 Restart=on-failure
 StartLimitInterval=0
 RestartSec=5
@@ -110,6 +127,9 @@ LimitMEMLOCK=2048132
 [Install]
 WantedBy=multi-user.target
 ```
+
+</p>
+</details>
 
 Reload the systemd Daemon
 

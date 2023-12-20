@@ -36,7 +36,11 @@ sudo nano chains.json
 
 Add the following block
 
-```bash title="chains.json"
+<details>
+<summary>chains.json</summary>
+<p>
+
+```bash
 {
   "$schema": "../chains.schema.json",
   "name": "<your_validator_name>",
@@ -54,6 +58,9 @@ Add the following block
 }
 ```
 
+</p>
+</details>
+
 Create the file `profile.json`
 
 ```bash
@@ -62,12 +69,19 @@ sudo nano profile.json
 
 Add the following block
 
-```bash title="profile.json"
+<details>
+<summary>profile.json</summary>
+<p>
+
+```bash
 {
   "$schema": "../profile.schema.json",
   "name": "<your_validator_name>",
   "identity": "<your_16_digit_keybase_identity>"
 }
 ```
+
+</p>
+</details>
 
 Push to the origin and create a pull request adding a commit message
