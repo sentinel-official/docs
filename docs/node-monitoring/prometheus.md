@@ -37,10 +37,10 @@ sudo nano prometheus.yml
 Ensure that both your Validator machine and local machine are included in the list of scrape targets in the configuration file. This step enables Prometheus to collect metrics from these sources. I have added all the exported outlined in this guide
 
 <details>
-<summary>config.toml</summary>
+<summary>prometheus.yml</summary>
 <p>
 
-```yaml title="/home/<your_user>/prometheus/prometheus.yml"
+```yaml
 scrape_configs:
   # Monitoring Node with prometheus installed
   - job_name: "monitor-hardware-metrics"
