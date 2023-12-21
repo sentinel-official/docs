@@ -64,33 +64,25 @@ Launch the script
 ./state-sync.sh
 ```
 
-Start the node WITHOUT using systemd
+Start the node by running the following command:
 
 ```bash
-sentinelhub start
+sudo systemctl start sentinelhub.service
 ```
 
-Let the node sync fully and periodically check with this command
+Your node will fully synchronize within 10 minutes. Periodically check its status using the following command:
 
 ```bash
 curl --silent "http://localhost:26657/status" | jq -S
 ```
 
-if `result.sync_info.catching_up` value is `false` that means the node is synchronized, so you can now stop the node by pressing `CTRL+C`
+If the value of `result.sync_info.catching_up` is `false`, it indicates that the node is synchronized and ready to start signing blocks.
 
-Start the node WITH systemd
-
-```bash
-sudo systemctl start sentinelhub
-```
-
-Use this command to check logs in real time
+To monitor the logs in real-time, use the following command:
 
 ```bash
 sudo journalctl -u sentinelhub.service -f --output=cat
 ```
-
-If everything goes well, your node should start syncing within 10 minutes.
 
 ### Free up space
 
@@ -131,28 +123,34 @@ Stop the node
 sudo systemctl stop sentinelhub.service
 ```
 
-Launch the state-sync script
+Launch the script
 
 ```bash
 ./state-sync.sh
 ```
 
-Start the node
+Start the node by running the following command:
 
 ```bash
 sudo systemctl start sentinelhub.service
 ```
 
-Use this command to check logs in real time
+Your node will fully synchronize within 10 minutes. Periodically check its status using the following command:
+
+```bash
+curl --silent "http://localhost:26657/status" | jq -S
+```
+
+If the value of `result.sync_info.catching_up` is `false`, it indicates that the node is synchronized and ready to start signing blocks.
+
+To monitor the logs in real-time, use the following command:
 
 ```bash
 sudo journalctl -u sentinelhub.service -f --output=cat
 ```
 
-If everything goes well, your node will commence syncing and should complete the process in approximately 10-15 minutes.
-
-Once your node is fully synced, you may safely delete the `data-old/` folder.
+Once your node has completed synchronization, you can confidently proceed to delete the `.sentinel/data-old/` folder.
 
 ```bash
-sudo rm -fr ~/.sentinelhub/data-old
+sudo rm -fr $HOME/.sentinelhub/data-old/
 ```
