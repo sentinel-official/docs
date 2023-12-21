@@ -1,11 +1,11 @@
 ---
-title: Ecoinomics
+title: Economics
 sidebar_position: 2
 ---
 
-# Ecoinomics
+# Economics
 
-After dedicating a considerable amount of time to the Ethereum testnet blockchain, we have transitioned to Cosmos and established our own blockchain seamlessly integrated into the Cosmos network. This transition not only marks a shift in our technological infrastructure but also brings about a transformation in our ecoinomics.
+After dedicating a considerable amount of time to the Ethereum testnet blockchain, we have transitioned to Cosmos and established our own blockchain seamlessly integrated into the Cosmos network. This transition not only marks a shift in our technological infrastructure but also brings about a transformation in our economics.
 
 Key metrics:
 - Current supply: 25.93B
