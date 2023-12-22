@@ -23,9 +23,10 @@ The first monitoring tools are called **`Exporters`** and are agents that run on
 
 ### Monitoring Machine
 
-The next two monitoring must be installed on a separated machine which is used just to monitor your node.
+The next three monitoring tools must be installed on a separated machine which is used just to monitor your node.
 
-- [**Prometheus**](/node-monitoring/prometheus): a monitoring system that collects metrics from the Exporters. It stores the metrics in a time-series database and provides a powerful query language to extract and aggregate the data. Prometheus also has an alerting system that can be used to send notifications when certain thresholds are breached
+- [**Alert Manager**](/node-monitoring/alertmanager): a component of the Prometheus monitoring and alerting toolkit responsible. for handling alerts sent by client applications such as Prometheus server and then managing the routing and notification of these alerts to different receivers
+- [**Prometheus**](/node-monitoring/prometheus): a monitoring system that collects metrics from the Exporters. It stores the metrics in a time-series database and provides a powerful query language to extract and aggregate the data. Prometheus also has an alerting system that can be used to send notifications when certain thresholds are breached.
 - [**Grafana**](/node-monitoring/grafana): a visualization tool that can be used to create dashboards and charts to display the data collected by Prometheus. Grafana supports a wide range of data sources, including Prometheus, and provides a rich set of visualization options, including graphs, tables, and alerts.
 
 How does this stack of tools work?

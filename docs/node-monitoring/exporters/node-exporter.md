@@ -40,7 +40,7 @@ sudo nano /etc/systemd/system/node-exporter.service
 Paste the below text
 
 <details>
-<summary>cosmos-node-exporter.service</summary>
+<summary>node-exporter.service</summary>
 <p>
 
 ```bash title="/etc/systemd/system/node-exporter.service"

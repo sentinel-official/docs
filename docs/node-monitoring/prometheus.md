@@ -1,7 +1,7 @@
 ---
 title: Prometheus
 description: A tool that collects your metrics from Node Exporter
-sidebar_position: 3
+sidebar_position: 4
 ---
 
 # Prometheus
@@ -217,7 +217,7 @@ If you are running Prometheus on a VPS and want to access the web UI via an exte
 sudo ufw allow 9090/tcp
 ```
 
-Then you can know type this address on your browser
+You can now enter this address in your browser to check if Prometheus displays them.
 
 ```bash
 https://prometheus_ip:9090/graph
