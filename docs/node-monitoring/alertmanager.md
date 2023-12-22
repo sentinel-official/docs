@@ -44,11 +44,11 @@ sudo nano alertmanager.yml
 
 ```yaml
 route:
-  receiver: prom_alert_manager_bot
+  receiver: telegram
   repeat_interval: 1h
 
 receivers:
-  - name: prom_alert_manager_bot
+  - name: telegram
     telegram_configs:
       - send_resolved: true
         bot_token: <your_bot_token>
