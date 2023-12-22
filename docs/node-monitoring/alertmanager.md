@@ -44,17 +44,70 @@ sudo nano alertmanager.yml
 
 ```yaml
 route:
-  receiver: telegram
+  receiver: <your_telegram_bot_name>
   repeat_interval: 1h
 
 receivers:
-  - name: telegram
+  - name: <your_telegram_bot_name>
     telegram_configs:
       - send_resolved: true
+        message: '{{ template "telegram.text" . }}'
         bot_token: <your_bot_token>
         api_url: https://api.telegram.org
         chat_id: <you_chat_id>
         parse_mode: ''
+
+templates:
+  - template.tmpl
+```
+
+</p>
+</details>
+
+## Set up the Template file
+
+The template file is designed to format and enhance the readability of your Telegram alerts.
+
+Open the config file
+
+```bash
+sudo nano template.tmpl
+```
+
+<details>
+<summary>template.tmpl</summary>
+<p>
+
+```bash
+{{ define "__alertmanager" }}Alertmanager{{ end }}
+{{ define "__alertmanagerURL" }}{{ .ExternalURL }}/#/alerts?receiver={{ .Receiver | urlquery }}{{ end }}
+
+{{ define "__subject" }}[{{ .Status | toUpper }}{{ if eq .Status "firing" }}:{{ .Alerts.Firing | len }}{{ end }}] {{ .GroupLabels.SortedPairs.Values | join " " }} {{ if gt (len .CommonLabels) (len .GroupLabels) }}({{ with .CommonLabels.Remove .GroupLabels.Names }}{{ .Values | join " " }}{{ end }}){{ end }}{{ end }}
+{{ define "__description" }}{{ end }}
+
+{{ define "alerts_list" }}
+{{ range . }}{{ if index .Labels "host" }}🖥️ Host: {{ index .Labels "host" }} ({{ index .Labels "instance" }}){{ else }}🖥️ Host: {{ index .Labels "instance" }}{{ end }}
+{{ if eq (index .Labels "severity") "critical" }}🔴 Severity: critical {{ else }}🟠 Severity: warning {{ end }}
+📖 Alert: {{ index .Labels "alertname" }}
+ℹ️ Details: {{ index .Annotations "summary" }}
+📝 Description: {{ index .Annotations "description" }}
+
+Labels:
+{{ range .Labels.SortedPairs }} - {{ .Name }} = {{ .Value }}
+{{ end }}
+<a href="{{ .GeneratorURL }}">Source</a>
+{{ end }}{{ end }}
+
+{{ define "telegram.text" }}
+{{ if gt (len .Alerts.Firing) 0 }}
+🔥 <strong>Alerts Firing</strong>
+{{ template "alerts_list" .Alerts.Firing }}
+{{ end }}
+{{ if gt (len .Alerts.Resolved) 0 }}
+✅ <strong>Alerts Resolved</strong>
+{{ template "alerts_list" .Alerts.Resolved }}
+{{ end }}
+{{ end }}
 ```
 
 </p>
