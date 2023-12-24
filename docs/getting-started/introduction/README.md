@@ -7,13 +7,13 @@ sidebar_position: 1
 
 ##  What is Sentinel?
 
-Sentinel is a web3 framework providing a community driven network of nodes that share their bandwidth, on which Decentralized VPNs and other such services are built. The purpose of the Sentinel ecosystem is to empower universal access to the internet in a trusted and provable manner. This will be done by allowing organizations and individuals around the world to construct cost-effective, scalable, distributed and decentralized networking solutions on Sentinel’s Cosmos-based blockchain.
+Sentinel is an open source framework for a network of nodes on which Decentralized VPNs and other Web3 services are built. The purpose of the Sentinel ecosystem is to empower universal access to the internet in a trusted and provable manner. This will be done by allowing organizations and individuals around the world to construct decentralized, scalable, distributed networking solutions on Sentinel’s Cosmos-based blockchain in a cost-effective manner.
 
 :::info Important 
-Sentinel is a network of independent dVPN (decentralized virtual private network) applications, not just a single consumer facing dVPN.
+Sentinel is the foundation for a network of independent dVPN (decentralized virtual private network) applications; not just one single consumer-facing dVPN.
 :::
 
-Apart from releasing and maintaining the native Sentinel application on Desktop, Android and iOS other organizations will be able to utilize the power of the Sentinel blockchain by using the Sentinel Protocol. Sentinel strongly encourages other organizations to white-label the Sentinel protocol as the code is fully open sourced and transparant.
+We strongly encourage all interested parties to build on Sentinel—anyone from established VPN companies to startups to lone individuals in their bedroom. Sentinel's code is fully open-sourced, transparent, and readily available to all for this very reason.
 
 ![](/img/getting-started/welcome.jpg)
 
@@ -21,10 +21,13 @@ Apart from releasing and maintaining the native Sentinel application on Desktop,
 ## Why Sentinel?
 
 ### Decentralized
-A decentralized VPN (dVPN) is not owned by a single centralized organization. With a dVPN, there is no need to place trust in a centralized entity to guarantee its reliability, as all that authority is distributed across the blockchain or various node owners. By using a dVPN, you attain freedom from the world, including the organization that previously supplied you with this liberating service.
+
+A decentralized VPN (dVPN) is not owned or operated by any single centralized actor. With a dVPN, there is no need to place your trust and data in the hands of a big tech company to guarantee reliability, as all authority is distributed across the blockchain to various node owners, stakers, application developers, and validators.
 
 ### Open Source
-The Sentinel's code is completely open source. Open-sourcing the code substantially decreases the risk of hacking because numerous smart and knowledgeable individuals can review its functionality, identify vulnerabilities, and contribute to its improvement.
+
+Open-sourcing the code substantially decreases the risk of security breaches. Sentinel's transparency means that innumerable knowledgeable, experienced individuals have reviewed its functionality, identified vulnerabilities, and contributed to its improvement—and will continue to do so! 
 
 ### No Log Policy
-Sentinel dVPN is committed to user privacy and does not log any user activity or data.
+
+dVPN is a trustless technology; which means you don't have to just take our word for it when we say that Sentinel is absolutely committed to user privacy, and does not log any user activity or data—it's impossible for us to in the first place.
