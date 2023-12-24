@@ -46,6 +46,7 @@ By implementing this process, the Subscription Plan ensures a continuous assessm
 
 To verify your Health Check status, navigate to the [API Records](https://api.health.sentinel.co/v1/records) and locate your `sentnode` address.
 Ensure the following fields meet the specified conditions:
+- `status` should be 1
 - `info_fetch_timestamp` is not zero timestamp
 - `info_fetch_error` is empty or does not exist
 - `config_exchange_timestamp` is not zero timestamp
