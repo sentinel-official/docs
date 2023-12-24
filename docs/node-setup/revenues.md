@@ -24,6 +24,14 @@ Nodes added into a time-based subscription plan will be paid based on monthly fl
 
 This subscription plan will be shared by multiple white-label applications and after sufficient optimization and testing, white-label applications will begin to create their own individual subscription plans overtime as their bandwidth usage increases exponentially from here on out.
 
+## The Revenues Explained
+
+In delineating of on-chain revenue, it is crucial to emphasize that payments directed towards nodes are intended to originate solely from white-labels. However, it is noteworthy that these payments are currently experiencing substantial subsidization, particularly with the uptick in usage and the integration of in-app advertisements.
+
+Revenue, in essence, signifies compensation for services rendered. The calculation presented here unequivocally reflects this definition. It's important to underline that this is not a giveaway or mere incentive; rather, it represents tangible monetary compensation extended to users.
+
+It is essential to distinguish this as `network revenue` rather than organizational revenue, and this classification is apt. For example, consider Uber's strategy of incentivizing drivers to fortify supply ahead of demand spikes. If Uber were to construct a chart depicting total earnings by drivers, it would include the value of the provided incentives in the calculation. This is because such funds fall under the category of payments made for services rendered, irrespective of whether they were subsidized or not.
+
 ## Node Health Check as Requirement
 
 To be added into the Subscription Plan and consequently be eligible to Node Revenue System, the node is required to pass the `Node Health Check`.
@@ -34,4 +42,17 @@ This check occurs multiple times a day and will test:
 
 By implementing this process, the Subscription Plan ensures a continuous assessment, allowing for the addition of new nodes and the removal of problematic ones that require corrective measures.
 
-Currently, there is an accessible [online spreadsheet](https://docs.google.com/spreadsheets/d/1rJgW_xjmvtEWjn6eMpkrlXtdpxy-TRPRpxRAHCVE_vs/edit?pli=1#gid=0) delineating nodes that passed the health check and those that did not meet the criteria. In the upcoming `Node Dashboard`, each node will feature an indicator on the page, clearly indicating whether it has successfully passed the health check or not. Furthermore, an alert system will be implemented to promptly notify node operators in the event that their node fails a health check, providing them with timely and actionable information.
+### How can I verify that my node has successfully passed the Health Check?
+
+To verify your Health Check status, navigate to the [API Records](https://api.health.sentinel.co/v1/records) and locate your `sentnode` address.
+Ensure the following fields meet the specified conditions:
+- `info_fetch_timestamp` is not zero timestamp
+- `info_fetch_error` is empty or does not exist
+- `config_exchange_timestamp` is not zero timestamp
+- `config_exchange_error` is empty or does not exist
+- `location_fetch_timestamp` is not zero timestamp
+- `location_fetch_error` is empty ot does not exist
+
+For a more user-friendly overview, consult the [online spreadsheet](https://docs.google.com/spreadsheets/d/1rJgW_xjmvtEWjn6eMpkrlXtdpxy-TRPRpxRAHCVE_vs/edit?pli=1#gid=0) which categorizes nodes based on whether they have successfully passed the health check or failed to meet the criteria.
+
+In the upcoming `Node Dashboard`, each node will feature an indicator on the page, clearly indicating whether it has successfully passed the health check or not. Furthermore, an alert system will be implemented to promptly notify node operators in the event that their node fails a health check, providing them with timely and actionable information.
