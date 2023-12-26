@@ -1,6 +1,6 @@
 ---
-title: 2 - Linux Script
-sidebar_position: 4
+title: Linux Script
+sidebar_position: 2
 ---
 
 # Linux Script
