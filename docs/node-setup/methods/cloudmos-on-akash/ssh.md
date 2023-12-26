@@ -8,7 +8,7 @@ sidebar_position: 3
 
 You might prefer accessing your container via SSH, as the default Cloudmos shell may not provide a satisfactory user experience. To accomplish this, we will need the correct **provider name** and **port** information for the SSH connection.
 
-On `LEASE` tab make note of the forwarded port 22; in this case, it is set to **32725**.
+On `LEASE` tab make note of the forwarded port 22; in this case, it is set to **32757**.
 
 ![Check IP & Port](/img/akash/checks.png)
 
