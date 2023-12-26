@@ -236,6 +236,10 @@ const config = {
                 label: 'Stats',
               },
               {
+                href: 'https://nodes.sentinel.co',
+                label: 'Node Dashboard',
+              },
+              {
                 href: 'https://map.sentinel.co',
                 label: 'Node Explorer',
               },

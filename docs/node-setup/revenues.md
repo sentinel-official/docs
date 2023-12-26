@@ -42,9 +42,20 @@ This check occurs multiple times a day and will test:
 
 By implementing this process, the Subscription Plan ensures a continuous assessment, allowing for the addition of new nodes and the removal of problematic ones that require corrective measures.
 
-### How can I verify that my node has successfully passed the Health Check?
+## How can I verify that my node has successfully passed the Health Check?
 
-To verify your Health Check status, navigate to the [API Records](https://api.health.sentinel.co/v1/records) and locate your `sentnode` address.
+You have two methods to verify whether your node has successfully passed the Health Check.
+
+### 1 - Node Dashboard
+
+In the [Node Dashboard](https://nodes.sentinel.co) each node features an indicator on the page, clearly indicating whether it has successfully passed the health check or not. Simply paste your `sentnode` address into the search bar. Furthermore, an alert system will be implemented to promptly notify node operators in the event that their node fails a health check, providing them with timely and actionable information.
+
+### 2 - Manual Check
+
+To verify your Health Check status paste the following link into your browser: `https://api.health.sentinel.co/v1/records/<your_sent_node_address>`
+
+For a comprehensive list of nodes, you can also explore the [API Records](https://api.health.sentinel.co/v1/records) main page
+
 Ensure the following fields meet the specified conditions:
 - `status` should be 1
 - `info_fetch_timestamp` is not zero timestamp
@@ -55,5 +66,3 @@ Ensure the following fields meet the specified conditions:
 - `location_fetch_error` is empty ot does not exist
 
 For a more user-friendly overview, consult the [online spreadsheet](https://docs.google.com/spreadsheets/d/1rJgW_xjmvtEWjn6eMpkrlXtdpxy-TRPRpxRAHCVE_vs/edit?pli=1#gid=0) which categorizes nodes based on whether they have successfully passed the health check or failed to meet the criteria.
-
-In the upcoming `Node Dashboard`, each node will feature an indicator on the page, clearly indicating whether it has successfully passed the health check or not. Furthermore, an alert system will be implemented to promptly notify node operators in the event that their node fails a health check, providing them with timely and actionable information.
