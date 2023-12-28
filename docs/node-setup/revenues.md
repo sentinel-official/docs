@@ -57,12 +57,15 @@ To verify your Health Check status paste the following link into your browser: `
 For a comprehensive list of nodes, you can also explore the [API Records](https://api.health.sentinel.co/v1/records) main page
 
 Ensure the following fields meet the specified conditions:
-- `status` should be 1
-- `info_fetch_timestamp` is not zero timestamp
-- `info_fetch_error` is empty or does not exist
-- `config_exchange_timestamp` is not zero timestamp
-- `config_exchange_error` is empty or does not exist
-- `location_fetch_timestamp` is not zero timestamp
-- `location_fetch_error` is empty ot does not exist
+- `ok` must be true
+- `status` must be 1
+- `info_fetch_timestamp` should not be a zero timestamp
+- `config_exchange_timestamp` should not be a timestamp
+- `location_fetch_timestamp` should not be a zero timestamp
 
 For a more user-friendly overview, consult the [online spreadsheet](https://docs.google.com/spreadsheets/d/1rJgW_xjmvtEWjn6eMpkrlXtdpxy-TRPRpxRAHCVE_vs/edit?pli=1#gid=0) which categorizes nodes based on whether they have successfully passed the health check or failed to meet the criteria.
+
+The spreadsheet includes the following additional fields:
+- `info_fetch_error` should be empty or non-existent
+- `config_exchange_error` should be empty or non-existent
+- `location_fetch_error` should be empty or non-existent
