@@ -20,7 +20,7 @@ The DAO perform expenses either from Multisig Wallet and Validator Wallet
 
 | TX TIME (UTC) | RECIPIENT                                 | AMOUNT | DESCRIPTION | TX DETAILS
 |---------------|-------------------------------------------|--------|-------------|-----------
-| 01/11/2023 12:03:56 | sent1jrgqxfsqm3wnkjdqz8t860dv2tcweq99xesaf9 | 1,500,000 | Mortim Services | [🔎](https://www.mintscan.io/sentinel/txs/B2CCCC2BA7C793096A42753FDEB7899174D41BD9BE6666DD2576D57C35D61594?height=13407519)
+| 01/11/2023 12:03:56 | sent1jrgqxfsqm3wnkjdqz8t860dv2tcweq99xesaf9 | 1,500,000 | Design/Promo costs | [🔎](https://www.mintscan.io/sentinel/txs/B2CCCC2BA7C793096A42753FDEB7899174D41BD9BE6666DD2576D57C35D61594?height=13407519)
 | 01/11/2023 11:47:33 | sent1yj2rzayd5nw3q7t0yh2l2cjw307v7qtrvc4zwu | 1,000,000 | October Poker 1st Place | [🔎](https://www.mintscan.io/sentinel/txs/1998DF780B3B809F9C7FD0F155B4607982BCD77F3A85410A72918284CDDF7FCF?height=13407351)
 | 01/11/2023 11:49:24 | sent1f4h6rzrn0aljfr5p9sscqplmp0ycza8qddmnkx | 562,500 | October Poker 2nd Place | [🔎](https://www.mintscan.io/sentinel/txs/EDE2E8117621E5D5B481EA5CF6841AD0E39F237FCCE80CD0B6EF6F72AA3FECB5?height=13407370)
 | 01/11/2023 11:50:34 | sent1hud0wx3pjd83jcd0frkzt70dhdu7wgjvh5f4za | 375,000 | October Poker 3rd Place | [🔎](https://www.mintscan.io/sentinel/txs/BDD6058C45B853DEC67D3B7EF12FA41703EF1F2A3DA360315590532000429FFD?height=13407382)
