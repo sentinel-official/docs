@@ -1,6 +1,6 @@
 ---
-title: Growth DAO
-sidebar_position: 9
+title: Introduction
+sidebar_position: 1
 ---
 
 # Sentinel Growth DAO
@@ -70,28 +70,3 @@ These tools would simplify the usage of the Sentinel network, thereby enhancing 
 ## Funding
 
 The DAO is funded with coins from the community fund, approximately 240,000,000 coins, to support the implementation of these initiatives. The precise amount will be determined based on the requirements and the scope of our operations, subject to approval by DAO members. A multi-signature (multi-sig) wallet has been established and will be under the supervision of DAO members.
-
-
-Multisig wallet: `sent1ug9ene2fkw749nutuzd858r6sqeljt6f6vya33`
-
-
-## DAO Validator
-
-The DAO validator is currently active with a 100% commission. The rewards will either be redelegated or used for the initiatives mentioned above. Anyone interested in further supporting the DAO can do so through discussions or by using DVPN coins.
-
-Sentinel Growth DAO Channel: [https://t.me/SentinelGrowthDAO](https://t.me/SentinelGrowthDAO)
-
-
-## DAO Core Members 
-
-**Founding Members**
-- Conundrum - [https://t.me/Conundrum_SIN](https://t.me/Conundrum_SIN)
-- Joey | BadgerBite - [https://t.me/joey19944](https://t.me/joey19944)
-- Seventh - [https://t.me/xSeventhx](https://t.me/xSeventhx)
-
-**Multisig Wallet**
-- Bart | Chainvibes - [https://t.me/Creamers](https://t.me/Creamers)
-- Joey | BadgerBite - [https://t.me/joey19944](https://t.me/joey19944)
-- Sergey | Quokka Stake - [https://t.me/freak12techno](https://t.me/freak12techno)
-- Seventh - [https://t.me/xSeventhx](https://t.me/xSeventhx)
-- Trinity Validator - [https://t.me/trinityvalidator](https://t.me/trinityvalidator)
