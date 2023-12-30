@@ -31,8 +31,7 @@ sidebar_position: 1
 - [BasedVPN](https://t.me/BasedVPN): The first free dVPN App based in UK
 
 
-## Utility
+## Utility Bots
 
 - [Sentinel Validators Missed Blocks](https://t.me/sentinel_missed): Automated channel for monitoring validator missed blocks and jailings/unjailings
-- [Frog dVPN Launcher](https://t.me/froglauncher): The new dVPN app to set up and launch multiple nodes
-- [Akash Network](https://t.me/AkashNW): A separate Cosmos project used for deploying Sentinel v2ray nodes
+- [Sentinel Whale Monitor](https://t.me/sentinel_whale_monitor): Automated channel for monitoring big transactions and foundation-related wallets
