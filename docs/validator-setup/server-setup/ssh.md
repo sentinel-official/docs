@@ -26,12 +26,14 @@ total 2
 
 :::danger Important
 
-Add your **public** SSH key to the `authorized_keys` file on your VPS to enable secure SSH connections. If you don't perform this step you will be locked out and unable to connect to your VPS as it will be refused!
+Add your **public** SSH key to the `authorized_keys` file on your VPS to enable secure SSH connections. If you do not perform this step you will be locked out and unable to connect to your VPS as it will be refused!
 
 ```bash
 ssh-copy-id -i ~/.ssh/id_ed25519.pub username@server_ip
 ```
 :::
+
+If the import fails, ensure that the `.ssh/` folder exists on your server under the newly created user. If it does not exist, create it by doing `mkdir ~/.ssh`
 
 ### Server Side
 

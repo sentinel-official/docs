@@ -75,7 +75,7 @@ sudo systemctl stop nginx.service
 Navigate to the configuration directory:
 
 ```bash
-cd /etc/nginx/config.d
+cd /etc/nginx/conf.d
 ```
 
 You will find the file `default.conf`. You can rename it and create the file `rpc.conf`
@@ -113,10 +113,16 @@ server {
 </p>
 </details>
 
-Now, install the Certbot plugin and apply it to the above file to enable redirection to HTTPS
+Now, install the Certbot plugin
 
 ```bash
 sudo apt-get install python3-certbot-nginx
+sudo certbot --nginx
+```
+
+Apply Certbot plugin to the rpc.conf file to enable redirection to HTTPS and select the number corresponding to your Full Node
+
+```bash
 sudo certbot --nginx
 ```
 

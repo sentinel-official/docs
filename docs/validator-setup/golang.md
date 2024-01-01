@@ -37,8 +37,8 @@ Get a copy of the last Golang version and unpack it
 
 ```bash
 cd ~ && \
-curl -OL https://golang.org/dl/go1.21.3.linux-amd64.tar.gz && \
-tar -C ${HOME} -xvf go1.21.3.linux-amd64.tar.gz
+curl -OL https://golang.org/dl/go1.21.5.linux-amd64.tar.gz && \
+tar -C ${HOME} -xvf go1.21.5.linux-amd64.tar.gz
 ```
 
 Move the extracted go into `/usr/local/lib/go`

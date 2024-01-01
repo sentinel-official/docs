@@ -11,19 +11,20 @@ Certbot is specifically used for obtaining and renewing SSL/TLS certificates for
 Install Certbot tool
 
 ```bash
-sudo apt-get install certbot
+sudo apt install certbot
 ```
 
 Enable port 80 and 443 on your firewall
 
 ```bash
 sudo ufw allow 80/tcp
+sudo ufw allow 443/tcp
 ```
 
 Generate a SSL Certificate
 
 ```bash
-certbot certonly -d rpc.sentinel.myvalidator.com
+sudo certbot certonly -d rpc.sentinel.myvalidator.com
 ```
 
 You will be prompted to follow some steps.

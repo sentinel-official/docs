@@ -24,3 +24,9 @@ Add the following line
 ```bash title="/etc/sudoers"
 sentinel ALL=(ALL:ALL) ALL
 ```
+
+Switch to the newly created user
+
+```bash
+su - sentinel
+```
