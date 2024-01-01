@@ -23,9 +23,9 @@ To get started, begin by downloading the most recent [release](https://github.co
 ```bash
 mkdir cosmos-node-exporter
 cd cosmos-node-exporter
-wget https://github.com/QuokkaStake/cosmos-node-exporter/releases/download/v3.1.0/cosmos-node-exporter_3.1.0_linux_amd64.tar.gz
-tar xvfz cosmos-node-exporter_3.1.0_linux_amd64.tar.gz
-sudo rm -f cosmos-node-exporter_3.1.0_linux_amd64.tar.gz
+wget https://github.com/QuokkaStake/cosmos-node-exporter/releases/download/v4.0.0/cosmos-node-exporter_4.0.0_linux_amd64.tar.gz
+tar xvfz cosmos-node-exporter_4.0.0_linux_amd64.tar.gz
+sudo rm -f cosmos-node-exporter_4.0.0_linux_amd64.tar.gz
 ```
 
 Add a symbolic link to the `/usr/local/bin/` directory for system-wide access to Cosmos Node Exporter:
@@ -39,7 +39,7 @@ sudo ln -s /home/<your_user>/cosmos-node-exporter/cosmos-node-exporter /usr/loca
 Inside your `cosmos-node-exporter` directory create the config file:
 
 ```bash
-sudo nano config.toml
+nano config.toml
 ```
 
 Paste the following code in it making sure to edit the fields between `<` and `>` characters
@@ -57,33 +57,32 @@ level = "debug"
 # Defaults to false.
 json = false
 
-# Tendermint configuration
-[tendermint]
-# If set to false, the metrics related to Tendermint node would be disabled. Defaults to true.
-enabled = true
-# Tendermint RPC address. Defaults to "http://localhost:26657".
-address = "http://localhost:26657"
-# If set to false, upgrades metrics won't be queried. Useful for chains that use Tendermint
+# Per-node configuration, there can be multiple nodes.
+[[node]]
+# Node name. Will be displayed in labels. Required.
+name = "<your_node_name>"
+
+# Tendermint configuration. Has the following fields:
+# 1. enabled. If set to false, the metrics related to Tendermint node would be disabled. Defaults to true.
+# 2. address. Tendermint RPC address. Defaults to "http://localhost:26657".
+# 3. query-upgrades. If set to false, upgrades metrics won't be queried. Useful for chains that use Tendermint
 # but not cosmos-sdk, such as Nomic. Defaults to true.
-query-upgrades = true
+tendermint = { enabled = true, address = "http://localhost:26657", query-upgrades = true }
 
-[cosmovisor]
-# If set to false, the metrics related to Cosmovisor would be disabled. Defaults to true.
-enabled = true
-# Path to folder storing fullnode data and configs (like ~/.gaia for cosmoshub).
-chain-folder = "/home/<your_user>/.sentinelhub"
-# Binary name (like gaiad for cosmoshub)
-chain-binary-name = "sentinelhub"
-# Cosmovisor path (usually located at ~/go/bin/cosmovisor)
-cosmovisor-path = "/home/<your_user>/go/bin/cosmovisor"
+# Cosmovisor configuration. Has the following fields:
+# 1. enabled. # If set to false, the metrics related to Cosmovisor would be disabled. Defaults to true.
+# 2. chain-folder. Path to folder storing fullnode data and configs (like ~/.gaia for cosmoshub).
+# 3. chain-binary-name. Binary name (like gaiad for cosmoshub)
+# 4. cosmovisor-path. Cosmovisor path (usually located at ~/go/bin/cosmovisor)
+cosmovisor = { enabled = true, chain-folder = "/home/<your_user>/.sentinelhub", chain-binary-name = "sentinelhub", cosmovisor-path = "/home/<your_user>/go/bin/cosmovisor" }
 
-# Github configuration.
-[github]
-# Repository path. Omitting it will result in disabling Github metrics.
-repository = "https://github.com/sentinel-official/hub"
-# Github token. Useful if you want to make requests often, as Github rate-limits requests
-# if no token is specified.
-token = "<your_github_token>"
+
+# Git configuration. Has the following fields:
+# 1. repository. Repository path. Omitting it will result in disabling Git metrics.
+# Can be either a link to Github repo (like below), or a Gitopia repo (see below for example).
+# 2. token. Github token. Useful if you want to make requests often, as Github rate-limits requests
+# if no token is specified. Only used for Github.
+git = { repository = "https://github.com/sentinel-official/hub", token = "<your_github_token>" }
 ```
 
 </p>

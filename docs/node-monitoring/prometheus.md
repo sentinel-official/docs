@@ -202,7 +202,7 @@ sudo systemctl start prometheus.service
 Use this command to check logs in real time
 
 ```bash
-sudo journalctl -u prometheus.service -f
+sudo journalctl -u prometheus.service -f --output cat
 ```
 
 After installing and running Prometheus, you can verify whether metrics are being exported from Node Exporter to Prometheus by using cURL to request the /metrics endpoint on Prometheus port 9090 (you need to insert the password created before)

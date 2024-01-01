@@ -34,7 +34,7 @@ sudo ln -s /home/<your_user>/cosmos-validator-exporter/cosmos-validator-exporter
 Inside your `cosmos-validator-exporter` directory create the config file:
 
 ```bash
-sudo nano config.toml
+nano config.toml
 ```
 
 Paste the following code in it making sure to add your sentvaloper and sentvalcons addresses:
