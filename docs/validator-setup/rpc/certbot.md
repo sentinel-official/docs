@@ -24,7 +24,7 @@ sudo ufw allow 443/tcp
 Generate a SSL Certificate
 
 ```bash
-sudo certbot certonly -d rpc.sentinel.myvalidator.com
+sudo certbot certonly -d rpc.sentinel.myvalidator.com,api.sentinel.myvalidator.com
 ```
 
 You will be prompted to follow some steps.

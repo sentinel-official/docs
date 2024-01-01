@@ -13,8 +13,8 @@ NGINX (pronounced "engine-x") is a high-performance, open-source web server and 
 Install the dependencies:
 
 ```bash
-sudo apt-get update
-sudo apt-get install curl gnupg2 ca-certificates lsb-release
+sudo apt update
+sudo apt install curl gnupg2 ca-certificates lsb-release
 ```
 
 Import an official Nginx signing key:
@@ -41,7 +41,7 @@ http://nginx.org/packages/debian `lsb_release -cs` nginx" \
 Install NGINX:
 
 ```bash
-sudo apt-get update && sudo apt-get install nginx
+sudo apt install nginx
 ```
 
 ## Launch test
@@ -78,11 +78,12 @@ Navigate to the configuration directory:
 cd /etc/nginx/conf.d
 ```
 
-You will find the file `default.conf`. You can rename it and create the file `rpc.conf`
+You may find the file `default.conf`. You can rename it or create the files `rpc.conf` and `api.conf`
 
 ```bash
 sudo mv default.conf rpc.conf
 sudo nano rpc.conf
+sudo nano api.conf
 ```
 
 Copy the following template into the `rpc.conf` and replace myvalidator with your domain
@@ -113,11 +114,36 @@ server {
 </p>
 </details>
 
+Copy the following template into the `api.conf` and replace myvalidator with your domain
+
+<details>
+<summary>api.conf</summary>
+<p>
+
+```bash
+server {
+    server_name api.sentinel.myvalidator.com;
+
+    location / {
+        proxy_pass http://127.0.0.1:1317;
+        proxy_set_header Host $host;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_http_version 1.1;
+    }
+
+    listen [::]:80;
+    listen 80;
+}
+```
+
+</p>
+</details>
+
 Now, install the Certbot plugin
 
 ```bash
-sudo apt-get install python3-certbot-nginx
-sudo certbot --nginx
+sudo apt install python3-certbot-nginx
 ```
 
 Apply Certbot plugin to the rpc.conf file to enable redirection to HTTPS and select the number corresponding to your Full Node
