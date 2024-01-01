@@ -35,7 +35,7 @@ ssh-copy-id -i ~/.ssh/id_ed25519.pub username@server_ip
 
 ### Server Side
 
-Your public key will be mpw visible on your server by typing
+Your public key will be now visible on your server by typing
 
 ```bash
 cat ~.ssh/authorized_keys
