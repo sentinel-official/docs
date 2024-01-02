@@ -35,20 +35,21 @@ mkdir -p ~/.sentinelhub/cosmovisor/genesis/bin
 mkdir -p ~/.sentinelhub/cosmovisor/upgrades
 ```
 
-Set the environment variables based on your shell type (can be `~/.profile` or `~/.bashrc`):
+Configure the environment variables according to your shell type, which may involve editing either `~/.profile` or `~/.bashrc`:
 
 <details>
-<summary>.bashrc</summary>
+<summary>Environmental Variables</summary>
 <p>
 
 ```bash
-echo "# Setup Cosmovisor" >> ~/.bashrc
+echo "# Cosmovisor Environmental Variables" >> ~/.bashrc
 echo "export DAEMON_NAME=sentinelhub" >> ~/.bashrc
 echo "export DAEMON_HOME=$HOME/.sentinelhub" >> ~/.bashrc
 echo "export DAEMON_ALLOW_DOWNLOAD_BINARIES=false" >> ~/.bashrc
 echo "export DAEMON_LOG_BUFFER_SIZE=512" >> ~/.bashrc
 echo "export DAEMON_RESTART_AFTER_UPGRADE=true" >> ~/.bashrc
 echo "export UNSAFE_SKIP_BACKUP=true" >> ~/.bashrc
+
 source ~/.bashrc
 ```
 
@@ -131,8 +132,8 @@ Reload the daemon, stop `sentinelhub.service`, enable and start `cosmovisor.serv
 
 ```bash
 sudo systemctl daemon-reload
-sudo systemctl stop sentinelhub.service
 sudo systemctl enable cosmovisor.service
+sudo systemctl stop sentinelhub.service
 sudo systemctl start cosmovisor.service
 ```
 
@@ -145,7 +146,7 @@ sudo systemctl status cosmovisor.service
 To see live logs of the service:
 
 ```bash
-journalctl -u cosmovisor.service -f
+journalctl -u cosmovisor.service -f --output=cat
 ```
 
 If everything went fine you can either disable or remove `sentinelhub.service` as you do not need it anymore
