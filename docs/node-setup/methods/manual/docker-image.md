@@ -39,12 +39,12 @@ commit=$(git rev-list --tags --max-count=1) && \
 git checkout $(git describe --tags ${commit})
 ```
 
-- Option 2 - Manual (if the previous command does not work for some reasons). Check here for the last current release
+- Option 2 - Manual (if the previous command does not work for some reasons). Check [here](https://github.com/sentinel-official/dvpn-node/releases) for the last current release
 
 ```bash
 cd ~/dvpn-node && \
 git fetch && \
-git checkout v0.7.0
+git checkout vX.X.X
 ```
 
 ### Build the image
