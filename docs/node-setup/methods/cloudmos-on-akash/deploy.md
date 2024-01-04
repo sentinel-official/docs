@@ -14,7 +14,11 @@ Select `Empty` template
 
 ![Empty Template](/img/akash/template.png)
 
-Edit the content of the following code (make sure you write within the double quotes)
+Insert the provided content, ensuring that you edit the necessary fields and that your input is enclosed within double quotes
+
+<details>
+<summary>Template</summary>
+<p>
 
 ```bash
 ---
@@ -72,7 +76,10 @@ deployment:
       count: 1
 ```
 
-Then paste it into the template board and click on `CREATE DEPLOYMENT`
+</p>
+</details>
+
+Click on `CREATE DEPLOYMENT`
 
 ![Create Deployment](/img/akash/create-deployment.png)
 
