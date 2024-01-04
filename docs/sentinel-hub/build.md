@@ -28,7 +28,7 @@ Build Sentinel from the source code:
 ```bash
 git clone https://github.com/sentinel-official/hub.git "${HOME}/sentinelhub"
 cd "${HOME}/sentinelhub"
-git checkout v0.11.3 # always make sure it's the latest version
+git checkout vX.X.X # always make sure it's the latest version
 make install
 sudo ln -s "${GOBIN}/sentinelhub" /usr/local/bin/sentinelhub
 ```

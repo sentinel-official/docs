@@ -15,10 +15,10 @@ Alerting with Prometheus is separated into two parts.
 To get started, begin by downloading the most recent [release](https://github.com/prometheus/alertmanager/releases). Once the download is complete, proceed to unzip the file, and you'll be all set to proceed.
 
 ```bash
-wget https://github.com/prometheus/alertmanager/releases/download/v0.26.0/alertmanager-0.26.0.linux-amd64.tar.gz
-tar xvfz alertmanager-0.26.0.linux-amd64.tar.gz
-sudo rm -f alertmanager-0.26.0.linux-amd64.tar.gz
-mv alertmanager-0.26.0.linux-amd64/ alertmanager/
+wget https://github.com/prometheus/alertmanager/releases/download/vX.X.X/alertmanager-X.X.X.linux-amd64.tar.gz
+tar xvfz alertmanager-X.X.X.linux-amd64.tar.gz
+sudo rm -f alertmanager-X.X.X.linux-amd64.tar.gz
+mv alertmanager-X.X.X.linux-amd64/ alertmanager/
 cd alertmanager/
 ```
 

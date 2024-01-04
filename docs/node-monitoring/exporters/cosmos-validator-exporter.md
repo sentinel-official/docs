@@ -18,9 +18,9 @@ To get started, begin by downloading the most recent [release](https://github.co
 ```bash
 mkdir cosmos-validator-exporter
 cd cosmos-validator-exporter
-wget https://github.com/QuokkaStake/cosmos-validators-exporter/releases/download/v5.1.0/cosmos-validators-exporter_5.1.0_linux_amd64.tar.gz
-tar xvfz cosmos-validators-exporter_5.1.0_linux_amd64.tar.gz
-sudo rm -f cosmos-validators-exporter_5.1.0_linux_amd64.tar.gz
+wget https://github.com/QuokkaStake/cosmos-validators-exporter/releases/download/vX.X.X/cosmos-validators-exporter_X.X.X_linux_amd64.tar.gz
+tar xvfz cosmos-validators-exporter_X.X.X_linux_amd64.tar.gz
+sudo rm -f cosmos-validators-exporter_X.X.X_linux_amd64.tar.gz
 ```
 
 Add a symbolic link to the `/usr/local/bin/` directory for system-wide access to Cosmos Validator Exporter:

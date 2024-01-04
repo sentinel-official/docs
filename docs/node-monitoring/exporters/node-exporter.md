@@ -16,10 +16,10 @@ Execute the following operations on your validator machine
 On both your validator and monitoring machines, download and unpack Node Exporter (check the last version [here](https://github.com/prometheus/node_exporter))
 
 ```bash
-wget https://github.com/prometheus/node_exporter/releases/download/v1.7.0/node_exporter-1.7.0.linux-amd64.tar.gz
-tar xvfz node_exporter-1.7.0.linux-amd64.tar.gz
-sudo rm -f node_exporter-1.7.0.linux-amd64.tar.gz
-mv node_exporter-1.7.0.linux-amd64/ node-exporter/
+wget https://github.com/prometheus/node_exporter/releases/download/vX.X.X/node_exporter-X.X.X.linux-amd64.tar.gz
+tar xvfz node_exporter-X.X.X.linux-amd64.tar.gz
+sudo rm -f node_exporter-X.X.X.linux-amd64.tar.gz
+mv node_exporter-X.X.X.linux-amd64/ node-exporter/
 cd node-exporter/
 ```
 

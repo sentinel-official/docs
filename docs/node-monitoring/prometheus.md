@@ -13,10 +13,10 @@ Prometheus is a monitoring application that must be installed on a separate moni
 To get started, begin by downloading the most recent [release](https://github.com/prometheus/prometheus/releases). Once the download is complete, proceed to unzip the file, and you'll be all set to proceed.
 
 ```bash
-wget https://github.com/prometheus/prometheus/releases/download/v2.48.1/prometheus-2.48.1.linux-amd64.tar.gz
-tar xvfz prometheus-2.48.1.linux-amd64.tar.gz
-sudo rm -f prometheus-2.48.1.linux-amd64.tar.gz
-mv prometheus-2.48.1.linux-amd64/ prometheus/
+wget https://github.com/prometheus/prometheus/releases/download/vX.X.X/prometheus-X.X.X.linux-amd64.tar.gz
+tar xvfz prometheus-X.X.X.linux-amd64.tar.gz
+sudo rm -f prometheus-X.X.X.linux-amd64.tar.gz
+mv prometheus-X.X.X.linux-amd64/ prometheus/
 cd prometheus/
 ```
 

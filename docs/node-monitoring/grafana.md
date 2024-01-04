@@ -14,13 +14,13 @@ Grafana should not be installed on either a validator node or a monitoring machi
 
 ## Download & Installation
 
-On your monitoring machine, download and unpack Grafana (check the last version [here](https://grafana.com/grafana/download?platform=linux))
+To get started, begin by downloading the most recent [release](https://grafana.com/grafana/download). Once the download is complete, proceed to unzip the file, and you'll be all set to proceed.
 
 ```bash
-wget https://dl.grafana.com/enterprise/release/grafana-enterprise-10.2.3.linux-amd64.tar.gz
-tar -zxvf grafana-enterprise-10.2.3.linux-amd64.tar.gz
-sudo rm -f grafana-enterprise-10.2.3.linux-amd64.tar.gz
-mv grafana-v10.2.3/ grafana/
+wget https://dl.grafana.com/enterprise/release/grafana-enterprise-X.X.X.linux-amd64.tar.gz
+tar -zxvf grafana-enterprise-X.X.X.linux-amd64.tar.gz
+sudo rm -f grafana-enterprise-X.X.X.linux-amd64.tar.gz
+mv grafana-vX.X.X/ grafana/
 cd grafana/
 ```
 Add a symbolic link to the `/usr/local/bin/` directory for system-wide access to Prometheus:

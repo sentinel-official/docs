@@ -23,9 +23,9 @@ To get started, begin by downloading the most recent [release](https://github.co
 ```bash
 mkdir cosmos-node-exporter
 cd cosmos-node-exporter
-wget https://github.com/QuokkaStake/cosmos-node-exporter/releases/download/v4.0.0/cosmos-node-exporter_4.0.0_linux_amd64.tar.gz
-tar xvfz cosmos-node-exporter_4.0.0_linux_amd64.tar.gz
-sudo rm -f cosmos-node-exporter_4.0.0_linux_amd64.tar.gz
+wget https://github.com/QuokkaStake/cosmos-node-exporter/releases/download/vX.X.x/cosmos-node-exporter_X.X.X_linux_amd64.tar.gz
+tar xvfz cosmos-node-exporter_X.X.X_linux_amd64.tar.gz
+sudo rm -f cosmos-node-exporter_X.X.X_linux_amd64.tar.gz
 ```
 
 Add a symbolic link to the `/usr/local/bin/` directory for system-wide access to Cosmos Node Exporter:

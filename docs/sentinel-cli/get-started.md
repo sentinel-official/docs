@@ -25,7 +25,7 @@ Verify the installation by typing `go version` in your terminal.
 go version
 ```
 
-You should receive this output: `go version go1.xx.x darwin/amd64`
+You should receive this output: `go version goX.X.X darwin/amd64`
 
 ### Build the binary
 
@@ -38,7 +38,7 @@ Build Sentinel from the source code:
 ```bash
 git clone https://github.com/sentinel-official/cli-client.git "${HOME}/sentinelcli"
 cd "${HOME}/sentinelcli"
-git checkout v0.3.2 # always make sure it's the latest version
+git checkout vX.X.X # always make sure it's the latest version
 make install
 sudo ln -s "${HOME}/sentinelcli" /usr/local/bin/sentinelcli
 ```
