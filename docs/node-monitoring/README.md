@@ -8,33 +8,43 @@ sidebar_position: 1
 Running a node or a validator requires a reliable monitoring system to prevent downtime, missed blocks, and reputation damage. Alerting is also essential to notify you of issues.
 We'll use established monitoring and visualization tools as part of a **stack** or **standalone** solutions.
 
-## Monitoring Stack
+A monitoring stack comprises a set of tools that require installation on both your local node machine and a dedicated monitoring machine. The data collection process involves two main types: metrics collection and logs collection.
 
-A monitoring stack comprises a set of tools that require installation on both your local node machine and a dedicated monitoring machine.
+## Metrics Collection
+
+Metrics collection involves gathering and monitoring various quantitative data points that provide insights into the performance and health of a system.
 
 ### Node Machine
 
 The first monitoring tools are called **`Exporters`** and are agents that run on your node machine. They collect various system-level metrics and expose them in a format that can be understood by Prometheus.
 
-- [**Node Exporter**](/node-monitoring/exporters/node-exporter): it collects various system-level metrics, such as CPU usage, memory usage, disk usage, network activity, and others.
-- [**Tendermint Internal Metrics**](/node-monitoring/exporters/tendermint-internal-metrics): it collects various system-level metrics of your validator, and can be easily enabled from your validator configuration file.
-- [**Cosmos Validator Exporter**](/node-monitoring/exporters/cosmos-validator-exporter): a Prometheus scraper designed to retrieve validator statistics from an LCD server exposed by a full node. It was created by Quokkastake, a very active community member.
-- [**Cosmos Node Exporter**](/node-monitoring/exporters/cosmos-node-exporter): another Prometheus scraper created by Quokkastake, designed to collect other essential data for monitoring your node.
+- [**Node Exporter**](/node-monitoring/metrics/exporters/node-exporter): it collects various system-level metrics, such as CPU usage, memory usage, disk usage, network activity, and others.
+- [**Tendermint Metrics**](/node-monitoring/metrics/exporters/tendermint): it collects various system-level metrics of your validator, and can be easily enabled from your validator configuration file.
+- [**Cosmos Validator Exporter**](/node-monitoring/metrics/exporters/cosmos-validator-exporter): a Prometheus scraper designed to retrieve validator statistics from an LCD server exposed by a full node. It was created by Quokkastake, a very active community member.
+- [**Cosmos Node Exporter**](/node-monitoring/metrics/exporters/cosmos-node-exporter): another Prometheus scraper created by Quokkastake, designed to collect other essential data for monitoring your node.
 
 ### Monitoring Machine
 
 The next three monitoring tools must be installed on a separated machine which is used just to monitor your node.
 
-- [**Alert Manager**](/node-monitoring/alertmanager): a component of the Prometheus monitoring and alerting toolkit responsible. for handling alerts sent by client applications such as Prometheus server and then managing the routing and notification of these alerts to different receivers
-- [**Prometheus**](/node-monitoring/prometheus): a monitoring system that collects metrics from the Exporters. It stores the metrics in a time-series database and provides a powerful query language to extract and aggregate the data. Prometheus also has an alerting system that can be used to send notifications when certain thresholds are breached.
-- [**Grafana**](/node-monitoring/grafana): a visualization tool that can be used to create dashboards and charts to display the data collected by Prometheus. Grafana supports a wide range of data sources, including Prometheus, and provides a rich set of visualization options, including graphs, tables, and alerts.
+- [**Alert Manager**](/node-monitoring/metrics/alertmanager): a component of the Prometheus monitoring and alerting toolkit responsible. for handling alerts sent by client applications such as Prometheus server and then managing the routing and notification of these alerts to different receivers
+- [**Prometheus**](/node-monitoring/metrics/prometheus): a monitoring system that collects metrics from the Exporters. It stores the metrics in a time-series database and provides a powerful query language to extract and aggregate the data. Prometheus also has an alerting system that can be used to send notifications when certain thresholds are breached.
 
 How does this stack of tools work?
 
 In terms of communication, the Exporters send metrics to Prometheus over HTTP. Prometheus scrapes the metrics from the Exporters on a regular interval, typically every few seconds. Once the data is collected, Prometheus stores it in its time-series database. Grafana, in turn, connects to Prometheus as a data source and queries the data using the powerful Prometheus query language. Grafana then uses this data to create beautiful visualizations that can be shared with others.
 
-## Standalone Monitoring
+## Logs Collection
 
-A standalone monitoring solution consists of a single tool that only needs to be installed on a dedicated monitoring machine.
+Logs collection involves gathering and storing textual records or entries generated by various components within a system or application. These logs provide detailed information about events, actions, errors, and status changes that occur during the operation of the system. Unlike metrics, which are numeric and quantitative, logs are often qualitative and provide a more detailed narrative of what transpires within a system.
 
-For newcomers, an excellent tool to begin with is [Uptime Kuma](/node-monitoring/uptime-kuma), which specializes in monitoring the uptime of your node, as we've discussed in the relevant section.
+- **Node Machine**: [Promtail](/node-monitoring/logs/promtail), an agent used for scraping and forwarding logs to Loki
+- **Monitor Machine**: [Loki](/node-monitoring/logs/loki), a central log aggregation system that stores and indexes logs
+
+# Grafana
+
+[Grafana](/node-monitoring/grafana) serves as a powerful visualization tool, enabling the creation of interactive dashboards and charts that present data collected by Prometheus and logs gathered by Loki in a visually appealing and comprehensible manner.
+
+# Uptime Kuma
+
+[Uptime Kuma](/node-monitoring/uptime-kuma) consists of a single tool that only needs to be installed on a dedicated machine, specifically designed to monitor the uptime of your nodes.

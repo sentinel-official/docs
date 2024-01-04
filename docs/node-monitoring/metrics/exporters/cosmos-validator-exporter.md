@@ -1,6 +1,6 @@
 ---
 title: Cosmos Validator Exporter
-sidebar_position: 3
+sidebar_position: 5
 ---
 
 # Cosmos Validator Exporter

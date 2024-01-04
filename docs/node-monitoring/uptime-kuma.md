@@ -1,7 +1,6 @@
 ---
 title: Uptime Kuma
-description: How to monitor your running node
-sidebar_position: 6
+sidebar_position: 5
 ---
 
 # Uptime Kuma
