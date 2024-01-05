@@ -1,9 +1,10 @@
 ---
-title: Commands
-sidebar_position: 3
+title: List
+description: Sentinel Hub command list
+sidebar_position: 1
 ---
 
-# Commands
+# Sentinel Hub Command List
 
 This section describes the commands available from `sentinelhub`, the command line interface that connects a running `sentinelhub` process.
 

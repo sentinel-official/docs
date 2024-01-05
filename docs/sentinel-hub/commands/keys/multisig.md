@@ -1,7 +1,7 @@
 ---
 title: Multisig
 description: How to generate and manage a Multisig Key.
-sidebar_position: 1
+sidebar_position: 2
 ---
 
 # Multisig

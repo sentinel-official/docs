@@ -1,7 +1,7 @@
 ---
 title: TMKMS
 description: An essential security measure when running your validator
-sidebar_position: 1
+sidebar_position: 3
 ---
 
 # TMKMS
