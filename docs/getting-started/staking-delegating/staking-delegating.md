@@ -5,8 +5,8 @@ sidebar_position: 1
 
 # Staking / Delegating
 
-Delegating can be done in various ways through one of the [Sentinel wallets](/getting-started/wallets).
+Delegating your DVPN can be accomplished through various methods, facilitated by one of the [Sentinel wallets](/getting-started/wallets).
 
-You can either delegate your DVPN directly from within the wallet directly or use a 3rd party website that offers more staking options. For example [restake.app](https://restake.app/sentinel) (which you can interact with through the Keplr wallet as well), offers automatic compounding of your stake.
+You have the option to delegate your DVPN directly within the wallet itself or explore additional staking options through third-party websites. An excellent example is [restake.app](https://restake.app/sentinel), accessible through the Keplr wallet, which not only allows for direct interaction but also provides automatic compounding of your stake.
 
-Do make sure while you are delegating your stake you have carefully [selected a validator](/getting-started/staking-delegating/choose-validator) to trust your stake with. They will never own your stake and you keep being the only one having full control, however it's still important to select a good validator to minimize slashing penalties and support those that bring value to the blockchain and Sentinel overall.
+When delegating your stake, it is crucial to meticulously [choose a validator](/getting-started/staking-delegating/choose-validator) whom you trust with your assets. It's essential to note that the validator will never own your stake, ensuring you retain full control. However, selecting a reputable validator is paramount to minimizing slashing penalties and supporting entities that contribute value to the blockchain and enhance the overall Sentinel ecosystem.

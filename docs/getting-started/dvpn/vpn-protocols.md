@@ -5,19 +5,19 @@ sidebar_position: 2
 
 ## V2Ray Networking Tool
 
-Interference, blocking and jamming technologies have been evolving along the years, making traditional VPN, SSH tunneling and other internet access methods gradually recognized. Because of this, great actors, interfere through all different kinds of measures and it’s becoming more and more difficult to access geo-banned websites, forcing development of evasive and masking internet technology. Welcome V2Ray!
+The landscape of interference, blocking, and jamming technologies has evolved over the years, gradually challenging traditional VPNs, SSH tunneling, and other internet access methods. As a result, prominent entities utilize diverse measures to interfere, rendering it increasingly difficult to access geo-banned websites. This necessitates the development of evasive and masking internet technology, and that's where V2Ray comes in.
 
-Several VPN protocols and proxies have been worked on to further strengthen privacy and security by the Sentinel dVPN team which include V2Ray. V2Ray is a very capable network tool as shown in recent years. It has powerful functions and is widely known for bypassing the firewall effectively.
+The Sentinel dVPN team has diligently worked on various VPN protocols and proxies, including V2Ray, to enhance privacy and security. V2Ray has emerged as a highly proficient network tool in recent years, renowned for its powerful features and effective firewall bypass capabilities.
 
-Sentinel dVPN is making use of the V2Ray camouflage to package the traffic through the firewall with common HTTPS/TLS, which greatly reduces the possibility of V2Ray nodes being blocked or interfered with, while providing a stable Internet experience. V2Ray itself is not a protocol or circumvention system by itself. Rather, as Sentinel dVPN is an ecosystem for dVPN applications, so is V2Ray an open-source framework that allows for one or more proxies to run, with various layered proxy protocols, transports, and obfuscation.
+Sentinel dVPN leverages V2Ray's camouflage capabilities to package traffic through the firewall using common HTTPS/TLS, significantly reducing the likelihood of V2Ray nodes being blocked or interfered with. This approach ensures a stable internet experience. It's important to note that V2Ray, in itself, is not a standalone protocol or circumvention system. Similar to how Sentinel dVPN forms an ecosystem for dVPN applications, V2Ray serves as an open-source framework allowing one or more proxies to run, incorporating various layered proxy protocols, transports, and obfuscation techniques.
 
 ## V2Ray features
 
-- Multiple inbound/outbound proxies: one V2Ray instance supports in parallel multiple inbound and outbound protocols. Each protocol works independently.
-- Customizable routing: incoming traffic can be sent to different outbounds based on routing configuration. It is easy to route traffic by target region or domain.
-- Multiple protocols: V2Ray supports multiple protocols, including Socks, HTTP, Shadowsocks, VMess etc. Each protocol may have its own transport, such as TCP, mKCP, WebSocket etc.
-- Obfuscation: V2Ray has built in obfuscation to hide traffic in TLS, and can run in parallel with web servers.
-- Reverse proxy: General support of reverse proxy. Can be used to build tunnels to localhost.
-- Multiple platforms: V2Ray runs natively on Windows, Mac OS, Linux, etc. There is also third party support on mobile.
+- **Multiple Inbound/Outbound Proxies:** Each V2Ray instance supports multiple inbound and outbound protocols simultaneously, with each protocol functioning independently.
+- **Customizable Routing:** Incoming traffic can be directed to different outbounds based on routing configurations, making it easy to route traffic based on target region or domain.
+- **Multiple Protocols:** V2Ray supports various protocols, including Socks, HTTP, Shadowsocks, VMess, etc., with each protocol having its own transport like TCP, mKCP, WebSocket, etc.
+- **Obfuscation:** V2Ray incorporates built-in obfuscation to conceal traffic within TLS and can run concurrently with web servers.
+- **Reverse Proxy:** General support for reverse proxy, enabling the creation of tunnels to localhost.
+- M**ultiple Platforms:** V2Ray runs natively on Windows, Mac OS, Linux, and more. Additionally, third-party support is available for mobile platforms.
 
-You can find a lot more information on V2Ray on the Project V [website](https://www.v2ray.com/en).
+For more in-depth information on V2Ray, you can explore the [Project V Website](https://www.v2ray.com/en).

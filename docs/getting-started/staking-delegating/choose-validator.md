@@ -3,30 +3,22 @@ title: How to choose a validator
 sidebar_position: 2
 ---
 
-# How to choose a validator
+# How to choose the right Validator
 
-In order to stake your DVPN you need to find the right validator to stake to. Validators are the ones taking care of the backbone of Sentinel, namely the blockchain itself. Collectively they maintain the blockchain, making sure all transactions are signed, upgrades are carried out ect. In order for Sentinel to be successful we need to make sure the right validators are selected that are dedicated to the future of Sentinel. Here are some of the most important things to consider when choosing a validator in no particular order:
+To effectively stake your DVPN, choosing the appropriate validator is crucial. Validators play a pivotal role in maintaining the Sentinel blockchain, ensuring the integrity of transactions and overseeing upgrades. Selecting dedicated validators is essential for the continued success of Sentinel. Here are key considerations when choosing a validator, listed in no particular order:
 
-### Reachable
-When you have specific questions about what the validator is doing or not doing, are they reachable? You want your validator to be reachable when something happens. Also, if you want to know about how a validator has all these things mentioned in this article set up (if they even have this set up at all), see if this validator is reachable to ask them or talk to them about it. Some validators are better reachable than others, most of them have a link on the [explorer](https://www.mintscan.io/sentinel/validators) when you click on a validator.
+- **Reachable**. Ensure your chosen validator is easily reachable for inquiries or concerns. The ability to communicate with them is vital, especially during critical events. Validators with clear communication channels, often found through links on the [explorer](https://www.mintscan.io/sentinel/validators), are preferable.
 
-### Community involvement
-You want validators to stay involved with the community. To be active in the chat, help new or old community members and to be a good active member of the community. **Who do you come to when you have a question or need help?** Help those validators that help you and others.
+- **Community Engagement**. Opt for validators actively involved in the community. A responsive presence in community forums, assistance to fellow members, and overall positive engagement are indicators of a reliable validator. Supporting validators who contribute positively fosters a stronger community.
 
-### Validator setup
-You want the validator to have a **good validator setup** with good hardware (is it a cheap PC from the store around the corner or enterprise hardware that lasts forever?) and securely configured (firewalled, anti brute force, anti DDoS, monitoring, sentries, fail-over) to prevent downtime/slashing/jailing. There is no way to actually verify what they use, but start with asking them and then you can monitor their validator performance through an explorer.
+- **Validator Setup**. Assess the hardware and security configurations of the validator. A robust setup with quality hardware and secure configurations (firewall, anti-brute force, anti-DDoS, monitoring, sentries, fail-over) is essential to prevent downtime, slashing, or jailing. While it's challenging to verify their setup, ongoing communication and monitoring through the explorer can provide insights.
 
-### Testnet
-**You want your validator to support testnet.** Testnet is what the last stage before changes are made on mainnet/live environment and is essential to the growth and success of the project. Selecting a validator that support testnet is supporting those validators that don’t just show up for mainnet when money can be earned, but also show up when testing needs to be done in order for us all to improve. Just seeing there names on there is enough. The rank and commission rates ect. does not matter since it’s not mainnet.
+- **Testnet**. Choose a validator that supports testnet, as it indicates commitment to the project's growth and success. Validators who actively participate in testing contribute to the project's improvement. Acknowledging their presence on the testnet demonstrates a commitment beyond mainnet rewards.
 
-### Full archive node
-Some validators run a full archive node. This means they are **supporting the network** even further by setting up an extra server to keep track of all the blockchain transactions and not just a part of it needed for a validator. This helps the network be stronger, the more validators support this.
+- **Full Archive Node**. Some validators run full archive nodes, enhancing network resilience by tracking all blockchain transactions. Supporting validators with this additional commitment strengthens the overall network.
 
-### Project involvement
-**You want validators to be involved with the project.** To be up-to-date on the latest announcements, proposals en upgrades. To see if a validator is involved with proposals, you can check the [validator page on the explorer](https://www.mintscan.io/sentinel/validators) where there is an easy overview of how many proposals a validator participated in. Lack of this can result in validators going down as they don’t take the necessary steps on time when action is required. This also coincides with validators being involved with the community as how can they help the community if they are not up-to-date on the project?
+- **Project Involvement**. Seek validators who stay informed about project developments, announcements, proposals, and upgrades. Checking a validator's participation in proposals on the [explorer's validator page](https://www.mintscan.io/sentinel/validators) provides valuable insights. Involvement in project activities is crucial to ensuring timely actions and community support.
 
-### Commission
-The lower the commission of a validator the more rewards you as a delegator will earn. **This has to strike a good balance** as validators do also put in a lot of work (if they care) into securing the network and actively helping the project get better.
+- **Commission Rates**. Consider the commission rates of validators. While lower commission rates increase your delegation rewards, it's essential to strike a balance, recognizing the effort validators put into securing the network and contributing to project improvement.
 
-### Decentralization
-**It’s good to decentralize voting power** on the Sentinel blockchain. You can also delegate your coins to multiple validators. That way when a vote is proposed not 1 validator or a small group of validators can decide the outcome themselves. When you stake to a validator you are giving them your voting power.
+- **Decentralization**. Promote decentralization by spreading your voting power across multiple validators. Delegating coins to various validators prevents a single validator or a small group from monopolizing decision-making during votes. Your stake contributes to a more democratic governance structure on the Sentinel blockchain.

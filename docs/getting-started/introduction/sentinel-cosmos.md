@@ -3,14 +3,14 @@ title: Sentinel within Cosmos
 sidebar_position: 2
 ---
 
-# Sentinel within Cosmos
+# Sentinel in the Cosmos Ecosystem
 
-Cosmos is an ever-expanding ecosystem of interconnected apps and services, built for a decentralized future. Strictly speaking, Cosmos is a decentralized network of independent parallel blockchains, each powered by BFT consensus algorithms like [Tendermint](https://tendermint.com) consensus.
+Cosmos unfolds as a dynamic ecosystem, a tapestry of interconnected applications and services meticulously crafted for a decentralized future. At its core, Cosmos stands as a decentralized network, comprising independent parallel blockchains fortified by Byzantine Fault Tolerant (BFT) consensus algorithms, such as the revered [Tendermint](https://tendermint.com) consensus.
 
-In other words, Cosmos is an ecosystem of blockchains that can scale and interoperate with each other. Before Cosmos, blockchains were siloed and unable to communicate with each other. They were hard to build and could only handle a small amount of transactions per second. Cosmos solves these problems with a new technical vision. In order to understand this vision we need to go back to the fundamentals of blockchain technology.
+In essence, Cosmos materializes as a vibrant ecosystem of blockchains designed for seamless scalability and interoperability. Pre-Cosmos, blockchains languished in isolation, incapable of meaningful communication. Hindered by developmental complexities, they struggled with paltry transaction throughput. Cosmos introduces a novel technical paradigm to surmount these challenges, prompting a return to the foundational principles of blockchain technology.
 
-To learn more about Cosmos visit their [website](https://cosmos.network/intro).
+For a deeper dive into Cosmos, explore their [website](https://cosmos.network/intro).
 
 ### How does Sentinel fit in?
 
-Sentinel has created their own blockchain within the Cosmos ecosystem. Therefore it’s not only a blockchain on itself, but also utilized the benefits that Cosmos has to offer where it’s able to scale and communicate with other blockchains (being interoperable). A direct implementation of such a benefit is the ease within we are able to trade DVPN with other coins on other blockchains in a decentralized manner through for example [Osmosis](https://app.osmosis.zone/?from=DVPN&to=ATOM). Osmosis is a DEX that also has their own blockchain within Cosmos. However, DVPN can easily be traded there without the need for a bridge.
+Within the Cosmos Ecosystem, Sentinel has ingeniously fashioned its own blockchain. It is not merely a standalone entity but rather a beneficiary of Cosmos' inherent advantages, enabling scalability and cross-blockchain communication, thus achieving true interoperability. A tangible manifestation of this advantage is evident in the seamless trading of DVPN with other cryptocurrencies on disparate blockchains. This decentralized exchange (DEX) capability is exemplified by platforms like [Osmosis](https://app.osmosis.zone/?from=DVPN&to=ATOM), an integral part of the Cosmos Ecosysten. Osmosis operates as a DEX with its own blockchain, yet it facilitates effortless DVPN trading without the need for a bridging mechanism. Sentinel, nestled within Cosmos, exemplifies the harmonious coexistence and collaboration that define this decentralized cosmos.
