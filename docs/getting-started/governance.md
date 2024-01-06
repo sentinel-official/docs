@@ -7,15 +7,10 @@ sidebar_position: 8
 
 ## Voting
 
-Staked DVPN holders are eligible to vote on governance proposals. Browse the available proposals, and use one's staked coins to cast a vote.
+Staked DVPN holders have the opportunity to participate in the governance process by voting on proposals. Explore the [list](https://www.mintscan.io/sentinel/proposals) of available proposals and leverage your staked coins to actively engage in the voting process.
 
 ![](/img/getting-started/voting.png)
 
-## Creating a Proposal
+## Proposals Management
 
-Governance proposals can be added through sentinelhub.
-Proposers should use the following format when recommending allocation points for a new gauge:
-
-```bash
-sentinelhub tx gov submit-proposal [command][flag]
-```
+Governance proposals can be generated and voted on through Sentinel Hub by accessing the dedicated section available at the this [link](/sentinel-hub/commands/governance).

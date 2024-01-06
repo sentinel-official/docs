@@ -16,6 +16,7 @@ the address will be looked up in the local Keybase. The list of initial tokens m
 contain valid denominations. Accounts may optionally be supplied with vesting parameters.
 
 **Syntax**
+
 ```bash
 sentinelhub add-genesis-account [address_or_key_name] [coin][,[coin]] [flags]
 ```
@@ -25,6 +26,7 @@ sentinelhub add-genesis-account [address_or_key_name] [coin][,[coin]] [flags]
 Collects genesis transactions and outputs them to `genesis.json`.
 
 **Syntax**
+
 ```bash
 sentinelhub collect-gentxs [flags]
 ```
@@ -42,6 +44,7 @@ sentinelhub config <key> [value] [flags]
 <p>
 
 #### This is the output of `sentinelhub config`
+
 ```json
 {
 	"chain-id": "",
@@ -60,6 +63,7 @@ sentinelhub config <key> [value] [flags]
 Tool for helping with debugging your application.
 
 **Syntax**
+
 ```bash
 sentinelhub debug [flags]
 sentinelhub debug [subcommand]
@@ -70,6 +74,7 @@ sentinelhub debug [subcommand]
 <p>
 
 #### This is the output of `sentinelhub debug`
+
 ```bash
 addr        Convert an address between hex and bech32
 pubkey      Decode a pubkey from proto JSON
@@ -84,6 +89,7 @@ raw-bytes   Convert raw bytes output (eg. [10 21 13 255]) to hex
 Exports the state to JSON.
 
 **Syntax**
+
 ```bash
 sentinelhub export [flags]
 ```
@@ -106,11 +112,13 @@ minimum self delegation:     1
 ```
 
 **Syntax**
+
 ```bash
 sentinelhub gentx [key_name] [amount][denom] [flags]
 ```
 
 **Example**
+
 ```bash
 sentinelhub gentx my-key-name 1000000udvpn --home=/path/to/home/dir --keyring-backend=os --chain-id=sentinelhub-2 \
    --moniker="myValidator" \
@@ -128,6 +136,7 @@ Help provides help for any command in the application.
 Simply type sentinelhub help [path to command] for full details.
 
 **Syntax**
+
 ```bash
 sentinelhub help [command] [flags]
 ```
@@ -137,11 +146,13 @@ sentinelhub help [command] [flags]
 Initialize validators's and node's configuration files
 
 **Syntax**
+
 ```bash
 sentinelhub init [moniker] [flags]
 ```
 
 **Example**
+
 ```bash
 sentinelhub init my-node
 ```
@@ -172,6 +183,7 @@ information:
 The pass backend requires GnuPG: https://gnupg.org/
 
 **Syntax**
+
 ```bash
 sentinelhub keys [command]
 ```
@@ -181,6 +193,7 @@ sentinelhub keys [command]
 <p>
 
 #### This is the output of `sentinelhub keys`
+
 ```bash
 add         Add an encrypted private key (either newly generated or recovered), encrypt it, and save to <name> file
 delete      Delete the given keys
@@ -205,6 +218,7 @@ For more detailed usage instructions for keys, please refer to the related secti
 Manages queries.
 
 **Syntax**
+
 ```bash
 sentinelhub query [flags]
 sentinelhub query [subcommand]
@@ -215,6 +229,7 @@ sentinelhub query [subcommand]
 <p>
 
 #### This is the output of `sentinelhub query`
+
 ```bash
 authz               Authorization transactions subcommands
 bank                Bank transaction subcommands
@@ -255,6 +270,7 @@ restarting Tendermint the transactions in block n will be re-executed against th
 application.
 
 **Syntax**
+
 ```bash
 sentinelhub rollback [flags]
 ```
@@ -291,6 +307,7 @@ bypassed and can be used when legacy queries are needed after an on-chain upgrad
 is performed. Note, when enabled, gRPC will also be automatically enabled.
 
 **Syntax**
+
 ```bash
 sentinelhub start [flags]
 ```
@@ -300,6 +317,7 @@ sentinelhub start [flags]
 Displays the status of a remote node (default "tcp://localhost:26657").
 
 **Syntax**
+
 ```bash
 sentinelhub status [flags]
 ```
@@ -360,6 +378,7 @@ sentinelhub status [flags]
 Manages the Tendermint protocol.
 
 **Syntax**
+
 ```bash
 sentinelhub tendermint [command] [flags]
 ```
@@ -369,6 +388,7 @@ sentinelhub tendermint [command] [flags]
 <p>
 
 #### This is the output of `sentinelhub tendermint`
+
 ```bash
 reset-state      Remove all the data and WAL
 show-address     Shows this node's tendermint validator consensus address
@@ -386,6 +406,7 @@ version          Print tendermint libraries' version
 Retrieves a transaction by its hash, account sequence, or signature. 
 
 **Syntax**
+
 ```bash
 sentinelhub tx [flags]
 sentinelhub tx [subcommand]
@@ -395,6 +416,7 @@ sentinelhub tx [subcommand]
 <p>
 
 #### This is the output of `sentinelhub tx`
+
 ```bash
 authz               Authorization transactions subcommands
 bank                Bank transaction subcommands
@@ -430,11 +452,13 @@ wasm                Wasm transaction subcommands
 validates the genesis file at the default location or at the location passed as an argument.
 
 **Syntax**
+
 ```bash
 sentinelhub validate-genesis [file] [flags]
 ```
 
 **Example**
+
 ```bash
 sentinelhub validate-genesis genesis.json
 ```
@@ -444,6 +468,7 @@ sentinelhub validate-genesis genesis.json
 Print the application binary version information.
 
 **Syntax**
+
 ```bash
 sentinelhub version [flags]
 ```
