@@ -9,11 +9,12 @@ With Sentinel Hub, you can execute various operations to engage with staking rew
 
 ## Withdraw Staking Rewards
 
-To claim your staking rewards, execute the following command in your terminal:
+To claim both your staking rewards and commissions, execute the following command in your terminal:
 
 ```bash
 sentinelhub tx distribution withdraw-rewards <sentvaloper_validator_address> \
     --from=<your_keyname> \
+    --commission \
     --chain-id=sentinelhub-2 \
     --node https://rpc.sentinel.co:443 \
     --gas-prices=0.5udvpn \
