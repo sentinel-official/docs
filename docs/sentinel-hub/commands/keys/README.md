@@ -1,10 +1,10 @@
 ---
-title: Basic Key Management
+title: Key Management
 description: Create, import, export, and delete keys.
 sidebar_position: 1
 ---
 
-# Basic Key Management
+# Key Management
 
 As you have now built SentinelHub, you can manage your keys.
 
