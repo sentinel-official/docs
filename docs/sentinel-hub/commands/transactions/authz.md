@@ -6,7 +6,6 @@ sidebar_position: 1
 # Authz
 
 Authorize and revoke access to execute transactions on behalf of your address
-`Grant authorization to an address to execute a transaction on another address behalf`
 
 ## Authorization to Spend
 
