@@ -1,9 +1,7 @@
 ---
-title: Query
-sidebar_position: 6
+title: To be continued...
+sidebar_position: 4
 ---
-
-# Query
 
 :::note Important
 Please be patient, [**Trinity Validator**](https://trinityvalidator.com) is working on this
