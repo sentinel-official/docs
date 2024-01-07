@@ -49,11 +49,12 @@ gas_prices = "0.1udvpn"
 id = "sentinelhub-2"
 
 # Comma separated Tendermint RPC addresses for the chain
-rpc_addresses = "https://rpc.sentinel.co:443,https://rpc.sentinel.quokkastake.io:443"
+rpc_addresses = "https://rpc.sentinel.co:443,https://rpc.sentinel.quokkastake.io:443,https://rpc.trinityvalidator.com"
 # Find below some alternative ones
 # https://rpc.mathnodes.com:443
-# https://sentinel-rpc.badgerbite.io:443
-# https://sentinel-rpc2.badgerbite.io:443
+# https://rpc-sentinel.whispernode.com:443
+# https://rpc.sentinel.chaintools.tech:443
+# https://sentinel-rpc.publicnode.com:443
 
 # Timeout seconds for querying the data from the RPC server
 rpc_query_timeout = 10
