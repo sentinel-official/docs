@@ -81,7 +81,7 @@ export default function Homepage() {
             <Card
               title="Growth DAO"
               description="The Sentinel Growth DAO aims to fund community initiatives and the development of potential VPNs to attract users and, ultimately, generate higher revenues for the Sentinel Network."
-              to="/getting-started/dao/"
+              to="/getting-started/growthdao/dao"
               icon={<GrowthDao />}
               svgFile=""
             />
