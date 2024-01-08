@@ -5,7 +5,7 @@ sidebar_position: 2
 
 # Build the Source Code
 
-To compile the source code of Sentinel Hun into a binary, two essential steps are necessary: installing Go and executing the build process.
+To compile the source code of Sentinel Hub into a binary, two essential steps are necessary: installing Go and executing the build process.
 
 ## Install Go
 
