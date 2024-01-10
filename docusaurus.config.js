@@ -269,19 +269,19 @@ const config = {
             items: [
               {
                 label: 'Getting Started',
-                href: 'getting-started/introduction',
+                href: '/getting-started/introduction',
               },
               {
                 label: 'Sentinel Hub',
-                href: 'sentinel-hub',
+                href: '/sentinel-hub',
               },
               {
                 label: 'Networks',
-                to: 'networks',
+                to: '/networks',
               },
               {
                 label: 'Run a Node',
-                href: 'node-setup',
+                href: '/node-setup',
               },
             ],
           },
@@ -290,7 +290,7 @@ const config = {
             items: [
               {
                 label: 'dVPN Apps',
-                href: 'getting-started/apps',
+                href: '/getting-started/apps',
               },
               {
                 label: 'GitHub',
