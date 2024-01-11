@@ -31,4 +31,4 @@ In order to become an active Sentinel validator you’ll need to accumulate enou
 
 ### dVPN node
 
-If running a Sentinel validator seems to be unfeasible for you, you can also setup a dVPN node instead. A dVPN node is not bound to a minimum amount of voting power. It will still support the Sentinel network and can be a source of income as well. Read more about it in the "[dVPN node setup](https://docs.sentinel.co/node-setup)" section.
+If running a Sentinel validator seems to be unfeasible for you, you can also setup a dVPN node instead. A dVPN node is not bound to a minimum amount of voting power. It will still support the Sentinel network and can be a source of income as well. Read more about it in the [dVPN node setup](/node-setup) section.

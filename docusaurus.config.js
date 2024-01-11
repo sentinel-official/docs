@@ -42,6 +42,7 @@ const SECTIONS = [
   defineSection('networks'),
   defineSection('tools'),
   defineSection('node-setup'),
+  defineSection('full-node-setup'),
   defineSection('validator-setup'),
   defineSection('node-monitoring'),
   defineSection('apis'),
@@ -169,6 +170,10 @@ const config = {
               {
                 to: 'node-setup',
                 label: 'Run a Node',
+              },
+              {
+                to: 'full-node-setup',
+                label: 'Run a Full Node',
               },
               {
                 to: 'validator-setup',

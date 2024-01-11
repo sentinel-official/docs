@@ -1,10 +1,11 @@
 ---
 title: Requirements
+description: All you need to prepare your server
 sidebar_position: 1
 ---
 ## Home or Dedicated Server
 
-To run a Validator, an ideal hardware configuration may be the one below
+To run a Full Node, an ideal hardware configuration may be the one below
 - CPU: Intel Xeon E3-1220 v2 or better - 3.1 GHz - 4 core(s)
 - RAM: 32GB - DDR3
 - Hard Drive(s): 2x 1TB (SSD SATA) RAID

@@ -1,11 +1,12 @@
 ---
 title: Create New User
+description: It's essential to create a new user.
 sidebar_position: 2
 ---
 
 # Create New User
 
-Creating a new user is crucial because you should avoid managing your validator under the root user account.
+Creating a new user is crucial because you should avoid managing your full node under the root user account.
 Our user will be named `sentinel`, and you will be asked to create a new password for this user.
 
 ```bash
