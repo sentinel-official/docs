@@ -40,7 +40,6 @@ const SECTIONS = [
   defineSection('sentinel-hub'),
   defineSection('sentinel-cli'),
   defineSection('networks'),
-  defineSection('tools'),
   defineSection('node-setup'),
   defineSection('full-node-setup'),
   defineSection('validator-setup'),
