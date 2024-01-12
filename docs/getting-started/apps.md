@@ -62,7 +62,7 @@ The following dVPN apps are built on top of the Sentinel Protocol. This is why w
     </Section>
 </Section>
 
-<Section id="web-sdks" hasSubSections>
+<!-- <Section id="web-sdks" hasSubSections>
     <Section
               title="⚙️ 3rd party apps that have Sentinel integrated"
               id="core-sdks"
@@ -95,4 +95,4 @@ The following dVPN apps are built on top of the Sentinel Protocol. This is why w
         svgFile=""
     />
     </Section>
-</Section>
+</Section> -->
