@@ -28,7 +28,3 @@ Once you've become a Validator, it is strongly recommended to explore the follow
 ### Voting power
 
 In order to become an active Sentinel validator you’ll need to accumulate enough voting power. Voting power is the metric that decides if a technical valid validator is active or not. You will receive voting power by delegating DVPN to your validator or have other people delegate DVPN to your validator. 1 DVPN equals 1 voting power. How much voting power is required to be come active can be seen on the [blockchain explorer](https://www.mintscan.io/sentinel/validators). Sort on voting power and check what the lowest amount is. You’ll need to require more voting power than that in order to become an active validator, sign transactions and get rewarded for it.
-
-### dVPN node
-
-If running a Sentinel validator seems to be unfeasible for you, you can also setup a dVPN node instead. A dVPN node is not bound to a minimum amount of voting power. It will still support the Sentinel network and can be a source of income as well. Read more about it in the [dVPN node setup](/node-setup) section.
