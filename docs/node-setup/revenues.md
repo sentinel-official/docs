@@ -1,6 +1,6 @@
 ---
 title: Node Revenue System
-sidebar_position: 8
+sidebar_position: 5
 ---
 
 # Node Revenue System
