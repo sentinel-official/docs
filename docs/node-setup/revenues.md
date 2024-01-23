@@ -52,9 +52,9 @@ You have three methods to verify whether your node has successfully passed the H
 In the [Node Dashboard](https://nodes.sentinel.co) each node features an indicator on the page, clearly indicating whether it has successfully passed the health check or not. Simply paste your `sentnode` address into the search bar. Furthermore, an alert system will be implemented to promptly notify node operators in the event that their node fails a health check, providing them with timely and actionable information.
 
 
-### 2 - Bursunode Website
+### 2 - Busurnode Website
 
-Navigate to xplore the [Bursurnode Website](https://sentinel.busurnode.com/) to access comprehensive statistics for both individual nodes and the entire network.
+Navigate to xplore the [Busurnode Website](https://sentinel.busurnode.com/) to access comprehensive statistics for both individual nodes and the entire network.
 
 
 ### 3 - Manual Check via API
