@@ -45,13 +45,19 @@ By implementing this process, the Subscription Plan ensures a continuous assessm
 
 ## How can I verify that my node has successfully passed the Health Check?
 
-You have two methods to verify whether your node has successfully passed the Health Check.
+You have three methods to verify whether your node has successfully passed the Health Check.
 
 ### 1 - Node Dashboard
 
 In the [Node Dashboard](https://nodes.sentinel.co) each node features an indicator on the page, clearly indicating whether it has successfully passed the health check or not. Simply paste your `sentnode` address into the search bar. Furthermore, an alert system will be implemented to promptly notify node operators in the event that their node fails a health check, providing them with timely and actionable information.
 
-### 2 - Manual Check
+
+### 2 - Bursunode Website
+
+Navigate to xplore the [Bursurnode Website](https://sentinel.busurnode.com/) to access comprehensive statistics for both individual nodes and the entire network.
+
+
+### 3 - Manual Check via API
 
 To verify your Health Check status paste the following link into your browser: `https://api.health.sentinel.co/v1/records/<your_sent_node_address>`
 
@@ -63,10 +69,3 @@ Ensure the following fields meet the specified conditions:
 - `info_fetch_timestamp` should not be a zero timestamp
 - `config_exchange_timestamp` should not be a timestamp
 - `location_fetch_timestamp` should not be a zero timestamp
-
-For a more user-friendly overview, consult the [online spreadsheet](https://docs.google.com/spreadsheets/d/1rJgW_xjmvtEWjn6eMpkrlXtdpxy-TRPRpxRAHCVE_vs/edit?pli=1#gid=0) which categorizes nodes based on whether they have successfully passed the health check or failed to meet the criteria.
-
-The spreadsheet includes the following additional fields:
-- `info_fetch_error` should be empty or non-existent
-- `config_exchange_error` should be empty or non-existent
-- `location_fetch_error` should be empty or non-existent
