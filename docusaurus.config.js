@@ -236,20 +236,20 @@ const config = {
                 label: 'Website',
               },
               {
+                href: 'https://www.mintscan.io/sentinel',
+                label: 'Explorer',
+              },
+              {
                 href: 'https://stats.sentinel.co',
                 label: 'Stats',
               },
               {
-                href: 'https://nodes.sentinel.co',
-                label: 'Node Dashboard',
-              },
-              {
-                href: 'https://map.sentinel.co',
-                label: 'Node Explorer',
-              },
-              {
                 href: 'https://github.com/sentinel-official',
                 label: 'GitHub',
+              },
+              {
+                href: 'https://sentinelgrowthdao.com',
+                label: 'Growth DAO',
               },
             ],
           },
