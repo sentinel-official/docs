@@ -21,6 +21,7 @@ Disclaimer: Listed groups may not be project-affiliated. Some are geared toward 
 - Iran: https://t.me/sentinelirancommunity
 - Italy: https://t.me/sentinel_italia
 - Japan: https://t.me/sentineljapan
+- Nigeria: https://t.me/sentinelnigeria
 - Pakistan: https://t.me/Sentinel_Pakistan
 - Philippines: https://t.me/Sentinel_PH
 - Russia: https://t.me/sentinel_ru
