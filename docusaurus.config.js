@@ -125,11 +125,11 @@ const config = {
       navbar: {
         // NOTE: hideOnScroll breaks on `/api`, enable when fixed
         // hideOnScroll: true,
-        title: 'SENTINEL DOCS',
+        //title: 'SENTINEL DOCS',
         logo: {
           href: '/',
-          src: '/logo/sentinel.svg',
-          srcDark: '/logo/sentinel.svg',
+          src: '/logo/sentinel-logo-light.svg',
+          srcDark: '/logo/sentinel-logo-dark.svg',
           alt: 'Sentinel Docs',
           //height: '26px',
           //width: '114px',
@@ -261,9 +261,9 @@ const config = {
       },
       footer: {
         logo: {
-          href: 'http://sentinel.co',
-          src: '/logo/sentinel.svg',
-          srcDark: '/logo/sentinel.svg',
+          //href: 'http://docs.sentinel.co',
+          src: '/logo/sentinel-logo-light.svg',
+          srcDark: '/logo/sentinel-logo-dark.svg',
           alt: 'Sentinel Docs',
           height: '36px',
         },
