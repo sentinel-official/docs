@@ -79,9 +79,9 @@ export default function Homepage() {
               icon={<Wallet />}
             />
             <Card
-              title="Growth DAO"
-              description="The Sentinel Growth DAO aims to fund community initiatives and the development of potential VPNs to attract users and, ultimately, generate higher revenues for the Sentinel Network."
-              to="/getting-started/growthdao/dao"
+              title="Staking"
+              description="Discover all you need to know about staking your DVPN coins, from selecting the ideal validator to streamlining the process with the REStake app.."
+              to="/getting-started/staking-delegating"
               icon={<GrowthDao />}
               svgFile=""
             />
