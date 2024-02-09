@@ -168,15 +168,15 @@ const config = {
             items: [
               {
                 to: 'node-setup',
-                label: 'Run a Node',
+                label: 'dVPN Node Setup',
               },
               {
                 to: 'full-node-setup',
-                label: 'Run a Full Node',
+                label: 'Full Node Setup',
               },
               {
                 to: 'validator-setup',
-                label: 'Run a Validator',
+                label: 'Validator Setup',
               },
               {
                 to: 'node-monitoring',
