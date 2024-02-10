@@ -1,6 +1,6 @@
 ---
-title: Commands
-sidebar_position: 3
+title: List
+sidebar_position: 1
 ---
 
 # Commands

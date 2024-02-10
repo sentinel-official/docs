@@ -1,6 +1,6 @@
 ---
 title: Contributing
-sidebar_position: 6
+sidebar_position: 4
 ---
 # Contributing
 
@@ -8,15 +8,11 @@ The following information provides a set of guidelines for contributing to the S
 
 Contributions come in the form of writing documentation, raising issues / PRs, and any other actions that help develop the Sentinel protocol documentation.
 
-:::note
-Please note that the most recent version, **0.3.1**, was released by freQnik of MathNodes and will soon be integrated into the Sentinel repository.
-:::
-
 ## Proposing changes
 
 To contribute a change proposal, use the following workflow:
 
-1. [Fork the repository](https://github.com/freQniK/cli-client).
+1. [Fork the repository](https://github.com/sentinel-official/cli-client).
 2. [Add an upstream](https://docs.github.com/en/github/collaborating-with-pull-requests/working-with-forks/syncing-a-fork) so that you can update your fork.
 3. Clone your fork to your computer.
 4. Create a branch and name it appropriately.
