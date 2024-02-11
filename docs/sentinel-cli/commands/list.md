@@ -5,7 +5,7 @@ sidebar_position: 1
 
 # Commands
 
-This section describes the commands available from `sentinelhub`, the command line interface that connects a running `sentinelhub` process.
+This section describes the commands available from `sentinelcli`, the command line interface that connects a running `sentinelcli` process.
 
 ### `completion`
 
@@ -99,6 +99,42 @@ show        Retrieve key information by name or address
 For a more detailed explaination of the subcommand, plese visit the [Basic Key Management](/sentinel-cli/keys/keys-cli) section.
 
 
+### `query`
+
+Transaction command
+
+**Syntax**
+```bash
+sentinelcli query [command]
+sentinelcli query [flags]
+```
+
+<details>
+<summary>Available subcommands</summary>
+<p>
+
+#### This is the output of `sentinelcli query`
+```sh
+allocation    Query a allocation
+allocations   Query allocations of a subscription
+deposit       Query a deposit
+deposits      Query deposits
+node          Query a node
+nodes         Query nodes
+plan          Query a plan
+plans         Query plans
+provider      Query a provider
+providers     Query providers
+session       Query a session
+sessions      Query sessions
+subscription  Query a subscription
+subscriptions Query subscriptions
+```
+
+</p>
+</details>
+
+
 ### `tx`
 
 Transaction command
@@ -109,8 +145,11 @@ sentinelcli tx [command] [flags]
 sentinelcli tx [flags]
 ```
 
-Available subcommands:
+<details>
+<summary>Available subcommands</summary>
+<p>
 
+#### This is the output of `sentinelcli tx`
 ```sh
 node         Node related subcommands
 plan         plan related subcommands
@@ -119,11 +158,15 @@ session      Session related subcommands
 subscription Subscription related subcommands
 ```
 
+</p>
+</details>
+
+
 ### `version`
 
 Print the application binary version information
 
 **Syntax**
 ```bash
-sentinelhub version
+sentinelcli version
 ```
