@@ -52,7 +52,7 @@ export default function Homepage() {
             <Card
               title="The DVPN Coin"
               description="The DVPN coin is a governance coin that allows staked coin holders to decide the future of the protocol, including every implementation detail. "
-              to="/getting-started/dvpn-coin"
+              to="/getting-started/dvpn-coin/overview"
               icon={<DvpnCoin />}
               svgFile=""
             />
@@ -81,7 +81,7 @@ export default function Homepage() {
             <Card
               title="Staking"
               description="Discover all you need to know about staking your DVPN coins, from selecting the ideal validator to streamlining the process with the REStake app.."
-              to="/getting-started/staking-delegating"
+              to="/getting-started/dvpn-coin/staking/concepts"
               icon={<GrowthDao />}
               svgFile=""
             />
@@ -123,16 +123,30 @@ export default function Homepage() {
 
           <Section title="📜 User Guides">
             <Card
-              title="Run a Node"
-              description="Learn on how deploy a Sentinel Node"
+              title="Run a dVPN Node"
+              description="Learn how to deploy a dVPN Node to provide bandwidth and earn DVPN coins."
               to="/node-setup"
               icon={<Guide />}
               svgFile=""
             />
             <Card
+              title="Run a Full Node"
+              description="Learn how to set up a Full Node and effectively communicate with the Sentinel Blockchain."
+              to="/full-node-setup"
+              icon={<Guide />}
+              svgFile=""
+            />
+            <Card
               title="Run a Validator"
-              description="Set up a full node and Validate the Network"
+              description="Learn how to set up a Validator and secure the network."
               to="/validator-setup"
+              icon={<Guide />}
+              svgFile=""
+            />
+            <Card
+              title="Node Monitoring"
+              description="Learn how to monitor your node"
+              to="/node-monitoring"
               icon={<Guide />}
               svgFile=""
             />
