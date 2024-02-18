@@ -18,7 +18,7 @@ sentinelhub tx distribution withdraw-rewards <sentvaloper_validator_address> \
     --chain-id=sentinelhub-2 \
     --node https://rpc.sentinel.co:443 \
     --gas-prices=0.5udvpn \
-    --gas=300000 \
+    --gas=300000
 ```
 
 Replace `<sentvaloper_validator_address>` with the actual validator address you staked with, and `<your_keyname>` with the name of your key. Adjust the gas prices and limit according to your preference and network conditions.
@@ -33,7 +33,7 @@ sentinelhub tx distribution set-withdraw-addr <withdrawal_address> \
     --chain-id=sentinelhub-2 \
     --node https://rpc.sentinel.co:443 \
     --gas-prices=0.5udvpn \
-    --gas=300000 \
+    --gas=300000
 ```
 
 Make sure to replace `<withdrawal_address>` with the actual address you want to set as your withdrawal destination and `<your_keyname>` with your specific key name. Adjust other parameters as needed.

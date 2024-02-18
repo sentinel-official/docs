@@ -14,7 +14,7 @@ sentinelhub tx staking delegate <sentvaloper_validator_address> \
     --chain-id=sentinelhub-2 \
     --node https://rpc.sentinel.co:443 \
     --gas-prices=0.5udvpn \
-    --gas=300000 \
+    --gas=300000
 ```
 
 Make sure to replace `<sentvaloper_validator_address>`, `<amount>`, and `<your_keyname>` with the appropriate values for your delegation.
