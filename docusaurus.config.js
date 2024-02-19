@@ -224,6 +224,10 @@ const config = {
                 href: 'https://medium.com/@sentinel',
                 label: 'Medium',
               },
+              {
+                href: 'https://omniflix.tv/channel/65b376e8c65a4348750ace8a',
+                label: 'OmniFLix TV',
+              },
             ],
           },
           {
