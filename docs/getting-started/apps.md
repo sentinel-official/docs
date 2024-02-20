@@ -53,8 +53,8 @@ The following dVPN apps are built on top of the Sentinel Protocol. This is why w
         svgFile=""
     />
     <Card
-        title="Bagimsiz dVPN"
-        description="Bagimsiz dVPN is a Turkish free and fully decentralized service created by volunteers who prioritize digital human rights, offering powerful features like WireGuard and V2Ray support."
+        title="Independent dVPN (formerly Bagimsiz)"
+        description="Independent dVPN is a Turkish free and fully decentralized service created by volunteers who prioritize digital human rights, offering powerful features like WireGuard and V2Ray support."
         to="https://bagimsizvpn.com"
         icon=""
         svgFile="/icons/bagimsiz.png"

@@ -11,16 +11,16 @@ If you need support please use the official support media below:
 
 - [Meile](https://t.me/MathNodes)
 - [Solar Labs](https://t.me/solarlabs)
+- [Independent VPN](https://t.me/bagimsizdvpn)
 - [BasedVPN](https://t.me/BasedVPN)
-- [Bagimsiz](https://t.me/bagimsizdvpn)
 <!-- - [Decentr](https://t.me/DecentrNet) -->
 
 **Email:**
 
 - Meile ➡️ [support@mathnodes.com](mailto:support@mathnodes.com)
 - Solar Labs ➡️ [support@solarlabs.ee](mailto:support@solarlabs.ee)
+- Independent VPN ➡️ [ceo@basedapps.co.uk](mailto:ceo@basedapps.co.uk)
 - BasedVPN ➡️ [support@basedapps.co.uk](mailto:support@basedapps.co.uk)
-- Bagimsiz ➡️ [ceo@basedapps.co.uk](mailto:ceo@basedapps.co.uk)
 <!-- - Foxta ➡️ [contactus@kalagato.co](mailto:contactus@kalagato.co) -->
 
 **White-label Discord:**

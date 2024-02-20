@@ -27,7 +27,7 @@ sidebar_position: 1
 
 - [Solar dVPN](https://t.me/solarlabs):  Announcement channel, but there is also a [Community Group](https://t.me/solarlabs_chat),
 - [Meile dVPN](https://t.me/MathNodes): Everything regarding Meile dVPN is discussed in this very active group
-- [Bagimsiz dVPN](https://t.me/bagimsizdvpn): The Turkish free dVPN that is becoming very popular
+- [Independent dVPN](https://t.me/bagimsizdvpn): The Turkish free dVPN that is becoming very popular
 - [BasedVPN](https://t.me/BasedVPN): The first free dVPN App based in UK
 
 
