@@ -41,10 +41,10 @@ Logs collection involves gathering and storing textual records or entries genera
 - **Node Machine**: [Promtail](/node-monitoring/logs/promtail), an agent used for scraping and forwarding logs to Loki
 - **Monitor Machine**: [Loki](/node-monitoring/logs/loki), a central log aggregation system that stores and indexes logs
 
-# Grafana
+## Grafana
 
 [Grafana](/node-monitoring/grafana) serves as a powerful visualization tool, enabling the creation of interactive dashboards and charts that present data collected by Prometheus and logs gathered by Loki in a visually appealing and comprehensible manner.
 
-# Uptime Kuma
+## Uptime Kuma
 
 [Uptime Kuma](/node-monitoring/uptime-kuma) consists of a single tool that only needs to be installed on a dedicated machine, specifically designed to monitor the uptime of your nodes.
