@@ -3,6 +3,8 @@ title: Governance
 sidebar_position: 8
 ---
 
+![](/img/getting-started/governance.png)
+
 # Governance
 
 Governance refers to the decentralized decision-making process that allows stakeholders to collectively determine the direction and policies of the network. It involves proposing, discussing, and voting on changes, upgrades, and strategic decisions regarding the protocol, ecosystem development, and resource allocation. Through governance mechanisms, such as on-chain voting and proposal submission, participants can voice their opinions, contribute to shaping the network's evolution, and ensure its resilience, security, and sustainability. Effective governance fosters transparency, inclusivity, and accountability within the Sentinel DVPN ecosystem, empowering community members to actively participate in its management and growth.
