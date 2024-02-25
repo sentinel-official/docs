@@ -41,7 +41,7 @@ ssh-copy-id -i ~/.ssh/id_ed25519.pub username@server_ip
 Your public key will be visible on your server by typing
 
 ```bash
-cat ~.ssh/authorized_keys
+cat ~/.ssh/authorized_keys
 ```
 
 ### Server Side
