@@ -4,6 +4,7 @@ import {
   Guide,
   NodeSpawner,
   TerminalIcon,
+  ModulesIcon,
 } from './icons';
 
 const MULTI_SECTIONS = [
@@ -45,9 +46,15 @@ const SECTIONS = [
     section: 'core-sdk',
   },
   {
-    name: 'Sentinel Cli',
+    name: 'Sentinel CLI',
     id: 'sentinel-cli',
     icon: TerminalIcon,
+    section: 'core-sdk',
+  },
+  {
+    name: 'SDKs',
+    id: 'sdk',
+    icon: ModulesIcon,
     section: 'core-sdk',
   },
   {

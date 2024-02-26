@@ -1,0 +1,49 @@
+---
+title: Overview
+sidebar_position: 1
+---
+import {
+  HomepageCard as Card,
+  HomepageSection as Section,
+} from '../../src/components/HomepageComponents';
+
+import {
+  TerminalIcon,
+  KeysIcon,
+  SentinelCore,
+  Contribute,
+  Guide,
+} from '../../src/icons';
+
+# Sentinel SDKs
+
+A comprehensive look into the Sentinel Standard Development Kits, purposefully engineered to offer developers a user-friendly toolkit for constructing software tailored to the Sentinel blockchain's features and functionalities.
+
+Currently, there have been three Sentinel SDKs developed, providing developers with the tools necessary to create their own applications.
+
+:::warning
+Please note that some of the SDKs may still be in the development phase.
+:::
+
+<Section title="Developers" id="web-sdks" hasSubSections >
+  <Section>
+    <Card
+      title="Golang SDK"
+      description="The Golang SDK provides developers with powerful tools and utilities to seamlessly integrate with the Sentinel Ecosystem"
+      to="/sdk/golang"
+      svgFile="/icons/go.svg"
+    />
+    <Card
+      title="Javascript SDK"
+      description="The JavaScript SDK offers developers a comprehensive set of tools and resources to effortlessly incorporate the Sentinel functionality into their web applications"
+      to="/sdk/javascript"
+      svgFile="/icons/node-js.svg"
+    />
+    <Card
+      title="Python SDK"
+      description="The Python SDK equips developers with a versatile toolkit to integrate Sentinel's capabilities into their Python applications with ease"
+      to="/sdk/python"
+      svgFile="/icons/python.svg"
+    />
+  </Section>
+</Section>

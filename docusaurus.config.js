@@ -36,16 +36,17 @@ function defineSection(section, options = {}) {
 }
 
 const SECTIONS = [
-  defineSection('getting-started'),
-  defineSection('sentinel-hub'),
-  defineSection('sentinel-cli'),
-  defineSection('networks'),
-  defineSection('node-setup'),
-  defineSection('full-node-setup'),
-  defineSection('validator-setup'),
-  defineSection('node-monitoring'),
   defineSection('apis'),
+  defineSection('full-node-setup'),
+  defineSection('getting-started'),
+  defineSection('networks'),
+  defineSection('node-monitoring'),
+  defineSection('node-setup'),
+  defineSection('sdk'),
+  defineSection('sentinel-cli'),
+  defineSection('sentinel-hub'),
   defineSection('support'),
+  defineSection('validator-setup'),
 ];
 
 /** @type {import('@docusaurus/types').Config} */
@@ -152,6 +153,10 @@ const config = {
               {
                 to: 'sentinel-cli',
                 label: 'Sentinel CLI',
+              },
+              {
+                to: 'sdk',
+                label: 'SDKs',
               },
               {
                 to: 'networks',
