@@ -40,6 +40,7 @@ const SECTIONS = [
   defineSection('full-node-setup'),
   defineSection('getting-started'),
   defineSection('networks'),
+  defineSection('nodes'),
   defineSection('node-monitoring'),
   defineSection('node-setup'),
   defineSection('sdk'),
@@ -163,6 +164,20 @@ const config = {
                 label: 'Networks',
               },
             ],
+            // className: 'new-badge',
+            //activeBaseRegex: '(.*ui-kit|.*web-core)',
+          },
+          {
+            label: 'Nodes',
+            to: 'nodes',
+            //type: 'dropdown',
+            position: 'left',
+            // items: [
+            //   {
+            //     to: 'nodes',
+            //     label: 'Nodes',
+            //   },
+            // ],
             // className: 'new-badge',
             //activeBaseRegex: '(.*ui-kit|.*web-core)',
           },

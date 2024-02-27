@@ -2,7 +2,6 @@ import {
   SentinelCore,
   Network,
   Guide,
-  NodeSpawner,
   TerminalIcon,
   ModulesIcon,
 } from './icons';
@@ -19,11 +18,6 @@ const MULTI_SECTIONS = [
       section: 'guides',
       description: 'Guides to provide bandwidth and validate',
     },
-    {
-      name: 'Tools',
-      section: 'tools',
-      description: 'Tools to facilitate the interaction with the blockchain',
-    }
   ],
 ];
 
@@ -49,6 +43,12 @@ const SECTIONS = [
     name: 'Sentinel CLI',
     id: 'sentinel-cli',
     icon: TerminalIcon,
+    section: 'core-sdk',
+  },
+  {
+    name: 'Nodes',
+    id: 'nodes',
+    icon: SentinelCore,
     section: 'core-sdk',
   },
   {
@@ -88,14 +88,6 @@ const SECTIONS = [
     id: 'node-monitoring',
     icon: Guide,
     section: 'guides',
-  },
-
-  // Dropdown Tools
-  {
-    name: 'Node Spawner',
-    id: 'tools',
-    icon: NodeSpawner,
-    section: 'tools',
   },
 ];
 

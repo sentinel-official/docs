@@ -1,0 +1,62 @@
+---
+title: Overview
+sidebar_position: 1
+---
+import {
+  HomepageCard as Card,
+  HomepageSection as Section,
+} from '../../src/components/HomepageComponents';
+
+import {
+  TerminalIcon,
+  SentinelCore,
+  Guide,
+  DvpnCoin,
+} from '../../src/icons';
+
+# Sentinel dVPN Nodes
+
+A comprehensive look into the Sentinel Standard Development Kits, purposefully engineered to offer developers a user-friendly toolkit for constructing software tailored to the Sentinel blockchain's features and functionalities.
+
+Currently, there have been three Sentinel SDKs developed, providing developers with the tools necessary to create their own applications.
+
+<Section id="web-sdks" hasSubSections >
+  <Section>
+    <Card
+      title="Introduction"
+      description="Introducing the dVPN Node: understanding its purpose, bandwidth sharing concept, and crucial role within the Sentinel Ecosystem"
+      to="/nodes/intro"
+      icon={<SentinelCore />}
+    />
+    <Card
+      title="Set up a Node"
+      description="Discover the process of setting up a dVPN node to contribute to the Sentinel network by sharing your bandwidth with this comprehensive step-by-step guide"
+      to="/node-setup"
+      icon={<Guide />}
+    />
+    <Card
+      title="Earnings"
+      description="Hosting a dVPN node incurs costs such as server expenses and electricity bills. However, these expenses can be offset through the Node Revenue System, allowing for monetization of the service"
+      to="/nodes/earnings"
+      icon={<DvpnCoin />}
+    />
+    <Card
+      title="Health Check"
+      description="Successfully completing the Health Check is the primary prerequisite for eligibility to earn node rewards and monetize your node. Here's a guide on how to accomplish it"
+      to="/nodes/health-check"
+      svgFile="/icons/health-check.svg"
+    />
+    <Card
+      title="Stats"
+      description="Discover the Sentinel Node Network through a suite of online tools tailored to provide insights into node statistics and enhance your dVPN journey with effortless navigation"
+      to="/nodes/stats"
+      svgFile="/icons/stats.svg"
+    />
+    <Card
+      title="Scripts"
+      description="A suite of community-developed tools designed to streamline intricate node management operations"
+      to="/nodes/scripts"
+      icon={<TerminalIcon />}
+    />
+  </Section>
+</Section>
