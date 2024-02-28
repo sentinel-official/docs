@@ -46,11 +46,10 @@ The following dVPN apps are built on top of the Sentinel Protocol. This is why w
         svgFile=""
     />
     <Card
-        title="BasedVPN"
-        description="BasedVPN is an entirely free and fully decentralized service created by volunteers who prioritize digital human rights, offering powerful features like WireGuard and V2Ray support to break through internet censorship, even in countries like China."
-        to="https://basedapps.co.uk/"
-        icon={<Basedvpn />}
-        svgFile=""
+        title="V2:App"
+        description="V2App, powered by the advanced V2Ray platform, offers seamless access to a free and open internet. Built on top of Sentinel dVPN blockchain, v2app emphasizes strong privacy and security, without compromising on speed and reliability."
+        to="https://v2.app/"
+        svgFile="/icons/v2.svg"
     />
     <Card
         title="Independent dVPN (formerly Bagimsiz)"
@@ -58,6 +57,13 @@ The following dVPN apps are built on top of the Sentinel Protocol. This is why w
         to="https://bagimsizvpn.com"
         icon=""
         svgFile="/icons/bagimsiz.png"
+    />
+    <Card
+        title="BasedVPN"
+        description="BasedVPN is an entirely free and fully decentralized service created by volunteers who prioritize digital human rights, offering powerful features like WireGuard and V2Ray support to break through internet censorship, even in countries like China."
+        to="https://basedapps.co.uk/"
+        icon={<Basedvpn />}
+        svgFile=""
     />
     </Section>
 </Section>
