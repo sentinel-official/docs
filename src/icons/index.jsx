@@ -29,3 +29,4 @@ export { default as GrowthDao } from './GrowthDao';
 export { default as Wallet } from './Wallet';
 export { default as Download } from './Download';
 export { default as DvpnCoin } from './DvpnCoin';
+export { default as Nodes } from './Nodes';

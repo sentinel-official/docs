@@ -2,6 +2,7 @@ import {
   SentinelCore,
   Network,
   Guide,
+  Nodes,
   TerminalIcon,
   ModulesIcon,
 } from './icons';
@@ -48,7 +49,7 @@ const SECTIONS = [
   {
     name: 'Nodes',
     id: 'nodes',
-    icon: SentinelCore,
+    icon: Nodes,
     section: 'core-sdk',
   },
   {
