@@ -1,5 +1,5 @@
 ---
-title: Install and Configure Full Node
+title: Full Node Setup
 description: These steps will guide you on how to install and configure the Sentinel hub
 sidebar_position: 4
 ---
@@ -67,8 +67,10 @@ sudo nano ${HOME}/.sentinelhub/config/config.toml
 ```
 
 Set seeds and peers separated by comma.
-- **Seeds**: are initial entry points for new nodes joining the network and are typically used during the bootstrap phase. In this phase, a new node connects to them to obtain information about the network's topology and to discover other nodes to connect to. The seeds you see below are taken from [here](https://github.com/QuokkaStake/ansible/blob/master/group_vars/sentinelhub_2)
-- **Peers***: are usually nodes that a given node wants to maintain a reliable and consistent connection with, often because they have specific roles in the network or are deemed important for communication. The below peers were sent me by a Sentinel developer.
+- **Seeds**: are initial entry points for new nodes joining the network and are typically used during the bootstrap phase. In this phase, a new node connects to them to obtain information about the network's topology and to discover other nodes to connect to.
+- **Peers**: are usually nodes that a given node wants to maintain a reliable and consistent connection with, often because they have specific roles in the network or are deemed important for communication.
+
+You can obtain a comprehensive list of seeds both on [Mintscan](https://dev.mintscan.io/sentinel/info) and on the Quokkastake GitHub [repository](https://github.com/QuokkaStake/ansible/blob/master/group_vars/sentinelhub_2).
 
 ```bash title="${HOME}/.sentinelhub/config/config.toml"
 [p2p]
@@ -104,7 +106,7 @@ Open the app.toml file
 sudo nano ${HOME}/.sentinelhub/config/app.toml
 ```
 
-Set minimum gas prices for udvpn and other supported IBC tokens
+Establish minimum gas prices for udvpn and other supported IBC tokens. You can find the minimum gas prices for udvpn [here](https://raw.githubusercontent.com/sentinel-official/networks/main/sentinelhub-2/minimum-gas-prices.txt).
 
 ```bash title="${HOME}/.sentinelhub/config/app.toml"
 minimum-gas-prices = "0.01ibc/31FEE1A2A9F9C01113F90BD0BBCCE8FD6BBB8585FAF109A2101827DD1D5B95B8,0.1udvpn,0.01ibc/B1C0DDB14F25279A2026BC8794E12B259F8BDA546A3C5132CCAEE4431CE36783,0.01ibc/ED07A3391A112B175915CD8FAF43A2DA8E4790EDE12566649D0C2F97716B8518,0.01ibc/A8C2D23A1E6F95DA4E48BA349667E322BD7A6C996D8A4AAE8BA72E190F3D1477"
