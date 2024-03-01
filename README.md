@@ -60,7 +60,7 @@ This section describes how you can get our documentation portal up and running o
 1. Clone the repo
 
 ```sh
-git clone https://github.com/trinityprivacy/sentinel-docs
+git clone https://github.com/sentinel-official/docs
 ```
 
 2. Install NPM packages
@@ -77,47 +77,111 @@ npm start
 
 <!-- USAGE EXAMPLES -->
 
-## Usage
+## Add new sections
 
 <!-- In usage, mention how to edit the docs, how to update versions, etc. -->
 
-### To add new sections
+Navigate into your progect folder
 
-Create a new section in docusaurus by adding a new section to `SECTIONS[]` array with the `defineSection()` utility easily.
-
-Now, run `npm start` and you can access your 'new-section' at http://localhost:3000/new-section
-
-### Adding new docs to the Context Switcher
-
-To add a newly created section to the Sections Menu, edit [./src/sections.js](src/sections.js).
-
-For example, for a section `new-section`, you will add:
-
-```jsx
-import { NewSectionIcon } from '../assets/icons';
-
-const SECTIONS = [
-  // ...
-  {
-    id: 'new-section',
-    name: 'New Section',
-    icon: NewSectionIcon,
-    section: false, // Whether it has a section menu or not
-  },
-]
+```sh
+cd docs
 ```
 
-You'll need to create a NewSectionIcon component too.
+Create a folder named `section-name`
+
+```sh
+mkdir section-name
+```
+
+### Edit`docusaurus.config.js`
+
+Create a new section in by adding a new section to `SECTIONS[]` array with the `defineSection()` utility easily.
+
+```jsx
+const SECTIONS = [
+  defineSection('section-name'),
+];
+```
+
+Create the navbar item `section-name`
+
+```jsx
+ themeConfig:
+    ({
+      ...
+      docs: {
+      ...
+      },
+      navbar: {
+      ...
+        },
+        items: [
+          {
+            label: 'Section Name',
+            to: 'section-name',
+            position: 'left',
+          },
+        ],
+      },
+      ...
+    }),
+```
+
+### Add the section to the Context Switcher
+
+To add a newly created section to the Sections Menu, edit `/src/sections.js`
+
+The section acan be added to the multisection menu
+
+```jsx
+{
+  name: 'Section Name',
+  section: 'the section id',
+  description: 'Section description',
+},
+```
+
+or the subsection menu
+
+```jsx
+{
+  name: 'Section name',
+  id: 'section-name',
+  icon: SentinelCore,
+  section: 'section id',
+},
+```
+
+### Edit `docusearch.config.json`
+
+Add the following block to ensure that the content in the new section is properly indexed by the Algolia plugin
+
+```jsx
+"section-name": {
+  "lvl0": {
+    "selector": "",
+    "global": true,
+    "default_value": "section-name"
+  },
+  "lvl1": "article h1",
+  "lvl2": "article h2",
+  "lvl3": "article h3",
+  "lvl4": "article h4",
+  "lvl5": "article h5, article td:first-child",
+  "lvl6": "article h6",
+  "text": "article p, article li, article td:last-child"
+  },
+```
+
+Now, run `npm run start` and you can access your 'new-section' at http://localhost:3000/new-section
 
 That is it!
-
-
 
 <!-- CONTRIBUTING -->
 
 ## Contributing
 
-Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**. Sincere thanks to all our contributors. Thank you, [contributors](https://github.com/trinityprivacy/sentinel-docs/graphs/contributors)!
+Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**. Sincere thanks to all our contributors. Thank you, [contributors](https://github.com/sentinel-official/docs/graphs/contributors)!
 
 ## Support
 

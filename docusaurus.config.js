@@ -170,16 +170,7 @@ const config = {
           {
             label: 'Nodes',
             to: 'nodes',
-            //type: 'dropdown',
             position: 'left',
-            // items: [
-            //   {
-            //     to: 'nodes',
-            //     label: 'Nodes',
-            //   },
-            // ],
-            // className: 'new-badge',
-            //activeBaseRegex: '(.*ui-kit|.*web-core)',
           },
           {
             label: 'User Guides',
