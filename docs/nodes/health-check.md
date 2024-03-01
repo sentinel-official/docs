@@ -9,7 +9,7 @@ To be added into the Subscription Plan and consequently be eligible to Node Reve
 This check occurs multiple times a day and will test:
 - the node endpoint
 - the node configuration
-- the node hourly price (4.16 DVPN for datacenters and 13.7 DVPN for residentials nodes)
+- the node hourly price (4.16 DVPN for datacenters and 10 DVPN for residentials nodes)
 - the node connectivity
 
 By implementing this process, the Subscription Plan ensures a continuous assessment, allowing for the addition of new nodes and the removal of problematic ones that require corrective measures.
@@ -23,16 +23,16 @@ You have three methods to verify whether your node has successfully passed the H
 In the [Node Dashboard](https://nodes.sentinel.co) each node features an indicator on the page, clearly indicating whether it has successfully passed the health check or not. Simply paste your `sentnode` address into the search bar. Furthermore, an alert system will be implemented to promptly notify node operators in the event that their node fails a health check, providing them with timely and actionable information.
 
 
-### 2 - Busurnode Website
+### 2 - Busurnode
 
 Navigate to xplore the [Busurnode Website](https://sentinel.busurnode.com/) to access comprehensive statistics for both individual nodes and the entire network.
 
 
-### 3 - Manual Check via API
+### 3 - Manual Check via Sentinel API
 
 To verify your Health Check status paste the following link into your browser: `https://api.health.sentinel.co/v1/records/<your_sent_node_address>`
 
-For a comprehensive list of nodes, you can also explore the [API Records](https://api.health.sentinel.co/v1/records) main page
+For a comprehensive list of nodes, you can also explore the [Sentinel API Records](https://api.health.sentinel.co/v1/records) main page
 
 Ensure the following fields meet the specified conditions:
 - `ok` must be true
@@ -40,3 +40,9 @@ Ensure the following fields meet the specified conditions:
 - `info_fetch_timestamp` should not be a zero timestamp
 - `config_exchange_timestamp` should not be a timestamp
 - `location_fetch_timestamp` should not be a zero timestamp
+
+### 4 - Manual Check via Planwizard API
+
+To verify your Health Check status paste the following link into your browser: `https://planwizard.basedapps.co.uk/nodes/<your_sent_node_address>`
+
+For a comprehensive list of nodes, you can also explore the [Planwizard API Records](https://planwizard.basedapps.co.uk/nodes) main page

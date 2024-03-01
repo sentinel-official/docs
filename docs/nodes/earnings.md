@@ -14,7 +14,7 @@ This Subscription Plan will be shared by the white-label applications and after 
 
 This makes **Sentinel a revenue generating ecosystem**.
 
-Nodes will initially receive $7.5 per month in dVPN which will be paid out every hour. In the future dVPN/USD price calculation will be readjusted every 1 hour using an on-chain oracle.
+Nodes rewards will be paid out every hour. In the future dVPN/USD price calculation will be readjusted every 1 hour using an on-chain oracle.
 
 This will create a market for using a dVPN and strike a balance between the quality/performance of a node vs the price set by the owner. Setting the price too high will get you less customers and setting it too low will cut some of your profits.
 
