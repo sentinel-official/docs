@@ -20,8 +20,8 @@ A Sentinel dVPN Validator can be deployed on various platforms, including:
 To set up a Validator successfully, you should possess a moderate level of proficiency in Linux and networking. This guide has been designed to assist users in comprehending all the necessary steps required for setting up a full node and becoming a Validator.
 
 Once you've become a Validator, it is strongly recommended to explore the following sub-modules to enhance both security and contribute to greater network decentralization.
-- [TMKMS Security](/validator-setup/category/tmkms-security): protect your private validator key!
-- [Node Monitoring](/node-monitoring): make sure everything works properly on your Validator machine!
+- [TMKMS Setup](/validator-setup/category/tmkms-setup): protect your private validator key with the Tendermint Key Managemet System
+- [Node Monitoring](/node-monitoring): make sure everything works properly on your Validator machine
 - [Autorestake](/validator-setup/category/restake-app-setup): a guide to join Restake.app and enable your Validator for autocompound
 - [RPC Exposure](/validator-setup/category/rpc-exposure): enable remote execution of functions and access to node services
 

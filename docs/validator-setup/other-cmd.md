@@ -65,7 +65,7 @@ tombstoned: false #if true, means you double signed
 </details>
 
 :::warning
-Please be aware that if you are utilizing [TMKMS](/validator-setup/category/tmkms-security), since it typically resides on a separate machine, the aforementioned command will not function as expected. To ensure its execution, you must navigate to [ping.pub](https://ping.pub/sentinel/staking/sentvaloper1nygcr5p33plzq4akfxnl3nr7nf59gnshnwf0ln), extract the Consensus Public Key, and subsequently paste it into the following command for execution:
+Please be aware that if you are utilizing [TMKMS](/validator-setup/category/tmkms-setup), since it typically resides on a separate machine, the aforementioned command will not function as expected. To ensure its execution, you must navigate to [ping.pub](https://ping.pub/sentinel/staking/sentvaloper1nygcr5p33plzq4akfxnl3nr7nf59gnshnwf0ln), extract the Consensus Public Key, and subsequently paste it into the following command for execution:
 
 ```bash
 sentinelhub query slashing signing-info '{"@type":"/cosmos.crypto.ed25519.PubKey","key":"M2sRH0zuP/2wqnDR7lkK/Qbb+CZdWHYYRjhyM9yX0IY="}'
