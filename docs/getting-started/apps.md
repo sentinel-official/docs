@@ -59,9 +59,9 @@ The following dVPN apps are built on top of the Sentinel Protocol. This is why w
         svgFile="/icons/bagimsiz.png"
     />
     <Card
-        title="BasedVPN"
-        description="BasedVPN is an entirely free and fully decentralized service created by volunteers who prioritize digital human rights, offering powerful features like WireGuard and V2Ray support to break through internet censorship, even in countries like China."
-        to="https://basedapps.co.uk/"
+        title="Airdrop VPN"
+        description="Airdrop VPN, as the name suggests, specializes in airdrops and exclusively features residential nodes. This specialization ensures remarkable reliability and resilience against any geoblocking services."
+        to="#"
         icon={<Basedvpn />}
         svgFile=""
     />
