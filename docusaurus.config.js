@@ -347,7 +347,7 @@ const config = {
             ],
           },
         ],
-        copyright: "Copyright © Sentinel dVPN - Built by <a href='https://trinityvalidator.com'>Trinity Validator</a>, co-maintained with <a href='https://x.com/CommunityStakin'>CommunityStaking Validator</a>",
+        copyright: "Copyright © Sentinel dVPN - Built and maintained by <a href='https://trinityvalidator.com'>Trinity Validator</a>",
       },
       prism: {
         theme: prismThemes.github,

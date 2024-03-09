@@ -1,6 +1,6 @@
 ---
 title: Import a Keplr account
-sidebar_position: 4
+sidebar_position: 5
 ---
 
 # Import a Keplr account

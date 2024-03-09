@@ -5,7 +5,7 @@ sidebar_position: 1
 
 # Sentinel dVPN Full Node Setup Guide
 
-This guide is intended for anyone who wishes to contribute to the Sentinel Network by installing a Full Node .
+This guide is intended for anyone who wishes to contribute to the Sentinel Network by installing a Full Node.
 
 :::warning
 Please note that if you intend to share your bandwidth, you must adhere to the [dVPN Node guide](/node-setup), as the Full Node serves distinct purposes.

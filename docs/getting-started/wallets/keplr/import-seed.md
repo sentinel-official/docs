@@ -1,9 +1,9 @@
 ---
-title: Import Wccount
+title: Import a Seed Phrase
 sidebar_position: 4
 ---
 
-# Import a Keplr Wallet
+# Import your wallet using secret/seed phrase
 
 If you are setting up Keplr for the first time: In the initial pop-up window, choose `Import Existing Recovery Phrase`
 

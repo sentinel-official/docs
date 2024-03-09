@@ -1,6 +1,6 @@
 ---
 title: Import a Seed Phrase
-sidebar_position: 5
+sidebar_position: 4
 ---
 
 # Import your wallet using secret/seed phrase
