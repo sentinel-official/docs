@@ -25,16 +25,16 @@ MONIKER="Your Validator Name"
 sentinelhub tx staking create-validator \
     --broadcast-mode=block \
     --min-self-delegation=1 \
-    --chain-id=sentinelhub-2 \
     --commission-max-change-rate=0.01 \
     --commission-max-rate=0.2 \
     --commission-rate=0.05 \
-    --gas=500000 \
-    --gas-prices=0.1udvpn \
     --amount=${DELEGATION_AMOUNT} \
-    --from="${KEY_NAME}" \
     --moniker="${MONIKER}" \
-    --pubkey="${CONSENSUS_PUBLIC_KEY}"
+    --pubkey="${CONSENSUS_PUBLIC_KEY}" \
+    --from="${KEY_NAME}" \
+    --chain-id=sentinelhub-2 \
+    --gas=300000 \
+    --gas-prices=0.5udvpn
 ```
 
 ### The `--commission` flag explained
