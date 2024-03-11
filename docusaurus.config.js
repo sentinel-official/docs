@@ -236,6 +236,10 @@ const config = {
                 label: 'Medium',
               },
               {
+                href: 'https://youtube.com/@sentineldvpn',
+                label: 'YouTube',
+              },
+              {
                 href: 'https://omniflix.tv/channel/65b376e8c65a4348750ace8a',
                 label: 'OmniFlix TV',
               },
