@@ -25,11 +25,6 @@ The following dVPN apps are built on top of the Sentinel Protocol. This is why w
               title="⚙️ White-labels that build their app on the Sentinel Protocol"
               id="core-sdks"
               HeadingTag="h4"
-              description={
-                <>
-                  Everything that is needed to learn about the Sentinel core chain development. 
-                </>
-              }
             >
     <Card
         title="Solar dVPN"
@@ -63,6 +58,22 @@ The following dVPN apps are built on top of the Sentinel Protocol. This is why w
         description="Airdrop VPN, as the name suggests, specializes in airdrops and exclusively features residential nodes. This specialization ensures remarkable reliability and resilience against any geoblocking services."
         to="#"
         icon={<Basedvpn />}
+        svgFile=""
+    />
+    </Section>
+</Section>
+
+<Section id="web-sdks" hasSubSections>
+    <Section
+              title="⚙️ 3rd party apps that have Sentinel integrated"
+              id="core-sdks"
+              HeadingTag="h4"
+            >
+    <Card
+        title="Decentr Browser"
+        description="Decentr is a browser with unparalleled speed, security and utility. Included in the browser release is Sentinel dVPN and Adblock."
+        to="https://decentr.net/"
+        icon={<Decentr />}
         svgFile=""
     />
     </Section>
