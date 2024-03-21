@@ -70,7 +70,7 @@ Set seeds and peers separated by comma.
 - **Seeds**: are initial entry points for new nodes joining the network and are typically used during the bootstrap phase. In this phase, a new node connects to them to obtain information about the network's topology and to discover other nodes to connect to.
 - **Peers**: are usually nodes that a given node wants to maintain a reliable and consistent connection with, often because they have specific roles in the network or are deemed important for communication.
 
-You can obtain a comprehensive list of seeds both on [Mintscan](https://dev.mintscan.io/sentinel/info) and on the Quokkastake GitHub [repository](https://github.com/QuokkaStake/ansible/blob/master/group_vars/sentinelhub_2).
+You can obtain a comprehensive list of seeds both on [Mintscan](https://www.mintscan.io/sentinel/parameters) and on the Quokkastake GitHub [repository](https://github.com/QuokkaStake/ansible/blob/master/group_vars/sentinelhub_2).
 
 ```bash title="${HOME}/.sentinelhub/config/config.toml"
 [p2p]
