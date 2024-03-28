@@ -42,14 +42,13 @@ By following this procedure, your validator image will be visible on [Mintscan](
 Here's what you'll need:
 - A GitHub account with a [PAT](https://github.com/settings/tokens) (Personal Access Token) enabled with all repo scopes
 - Your validator image in the format `<your_sentval_address>.png`
-Go to [https://github.com/cosmostation/chainlist](https://github.com/cosmostation/chainlist)
 
-Fork the project
+Fork the [Chainlist Repository](https://github.com/cosmostation/chainlist)
 
-Clone the forked project to your computer
+Clone the forked repository to your computer
 
 ```bash
-git clone https://github.com/cosmostation/chainlist
+git clone https://github.com/<your_account>/chainlist
 ```
 
 Navigate to the directory from which you will execute the next commands
