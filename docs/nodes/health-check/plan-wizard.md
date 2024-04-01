@@ -16,6 +16,8 @@ You can locate the planwizard and its functions by clicking on [this link](https
 The creator suggests NOT relying on this API because it's meant for demonstration purposes only and there's a possibility that it might undergo changes.
 :::
 
+## Methods
+
 ### `GET /nodes?limit=100&offset=0`
 
 Provides details about every node accessible on the blockchain.
@@ -382,6 +384,188 @@ https://planwizard.basedapps.co.uk/plans/1
       "blockchain_id":6,
       "is_managed_automatically":true
    }
+}
+```
+
+</p>
+</details>
+
+### `GET /plans/:id/nodes`
+
+Retrieve the node list about a specific plan.
+
+```bash
+https://planwizard.basedapps.co.uk/plans/1/nodes
+```
+
+<details>
+<summary>Output</summary>
+<p>
+
+```js
+{
+   "data":[
+      {
+         "id":6510,
+         "is_active":true,
+         "revision":1711971760,
+         "is_node_status_fetched":true,
+         "last_node_status_fetch":"2024-04-01T05:08:03.931438Z",
+         "is_network_info_fetched":true,
+         "last_network_info_fetch":"2024-04-01T12:06:47.172824Z",
+         "is_health_checked":true,
+         "last_health_check":"2024-04-01T12:03:57.093798Z",
+         "address":"sentnode1007wr8ga4e5w5667tawlvecy66g8gc6v0evlyj",
+         "remote_url":"https://103.72.151.119:31989",
+         "status":1,
+         "status_at":"2024-04-01T11:01:48.78376Z",
+         "inactive_at":"2024-04-01T12:01:48.78376Z",
+         "gigabyte_prices":[
+            {
+               "denom":"ibc/31FEE1A2A9F9C01113F90BD0BBCCE8FD6BBB8585FAF109A2101827DD1D5B95B8",
+               "amount":52573
+            },
+            {
+               "denom":"ibc/A8C2D23A1E6F95DA4E48BA349667E322BD7A6C996D8A4AAE8BA72E190F3D1477",
+               "amount":9204
+            },
+            {
+               "denom":"ibc/B1C0DDB14F25279A2026BC8794E12B259F8BDA546A3C5132CCAEE4431CE36783",
+               "amount":1180852
+            },
+            {
+               "denom":"ibc/ED07A3391A112B175915CD8FAF43A2DA8E4790EDE12566649D0C2F97716B8518",
+               "amount":122740
+            },
+            {
+               "denom":"udvpn",
+               "amount":15342624
+            }
+         ],
+         "hourly_prices":[
+            {
+               "denom":"ibc/31FEE1A2A9F9C01113F90BD0BBCCE8FD6BBB8585FAF109A2101827DD1D5B95B8",
+               "amount":18480
+            },
+            {
+               "denom":"ibc/A8C2D23A1E6F95DA4E48BA349667E322BD7A6C996D8A4AAE8BA72E190F3D1477",
+               "amount":770
+            },
+            {
+               "denom":"ibc/B1C0DDB14F25279A2026BC8794E12B259F8BDA546A3C5132CCAEE4431CE36783",
+               "amount":1871892
+            },
+            {
+               "denom":"ibc/ED07A3391A112B175915CD8FAF43A2DA8E4790EDE12566649D0C2F97716B8518",
+               "amount":18897
+            },
+            {
+               "denom":"udvpn",
+               "amount":4160000
+            }
+         ],
+         "moniker":"DreamMaker_wYNK",
+         "bandwidth_upload":134125000,
+         "bandwidth_download":367750000,
+         "is_handshake_enabled":false,
+         "handshake_peers":8,
+         "interval_set_sessions":10000000000,
+         "interval_update_sessions":6900000000000,
+         "interval_update_status":3300000000000,
+         "location_city":"Kuala Lumpur",
+         "location_country":"Malaysia",
+         "location_lat":3.1412,
+         "location_lon":101.685,
+         "operator":"sent1007wr8ga4e5w5667tawlvecy66g8gc6ve0dxpy",
+         "peers":0,
+         "max_peers":250,
+         "type":2,
+         "version":"0.7.1",
+         "asn":"AS134835",
+         "is_residential":false,
+         "is_healthy":true
+      },
+      {
+         "id":11371,
+         "is_active":true,
+         "revision":1711971760,
+         "is_node_status_fetched":true,
+         "last_node_status_fetch":"2024-04-01T05:52:36.1722Z",
+         "is_network_info_fetched":true,
+         "last_network_info_fetch":"2024-04-01T12:08:20.125568Z",
+         "is_health_checked":true,
+         "last_health_check":"2024-04-01T12:08:16.896488Z",
+         "address":"sentnode1mx0a5crwm3n0wkauvupdnl5wudh6h7qn7q9du4",
+         "remote_url":"https://45.120.156.190:41798",
+         "status":1,
+         "status_at":"2024-04-01T10:55:58.032739Z",
+         "inactive_at":"2024-04-01T11:55:58.032739Z",
+         "gigabyte_prices":[
+            {
+               "denom":"ibc/31FEE1A2A9F9C01113F90BD0BBCCE8FD6BBB8585FAF109A2101827DD1D5B95B8",
+               "amount":52573
+            },
+            {
+               "denom":"ibc/A8C2D23A1E6F95DA4E48BA349667E322BD7A6C996D8A4AAE8BA72E190F3D1477",
+               "amount":9204
+            },
+            {
+               "denom":"ibc/B1C0DDB14F25279A2026BC8794E12B259F8BDA546A3C5132CCAEE4431CE36783",
+               "amount":1180852
+            },
+            {
+               "denom":"ibc/ED07A3391A112B175915CD8FAF43A2DA8E4790EDE12566649D0C2F97716B8518",
+               "amount":122740
+            },
+            {
+               "denom":"udvpn",
+               "amount":15342624
+            }
+         ],
+         "hourly_prices":[
+            {
+               "denom":"ibc/31FEE1A2A9F9C01113F90BD0BBCCE8FD6BBB8585FAF109A2101827DD1D5B95B8",
+               "amount":18480
+            },
+            {
+               "denom":"ibc/A8C2D23A1E6F95DA4E48BA349667E322BD7A6C996D8A4AAE8BA72E190F3D1477",
+               "amount":770
+            },
+            {
+               "denom":"ibc/B1C0DDB14F25279A2026BC8794E12B259F8BDA546A3C5132CCAEE4431CE36783",
+               "amount":1871892
+            },
+            {
+               "denom":"ibc/ED07A3391A112B175915CD8FAF43A2DA8E4790EDE12566649D0C2F97716B8518",
+               "amount":18897
+            },
+            {
+               "denom":"udvpn",
+               "amount":4160000
+            }
+         ],
+         "moniker":"SuchNode-p1iCM6q83mIl",
+         "bandwidth_upload":249250000,
+         "bandwidth_download":261250000,
+         "is_handshake_enabled":false,
+         "handshake_peers":8,
+         "interval_set_sessions":10000000000,
+         "interval_update_sessions":6900000000000,
+         "interval_update_status":3300000000000,
+         "location_city":"Mong Kok",
+         "location_country":"Hong Kong",
+         "location_lat":22.3184,
+         "location_lon":114.169,
+         "operator":"sent1mx0a5crwm3n0wkauvupdnl5wudh6h7qngky5er",
+         "peers":0,
+         "max_peers":250,
+         "type":2,
+         "version":"0.7.1",
+         "asn":"AS134835",
+         "is_residential":false,
+         "is_healthy":true
+      }
+   ]
 }
 ```
 
