@@ -54,12 +54,19 @@ The following dVPN apps are built on top of the Sentinel Protocol. This is why w
         svgFile="/icons/bagimsiz.png"
     />
     <Card
+        title="Breadcrumbs"
+        description="Take charge of your online privacy with Breadcrumbs. Protect your digital footprint and earn rewards for your data. Our advanced VPN, powered by Sentinel, ensures top-notch security, keeping your information safe and inaccessible to prying eyes."
+        to="https://www.breadcrumbsdata.com/"
+        icon=""
+        svgFile="/icons/breadcrumbs.svg"
+    />
+    <!-- <Card
         title="Airdrop VPN"
         description="Airdrop VPN, as the name suggests, specializes in airdrops and exclusively features residential nodes. This specialization ensures remarkable reliability and resilience against any geoblocking services."
         to="#"
         icon={<Basedvpn />}
         svgFile=""
-    />
+    /> -->
     </Section>
 </Section>
 
