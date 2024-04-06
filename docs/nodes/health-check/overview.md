@@ -9,6 +9,7 @@ To be added into the Subscription Plan and consequently be eligible to Node Reve
 This check occurs multiple times a day and will test:
 - the node endpoint
 - the node configuration
+- the node gigabyte price (less than 20 DVPN)
 - the node hourly price (4.16 DVPN for datacenters and 10 DVPN for residentials nodes)
 - the node connectivity
 

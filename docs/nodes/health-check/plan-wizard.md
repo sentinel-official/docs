@@ -32,168 +32,174 @@ https://planwizard.basedapps.co.uk/nodes?limit=100&offset=0
 
 ```js
 {
-    "data": [
-        {
-            "id": 848,
-            "is_active": true,
-            "revision": 1705802068,
-            "is_node_status_fetched": true,
-            "last_node_status_fetch": "2024-01-21T02:00:47.99249Z",
-            "is_network_info_fetched": false,
-            "last_network_info_fetch": null,
-            "is_health_checked": false,
-            "last_health_check": null,
-            "address": "sentnode1zzpragl7n6yuh7kkawk2cj895x4h039wf2hgna",
-            "remote_url": "https://23.231.78.40:33763",
-            "status": 1,
-            "status_at": "2024-01-21T01:06:10.540593Z",
-            "inactive_at": "2024-01-21T02:06:10.540593Z",
-            "gigabyte_prices": [
-                {
-                    "denom": "ibc/31FEE1A2A9F9C01113F90BD0BBCCE8FD6BBB8585FAF109A2101827DD1D5B95B8",
-                    "amount": 52573
-                },
-                {
-                    "denom": "ibc/A8C2D23A1E6F95DA4E48BA349667E322BD7A6C996D8A4AAE8BA72E190F3D1477",
-                    "amount": 9204
-                },
-                {
-                    "denom": "ibc/B1C0DDB14F25279A2026BC8794E12B259F8BDA546A3C5132CCAEE4431CE36783",
-                    "amount": 1180852
-                },
-                {
-                    "denom": "ibc/ED07A3391A112B175915CD8FAF43A2DA8E4790EDE12566649D0C2F97716B8518",
-                    "amount": 122740
-                },
-                {
-                    "denom": "udvpn",
-                    "amount": 15342624
-                }
-            ],
-            "hourly_prices": [
-                {
-                    "denom": "ibc/31FEE1A2A9F9C01113F90BD0BBCCE8FD6BBB8585FAF109A2101827DD1D5B95B8",
-                    "amount": 18480
-                },
-                {
-                    "denom": "ibc/A8C2D23A1E6F95DA4E48BA349667E322BD7A6C996D8A4AAE8BA72E190F3D1477",
-                    "amount": 770
-                },
-                {
-                    "denom": "ibc/B1C0DDB14F25279A2026BC8794E12B259F8BDA546A3C5132CCAEE4431CE36783",
-                    "amount": 1871892
-                },
-                {
-                    "denom": "ibc/ED07A3391A112B175915CD8FAF43A2DA8E4790EDE12566649D0C2F97716B8518",
-                    "amount": 18897
-                },
-                {
-                    "denom": "udvpn",
-                    "amount": 4160000
-                }
-            ],
-            "moniker": "DreamMaker_UUgx77",
-            "bandwidth_upload": 253875000,
-            "bandwidth_download": 317750000,
-            "is_handshake_enabled": false,
-            "handshake_peers": 8,
-            "interval_set_sessions": 10000000000,
-            "interval_update_sessions": 6900000000000,
-            "interval_update_status": 3300000000000,
-            "location_city": "Los Angeles",
-            "location_country": "United States",
-            "location_lat": 34.0726,
-            "location_lon": -118.261,
-            "operator": "sent1zzpragl7n6yuh7kkawk2cj895x4h039wluk3kt",
-            "peers": 1,
-            "max_peers": 250,
-            "type": 2,
-            "version": "0.7.1",
-            "asn": null,
-            "is_residential": null,
-            "is_healthy": null
-        },
-        {
-            "id": 851,
-            "is_active": true,
-            "revision": 1705802068,
-            "is_node_status_fetched": true,
-            "last_node_status_fetch": "2024-01-21T02:00:49.209966Z",
-            "is_network_info_fetched": false,
-            "last_network_info_fetch": null,
-            "is_health_checked": false,
-            "last_health_check": null,
-            "address": "sentnode1zzfh0ul0eqe8w3m9w8uf94vnycqkdc3egncvke",
-            "remote_url": "https://5.231.206.140:6636",
-            "status": 1,
-            "status_at": "2024-01-21T01:50:34.065488Z",
-            "inactive_at": "2024-01-21T02:50:34.065488Z",
-            "gigabyte_prices": [
-                {
-                    "denom": "ibc/31FEE1A2A9F9C01113F90BD0BBCCE8FD6BBB8585FAF109A2101827DD1D5B95B8",
-                    "amount": 52573
-                },
-                {
-                    "denom": "ibc/A8C2D23A1E6F95DA4E48BA349667E322BD7A6C996D8A4AAE8BA72E190F3D1477",
-                    "amount": 9204
-                },
-                {
-                    "denom": "ibc/B1C0DDB14F25279A2026BC8794E12B259F8BDA546A3C5132CCAEE4431CE36783",
-                    "amount": 1180852
-                },
-                {
-                    "denom": "ibc/ED07A3391A112B175915CD8FAF43A2DA8E4790EDE12566649D0C2F97716B8518",
-                    "amount": 122740
-                },
-                {
-                    "denom": "udvpn",
-                    "amount": 15342624
-                }
-            ],
-            "hourly_prices": [
-                {
-                    "denom": "ibc/31FEE1A2A9F9C01113F90BD0BBCCE8FD6BBB8585FAF109A2101827DD1D5B95B8",
-                    "amount": 18480
-                },
-                {
-                    "denom": "ibc/A8C2D23A1E6F95DA4E48BA349667E322BD7A6C996D8A4AAE8BA72E190F3D1477",
-                    "amount": 770
-                },
-                {
-                    "denom": "ibc/B1C0DDB14F25279A2026BC8794E12B259F8BDA546A3C5132CCAEE4431CE36783",
-                    "amount": 1871892
-                },
-                {
-                    "denom": "ibc/ED07A3391A112B175915CD8FAF43A2DA8E4790EDE12566649D0C2F97716B8518",
-                    "amount": 18897
-                },
-                {
-                    "denom": "udvpn",
-                    "amount": 4160000
-                }
-            ],
-            "moniker": "SuchNode-mSqmIz3JcC0j",
-            "bandwidth_upload": 116383225,
-            "bandwidth_download": 117330675,
-            "is_handshake_enabled": false,
-            "handshake_peers": 8,
-            "interval_set_sessions": 10000000000,
-            "interval_update_sessions": 6900000000000,
-            "interval_update_status": 3300000000000,
-            "location_city": "Bad Soden am Taunus",
-            "location_country": "Germany",
-            "location_lat": 50.1592,
-            "location_lon": 8.48173,
-            "operator": "sent1zzfh0ul0eqe8w3m9w8uf94vnycqkdc3e79e4n0",
-            "peers": 0,
-            "max_peers": 250,
-            "type": 2,
-            "version": "0.7.1",
-            "asn": null,
-            "is_residential": null,
-            "is_healthy": null
-        }
-    ]
+   "data":[
+      {
+         "id":1259,
+         "is_active":false,
+         "revision":1706943783,
+         "is_node_status_fetched":true,
+         "last_node_status_fetch":"2024-01-21T02:36:29.735792Z",
+         "is_network_info_fetched":true,
+         "last_network_info_fetch":"2024-04-06T10:02:14.725058Z",
+         "is_health_checked":true,
+         "last_health_check":"2024-04-06T10:01:27.359839Z",
+         "is_whitelist_info_fetched":false,
+         "last_whitelist_info_fetch":null,
+         "address":"sentnode1rz0hwaa4t0mmcegxq236m3349zd6zu5jwz5tep",
+         "remote_url":"https://206.214.81.253:49713",
+         "status":1,
+         "status_at":"2024-02-03T06:04:23.282112Z",
+         "inactive_at":"2024-02-03T07:04:23.282112Z",
+         "gigabyte_prices":[
+            {
+               "denom":"ibc/31FEE1A2A9F9C01113F90BD0BBCCE8FD6BBB8585FAF109A2101827DD1D5B95B8",
+               "amount":52573
+            },
+            {
+               "denom":"ibc/A8C2D23A1E6F95DA4E48BA349667E322BD7A6C996D8A4AAE8BA72E190F3D1477",
+               "amount":9204
+            },
+            {
+               "denom":"ibc/B1C0DDB14F25279A2026BC8794E12B259F8BDA546A3C5132CCAEE4431CE36783",
+               "amount":1180852
+            },
+            {
+               "denom":"ibc/ED07A3391A112B175915CD8FAF43A2DA8E4790EDE12566649D0C2F97716B8518",
+               "amount":122740
+            },
+            {
+               "denom":"udvpn",
+               "amount":15342624
+            }
+         ],
+         "hourly_prices":[
+            {
+               "denom":"ibc/31FEE1A2A9F9C01113F90BD0BBCCE8FD6BBB8585FAF109A2101827DD1D5B95B8",
+               "amount":18480
+            },
+            {
+               "denom":"ibc/A8C2D23A1E6F95DA4E48BA349667E322BD7A6C996D8A4AAE8BA72E190F3D1477",
+               "amount":770
+            },
+            {
+               "denom":"ibc/B1C0DDB14F25279A2026BC8794E12B259F8BDA546A3C5132CCAEE4431CE36783",
+               "amount":1871892
+            },
+            {
+               "denom":"ibc/ED07A3391A112B175915CD8FAF43A2DA8E4790EDE12566649D0C2F97716B8518",
+               "amount":18897
+            },
+            {
+               "denom":"udvpn",
+               "amount":4160000
+            }
+         ],
+         "moniker":"Rosamaria Chad",
+         "bandwidth_upload":335000000,
+         "bandwidth_download":160375000,
+         "is_handshake_enabled":false,
+         "handshake_peers":8,
+         "interval_set_sessions":10000000000,
+         "interval_update_sessions":6900000000000,
+         "interval_update_status":3300000000000,
+         "location_city":"Phoenix",
+         "location_country":"United States",
+         "location_lat":33.4484,
+         "location_lon":-112.074,
+         "operator":"sent1rz0hwaa4t0mmcegxq236m3349zd6zu5jc54juh",
+         "peers":1,
+         "max_peers":250,
+         "type":2,
+         "version":"0.7.1",
+         "asn":"AS62904",
+         "is_residential":false,
+         "is_healthy":false,
+         "is_whitelisted":null
+      },
+      {
+         "id":2520,
+         "is_active":false,
+         "revision":1707747346,
+         "is_node_status_fetched":true,
+         "last_node_status_fetch":"2024-01-21T02:13:05.833845Z",
+         "is_network_info_fetched":true,
+         "last_network_info_fetch":"2024-04-06T09:57:37.462276Z",
+         "is_health_checked":true,
+         "last_health_check":"2024-04-06T10:02:27.49802Z",
+         "is_whitelist_info_fetched":false,
+         "last_whitelist_info_fetch":null,
+         "address":"sentnode1xppeavtsgwx5ge8hqghc57kv9q057yf3rtada9",
+         "remote_url":"https://154.209.183.184:37582",
+         "status":1,
+         "status_at":"2024-02-12T13:43:20.15166Z",
+         "inactive_at":"2024-02-12T14:43:20.15166Z",
+         "gigabyte_prices":[
+            {
+               "denom":"ibc/31FEE1A2A9F9C01113F90BD0BBCCE8FD6BBB8585FAF109A2101827DD1D5B95B8",
+               "amount":52573
+            },
+            {
+               "denom":"ibc/A8C2D23A1E6F95DA4E48BA349667E322BD7A6C996D8A4AAE8BA72E190F3D1477",
+               "amount":9204
+            },
+            {
+               "denom":"ibc/B1C0DDB14F25279A2026BC8794E12B259F8BDA546A3C5132CCAEE4431CE36783",
+               "amount":1180852
+            },
+            {
+               "denom":"ibc/ED07A3391A112B175915CD8FAF43A2DA8E4790EDE12566649D0C2F97716B8518",
+               "amount":122740
+            },
+            {
+               "denom":"udvpn",
+               "amount":15342624
+            }
+         ],
+         "hourly_prices":[
+            {
+               "denom":"ibc/31FEE1A2A9F9C01113F90BD0BBCCE8FD6BBB8585FAF109A2101827DD1D5B95B8",
+               "amount":18480
+            },
+            {
+               "denom":"ibc/A8C2D23A1E6F95DA4E48BA349667E322BD7A6C996D8A4AAE8BA72E190F3D1477",
+               "amount":770
+            },
+            {
+               "denom":"ibc/B1C0DDB14F25279A2026BC8794E12B259F8BDA546A3C5132CCAEE4431CE36783",
+               "amount":1871892
+            },
+            {
+               "denom":"ibc/ED07A3391A112B175915CD8FAF43A2DA8E4790EDE12566649D0C2F97716B8518",
+               "amount":18897
+            },
+            {
+               "denom":"udvpn",
+               "amount":4160000
+            }
+         ],
+         "moniker":"Dudley-Voller",
+         "bandwidth_upload":153875000,
+         "bandwidth_download":140500000,
+         "is_handshake_enabled":false,
+         "handshake_peers":8,
+         "interval_set_sessions":10000000000,
+         "interval_update_sessions":6900000000000,
+         "interval_update_status":3300000000000,
+         "location_city":"Tseung Kwan O",
+         "location_country":"Hong Kong",
+         "location_lat":22.3119,
+         "location_lon":114.257,
+         "operator":"sent1xppeavtsgwx5ge8hqghc57kv9q057yf34au5cn",
+         "peers":0,
+         "max_peers":250,
+         "type":2,
+         "version":"0.7.1",
+         "asn":"AS133180",
+         "is_residential":false,
+         "is_healthy":false,
+         "is_whitelisted":null
+      }
+   ]
 }
 ```
 
@@ -217,20 +223,22 @@ You will get the following json output:
 ```js
 {
    "data":{
-      "id":16354,
-      "is_active":true,
-      "revision":1711966354,
+      "id":1259,
+      "is_active":false,
+      "revision":1706943783,
       "is_node_status_fetched":true,
-      "last_node_status_fetch":"2024-03-31T16:40:13.427227Z",
+      "last_node_status_fetch":"2024-01-21T02:36:29.735792Z",
       "is_network_info_fetched":true,
-      "last_network_info_fetch":"2024-04-01T10:32:10.978466Z",
+      "last_network_info_fetch":"2024-04-06T10:02:14.725058Z",
       "is_health_checked":true,
-      "last_health_check":"2024-04-01T10:34:31.349856Z",
-      "address":"sentnode15ph43fu8cm48scn3m6l9ap0sp3p90ns52mzmpl",
-      "remote_url":"https://168.119.166.81:29486",
+      "last_health_check":"2024-04-06T10:01:27.359839Z",
+      "is_whitelist_info_fetched":false,
+      "last_whitelist_info_fetch":null,
+      "address":"sentnode1rz0hwaa4t0mmcegxq236m3349zd6zu5jwz5tep",
+      "remote_url":"https://206.214.81.253:49713",
       "status":1,
-      "status_at":"2024-04-01T09:29:16.222958Z",
-      "inactive_at":"2024-04-01T10:29:16.222958Z",
+      "status_at":"2024-02-03T06:04:23.282112Z",
+      "inactive_at":"2024-02-03T07:04:23.282112Z",
       "gigabyte_prices":[
          {
             "denom":"ibc/31FEE1A2A9F9C01113F90BD0BBCCE8FD6BBB8585FAF109A2101827DD1D5B95B8",
@@ -275,32 +283,38 @@ You will get the following json output:
             "amount":4160000
          }
       ],
-      "moniker":"Trinity v2ray Node",
-      "bandwidth_upload":43900537,
-      "bandwidth_download":227196312,
+      "moniker":"Rosamaria Chad",
+      "bandwidth_upload":335000000,
+      "bandwidth_download":160375000,
       "is_handshake_enabled":false,
       "handshake_peers":8,
       "interval_set_sessions":10000000000,
       "interval_update_sessions":6900000000000,
       "interval_update_status":3300000000000,
-      "location_city":"Hachenburg",
-      "location_country":"Germany",
-      "location_lat":50.6584,
-      "location_lon":7.8268,
-      "operator":"sent15ph43fu8cm48scn3m6l9ap0sp3p90ns5udrzyf",
+      "location_city":"Phoenix",
+      "location_country":"United States",
+      "location_lat":33.4484,
+      "location_lon":-112.074,
+      "operator":"sent1rz0hwaa4t0mmcegxq236m3349zd6zu5jc54juh",
       "peers":1,
       "max_peers":250,
       "type":2,
       "version":"0.7.1",
-      "asn":"AS24940",
+      "asn":"AS62904",
       "is_residential":false,
-      "is_healthy":true
+      "is_healthy":false,
+      "is_whitelisted":null
    }
 }
 ```
 
 </p>
 </details>
+
+Note: the field `is_whitelisted` has three possible values:
+- **true**: indicates that the node has been whitelisted.
+- **false**: indicates that the node has NOT been whitelisted.
+- **null**: implies a pending status, indicating that the node's whitelisting status is undetermined, and it may or may not be whitelisted.
 
 ### `GET /nodes/:address/plans`
 
@@ -406,20 +420,22 @@ https://planwizard.basedapps.co.uk/plans/1/nodes
 {
    "data":[
       {
-         "id":6510,
+         "id":9971,
          "is_active":true,
-         "revision":1711971760,
+         "revision":1712274950,
          "is_node_status_fetched":true,
-         "last_node_status_fetch":"2024-04-01T05:08:03.931438Z",
+         "last_node_status_fetch":"2024-04-05T23:52:51.33843Z",
          "is_network_info_fetched":true,
-         "last_network_info_fetch":"2024-04-01T12:06:47.172824Z",
+         "last_network_info_fetch":"2024-04-06T10:01:32.945718Z",
          "is_health_checked":true,
-         "last_health_check":"2024-04-01T12:03:57.093798Z",
-         "address":"sentnode1007wr8ga4e5w5667tawlvecy66g8gc6v0evlyj",
-         "remote_url":"https://103.72.151.119:31989",
+         "last_health_check":"2024-04-06T10:01:26.429703Z",
+         "is_whitelist_info_fetched":true,
+         "last_whitelist_info_fetch":"2024-04-06T10:00:18.029188Z",
+         "address":"sentnode1hhh5mhst8cuxsvfknz05gqkvxj9jq2p9e0fda3",
+         "remote_url":"https://170.130.186.250:33679",
          "status":1,
-         "status_at":"2024-04-01T11:01:48.78376Z",
-         "inactive_at":"2024-04-01T12:01:48.78376Z",
+         "status_at":"2024-04-04T23:46:24.11667Z",
+         "inactive_at":"2024-04-05T00:46:24.11667Z",
          "gigabyte_prices":[
             {
                "denom":"ibc/31FEE1A2A9F9C01113F90BD0BBCCE8FD6BBB8585FAF109A2101827DD1D5B95B8",
@@ -464,42 +480,45 @@ https://planwizard.basedapps.co.uk/plans/1/nodes
                "amount":4160000
             }
          ],
-         "moniker":"DreamMaker_wYNK",
-         "bandwidth_upload":134125000,
-         "bandwidth_download":367750000,
+         "moniker":"x_Node_GT_118",
+         "bandwidth_upload":196125000,
+         "bandwidth_download":231125000,
          "is_handshake_enabled":false,
          "handshake_peers":8,
          "interval_set_sessions":10000000000,
          "interval_update_sessions":6900000000000,
          "interval_update_status":3300000000000,
-         "location_city":"Kuala Lumpur",
-         "location_country":"Malaysia",
-         "location_lat":3.1412,
-         "location_lon":101.685,
-         "operator":"sent1007wr8ga4e5w5667tawlvecy66g8gc6ve0dxpy",
-         "peers":0,
+         "location_city":"Los Angeles",
+         "location_country":"United States",
+         "location_lat":34.0726,
+         "location_lon":-118.261,
+         "operator":"sent1hhh5mhst8cuxsvfknz05gqkvxj9jq2p90eg5c8",
+         "peers":1,
          "max_peers":250,
          "type":2,
          "version":"0.7.1",
-         "asn":"AS134835",
+         "asn":"AS62904",
          "is_residential":false,
-         "is_healthy":true
+         "is_healthy":true,
+         "is_whitelisted":true
       },
       {
-         "id":11371,
+         "id":13764,
          "is_active":true,
-         "revision":1711971760,
+         "revision":1712273819,
          "is_node_status_fetched":true,
-         "last_node_status_fetch":"2024-04-01T05:52:36.1722Z",
+         "last_node_status_fetch":"2024-04-05T19:46:06.698559Z",
          "is_network_info_fetched":true,
-         "last_network_info_fetch":"2024-04-01T12:08:20.125568Z",
+         "last_network_info_fetch":"2024-04-06T10:01:33.508748Z",
          "is_health_checked":true,
-         "last_health_check":"2024-04-01T12:08:16.896488Z",
-         "address":"sentnode1mx0a5crwm3n0wkauvupdnl5wudh6h7qn7q9du4",
-         "remote_url":"https://45.120.156.190:41798",
+         "last_health_check":"2024-04-06T10:01:28.846133Z",
+         "is_whitelist_info_fetched":true,
+         "last_whitelist_info_fetch":"2024-04-06T10:00:54.130689Z",
+         "address":"sentnode1hmggy2qug9vg55t6lp8nwfghu48w2zh93mrjt5",
+         "remote_url":"https://107.158.192.237:35272",
          "status":1,
-         "status_at":"2024-04-01T10:55:58.032739Z",
-         "inactive_at":"2024-04-01T11:55:58.032739Z",
+         "status_at":"2024-04-04T23:36:06.084283Z",
+         "inactive_at":"2024-04-05T00:36:06.084283Z",
          "gigabyte_prices":[
             {
                "denom":"ibc/31FEE1A2A9F9C01113F90BD0BBCCE8FD6BBB8585FAF109A2101827DD1D5B95B8",
@@ -544,26 +563,27 @@ https://planwizard.basedapps.co.uk/plans/1/nodes
                "amount":4160000
             }
          ],
-         "moniker":"SuchNode-p1iCM6q83mIl",
-         "bandwidth_upload":249250000,
-         "bandwidth_download":261250000,
+         "moniker":"No.28580 Leo Preheim",
+         "bandwidth_upload":268000000,
+         "bandwidth_download":361250000,
          "is_handshake_enabled":false,
          "handshake_peers":8,
          "interval_set_sessions":10000000000,
          "interval_update_sessions":6900000000000,
          "interval_update_status":3300000000000,
-         "location_city":"Mong Kok",
-         "location_country":"Hong Kong",
-         "location_lat":22.3184,
-         "location_lon":114.169,
-         "operator":"sent1mx0a5crwm3n0wkauvupdnl5wudh6h7qngky5er",
-         "peers":0,
+         "location_city":"Yorba Linda",
+         "location_country":"United States",
+         "location_lat":33.9011,
+         "location_lon":-117.7959,
+         "operator":"sent1hmggy2qug9vg55t6lp8nwfghu48w2zh98dztwz",
+         "peers":1,
          "max_peers":250,
          "type":2,
          "version":"0.7.1",
-         "asn":"AS134835",
+         "asn":"AS62904",
          "is_residential":false,
-         "is_healthy":true
+         "is_healthy":true,
+         "is_whitelisted":true
       }
    ]
 }
