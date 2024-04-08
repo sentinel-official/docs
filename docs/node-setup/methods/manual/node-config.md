@@ -357,7 +357,7 @@ sudo ufw allow <tcp_port>/tcp #for example sudo ufw allow 7777/tcp
 **(Wireguard)** Enable UDP port on Firewall (check file `wireguard.toml`)
 
 ```bash
-sudo ufw allow <udp_port>/udp #for example sudo ufw allow 8888/tcp
+sudo ufw allow <udp_port>/udp #for example sudo ufw allow 8888/udp
 ```
 
 **(V2RAY)** Enable TCP port on Firewall (check file `v2ray.toml`)
