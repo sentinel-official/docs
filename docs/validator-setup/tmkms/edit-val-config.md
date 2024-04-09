@@ -11,7 +11,7 @@ Now we need the validator config file to use the port you selected in the tmkms.
 To do this open the config file
 
 ```bash
-sudo nano $HOME/.sentinelhub/config/config.toml
+nano $HOME/.sentinelhub/config/config.toml
 ```
 
 Set the field private validator listening address

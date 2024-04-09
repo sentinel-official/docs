@@ -30,7 +30,7 @@ sudo apt install git build-essential ufw curl jq snapd --yes
 ### Install Libusb
 
 ```bash
-apt install libusb-1.0-0-dev
+sudo apt install libusb-1.0-0-dev
 ```
 
 If on x86_64 architecture:

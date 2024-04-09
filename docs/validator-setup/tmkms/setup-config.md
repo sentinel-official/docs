@@ -22,7 +22,7 @@ tmkms softsign keygen ./config/secrets/secret_connection_key
 Add a symbolic link to the `/usr/local/bin/` directory for system-wide access to TMKMS:
 
 ```bash
-sudo ln -s /home/<your_user>/.cargo/bin/tmkms /usr/local/bin/
+sudo ln -s /home/${USER}/.cargo/bin/tmkms /usr/local/bin/
 ```
 
 ## Transfer Private Validator Key
@@ -52,7 +52,7 @@ sudo rm -f /home/myuser/tmkms/config/secrets/priv_validator_key.json
 Open the tmkms config file
 
 ```bash
-sudo nano ~/tmkms/config/tmkms.toml
+nano ~/tmkms/config/tmkms.toml
 ```
 
 In this example, my validator has the IP address of validator_ip and we will be using port 26659 to feed the validator key to the validator. We will also be using chain_id sentinelhub-2
