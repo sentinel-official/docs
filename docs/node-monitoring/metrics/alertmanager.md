@@ -25,7 +25,7 @@ cd alertmanager/
 Add a symbolic link to the `/usr/local/bin/` directory for system-wide access to Alert Manager:
 
 ```bash
-sudo ln -s /home/<your_user>/alertmanager/alertmanager /usr/local/bin/
+sudo ln -s /home/${USER}/alertmanager/alertmanager /usr/local/bin/
 ```
 
 ## Set up the Config file
@@ -135,7 +135,7 @@ sudo nano cosmos-validator-exporter.yml
 <summary>node-exporter.yml</summary>
 <p>
 
-```yaml title="/home/<your_user>/alertmanager/rules/node-exporter.yml
+```yaml title="/home/${USER}/alertmanager/rules/node-exporter.yml
 groups:
   - name: HostAlerts
     rules:
@@ -381,7 +381,7 @@ groups:
 <summary>tendermint-internal-metrics.yml</summary>
 <p>
 
-```yaml title="/home/<your_user>/alertmanager/rules/tendermint-internal-metrics.yml
+```yaml title="/home/${USER}/alertmanager/rules/tendermint-internal-metrics.yml
 groups:
   - name: TendermintInternalAlerts
     rules:
@@ -420,7 +420,7 @@ groups:
 <summary>cosmos-node-exporter.yml</summary>
 <p>
 
-```yaml title="/home/<your_user>/alertmanager/rules/cosmos-node-exporter.yml
+```yaml title="/home/${USER}/alertmanager/rules/cosmos-node-exporter.yml
 groups:
   - name: CosmosNodeExporter
     rules:
@@ -505,7 +505,7 @@ groups:
 <summary>cosmos-validator-exporter</summary>
 <p>
 
-```yaml title="/home/<your_user>/alertmanager/rules/cosmos-validator-exporter.yml
+```yaml title="/home/${USER}/alertmanager/rules/cosmos-validator-exporter.yml
 groups:
   - name: CosmosValidatorsExporterAlerts
     rules:
@@ -545,7 +545,7 @@ Add the following code block with the `target` and the created `rule files`:
 <summary>prometheus.yml</summary>
 <p>
 
-```yaml title="/home/<your_user>/prometheus/prometheus.yml
+```yaml title="/home/${USER}/prometheus/prometheus.yml
 # Alertmanager configuration
 alerting:
   alertmanagers:

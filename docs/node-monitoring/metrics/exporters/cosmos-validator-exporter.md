@@ -26,7 +26,7 @@ sudo rm -f cosmos-validators-exporter_X.X.X_linux_amd64.tar.gz
 Add a symbolic link to the `/usr/local/bin/` directory for system-wide access to Cosmos Validator Exporter:
 
 ```bash
-sudo ln -s /home/<your_user>/cosmos-validator-exporter/cosmos-validator-exporter /usr/local/bin/
+sudo ln -s /home/${USER}/cosmos-validator-exporter/cosmos-validator-exporter /usr/local/bin/
 ```
 
 ### Create a Config file
@@ -43,7 +43,7 @@ Paste the following code in it making sure to add your sentvaloper and sentvalco
 <summary>config.toml</summary>
 <p>
 
-```bash title="/home/<your_user>/cosmos-validator-exporter/config.toml"
+```bash title="/home/${USER}/cosmos-validator-exporter/config.toml"
 # Global timeout for RPC queries, in seconds. Defaults to 5.
 timeout = 5
 # The address the exporter will listen on .Defaults to ":9560".

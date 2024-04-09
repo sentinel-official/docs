@@ -26,7 +26,7 @@ cd node-exporter/
 Add a symbolic link to the `/usr/local/bin/` directory for system-wide access to Node Exporter:
 
 ```bash
-sudo ln -s /home/<your_user>/node-exporter/node-exporter /usr/local/bin/
+sudo ln -s /home/${USER}/node-exporter/node-exporter /usr/local/bin/
 ```
 
 ### Add a system unit file

@@ -24,7 +24,7 @@ mv promtail-linux-amd64 promtail
 Add a symbolic link to the `/usr/local/bin/` directory for system-wide access to Promtail:
 
 ```bash
-sudo ln -s /home/<your_user>/promtail/promtail /usr/local/bin/
+sudo ln -s /home/${USER}/promtail/promtail /usr/local/bin/
 ```
 
 ## Create a Config file

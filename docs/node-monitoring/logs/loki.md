@@ -24,7 +24,7 @@ mv loki-linux-amd64.zip loki
 Add a symbolic link to the `/usr/local/bin/` directory for system-wide access to Loki:
 
 ```bash
-sudo ln -s /home/<your_user>/loki/loki /usr/local/bin/
+sudo ln -s /home/${USER}/loki/loki /usr/local/bin/
 ```
 
 ## Create a Config file

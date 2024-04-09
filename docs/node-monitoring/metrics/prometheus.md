@@ -23,7 +23,7 @@ cd prometheus/
 Add a symbolic link to the `/usr/local/bin/` directory for system-wide access to Prometheus:
 
 ```bash
-sudo ln -s /home/<your_user>/prometheus/prometheus /usr/local/bin/
+sudo ln -s /home/${USER}/prometheus/prometheus /usr/local/bin/
 ```
 
 ## Configure Jobs in the Config File

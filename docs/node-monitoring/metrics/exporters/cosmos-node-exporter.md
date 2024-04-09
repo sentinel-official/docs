@@ -31,7 +31,7 @@ sudo rm -f cosmos-node-exporter_X.X.X_linux_amd64.tar.gz
 Add a symbolic link to the `/usr/local/bin/` directory for system-wide access to Cosmos Node Exporter:
 
 ```bash
-sudo ln -s /home/<your_user>/cosmos-node-exporter/cosmos-node-exporter /usr/local/bin/
+sudo ln -s /home/${USER}/cosmos-node-exporter/cosmos-node-exporter /usr/local/bin/
 ```
 
 ### Create a Config file
@@ -48,7 +48,7 @@ Paste the following code in it making sure to edit the fields between `<` and `>
 <summary>config.toml</summary>
 <p>
 
-```bash title="/home/<your_user>/cosmos-node-exporter/config.toml"
+```bash title="/home/${USER}/cosmos-node-exporter/config.toml"
 # Logging configuration.
 [log]
 # Verbosity level. Set to `debug` or even `trace` to make it more verbose. Defaults to `info`.

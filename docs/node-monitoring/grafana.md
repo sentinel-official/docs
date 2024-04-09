@@ -26,7 +26,7 @@ cd grafana/
 Add a symbolic link to the `/usr/local/bin/` directory for system-wide access to Prometheus:
 
 ```bash
-sudo ln -s /home/<your_user>/grafana/bin/grafana-server /usr/local/bin/
+sudo ln -s /home/${USER}/grafana/bin/grafana-server /usr/local/bin/
 ```
 
 ## Add a system unit file
