@@ -66,7 +66,9 @@ rpc_tx_timeout = 30
 simulate_and_execute = true
 
 [handshake]
-# Enable Handshake DNS resolver (if you use v2ray set enable = false)
+# Enable Handshake DNS resolver
+# if you use wireguard set enable = true
+# if you use v2ray set enable = false
 enable = true
 
 # Number of peers
@@ -159,7 +161,9 @@ rpc_tx_timeout = 30
 simulate_and_execute = true
 
 [handshake]
-# Enable Handshake DNS resolver (if you use v2ray set enable = false)
+# Enable Handshake DNS resolver
+# if you use wireguard set enable = true
+# if you use v2ray set enable = false
 enable = true
 
 # Number of peers
