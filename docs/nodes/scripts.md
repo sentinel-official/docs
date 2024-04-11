@@ -140,11 +140,13 @@ rpc_addresses=("https://rpc.trinityvalidator.com:443"
            "https://rpc-sentinel.busurnode.com:443")
 
 for node in "${rpc_addresses[@]}"; do
-   echo "#####"
+   echo ""
    echo "$node stats:"
-   time /usr/local/bin/sentinelhub query block --node "$node" > /dev/null
-   echo "#####"
-   
+   # Capture the real time only using time command and redirecting stdout and stderr to /dev/null
+   real_time=$( { time /usr/local/bin/sentinelhub query block --node "$node" > /dev/null; } 2>&1 )
+   # Extract and print just the real time
+   echo "$real_time" | grep -oP 'real\t\K\S+'
+   echo ""
 done
 ```
 
