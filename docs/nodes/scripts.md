@@ -8,3 +8,101 @@ sidebar_position: 7
 :::note Important
 Please be patient, [**Trinity Validator**](https://trinityvalidator.com) is working on this
 :::
+
+This page contains simple and useful scripts for development within the Sentinel Ecosystem.
+
+## Instructions
+
+Copy the scripts below into a file and save it with a `.sh` extension.
+
+Make the file executable by running the following command:
+
+```bash
+sudo chmod +x filename.sh
+```
+
+Run the file using the terminal
+
+```bash
+./filename
+```
+
+## Script list
+
+Explore the collection of scripts below
+
+### `Node Status`
+
+Provides the status of the specified `sentnode` address.
+
+<details>
+<summary>Node Status</summary>
+<p>
+
+```bash title="/home/${USER}/sentnode-status.sh"
+#!/bin/bash
+
+# Fetching the JSON data from the API
+api_response=$(curl -s https://api.sentinelgrowthdao.com/sentinel/nodes/sentnode1rx7kjsvhvklcluhu9zl6hswrau06vh3ll7gthr)
+
+# Extracting the remote URL from the JSON response
+remote_url=$(echo "$api_response" | jq -r '.node.remote_url')
+
+# Fetching the status from the remote URL
+status_response=$(curl -k "$remote_url/status" | jq '.')
+
+echo "Status from $remote_url:"
+echo "$status_response" | jq '.'
+```
+
+</p>
+</details>
+
+### `RPC Countries`
+
+Lists the countries of the RPC Nodes.
+
+<details>
+<summary>RPC Countries</summary>
+<p>
+
+```bash title="/home/${USER}/rpc-countries.sh"
+#!/bin/bash
+
+# List of addresses to iterate over
+
+addresses=("rpc.trinityvalidator.com"
+           "rpc.sentinel.co"
+           "rpc.sentinel.quokkastake.io"
+           "rpc.sentinel.chaintools.tech"
+           "sentinel.declab.pro"
+           "rpc-sentinel.whispernode.com"
+           "rpc.sentinelgrowthdao.com"
+           "sentinel-rpc.publicnode.com"
+           "rpc.dvpn.roomit.xyz"
+           "sentinel.rpc.nodeshub.online"
+           "public.stakewolle.com/cosmos/sentinel/rpc"
+           "sentinel-rpc.validatornode.com"
+           "rpc.mathnodes.com"
+           "rpc.dvpn.me"
+           "rpc-sentinel.busurnode.com/")
+
+
+# Iterate over each address
+for address in "${addresses[@]}"; do
+    echo "Address: $address"
+    
+    # Get the IP address
+    rpc_ipv4=$(nslookup "$address" | awk '/^Address: / { print $2 }')
+    
+    # Get country information for the address
+    country=$(curl -s "http://ip-api.com/json/${rpc_ipv4}" | jq -r '.country')
+    
+    # Print the country information
+    echo "Country: $country"
+    echo ""
+done
+```
+
+</p>
+</details>
