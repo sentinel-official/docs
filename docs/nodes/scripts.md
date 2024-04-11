@@ -5,10 +5,6 @@ sidebar_position: 7
 
 # Node Scripts
 
-:::note Important
-Please be patient, [**Trinity Validator**](https://trinityvalidator.com) is working on this
-:::
-
 This page contains simple and useful scripts for development within the Sentinel Ecosystem.
 
 ## Instructions
@@ -81,11 +77,14 @@ addresses=("rpc.trinityvalidator.com"
            "sentinel-rpc.publicnode.com"
            "rpc.dvpn.roomit.xyz"
            "sentinel.rpc.nodeshub.online"
-           "public.stakewolle.com/cosmos/sentinel/rpc"
+           "public.stakewolle.com"
            "sentinel-rpc.validatornode.com"
            "rpc.mathnodes.com"
            "rpc.dvpn.me"
-           "rpc-sentinel.busurnode.com/")
+           "rpc-sentinel-ia.cosmosia.notional.ventures"
+           "sentinel-rpc.polkachu.com"
+           "sentinel-rpc.badgerbite.io"
+           "rpc-sentinel.busurnode.com:443")
 
 
 # Iterate over each address
@@ -101,6 +100,51 @@ for address in "${addresses[@]}"; do
     # Print the country information
     echo "Country: $country"
     echo ""
+done
+```
+
+</p>
+</details>
+
+
+### `RPC Uptime`
+
+Lists the RPC Nodes and their uptime.
+
+<details>
+<summary>RPC Uptime</summary>
+<p>
+
+```bash title="/home/${USER}/rpc-uptime.sh"
+#!/bin/bash
+
+# List of addresses to iterate over
+
+rpc_addresses=("https://rpc.trinityvalidator.com:443"
+           "https://rpc.sentinel.co:443"
+           "https://rpc.sentinel.quokkastake.io:443"
+           "https://rpc.sentinel.chaintools.tech:443"
+           "https://sentinel.declab.pro:26628"
+           "https://rpc-sentinel.whispernode.com:443"
+           "https://rpc.sentinelgrowthdao.com:443"
+           "https://sentinel-rpc.publicnode.com:443"
+           "https://rpc.dvpn.roomit.xyz:443"
+           "https://sentinel.rpc.nodeshub.online:443"
+           "https://public.stakewolle.com:443/cosmos/sentinel/rpc/"
+           "https://sentinel-rpc.validatornode.com:443"
+           "https://rpc.mathnodes.com:443"
+           "https://rpc.dvpn.me:443"
+           "https://sentinel-rpc.badgerbite.io:443"
+           "https://rpc-sentinel-ia.cosmosia.notional.ventures:443"
+           "https://sentinel-rpc.polkachu.com:443"
+           "https://rpc-sentinel.busurnode.com:443")
+
+for node in "${rpc_addresses[@]}"; do
+   echo "#####"
+   echo "$node stats:"
+   time /usr/local/bin/sentinelhub query block --node "$node" > /dev/null
+   echo "#####"
+   
 done
 ```
 
