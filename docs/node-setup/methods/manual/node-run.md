@@ -107,7 +107,7 @@ docker run --sig-proxy=false \
 </p>
 </details>
 
-## V2Ray
+### V2Ray
 
 To run the node, use the following command and remember to include the ports you chose in your `config.toml` and `v2ray.toml` files (in this example, replace `<API_PORT>` with `7777` and `<V2RAY_PORT>` with `9999` (without the `'<'` and `'>'`):
 
