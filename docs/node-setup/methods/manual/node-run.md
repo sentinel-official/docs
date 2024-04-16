@@ -13,7 +13,8 @@ Running a node can be done in two ways: with or without the autorestart function
  If you are running your node for testing purposes you can use the [**Node Faucet**](https://faucet.im/)
 :::
 
-## Enabling Autorestart Function
+## Enabling Autorestart Function (Without using a Passphrase)
+
 To use autorestart function you must have set `backend='test'` on `config.toml` file. This is the easiest way, as it doesn't require the passphrase to be entered every time the node stops for any reason. However, it's worth noting that this solution is not recommended.
 
 ### Wireguard
@@ -67,31 +68,13 @@ docker run -d \
 </p>
 </details>
 
-## Without Autorestart Function
+## Using a Passphrase (Without Autorestart Function)
 
-If you prefer not to initiate your node using the autorestart function, you should employ a screen session to detach from the node after executing the docker run command.
-
-### Create a Screen session
-
-Before running the node, we recommend starting a screen session to run the Docker command. First, install the screen package
-
-```bash
-sudo apt-get install screen
-```
-
-Open a new screen session with the following command ("dvpn' is the session name)
-
-```bash
-screen -t dvpn -S dvpn
-```
-
-Use the appropriate command to run the node based on the node type specified in the config.toml file. Wireguard To run the node, use the following command and remember to include the TCP and UDP ports
-
-### Run the Node
+If you prefer not to initiate your node using the autorestart function, you should execute the docker run command with 2 additional flags.
 
 Depending on the protocol you have selected, run the corresponding command
 
-**Wireguard**
+### Wireguard
 
 To run the node, use the following command and remember to include the ports you chose in your `config.toml` and `wireguard.toml` files (in this example, replace `<API_PORT>` with `7777` and `<WIREGUARD_PORT>` with `8888` (without the `'<'` and `'>'`):
 
@@ -100,7 +83,8 @@ To run the node, use the following command and remember to include the ports you
 <p>
 
 ```bash
-docker run --rm \
+docker run --sig-proxy=false \
+    --detach-keys="ctrl-q" \
     --name sentinel-dvpn-node \
     --interactive \
     --tty \
@@ -123,7 +107,7 @@ docker run --rm \
 </p>
 </details>
 
-**V2Ray**
+## V2Ray
 
 To run the node, use the following command and remember to include the ports you chose in your `config.toml` and `v2ray.toml` files (in this example, replace `<API_PORT>` with `7777` and `<V2RAY_PORT>` with `9999` (without the `'<'` and `'>'`):
 
@@ -132,7 +116,8 @@ To run the node, use the following command and remember to include the ports you
 <p>
 
 ```bash
-docker run --rm \
+docker run --sig-proxy=false \
+    --detach-keys="ctrl-q" \
     --interactive \
     --tty \
     --volume "${HOME}/.sentinelnode:/root/.sentinelnode" \
@@ -144,19 +129,27 @@ docker run --rm \
 </p>
 </details>
 
-### Detach from the screen session
 
-Detach from the node screen session
+### Start/Restart the Container
 
-```bash
-ctrl+a+d
-```
-
-To re-attach to the session type
+To restart a running container and be prompted to type your passphrase execute
 
 ```bash
-screen -x dvpn
+docker start -ai --detach-keys="ctrl-q" sentinel-dvpn-node
 ```
+
+### Attach to the container
+
+To attach to a running container execute
+
+```bash
+docker attach --detach-keys="ctrl-q" sentinel-dvpn-node
+```
+
+### Detach from the Docker Container
+
+If you want to detach from a running container accessed with any of the previous commands (`run`, `start/restart` or `attach`) just press `CTRL+Q` on your keyboard
+
 
 ## Post Node Run Commands
 
@@ -171,6 +164,8 @@ Node logs. You can specify a different number of logs if you need to view more o
 ```bash
 docker logs -f -n 100 sentinel-dvpn-node
 ```
+
+To detach from logs, just press CTRL+C on your keyboard
 
 Container list/details
 
