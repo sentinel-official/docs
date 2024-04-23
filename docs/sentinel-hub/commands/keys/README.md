@@ -150,14 +150,14 @@ zWHbcVDvtfxF/sSn8lo1SZWVt+L5UP+BMG1VPAQ=
 -----END TENDERMINT PRIVATE KEY-----
 ```
 
-## The keyring-backend option
+## The Keyring-Backend Option
 
 Interacting with a node requires a public-private key pair. A keyring is the container that holds these keys, which can be stored in various locations, each with a specified backend type.
 
 ```
 sentinelhub keys [subcommands] --keyring-backend [backend type]
 ```
-### Os backend
+### OS Backend
 
 The default `os` backend stores the keys in operating system's credential subsystem, which is convenient for most users without compromising on security. 
 
@@ -168,10 +168,10 @@ Here is a list of password managers corresponding to different operating systems
   - [libsecret](https://gitlab.gnome.org/GNOME/libsecret)
   - [kwallet](https://api.kde.org/frameworks/kwallet/html/index.html)
 
-### File backend
+### File Backend
 
-The `file` backend stores the encrypted keys inside the app's configuration directory. A password entry is required everytime a user access it, which may also result in multiple repeated password prompts in a single command.
+The `file` backend is the default choice, storing encrypted keys within the application's configuration directory. Each time a user accesses it, such as during container startup, they must enter a password. This interactive requirement prevents running it detached.
 
-### Test backend
+### Test Backend
 
-The `test` backend is a password-less variation of the `file` backend. It stores unencrypted keys inside the app's configuration directory and should only be used in testing environments. It should never be used in production.
+The `test` backend is like a simplified version of the `file` backend, but without the need for passwords. It keeps keys in plain text within the app's config folder and is meant solely for testing purposes. It's not recommended for production because it's less secure. In this scenario, you can opt to run the container in detached mode instead.

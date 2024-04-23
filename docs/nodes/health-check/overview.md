@@ -13,6 +13,10 @@ This check occurs multiple times a day and will test:
 - the node hourly price (4.16 DVPN for datacenters and 10 DVPN for residentials nodes)
 - the node connectivity
 
+:::note
+Node Health Checks currently happen **ONCE** a day. So, if you have recently run a dVPN node, expect some waiting time before you receive any outcomes.
+:::
+
 By implementing this process, the Subscription Plan ensures a continuous assessment, allowing for the addition of new nodes and the removal of problematic ones that require corrective measures.
 
 To check if your node has passed the health check, there are four ways to do it.

@@ -330,14 +330,54 @@ https://planwizard.basedapps.co.uk/nodes/<your_sent_node_address>/plans
 
 ```js
 {
-    "data": [
+   "data": [
         {
             "id": 1,
             "name": "General",
             "blockchain_id": 6,
             "is_managed_automatically": true
         }
-    ]
+   ]
+}
+```
+
+</p>
+</details>
+
+## `GET /nodes/:address/events`
+
+Retrieve the reason(s) why the node is not listed on the subscription plan
+
+```bash
+https://planwizard.basedapps.co.uk/nodes/<your_sent_node_address>/events
+```
+
+<details>
+<summary>Output</summary>
+<p>
+
+```js
+{
+   "data": [
+      {
+         "id": 42335,
+         "created_at": "2024-04-17T22:59:16.923093Z",
+         "node_id": 16354,
+         "entry": "Node residential status does not match requirement for plan Residential (ID 2)"
+      },
+      {
+         "id": 30512,
+         "created_at": "2024-04-17T20:59:17.774291Z",
+         "node_id": 16354,
+         "entry": "Node residential status does not match requirement for plan Residential (ID 2)"
+      },
+      {
+         "id": 36400,
+         "created_at": "2024-04-17T21:59:18.814638Z",
+         "node_id": 16354,
+         "entry": "Node residential status does not match requirement for plan Residential (ID 2)"
+      }
+   ]
 }
 ```
 

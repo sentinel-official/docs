@@ -12,6 +12,7 @@ Staking involves actively participating in the Sentinel Network by locking up a 
 Delegating allows DVPN holders who may not have the technical expertise or resources to run their own validator nodes to still participate in the network and earn rewards. Instead of staking their DVPN directly, holders delegate them to a validator or a staking pool. These validators or pools then use the aggregated stake to participate in block creation or validation on behalf of the delegators. Rewards earned through this process are then distributed proportionally among the delegators based on their contributed stake. Delegating allows for a more passive involvement in staking, as the delegated DVPNs remain under the control of their owners, who can freely transfer or unstake them at any time.
 
 The process of delegation involves the following steps:
+
 - **Set up a Wallet** that supports Sentinel DVPN Coin. You can explore wallets in the [respective section](/getting-started/wallets).
 - **Choose a Validator**: It's crucial to select a validator whom you trust with your assets. It's important to note that the validator will never own your stake, ensuring you retain full control. However, opting for a [reputable validator](/getting-started/dvpn-coin/staking/choose-validator) is essential to minimize slashing penalties and to support entities that contribute value to the blockchain, thereby enhancing the overall Sentinel ecosystem.
 

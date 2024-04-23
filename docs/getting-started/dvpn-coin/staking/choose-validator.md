@@ -5,7 +5,13 @@ sidebar_position: 2
 
 # How to choose the right Validator
 
-To effectively stake your DVPN, choosing the appropriate validator is crucial. Validators play a pivotal role in maintaining the Sentinel blockchain, ensuring the integrity of transactions and overseeing upgrades. Selecting dedicated validators is essential for the continued success of Sentinel. Here are key considerations when choosing a validator, listed in no particular order:
+To effectively stake your DVPN, choosing the appropriate validator is crucial. Validators play a pivotal role in maintaining the Sentinel blockchain, ensuring the integrity of transactions and overseeing upgrades. Selecting dedicated validators is essential for the continued success of Sentinel.
+
+:::note
+Be aware that the validator will automatically vote on proposals for you. However, if you choose to vote yourself, your vote will replace the validator's.
+:::
+
+Here are key considerations when choosing a validator, listed in no particular order:
 
 - **Reachable**. Ensure your chosen validator is easily reachable for inquiries or concerns. The ability to communicate with them is vital, especially during critical events. Validators with clear communication channels, often found through links on the [explorer](https://www.mintscan.io/sentinel/validators), are preferable.
 
