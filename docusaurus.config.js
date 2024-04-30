@@ -255,7 +255,7 @@ const config = {
                 label: 'Website',
               },
               {
-                href: 'https://www.mintscan.io/sentinel',
+                href: 'https://explorer.sentinel.co',
                 label: 'Explorer',
               },
               {
