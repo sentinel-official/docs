@@ -27,11 +27,12 @@ sidebar_position: 1
 
 - [Solar dVPN](https://t.me/solarlabs):  Announcement channel, but there is also a [Community Group](https://t.me/solarlabs_chat),
 - [Meile dVPN](https://t.me/MathNodes): Everything regarding Meile dVPN is discussed in this very active group
-- [Independent dVPN](https://t.me/bagimsizdvpn): The Turkish free dVPN that is becoming very popular
-- [BasedVPN](https://t.me/BasedVPN): The first free dVPN App based in UK
+- [Independent dVPN](https://t.me/independentdvpn): The Turkish free dVPN that is becoming very popular
+- [V2:App](https://t.me/v2app): A dVPN App powered by the advanced V2Ray technology
 
 
 ## Utility Bots
 
 - [Sentinel Validators Missed Blocks](https://t.me/sentinel_missed): Automated channel for monitoring validator missed blocks and jailings/unjailings
 - [Sentinel Whale Monitor](https://t.me/sentinel_whale_monitor): Automated channel for monitoring big transactions and foundation-related wallets
+- [Sentinel Node Monitor](https://t.me/dvpn_node_bot): A free Telegram bot designed for Sentinel node operators to monitor node information and status

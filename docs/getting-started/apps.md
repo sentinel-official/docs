@@ -13,7 +13,6 @@ import {
   Decentr,
   Carbon,
   Meile,
-  Basedvpn,
   Foxta,
   Solar,
 } from '../../src/icons';
@@ -47,11 +46,11 @@ The following dVPN apps are built on top of the Sentinel Protocol. This is why w
         svgFile="/icons/v2.svg"
     />
     <Card
-        title="Independent dVPN (formerly Bagimsiz)"
+        title="Independent dVPN"
         description="Independent dVPN is a Turkish free and fully decentralized service created by volunteers who prioritize digital human rights, offering powerful features like WireGuard and V2Ray support."
-        to="https://bagimsizvpn.com"
+        to="https://independentdvpn.com"
         icon=""
-        svgFile="/icons/bagimsiz.png"
+        svgFile="/icons/independentdvpn.png"
     />
     <Card
         title="Breadcrumbs"
@@ -64,7 +63,7 @@ The following dVPN apps are built on top of the Sentinel Protocol. This is why w
         title="Airdrop VPN"
         description="Airdrop VPN, as the name suggests, specializes in airdrops and exclusively features residential nodes. This specialization ensures remarkable reliability and resilience against any geoblocking services."
         to="#"
-        icon={<Basedvpn />}
+        icon={<AirdropVPN />}
         svgFile=""
     /> -->
     </Section>

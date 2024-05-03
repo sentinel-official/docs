@@ -21,7 +21,6 @@ export { default as Decentr } from './Decentr';
 export { default as Carbon } from './Carbon';
 export { default as NodeSpawner } from './NodeSpawner';
 export { default as Meile } from './Meile';
-export { default as Basedvpn } from './Basedvpn';
 export { default as Foxta } from './Foxta';
 export { default as Solar } from './Solar';
 export { default as Keplr } from './Keplr';
