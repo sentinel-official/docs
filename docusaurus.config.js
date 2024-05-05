@@ -212,7 +212,7 @@ const config = {
             position: 'right',
             items: [
               {
-                href: 'https://x.com/sentinelvpn',
+                href: 'https://x.com/sentineldvpn',
                 label: 'X/Twitter',
               },
               {
@@ -334,7 +334,7 @@ const config = {
             items: [
               {
                 label: 'X',
-                href: 'https://x.com/sentinelvpn',
+                href: 'https://x.com/sentineldvpn',
               },
               {
                 label: 'Telegram',
