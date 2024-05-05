@@ -6,7 +6,7 @@ Contributions come in the form of writing documentation, raising issues, and any
 
 Please don't submit a pull request to ask a question. Instead, join us in the following communities, and ask all your questions.
 
-- [Sentinel Telegram community](https://t.me/sentinel_co)
+- [Sentinel Telegram community](https://t.me/sentineldvpn)
 - [Sentinel Discord community](https://discord.com/invite/mmAA8qF)
 
 

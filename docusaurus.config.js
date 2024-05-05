@@ -216,7 +216,7 @@ const config = {
                 label: 'X/Twitter',
               },
               {
-                href: 'https://t.me/sentinel_co',
+                href: 'https://t.me/sentineldvpn',
                 label: 'Telegram',
               },
               {
@@ -338,7 +338,7 @@ const config = {
               },
               {
                 label: 'Telegram',
-                href: 'https://t.me/sentinel_co',
+                href: 'https://t.me/sentineldvpn',
               },
               {
                 label: 'Discord',

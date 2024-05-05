@@ -8,7 +8,7 @@ sidebar_position: 1
 
 ## Official
 
-- [Sentinel dVPN](https://t.me/sentinel_co): The official main community channel
+- [Sentinel dVPN](https://t.me/sentineldvpn): The official main community channel
 - [Sentinel Official Announcements](https://t.me/Sentinel_Announcements): Official Sentinel news and announcements
 - [Sentinel Node Network](https://t.me/SentinelNodeNetwork): A group for Sentinel node operators
 
