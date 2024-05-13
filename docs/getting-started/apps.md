@@ -15,6 +15,7 @@ import {
   Meile,
   Foxta,
   Solar,
+  SentinelCore,
 } from '../../src/icons';
 
 The following dVPN apps are built on top of the Sentinel Protocol. This is why we refer to Sentinel as a network of independent dVPN (decentralized Virtual Private Network) applications, rather than just a single consumer-facing dVPN.
@@ -25,6 +26,13 @@ The following dVPN apps are built on top of the Sentinel Protocol. This is why w
               id="core-sdks"
               HeadingTag="h4"
             >
+    <Card
+        title="Sentinel Shield dVPN"
+        description="Open source, p2p, trustless architecture powers one of the most decentralized consumer-facing DePIN applications ever created. Everything from peer discovery to connection authorization is through the blockchain; encrypted and safely in your hands, not in a VPN company's database."
+        to="https://shield.sentinel.co/"
+        icon={<SentinelCore />}
+        svgFile=""
+    />
     <Card
         title="Solar dVPN"
         description="SOLAR dVPN is a blockchain-based decentralized VPN service. Using mobile & desktop apps, it allows you to access hundreds of community-managed servers all around the world and use them as your private & secure gateway to the Internet."
