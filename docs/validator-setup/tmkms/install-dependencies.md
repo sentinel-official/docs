@@ -14,6 +14,8 @@ Start by opening the node you intend to run TMKMS (not the node you validate on)
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 ```
 
+Select option `1) Proceed with standard installation (default - just press enter)`
+
 Source the `env` file
 
 ```bash
