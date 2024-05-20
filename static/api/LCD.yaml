@@ -19978,6 +19978,606 @@ paths:
       tags:
       - mint
       - Query
+  /sentinel/nodes:
+    get:
+      operationId: Nodes
+      parameters:
+      - description: 'count_total is set to true  to indicate that the result set
+          should include a count of the total number of items available for pagination in UIs.
+          count_total is only respected when offset is used. It is ignored when key is set.'
+        in: query
+        name: pagination.count_total
+        required: false
+        schema:
+          type: boolean
+      - description: 'limit is the total number of results to be returned in the result page. If left empty it will default to a value to be set by each app.'
+        in: query
+        name: pagination.limit
+        required: false
+        schema:
+          format: uint64
+          type: string
+      - description: 'key is a value returned in PageResponse.next_key to begin querying the next page most efficiently. Only one of offset or key hould be set.'
+        in: query
+        name: pagination.key
+        required: false
+        schema:
+          format: byte
+          type: string
+      - description: 'offset is a numeric offset that can be used when key is unavailable. It is less efficient than using key. Only one of offset or key should be set.'
+        in: query
+        name: pagination.offset
+        required: false
+        schema:
+          format: uint64
+          type: string
+      - description: 'reverse is set to true if results are to be returned in the descending order. Since: cosmos-sdk 0.43'
+        in: query
+        name: pagination.reverse
+        required: false
+        schema:
+          type: boolean
+      responses:
+        '200':
+          content:
+            '*/*':
+              schema:
+                description: QueryNodeResponse is response type for the Query/Plan
+                  RPC method.
+                properties:
+                  nodes:
+                    description: nodes defines the queried parameter.
+                    properties:
+                      address:
+                        type: string
+                        format: string
+                      gygabyte_prices:
+                        properties:
+                          denom:
+                            type: string
+                            format: string
+                          amount:
+                            type: string
+                            format: uint64
+                        type: object
+                      hourly_prices:
+                        properties:
+                          denom:
+                            type: string
+                            format: string
+                          amount:
+                            type: string
+                            format: uint64
+                        type: object
+                      remote_url:
+                        type: string
+                        format: string
+                      inactive_at:
+                        type: string
+                        format: date-time
+                      status:
+                        type: string
+                        format: string
+                      status_at:
+                        type: string
+                        format: date-time
+                    type: object
+                  pagination:
+                    description: pagination defines the pagination in the response.
+                    properties:
+                      next_key:
+                        format: byte
+                        title: 'next_key is the key to be passed to PageRequest.key
+                          to
+
+                          query the next page most efficiently'
+                        type: string
+                      total:
+                        format: uint64
+                        title: 'total is total number of results available if PageRequest.count_total
+
+                          was set, its value is undefined otherwise'
+                        type: string
+                    type: object
+                type: object
+          description: A successful response.
+        default:
+          content:
+            '*/*':
+              schema:
+                properties:
+                  code:
+                    format: int32
+                    type: integer
+                  details:
+                    items:
+                      properties:
+                        type_url:
+                          type: string
+                        value:
+                          format: byte
+                          type: string
+                      type: object
+                    type: array
+                  error:
+                    type: string
+                  message:
+                    type: string
+                type: object
+          description: An unexpected error response.
+      summary: ''
+      tags:
+      - nodes
+      - Query
+  /sentinel/nodes/{node_address}:
+    get:
+      operationId: Node Address
+      parameters:
+      - description: 'Node Address defines the unique address of the node'
+        in: query
+        name: node_address
+        required: false
+        schema:
+          format: uint64
+          type: string
+      responses:
+        '200':
+          content:
+            '*/*':
+              schema:
+                description: QueryNodeResponse is response type for the Query/Plan
+                  RPC method.
+                properties:
+                  nodes:
+                    description: nodes defines the queried parameter.
+                    properties:
+                      address:
+                        type: string
+                        format: string
+                      gygabyte_prices:
+                        properties:
+                          denom:
+                            type: string
+                            format: string
+                          amount:
+                            type: string
+                            format: uint64
+                        type: object
+                      hourly_prices:
+                        properties:
+                          denom:
+                            type: string
+                            format: string
+                          amount:
+                            type: string
+                            format: uint64
+                        type: object
+                      remote_url:
+                        type: string
+                        format: string
+                      inactive_at:
+                        type: string
+                        format: date-time
+                      status:
+                        type: string
+                        format: string
+                      status_at:
+                        type: string
+                        format: date-time
+                    type: object
+                type: object
+          description: A successful response.
+        default:
+          content:
+            '*/*':
+              schema:
+                properties:
+                  code:
+                    format: int32
+                    type: integer
+                  details:
+                    items:
+                      properties:
+                        type_url:
+                          type: string
+                        value:
+                          format: byte
+                          type: string
+                      type: object
+                    type: array
+                  error:
+                    type: string
+                  message:
+                    type: string
+                type: object
+          description: An unexpected error response.
+      summary: ''
+      tags:
+      - nodes
+      - Query
+  /sentinel/nodes/{node_address}/payouts:
+    get:
+      operationId: Node Payouts
+      parameters:
+      - description: 'Node Payouts defines the payouts of the node'
+        in: query
+        name: node_address
+        required: false
+        schema:
+          format: uint64
+          type: string
+      responses:
+        '200':
+          content:
+            '*/*':
+              schema:
+                description: QueryNodeResponse is response type for the Query/Plan
+                  RPC method.
+                properties:
+                  payouts:
+                    description: payouts defines the payouts parameter for the selected node.
+                    properties:
+                      id:
+                        type: string
+                        format: uint64
+                      address:
+                        description: the operator address
+                        type: string
+                        format: string
+                      node_address:
+                        description: the node address
+                        type: string
+                        format: string
+                      hours:
+                        type: string
+                        format: uint64
+                      price:
+                        properties:
+                          denom:
+                            type: string
+                            format: string
+                          amount:
+                            type: string
+                            format: uint64
+                        type: object
+                      next_at:
+                        type: string
+                        format: date-time
+                    type: object
+                  pagination:
+                    description: pagination defines the pagination in the response.
+                    properties:
+                      next_key:
+                        format: byte
+                        title: 'next_key is the key to be passed to PageRequest.key
+                          to
+
+                          query the next page most efficiently'
+                        type: string
+                      total:
+                        format: uint64
+                        title: 'total is total number of results available if PageRequest.count_total
+
+                          was set, its value is undefined otherwise'
+                        type: string
+                    type: object
+                type: object
+          description: A successful response.
+        default:
+          content:
+            '*/*':
+              schema:
+                properties:
+                  code:
+                    format: int32
+                    type: integer
+                  details:
+                    items:
+                      properties:
+                        type_url:
+                          type: string
+                        value:
+                          format: byte
+                          type: string
+                      type: object
+                    type: array
+                  error:
+                    type: string
+                  message:
+                    type: string
+                type: object
+          description: An unexpected error response.
+      summary: ''
+      tags:
+      - nodes
+      - Query
+  /sentinel/nodes/{node_address}/sessions:
+    get:
+      operationId: Node Sessions
+      parameters:
+      - description: 'Node Sessions defines the sessions of the node'
+        in: query
+        name: node_address
+        required: false
+        schema:
+          format: uint64
+          type: string
+      - description: 'count_total is set to true  to indicate that the result set
+          should include a count of the total number of items available for pagination in UIs.
+          count_total is only respected when offset is used. It is ignored when key is set.'
+        in: query
+        name: pagination.count_total
+        required: false
+        schema:
+          type: boolean
+      - description: 'limit is the total number of results to be returned in the result page. If left empty it will default to a value to be set by each app.'
+        in: query
+        name: pagination.limit
+        required: false
+        schema:
+          format: uint64
+          type: string
+      - description: 'key is a value returned in PageResponse.next_key to begin querying the next page most efficiently. Only one of offset or key hould be set.'
+        in: query
+        name: pagination.key
+        required: false
+        schema:
+          format: byte
+          type: string
+      - description: 'offset is a numeric offset that can be used when key is unavailable. It is less efficient than using key. Only one of offset or key should be set.'
+        in: query
+        name: pagination.offset
+        required: false
+        schema:
+          format: uint64
+          type: string
+      - description: 'reverse is set to true if results are to be returned in the descending order. Since: cosmos-sdk 0.43'
+        in: query
+        name: pagination.reverse
+        required: false
+        schema:
+          type: boolean
+      responses:
+        '200':
+          content:
+            '*/*':
+              schema:
+                description: QueryNodeResponse is response type for the Query/Plan
+                  RPC method.
+                properties:
+                  sessions:
+                    description: sessions defines the sessions parameter for the selected node.
+                    properties:
+                      id:
+                        type: string
+                        format: uint64
+                      subscription_id:
+                        type: string
+                        format: uint64
+                      node_address:
+                        description: the node address
+                        type: string
+                        format: string
+                      address:
+                        description: the operator address
+                        type: string
+                        format: string
+                      bandwidth:
+                        properties:
+                          upload:
+                            type: string
+                            format: uint64
+                          download:
+                            type: string
+                            format: uint64
+                        type: object
+                      duration:
+                        type: string
+                        format: uint64
+                      inactive_at:
+                        type: string
+                        format: date-time
+                      status:
+                        type: string
+                        format: string
+                      status_at:
+                        type: string
+                        format: date-time
+                    type: object
+                  pagination:
+                    description: pagination defines the pagination in the response.
+                    properties:
+                      next_key:
+                        format: byte
+                        title: 'next_key is the key to be passed to PageRequest.key
+                          to
+
+                          query the next page most efficiently'
+                        type: string
+                      total:
+                        format: uint64
+                        title: 'total is total number of results available if PageRequest.count_total
+
+                          was set, its value is undefined otherwise'
+                        type: string
+                    type: object
+                type: object
+          description: A successful response.
+        default:
+          content:
+            '*/*':
+              schema:
+                properties:
+                  code:
+                    format: int32
+                    type: integer
+                  details:
+                    items:
+                      properties:
+                        type_url:
+                          type: string
+                        value:
+                          format: byte
+                          type: string
+                      type: object
+                    type: array
+                  error:
+                    type: string
+                  message:
+                    type: string
+                type: object
+          description: An unexpected error response.
+      summary: ''
+      tags:
+      - nodes
+      - Query
+  /sentinel/nodes/{node_address}/subscriptions:
+    get:
+      operationId: Node Subscriptions
+      parameters:
+      - description: 'Node Subscriptions defines the subscriptions of the node'
+        in: query
+        name: node_address
+        required: false
+        schema:
+          format: uint64
+          type: string
+      - description: 'count_total is set to true  to indicate that the result set
+          should include a count of the total number of items available for pagination in UIs.
+          count_total is only respected when offset is used. It is ignored when key is set.'
+        in: query
+        name: pagination.count_total
+        required: false
+        schema:
+          type: boolean
+      - description: 'limit is the total number of results to be returned in the result page. If left empty it will default to a value to be set by each app.'
+        in: query
+        name: pagination.limit
+        required: false
+        schema:
+          format: uint64
+          type: string
+      - description: 'key is a value returned in PageResponse.next_key to begin querying the next page most efficiently. Only one of offset or key hould be set.'
+        in: query
+        name: pagination.key
+        required: false
+        schema:
+          format: byte
+          type: string
+      - description: 'offset is a numeric offset that can be used when key is unavailable. It is less efficient than using key. Only one of offset or key should be set.'
+        in: query
+        name: pagination.offset
+        required: false
+        schema:
+          format: uint64
+          type: string
+      - description: 'reverse is set to true if results are to be returned in the descending order. Since: cosmos-sdk 0.43'
+        in: query
+        name: pagination.reverse
+        required: false
+        schema:
+          type: boolean
+      responses:
+        '200':
+          content:
+            '*/*':
+              schema:
+                description: QueryNodeResponse is response type for the Query/Plan
+                  RPC method.
+                properties:
+                  subscriptions:
+                    description: subscriptions defines the subscription parameter for the selected node.
+                    properties:
+                      type:
+                        description: the @type field specifies that the entity being described is a node subscription within the "/sentinel.subscription.v2" namespace
+                        type: string
+                        format: string
+                      base:
+                        properties:
+                          id:
+                            type: string
+                            format: uint64
+                          address:
+                            description: the subscriber's operator address
+                            type: string
+                            format: string
+                          inactive_at:
+                            type: string
+                            format: date-time
+                          status:
+                            type: string
+                            format: string
+                          status_at:
+                            type: string
+                            format: date-time
+                        type: object
+                      node_address:
+                        description: the node address
+                        type: string
+                        format: string
+                      gygabytes:
+                        type: string
+                        format: uint64
+                      hours:
+                        type: string
+                        format: uint64
+                      deposit:
+                        properties:
+                          denom:
+                            type: string
+                            format: string
+                          amount:
+                            type: string
+                            format: uint64
+                        type: object
+                    type: object
+                  pagination:
+                    description: pagination defines the pagination in the response.
+                    properties:
+                      next_key:
+                        format: byte
+                        title: 'next_key is the key to be passed to PageRequest.key
+                          to
+
+                          query the next page most efficiently'
+                        type: string
+                      total:
+                        format: uint64
+                        title: 'total is total number of results available if PageRequest.count_total
+
+                          was set, its value is undefined otherwise'
+                        type: string
+                    type: object
+                type: object
+          description: A successful response.
+        default:
+          content:
+            '*/*':
+              schema:
+                properties:
+                  code:
+                    format: int32
+                    type: integer
+                  details:
+                    items:
+                      properties:
+                        type_url:
+                          type: string
+                        value:
+                          format: byte
+                          type: string
+                      type: object
+                    type: array
+                  error:
+                    type: string
+                  message:
+                    type: string
+                type: object
+          description: An unexpected error response.
+      summary: ''
+      tags:
+      - nodes
+      - Query
   /cosmos/params/v1beta1/params:
     get:
       operationId: Params
@@ -20041,370 +20641,6 @@ paths:
       summary: ''
       tags:
       - params
-      - Query
-  /sentinel/plans/{plan_id}:
-    get:
-      operationId: Plan
-      parameters:
-      - description: 'plan_id defines the unique id of the plan'
-        in: query
-        name: plan_id
-        required: false
-        schema:
-          format: uint64
-          type: string
-      responses:
-        '200':
-          content:
-            '*/*':
-              schema:
-                description: QueryPlanResponse is response type for the Query/Plan
-                  RPC method.
-                properties:
-                  plan:
-                    description: plan defines the queried parameter.
-                    properties:
-                      id:
-                        description: the queried plan id
-                        type: string
-                      provider_address:
-                        type: string
-                      duration:
-                        type: string
-                      gygabytes:
-                        type: string
-                      prices:
-                        properties:
-                          denom:
-                            type: string
-                          amount:
-                            type: string
-                      status:
-                        type: string
-                      status_at:
-                        type: string
-                    type: object
-                type: object
-          description: A successful response.
-        default:
-          content:
-            '*/*':
-              schema:
-                properties:
-                  code:
-                    format: int32
-                    type: integer
-                  details:
-                    items:
-                      properties:
-                        type_url:
-                          type: string
-                        value:
-                          format: byte
-                          type: string
-                      type: object
-                    type: array
-                  error:
-                    type: string
-                  message:
-                    type: string
-                type: object
-          description: An unexpected error response.
-      summary: ''
-      tags:
-      - plans
-      - Query
-  /sentinel/plans/{id_plan}/nodes:
-    get:
-      operationId: Plan Nodes
-      parameters:
-      - name: id_plan
-        description: 'id_plan defines the unique id of the plan'
-        in: query
-        required: false
-        schema:
-          format: uint64
-          type: string
-        x-order: 1
-      - description: 'count_total is set to true  to indicate that the result set
-          should include
-
-          a count of the total number of items available for pagination in UIs.
-
-          count_total is only respected when offset is used. It is ignored when key
-
-          is set.'
-        in: query
-        name: pagination.count_total
-        required: false
-        schema:
-          type: boolean
-      - description: 'limit is the total number of results to be returned in the result
-          page.
-
-          If left empty it will default to a value to be set by each app.'
-        in: query
-        name: pagination.limit
-        required: false
-        schema:
-          format: uint64
-          type: string
-      - description: 'key is a value returned in PageResponse.next_key to begin
-
-          querying the next page most efficiently. Only one of offset or key
-
-          should be set.'
-        in: query
-        name: pagination.key
-        required: false
-        schema:
-          format: byte
-          type: string
-      - description: 'offset is a numeric offset that can be used when key is unavailable.
-
-          It is less efficient than using key. Only one of offset or key should
-
-          be set.'
-        in: query
-        name: pagination.offset
-        required: false
-        schema:
-          format: uint64
-          type: string
-      - description: 'reverse is set to true if results are to be returned in the
-          descending order.
-
-
-          Since: cosmos-sdk 0.43'
-        in: query
-        name: pagination.reverse
-        required: false
-        schema:
-          type: boolean
-      responses:
-        '200':
-          content:
-            '*/*':
-              schema:
-                description: QueryPlanResponse is response type for the Query/Plan
-                  RPC method.
-                properties:
-                  pagination:
-                    description: pagination defines the pagination in the response.
-                    properties:
-                      next_key:
-                        format: byte
-                        title: 'next_key is the key to be passed to PageRequest.key
-                          to
-
-                          query the next page most efficiently'
-                        type: string
-                      total:
-                        format: uint64
-                        title: 'total is total number of results available if PageRequest.count_total
-
-                          was set, its value is undefined otherwise'
-                        type: string
-                    type: object
-                  nodes:
-                    description: the list of node added into the queried subscription plan.
-                    properties:
-                      address:
-                        type: string
-                      gygabyte_prices:
-                        properties:
-                          denom:
-                            type: string
-                          amount:
-                            type: string
-                      hourly_prices:
-                        properties:
-                          denom:
-                            type: string
-                          amount:
-                            type: string
-                      remote_url:
-                        type: string
-                      inactive_at:
-                        type: string
-                      status:
-                        type: string
-                      status_at:
-                        type: string
-                    type: object
-                type: object
-          description: A successful response.
-        default:
-          content:
-            '*/*':
-              schema:
-                properties:
-                  code:
-                    format: int32
-                    type: integer
-                  details:
-                    items:
-                      properties:
-                        type_url:
-                          type: string
-                        value:
-                          format: byte
-                          type: string
-                      type: object
-                    type: array
-                  error:
-                    type: string
-                  message:
-                    type: string
-                type: object
-          description: An unexpected error response.
-      summary: ''
-      tags:
-      - plans
-      - Query
-  /sentinel/plans/{id_plan}/subscriptions:
-    get:
-      operationId: Plan Subscriptions
-      parameters:
-      - name: id_plan
-        description: 'id_plan defines the unique id of the plan'
-        in: query
-        required: false
-        schema:
-          format: uint64
-          type: string
-        x-order: 1
-      - description: 'count_total is set to true  to indicate that the result set
-          should include
-
-          a count of the total number of items available for pagination in UIs.
-
-          count_total is only respected when offset is used. It is ignored when key
-
-          is set.'
-        in: query
-        name: pagination.count_total
-        required: false
-        schema:
-          type: boolean
-      - description: 'limit is the total number of results to be returned in the result
-          page.
-
-          If left empty it will default to a value to be set by each app.'
-        in: query
-        name: pagination.limit
-        required: false
-        schema:
-          format: uint64
-          type: string
-      - description: 'key is a value returned in PageResponse.next_key to begin
-
-          querying the next page most efficiently. Only one of offset or key
-
-          should be set.'
-        in: query
-        name: pagination.key
-        required: false
-        schema:
-          format: byte
-          type: string
-      - description: 'offset is a numeric offset that can be used when key is unavailable.
-
-          It is less efficient than using key. Only one of offset or key should
-
-          be set.'
-        in: query
-        name: pagination.offset
-        required: false
-        schema:
-          format: uint64
-          type: string
-      - description: 'reverse is set to true if results are to be returned in the
-          descending order.
-
-
-          Since: cosmos-sdk 0.43'
-        in: query
-        name: pagination.reverse
-        required: false
-        schema:
-          type: boolean
-      responses:
-        '200':
-          content:
-            '*/*':
-              schema:
-                description: QueryPlanResponse is response type for the Query/Plan
-                  RPC method.
-                properties:
-                  pagination:
-                    description: pagination defines the pagination in the response.
-                    properties:
-                      next_key:
-                        format: byte
-                        title: 'next_key is the key to be passed to PageRequest.key
-                          to
-
-                          query the next page most efficiently'
-                        type: string
-                      total:
-                        format: uint64
-                        title: 'total is total number of results available if PageRequest.count_total
-
-                          was set, its value is undefined otherwise'
-                        type: string
-                    type: object
-                  subscriptions:
-                    description: the list of subscription plan subscriptions.
-                    properties:
-                      type:
-                        type: string
-                      base:
-                        properties:
-                          id:
-                            type: string
-                          address:
-                            type: string
-                          inactive_at:
-                            type: string
-                          status:
-                            type: string
-                          status_at:
-                            type: string
-                      plan_id:
-                        type: string
-                      denom:
-                        type: string
-                    type: object
-                type: object
-          description: A successful response.
-        default:
-          content:
-            '*/*':
-              schema:
-                properties:
-                  code:
-                    format: int32
-                    type: integer
-                  details:
-                    items:
-                      properties:
-                        type_url:
-                          type: string
-                        value:
-                          format: byte
-                          type: string
-                      type: object
-                    type: array
-                  error:
-                    type: string
-                  message:
-                    type: string
-                type: object
-          description: An unexpected error response.
-      summary: ''
-      tags:
-      - plans
       - Query
   /sentinel/plans:
     get:
@@ -20473,6 +20709,254 @@ paths:
                 description: QueryPlanResponse is response type for the Query/Plan
                   RPC method.
                 properties:
+                  plans:
+                    description: plans defines the queried parameter.
+                    properties:
+                      id:
+                        description: the queried plan id
+                        type: string
+                        schema:
+                        format: uint64
+                      provider_address:
+                        type: string
+                        format: string
+                      duration:
+                        type: string
+                        format: string
+                      gygabytes:
+                        type: string
+                        format: uint64
+                      prices:
+                        properties:
+                          denom:
+                            type: string
+                            format: string
+                          amount:
+                            type: string
+                            format: uint64
+                        type: object
+                      status:
+                        type: string
+                        format: string
+                      status_at:
+                        type: string
+                        format: date-time
+                    type: object
+                  pagination:
+                    description: pagination defines the pagination in the response.
+                    properties:
+                      next_key:
+                        format: byte
+                        title: 'next_key is the key to be passed to PageRequest.key to query the next page most efficiently'
+                        type: string
+                      total:
+                        format: uint64
+                        title: 'total is total number of results available if PageRequest.count_total was set, its value is undefined otherwise'
+                        type: string
+                    type: object
+                type: object
+          description: A successful response.
+        default:
+          content:
+            '*/*':
+              schema:
+                properties:
+                  code:
+                    format: int32
+                    type: integer
+                  details:
+                    items:
+                      properties:
+                        type_url:
+                          type: string
+                        value:
+                          format: byte
+                          type: string
+                      type: object
+                    type: array
+                  error:
+                    type: string
+                  message:
+                    type: string
+                type: object
+          description: An unexpected error response.
+      summary: ''
+      tags:
+      - plans
+      - Query
+  /sentinel/plans/{plan_id}:
+    get:
+      operationId: Plan
+      parameters:
+      - description: 'plan_id defines the unique id of the plan'
+        in: query
+        name: plan_id
+        required: false
+        schema:
+          format: uint64
+          type: string
+      responses:
+        '200':
+          content:
+            '*/*':
+              schema:
+                description: QueryPlanResponse is response type for the Query/Plan
+                  RPC method.
+                properties:
+                  plan:
+                    description: plan defines the queried parameter.
+                    properties:
+                      id:
+                        description: the queried plan id
+                        type: string
+                        format: uint64
+                      provider_address:
+                        type: string
+                        format: string
+                      duration:
+                        type: string
+                        format: string
+                      gygabytes:
+                        type: string
+                        format: uint64
+                      prices:
+                        properties:
+                          denom:
+                            type: string
+                            format: string
+                          amount:
+                            type: string
+                            format: uint64
+                        type: object
+                      status:
+                        type: string
+                        format: string
+                      status_at:
+                        type: string
+                        format: date-time
+                    type: object
+                type: object
+          description: A successful response.
+        default:
+          content:
+            '*/*':
+              schema:
+                properties:
+                  code:
+                    format: int32
+                    type: integer
+                  details:
+                    items:
+                      properties:
+                        type_url:
+                          type: string
+                        value:
+                          format: byte
+                          type: string
+                      type: object
+                    type: array
+                  error:
+                    type: string
+                  message:
+                    type: string
+                type: object
+          description: An unexpected error response.
+      summary: ''
+      tags:
+      - plans
+      - Query
+  /sentinel/plans/{id_plan}/nodes:
+    get:
+      operationId: Plan Nodes
+      parameters:
+      - name: id_plan
+        description: 'id_plan defines the unique id of the plan'
+        in: query
+        required: false
+        schema:
+          format: uint64
+          type: string
+        x-order: 1
+      - description: 'count_total is set to true  to indicate that the result set
+          should include  a count of the total number of items available for pagination in UIs.
+          count_total is only respected when offset is used. It is ignored when key is set.'
+        in: query
+        name: pagination.count_total
+        required: false
+        schema:
+          type: boolean
+      - description: 'limit is the total number of results to be returned in the result page. If left empty it will default to a value to be set by each app.'
+        in: query
+        name: pagination.limit
+        required: false
+        schema:
+          format: uint64
+          type: string
+      - description: 'key is a value returned in PageResponse.next_key to begin querying the next page most efficiently. Only one of offset or key should be set.'
+        in: query
+        name: pagination.key
+        required: false
+        schema:
+          format: byte
+          type: string
+      - description: 'offset is a numeric offset that can be used when key is unavailable. It is less efficient than using key. Only one of offset or key should be set.'
+        in: query
+        name: pagination.offset
+        required: false
+        schema:
+          format: uint64
+          type: string
+      - description: 'reverse is set to true if results are to be returned in the descending order. Since: cosmos-sdk 0.43'
+        in: query
+        name: pagination.reverse
+        required: false
+        schema:
+          type: boolean
+      responses:
+        '200':
+          content:
+            '*/*':
+              schema:
+                description: QueryPlanResponse is response type for the Query/Plan
+                  RPC method.
+                properties:
+                  nodes:
+                    description: the list of node added into the queried subscription plan.
+                    properties:
+                      address:
+                        type: string
+                        format: string
+                      gygabyte_prices:
+                        properties:
+                          denom:
+                            type: string
+                            format: string
+                          amount:
+                            type: string
+                            format: uint64
+                        type: object
+                      hourly_prices:
+                        properties:
+                          denom:
+                            type: string
+                            format: string
+                          amount:
+                            type: string
+                            format: uint64
+                        type: object
+                      remote_url:
+                        type: string
+                        format: string
+                      inactive_at:
+                        type: string
+                        format: date-time
+                      status:
+                        type: string
+                        format: string
+                      status_at:
+                        type: string
+                        format: date-time
+                    type: object
                   pagination:
                     description: pagination defines the pagination in the response.
                     properties:
@@ -20490,27 +20974,132 @@ paths:
                           was set, its value is undefined otherwise'
                         type: string
                     type: object
-                  plan:
-                    description: plan defines the queried parameter.
+                type: object
+          description: A successful response.
+        default:
+          content:
+            '*/*':
+              schema:
+                properties:
+                  code:
+                    format: int32
+                    type: integer
+                  details:
+                    items:
+                      properties:
+                        type_url:
+                          type: string
+                        value:
+                          format: byte
+                          type: string
+                      type: object
+                    type: array
+                  error:
+                    type: string
+                  message:
+                    type: string
+                type: object
+          description: An unexpected error response.
+      summary: ''
+      tags:
+      - plans
+      - Query
+  /sentinel/plans/{id_plan}/subscriptions:
+    get:
+      operationId: Plan Subscriptions
+      parameters:
+      - name: id_plan
+        description: 'id_plan defines the unique id of the plan'
+        in: query
+        required: false
+        schema:
+          format: uint64
+          type: string
+        x-order: 1
+      - description: 'count_total is set to true  to indicate that the result set
+          should include a count of the total number of items available for pagination in UIs.
+          count_total is only respected when offset is used. It is ignored when key is set.'
+        in: query
+        name: pagination.count_total
+        required: false
+        schema:
+          type: boolean
+      - description: 'limit is the total number of results to be returned in the result page. If left empty it will default to a value to be set by each app.'
+        in: query
+        name: pagination.limit
+        required: false
+        schema:
+          format: uint64
+          type: string
+      - description: 'key is a value returned in PageResponse.next_key to begin querying the next page most efficiently. Only one of offset or key should be set.'
+        in: query
+        name: pagination.key
+        required: false
+        schema:
+          format: byte
+          type: string
+      - description: 'offset is a numeric offset that can be used when key is unavailable. It is less efficient than using key. Only one of offset or key should be set.'
+        in: query
+        name: pagination.offset
+        required: false
+        schema:
+          format: uint64
+          type: string
+      - description: 'reverse is set to true if results are to be returned in the descending order. Since: cosmos-sdk 0.43'
+        in: query
+        name: pagination.reverse
+        required: false
+        schema:
+          type: boolean
+      responses:
+        '200':
+          content:
+            '*/*':
+              schema:
+                description: QueryPlanResponse is response type for the Query/Plan
+                  RPC method.
+                properties:
+                  subscriptions:
+                    description: the list of subscription plan subscriptions.
                     properties:
-                      id:
-                        description: the queried plan id
+                      type:
                         type: string
-                      provider_address:
-                        type: string
-                      duration:
-                        type: string
-                      gygabytes:
-                        type: string
-                      prices:
+                        format: string
+                      base:
                         properties:
-                          denom:
+                          id:
                             type: string
-                          amount:
+                            format: uint64
+                          address:
                             type: string
-                      status:
+                            format: string
+                          inactive_at:
+                            type: string
+                            format: date-time
+                          status:
+                            type: string
+                            format: string
+                          status_at:
+                            type: string
+                            format: date-time
+                        type: object
+                      plan_id:
                         type: string
-                      status_at:
+                        format: uint64
+                      denom:
+                        type: string
+                        format: string
+                    type: object
+                  pagination:
+                    description: pagination defines the pagination in the response.
+                    properties:
+                      next_key:
+                        format: byte
+                        title: 'next_key is the key to be passed to PageRequest.key to query the next page most efficiently'
+                        type: string
+                      total:
+                        format: uint64
+                        title: 'total is total number of results available if PageRequest.count_total was set, its value is undefined otherwise'
                         type: string
                     type: object
                 type: object
@@ -25808,3 +26397,6 @@ paths:
 servers:
 - description: Sentinel Mainnet Node
   url: https://lcd.sentinel.co
+servers:
+- description: Trinity Validator
+  url: https://api.trinityvalidator.com
