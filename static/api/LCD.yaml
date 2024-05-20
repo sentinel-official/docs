@@ -27371,5 +27371,4 @@ paths:
       - Query
 servers:
 - description: Sentinel Mainnet Node
-  url: https://api.trinityvalidator.com
-  #url: https://lcd.sentinel.co
+  url: https://lcd.sentinel.co
