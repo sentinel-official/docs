@@ -11821,7 +11821,7 @@ paths:
       - description: 'account_address defines the unique address of the account'
         in: query
         name: account_address
-        required: false
+        required: true
         schema:
           format: uint64
           type: string
@@ -11952,7 +11952,7 @@ paths:
       - description: 'account_address defines the unique address of the account'
         in: query
         name: account_address
-        required: false
+        required: true
         schema:
           format: uint64
           type: string
@@ -12092,7 +12092,7 @@ paths:
       - description: 'account_address defines the unique address of the account'
         in: query
         name: account_address
-        required: false
+        required: true
         schema:
           format: uint64
           type: string
@@ -17038,7 +17038,7 @@ paths:
       - description: 'Address defines the unique address of the depositor'
         in: query
         name: deposit_address
-        required: false
+        required: true
         schema:
           format: uint64
           type: string
@@ -20696,7 +20696,7 @@ paths:
       - description: 'Node Address defines the unique address of the node'
         in: query
         name: node_address
-        required: false
+        required: true
         schema:
           format: uint64
           type: string
@@ -20887,7 +20887,7 @@ paths:
       - description: 'Node Payouts defines the payouts of the node'
         in: query
         name: node_address
-        required: false
+        required: true
         schema:
           format: uint64
           type: string
@@ -20983,7 +20983,7 @@ paths:
       - description: 'Node Sessions defines the sessions of the node'
         in: query
         name: node_address
-        required: false
+        required: true
         schema:
           format: uint64
           type: string
@@ -21123,7 +21123,7 @@ paths:
       - description: 'Node Subscriptions defines the subscriptions of the node'
         in: query
         name: node_address
-        required: false
+        required: true
         schema:
           format: uint64
           type: string
@@ -21451,14 +21451,14 @@ paths:
       tags:
       - payouts
       - Query
-  /sentinel/payouts/{id_payout}:
+  /sentinel/payouts/{payout_id}:
     get:
       operationId: PayoutInfo
       parameters:
-      - description: 'id_payout defines the unique id of the payout'
+      - description: 'payout_id defines the unique id of the payout'
         in: query
-        name: id_payout
-        required: false
+        name: payout_id
+        required: true
         schema:
           format: uint64
           type: string
@@ -21672,14 +21672,14 @@ paths:
       tags:
       - plans
       - Query
-  /sentinel/plans/{id_plan}:
+  /sentinel/plans/{plan_id}:
     get:
       operationId: PlanInfo
       parameters:
-      - description: 'id_plan defines the unique id of the plan'
+      - description: 'plan_id defines the unique id of the plan'
         in: query
-        name: id_plan
-        required: false
+        name: plan_id
+        required: true
         schema:
           format: uint64
           type: string
@@ -21753,14 +21753,14 @@ paths:
       tags:
       - plans
       - Query
-  /sentinel/plans/{id_plan}/nodes:
+  /sentinel/plans/{plan_id}/nodes:
     get:
       operationId: PlanNodes
       parameters:
-      - name: id_plan
-        description: 'id_plan defines the unique id of the plan'
+      - name: plan_id
+        description: 'plan_id defines the unique id of the plan'
         in: query
-        required: false
+        required: true
         schema:
           format: uint64
           type: string
@@ -21892,14 +21892,14 @@ paths:
       tags:
       - plans
       - Query
-  /sentinel/plans/{id_plan}/subscriptions:
+  /sentinel/plans/{plan_id}/subscriptions:
     get:
       operationId: PlanSubscriptions
       parameters:
-      - name: id_plan
-        description: 'id_plan defines the unique id of the plan'
+      - name: plan_id
+        description: 'plan_id defines the unique id of the plan'
         in: query
-        required: false
+        required: true
         schema:
           format: uint64
           type: string
@@ -22146,7 +22146,7 @@ paths:
       - description: 'Provider Address defines the unique address of the provider'
         in: query
         name: provider_address
-        required: false
+        required: true
         schema:
           format: uint64
           type: string
@@ -22270,14 +22270,14 @@ paths:
       tags:
       - providers
       - Query
-  /sentinel/providers/{address_provider}/plans:
+  /sentinel/providers/{provider_address}/plans:
     get:
       operationId: ProviderPlans
       parameters:
       - description: 'Provider Address defines the unique address of the provider'
         in: query
-        name: address_provider
-        required: false
+        name: provider_address
+        required: true
         schema:
           format: uint64
           type: string
@@ -22535,14 +22535,14 @@ paths:
       tags:
       - sessions
       - Query
-  /sentinel/sessions/{id_session}:
+  /sentinel/sessions/{session_id}:
     get:
       operationId: SessionInfo
       parameters:
-      - description: 'id_session defines the unique id of the session'
+      - description: 'session_id defines the unique id of the session'
         in: query
-        name: id_session
-        required: false
+        name: session_id
+        required: true
         schema:
           format: uint64
           type: string
@@ -26667,14 +26667,14 @@ paths:
       tags:
       - subscriptions
       - Query
-  /sentinel/subscriptions/{id_subscription}:
+  /sentinel/subscriptions/{subscription_id}:
     get:
       operationId: SubscriptionInfo 
       parameters:
-      - description: 'id_subscription defines the unique id of the subscription'
+      - description: 'subscription_id defines the unique id of the subscription'
         in: query
-        name: id_subscription
-        required: false
+        name: subscription_id
+        required: true
         schema:
           format: uint64
           type: string
@@ -26762,14 +26762,14 @@ paths:
       tags:
       - subscriptions
       - Query
-  /sentinel/subscriptions/{id_subscription}/allocations:
+  /sentinel/subscriptions/{subscription_id}/allocations:
     get:
       operationId: SubscriptionAllocations
       parameters:
-      - description: 'id_subscription defines the unique id of the subscription'
+      - description: 'subscription_id defines the unique id of the subscription'
         in: query
-        name: id_subscription
-        required: false
+        name: subscription_id
+        required: true
         schema:
           format: uint64
           type: string
@@ -26929,14 +26929,14 @@ paths:
       tags:
       - subscriptions
       - Query
-  /sentinel/subscriptions/{id_subscription}/sessions:
+  /sentinel/subscriptions/{subscription_id}/sessions:
     get:
       operationId: SubscriptionSessions
       parameters:
-      - description: 'id_subscription defines the unique id of the subscription'
+      - description: 'subscription_id defines the unique id of the subscription'
         in: query
-        name: id_subscription
-        required: false
+        name: subscription_id
+        required: true
         schema:
           format: uint64
           type: string
@@ -27189,7 +27189,7 @@ paths:
       - description: 'tx_hash defines the unique hash of the swap'
         in: query
         name: tx_hash
-        required: false
+        required: true
         schema:
           format: uint64
           type: string
