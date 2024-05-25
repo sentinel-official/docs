@@ -58,7 +58,7 @@ For more information on how to configure and use pre-commit, refer to the offici
 
 Below is an example of how to use the Sentinel Pythoon SDK in your Python code. This example demonstrates how to create an instance of the SDK, query active nodes, and fetch subscriptions with specific pagination settings.
 
-```bash
+```python
 from sentinel_sdk.sdk import SDKInstance
 from sentinel_sdk.types import Status, PageRequest
 sdk = SDKInstance("grpc.sentinel.co", 9090)
