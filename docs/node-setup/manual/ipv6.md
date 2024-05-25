@@ -41,7 +41,7 @@ Click on `Advanced DNS` and under `Hosts Record`, click on `ADD NEW RECORD`.
 
 **AAAA Record**
 
-Repeat the procedure for adding the second record:
+Repeat the procedure for adding the second record:added node ipv6
 - Under `Type` select `AAAA Record`
 - Under `Host` type `your_subdomain_name`
 - Under `Value` type `your Node IPv6 address` (i.e. 2606:4700:4700::1111)

@@ -1,7 +1,7 @@
 ---
 title: Run the Node
 description: Start your node
-sidebar_position: 6
+sidebar_position: 5
 ---
 
 Running a node can be done in two ways: with or without the autorestart function. If you do not want to use it, you need to use a screen session to detach from the node after launching the docker run command.
