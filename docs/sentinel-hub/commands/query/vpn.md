@@ -1,6 +1,6 @@
 ---
 title: VPN
-sidebar_position: 6
+sidebar_position: 7
 ---
 
 Querying commands for the vpn module
