@@ -1,6 +1,6 @@
 ---
 title: Slashing Params
-sidebar_position: 5
+sidebar_position: 6
 ---
 
 Querying commands for the slashing module
