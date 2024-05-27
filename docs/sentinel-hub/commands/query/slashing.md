@@ -1,6 +1,6 @@
 ---
 title: Slashing Params
-sidebar_position: 4
+sidebar_position: 5
 ---
 
 Querying commands for the slashing module
@@ -74,7 +74,6 @@ sentinelhub query slashing signing-infos \
   missed_blocks_counter: "18"
   start_height: "416424"
   tombstoned: false
-
 ```
 
 </p>

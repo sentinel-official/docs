@@ -1,6 +1,6 @@
 ---
 title: Governance
-sidebar_position: 3
+sidebar_position: 4
 ---
 
 The governance module queries proposals on the blockchain.
