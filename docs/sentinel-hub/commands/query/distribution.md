@@ -1,6 +1,6 @@
 ---
 title: Distribution
-sidebar_position: 4
+sidebar_position: 5
 ---
 
 The query distribution module encompasses aspects such as community pool management, validator commissions, delegator rewards, parameter settings, and slashing mechanisms.
