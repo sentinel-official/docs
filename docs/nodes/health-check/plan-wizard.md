@@ -344,7 +344,7 @@ https://planwizard.basedapps.co.uk/nodes/<your_sent_node_address>/plans
 </p>
 </details>
 
-## `GET /nodes/:address/events`
+### `GET /nodes/:address/events`
 
 Retrieve the reason(s) why the node is not listed on the subscription plan
 
