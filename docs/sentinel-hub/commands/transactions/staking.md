@@ -51,7 +51,7 @@ To unbond your staked amount from a validator type on your terminal
 ```bash
 sentinelhub tx staking unbond <sentvaloper_validator_address> \
     <amount>udvpn \
-    --from=<your_keyname> \
+    --from=<delegator_address> \
     --chain-id=sentinelhub-2 \
     --node https://rpc.sentinel.co:443 \
     --gas-prices=0.5udvpn \
