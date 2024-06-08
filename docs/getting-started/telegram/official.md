@@ -29,6 +29,7 @@ sidebar_position: 1
 - [Meile dVPN](https://t.me/MathNodes): Everything regarding Meile dVPN is discussed in this very active group
 - [Independent dVPN](https://t.me/independentdvpn): The Turkish free dVPN that is becoming very popular
 - [V2:App](https://t.me/v2app): A dVPN App powered by the advanced V2Ray technology
+- [Dogwifhat dVPN](https://t.me/dogwifhatdvpn): The Sentinel Ecosystem's first foray into the memecoin world.
 
 
 ## Utility Bots

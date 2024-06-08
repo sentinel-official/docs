@@ -67,6 +67,13 @@ The following dVPN apps are built on top of the Sentinel Protocol. This is why w
         icon=""
         svgFile="/icons/breadcrumbs.svg"
     />
+    <Card
+        title="Dofwifhat dVPN"
+        description="It’s a dVPN wif a hat! The Sentinel Ecosystem's first foray into the memecoin world. This application is entirely open source, accessible on GitHub, and compatible with both Android and iOS platforms."
+        to="https://dogwifhatdvpn.com/"
+        icon=""
+        svgFile="/icons/dogwifhat.png"
+    />
     <!-- <Card
         title="Airdrop VPN"
         description="Airdrop VPN, as the name suggests, specializes in airdrops and exclusively features residential nodes. This specialization ensures remarkable reliability and resilience against any geoblocking services."
