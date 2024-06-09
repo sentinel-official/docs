@@ -19,7 +19,7 @@ The following statistical tools, developed by the Sentinel team, provide detaile
 
 - [Busurnode](https://sentnodes.com): this tool assists node hosts in obtaining information about their nodes' health check status. In case of failure, it provides details about what might have gone wrong.
 - [Node Faucet](https://faucet.im/): To kickstart your node, ensure your operator address has sufficient DVPN. For testing, use the Sentinel Node Faucet by entering your node operator address. The faucet will send 0.2 DVPN, ample for verifying your node's online status. Consider adding more DVPN for prolonged online presence.
-- [Node Monitor Telegram Bot](/nodes/tools/node-monitor-bot): A convenient Telegram bot designed to assist you in monitoring your dVPN nodes, providing comprehensive details about each node's status and performance.
+- [Node Monitor Telegram Bot](/node-monitoring/node-monitor-bot): A convenient Telegram bot designed to assist you in monitoring your dVPN nodes, providing comprehensive details about each node's status and performance.
 
 ## Node Metabase Analytics
 

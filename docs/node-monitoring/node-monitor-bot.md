@@ -1,11 +1,11 @@
 ---
 title: Node Monitor Telegram Bot
-sidebar_position: 1
+sidebar_position: 6
 ---
 
 # Node Monitor Telegram Bot
 
-Sentinel Node Monitor is a free Telegram bot designed for Sentinel node operators to monitor node information and status, as well as to obtain real-time insights into network usage.
+Sentinel Node Monitor is a free Telegram bot designed for Sentinel dVPN Node operators to monitor node information and status, as well as to obtain real-time insights into network usage.
 
 It's a tool built by the community, for the community, with every development aligned with the requests and feedback of Sentinel node operators. The bot is currently operational and accessible in an open beta phase. We invite all community members to participate in testing the features and stability of the tool.
 
