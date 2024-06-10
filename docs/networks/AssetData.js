@@ -1,34 +1,11 @@
+// eslint-disable-next-line no-unused-vars
 import React, { useState, useEffect } from 'react';
 
 const AssetData = () => {
   const [assets, setAssets] = useState(null);
   // add setSelectedUrl if uncommented below code
   const [selectedUrl] = useState('https://raw.githubusercontent.com/cosmos/chain-registry/master/sentinel/assetlist.json');
-
-  // const assetUrls = {
-  //   mainnet: 'https://raw.githubusercontent.com/cosmos/chain-registry/master/sentinel/assetlist.json'
-  // };
-
   
-  // const chainButtonStyle = {
-  //   backgroundColor: '#322dc2',
-  //   border: 'none',
-  //   color: 'white',
-  //   padding: '15px 32px',
-  //   textAlign: 'center',
-  //   textDecoration: 'none',
-  //   display: 'inline-block',
-  //   fontSize: '16px',
-  //   margin: '4px 2px',
-  //   borderRadius: '8px',
-  //   transition: 'background-color 0.2s ease-in-out', 
-  //   ':hover': {
-  //     backgroundColor: '#5f4bea',
-  //   }
-  // };
-  
-  
-
   useEffect(() => {
     const fetchAssets = () => {
       if (!selectedUrl) return;
@@ -39,20 +16,8 @@ const AssetData = () => {
     fetchAssets();
   }, [selectedUrl]);
 
-  // const handleUrlChange = (url) => {
-  //   setSelectedUrl(url);
-  // };
-
   return (
     <>
-      {/* <div>
-        <h3>Select a chain</h3>
-        {Object.entries(assetUrls).map(([key, url]) => (
-           <button key={key} onClick={() => handleUrlChange(url)} style={chainButtonStyle}>
-            {key}
-          </button>
-        ))}
-      </div> */}
       {assets ? (
         <table>
   <thead>
