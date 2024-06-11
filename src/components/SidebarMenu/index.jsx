@@ -39,7 +39,7 @@ export default function SidebarMenu() {
           defaultValue={id}
           values={sections}
           onValueChange={handleSectionChange}
-          triggerClassName={styles.sectionsMenu}
+          className={styles.sectionsMenu}
         />
         <VersionDropdown docsPluginId={id} dropdownItemsBefore={[]} dropdownItemsAfter={[]} />
       </div>
@@ -76,7 +76,7 @@ export default function SidebarMenu() {
             defaultValue={id}
             values={items}
             onValueChange={handleSectionChange}
-            triggerClassName={styles.sectionsMenu}
+            className={styles.sectionsMenu}
           />
         </div>
       </div>
