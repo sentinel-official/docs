@@ -18,11 +18,11 @@ const SectionsMenu = forwardRef(
         </Select.Trigger>
 
         <Select.Portal>
-          <Select.Content className={clsx('sections-menu-content', className)}>
-            <Select.ScrollUpButton className="sections-menu-scrollButton">
-              <ChevronUpIcon />
-            </Select.ScrollUpButton>
-
+          <Select.Content
+            className={clsx('sections-menu-content', className)}
+            position="popper"
+            style={{ maxHeight: 'none', overflow: 'visible' }}
+          >
             <Select.Viewport>
               <Select.Group>
                 {values.map(({ id, name, icon: Icon, disabled = false }) => (
@@ -46,10 +46,6 @@ const SectionsMenu = forwardRef(
                 {children}
               </Select.Group>
             </Select.Viewport>
-
-            <Select.ScrollDownButton className="sections-menu-scrollButton">
-              <ChevronDownIcon />
-            </Select.ScrollDownButton>
           </Select.Content>
         </Select.Portal>
       </Select.Root>
