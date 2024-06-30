@@ -96,7 +96,7 @@ This indicates that your certificate has been successfully renewed.
 Finally, restart the NGINX service to apply the renewed certificates:
 
 ```bash
-sudo systemctl stop nginx.service
+sudo systemctl start nginx.service
 ```
 
 Your remote procedure call (RPC) and API should now be accessible again via HTTPS.
