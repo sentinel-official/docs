@@ -54,7 +54,15 @@ certificates, run "certbot renew"
 
 ## Renew a SSL Certificate
 
-After a specific amount of time, typically 90 days, your Certbot certificate will reach its expiration date. To ensure continued validity, you can renew it by running the following command:
+Certbot certificates typically expire every 90 days. To maintain their validity, you need to renew them regularly. Follow these steps to renew your SSL certificate:
+
+First, stop the NGINX service to avoid any conflicts during the renewal process:
+
+```bash
+sudo systemctl stop nginx.service
+```
+
+Run the following command to renew your certificates:
 
 ```bash
 sudo certbot renew
@@ -83,4 +91,12 @@ Congratulations, all renewals succeeded:
 </p>
 </details>
 
-This indicates that your certificate has been successfully renewed, and your remote procedure call (RPC) and API are accessible again via HTTPS.
+This indicates that your certificate has been successfully renewed.
+
+Finally, restart the NGINX service to apply the renewed certificates:
+
+```bash
+sudo systemctl stop nginx.service
+```
+
+Your remote procedure call (RPC) and API should now be accessible again via HTTPS.
