@@ -5,11 +5,11 @@ sidebar_position: 5
 
 # Run the Full Node
 
-When setting up a validator and joining a blockchain network, there are typically two main states that a node needs to synchronize with the network: Block Sync and State Sync. In this guide we will cover `State Sync`, which is the preferable approach.
+When setting up a validator and joining a blockchain network, there are typically two main states that a node needs to synchronize with the network: State Sync, Using a Snapshot, and Block Sync. In this guide we will cover `State Sync`, which is the preferable approach.
 
 ## State Sync
 
-State Sync is the process of downloading the current state of the blockchain. When a validator joins a network, it needs to download the current state of the blockchain in order to validate new blocks. The current state includes all account balances, contract code, and contract storage. State sync is a more efficient way to get up to speed with the current state of the network, as it only downloads the necessary information rather than downloading the entire blockchain.
+State Sync is the process of downloading the current state of the blockchain at a recent block height from other peers and then download and process blocks from that height onward. This method reduces the need to process all historical blocks by downloading the entire blockchain, thus speeding up the synchronization process.
 
 State Sync is used to perform the following tasks that we will see in detail:
 - Bootstrap a node
@@ -70,19 +70,8 @@ Start the node by running the following command:
 sudo systemctl start sentinelhub.service
 ```
 
-Your node will fully synchronize within 10 minutes. Periodically check its status using the following command:
+The final step is to check the [sync status](/validator-setup/node-run#check-sync-status) to confirm when the node has completed synchronization.
 
-```bash
-curl --silent "http://localhost:26657/status" | jq -S
-```
-
-If the value of `result.sync_info.catching_up` is `false`, it indicates that the node is synchronized and ready to start signing blocks.
-
-To monitor the logs in real-time, use the following command:
-
-```bash
-sudo journalctl -u sentinelhub.service -f --output=cat
-```
 
 ### Free up space
 
@@ -135,7 +124,62 @@ Start the node by running the following command:
 sudo systemctl start sentinelhub.service
 ```
 
-Your node will fully synchronize within 10 minutes. Periodically check its status using the following command:
+The final step is to check the [sync status](/validator-setup/node-run#check-sync-status) to confirm when the node has completed synchronization.
+
+
+## Using a Snapshot
+
+Downloading a Blockchain Snapshot is a different method where you download a snapshot of the blockchain at a recent height. This snapshot includes the state of the blockchain at a specific point in time. After applying the snapshot, the node only needs to catch up with the blocks generated after the snapshot was taken, which can be significantly faster than starting from the genesis block.
+
+Install the required packages:
+
+```bash
+sudo apt-get install lz4
+```
+
+### (Optional) Stop the Node
+
+If you are already running the node and want to free up space, follow the below commands:
+
+Stop the node
+
+```bash
+sudo systemctl stop sentinelhub.service
+```
+
+Rename the data folder
+
+```bash
+cd .sentinelhub
+mv data data-old
+```
+
+### Apply the Snapshot
+
+The next command will download and install the snapshot (we used Polkachu servuices or this example)
+
+```bash
+curl -o - -L https://snapshots.polkachu.com/snapshots/sentinel/sentinel_16474975.tar.lz4 | lz4 -c -d - | tar -x -C $HOME/.sentinelhub
+```
+
+Start the node by running the following command:
+
+```bash
+sudo systemctl start sentinelhub.service
+```
+
+The final step is to check the [sync status](/validator-setup/node-run#check-sync-status) to confirm when the node has completed synchronization.
+
+
+## Block Sync
+
+Block Sync involves starting from the genesis block of the blockchain and then sequentially downloading and validating every block until the node is fully synchronized with the current state of the blockchain. This process can be time-consuming because it requires processing every transaction in the blockchain's history.
+Block sync is typically used when someone wants to host `archive nodes`, which are nodes that retain the full history of the blockchain, including all the blocks and their associated states from the genesis block to the current block. This means they have the entire blockchain's data and can provide historical data queries for any point in the blockchain's history. Detailed guidance on setting up and maintaining an archive node will be covered in the future.
+
+
+## Check Sync Status
+
+After starting your node, it will fully synchronize within a few minutes. Periodically check its status using the following command:
 
 ```bash
 curl --silent "http://localhost:26657/status" | jq -S
@@ -149,8 +193,7 @@ To monitor the logs in real-time, use the following command:
 sudo journalctl -u sentinelhub.service -f --output=cat
 ```
 
-Once your node has completed synchronization, you can confidently proceed to delete the `.sentinel/data-old/` folder.
+If you're not setting up a new node but just clearing space, after your node has finished syncing, you can safely delete the `.sentinel/data-old/` folder.
 
 ```bash
 sudo rm -fr $HOME/.sentinelhub/data-old/
-```
