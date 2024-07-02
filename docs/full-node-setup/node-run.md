@@ -70,7 +70,7 @@ Start the node by running the following command:
 sudo systemctl start sentinelhub.service
 ```
 
-The final step is to check the [sync status](/validator-setup/node-run#check-sync-status) to confirm when the node has completed synchronization.
+The final step is to check the [sync status](/full-node-setup/node-run#check-sync-status) to confirm when the node has completed synchronization.
 
 
 ### Free up space
@@ -124,7 +124,7 @@ Start the node by running the following command:
 sudo systemctl start sentinelhub.service
 ```
 
-The final step is to check the [sync status](/validator-setup/node-run#check-sync-status) to confirm when the node has completed synchronization.
+The final step is to check the [sync status](/full-node-setup/node-run#check-sync-status) to confirm when the node has completed synchronization.
 
 
 ## Using a Snapshot
@@ -168,7 +168,7 @@ Start the node by running the following command:
 sudo systemctl start sentinelhub.service
 ```
 
-The final step is to check the [sync status](/validator-setup/node-run#check-sync-status) to confirm when the node has completed synchronization.
+The final step is to check the [sync status](/full-node-setup/node-run#check-sync-status) to confirm when the node has completed synchronization.
 
 
 ## Block Sync
