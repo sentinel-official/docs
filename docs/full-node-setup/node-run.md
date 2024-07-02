@@ -25,7 +25,7 @@ Create the file `state-sync.sh`
 sudo nano state-sync.sh
 ```
 
-Add the following code in it (to add your own or favourite RPC check this list [here](https://cosmos.directory/sentinel/nodes)):
+Add the following code in it (to add your own or favourite RPC check this list [here](https://sentnodes.com/public-rpc)):
 
 <details>
 <summary>state-sync.sh</summary>
