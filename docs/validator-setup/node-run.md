@@ -156,11 +156,20 @@ mv data data-old
 
 ### Apply the Snapshot
 
-The next command will download and install the snapshot (we used Polkachu servuices or this example)
+:::warning
+If you're using a snapshot on a validator node during a chain halt and you're **NOT** using TMKMS, be sure to back up your `priv_validator_state.json` file from your recently renamed `data-old` folder. After extracting the snapshot, but before starting the node, replace the new `priv_validator_state.json` file with your backup. This step is essential to prevent double-signing.
+:::
+
+For this example, we will use a [Polkachu snapshot](https://www.polkachu.com/tendermint_snapshots/sentinel). To download and install the latest snapshot, follow these steps:
+
+- Copy the snapshot file link.
+- Run the following command in your terminal:
 
 ```bash
-curl -o - -L https://snapshots.polkachu.com/snapshots/sentinel/sentinel_16474975.tar.lz4 | lz4 -c -d - | tar -x -C $HOME/.sentinelhub
+curl -o - -L https://snapshots.polkachu.com/snapshots/sentinel/sentinel_<block_height>.tar.lz4 | lz4 -c -d - | tar -x -C $HOME/.sentinelhub
 ```
+
+This command will download and extract the snapshot, which is essentially a zipped `data` folder, directly into your `.sentinelhub` directory.
 
 Start the node by running the following command:
 
