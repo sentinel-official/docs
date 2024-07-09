@@ -3,7 +3,10 @@ title: Buy DVPN
 sidebar_position: 3
 ---
 
-You can get DVPN either from Centralized and Decentralized exchanges
+You can get DVPN either from Centralized and Decentralized exchanges.
+
+**Sentinel Foundation** recommend using:
+- SwapFast: [https://swap.sentinel.co](https://swap.sentinel.co) built by Leap.
 
 ### Centralized Exchanges (CEX)
 
@@ -12,7 +15,7 @@ You can get DVPN either from Centralized and Decentralized exchanges
 
 ### Decentralized Exchanges (DEX)
 
-- Osmosis: [https://app.osmosis.zone](https://app.osmosis.zone)
+- Osmosis (best choice!): [https://app.osmosis.zone](https://app.osmosis.zone)
 - Kujira: [Trade](https://fin.kujira.app/trade/kujira1ullqzk95uh0derdqpp8e5f4ukdun00xdal486zmjeeqsfhefgd0qh0qndl?q=all) - [Liquidity Hub](https://bow.kujira.network/pools/kujira1ullqzk95uh0derdqpp8e5f4ukdun00xdal486zmjeeqsfhefgd0qh0qndl)
 - Sifchain: [https://sifchain.network/](https://sifchain.network/)
 - Sienna Network: [https://sienna.network/](https://sienna.network/)
