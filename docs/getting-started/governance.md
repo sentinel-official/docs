@@ -1,6 +1,6 @@
 ---
 title: Governance
-sidebar_position: 8
+sidebar_position: 6
 ---
 
 ![](/img/getting-started/governance.png)

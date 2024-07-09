@@ -51,4 +51,4 @@ Type the command `/total_peers` to see the total number of peers connected to a 
 
 Type the command `/online_nodes` to see the total number of active nodes.
 
-The Sentinel Node Monitor is a continuously evolving tool developed and maintained by Bitveil. To support Bitveil work, you are encourgaed to delegate a portion of your DVPN to their [Validator](https://www.mintscan.io/sentinel/validators/sentvaloper1xmc6yzr95v0w5pcx7k8qx97w69rhc4caclfy9h)!
+The Sentinel Node Monitor is a continuously evolving tool developed and maintained by Bitveil. To support Bitveil work, you are encourgaed to delegate a portion of your DVPN to their [Validator](https://explorer.sentinel.co/sentinel/validator/sentvaloper1xmc6yzr95v0w5pcx7k8qx97w69rhc4caclfy9h)!

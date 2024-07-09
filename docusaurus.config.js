@@ -37,6 +37,7 @@ function defineSection(section, options = {}) {
 
 const SECTIONS = [
   defineSection('apis'),
+  defineSection('dvpn-coin'),
   defineSection('full-node-setup'),
   defineSection('getting-started'),
   defineSection('networks'),
@@ -46,7 +47,6 @@ const SECTIONS = [
   defineSection('sdk'),
   defineSection('sentinel-cli'),
   defineSection('sentinel-hub'),
-  defineSection('support'),
   defineSection('validator-setup'),
 ];
 
@@ -143,6 +143,11 @@ const config = {
             position: 'left',
           },
           {
+            label: 'DVPN Coin',
+            to: 'dvpn-coin/overview',
+            position: 'left',
+          },
+          {
             label: 'Sentinel Core',
             type: 'dropdown',
             position: 'left',
@@ -199,11 +204,6 @@ const config = {
           {
             label: 'API Reference',
             to: 'apis',
-            position: 'left',
-          },
-          {
-            label: 'Support',
-            to: 'support',
             position: 'left',
           },
           {

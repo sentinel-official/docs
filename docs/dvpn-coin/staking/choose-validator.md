@@ -13,7 +13,7 @@ Be aware that the validator will automatically vote on proposals for you. Howeve
 
 Here are key considerations when choosing a validator, listed in no particular order:
 
-- **Reachable**. Ensure your chosen validator is easily reachable for inquiries or concerns. The ability to communicate with them is vital, especially during critical events. Validators with clear communication channels, often found through links on the [explorer](https://www.mintscan.io/sentinel/validators), are preferable.
+- **Reachable**. Ensure your chosen validator is easily reachable for inquiries or concerns. The ability to communicate with them is vital, especially during critical events. Validators with clear communication channels, often found through links on the [explorer](https://explorer.sentinel.co/sentinel/validator), are preferable.
 
 - **Community Engagement**. Opt for validators actively involved in the community. A responsive presence in community forums, assistance to fellow members, and overall positive engagement are indicators of a reliable validator. Supporting validators who contribute positively fosters a stronger community.
 
@@ -23,7 +23,7 @@ Here are key considerations when choosing a validator, listed in no particular o
 
 - **Full Archive Node**. Some validators run full archive nodes, enhancing network resilience by tracking all blockchain transactions. Supporting validators with this additional commitment strengthens the overall network.
 
-- **Project Involvement**. Seek validators who stay informed about project developments, announcements, proposals, and upgrades. Checking a validator's participation in proposals on the [explorer's validator page](https://www.mintscan.io/sentinel/validators) provides valuable insights. Involvement in project activities is crucial to ensuring timely actions and community support.
+- **Project Involvement**. Seek validators who stay informed about project developments, announcements, proposals, and upgrades. Checking a validator's participation in proposals on the [explorer's validator page](https://explorer.sentinel.co/sentinel/validator) provides valuable insights. Involvement in project activities is crucial to ensuring timely actions and community support.
 
 - **Commission Rates**. Consider the commission rates of validators. While lower commission rates increase your delegation rewards, it's essential to strike a balance, recognizing the effort validators put into securing the network and contributing to project improvement.
 
