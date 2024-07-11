@@ -12,17 +12,21 @@ Install Docker Engine from official [site](https://docs.docker.com/engine/)
 
 ## Create a mnemonic you will use only for Restake.app
 
-Download `Sentinel CLI` from [here](https://github.com/sentinel-official/cli-client/releases)
-
-Right click on the download file and make it executable
-
-Open a terminal and type:
+Download `Sentinel CLI` from [here](https://github.com/sentinel-official/cli-client/releases) and install it by typing:
 
 ```bash
-./sentinelcli keys add --home "${HOME}/.sentinelcli" --keyring-backend test keyname
+wget https://github.com/sentinel-official/cli-client/releases/download/v0.X.X/sentinelcli_linux_x86_64.tar.gz
+tar xvzf sentinelcli_linux_x86_64.tar.gz
+sudo mv ${HOME}/sentinelcli /usr/local/bin
 ```
 
-Take note of mnemonic and operator address (also make sure to **add funds** into it)
+To create a mnemonic type:
+
+```bash
+sentinelcli keys add keyname
+```
+
+Create a passphrase and take note of both mnemonic and operator address (also make sure to **add funds** into it)
 
 ## Clone and configure Restake
 
@@ -44,7 +48,13 @@ Create your `.env` file from the sample `.env.sample`
 cp .env.sample .env
 ```
 
-Open `.env` file and add your mnemonic:
+Open `.env` file:
+
+```bash
+sudo nano .env
+```
+
+Add your mnemonic:
 
 ```bash
 MNEMONIC=my hot wallet seed words here that has minimal funds
@@ -63,16 +73,17 @@ docker compose run --rm app npm install
 docker compose build --no-cache
 ```
 
-Go into src directory
+Go into `src` directory
 
 ```bash
 cd src/
 ```
 
-Create your `.networks.local.json` file from the sample `.networks.local.json.sample`
+Create your `.networks.local.json` file from the sample .networks.local.json.sample and open it:
 
 ```bash
 cp networks.local.json.sample networks.local.json
+sudo nano networks.local.json
 ```
 
 Replace the file with this code block and, on `restUrl` field, select your desired one from [here](https://cosmos.directory/sentinel/nodes) and click on REST tab:
@@ -90,8 +101,6 @@ Replace the file with this code block and, on `restUrl` field, select your desir
   }
 }
 ```
-
-For `restUrl` field check this [link](https://cosmos.directory/sentinel/nodes)
 
 ## Running the script
 
@@ -204,7 +213,7 @@ sudo systemctl status restake.timer
 Or with `journalctl` in real time:
 
 ```bash
-sudo journalctl -u restake.service -f
+sudo journalctl -u restake.service -f --output=cat
 ```
 
 You should see something like that:
