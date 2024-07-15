@@ -13,8 +13,6 @@ import {
   Decentr,
   Carbon,
   Meile,
-  Foxta,
-  Solar,
   SentinelCore,
 } from '../../src/icons';
 
@@ -31,13 +29,6 @@ The following dVPN apps are built on top of the Sentinel Protocol. This is why w
         description="Open source, p2p, trustless architecture powers one of the most decentralized consumer-facing DePIN applications ever created. Everything from peer discovery to connection authorization is through the blockchain; encrypted and safely in your hands, not in a VPN company's database."
         to="https://shield.sentinel.co/"
         icon={<SentinelCore />}
-        svgFile=""
-    />
-    <Card
-        title="Solar dVPN"
-        description="SOLAR dVPN is a blockchain-based decentralized VPN service. Using mobile & desktop apps, it allows you to access hundreds of community-managed servers all around the world and use them as your private & secure gateway to the Internet."
-        to="https://dvpn.solar/"
-        icon={<Solar />}
         svgFile=""
     />
     <Card
@@ -74,13 +65,6 @@ The following dVPN apps are built on top of the Sentinel Protocol. This is why w
         icon=""
         svgFile="/icons/dogwifhat.png"
     />
-    <!-- <Card
-        title="Airdrop VPN"
-        description="Airdrop VPN, as the name suggests, specializes in airdrops and exclusively features residential nodes. This specialization ensures remarkable reliability and resilience against any geoblocking services."
-        to="#"
-        icon={<AirdropVPN />}
-        svgFile=""
-    /> -->
     </Section>
 </Section>
 
@@ -99,38 +83,3 @@ The following dVPN apps are built on top of the Sentinel Protocol. This is why w
     />
     </Section>
 </Section>
-
-<!-- <Section id="web-sdks" hasSubSections>
-    <Section
-              title="⚙️ 3rd party apps that have Sentinel integrated"
-              id="core-sdks"
-              HeadingTag="h4"
-              description={
-                <>
-                  Apps that Integrates Sentinel among their functions. 
-                </>
-              }
-            >
-    <Card
-        title="Decentr Browser"
-        description="Decentr is a browser with unparalleled speed, security and utility. Included in the browser release is Sentinel dVPN and Adblock."
-        to="https://decentr.net/"
-        icon={<Decentr />}
-        svgFile=""
-    />
-    <Card
-        title="Carbon Browser"
-        description="Carbon is a decentralized browser with AdBlock, Sentinel dVPN, Crypto Wallet, 100% Privacy and many other features."
-        to="https://carbon.website/"
-        icon={<Carbon />}
-        svgFile=""
-    />
-    <Card
-        title="Foxta - dVPN Private Browser"
-        description="Foxta is a Private Browser with Sentinel VPN Integration and Wireguard protocol integration."
-        to="https://play.google.com/store/apps/details?id=com.ryn.vpn.privatedns.proxy.fast.mini.web.browser&pli=1"
-        icon={<Foxta />}
-        svgFile=""
-    />
-    </Section>
-</Section> -->

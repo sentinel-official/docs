@@ -9,7 +9,7 @@ Operating a dVPN node incurs expenses for the owner, including the acquisition o
 
 ## What is dVPN Node Revenue System?
 
-With this system, white-label applications like Solar VPN, Meile dVPN, Independent VPN, Based VPN, and others will utilize the innovative on-chain `Subscription Plan`. These applications will have the ability to choose nodes from the public list, which will then be added into the subscription.
+With this system, white-label applications like Meile dVPN, Independent VPN, Based VPN, and others will utilize the innovative on-chain `Subscription Plan`. These applications will have the ability to choose nodes from the public list, which will then be added into the subscription.
 This Subscription Plan will be shared by the white-label applications and after sufficient optimization and testing, white-label applications will begin to create their own individual subscription plans overtime as their bandwidth usage increases exponentially from here on out.
 
 This makes **Sentinel a revenue generating ecosystem**.

@@ -3,7 +3,7 @@ title: Plan Wizard
 sidebar_position: 5
 ---
 
-Plan Wizard was created by Alekandr Litreev at SOLAR Labs with the following aims:
+Plan Wizard was created by Alekandr Litreev at Norse Labs with the following aims:
 
 - To examine information regarding a dvpn node and view it from the perspective of the Plan Wizard backend.
 - To verify if your node has been included in the plan.

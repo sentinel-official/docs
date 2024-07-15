@@ -29,7 +29,6 @@ This list does not include validators who have already communicated their decomm
 - OmniFlix Network: https://t.me/OmniFLixNetwork
 - PrithviDevs: https://t.me/PrithviDevsChat
 - Quokka Stake: https://t.me/quokkastake
-- SolarLabs: https://t.me/solarlabs
 - Stakecito: https://t.me/cryptocitos_frens
 - StakeLab: https://t.me/stakelab_fr
 - Stakewolle: https://t.me/stakewolle
