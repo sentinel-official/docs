@@ -12,7 +12,7 @@ sidebar_position: 1
 - [Sentinel Official Announcements](https://t.me/Sentinel_Announcements): Official Sentinel news and announcements.
 - [Sentinel Node Network](https://t.me/SentinelNodeNetwork): A group for dVPN node operators.
 - [Sentinel RPC Node Network](https://t.me/sentinelrpcnodes): A group for RPC Node operators.
-- [Sentinel DVPN Coin Price & Governance](https://t.me/dvpnpricediscussion): DVPN Coin and Governance discussion.
+- [Sentinel DVPN Coin Price](https://t.me/dvpnpricediscussion): DVPN Coin price discussion.
 
 
 ## Community
