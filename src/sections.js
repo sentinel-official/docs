@@ -47,7 +47,7 @@ const SECTIONS = [
     section: 'core-sdk',
   },
   {
-    name: 'Nodes',
+    name: 'dVPN Nodes',
     id: 'nodes',
     icon: Nodes,
     section: 'core-sdk',

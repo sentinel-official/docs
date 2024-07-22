@@ -1,7 +1,9 @@
 ---
 title: Overview
-sidebar_position: 1
+sidebar_position: 1.5
 ---
+
+![](/img/getting-started/dvpn-coin.png)
 
 # DVPN Coin
 

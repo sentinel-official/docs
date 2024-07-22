@@ -173,7 +173,7 @@ const config = {
             //activeBaseRegex: '(.*ui-kit|.*web-core)',
           },
           {
-            label: 'Nodes',
+            label: 'dVPN Nodes',
             to: 'nodes',
             position: 'left',
           },
