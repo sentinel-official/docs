@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="824" height="824" viewBox="0 0 824 824" version="1.1">
+    <title>Group</title>
+    <defs>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#0ADBC9" offset="0%"/>
+            <stop stop-color="#04B599" offset="100%"/>
+        </linearGradient>
+        <path d="M542.898393,441.78 C544.193372,441.78 545.786354,441.47022 547.677339,440.850659 C549.568324,440.231098 551.524319,439.333398 553.545325,438.157559 C576.195254,424.502721 595.217232,412.080881 610.61126,400.892039 C626.005288,389.703196 638.297124,378.65521 647.486768,367.748079 C656.676412,356.840948 663.33369,345.087662 667.458602,332.488221 C671.583514,319.888781 673.64597,305.233663 673.64597,288.522869 L673.64597,149.78 L412.153433,149.78 L412.153433,288.522869 C412.153433,305.233663 414.241195,319.77038 418.416719,332.13302 C422.592244,344.49566 429.35031,356.009593 438.690919,366.67482 C448.031527,377.340046 460.373976,388.296681 475.718264,399.544723 C491.062552,410.792766 509.857211,423.663711 532.102241,438.157559 C534.123247,439.451798 536.076624,440.379098 537.962373,440.939459 C539.848122,441.49982 541.493462,441.78 542.898393,441.78 Z" id="path-2"/>
+        <filter x="-57.4%" y="-51.4%" width="214.7%" height="202.7%" filterUnits="objectBoundingBox" id="filter-3">
+            <feOffset dx="0" dy="0" in="SourceAlpha" result="shadowOffsetOuter1"/>
+            <feGaussianBlur stdDeviation="50" in="shadowOffsetOuter1" result="shadowBlurOuter1"/>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.2 0" type="matrix" in="shadowBlurOuter1"/>
+        </filter>
+    </defs>
+    <g id="Logo" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard" transform="translate(-100, -100)">
+            <g id="Group" transform="translate(100, 100)">
+                <rect id="Rectangle" fill="url(#linearGradient-1)" x="0" y="0" width="824" height="824" rx="182"/>
+                <g id="Path" fill-rule="nonzero">
+                    <use fill="black" fill-opacity="1" filter="url(#filter-3)" xlink:href="#path-2"/>
+                    <use fill="#F2F2F7" xlink:href="#path-2"/>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

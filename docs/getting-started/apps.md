@@ -39,10 +39,10 @@ The following dVPN apps are built on top of the Sentinel Protocol. This is why w
         svgFile=""
     />
     <Card
-        title="V2:App"
-        description="V2App, powered by the advanced V2Ray platform, offers seamless access to a free and open internet. Built on top of Sentinel dVPN blockchain, v2app emphasizes strong privacy and security, without compromising on speed and reliability."
-        to="https://v2.app/"
-        svgFile="/icons/v2.svg"
+        title="DVPN Telegram Bot"
+        description="An innovative mini-app created by Norse Labs and powered by the Sentinel blockchain. It lets you securely and privately connect to thousands of dVPN servers worldwide, all for free! Since it’s used via Telegram, there’s no need to download any additional apps."
+        to="https://t.me/dvpnbot"
+        svgFile="/icons/dvpn-telegram-bot.svg"
     />
     <Card
         title="Independent dVPN"
@@ -50,6 +50,12 @@ The following dVPN apps are built on top of the Sentinel Protocol. This is why w
         to="https://independentdvpn.com"
         icon=""
         svgFile="/icons/independentdvpn.png"
+    />
+    <Card
+        title="V2:App"
+        description="V2App, powered by the advanced V2Ray platform, offers seamless access to a free and open internet. Built on top of Sentinel dVPN blockchain, v2app emphasizes strong privacy and security, without compromising on speed and reliability."
+        to="https://v2.app/"
+        svgFile="/icons/v2.svg"
     />
     <Card
         title="Breadcrumbs"
