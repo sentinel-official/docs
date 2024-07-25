@@ -15,20 +15,36 @@ The dVPN  Node Manager tool can be installed in three distinct ways, tailored to
 
 For Debian-based users, the simplest and most streamlined way of installing the `dvpn-node-manager` is through our Personal Package Archive (PPA). This method ensures that you receive the latest updates automatically and simplifies the installation process.
 
-### Adding the PPA and Installing the Package
+### Ubuntu
 
-Add the PPA to your system: This step adds our repository to your system's list of sources, from which packages are retrieved. You can add the PPA by running the following command in your terminal:
+This step adds our repository to your system's list of sources, from which packages are retrieved. You can add the PPA by running the following command in your terminal:
 
 ```bash
 sudo add-apt-repository ppa:foxinou/dvpn-node-manager
-sudo apt update
 ```
+
+### Debian
+
+Debian users need to add the PPA manually. Follow these steps to add the PPA and install the package:
+
+1. Add the PPA key to your system:
+
+  ```
+  curl -fsSL https://files.foxinodes.net/launchpad/foxinou_dvpn-node-manager.gpg | sudo tee /etc/apt/trusted.gpg.d/foxinou_dvpn-node-manager.gpg > /dev/null
+  ```
+
+2. Add the PPA to your sources list:
+
+  ```
+  echo "deb http://ppa.launchpad.net/foxinou/dvpn-node-manager/ubuntu jammy main" | sudo tee -a /etc/apt/sources.list
+  ```
 
 ### Install the dvpn-node-manager:
 
 Now that your system is aware of the new repository, you can install the `dvpn-node-manager` package by executing:
 
 ```bash
+sudo apt update
 sudo apt install dvpn-node-manager
 ```
 
@@ -58,7 +74,7 @@ This command will remove the dvpn-node-manager package from your system. If you 
 sudo add-apt-repository --remove ppa:foxinou/dvpn-node-manager
 ```
 
-This will ensure that your system no longer checks for updates from the dvpn-node-manager PPA.
+This will ensure that your system no longer checks for updates from the `dvpn-node-manager` PPA.
 
 
 ## From Debian Package 
@@ -70,9 +86,7 @@ For users on Debian-based systems, the `dvpn-node-manager` is available as a `.d
 You can manually download the `.deb` file of your choice by consulting the available [releases](https://github.com/sentinelgrowthdao/dvpn-node-manager/releases).
 
 ```bash
-sudo wget -O /var/cache/apt/archives/dvpn-node-manager_latest.deb https://github.com/sentinelgrowthdao/dvpn-node-manager/releases/download/v1.0.0-alpha9/dvpn-node-manager_1.0.0-alpha9_$(dpkg --print-architecture).deb
-sudo chmod 644 /var/cache/apt/archives/dvpn-node-manager_latest.deb
-sudo chown _apt:root /var/cache/apt/archives/dvpn-node-manager_latest.deb
+sudo wget -O /var/cache/apt/archives/dvpn-node-manager_latest.deb https://github.com/sentinelgrowthdao/dvpn-node-manager/releases/download/v1.0.0-alpha13/dvpn-node-manager_1.0.0-alpha13_$(dpkg --print-architecture).deb && sudo chmod 644 /var/cache/apt/archives/dvpn-node-manager_latest.deb && sudo chown _apt:root /var/cache/apt/archives/dvpn-node-manager_latest.deb
 ```
 
 ### Installing the Package
