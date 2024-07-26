@@ -1,6 +1,6 @@
 ---
 title: Overview
-sidebar_position: 1.5
+sidebar_position: 1
 ---
 
 ![](/img/getting-started/dvpn-coin.png)

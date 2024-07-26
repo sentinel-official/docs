@@ -144,7 +144,7 @@ const config = {
           },
           {
             label: 'DVPN Coin',
-            to: 'dvpn-coin/overview',
+            to: 'dvpn-coin',
             position: 'left',
           },
           {
