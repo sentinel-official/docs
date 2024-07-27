@@ -67,7 +67,7 @@ Lists the countries of the RPC Nodes.
 
 # List of addresses to iterate over
 
-addresses=("rpc.trinityvalidator.com"
+addresses=("rpc.trinitystake.io"
            "rpc.sentinel.co"
            "rpc.sentinel.quokkastake.io"
            "rpc.sentinel.chaintools.tech"
@@ -120,7 +120,7 @@ Lists the RPC Nodes and their uptime.
 
 # List of addresses to iterate over
 
-rpc_addresses=("https://rpc.trinityvalidator.com:443"
+rpc_addresses=("https://rpc.trinitystake.io:443"
            "https://rpc.sentinel.co:443"
            "https://rpc.sentinel.quokkastake.io:443"
            "https://rpc.sentinel.chaintools.tech:443"

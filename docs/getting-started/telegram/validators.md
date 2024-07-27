@@ -30,6 +30,6 @@ This list does NOT include validators who have already communicated their decomm
 - StakeLab: https://t.me/stakelab_fr
 - Stakewolle: https://t.me/stakewolle
 - Strangelove: https://t.me/strangeloveprice
-- Trinity Validator: https://t.me/trinityvalidatorgroup
+- Trinity Stake: https://t.me/trinitystakegroup
 - Trivium Network: https://t.me/TriviumNode
 - Ubik Capital: https://t.me/ubikcapital
