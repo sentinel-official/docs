@@ -16,9 +16,11 @@ Then open Keplr, create a new wallet and take note of the mnemonic (24 words)
 
 Access this [website](https://www.base64encode.org/), encode your mnemonic in Base64 format and take note of it as you will need to insert it into the template file
 
-Now, fund your wallet with a minimum of:
+To get started, fund your wallet with the following minimum amounts:
+
 - **50 DVPN:**  necessary for the Node to operate
-- **15 AKT:** 5 for deployment deposit and the remaining for paying the provider
+- **0.5 AKT:** required as a deployment deposit.
+- **X AKT:** make sure you have enough AKT to cover your provider's monthly fees.
 
 This is just an example of how your wallet is displayed
 

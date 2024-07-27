@@ -15,7 +15,7 @@ There are currenty 5 ways to get started with setting up a dVPN node:
 - [Automated](/node-setup/automated)
 - [Manual](node-setup/manual-setup)
 - [Linux Script](/node-setup/other/linux-script)
-- [Cloudmos on Akash](/node-setup/other/cloudmos-on-akash/start-cloudmos-on-akash)
+- [Akash Network](/node-setup/akash)
 - [Node Spawner](/node-setup/other/node-spawner/overview)
 
 ### dVPN Node Owners Groups

@@ -1,9 +1,9 @@
 {
-  "label": "Cloudmos on Akash",
+  "label": "Akash Network",
   "position": 3,
   "link": {
     "type": "generated-index",
-    "slug": "/cloudmos-on-akash",
+    "slug": "/akash",
     "description": "Intended for anyone inclined to contribute to the Sentinel Network and allocate their bandwidth through a dVPN node hosted on Akash Network."
   }
 }

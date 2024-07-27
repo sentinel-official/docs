@@ -10,9 +10,9 @@ sidebar_position: 3
 Execute this step only if you have selected the template that includes SSH access.
 :::
 
-You might prefer accessing your container via SSH, as the default Cloudmos shell may not provide a satisfactory user experience. To accomplish this, we will need the correct **provider name** and **port** information for the SSH connection.
+You might prefer accessing your container via SSH, as the default shell may not provide a satisfactory user experience. To accomplish this, we will need the correct **provider name** and **port** information for the SSH connection.
 
-On `LEASE` tab make note of the forwarded port 22; in this case, it is set to **32757**.
+On `LEASE` tab make note of the forwarded port 22; in this case, it is set to **30225**.
 
 ![Check IP & Port](/img/akash/checks.png)
 
@@ -23,7 +23,7 @@ Click on the **provider** and retrieve the full name, such as `provider.hurrican
 Now open a terminal and type
 
 ```bash
-ssh root@provider.hurricane.akash.pub -p 32757
+ssh root@provider.hurricane.akash.pub -p 30225
 ```
 
 Now you have SSHed into your container!
