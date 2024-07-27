@@ -6,7 +6,7 @@ sidebar_position: 4
 
 # Remove the Node
 
-In the `Deployments` section, click on the three dots on the right side of your active deployment and select `Close`. You will also receive your **5 AKT** deployment deposit back.
+In the `Deployments` section, click on the three dots on the right side of your active deployment and select `Close`. You will also receive your **0.5 AKT** deployment deposit back.
 
 ![Remove the Node](/img/akash/close.png)
 
