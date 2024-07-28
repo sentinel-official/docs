@@ -164,7 +164,7 @@ mv data data-old
 If you're using a snapshot on a validator node during a chain halt and you're **NOT** using TMKMS, be sure to back up your `priv_validator_state.json` file from your recently renamed `data-old` folder. After extracting the snapshot, but before starting the node, replace the new `priv_validator_state.json` file with your backup. This step is essential to prevent double-signing.
 :::
 
-Please find below a list of validators that offer their snapshots:
+Please find below a list of Validators/RPC owners that offer their snapshots:
 
 <details>
 <summary>Available Snapshots</summary>
