@@ -3,20 +3,22 @@ title: Explorers
 sidebar_position: 5
 ---
 
-# Explorers
+# Sentinel Explorers
 
-The explorers in the Cosmos ecosystem are rapidly growing. The following is a list of Sentinel explorers currently available. Please make sure to contribute to this page if any explorers are missing.
+Here is a list of available Sentinel explorers. If you notice any missing, please contribute to keep this page up to date.
+
+### Block Explorers
+
+| Explorer Name | URL                                       |
+|---------------|-------------------------------------------|
+| Official      | https://explorer.sentinel.co           |
+| Mintscan      | https://www.mintscan.io/sentinel           |
+| Ping.pub      | https://ping.pub/sentinel                  |
+| ATOMscan      | https://atomscan.com/sentinel           |
+
 
 ### Node Explorers
 
 | Explorer Name | URL                                       |
 |---------------|-------------------------------------------|
 | Sentinel Map      | https://map.sentinel.co           |
-
-### Block Explorers
-
-| Explorer Name | URL                                       |
-|---------------|-------------------------------------------|
-| Mintscan      | https://www.mintscan.io/sentinel           |
-| ATOMscan      | https://atomscan.com/sentinel           |
-| Ping.pub      | https://ping.pub/sentinel                  |
