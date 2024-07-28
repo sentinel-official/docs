@@ -75,6 +75,10 @@ The final step is to check the [sync status](/full-node-setup/node-run#check-syn
 
 ### Free up space
 
+:::warning
+Perform this step only if you already have a running full node that needs to free up space. If you are setting up a full node for the first time, refer to the `Bootstrap the Node` section above.
+:::
+
 This step should be performed regularly, as the hard disk tends to fill up over time. It is advisable to establish a monitoring structure to determine when it is necessary to free up space.
 
 To get started, edit the `state-sync.sh` file and and include the final three lines
@@ -155,6 +159,20 @@ mv data data-old
 ```
 
 ### Apply the Snapshot
+
+Please find below a list of Validators/RPC owners that offer their snapshots:
+
+<details>
+<summary>Available Snapshots</summary>
+<p>
+
+- Autostake: [https://autostake.com/networks/sentinel/](https://autostake.com/networks/sentinel/)
+- Busurnode: in maintenance
+- Polkachu: [https://www.polkachu.com/tendermint_snapshots/sentinel](https://www.polkachu.com/tendermint_snapshots/sentinel)
+- Roomit: [https://roomit.xyz/snapshot/mainnet/dvpn/](https://roomit.xyz/snapshot/mainnet/dvpn/)
+
+</p>
+</details>
 
 For this example, we will use a [Polkachu snapshot](https://www.polkachu.com/tendermint_snapshots/sentinel). To download and install the latest snapshot, follow these steps:
 
