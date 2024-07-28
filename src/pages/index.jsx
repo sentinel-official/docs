@@ -52,7 +52,7 @@ export default function Homepage() {
             <Card
               title="The DVPN Coin"
               description="The DVPN coin is a governance coin that allows staked coin holders to decide the future of the protocol, including every implementation detail. "
-              to="/getting-started/dvpn-coin/overview"
+              to="/dvpn-coin"
               icon={<DvpnCoin />}
               svgFile=""
             />
