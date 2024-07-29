@@ -98,10 +98,10 @@ endpoints:
     kind: ip
 services:
   app:
-    image: declab/sentinel_dvpn_ssh:0.7.3
+    image: declab/sentinel_dvpn_ssh:0.7.1.1
     
     env:
-      - "SSH_PUBKEY=" # Your SSH pubkey
+      - "SSH_KEY=" # Your SSH pubkey
       - "MNEMONIC_BASE64=" # Mnemonic encrypted with BASE64.
       - "MONIKER=" # Your dVPN node name.
       - "REMOTE_PORT=8585" # TCP listen port.
