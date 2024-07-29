@@ -17,8 +17,10 @@ Establishing a Sentinel dVPN node offers flexibility in choosing the location, t
 ## Hardware Recommendations
 
 While running a dVPN node requires minimal hardware, optimal performance is ensured with the following specifications:
-- 2 CPUs
-- 2GB RAM
-- Unlimited bandwidth
+- vCPU: 2
+- RAM: 2GB
+- Hard Drive: 10GB SSD
+- Operative System: Linux (preferably Debian or Ubuntu)
+- Bandwidth: Unmetered
 
 These recommended hardware configurations ensure a smoother and more efficient operation of your dVPN node.

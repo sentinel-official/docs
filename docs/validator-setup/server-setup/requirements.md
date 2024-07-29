@@ -5,11 +5,11 @@ sidebar_position: 1
 ## Home or Dedicated Server
 
 To run a Validator, an ideal hardware configuration may be the one below
-- CPU: Intel Xeon E3-1220 v2 or better - 3.1 GHz - 4 core(s)
-- RAM: 32GB - DDR3
-- Hard Drive(s): 2x 1TB (SSD SATA) RAID
+- CPU: 3.1+ GHz 6+ cores
+- RAM: 32GB+ - DDR4
+- Hard Drive(s): 2 x 1TB (SSD NVMe) RAID
 - Bandwidth: Unmetered @ 1Gbps
-- Operative System: Linux (Debian)
+- Operative System: Linux (preferably Debian or Ubuntu)
 
 ## Change Root Password
 
