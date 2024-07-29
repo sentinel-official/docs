@@ -81,7 +81,7 @@ export default function Homepage() {
             <Card
               title="Staking"
               description="Discover all you need to know about staking your DVPN coins, from selecting the ideal validator to streamlining the process with the REStake app.."
-              to="/getting-started/dvpn-coin/staking/concepts"
+              to="/dvpn-coin/staking/concepts"
               icon={<GrowthDao />}
               svgFile=""
             />
