@@ -60,7 +60,7 @@ Add your mnemonic:
 MNEMONIC=my hot wallet seed words here that has minimal funds
 ```
 
-Open the `Dockerfile` and if the node version is not the last, update it manually (I put 20 instead 18)
+Open the `Dockerfile` and if the node version is not the last, update it manually (I put **20.15** instead 18)
 
 ```bash
 sudo nano Dockerfile
@@ -93,10 +93,12 @@ Replace the file with this code block and, on `restUrl` field, select your desir
   "sentinel": {
     "prettyName": "Sentinel 881",
     "restUrl": [
-      "https://api.sentinel.quokkastake.io:443" 
+      "https://api.trinitystake.io:443" 
     ],
     "autostake": {
-      "correctSlip44": false
+      "correctSlip44": false,
+      "delegationsTimeout": 300000,
+      "queryTimeout": 300000
     }
   }
 }
