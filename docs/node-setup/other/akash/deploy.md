@@ -98,7 +98,7 @@ endpoints:
     kind: ip
 services:
   app:
-    image: declab/sentinel_dvpn_ssh:0.7.1.1
+    image: declab/sentinel_dvpn_ssh:0.7.1.2
     
     env:
       - "SSH_KEY=" # Your SSH pubkey
