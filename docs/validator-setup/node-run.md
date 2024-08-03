@@ -171,7 +171,7 @@ Please find below a list of Validators/RPC owners that offer their snapshots:
 <p>
 
 - Autostake: [https://autostake.com/networks/sentinel/](https://autostake.com/networks/sentinel/)
-- Busurnode: in maintenance
+- Busurnode: [https://busurnode.com/network/mainnet/sentinel#service_snapshot](https://busurnode.com/network/mainnet/sentinel#service_snapshot)
 - Polkachu: [https://www.polkachu.com/tendermint_snapshots/sentinel](https://www.polkachu.com/tendermint_snapshots/sentinel)
 - Roomit: [https://roomit.xyz/snapshot/mainnet/dvpn/](https://roomit.xyz/snapshot/mainnet/dvpn/)
 
