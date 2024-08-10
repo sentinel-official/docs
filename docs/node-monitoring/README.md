@@ -5,7 +5,7 @@ sidebar_position: 1
 
 # Node Monitoring
 
-Running a node or a validator requires a reliable monitoring system to prevent downtime, missed blocks, and reputation damage. Alerting is also essential to notify you of issues.
+Running a dVPN Node, a Full Node or a Validator, requires a reliable monitoring system to prevent downtime, missed blocks, and reputation damage. Alerting is also essential to notify you of issues.
 We'll use established monitoring and visualization tools as part of a **stack** or **standalone** solutions.
 
 A monitoring stack comprises a set of tools that require installation on both your local node machine and a dedicated monitoring machine. The data collection process involves two main types: metrics collection and logs collection.
