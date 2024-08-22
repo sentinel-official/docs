@@ -5,7 +5,106 @@ sidebar_position: 5
 
 # Run the Full Node
 
-When setting up a validator and joining a blockchain network, there are typically two main states that a node needs to synchronize with the network: State Sync, Using a Snapshot, and Block Sync. In this guide we will cover `State Sync`, which is the preferable approach.
+When setting up a validator and joining a blockchain network, there are usually three key synchronization methods to get your node up to speed: using a Snapshot, State Sync, and Block Sync.
+
+
+## Using a Snapshot
+
+Downloading a Blockchain Snapshot is a different method where you download a snapshot of the blockchain at a recent height. This snapshot includes the state of the blockchain at a specific point in time. After applying the snapshot, the node only needs to catch up with the blocks generated after the snapshot was taken, which can be significantly faster than starting from the genesis block.
+
+
+For this example, we will use a [Busurnode Snapshot](https://busurnode.com/network/sentinel#service_snapshot). To download and install the latest snapshot, follow the below steps:
+
+Create a reusable shell script, like `snapshotsync.sh`, with the following code. If you're using a service name other than `sentinelhub`, such as `cosmovisor`, be sure to update `SERVICE_NAME` accordingly.
+
+<details>
+<summary>snapshotsync.sh</summary>
+<p>
+
+```bash
+#!/bin/bash
+
+# Service Name (update this if you use service name other than 'sentinelhub', for example 'cosmovisor')
+SERVICE_NAME=sentinelhub
+
+# Install required package
+echo "Installing required package"
+sudo apt install -y lz4 jq curl > /dev/null 2>&1
+
+# Get Latest Snapshot URL
+API_REQUEST=$(curl -s https://busurnode.com/api/v1/snapshot/mainnet/sentinel)
+IS_SUCCESS=$(echo $API_REQUEST | jq -r '.success')
+if [ "$IS_SUCCESS" = "true" ]; then
+  SNAPSHOT_URL=$(echo $API_REQUEST | jq -r '.data.snapshot.url')
+  echo "Latest Snapshot URL: $SNAPSHOT_URL"
+else
+  echo "Error fetching latest snapshot from Busurnode API"
+  exit 1
+fi
+
+# Download the latest snapshot and save it as sentinel_snapshot.tar.lz4
+echo "Downloading the latest snapshot..."
+curl -L --progress-bar -o "$HOME/sentinel_snapshot.tar.lz4" "$SNAPSHOT_URL"
+if [ $? -eq 0 ] && [ -f "$HOME/sentinel_snapshot.tar.lz4" ]; then
+  echo "Download complete: $HOME/sentinel_snapshot.tar.lz4"
+else
+  echo "Error: Download failed."
+  exit 1
+fi
+
+# Stop the sentinel service
+echo "Stopping the sentinel service..."
+sudo service $SERVICE_NAME stop
+
+# Copy the validator state JSON file
+cd $HOME
+cp ~/.sentinelhub/data/priv_validator_state.json ~/.sentinelhub/priv_validator_state.json
+
+# Reset Tendermint state
+sentinelhub tendermint unsafe-reset-all --home $HOME/.sentinelhub --keep-addr-book
+
+# Extract the snapshot
+echo "Extracting snapshot..."
+lz4 -c -d $HOME/sentinel_snapshot.tar.lz4 | tar -x -C $HOME/.sentinelhub
+
+# Replace priv_validator_state from backup
+cp ~/.sentinelhub/priv_validator_state.json ~/.sentinelhub/data/priv_validator_state.json
+
+# Start the sentinel service
+echo "Starting the sentinel service..."
+sudo service $SERVICE_NAME start
+echo "Process complete."
+```
+
+</p>
+</details>
+
+Next, grant execution permissions to the script and run it:
+
+```bash
+chmod 700 snapshotsync.sh
+./snapshotsync.sh
+```
+
+The final step is to check the [sync status](/full-node-setup/node-run#check-sync-status) to confirm when the node has completed synchronization.
+
+If you're looking for alternative services that provide snapshots, here is a list of Validators/RPC providers who offer them:
+
+<details>
+<summary>Available Snapshots</summary>
+<p>
+
+- Autostake: [https://autostake.com/networks/sentinel/](https://autostake.com/networks/sentinel/)
+- Busurnode: [https://busurnode.com/network/sentinel#service_snapshot](https://busurnode.com/network/sentinel#service_snapshot)
+- Polkachu: [https://www.polkachu.com/tendermint_snapshots/sentinel](https://www.polkachu.com/tendermint_snapshots/sentinel)
+- Roomit: [https://roomit.xyz/snapshot/mainnet/dvpn/](https://roomit.xyz/snapshot/mainnet/dvpn/)
+
+</p>
+</details>
+
+:::warning
+If you're using a snapshot on a validator node during a chain halt and you're **NOT** using TMKMS, be sure to back up your `priv_validator_state.json` file from your recently renamed `data-old` folder. After extracting the snapshot, but before starting the node, replace the new `priv_validator_state.json` file with your backup. This step is essential to prevent double-signing.
+:::
 
 ## State Sync
 
@@ -76,7 +175,7 @@ The final step is to check the [sync status](/full-node-setup/node-run#check-syn
 ### Free up space
 
 :::warning
-Perform this step only if you already have a running full node that needs to free up space. If you are setting up a full node for the first time, refer to the `Bootstrap the Node` section above.
+Perform this step only if you already have a running validator that needs to free up space. If you are setting up a validator for the first time, refer to the `Bootstrap the Node` section above.
 :::
 
 This step should be performed regularly, as the hard disk tends to fill up over time. It is advisable to establish a monitoring structure to determine when it is necessary to free up space.
@@ -121,69 +220,6 @@ Launch the script
 ```bash
 ./state-sync.sh
 ```
-
-Start the node by running the following command:
-
-```bash
-sudo systemctl start sentinelhub.service
-```
-
-The final step is to check the [sync status](/full-node-setup/node-run#check-sync-status) to confirm when the node has completed synchronization.
-
-
-## Using a Snapshot
-
-Downloading a Blockchain Snapshot is a different method where you download a snapshot of the blockchain at a recent height. This snapshot includes the state of the blockchain at a specific point in time. After applying the snapshot, the node only needs to catch up with the blocks generated after the snapshot was taken, which can be significantly faster than starting from the genesis block.
-
-Install the required packages:
-
-```bash
-sudo apt-get install lz4
-```
-
-### (Optional) Stop the Node
-
-If you are already running the node and want to free up space, follow the below commands:
-
-Stop the node
-
-```bash
-sudo systemctl stop sentinelhub.service
-```
-
-Rename the data folder
-
-```bash
-cd .sentinelhub
-mv data data-old
-```
-
-### Apply the Snapshot
-
-Please find below a list of Validators/RPC owners that offer their snapshots:
-
-<details>
-<summary>Available Snapshots</summary>
-<p>
-
-- Autostake: [https://autostake.com/networks/sentinel/](https://autostake.com/networks/sentinel/)
-- Busurnode: [https://busurnode.com/network/sentinel#service_snapshot](https://busurnode.com/network/sentinel#service_snapshot)
-- Polkachu: [https://www.polkachu.com/tendermint_snapshots/sentinel](https://www.polkachu.com/tendermint_snapshots/sentinel)
-- Roomit: [https://roomit.xyz/snapshot/mainnet/dvpn/](https://roomit.xyz/snapshot/mainnet/dvpn/)
-
-</p>
-</details>
-
-For this example, we will use a [Polkachu snapshot](https://www.polkachu.com/tendermint_snapshots/sentinel). To download and install the latest snapshot, follow these steps:
-
-- Copy the snapshot file link.
-- Run the following command in your terminal:
-
-```bash
-curl -o - -L https://snapshots.polkachu.com/snapshots/sentinel/sentinel_<block_height>.tar.lz4 | lz4 -c -d - | tar -x -C $HOME/.sentinelhub
-```
-
-This command will download and extract the snapshot, which is essentially a zipped `data` folder, directly into your `.sentinelhub` directory.
 
 Start the node by running the following command:
 
