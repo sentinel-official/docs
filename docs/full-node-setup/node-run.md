@@ -8,7 +8,7 @@ sidebar_position: 5
 When setting up a validator and joining a blockchain network, there are three main methods to sync your node: Snapshot, State Sync, and Block Sync. If your node is already running and you've used a Snapshot or State Sync, it's important to regularly free up space since the hard drive can fill up over time. Setting up a monitoring system is recommended to alert you when it's time to clear out unnecessary data.
 
 
-## Snapshot
+## Snapshot Sync
 
 Downloading a blockchain snapshot allows you to sync your node much faster by using a recent copy of the blockchain. Instead of starting from scratch and processing the entire blockchain, the snapshot brings your node up to a specific point in time. After that, your node only needs to catch up with the new blocks added since the snapshot, significantly speeding up the syncing process.
 
