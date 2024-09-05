@@ -8,6 +8,8 @@ sidebar_position: 3
 
 ## Method 1 - Prebuilt
 
+### x86_64
+
 Pull the image (check your desired version from this [link](https://github.com/sentinel-official/dvpn-node/pkgs/container/dvpn-node))
 
 ```bash
@@ -18,6 +20,18 @@ Tag the image
 
 ```bash
 docker tag ghcr.io/sentinel-official/dvpn-node:latest sentinel-dvpn-node
+```
+
+### ARM7
+
+```bash
+docker pull wajatmaka/sentinel-arm7-debian:v0.7.1
+```
+
+### AARCH64 (ARM64)
+
+```bash
+docker pull wajatmaka/sentinel-aarch64-alpine:v0.7.1
 ```
 
 ## Method 2 - From Source
