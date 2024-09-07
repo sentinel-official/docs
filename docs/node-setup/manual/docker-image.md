@@ -28,7 +28,7 @@ docker tag ghcr.io/sentinel-official/dvpn-node:latest sentinel-dvpn-node
 docker pull wajatmaka/sentinel-arm7-debian:v0.7.1
 ```
 
-### AARCH64 (ARM64)
+### AArch64 (ARM64)
 
 ```bash
 docker pull wajatmaka/sentinel-aarch64-alpine:v0.7.1
