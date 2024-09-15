@@ -15,7 +15,7 @@ Establishing a Sentinel dVPN node offers flexibility in choosing the location, t
 - On Akash Network: Refer to the specific [guide](/node-setup/akash) for detailed instructions
 
 :::warning
-It's recommended to avoid using widely known cloud providers like AWS, GCP, Azure, Vultr, Linode, Oracle, Alibaba, ColoCrossing, and similar platforms, as they may not be whitelisted for dVPN nodes.
+It's recommended to avoid using widely known cloud providers like AWS, GCP, Azure, Vultr, Linode, Oracle, Alibaba, ColoCrossing, Digital Ocean, and similar platforms, as they may not be whitelisted for dVPN nodes.
 :::
 
 ## Hardware Recommendations

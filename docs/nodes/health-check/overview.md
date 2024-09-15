@@ -27,5 +27,5 @@ To check if your node has passed the health check, there are four ways to do it.
 - [Planwizard API](/nodes/health-check/plan-wizard)
 
 :::warning
-To improve the chances of passing the health check, it's recommended to avoid using widely known cloud providers like AWS, GCP, Azure, Vultr, Linode, Oracle, Alibaba, ColoCrossing, and similar platforms, as they may not be whitelisted for dVPN nodes.
+To improve the chances of passing the health check, it's recommended to avoid using widely known cloud providers like AWS, GCP, Azure, Vultr, Linode, Oracle, Alibaba, ColoCrossing, Digital Ocean, and similar platforms, as they may not be whitelisted for dVPN nodes.
 :::
