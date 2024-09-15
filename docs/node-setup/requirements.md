@@ -14,6 +14,10 @@ Establishing a Sentinel dVPN node offers flexibility in choosing the location, t
 - At home: utilize a Raspberry Pi 4 or 5 for a locally hosted solution.
 - On Akash Network: Refer to the specific [guide](/node-setup/akash) for detailed instructions
 
+:::warning
+It's recommended to avoid using widely known cloud providers like AWS, GCP, Azure, Vultr, Linode, Oracle, Alibaba, ColoCrossing, and similar platforms, as they may not be whitelisted for dVPN nodes.
+:::
+
 ## Hardware Recommendations
 
 While running a dVPN node requires minimal hardware, optimal performance is ensured with the following specifications:

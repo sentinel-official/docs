@@ -6,7 +6,7 @@ sidebar_position: 1
 # Node Health Check
 
 To be added into the Subscription Plan and consequently be eligible to Node Revenue System, the node is required to pass the `Node Health Check`.
-This check occurs multiple times a day and will test:
+This check tests:
 - the node endpoint
 - the node configuration
 - the node gigabyte price (less than 20 DVPN)
@@ -25,3 +25,7 @@ To check if your node has passed the health check, there are four ways to do it.
 - [Busurnode](/nodes/health-check/busurnode)
 - [Sentinel API](/nodes/health-check/sentinel-api)
 - [Planwizard API](/nodes/health-check/plan-wizard)
+
+:::warning
+To improve the chances of passing the health check, it's recommended to avoid using widely known cloud providers like AWS, GCP, Azure, Vultr, Linode, Oracle, Alibaba, ColoCrossing, and similar platforms, as they may not be whitelisted for dVPN nodes.
+:::
