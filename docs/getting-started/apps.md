@@ -41,7 +41,7 @@ The following dVPN apps are built on top of the Sentinel Protocol. This is why w
     <Card
         title="DVPN Telegram Bot"
         description="An innovative mini-app created by Norse Labs and powered by the Sentinel blockchain. It lets you securely and privately connect to thousands of dVPN servers worldwide, all for free! Since it’s used via Telegram, there’s no need to download any additional apps."
-        to="https://t.me/dvpnbot"
+        to="https://norselabs.io/products/dvpn-bot"
         svgFile="/icons/dvpn-telegram-bot.svg"
     />
     <Card
