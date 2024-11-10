@@ -72,6 +72,7 @@ sentinelhub tendermint unsafe-reset-all --home $HOME/.sentinelhub --keep-addr-bo
 # Extract the snapshot
 echo "Extracting snapshot..."
 lz4 -c -d $HOME/sentinel_snapshot.tar.lz4 | tar -x -C $HOME/.sentinelhub
+rm $HOME/sentinel_snapshot.tar.lz4
 
 # Replace priv_validator_state from backup
 cp ~/.sentinelhub/priv_validator_state.json ~/.sentinelhub/data/priv_validator_state.json
