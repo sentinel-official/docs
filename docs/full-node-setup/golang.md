@@ -41,9 +41,10 @@ curl -OL https://golang.org/dl/goX.X.X.linux-amd64.tar.gz && \
 tar -C ${HOME} -xvf goX.X.X.linux-amd64.tar.gz
 ```
 
-Move the extracted go into `/usr/local/lib/go`
+Copy the extracted go into `/usr/local/lib/go`
+
 ```bash
-sudo mv ${HOME}/go /usr/local/lib/go
+sudo cp -r ${HOME}/go /usr/local/lib/go
 ```
 
 ## Export Golang environment variables
