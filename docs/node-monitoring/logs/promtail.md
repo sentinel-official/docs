@@ -32,7 +32,7 @@ sudo ln -s /home/${USER}/promtail/promtail /usr/local/bin/
 Inside your `promtail` directory create the `config.yaml` file:
 
 ```bash
-sudo nano config.yml
+sudo nano config.yaml
 ```
 
 Paste the following code in it making sure to edit the `<your_loki_instance_url>`
