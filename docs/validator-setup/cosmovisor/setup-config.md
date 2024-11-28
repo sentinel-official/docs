@@ -91,7 +91,7 @@ If you get `0.11.3` (which is the current version at the time of writing) everyt
 Set up a service to allow Cosmovisor to run in the background as well as restart automatically if it runs into any problems:
 
 ```bash
-sudo nano cosmovisor.service
+sudo nano /etc/systemd/system/cosmovisor.service
 ```
 
 Add the following block
