@@ -39,7 +39,7 @@ If the import fails, ensure that the `.ssh/` folder exists on your server under 
 Your public key will be now visible on your server by typing
 
 ```bash
-cat ~.ssh/authorized_keys
+cat ~/.ssh/authorized_keys
 ```
 
 For security purposes it is recommended to change the default port 22 to another one; let's say 2222.
