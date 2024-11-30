@@ -20,7 +20,7 @@ sudo apt update
 sudo apt install postgresql postgresql-contrib
 ```
 
-### Start and Enable PostgreSQL Service**
+### Start and Enable PostgreSQL Service
 
 After installation, the PostgreSQL service usually starts automatically. To check its status, use:
 
@@ -111,7 +111,7 @@ sudo ln -s /home/${USER}/missed-blocks-checker/missed-blocks-checker /usr/local/
 
 ### Create a Telegram Bot
 
-To receive notifications on Telegram about your missed blocks, you'll need to create a bot. You can do this using Telegram’s [BotFather](https://t.me/BotFather). For example, you could create a bot named `@my_validator_missed_blocks`.
+To use the Missed Blocks Checker on Telegram, you first need to create a bot. You can do this using Telegram’s [BotFather](https://t.me/BotFather). For example, you could create a bot named `@my_validator_missed_blocks`.
 
 Once the bot is created, make sure to save the following details:
 -  **Token**: This is a unique identifier tied to your bot’s name
@@ -324,3 +324,11 @@ sudo journalctl -u missed-blocks-checker.service -f --output cat
 ### Verify the Setup
 
 If everything is set up correctly, you should see the PostgreSQL database initialized and the tool up and running within a few minutes.
+
+## Usage
+
+After completing the installation, simply open your Telegram bot `@my_validator_missed_blocks`. Click on `/start`, and you'll see the following menu:
+
+![](/img/missed-blocks-checker.png)
+
+That's it! You're all set to begin.
