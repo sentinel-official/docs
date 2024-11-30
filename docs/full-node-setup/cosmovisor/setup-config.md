@@ -73,9 +73,9 @@ cosmovisor version
 You will get something like that:
 
 ```bash
-cosmovisor version: v1.5.0
+cosmovisor version: v1.7.0
 11:03AM INF running app args=["version"] module=cosmovisor path=/home/sentinel/.sentinelhub/cosmovisor/genesis/bin/sentinelhub
-0.11.3
+0.11.5
 ```
 
 To check your work, check sentinelhub version to confirm it matches with cosmovisor version
@@ -84,7 +84,7 @@ To check your work, check sentinelhub version to confirm it matches with cosmovi
 sentinelhub version
 ```
 
-If you get `0.11.3` (which is the current version at the time of writing) everything went fine
+If you get `0.11.5` (which is the current version at the time of writing) everything went fine
 
 ## Set Up Cosmovisor Service
 
