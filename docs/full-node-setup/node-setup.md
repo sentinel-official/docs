@@ -100,7 +100,7 @@ f6ba2e3e719428d17b045b43585dd9dcca66e76b@135.181.129.122:14656,e7b825983d15eef80
 </p>
 </details>
 
-Enable State Sync
+If you plan to use State Sync to run your node, simply set it to `true`:
 
 ```bash
 [statesync]
@@ -132,6 +132,18 @@ Set minimum gas prices for udvpn and other supported IBC tokens
 
 ```bash title="${HOME}/.sentinelhub/config/app.toml"
 minimum-gas-prices = "0.01ibc/31FEE1A2A9F9C01113F90BD0BBCCE8FD6BBB8585FAF109A2101827DD1D5B95B8,0.1udvpn,0.01ibc/B1C0DDB14F25279A2026BC8794E12B259F8BDA546A3C5132CCAEE4431CE36783,0.01ibc/ED07A3391A112B175915CD8FAF43A2DA8E4790EDE12566649D0C2F97716B8518,0.01ibc/A8C2D23A1E6F95DA4E48BA349667E322BD7A6C996D8A4AAE8BA72E190F3D1477"
+```
+
+Under the `[api]` code block set:
+
+```bash
+[api]
+
+# Enable defines if the API server should be enabled.
+enable = true
+
+# Address defines the API server to listen on.
+address = "tcp://0.0.0.0:1317"
 ```
 
 ### Add a system unit file

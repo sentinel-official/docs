@@ -39,6 +39,12 @@ The following dVPN apps are built on top of the Sentinel Protocol. This is why w
         svgFile=""
     />
     <Card
+        title="DVPN by Norse Labs"
+        description="DVPN is built with uncompromising privacy and security in mind. Leveraging the blockchain technology from Sentinel and advanced encryption, it follows a Zero Trust model — users don’t have to rely on us, as independent entities manage the servers, making tracking almost impossible."
+        to="https://play.google.com/store/apps/details?id=io.norselabs.dvpn&hl=en-US&pli=1"
+        svgFile="/icons/norse-labs.svg"
+    />
+    <Card
         title="DVPN Telegram Bot"
         description="An innovative mini-app created by Norse Labs and powered by the Sentinel blockchain. It lets you securely and privately connect to thousands of dVPN servers worldwide, all for free! Since it’s used via Telegram, there’s no need to download any additional apps."
         to="https://norselabs.io/products/dvpn-bot"
@@ -52,12 +58,6 @@ The following dVPN apps are built on top of the Sentinel Protocol. This is why w
         svgFile="/icons/independentdvpn.png"
     />
     <Card
-        title="V2:App"
-        description="V2App, powered by the advanced V2Ray platform, offers seamless access to a free and open internet. Built on top of Sentinel dVPN blockchain, v2app emphasizes strong privacy and security, without compromising on speed and reliability."
-        to="https://v2.app/"
-        svgFile="/icons/v2.svg"
-    />
-    <Card
         title="Breadcrumbs"
         description="Take charge of your online privacy with Breadcrumbs. Protect your digital footprint and earn rewards for your data. Our advanced VPN, powered by Sentinel, ensures top-notch security, keeping your information safe and inaccessible to prying eyes."
         to="https://www.breadcrumbsdata.com/"
@@ -65,7 +65,13 @@ The following dVPN apps are built on top of the Sentinel Protocol. This is why w
         svgFile="/icons/breadcrumbs.svg"
     />
     <Card
-        title="Dofwifhat dVPN"
+        title="V2:App"
+        description="V2App, powered by the advanced V2Ray platform, offers seamless access to a free and open internet. Built on top of Sentinel dVPN blockchain, v2app emphasizes strong privacy and security, without compromising on speed and reliability."
+        to="https://v2.app/"
+        svgFile="/icons/v2.svg"
+    />
+    <Card
+        title="Dogwifhat dVPN"
         description="It’s a dVPN wif a hat! The Sentinel Ecosystem's first foray into the memecoin world. This application is entirely open source, accessible on GitHub, and compatible with both Android and iOS platforms."
         to="https://dogwifhatdvpn.com/"
         icon=""

@@ -13,7 +13,7 @@ Install the dependencies:
 
 ```bash
 sudo apt update
-sudo apt install curl gnupg2 ca-certificates lsb-release
+sudo apt install curl gnupg2 ca-certificates lsb-release lsof psmisc
 ```
 
 Import an official Nginx signing key:
@@ -67,6 +67,7 @@ If you receive a successful message, you can now stop NGINX
 
 ```bash
 sudo systemctl stop nginx.service
+sudo killall nginx
 ```
 
 ## Configuration
@@ -149,10 +150,28 @@ Now, install the Certbot plugin
 sudo apt install python3-certbot-nginx
 ```
 
+Enable port 80 and 443 on your firewall
+
+```bash
+sudo ufw allow 80/tcp
+sudo ufw allow 443/tcp
+```
+
 Apply Certbot plugin to the rpc.conf file to enable redirection to HTTPS and select the number corresponding to your Full Node
 
 ```bash
 sudo certbot --nginx
+```
+
+You will be prompted to:
+- add your email
+- accept terms and conditions
+- Press Enter to select all the listed domains (rpc and api)
+
+Before restarting NGINX the following command to test the configuration for syntax errors:
+
+```bash
+sudo nginx -t
 ```
 
 Restart NGINX

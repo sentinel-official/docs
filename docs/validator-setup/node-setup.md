@@ -101,7 +101,7 @@ f6ba2e3e719428d17b045b43585dd9dcca66e76b@135.181.129.122:14656,e7b825983d15eef80
 </p>
 </details>
 
-Enable State Sync
+If you plan to use State Sync to run your node, simply set it to `true`:
 
 ```bash
 [statesync]
