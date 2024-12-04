@@ -27,6 +27,35 @@ Add a symbolic link to the `/usr/local/bin/` directory for system-wide access to
 sudo ln -s /home/${USER}/promtail/promtail /usr/local/bin/
 ```
 
+## Create the Promtail user
+
+It's generally a good practice to run Promtail as a dedicated user (promtail user).
+
+Create the user `promtail`:
+
+```bash
+sudo useradd --system promtail
+```
+
+Add the `promtail` user to the `adm` group
+
+```bash
+sudo usermod -a -G adm promtail
+```
+
+Grant execute permission for `other` on /home/sentinel This allows users other than `sentinel` to traverse the directory.
+
+```bash
+sudo chmod o+x /home/sentinel
+```
+
+Test Access for promtail user if it can access the binary:
+
+```bash
+sudo -u promtail /home/sentinel/promtail/promtail --version
+```
+
+
 ## Create a Config file
 
 Inside your `promtail` directory create the `config.yaml` file:
@@ -96,7 +125,7 @@ Description=Promtail
 After=network-online.target
 
 [Service]
-User=<your_user>
+User=promtail
 TimeoutStartSec=0
 CPUWeight=95
 IOWeight=95
