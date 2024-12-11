@@ -8,7 +8,7 @@ sidebar_position: 3
 First of all install some required packages
 
 ```bash
-sudo apt-get install -y curl git jq make unzip
+sudo apt-get install curl git jq make unzip gcc -y
 ```
 
 You now have two methods for installing Golang.
