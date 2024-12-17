@@ -84,7 +84,6 @@ Replace the file with the following code block. For the `restUrl` field, choose 
     "restUrl": [
       "https://api.trinitystake.io:443" 
     ],
-    "gasPrice": "0.1udvpn",
     "autostake": {
       "correctSlip44": false,
       "delegationsTimeout": 300000,
