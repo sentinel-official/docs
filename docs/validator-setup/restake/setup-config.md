@@ -42,28 +42,17 @@ Go into Restake directory
 cd restake
 ```
 
-Create your `.env` file from the sample `.env.sample`
+Rename the file  `.env.sample` to `.env`, then open it
 
 ```bash
-cp .env.sample .env
-```
-
-Open `.env` file:
-
-```bash
-sudo nano .env
+mv .env.sample .env
+nano .env
 ```
 
 Add your mnemonic:
 
 ```bash
 MNEMONIC=my hot wallet seed words here that has minimal funds
-```
-
-Open the `Dockerfile` and if the node version is not the last, update it manually (I put **20.15** instead 18)
-
-```bash
-sudo nano Dockerfile
 ```
 
 Pre-build your Docker containers with the following commands:
@@ -73,20 +62,20 @@ docker compose run --rm app npm install
 docker compose build --no-cache
 ```
 
-Go into `src` directory
+Navigate to the `src` directory
 
 ```bash
 cd src/
 ```
 
-Create your `.networks.local.json` file from the sample .networks.local.json.sample and open it:
+Rename the file `.networks.local.json` to `.networks.local.json.sample`, then open it:
 
 ```bash
-cp networks.local.json.sample networks.local.json
-sudo nano networks.local.json
+mv networks.local.json.sample networks.local.json
+nano networks.local.json
 ```
 
-Replace the file with this code block and, on `restUrl` field, select your desired one from [here](https://cosmos.directory/sentinel/nodes) and click on REST tab:
+Replace the file with the following code block. For the `restUrl` field, choose your preferred RPC endpoint from [this list](https://sentnodes.com/public-rpc):
 
 ```bash title=".networks.local.json"
 {
@@ -95,6 +84,7 @@ Replace the file with this code block and, on `restUrl` field, select your desir
     "restUrl": [
       "https://api.trinitystake.io:443" 
     ],
+    "gasPrice": "0.1udvpn",
     "autostake": {
       "correctSlip44": false,
       "delegationsTimeout": 300000,
