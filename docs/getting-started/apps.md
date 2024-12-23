@@ -1,5 +1,5 @@
 ---
-title: Download dVPN Apps
+title: dVPN Apps
 description: A list of apps entirely built on Sentinel
 sidebar_position: 4
 ---

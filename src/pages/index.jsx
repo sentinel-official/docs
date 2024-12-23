@@ -66,7 +66,7 @@ export default function Homepage() {
 
           <Section title="The dVPN Experience">
             <Card
-              title="Download dVPN apps"
+              title="dVPN apps"
               description="A comprehensive list of decentralized solutions built on top of Sentinel blockchain. These solutions enable you to access hundreds of community-managed nodes worldwide, providing a private and secure gateway to the internet."
               to="/getting-started/apps/"
               icon={<Download />}

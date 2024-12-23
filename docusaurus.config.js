@@ -143,8 +143,13 @@ const config = {
             position: 'left',
           },
           {
-            label: 'DVPN Coin',
+            label: '$DVPN Coin',
             to: 'dvpn-coin',
+            position: 'left',
+          },
+          {
+            label: 'Apps',
+            to: 'getting-started/apps',
             position: 'left',
           },
           {
@@ -202,7 +207,7 @@ const config = {
             // className: 'new-badge',
           },
           {
-            label: 'API Reference',
+            label: 'API',
             to: 'apis',
             position: 'left',
           },
