@@ -5,12 +5,12 @@ sidebar_position: 1
 ---
 ## Home or Dedicated Server
 
-To run a Full Node, an ideal hardware configuration may be the one below
-- CPU: 3.1+ GHz 6+ cores
-- RAM: 32GB+ - DDR4
-- Hard Drive(s): 2 x 1TB (SSD NVMe) RAID
-- Bandwidth: Unmetered @ 1Gbps
-- Operative System: Linux (preferably Debian or Ubuntu)
+To run a Full Node, the recommended minimum hardware requirements are as follows:
+- CPU: 8+ cores with a clock speed of 3.5 GHz or higher
+- RAM: At least 32GB DDR4
+- Storage: 500GB NVMe in RAID 1 configuration
+- Bandwidth: Unmetered connection with a speed of 1Gbps
+- Operating System: Linux (Debian or Ubuntu preferred)
 
 ## Change Root Password
 
