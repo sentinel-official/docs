@@ -1,5 +1,5 @@
 ---
-title: Migration
+title: Server Migration
 sidebar_position: 14
 ---
 
