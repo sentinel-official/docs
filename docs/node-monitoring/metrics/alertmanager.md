@@ -1,10 +1,10 @@
 ---
-title: Alert Manager
+title: Alertmanager
 description: An Alert system for Prometheus
 sidebar_position: 3
 ---
 
-# Alert Manager
+# Alertmanager
 
 Alerting with Prometheus is separated into two parts.
 - Alerting rules in Prometheus servers send alerts to an Alertmanager.
@@ -22,7 +22,7 @@ mv alertmanager-X.X.X.linux-amd64/ alertmanager/
 cd alertmanager/
 ```
 
-Add a symbolic link to the `/usr/local/bin/` directory for system-wide access to Alert Manager:
+Add a symbolic link to the `/usr/local/bin/` directory for system-wide access to Alertmanager:
 
 ```bash
 sudo ln -s /home/${USER}/alertmanager/alertmanager /usr/local/bin/
@@ -579,7 +579,7 @@ Paste the below text
 
 ```bash title="/etc/systemd/system/alertmanager.service"
 [Unit]
-Description=Alert Manager
+Description=Alertmanager
 After=network-online.target
 ​
 [Service]
@@ -612,7 +612,7 @@ Enable autostart of Node Exporter service
 sudo systemctl enable alertmanager.service
 ```
 
-## Start Alert Manager service
+## Start Alertmanager service
 
 ```bash
 sudo systemctl start alertmanager.service
@@ -624,7 +624,7 @@ Use this command to check logs in real time
 sudo journalctl -u alertmanager.service -f
 ```
 
-After installing and running Alert Manager, you can verify whether alerts are being displayed.
+After installing and running Alertmanager, you can verify whether alerts are being displayed.
 
 ```bash
 curl -u admin http://localhost:9093/metrics

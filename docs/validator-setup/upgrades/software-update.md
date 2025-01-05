@@ -1,6 +1,6 @@
 ---
 title: Software Upgrade
-sidebar_position: 15
+sidebar_position: 1
 ---
 
 # Software Upgrade

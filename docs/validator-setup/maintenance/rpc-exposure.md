@@ -1,6 +1,6 @@
 ---
 title: RPC Exposure
-sidebar_position: 12
+sidebar_position: 5
 ---
 
 # RPC Exposure

@@ -1,6 +1,6 @@
 {
-  "label": "Cosmovisor Setup",
-  "position": 10,
+  "label": "Cosmovisor",
+  "position": 2,
   "link": {
     "type": "generated-index",
     "description": "Cosmovisor is a tool within the Cosmos ecosystem that assists in the smooth and safe upgrade of the blockchain software. It helps automate the process of updating the software to a new version while ensuring a seamless transition and minimal disruptions to the network."
