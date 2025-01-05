@@ -1,11 +1,11 @@
-// import {
-//   SentinelCore,
-//   Network,
-//   Guide,
-//   Nodes,
-//   TerminalIcon,
-//   ModulesIcon,
-// } from './icons';
+import {
+  SentinelCore,
+  Network,
+  Guide,
+  Nodes,
+  TerminalIcon,
+  ModulesIcon,
+} from './icons';
 
 const MULTI_SECTIONS = [
   [
@@ -34,62 +34,62 @@ const SECTIONS = [
   // },
 
   // Dropdown Sentinel Core
-  // {
-  //   name: 'Sentinel Hub',
-  //   id: 'sentinel-hub',
-  //   icon: SentinelCore,
-  //   section: 'core-sdk',
-  // },
-  // {
-  //   name: 'Sentinel CLI',
-  //   id: 'sentinel-cli',
-  //   icon: TerminalIcon,
-  //   section: 'core-sdk',
-  // },
-  // {
-  //   name: 'dVPN Nodes',
-  //   id: 'nodes',
-  //   icon: Nodes,
-  //   section: 'core-sdk',
-  // },
-  // {
-  //   name: 'SDKs',
-  //   id: 'sdk',
-  //   icon: ModulesIcon,
-  //   section: 'core-sdk',
-  // },
-  // {
-  //   name: 'Networks',
-  //   id: 'networks',
-  //   icon: Network,
-  //   section: 'core-sdk',
-  // },
+  {
+    name: 'Sentinel Hub',
+    id: 'sentinel-hub',
+    icon: SentinelCore,
+    section: 'core-sdk',
+  },
+  {
+    name: 'Sentinel CLI',
+    id: 'sentinel-cli',
+    icon: TerminalIcon,
+    section: 'core-sdk',
+  },
+  {
+    name: 'dVPN Nodes',
+    id: 'nodes',
+    icon: Nodes,
+    section: 'core-sdk',
+  },
+  {
+    name: 'SDKs',
+    id: 'sdk',
+    icon: ModulesIcon,
+    section: 'core-sdk',
+  },
+  {
+    name: 'Networks',
+    id: 'networks',
+    icon: Network,
+    section: 'core-sdk',
+  },
 
   // Dropdown Sentinel Guides
-  // {
-  //   name: 'dVPN Node Setup',
-  //   id: 'node-setup',
-  //   icon: Guide,
-  //   section: 'guides',
-  // },
-  // {
-  //   name: 'Full Node Setup',
-  //   id: 'full-node-setup',
-  //   icon: Guide,
-  //   section: 'guides',
-  // },
-  // {
-  //   name: 'Validator Setup',
-  //   id: 'validator-setup',
-  //   icon: Guide,
-  //   section: 'guides',
-  // },
-  // {
-  //   name: 'Node Monitoring',
-  //   id: 'node-monitoring',
-  //   icon: Guide,
-  //   section: 'guides',
-  // },
+  {
+    name: 'dVPN Node Setup',
+    id: 'node-setup',
+    icon: Guide,
+    section: 'guides',
+  },
+  {
+    name: 'Full Node Setup',
+    id: 'full-node-setup',
+    icon: Guide,
+    section: 'guides',
+  },
+  {
+    name: 'Validator Setup',
+    id: 'validator-setup',
+    icon: Guide,
+    section: 'guides',
+  },
+  {
+    name: 'Node Monitoring',
+    id: 'node-monitoring',
+    icon: Guide,
+    section: 'guides',
+  },
 ];
 
 export { MULTI_SECTIONS, SECTIONS };
