@@ -1,6 +1,4 @@
 ---
-title: Overview
-description: A tool that ensures any future hub upgrades happen flawlessly
 sidebar_position: 1
 ---
 

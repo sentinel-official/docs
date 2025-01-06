@@ -23,7 +23,7 @@ If you are using TMKMS, follow the steps below.ps
 Once your new full node is fully synchronized, you can shut down the old node by running the following command:
 
 ```bash
-sudo systemctl stop cosmovisor.service
+sudo systemctl stop sentinelhub.service
 ```
 
 Next, remove the firewall rule for port 26659 with this command:
@@ -94,7 +94,7 @@ sudo systemctl restart tmkms.service
 On your new Node and type:
 
 ```bash
-sudo systemctl restart cosmovisor.service
+sudo systemctl restart sentinelhub.service
 ```
 
 :::info
@@ -111,7 +111,7 @@ If you are not using TMKMS, follow the steps below.
 Once your new full node is fully synchronized, you can shut down the old node by running the following command:
 
 ```bash
-sudo systemctl stop cosmovisor.service
+sudo systemctl stop sentinelhub.service
 ```
 
 :::note
@@ -121,7 +121,7 @@ Check on a Sentinel Explorer to ensure that your old node is skipping blocks.
 ### Stop the new Node
 
 ```bash
-sudo systemctl stop cosmovisor.service
+sudo systemctl stop sentinelhub.service
 ```
 
 ### Migrate the Keys
@@ -131,5 +131,5 @@ Migrate `.sentinelhub/config/priv_validator_key.json` and `.sentinelhub/data/pri
 ### Start the new Node
 
 ```bash
-sudo systemctl start cosmovisor.service
+sudo systemctl start sentinelhub.service
 ```

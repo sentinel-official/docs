@@ -79,12 +79,6 @@ const SECTIONS = [
     section: 'guides',
   },
   {
-    name: 'Validator Setup',
-    id: 'validator-setup',
-    icon: Guide,
-    section: 'guides',
-  },
-  {
     name: 'Node Monitoring',
     id: 'node-monitoring',
     icon: Guide,

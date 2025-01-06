@@ -47,7 +47,6 @@ const SECTIONS = [
   defineSection('sdk'),
   defineSection('sentinel-cli'),
   defineSection('sentinel-hub'),
-  defineSection('validator-setup'),
 ];
 
 /** @type {import('@docusaurus/types').Config} */
@@ -189,15 +188,11 @@ const config = {
             items: [
               {
                 to: 'node-setup',
-                label: 'dVPN Node Setup',
+                label: 'dVPN Node',
               },
               {
                 to: 'full-node-setup',
-                label: 'Full Node Setup',
-              },
-              {
-                to: 'validator-setup',
-                label: 'Validator Setup',
+                label: 'Full Node & Validate',
               },
               {
                 to: 'node-monitoring',

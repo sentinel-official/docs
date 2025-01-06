@@ -1,5 +1,5 @@
 ---
-title: Install Golang
+title: Golang Setup
 sidebar_position: 3
 ---
 

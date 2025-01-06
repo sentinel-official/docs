@@ -1,6 +1,6 @@
 ---
 title: Hard Fork sentinelhub-2
-sidebar_position: 2
+sidebar_position: 3
 ---
 
 # Hard Fork sentinelhub-2

@@ -1,6 +1,6 @@
 ---
 title: Add RPC to Chain Registry
-sidebar_position: 10
+sidebar_position: 6
 ---
 
 # Add RPC to Chain Registry

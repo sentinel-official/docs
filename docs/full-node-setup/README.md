@@ -21,3 +21,7 @@ A Sentinel dVPN Full Node can be deployed on various platforms, including:
 - The Akash Network
 
 To set up a Full Node successfully, you should possess a moderate level of proficiency in Linux and networking. This guide has been designed to assist users in comprehending all the necessary steps required for setting up a full node.
+
+We also highly advise setting up a monitoring system to avoid downtime, missed blocks (in case you validate), and damage to your reputation. Please refer to the guide below.
+
+- [Node Monitoring](/node-monitoring): make sure everything works properly on your Validator machine

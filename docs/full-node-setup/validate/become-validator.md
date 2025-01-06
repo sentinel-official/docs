@@ -5,6 +5,8 @@ sidebar_position: 6
 
 # Become a Validator
 
+Validators play a crucial role in maintaining the security and integrity of a network by verifying the authenticity of transactions and enforcing network rules and protocols. To participate in the network, validators are required to stake a certain amount of DVPN coins. Incentivized by the receipt of DVPN coins as rewards, validators are motivated to act honestly and ensure the network's security.
+
 A create-validator transaction is a type of transaction used to create a new validator. In this type of transaction, the validator stakes a certain amount of coins as collateral.
 
 Add an operator key and take note of the mnemonic key

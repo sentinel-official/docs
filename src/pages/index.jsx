@@ -130,16 +130,9 @@ export default function Homepage() {
               svgFile=""
             />
             <Card
-              title="Run a Full Node"
+              title="Run a Full Node & Validate"
               description="Learn how to set up a Full Node and effectively communicate with the Sentinel Blockchain."
               to="/full-node-setup"
-              icon={<Guide />}
-              svgFile=""
-            />
-            <Card
-              title="Run a Validator"
-              description="Learn how to set up a Validator and secure the network."
-              to="/validator-setup"
               icon={<Guide />}
               svgFile=""
             />
