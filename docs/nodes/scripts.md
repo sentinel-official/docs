@@ -67,24 +67,29 @@ Lists the countries of the RPC Nodes.
 
 # List of addresses to iterate over
 
-addresses=("rpc.trinitystake.io"
-           "rpc.sentinel.co"
-           "rpc.sentinel.quokkastake.io"
-           "rpc.sentinel.chaintools.tech"
-           "sentinel.declab.pro"
-           "rpc-sentinel.whispernode.com"
-           "rpc.sentinelgrowthdao.com"
-           "sentinel-rpc.publicnode.com"
-           "rpc.dvpn.roomit.xyz"
-           "sentinel.rpc.nodeshub.online"
-           "public.stakewolle.com"
-           "sentinel-rpc.validatornode.com"
-           "rpc.mathnodes.com"
-           "rpc.dvpn.me"
-           "rpc-sentinel-ia.cosmosia.notional.ventures"
-           "sentinel-rpc.polkachu.com"
-           "sentinel-rpc.badgerbite.io"
-           "rpc-sentinel.busurnode.com:443")
+ddresses=("https://rpc-sentinel.busurnode.com:443"
+           "https://na-rpc-sentinel.busurnode.com:443"
+           "https://eu-rpc-sentinel.busurnode.com:443"
+           "https://as-rpc-sentinel.busurnode.com:443"
+           "https://rpc.sentineldao.com:443"
+           "https://na-rpc.sentineldao.com:443"
+           "https://eu-rpc.sentineldao.com:443"
+           "https://as-rpc.sentineldao.com:443"
+           "https://rpc.na.sentinel.atmosfermuda.com:443"
+           "https://rpc.eu.sentinel.atmosfermuda.com:443"
+           "https://rpc.ap.sentinel.atmosfermuda.com:443"
+           "https://sentinel-rpc.publicnode.com:443"
+           "https://rpc.mathnodes.com:443"
+           "https://rpc.dvpn.me:443"
+           "https://rpc.ro.mathnodes.com:443"
+           "https://rpc.noncompliant.network:443"
+           "https://sentinel-rpc.polkachu.com:443"
+           "https://rpc.sentinel.dragonstake.io:443"
+           "https://rpc.dvpn.roomit.xyz:443"
+           "https://sentinel-rpc.validatornode.com:443"
+           "https://rpc.trinitystake.io:443"
+           "https://rpc.sentinel.quokkastake.io:443"
+           "https://sentinel.rpc.nodeshub.online:443")
 
 
 # Iterate over each address
@@ -112,7 +117,7 @@ done
 Lists the RPC Nodes and their uptime.
 
 <details>
-<summary>RPC Uptime</summary>
+<summary>Using Sentinelhub</summary>
 <p>
 
 ```bash title="/home/${USER}/rpc-uptime.sh"
@@ -120,24 +125,29 @@ Lists the RPC Nodes and their uptime.
 
 # List of addresses to iterate over
 
-rpc_addresses=("https://rpc.trinitystake.io:443"
-           "https://rpc.sentinel.co:443"
-           "https://rpc.sentinel.quokkastake.io:443"
-           "https://rpc.sentinel.chaintools.tech:443"
-           "https://sentinel.declab.pro:26628"
-           "https://rpc-sentinel.whispernode.com:443"
-           "https://rpc.sentinelgrowthdao.com:443"
+rpc_addresses=("https://rpc-sentinel.busurnode.com:443"
+           "https://na-rpc-sentinel.busurnode.com:443"
+           "https://eu-rpc-sentinel.busurnode.com:443"
+           "https://as-rpc-sentinel.busurnode.com:443"
+           "https://rpc.sentineldao.com:443"
+           "https://na-rpc.sentineldao.com:443"
+           "https://eu-rpc.sentineldao.com:443"
+           "https://as-rpc.sentineldao.com:443"
+           "https://rpc.na.sentinel.atmosfermuda.com:443"
+           "https://rpc.eu.sentinel.atmosfermuda.com:443"
+           "https://rpc.ap.sentinel.atmosfermuda.com:443"
            "https://sentinel-rpc.publicnode.com:443"
-           "https://rpc.dvpn.roomit.xyz:443"
-           "https://sentinel.rpc.nodeshub.online:443"
-           "https://public.stakewolle.com:443/cosmos/sentinel/rpc/"
-           "https://sentinel-rpc.validatornode.com:443"
            "https://rpc.mathnodes.com:443"
            "https://rpc.dvpn.me:443"
-           "https://sentinel-rpc.badgerbite.io:443"
-           "https://rpc-sentinel-ia.cosmosia.notional.ventures:443"
+           "https://rpc.ro.mathnodes.com:443"
+           "https://rpc.noncompliant.network:443"
            "https://sentinel-rpc.polkachu.com:443"
-           "https://rpc-sentinel.busurnode.com:443")
+           "https://rpc.sentinel.dragonstake.io:443"
+           "https://rpc.dvpn.roomit.xyz:443"
+           "https://sentinel-rpc.validatornode.com:443"
+           "https://rpc.trinitystake.io:443"
+           "https://rpc.sentinel.quokkastake.io:443"
+           "https://sentinel.rpc.nodeshub.online:443")
 
 for node in "${rpc_addresses[@]}"; do
    echo ""
@@ -148,6 +158,85 @@ for node in "${rpc_addresses[@]}"; do
    echo "$real_time" | grep -oP 'real\t\K\S+'
    echo ""
 done
+```
+
+</p>
+</details>
+
+<details>
+<summary>Without Using Sentinelhub - Just install dependencies with `sudo apt install curl jq bc -y`</summary>
+<p>
+
+```bash title="/home/${USER}/rpc-uptime.sh"
+#!/bin/bash
+
+# Set the PATH environment variable
+export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+
+# Define an array of RPC node addresses
+rpc_addresses=(
+    "https://rpc.sentinel.co:443"
+    "https://sentinel-rpc.polkachu.com:443"
+    "https://sentinel-rpc.validatornode.com:443"
+    "https://sentinel-rpc.badgerbite.io:443"
+    "https://sentinel-rpc.publicnode.com:443"
+    "https://rpc.sentinel.quokkastake.io:443"
+    "https://rpc-sentinel.whispernode.com:443"
+    "https://rpc.sentinel.chaintools.tech:443"
+    "https://rpc.mathnodes.com:443"
+    "https://rpc.dvpn.roomit.xyz:443"
+)
+
+# Declare an associative array to store execution times
+declare -A execution_times
+
+# Loop through each RPC node address
+for node in "${rpc_addresses[@]}"; do
+    echo "Testing ${node}..."
+
+    # Record the start time
+    start_time=$(date +%s.%N)
+
+    # Fetch the latest block height using the RPC endpoint
+    curl -s "${node}/block" | jq -r .result.block.header.height
+
+    # Record the end time
+    end_time=$(date +%s.%N)
+
+    # Calculate execution time
+    execution_time=$(echo "$end_time - $start_time" | bc)
+    execution_times["$node"]=$execution_time
+
+    echo "Finished testing ${node}, Execution took: $execution_time"
+done
+
+# Sort nodes by their execution time
+sorted_nodes=($(for node in "${rpc_addresses[@]}"; do
+    echo "$node ${execution_times["$node"]}"
+done | sort -k2 -n | awk '{print $1}'))
+
+# Display the sorted nodes with their execution times
+for node in "${sorted_nodes[@]}"; do
+    echo "Node: $node, Execution Time: ${execution_times["$node"]}"
+done
+
+# Select the top 5 fastest nodes
+new_addrs=()
+for ((a = 0; a <= 4; a++)); do
+    new_addrs+=("${sorted_nodes[$a]}")
+done
+
+# Create a comma-separated list of the top 5 nodes
+comma_separated=$(IFS=,; echo "${new_addrs[*]}")
+
+# Format the output line
+new_line="rpc_addresses=\"$comma_separated\""
+
+# Print the new line
+echo "$new_line"
+
+# Exit the script
+exit 0
 ```
 
 </p>
