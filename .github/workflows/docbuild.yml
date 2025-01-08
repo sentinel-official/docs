@@ -10,10 +10,10 @@ jobs:
     if: true # disable the workflow temporarily
     steps:
       - name: Checkout 🛎️
-        uses: actions/checkout@v4
+        uses: actions/checkout@v4.2.2
       
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v4.1.0
         with:
           node-version: '22.x'
 
@@ -23,7 +23,7 @@ jobs:
           yarn build
 
       - name: Deploy to Beta Branch 🚀
-        uses: JamesIves/github-pages-deploy-action@v4.6.1
+        uses: JamesIves/github-pages-deploy-action@v4.7.2
         with:
           branch: beta-build # The branch the action should deploy to.
           folder: build
