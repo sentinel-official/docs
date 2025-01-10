@@ -14,23 +14,15 @@ Open your terminal and type
 
 
 ```bash
-sentinelhub keys add <wallet_name>
-```
-
-You can create a new key with the name `default` as in the following example:
-
-```bash
-sentinelhub keys add default
+sentinelhub keys add key_name
 ```
 
 <details>
 <summary>Output</summary>
 <p>
 
-#### This is the output of `sentinelhub add key default`
-
-```bash
-- name: default
+```text
+- name: key_name
   type: local
   address: sent1706klv73nhw2k3p0yl3l88q9p6vlypudrk3nr7
   pubkey: '{"@type":"/cosmos.crypto.secp256k1.PubKey","key":"AxU17+KenLYWlmN50t+zDNvOz3YtzrBT6YwzGfi56Wvb"}'
@@ -80,9 +72,7 @@ Multiple keys can be created when needed. You can list all keys saved under the 
 <summary>Output</summary>
 <p>
 
-#### This is the output of `sentinelhub add key default`
-
-```bash
+```text
 - name: default
   type: local
   address: sent13zzgfl5n05tk97sq7xdgvx5zmfhx6undyw8722
