@@ -1,8 +1,4 @@
 {
   "label": "Commands",
-  "position": 3,
-  "link": {
-    "type": "generated-index",
-    "description": "A detailed explanationf of Sentinel Hub commands"
-  }
+  "position": 3
 }

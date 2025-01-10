@@ -114,7 +114,7 @@ sentinelhub tx staking create-validator \
     --gas-prices=0.5udvpn
 ```
 
-If you're currently in the validator creation process, refer to this [page](/validator-setup/become-validator) in the validator guide for further assistance.
+If you're currently in the validator creation process, refer to [this page](/full-node-setup/become-validator) in the full node guide for further assistance.
 
 
 ## Edit Validator
@@ -134,6 +134,10 @@ sentinelhub tx staking edit-validator \
     --gas-prices=0.5udvpn \
     --gas=300000
 ```
+
+If you want to update your validator's `commission-rate`, ensure the new value falls within the limits set by the `commission-max-change-rate` and `commission-max-rate` parameters defined when the validator was created.
+
+Please note that in this scenario, the flag `--node` is not utilized, assuming you are executing this command directly from your validator machine.
 
 
 ## Unjail Validator
