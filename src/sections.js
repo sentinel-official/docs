@@ -67,13 +67,13 @@ const SECTIONS = [
 
   // Dropdown Sentinel Guides
   {
-    name: 'dVPN Node Setup',
+    name: 'Run a dVPN Node',
     id: 'node-setup',
     icon: Guide,
     section: 'guides',
   },
   {
-    name: 'Full Node Setup',
+    name: 'Run a Full Node',
     id: 'full-node-setup',
     icon: Guide,
     section: 'guides',

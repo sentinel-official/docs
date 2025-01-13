@@ -188,11 +188,11 @@ const config = {
             items: [
               {
                 to: 'node-setup',
-                label: 'dVPN Node',
+                label: 'Run a dVPN Node',
               },
               {
                 to: 'full-node-setup',
-                label: 'Full Node & Validate',
+                label: 'Run a Full Node & Validate',
               },
               {
                 to: 'node-monitoring',
@@ -303,7 +303,7 @@ const config = {
                 to: '/networks',
               },
               {
-                label: 'Run a Node',
+                label: 'Run a dVPN Node',
                 href: '/node-setup',
               },
             ],
