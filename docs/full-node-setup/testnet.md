@@ -33,9 +33,9 @@ Let's initialize the Sentinel Hub using the Genesis file, a JSON file which defi
 
 ```bash
 sentinelhub init --chain-id bluenet-2-1 "Your Full Node Name"
-curl -fsLS -o "${HOME}/genesis.zip" "https://raw.githubusercontent.com/sentinel-official/networks/refs/heads/main/bluenet-2-1/genesis.json
-unzip -d "${HOME}/.sentinelhub/config/" "${HOME}/genesis.zip"
-rm "${HOME}/genesis.zip"
+curl -fsLS -o "${HOME}/genesis.json" "https://raw.githubusercontent.com/sentinel-official/networks/main/bluenet-2-1/genesis.json"
+cp "${HOME}/genesis.json" "${HOME}/.sentinelhub/config/genesis.json"
+rm "${HOME}/genesis.json"
 ```
 
 You will be asked to replace the genesis file, type `[A]ll`
