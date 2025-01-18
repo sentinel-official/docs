@@ -1,5 +1,5 @@
 ---
-title: Testnet
+title: Run on Testnet
 sidebar_position: 12
 sidebar_class_name: releaseSidebarHeading
 ---
