@@ -267,6 +267,10 @@ const config = {
                 label: 'GitHub',
               },
               {
+                href: 'https://gitopia.com/sentineldvpn',
+                label: 'Gitopia',
+              },
+              {
                 href: 'https://sentinelgrowthdao.com',
                 label: 'Growth DAO',
               },
