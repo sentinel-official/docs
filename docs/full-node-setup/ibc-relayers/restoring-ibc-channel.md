@@ -1,7 +1,6 @@
 ---
 title: Restoring IBC Channel
 sidebar_position: 13
-sidebar_class_name: releaseSidebarHeading
 ---
 
 # Restoring IBC Channel
