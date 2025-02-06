@@ -58,11 +58,11 @@ The following dVPN apps are built on top of the Sentinel Protocol. This is why w
         svgFile="/icons/independentdvpn.png"
     />
     <Card
-        title="Breadcrumbs"
-        description="Take charge of your online privacy with Breadcrumbs. Protect your digital footprint and earn rewards for your data. Our advanced VPN, powered by Sentinel, ensures top-notch security, keeping your information safe and inaccessible to prying eyes."
+        title="VALT"
+        description="Take charge of your online privacy with VALT. Protect your digital footprint and earn rewards for your data. Our advanced VPN, powered by Sentinel, ensures top-notch security, keeping your information safe and inaccessible to prying eyes."
         to="https://www.breadcrumbsdata.com/"
         icon=""
-        svgFile="/icons/breadcrumbs.svg"
+        svgFile="/icons/valt.svg"
     />
     <Card
         title="V2:App"
