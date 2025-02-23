@@ -390,7 +390,7 @@ RUN git clone https://github.com/sentinel-official/hub.git "/home/sentinel/senti
 
 WORKDIR /home/sentinel/sentinelhub
 
-RUN git checkout v12.0.0-rc9 &&\
+RUN git checkout v12.0.0-rc10 &&\
 make install 
 
 # root must perform the symlink
@@ -525,7 +525,7 @@ RUN git clone https://github.com/sentinel-official/hub.git "/home/sentinel/senti
 
 WORKDIR /home/sentinel/sentinelhub
 
-RUN git checkout v12.0.0-rc9 &&\
+RUN git checkout v12.0.0-rc10 &&\
 make install 
 
 #root must perform the symlink
