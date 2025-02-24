@@ -5,6 +5,10 @@ sidebar_position: 1
 
 # Sentinel dVPN Node Setup Guide
 
+:::warning
+The following guides will be updated after the Hub upgrade v12 is successfully deployed to production.
+:::
+
 ### Overview
 
 If you want to contribute to the Sentinel network and share your bandwidth you can set up a dVPN node that utilizes the Sentinel protocol. Every node owner can set their own price for customers using their bandwidth. Of course it’s up to the user to decide which node they will use as their dVPN.
