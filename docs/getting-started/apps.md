@@ -60,7 +60,7 @@ The following dVPN apps are built on top of the Sentinel Protocol. This is why w
     <Card
         title=""
         description="Take charge of your online privacy with VALT. Protect your digital footprint and earn rewards for your data. Our advanced VPN, powered by Sentinel, ensures top-notch security, keeping your information safe and inaccessible to prying eyes."
-        to="https://www.breadcrumbsdata.com/"
+        to="http://valtdata.com/"
         icon=""
         svgFile="/icons/valt.svg"
     />
