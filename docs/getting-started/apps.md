@@ -41,21 +41,15 @@ The following dVPN apps are built on top of the Sentinel Protocol. This is why w
     <Card
         title="DVPN by Norse Labs"
         description="DVPN is built with uncompromising privacy and security in mind. Leveraging the blockchain technology from Sentinel and advanced encryption, it follows a Zero Trust model — users don’t have to rely on us, as independent entities manage the servers, making tracking almost impossible."
-        to="https://play.google.com/store/apps/details?id=io.norselabs.dvpn&hl=en-US&pli=1"
+        to="https://norselabs.io/"
         svgFile="/icons/norse-labs.svg"
-    />
-    <Card
-        title="DVPN Telegram Bot"
-        description="An innovative mini-app created by Norse Labs and powered by the Sentinel blockchain. It lets you securely and privately connect to thousands of dVPN servers worldwide, all for free! Since it’s used via Telegram, there’s no need to download any additional apps."
-        to="https://norselabs.io/products/dvpn-bot"
-        svgFile="/icons/dvpn-telegram-bot.svg"
     />
     <Card
         title="Independent dVPN"
         description="Independent dVPN is a Turkish free and fully decentralized service created by volunteers who prioritize digital human rights, offering powerful features like WireGuard and V2Ray support."
         to="https://independentdvpn.com"
         icon=""
-        svgFile="/icons/independentdvpn.png"
+        svgFile="/icons/independentdvpn.svg"
     />
     <Card
         title="VALT"
@@ -63,6 +57,12 @@ The following dVPN apps are built on top of the Sentinel Protocol. This is why w
         to="http://valtdata.com/"
         icon=""
         svgFile="/icons/valt.svg"
+    />
+    <Card
+        title="DVPN Telegram Bot"
+        description="An innovative mini-app created by Norse Labs and powered by the Sentinel blockchain. It lets you securely and privately connect to thousands of dVPN servers worldwide, all for free! Since it’s used via Telegram, there’s no need to download any additional apps."
+        to="https://norselabs.io/products/dvpn-bot"
+        svgFile="/icons/dvpn-telegram-bot.svg"
     />
     <Card
         title="V2:App"
