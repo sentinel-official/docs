@@ -117,6 +117,7 @@ const config = {
       image: '/img/sentinel-docs-card.png',
       colorMode: {
         defaultMode: 'dark',
+        disableSwitch: true,
       },
       docs: {
         sidebar: {
