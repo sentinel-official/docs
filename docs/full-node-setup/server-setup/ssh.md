@@ -33,11 +33,22 @@ ssh-copy-id -i ~/.ssh/id_ed25519.pub username@server_ip
 ```
 :::
 
-If the import fails, ensure that the `.ssh/` folder exists on your server under the newly created user. If it does not exist, create it by doing `mkdir ~/.ssh`
 
 ### Server Side
 
-Your public key will be now visible on your server by typing
+If importing the SSH key fails, check if the `.ssh/` directory exists on your server. If it doesn’t, create it along with the `authorized_keys` file by running the following commands:
+
+```bash
+mkdir -p ~/.ssh
+chmod 700 ~/.ssh
+
+touch ~/.ssh/authorized_keys
+chmod 600 ~/.ssh/authorized_keys
+```
+
+After that, run the `ssh-copy-id` command again from your client.
+
+To verify that your public key has been added on your server, run:
 
 ```bash
 cat ~/.ssh/authorized_keys

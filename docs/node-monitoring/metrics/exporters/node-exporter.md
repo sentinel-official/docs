@@ -19,14 +19,14 @@ On both your validator and monitoring machines, download and unpack Node Exporte
 wget https://github.com/prometheus/node_exporter/releases/download/vX.X.X/node_exporter-X.X.X.linux-amd64.tar.gz
 tar xvfz node_exporter-X.X.X.linux-amd64.tar.gz
 sudo rm -f node_exporter-X.X.X.linux-amd64.tar.gz
-mv node_exporter-X.X.X.linux-amd64/ node-exporter/
-cd node-exporter/
+mv node_exporter-X.X.X.linux-amd64/ node_exporter/
+cd node_exporter/
 ```
 
 Add a symbolic link to the `/usr/local/bin/` directory for system-wide access to Node Exporter:
 
 ```bash
-sudo ln -s /home/${USER}/node-exporter/node-exporter /usr/local/bin/
+sudo ln -s /home/${USER}/node_exporter/node_exporter /usr/local/bin/
 ```
 
 ### Add a system unit file
@@ -34,16 +34,16 @@ sudo ln -s /home/${USER}/node-exporter/node-exporter /usr/local/bin/
 Create the .service file with a text editor
 
 ```bash
-sudo nano /etc/systemd/system/node-exporter.service
+sudo nano /etc/systemd/system/node_exporter.service
 ```
 
 Paste the below text
 
 <details>
-<summary>node-exporter.service</summary>
+<summary>node_exporter.service</summary>
 <p>
 
-```bash title="/etc/systemd/system/node-exporter.service"
+```bash title="/etc/systemd/system/node_exporter.service"
 [Unit]
 Description=Node Exporter
 After=network-online.target
@@ -53,7 +53,7 @@ User=youruser #modify this field with your user
 TimeoutStartSec=0
 CPUWeight=95
 IOWeight=95
-ExecStart=node-exporter
+ExecStart=node_exporter
 Restart=always
 RestartSec=2
 LimitNOFILE=800000
@@ -75,19 +75,19 @@ sudo systemctl daemon-reload
 Enable autostart of Node Exporter service
 
 ```bash
-sudo systemctl enable node-exporter.service
+sudo systemctl enable node_exporter.service
 ```
 
 ### Start Node Exporter service
 
 ```bash
-sudo systemctl start node-exporter.service
+sudo systemctl start node_exporter.service
 ```
 
 Use this command to check logs in real time
 
 ```bash
-sudo journalctl -u node-exporter.service -f --output cat
+sudo journalctl -u node_exporter.service -f --output cat
 ```
 
 Once the Node Exporter is installed and running, you can verify that `metrics` are being exported by cURLing the /metrics endpoint:
