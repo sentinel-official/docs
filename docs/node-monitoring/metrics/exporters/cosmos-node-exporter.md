@@ -18,14 +18,12 @@ Execute the following operations on your validator machine
 
 ### Download & Installation
 
-To get started, begin by downloading the most recent [release](https://github.com/QuokkaStake/cosmos-node-exporter/releases). Once the download is complete, proceed to unzip the file, and you'll be all set to proceed.
+To get started, clone the Cosmos Node Exporter [repository](https://github.com/QuokkaStake/cosmos-node-exporter) on your validator and compile the binary. Make sure you have Go installed before proceeding.
 
 ```bash
-mkdir cosmos-node-exporter
+git clone https://github.com/QuokkaStake/cosmos-node-exporter
 cd cosmos-node-exporter
-wget https://github.com/QuokkaStake/cosmos-node-exporter/releases/download/vX.X.x/cosmos-node-exporter_X.X.X_linux_amd64.tar.gz
-tar xvfz cosmos-node-exporter_X.X.X_linux_amd64.tar.gz
-sudo rm -f cosmos-node-exporter_X.X.X_linux_amd64.tar.gz
+make build
 ```
 
 Add a symbolic link to the `/usr/local/bin/` directory for system-wide access to Cosmos Node Exporter:
@@ -70,12 +68,16 @@ name = "<your_node_name>"
 tendermint = { enabled = true, address = "http://localhost:26657", query-upgrades = true }
 
 # Cosmovisor configuration. Has the following fields:
-# 1. enabled. # If set to false, the metrics related to Cosmovisor would be disabled. Defaults to true.
+# 1. enabled. If set to false, the metrics related to Cosmovisor would be disabled. Defaults to true.
 # 2. chain-folder. Path to folder storing fullnode data and configs (like ~/.gaia for cosmoshub).
 # 3. chain-binary-name. Binary name (like gaiad for cosmoshub)
 # 4. cosmovisor-path. Cosmovisor path (usually located at ~/go/bin/cosmovisor)
-cosmovisor = { enabled = true, chain-folder = "/home/<your_user>/.sentinelhub", chain-binary-name = "sentinelhub", cosmovisor-path = "/home/<your_user>/go/bin/cosmovisor" }
+cosmovisor = { enabled = true, chain-folder = "/home/<your_username>/.sentinelhub", chain-binary-name = "sentinelhub", cosmovisor-path = "/home/<your_username>/go/bin/cosmovisor" }
 
+# gRPC configuration. Has the following fields:
+# 1) enabled. If set to false, the metrics related to upgrades would be disabled. Defaults to true.
+# 2) address. Tendermint RPC address. Omitting it will result in disabling some metrics.
+grpc = { enabled = true, address = "localhost:9090" }
 
 # Git configuration. Has the following fields:
 # 1. repository. Repository path. Omitting it will result in disabling Git metrics.

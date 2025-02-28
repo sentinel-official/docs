@@ -68,6 +68,26 @@ Exit the PostgreSQL prompt by typing:
 \q
 ```
 
+### Add Postgres user to ADM group
+
+Add the `postgres` user to the `adm` group
+
+```bash
+sudo usermod -a -G adm postgres
+```
+
+Grant execute permission for `other` on /home/sentinel This allows users other than `sentinel` to traverse the directory.
+
+```bash
+sudo chmod o+x /home/sentinel
+```
+
+Test Access for postgres user if it can access the binary:
+
+```bash
+sudo -u postgres /home/sentinel/missed-blocks-checker/missed-blocks-checker --version
+```
+
 ### Create a Database and Test the Connection
 
 Now that the `postgres` user is secured, you can create a new database:
@@ -93,17 +113,15 @@ If the connection is successful, you're now connected to your new database using
 
 ## Download & Installation
 
-With PostgreSQL now installed, download and unpack the latest version of the `Missed Blocks Checker` on your validator. (You can find the latest version [here](https://github.com/QuokkaStake/missed-blocks-checker/releases).)
+Now that PostgreSQL is installed, clone the Missed Blocks Checker [repository](https://github.com/QuokkaStake/missed-blocks-checker) on your validator and compile the binary. Make sure you have Go installed before proceeding.
 
 ```bash
-wget https://github.com/QuokkaStake/missed-blocks-checker/releases/download/vX.X.X/missed-blocks-checker_X.X.X_linux_amd64.tar.gz
-tar xvfz missed-blocks-checker_X.X.X_linux_amd64.tar.gz
-sudo rm -f missed-blocks-checker_X.X.X_linux_amd64.tar.gz
-mv missed-blocks-checker_X.X.X_linux_amd64.tar.gz/ missed-blocks-checker/
-cd missed-blocks-checker/
+git clone https://github.com/QuokkaStake/missed-blocks-checker
+cd missed-blocks-checker
+make build
 ```
 
-Add a symbolic link to the `/usr/local/bin/` directory for system-wide access to Node Exporter:
+Add a symbolic link to the `/usr/local/bin/` directory for system-wide access to Missed BLocks Checker:
 
 ```bash
 sudo ln -s /home/${USER}/missed-blocks-checker/missed-blocks-checker /usr/local/bin/
@@ -151,7 +169,7 @@ type = "postgres"
 # Where the database will be stored.
 # If it's a PostgreSQL database, a connection string is expected (like postgres://user:password@host:port/database)
 # If it's a SQLite database, a path to the file storing a database is expected.
-path = "postgres://postgres:<your_password>.!@localhost:5432/missed_db"
+path = "postgres://postgres:<your_password>>@localhost:5432/missed_db"
 
 # Prometheus metrics configuration
 [metrics]
@@ -177,16 +195,16 @@ rpc-endpoints = [
     "https://rpc.sentinel.quokkastake.io:443"
 ]
 # Telegram reporter configuration. Needs token and chat. See README.md on how to set it up
-telegram = { token = "<your_telegram_token>", chat = <your_chat_id> }
+telegram = { token = "<your_telegram_token>", chat = <your_telegram_chat_id> }
 # Discord reporter configuration. Needs token, server ID (aka guild) and channel ID.
 # See README.md on how to set it up.
-discord = { token = "xxx", guild = "12345", channel = "54231" }
+discord = { token = "xxx", guild = "12345", channel = "67890" }
 # Explorer configuration, to generate links to validators.
 # Currently supported explorers are: Mintscan and Ping.pub, but you can use
 # a custom link pattern to generate custom links.
 # This chain configuration uses Mintscan, see below for Ping.pub and custom explorers.
 # If it's omitted, no links will be generated and everything will be in plain text.
-explorer = { ping-prefix = "sentinel", ping-host = "https://ping.pub" }
+explorer = { mintscan-prefix = "sent" }
 # How much blocks to store. This should be more than blocks window, as otherwise
 # the app would never be able to generate reports as there's always not enough blocks
 # to calculate missed blocks counter. Optimal would be to store at least 2x blocks
@@ -207,6 +225,13 @@ min-signed-per-window = 0.05
 thresholds = [0, 5, 10, 25, 50, 75, 100]
 # An emoji that's going to appear in the message when a validator **enters** this group
 # (for example, when a validator is missing blocks and its missed blocks counter moves from one group
+# to another).
+# This and emoji-end arrays' length should be equal to the amount of missed blocks group
+# (so if you have 3 thresholds, you have 2 groups, so these arrays both should have 2 values).
+# Defaults to ["🟡", "🟡", "🟡", "🟠", "🟠", "🟠", "🔴", "🔴", "🔴"]
+emoji-start = ["🟡", "🟡", "🟠", "🟠", "🔴", "🔴"]
+# An emoji that's going to appear in the message when a validator **leaves** this group
+# (for example, when a validator is recovering and its missed blocks counter moves from one group
 # to another).
 # This and emoji-end arrays' length should be equal to the amount of missed blocks group
 # (so if you have 3 thresholds, you have 2 groups, so these arrays both should have 2 values).
@@ -280,7 +305,7 @@ Description=Missed Blocks Checker
 After=network-online.target
 
 [Service]
-User=sentinel
+User=postgres
 TimeoutStartSec=0
 CPUWeight=95
 IOWeight=95
