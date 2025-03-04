@@ -70,13 +70,6 @@ The following dVPN apps are built on top of the Sentinel Protocol. This is why w
         to="https://v2.app/"
         svgFile="/icons/v2.svg"
     />
-    <Card
-        title="Dogwifhat dVPN"
-        description="It’s a dVPN wif a hat! The Sentinel Ecosystem's first foray into the memecoin world. This application is entirely open source, accessible on GitHub, and compatible with both Android and iOS platforms."
-        to="https://dogwifhatdvpn.com/"
-        icon=""
-        svgFile="/icons/dogwifhat.png"
-    />
     </Section>
 </Section>
 

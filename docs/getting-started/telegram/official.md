@@ -10,16 +10,16 @@ sidebar_position: 1
 
 - [Sentinel dVPN](https://t.me/sentineldvpn): The official main community channel.
 - [Sentinel Official Announcements](https://t.me/Sentinel_Announcements): Official Sentinel news and announcements.
+- [Sentinel DVPN Coin Price](https://t.me/dvpnpricediscussion): DVPN Coin price discussion.
 - [Sentinel Node Network](https://t.me/SentinelNodeNetwork): A group for dVPN node operators.
 - [Sentinel RPC Node Network](https://t.me/sentinelrpcnodes): A group for RPC Node operators.
-- [Sentinel DVPN Coin Price](https://t.me/dvpnpricediscussion): DVPN Coin price discussion.
+- [Sentinel IBC Relayers](https://t.me/sentinelibcrelayers): A group for IBC Relayers operators.
 
 
 ## Community
 
-- [Sentinel Independent News (S.I.N.)](https://t.me/sentinel_independent): Unofficial Sentinel news channel.
-- [The S.I.N. Bin](https://t.me/the_sinbin): Submissions, tips, comments, feedback, etc. for Sentinel Independent News.
 - [Sentinel Growth DAO](https://t.me/SentinelGrowthDAO): A place for everyone to discuss and participate in the Sentinel Growth DAO.
+- [Sentinel Independent News (S.I.N.)](https://t.me/sentinel_independent): Unofficial Sentinel news channel.
 - [Sentinel Free Speech](https://t.me/Sentinelfreespeech): The Legendary Sentinel Free Speech Group. All are welcome. No malicous images or files allowed.
 - [Sentinel Bureau of Memetic Warfare](https://t.me/Sentinelmemewar): A channel which posts OC Sentinel memes.
 
@@ -36,7 +36,6 @@ sidebar_position: 1
 - [Norse Labs](https://t.me/norselabs): Anything related to Norse Labs can be discussed in this group. 
 - [Independent dVPN](https://t.me/independentdvpn): The Turkish free dVPN that is becoming very popular.
 - [V2:App](https://t.me/v2app): A dVPN App powered by the advanced V2Ray technology.
-- [Dogwifhat dVPN](https://t.me/dogwifhatdvpn): The Sentinel Ecosystem's first foray into the memecoin world..
 
 
 ## Utility Bots
