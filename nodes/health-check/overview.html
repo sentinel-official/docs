@@ -18,7 +18,7 @@
 
 <link rel="preconnect" href="https://app.posthog.com">
 <script>!function(t,e){var o,p,i,n;e.__SV||(window.posthog=e,e._i=[],e.init=function(r,s,a){function c(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(i=t.createElement("script")).type="text/javascript",i.async=!0,i.src=s.api_host+"/static/array.js",(n=t.getElementsByTagName("script")[0]).parentNode.insertBefore(i,n);var g=e;for(void 0!==a?g=e[a]=[]:a="posthog",g.people=g.people||[],g.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},g.people.toString=function(){return g.toString(1)+".people (stub)"},o="capture identify alias people.set people.set_once set_config register register_once unregister opt_out_capturing has_opted_out_capturing opt_in_capturing reset".split(" "),p=0;p<o.length;p++)c(g,o[p]);e._i.push([r,s,a])},e.__SV=1)}(document,window.posthog||[]),posthog.init("00",{api_host:"https://app.posthog.com"})</script><link rel="stylesheet" href="/assets/css/styles.d0435b68.css">
-<script src="/assets/js/runtime~main.bfa92c9b.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.fd430f92.js" defer="defer"></script>
 <script src="/assets/js/main.a4afd883.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -31,7 +31,7 @@ This check tests:</p>
 <li>the node endpoint</li>
 <li>the node configuration</li>
 <li>the node gigabyte price (less than 20 DVPN)</li>
-<li>the node hourly price (7.6 DVPN for datacenters and 15 DVPN for residentials nodes)</li>
+<li>the node hourly price (15 DVPN for datacenters and 31,5 DVPN for residentials nodes, both expressed in udvpn)</li>
 <li>the node connectivity</li>
 </ul>
 <div class="theme-admonition theme-admonition-note admonition_xJq3 alert alert--secondary"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>note</div><div class="admonitionContent_BuS1"><p>Node Health Checks currently happen <strong>ONCE</strong> a day. So, if you have recently run a dVPN node, expect some waiting time before you receive any outcomes.</p></div></div>
