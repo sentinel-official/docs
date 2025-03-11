@@ -14,7 +14,7 @@ This check tests:
 - the node endpoint
 - the node configuration
 - the node gigabyte price (less than 20 DVPN)
-- the node hourly price (7.6 DVPN for datacenters and 15 DVPN for residentials nodes)
+- the node hourly price (15 DVPN for datacenters and 31,5 DVPN for residentials nodes, both expressed in udvpn)
 - the node connectivity
 
 :::note
