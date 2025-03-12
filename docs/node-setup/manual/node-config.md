@@ -49,7 +49,7 @@ gas_prices = "0.1udvpn"
 id = "sentinelhub-2"
 
 # Comma separated Tendermint RPC addresses for the chain
-rpc_addresses = "https://rpc.sentinel.co:443,https://rpc.sentinel.quokkastake.io:443,https://rpc.trinitystake.io:443"
+rpc_addresses = "https://rpc.sentinel.co:443,https://rpc.sentinel.quokkastake.io:443,https://rpc.sentineldao.com:443"
 # Find below some alternative ones
 # https://rpc.mathnodes.com:443
 # https://rpc-sentinel.whispernode.com:443
@@ -144,7 +144,7 @@ gas_prices = "0.1udvpn"
 id = "sentinelhub-2"
 
 # Comma separated Tendermint RPC addresses for the chain
-rpc_addresses = "https://rpc.sentinel.co:443,https://rpc.sentinel.quokkastake.io:443,https://rpc.trinitystake.io:443"
+rpc_addresses = "https://rpc.sentinel.co:443,https://rpc.sentinel.quokkastake.io:443,https://rpc.sentineldao.com:443"
 # Find below some alternative ones
 # https://rpc.mathnodes.com:443
 # https://rpc-sentinel.whispernode.com:443

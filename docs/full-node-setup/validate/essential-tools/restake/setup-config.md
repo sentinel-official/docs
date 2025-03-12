@@ -82,7 +82,7 @@ Replace the file with the following code block. For the `restUrl` field, choose 
   "sentinel": {
     "prettyName": "Sentinel 881",
     "restUrl": [
-      "https://api.trinitystake.io:443" 
+      "https://api.sentineldao.com:443" 
     ],
     "autostake": {
       "correctSlip44": false,
