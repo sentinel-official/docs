@@ -8,7 +8,6 @@ sidebar_position: 2
 
 Disclaimer: Listed groups may not be project-affiliated. Some are geared toward regions or languages, rather than specific nationalities
 
-- Africa: https://t.me/Sentinel_Africa
 - Brazil: https://t.me/dvpnsentinelbrasil
 - China: https://t.me/sentinel_chinese
 - France: https://t.me/sentinel_france
