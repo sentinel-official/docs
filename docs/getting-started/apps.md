@@ -64,16 +64,10 @@ The following dVPN apps are built on top of the Sentinel Protocol. This is why w
         to="https://norselabs.io/products/dvpn-bot"
         svgFile="/icons/dvpn-telegram-bot.svg"
     />
-    <Card
-        title="V2:App"
-        description="V2App, powered by the advanced V2Ray platform, offers seamless access to a free and open internet. Built on top of Sentinel dVPN blockchain, v2app emphasizes strong privacy and security, without compromising on speed and reliability."
-        to="https://v2.app/"
-        svgFile="/icons/v2.svg"
-    />
     </Section>
 </Section>
 
-<Section id="web-sdks" hasSubSections>
+<!-- <Section id="web-sdks" hasSubSections>
     <Section
               title="⚙️ 3rd party apps that have Sentinel integrated"
               id="core-sdks"
@@ -87,4 +81,4 @@ The following dVPN apps are built on top of the Sentinel Protocol. This is why w
         svgFile=""
     />
     </Section>
-</Section>
+</Section> -->
