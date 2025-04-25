@@ -13,7 +13,7 @@ Here is a list of available Sentinel explorers. If you notice any missing, pleas
 |---------------|-------------------------------------------|
 | Official      | https://explorer.sentinel.co           |
 | Mintscan      | https://www.mintscan.io/sentinel           |
-| Ping.pub      | https://explorer.busurnode.com/sentinel/                  |
+| Busurnode      | https://explorer.busurnode.com/sentinel/                  |
 | ATOMscan      | https://atomscan.com/sentinel           |
 
 
@@ -24,5 +24,5 @@ Here is a list of available Sentinel explorers. If you notice any missing, pleas
 | Sentinel Map      | https://map.sentinel.co           |
 | Node Dashboard      | https://nodes.sentinel.co           |
 | Live Node Explorer      | https://suchnode.net/           |
-| Sentnodes      | https://suchnode.net/           |
+| Sentnodes      | https://sentnodes.com/           |
 | Network Stats      | https://stats.sentinel.co           |
