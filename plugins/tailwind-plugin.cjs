@@ -1,4 +1,4 @@
-function tailwindPlugin(context, options) {
+function tailwindPlugin() {
     return {
       name: 'tailwind-plugin',
       configurePostCss(postcssOptions) {
