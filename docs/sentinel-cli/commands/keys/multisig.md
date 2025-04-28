@@ -67,4 +67,4 @@ sentinelcli keys show multi
 
 ## Sign the transaction
 
-To sign and broadcast the multisig transaction, you need to use [Sentinel Hub](/sentinel-core).
+To sign and broadcast the multisig transaction, you need to use [Sentinel Hub](/sentinel-hub).

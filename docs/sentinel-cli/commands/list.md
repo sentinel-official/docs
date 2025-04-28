@@ -96,7 +96,7 @@ show        Retrieve key information by name or address
 </p>
 </details>
 
-For a more detailed explaination of the subcommand, plese visit the [Basic Key Management](/sentinel-cli/keys/keys-cli) section.
+For a more detailed explaination of the subcommand, plese visit the [Basic Key Management](/sentinel-cli/commands/keys/keys-cli) section.
 
 
 ### `query`

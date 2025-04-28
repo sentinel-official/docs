@@ -8,10 +8,10 @@ sidebar_position: 4
 You might need to migrate your validator to a new server for reasons such as hardware failure or upgrading to better hardware. This guide will show you how to do this safely and avoid the risk of double signing.
 
 :::danger Important
-The first crucial step is to set up and **fully synchronize** your new node on the new server. To verify the sync status of your node, simply click [here](/validator-setup/node-run#check-sync-status)
+The first crucial step is to set up and **fully synchronize** your new node on the new server. To verify the sync status of your node, simply click [here](/full-node-setup/node-run#check-sync-status)
 :::
 
-Once the new node is synchronized, you can proceed with one of two methods depending on whether you are using [TMKMS](/validator-setup/category/tmkms).
+Once the new node is synchronized, you can proceed with one of two methods depending on whether you are using [TMKMS](/full-node-setup/category/tmkms).
 
 
 ## Using TMKMS

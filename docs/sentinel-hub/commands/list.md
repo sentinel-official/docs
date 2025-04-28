@@ -210,7 +210,7 @@ show        Retrieve key information by name or address
 </details>
 
 :::tip
-For more detailed usage instructions for keys, please refer to the related section **[here](/sentinel-core/category/key-management)**
+For more detailed usage instructions for keys, please refer to the related section **[here](/sentinel-hub/commands/keys)**
 :::
 
 ### `query`

@@ -4,7 +4,6 @@ import {themes as prismThemes} from 'prism-react-renderer';
 
 // const UIKitReferencePlugins = require('./plugins/ui-kit-reference-plugin.cjs');
 const { webpackPlugin } = require('./plugins/webpack-plugin.cjs');
-const posthogPlugin = require('./plugins/posthog-plugin.cjs');
 
 /** @type {import('@docusaurus/preset-classic').Options} */
 const defaultSettings = {
@@ -105,8 +104,7 @@ const config = {
   plugins: [
     ...SECTIONS,
     // ...UIKitReferencePlugins,
-    webpackPlugin,
-    posthogPlugin,
+    webpackPlugin
   ],
 
   themes: ['@docusaurus/theme-live-codeblock'],
@@ -382,22 +380,7 @@ const config = {
         contextualSearch: true,
         searchParameters: {},
       },
-      posthog: {
-        apiKey: '00',
-      },
     }),
-    // Tally and Kapa.ai Scripts
-    // scripts: [
-    //   "https://tally.so/widgets/embed.js",
-    //   {
-    //     src: "https://widget.kapa.ai/kapa-widget.bundle.js",
-    //     "data-website-id": "XXX-XXX-XXX",
-    //     "data-project-name": "Sentinel",
-    //     "data-project-color": "#HEX_COLOR_CODE",
-    //     "data-project-logo": "https://LINK_TO_LOGO.com/logo.png",
-    //     async: true,
-    //   },
-    // ],
   };
 
 module.exports = config;

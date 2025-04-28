@@ -114,7 +114,7 @@ sentinelhub tx staking create-validator \
     --gas-prices=0.5udvpn
 ```
 
-If you're currently in the validator creation process, refer to [this page](/full-node-setup/become-validator) in the full node guide for further assistance.
+If you're currently in the validator creation process, refer to [this page](/full-node-setup/validate/become-validator) in the full node guide for further assistance.
 
 
 ## Edit Validator
