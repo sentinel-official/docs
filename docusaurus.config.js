@@ -238,10 +238,6 @@ const config = {
                 href: 'https://youtube.com/@sentineldvpn',
                 label: 'YouTube',
               },
-              {
-                href: 'https://omniflix.tv/channel/65b376e8c65a4348750ace8a',
-                label: 'OmniFlix TV',
-              },
             ],
           },
           {
@@ -254,7 +250,7 @@ const config = {
                 label: 'Website',
               },
               {
-                href: 'https://explorer.sentinel.co',
+                href: 'https://www.mintscan.io/sentinel',
                 label: 'Explorer',
               },
               {
@@ -274,6 +270,11 @@ const config = {
                 label: 'Growth DAO',
               },
             ],
+          },
+          {
+            href: 'https://github.com/sentinel-official/docs',
+            className: 'pseudo-icon github-icon',
+            position: 'right',
           },
           {
             type: 'search',
