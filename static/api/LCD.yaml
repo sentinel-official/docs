@@ -20611,7 +20611,7 @@ paths:
                       address:
                         type: string
                         format: string
-                      gygabyte_prices:
+                      gigabytes:
                         properties:
                           denom:
                             type: string
@@ -20714,7 +20714,7 @@ paths:
                       address:
                         type: string
                         format: string
-                      gygabyte_prices:
+                      gigabytes:
                         properties:
                           denom:
                             type: string
@@ -21200,7 +21200,7 @@ paths:
                         description: the node address
                         type: string
                         format: string
-                      gygabytes:
+                      gigabytes:
                         type: string
                         format: uint64
                       hours:
@@ -21611,7 +21611,7 @@ paths:
                       duration:
                         type: string
                         format: string
-                      gygabytes:
+                      gigabytes:
                         type: string
                         format: uint64
                       prices:
@@ -21704,7 +21704,7 @@ paths:
                       duration:
                         type: string
                         format: string
-                      gygabytes:
+                      gigabytes:
                         type: string
                         format: uint64
                       prices:
@@ -21814,7 +21814,7 @@ paths:
                       address:
                         type: string
                         format: string
-                      gygabyte_prices:
+                      gigabytes:
                         properties:
                           denom:
                             type: string
@@ -22336,7 +22336,7 @@ paths:
                       duration:
                         type: string
                         format: string
-                      gygabytes:
+                      gigabytes:
                         type: string
                         format: uint64
                       prices:
@@ -26604,7 +26604,7 @@ paths:
                         description: the node address
                         type: string
                         format: string
-                      gygabytes:
+                      gigabytes:
                         type: string
                         format: uint64
                       hours:
@@ -26716,7 +26716,7 @@ paths:
                         description: the node address
                         type: string
                         format: string
-                      gygabytes:
+                      gigabytes:
                         type: string
                         format: uint64
                       hours:

@@ -32,7 +32,7 @@ Next, the dVPN application creator should proceed to establish an on-chain subsc
 ```bash
 sentinelhub tx vpn plan create \
   <plan_duration> \
-  <plan_gygabytes> \
+  <gigabytes> \
   <plan_prices> \
   --broadcast-mode block \
   --from <key_name> \

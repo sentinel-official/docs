@@ -99,7 +99,7 @@ import Long from "long";
 const args: TxNodeSubscribe = {
     from: account.address,
     nodeAddress: sentnode,
-    gigabytes: Long.fromNumber(gygabyte, true),
+    gigabytes: Long.fromNumber(gigabytes, true),
     denom: "udvpn"
 }
 const msg = nodeSubscribe(args)
@@ -115,7 +115,7 @@ import Long from "long";
 const args: TxNodeSubscribe = {
     from: account.address,
     nodeAddress: sentnode,
-    gigabytes: Long.fromNumber(gygabyte, true),
+    gigabytes: Long.fromNumber(gigabytes, true),
     denom: "udvpn",
     fee: "auto",
     memo: "hello from js-sdk"
