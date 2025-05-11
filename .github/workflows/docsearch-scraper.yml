@@ -10,7 +10,7 @@ jobs:
     if: true # disable the workflow temporarily
     steps:
       - name: check out code 🛎
-        uses: actions/checkout@v4
+        uses: actions/checkout@vv4.2.2
       # inject secrets as environment variables
       # then pass their values into the Docker container using "-e" syntax
       # and inject config.json contents as another variable
