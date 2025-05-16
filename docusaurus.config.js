@@ -211,11 +211,11 @@ const config = {
             position: 'right',
             items: [
               {
-                href: 'https://x.com/sentineldvpn',
+                href: 'https://x.com/sentinelp2p',
                 label: 'X/Twitter',
               },
               {
-                href: 'https://t.me/sentineldvpn',
+                href: 'https://t.me/sentinelp2p',
                 label: 'Telegram',
               },
               {
@@ -250,7 +250,7 @@ const config = {
                 label: 'Website',
               },
               {
-                href: 'https://www.mintscan.io/sentinel',
+                href: 'https://explorer.sentinel.co',
                 label: 'Explorer',
               },
               {
@@ -338,11 +338,11 @@ const config = {
             items: [
               {
                 label: 'X',
-                href: 'https://x.com/sentineldvpn',
+                href: 'https://x.com/sentinelp2p',
               },
               {
                 label: 'Telegram',
-                href: 'https://t.me/sentineldvpn',
+                href: 'https://t.me/sentinelp2p',
               },
               {
                 label: 'Discord',

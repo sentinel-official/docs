@@ -8,9 +8,9 @@ sidebar_position: 1
 
 ## Official
 
-- [Sentinel dVPN](https://t.me/sentineldvpn): The official main community channel.
+- [Sentinel P2P - Official Group](https://t.me/sentinelp2p): The official main community channel.
 - [Sentinel Official Announcements](https://t.me/Sentinel_Announcements): Official Sentinel news and announcements.
-- [Sentinel DVPN Coin Price](https://t.me/dvpnpricediscussion): DVPN Coin price discussion.
+- [Sentinel P2P Coin Price](https://t.me/pricep2pchat): DVPN Coin price discussion.
 - [Sentinel Node Network](https://t.me/SentinelNodeNetwork): A group for dVPN node operators.
 - [Sentinel RPC Node Network](https://t.me/sentinelrpcnodes): A group for RPC Node operators.
 - [Sentinel IBC Relayers](https://t.me/sentinelibcrelayers): A group for IBC Relayers operators.
@@ -20,7 +20,7 @@ sidebar_position: 1
 
 - [Sentinel Growth DAO](https://t.me/SentinelGrowthDAO): A place for everyone to discuss and participate in the Sentinel Growth DAO.
 - [Sentinel Independent News (S.I.N.)](https://t.me/sentinel_independent): Unofficial Sentinel news channel.
-- [Sentinel Free Speech](https://t.me/Sentinelfreespeech): The Legendary Sentinel Free Speech Group. All are welcome. No malicous images or files allowed.
+- [Sentinel Free Speech](https://t.me/entinelfreespeech): The Legendary Sentinel Free Speech Group. All are welcome. No malicous images or files allowed.
 - [Sentinel Bureau of Memetic Warfare](https://t.me/Sentinelmemewar): A channel which posts OC Sentinel memes.
 
 
