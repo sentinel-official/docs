@@ -11,9 +11,9 @@ Here is a list of available Sentinel explorers. If you notice any missing, pleas
 
 | Explorer Name | URL                                       |
 |---------------|-------------------------------------------|
-| Official      | https://explorer.sentinel.co           |
-| Mintscan      | https://www.mintscan.io/sentinel           |
+| Official (Mintscan)      | https://explorer.sentinel.co           |
 | Busurnode      | https://explorer.busurnode.com/sentinel/                  |
+| Ping Pub      | https://ping.pub/sentinel/                  |
 | ATOMscan      | https://atomscan.com/sentinel           |
 
 
