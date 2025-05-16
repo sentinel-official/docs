@@ -235,7 +235,7 @@ const config = {
                 label: 'Medium',
               },
               {
-                href: 'https://youtube.com/@sentineldvpn',
+                href: 'https://youtube.com/@sentinelP2P',
                 label: 'YouTube',
               },
             ],
