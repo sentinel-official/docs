@@ -5,13 +5,17 @@ sidebar_position: 1
 
 # Introduction
 
+:::tip Ticker Change
+Sentinel's ticker has changed from "$DVPN" to "$P2P." dVPN News has also rebranded as P2P News to reflect the project's broader scope.
+:::
+
 ##  What is Sentinel?
 
-Sentinel is an open source framework for a network of nodes on which Decentralized VPNs and other Web3 services are built. The purpose of the Sentinel ecosystem is to empower universal access to the internet in a trusted and provable manner. This will be done by allowing organizations and individuals around the world to construct decentralized, scalable, distributed networking solutions on Sentinel’s Cosmos-based blockchain in a cost-effective manner.
+Sentinel (ticker: $P2P, formerly $DVPN) is a layer-one peer-to-peer bandwidth marketplace DePIN blockchain which is used to power services like decentralized VPNs (dVPNs) and training data acquisition for AI models.
 
-:::info Important 
-Sentinel is the foundation for a network of independent dVPN (decentralized virtual private network) applications; not just one single consumer-facing dVPN.
-:::
+Anybody can host a node on the proof-of-stake Sentinel blockchain (built on the Cosmos SDK) and sell bandwidth to tens of thousands of real-world users across the world.
+
+The purpose of the Sentinel ecosystem is to empower universal access to the internet in a trusted and provable manner. This will be done by allowing organizations and individuals around the world to construct decentralized, scalable, distributed networking solutions on Sentinel’s Cosmos-based blockchain in a cost-effective manner.
 
 We strongly encourage all interested parties to build on Sentinel—anyone from established VPN companies to startups to lone individuals in their bedroom. Sentinel's code is fully open-sourced, transparent, and readily available to all for this very reason.
 

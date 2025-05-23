@@ -1,9 +1,9 @@
 ---
-title: Buy DVPN
+title: Buy P2P
 sidebar_position: 3
 ---
 
-You can get DVPN either from Centralized and Decentralized exchanges.
+You can get P2P either from Centralized and Decentralized exchanges.
 
 **Sentinel Foundation** recommend using:
 - SwapFast: [https://swap.sentinel.co](https://swap.sentinel.co) built by Leap.

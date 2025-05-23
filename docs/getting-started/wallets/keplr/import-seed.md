@@ -21,7 +21,7 @@ You will now be prompet to:
 
 ![](/img/keplr/import-4.png)
 
-The account will be imported and you will be prompted to add the Cosmos coins you want to use with the created wallet; make sure to select DVPN.
+The account will be imported and you will be prompted to add the Cosmos coins you want to use with the created wallet; make sure to select P2P.
 
 ![](/img/keplr/import-5.png)
 

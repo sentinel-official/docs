@@ -18,7 +18,7 @@ Access this [website](https://www.base64encode.org/), encode your mnemonic in Ba
 
 To get started, fund your wallet with the following minimum amounts:
 
-- **50 DVPN:**  necessary for the Node to operate
+- **50 P2P:**  necessary for the Node to operate
 - **0.5 AKT:** required as a deployment deposit.
 - **X AKT:** make sure you have enough AKT to cover your provider's monthly fees.
 

@@ -9,7 +9,7 @@ const API_URLS = {
   community: 'https://api.supply.sentinel.co/',
 };
 
-const DvpnPool = () => {
+const P2pPool = () => {
   const [data, setData] = useState({});
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -141,4 +141,4 @@ const DvpnPool = () => {
   );
 };
 
-export default DvpnPool;
+export default P2pPool;

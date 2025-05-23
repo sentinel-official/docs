@@ -286,7 +286,7 @@ content:
 
     Given the recent performance of Sentinel, marked by a significant number of products either already on the market or poised for imminent release, it is an opportune moment to establish a marketing fund. This fund will be dedicated to financing paid advertising across a diverse range of platforms. Our strategy includes leveraging Telegram groups, sponsored Telegram ads, Twitter (X), LinkedIn, and any other social platforms that are deemed effective. The primary goal of this initiative is to maximize our reach, encouraging a greater number of users to download Sentinel-based VPNs.
 
-    To finance this initiative, we plan to gradually convert DVPN coins into USDT. This process will be carefully managed to minimize market impact. We will explore two primary avenues for this conversion: engaging in over-the-counter (OTC) transactions with individual parties or executing measured sales on exchanges. In the case of exchange sales, we propose a cautious approach, such as selling around $100 per day, to avoid any adverse effects on the coin's price. This strategy ensures a steady funding stream
+    To finance this initiative, we plan to gradually convert P2P coins into USDT. This process will be carefully managed to minimize market impact. We will explore two primary avenues for this conversion: engaging in over-the-counter (OTC) transactions with individual parties or executing measured sales on exchanges. In the case of exchange sales, we propose a cautious approach, such as selling around $100 per day, to avoid any adverse effects on the coin's price. This strategy ensures a steady funding stream
 
     By voting NO, you disagree with the proposal.
     By voting ABSTAIN, you refrain from voting.

@@ -71,5 +71,5 @@ http://<your_ipv6>:<remote_port>/status
 ```
 
 :::note
-Your DVPN node is now ready to accept inbound IPv6 connections. Keep in mind that although many RPC (Remote Procedure Call) services and some whitelabel apps are accessible via IPv4, it might take a while for them to fully support IPv6. This involves updating their API or backend endpoints.
+Your dVPN node is now ready to accept inbound IPv6 connections. Keep in mind that although many RPC (Remote Procedure Call) services and some whitelabel apps are accessible via IPv4, it might take a while for them to fully support IPv6. This involves updating their API or backend endpoints.
 :::

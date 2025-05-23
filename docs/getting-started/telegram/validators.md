@@ -1,6 +1,6 @@
 ---
 title: Validator Channels
-description: A list of international Sentinel dVPN Telegram channels 
+description: A list of international Sentinel P2P Telegram channels 
 sidebar_position: 3
 ---
 

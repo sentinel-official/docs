@@ -30,7 +30,7 @@ A validator in the [active set](../getting-started/glossary.md#active-set) parti
 
 ## Bonding
 
-When a user delegates DVPN to a validator to receive staking rewards and in turn obtain voting power. Validators never have ownership of a delegator's DVPN. Delegating, bonding, and staking generally refer to the same process.
+When a user delegates P2P to a validator to receive staking rewards and in turn obtain voting power. Validators never have ownership of a delegator's P2P. Delegating, bonding, and staking generally refer to the same process.
 
 ## Burn
 
@@ -67,12 +67,12 @@ Decentralized finance. A movement away from traditional finance and toward syste
 
 ## Delegate
 
-When a user bonds DVPN to a validator to receive staking rewards and in turn obtain voting power. Validators never have ownership of the bonded DVPN. Delegating, bonding, and staking generally refer to the same process.
+When a user bonds P2P to a validator to receive staking rewards and in turn obtain voting power. Validators never have ownership of the bonded P2P. Delegating, bonding, and staking generally refer to the same process.
 
 
 ## Delegator
 
-A user who delegates, bonds, or stakes DVPN to a validator to earn rewards.
+A user who delegates, bonds, or stakes P2P to a validator to earn rewards.
 
 ## Fees
 
@@ -119,7 +119,7 @@ Revenue generated from fees given to validators and delegators.
 
 ## Self-delegation
 
-The amount of DVPN a validator bonds to themselves. Also referred to as self-bond.
+The amount of P2P a validator bonds to themselves. Also referred to as self-bond.
 
 ## Slashing
 
@@ -131,11 +131,11 @@ The difference in a coin's price between the start and end of a transaction.
 
 ## Stake
 
-The amount of DVPN bonded to a validator.
+The amount of P2P bonded to a validator.
 
 ## Staking
 
-When a user or delegator delegates and bonds DVPN to an active validator in order to receive rewards. Bonded DVPN adds to a validator's stake. Validators provide their stakes as collateral to participate in the consensus process. Validators with larger stakes are chosen to participate more often. Validators receive staking rewards for their participation. A validator's stake can be slashed if the validator misbehaves. Validators never have ownership of a delegator's DVPN, even when staking.
+When a user or delegator delegates and bonds P2P to an active validator in order to receive rewards. Bonded P2P adds to a validator's stake. Validators provide their stakes as collateral to participate in the consensus process. Validators with larger stakes are chosen to participate more often. Validators receive staking rewards for their participation. A validator's stake can be slashed if the validator misbehaves. Validators never have ownership of a delegator's P2P, even when staking.
 
 ## Tendermint consensus
 
@@ -161,7 +161,7 @@ A version of the mainnet just for testing. The testnet does not use real coins. 
 
 ## Total stake
 
-The total amount of DVPN bonded to a delegator, including self-bonded DVPN.
+The total amount of P2P bonded to a delegator, including self-bonded P2P.
 
 ## Unbonded validator
 
@@ -171,21 +171,21 @@ A validator that is not in the active set and does not participate in consensus 
 
 A validator transitioning from the active set to the inactive set. An unbonding validator does not participate in consensus or earn rewards. The unbonding process takes 14 days.
 
-## Unbonded DVPN
+## Unbonded P2P
 
-DVPN that can be freely traded and is not staked to a validator.
+P2P that can be freely traded and is not staked to a validator.
 
 ## Unbonding
 
-When a delegator decides to undelegate their DVPN from a validator. This process takes 14 days. No rewards accrue during this period. This action cannot be stopped once executed.
+When a delegator decides to undelegate their P2P from a validator. This process takes 14 days. No rewards accrue during this period. This action cannot be stopped once executed.
 
-## Unbonding DVPN
+## Unbonding P2P
 
-DVPN that is transitioning from bonded to unbonded. DVPN that is unbonding cannot be traded freely. The unbonding process takes 14 days. No rewards accrue during this period. This action cannot be stopped once executed.
+P2P that is transitioning from bonded to unbonded. P2P that is unbonding cannot be traded freely. The unbonding process takes 14 days. No rewards accrue during this period. This action cannot be stopped once executed.
 
 ## Undelegate
 
-When a delegator no longer wishes to have their DVPN bonded to a validator. This process takes 14 days. No rewards accrue during this period. This action cannot be stopped once executed.
+When a delegator no longer wishes to have their P2P bonded to a validator. This process takes 14 days. No rewards accrue during this period. This action cannot be stopped once executed.
 
 ## Uptime
 

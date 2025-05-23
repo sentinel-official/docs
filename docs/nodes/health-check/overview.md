@@ -13,8 +13,8 @@ To be added into the Subscription Plan and consequently be eligible to Node Reve
 This check tests:
 - the node endpoint
 - the node configuration
-- the node gigabyte price (less than 20 DVPN)
-- the node hourly price (15 DVPN for datacenters and 31,5 DVPN for residentials nodes, both expressed in udvpn)
+- the node gigabyte price (less than 20 P2P)
+- the node hourly price (15 P2P for datacenters and 31,5 P2P for residentials nodes, both expressed in udvpn)
 - the node connectivity
 
 :::note

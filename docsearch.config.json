@@ -13,9 +13,9 @@
       "selectors_key": "apis"
     },
     {
-      "url": "https://docs.sentinel.co/dvpn-coin",
-      "tags": "dvpn-coin",
-      "selectors_key": "dvpn-coin"
+      "url": "https://docs.sentinel.co/p2p-coin",
+      "tags": "p2p-coin",
+      "selectors_key": "p2p-coin"
     },
     {
       "url": "https://docs.sentinel.co/sentinel-core",
@@ -174,11 +174,11 @@
       "lvl6": "article h6",
       "text": "article p, article li, article td:last-child"
     },
-    "dvpn-coin": {
+    "p2p-coin": {
       "lvl0": {
         "selector": "",
         "global": true,
-        "default_value": "dvpn-coin"
+        "default_value": "p2p-coin"
       },
       "lvl1": "article h1",
       "lvl2": "article h2",

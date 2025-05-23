@@ -1,6 +1,6 @@
 ---
 title: Install Docker
-description: Sentinel dVPN requires Docker to be installed
+description: Sentinel P2P requires Docker to be installed
 sidebar_position: 2
 ---
 

@@ -18,12 +18,12 @@ The following statistical tools, developed by the Sentinel team, provide detaile
 ## Community
 
 - [Sentnodes](https://sentnodes.com): this tool developed by [Busurnode](https://busurnode.com/) assists dVPN node hosts in obtaining information about their dVPN nodes. health check status. In case of failure, it provides details about what might have gone wrong.
-- [dVPN Node Faucet](https://busurnode.com/network/sentinel/faucet): To kickstart your dVPN node, ensure your operator address has sufficient DVPN. For testing, use the Sentinel dVPN Node Faucet by entering your node operator address. The faucet will send 0.3 DVPN, sample for verifying your dVPN node's online status. Consider adding more DVPN for prolonged online presence.
+- [dVPN Node Faucet](https://busurnode.com/network/sentinel/faucet): To kickstart your dVPN node, ensure your operator address has sufficient P2P. For testing, use the Sentinel dVPN Node Faucet by entering your node operator address. The faucet will send 0.3 P2P, sample for verifying your dVPN node's online status. Consider adding more DVPN for prolonged online presence.
 - [dVPN Node Monitor Telegram Bot](/node-monitoring/node-monitor-bot): A convenient Telegram bot designed to assist you in monitoring your dVPN nodes, providing comprehensive details about each dVPN node's status and performance.
 
 ## Uptime
 
-- [Uptime Kuma](/node-monitoring/uptime-kuma): Uptime Kuma: A great selfhosted tool for continuously monitoring your node’s uptime, helping you maximize your dVPN earnings.
+- [Uptime Kuma](/node-monitoring/uptime-kuma): Uptime Kuma: A great selfhosted tool for continuously monitoring your node’s uptime, helping you maximize your dVPN node P2P earnings.
 
 ## dVPN Node Metabase Analytics
 

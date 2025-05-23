@@ -58,7 +58,7 @@ sentinelhub tx staking unbond <sentvaloper_validator_address> \
     --gas=300000
 ```
 
-This command will unbond the specified `<amount>` of UDVPN tokens from the validator identified by `<sentvaloper_validator_address>`. Ensure that you replace `<your_keyname>` with the actual name of your key.
+This command will unbond the specified `<amount>` of udvpn tokens from the validator identified by `<sentvaloper_validator_address>`. Ensure that you replace `<your_keyname>` with the actual name of your key.
 
 
 ## Withdraw Staking Rewards

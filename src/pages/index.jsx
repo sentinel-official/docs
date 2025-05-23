@@ -18,7 +18,7 @@ import {
   Download,
   GrowthDao,
   Wallet,
-  DvpnCoin,
+  P2pCoin,
   Whitepaper,
 } from '../icons';
 
@@ -35,25 +35,25 @@ export default function Homepage() {
           <div className='margin-bottom--lg'>
             <h2>Sentinel Docs</h2>
             <p>
-              The Sentinel blockchain is a decentralized network, ran by 80+ validators and full nodes, with many front-ends and development teams on it. Explore our docs and examples to quickly learn, develop & integrate with the Sentinel blockchain.
+            The Sentinel P2P blockchain is  is a layer-one peer-to-peer bandwidth marketplace DePIN blockchain which is used to power services like decentralized VPNs (dVPNs) and training data acquisition for AI models. Ran by 80+ validators and full nodes, with many front-ends and development teams on it. Explore our docs and examples to quickly learn, develop & integrate with the Sentinel blockchain.
             </p>
             <DyteButton onClick={() => router.push('getting-started/introduction')}>
               Get Started &rarr;
             </DyteButton>
           </div>
 
-          <Section title="Learn about Sentinel dVPN">
+          <Section title="Learn about Sentinel P2P">
             <Card
-              title="What is Sentinel dVPN?"
-              description="Sentinel is a decentralized virtual private network (dVPN) built on top of the Cosmos blockchain. It allows users to connect to the internet privately and securely by routing their traffic through a network of distributed nodes."
+              title="What is Sentinel P2P?"
+              description="Sentinel is a decentralized virtual private network (P2P) built on top of the Cosmos blockchain. It allows users to connect to the internet privately and securely by routing their traffic through a network of distributed nodes."
               to="/getting-started/introduction"
               icon={<SentinelCore />}
             />
             <Card
-              title="The DVPN Coin"
-              description="The DVPN coin is a governance coin that allows staked coin holders to decide the future of the protocol, including every implementation detail. "
-              to="/dvpn-coin"
-              icon={<DvpnCoin />}
+              title="The P2P Coin"
+              description="The P2P coin is a governance coin that allows staked coin holders to decide the future of the protocol, including every implementation detail. "
+              to="/p2p-coin"
+              icon={<P2pCoin />}
               svgFile=""
             />
             <Card
@@ -80,8 +80,8 @@ export default function Homepage() {
             />
             <Card
               title="Staking"
-              description="Discover all you need to know about staking your DVPN coins, from selecting the ideal validator to streamlining the process with the REStake app.."
-              to="/dvpn-coin/staking/concepts"
+              description="Discover all you need to know about staking your P2P coins, from selecting the ideal validator to streamlining the process with the REStake app.."
+              to="/p2p-coin/staking/concepts"
               icon={<GrowthDao />}
               svgFile=""
             />
@@ -124,7 +124,7 @@ export default function Homepage() {
           <Section title="📜 User Guides">
             <Card
               title="Run a dVPN Node"
-              description="Learn how to deploy a dVPN Node to provide bandwidth and earn DVPN coins."
+              description="Learn how to deploy a dVPN Node to provide bandwidth and earn P2P coins."
               to="/node-setup"
               icon={<Guide />}
               svgFile=""

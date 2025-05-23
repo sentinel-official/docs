@@ -3,7 +3,7 @@ title: Overview
 sidebar_position: 1
 ---
 
-# Sentinel dVPN Full Node Setup Guide
+# Sentinel P2P Full Node Setup Guide
 
 This guide is intended for anyone who wishes to contribute to the Sentinel Network by installing a Full Node.
 
@@ -15,7 +15,7 @@ A full node is a participant in the network that maintains a complete copy of th
 It stores the entire transaction history of the blockchain and validates new transactions based on the consensus rules of the network.
 Full nodes are important for decentralization as they help in distributing the blockchain data across the network, making it more resilient.
 
-A Sentinel dVPN Full Node can be deployed on various platforms, including:
+A Sentinel P2P Full Node can be deployed on various platforms, including:
 - Dedicated server (as explained in this guide)
 - Your home setup
 - The Akash Network

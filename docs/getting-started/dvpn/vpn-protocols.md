@@ -7,9 +7,9 @@ sidebar_position: 2
 
 The landscape of interference, blocking, and jamming technologies has evolved over the years, gradually challenging traditional VPNs, SSH tunneling, and other internet access methods. As a result, prominent entities utilize diverse measures to interfere, rendering it increasingly difficult to access geo-banned websites. This necessitates the development of evasive and masking internet technology, and that's where V2Ray comes in.
 
-The Sentinel dVPN team has diligently worked on various VPN protocols and proxies, including V2Ray, to enhance privacy and security. V2Ray has emerged as a highly proficient network tool in recent years, renowned for its powerful features and effective firewall bypass capabilities.
+The Sentinel P2P team has diligently worked on various VPN protocols and proxies, including V2Ray, to enhance privacy and security. V2Ray has emerged as a highly proficient network tool in recent years, renowned for its powerful features and effective firewall bypass capabilities.
 
-Sentinel dVPN leverages V2Ray's camouflage capabilities to package traffic through the firewall using common HTTPS/TLS, significantly reducing the likelihood of V2Ray nodes being blocked or interfered with. This approach ensures a stable internet experience. It's important to note that V2Ray, in itself, is not a standalone protocol or circumvention system. Similar to how Sentinel dVPN forms an ecosystem for dVPN applications, V2Ray serves as an open-source framework allowing one or more proxies to run, incorporating various layered proxy protocols, transports, and obfuscation techniques.
+Sentinel P2P leverages V2Ray's camouflage capabilities to package traffic through the firewall using common HTTPS/TLS, significantly reducing the likelihood of V2Ray nodes being blocked or interfered with. This approach ensures a stable internet experience. It's important to note that V2Ray, in itself, is not a standalone protocol or circumvention system. Similar to how Sentinel P2P forms an ecosystem for dVPN applications, V2Ray serves as an open-source framework allowing one or more proxies to run, incorporating various layered proxy protocols, transports, and obfuscation techniques.
 
 ## V2Ray features
 

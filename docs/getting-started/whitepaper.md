@@ -17,7 +17,7 @@ The covered contents are as follows:
 - Decentralizing the VPN Industry
 - Overview of the Sentinel Cosmos-based
 - Blockchain Architecture
-- Overview of the Sentinel dVPN Architecture
+- Overview of the Sentinel P2P Architecture
 - Coin Utility Model
 - Hardware Integration
 - Organizational Structure

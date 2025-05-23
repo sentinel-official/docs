@@ -1,16 +1,16 @@
 ---
 title: Official Channels
-description: A list of official Sentinel dVPN Telegram channels 
+description: A list of official Sentinel P2P Telegram channels 
 sidebar_position: 1
 ---
 
-# Sentinel dVPN Telegram Channels
+# Sentinel P2P Telegram Channels
 
 ## Official
 
 - [Sentinel P2P - Official Group](https://t.me/sentinelp2p): The official main community channel.
 - [Sentinel Official Announcements](https://t.me/Sentinel_Announcements): Official Sentinel news and announcements.
-- [Sentinel P2P Coin Price](https://t.me/pricep2pchat): DVPN Coin price discussion.
+- [Sentinel P2P Coin Price](https://t.me/pricep2pchat): P2P Coin price discussion.
 - [Sentinel Node Network](https://t.me/SentinelNodeNetwork): A group for dVPN node operators.
 - [Sentinel RPC Node Network](https://t.me/sentinelrpcnodes): A group for RPC Node operators.
 - [Sentinel IBC Relayers](https://t.me/sentinelibcrelayers): A group for IBC Relayers operators.

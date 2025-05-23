@@ -36,7 +36,7 @@ function defineSection(section, options = {}) {
 
 const SECTIONS = [
   defineSection('apis'),
-  defineSection('dvpn-coin'),
+  defineSection('p2p-coin'),
   defineSection('full-node-setup'),
   defineSection('getting-started'),
   defineSection('networks'),
@@ -141,8 +141,8 @@ const config = {
             position: 'left',
           },
           {
-            label: '$DVPN Coin',
-            to: 'dvpn-coin',
+            label: '$P2P Coin',
+            to: 'p2p-coin',
             position: 'left',
           },
           {
@@ -223,7 +223,7 @@ const config = {
                 label: 'Discord',
               },
               {
-                href: 'https://www.reddit.com/r/dVPN/',
+                href: 'https://www.reddit.com/r/SentinelP2P/',
                 label: 'Reddit',
               },
               {
@@ -355,7 +355,7 @@ const config = {
             ],
           },
         ],
-        copyright: "Copyright © Sentinel dVPN - Built and maintained by <a href='https://trinitystake.io'>Trinity Stake</a>",
+        copyright: "Copyright © Sentinel P2P - Built and maintained by <a href='https://trinitystake.io'>Trinity Stake</a>",
       },
       prism: {
         theme: prismThemes.github,

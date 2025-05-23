@@ -7,7 +7,7 @@ sidebar_position: 5
 Running a node can be done in two ways: with or without the autorestart function. If you do not want to use it, you need to use a screen session to detach from the node after launching the docker run command.
 
 :::danger Important
- Before starting the node, remember to send a few DVPN (**50** should suffice) to the operator address otherwise the node will not start!
+ Before starting the node, remember to send a few P2P (**50** should suffice) to the operator address otherwise the node will not start!
  To accomplish this, import the seed you generated or recovered in [**this step**](/node-setup/manual/node-config#add-a-mnemonic) into a wallet such as [**Leap**](/getting-started/wallets/leap/import-seed) or [**Keplr**](/getting-started/wallets/keplr/import-seed).
  
  If you are running your node for testing purposes you can use the [**Node Faucet**](https://busurnode.com/network/sentinel/faucet)

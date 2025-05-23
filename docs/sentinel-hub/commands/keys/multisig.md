@@ -146,12 +146,12 @@ sentinelhub keys add --multisig=key_1,key_2,key_3 --multisig-threshold=2 multisi
 
 **Fund the Multisig Accoun**
 
-Before creating transactions, ensure the multisig account has sufficient DVPN tokens.
+Before creating transactions, ensure the multisig account has sufficient P2P Coins.
 
 
 ### Step 3: Create the Multisig TX
 
-We want to send 5 DVPN from our multisig account to `sent1nygcr5p33plzq4akfxnl3nr7nf59gnshvtkzs6`. To do this, we'll create an offline transaction called `unsigned.json,` which contains the unsigned transaction in JSON format. This file will then be shared with each signer, who will add their signature and return it to the transaction creator.
+We want to send 5 P2P from our multisig account to `sent1nygcr5p33plzq4akfxnl3nr7nf59gnshvtkzs6`. To do this, we'll create an offline transaction called `unsigned.json,` which contains the unsigned transaction in JSON format. This file will then be shared with each signer, who will add their signature and return it to the transaction creator.
 
 ```bash
 sentinelhub tx bank send sent13c4medfuu9882c7sqjrt5egqp96l6f4sjd0efh \

@@ -6,12 +6,12 @@ sidebar_position: 3
 
 # Node Setup
 
-Here, you can complete the following steps to set up your dvpn node:
+Here, you can complete the following steps to set up your dVPN node:
 
 - Install dVPN Node Requirements: Begin by installing the necessary requirements for dVPN Node.
 - Download the Docker Image: Next, download the Docker image required for dVPN Node.
-- Customize dVPN Node Configuration: Tailor the DVPN node software to your specific preferences by configuring it to suit your needs.
-- Launch Your dVPN Node: Finally, start your DVPN node and enjoy secure and private networking.
+- Customize dVPN Node Configuration: Tailor the dVPN node software to your specific preferences by configuring it to suit your needs.
+- Launch Your dVPN Node: Finally, start your dVPN node and enjoy secure and private networking.
 
 Non-clickable buttons indicate that you have met the required criteria.
 
@@ -26,7 +26,7 @@ Please refer to manual [node configuration](/node-setup/manual/node-config) to e
 
 ![](/img/node-spawner/node-setup-3.png)
 
-If you have not added your wallet for recovery, a new one will be created and displayed to you. Please make sure to take note of your mnemonic, operator address, and node address, and don't forget to add a sufficient amount of DVPN to initiate the node.
+If you have not added your wallet for recovery, a new one will be created and displayed to you. Please make sure to take note of your mnemonic, operator address, and node address, and don't forget to add a sufficient amount of P2P to initiate the node.
 
 ![](/img/node-spawner/node-setup-4.png)
 
