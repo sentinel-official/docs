@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunksentinel_docs=self.webpackChunksentinel_docs||[]).push([[3721],{5170:s=>{s.exports=JSON.parse('{"name":"docusaurus-plugin-content-docs","id":"p2p-coin"}')}}]);
