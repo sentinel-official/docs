@@ -35,7 +35,7 @@ export default function Homepage() {
           <div className='margin-bottom--lg'>
             <h2>Sentinel Docs</h2>
             <p>
-            The Sentinel P2P blockchain is  is a layer-one peer-to-peer bandwidth marketplace DePIN blockchain which is used to power services like decentralized VPNs (dVPNs) and training data acquisition for AI models. Ran by 80+ validators and full nodes, with many front-ends and development teams on it. Explore our docs and examples to quickly learn, develop & integrate with the Sentinel blockchain.
+            The Sentinel P2P blockchain is a layer-one peer-to-peer bandwidth marketplace DePIN blockchain which is used to power services like decentralized VPNs (dVPNs) and training data acquisition for AI models. Ran by 80+ validators and full nodes, with many front-ends and development teams on it. Explore our docs and examples to quickly learn, develop & integrate with the Sentinel blockchain.
             </p>
             <DyteButton onClick={() => router.push('getting-started/introduction')}>
               Get Started &rarr;
