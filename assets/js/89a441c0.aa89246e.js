@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunksentinel_docs=self.webpackChunksentinel_docs||[]).push([[4545],{72182:(s,e,n)=>{n.r(e),n.d(e,{default:()=>c});n(96540);var a=n(56347),t=n(74848);function c(){const s=(0,a.W6)();return(0,t.jsx)(a.rd,{to:{pathname:"/api",search:"v=v2",hash:s.location.hash}})}}}]);
