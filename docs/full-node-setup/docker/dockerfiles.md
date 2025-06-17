@@ -55,7 +55,7 @@ echo 'export PATH=${PATH}:${GOROOT}/bin:${GOBIN}' >> .bashrc
 # Install Sentinel Hub
 # Must be sentinel or make install executes incorrectly
 USER sentinel 
-RUN git clone https://github.com/sentinel-official/hub.git "/home/sentinel/sentinelhub"
+RUN git clone https://github.com/sentinel-official/sentinelhub.git "/home/sentinel/sentinelhub"
 
 WORKDIR /home/sentinel/sentinelhub
 
@@ -210,7 +210,7 @@ echo 'export PATH=${PATH}:${GOROOT}/bin:${GOBIN}' >> .bashrc
 # Install Sentinel Hub
 # Must be sentinel or make install executes incorrectly
 USER sentinel 
-RUN git clone https://github.com/sentinel-official/hub.git "/home/sentinel/sentinelhub"
+RUN git clone https://github.com/sentinel-official/sentinelhub.git "/home/sentinel/sentinelhub"
 
 WORKDIR /home/sentinel/sentinelhub
 
@@ -386,7 +386,7 @@ echo 'export PATH=${PATH}:${GOROOT}/bin:${GOBIN}' >> .bashrc
 # Install Sentinel Hub please note the version is v12 here the current testnet version
 # Must be sentinel or make install executes incorrectly
 USER sentinel 
-RUN git clone https://github.com/sentinel-official/hub.git "/home/sentinel/sentinelhub"
+RUN git clone https://github.com/sentinel-official/sentinelhub.git "/home/sentinel/sentinelhub"
 
 WORKDIR /home/sentinel/sentinelhub
 
@@ -521,7 +521,7 @@ echo 'export PATH=${PATH}:${GOROOT}/bin:${GOBIN}' >> .bashrc
 # Install Sentinel Hub please note the version is v12 here the current testnet version
 # Must be sentinel or make install executes incorrectly
 USER sentinel 
-RUN git clone https://github.com/sentinel-official/hub.git "/home/sentinel/sentinelhub"
+RUN git clone https://github.com/sentinel-official/sentinelhub.git "/home/sentinel/sentinelhub"
 
 WORKDIR /home/sentinel/sentinelhub
 

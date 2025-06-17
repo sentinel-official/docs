@@ -21,12 +21,12 @@ You should receive this output: `go version go1.xx.x darwin/amd64`
 
 ## Build Sentinel
 
-In order to build Sentinel you need the source code. Either [download the source of a release](https://github.com/sentinel-official/hub/releases) or [clone the git repository](https://github.com/sentinel-official/hub.git) and make sure you always download the **latest version**.
+In order to build Sentinel you need the source code. Either [download the source of a release](https://github.com/sentinel-official/hub/releases) or [clone the git repository](https://github.com/sentinel-official/sentinelhub.git) and make sure you always download the **latest version**.
 
 Build Sentinel from the source code:
 
 ```bash
-git clone https://github.com/sentinel-official/hub.git "${HOME}/sentinelhub"
+git clone https://github.com/sentinel-official/sentinelhub.git "${HOME}/sentinelhub"
 cd "${HOME}/sentinelhub"
 git checkout vX.X.X # always make sure it's the latest version
 make install

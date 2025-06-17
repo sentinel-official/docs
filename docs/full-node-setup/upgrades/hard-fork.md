@@ -66,7 +66,7 @@ VERSION=v0.6.2
 BASE_DIRECTORY=${GOPATH}/src/github.com/sentinel-official
 
 rm -rf ${BASE_DIRECTORY}/hub/ && mkdir -p ${BASE_DIRECTORY} && cd ${BASE_DIRECTORY}/ && \
-git clone https://github.com/sentinel-official/hub.git && cd ${BASE_DIRECTORY}/hub/ && \
+git clone https://github.com/sentinel-official/sentinelhub.git && cd ${BASE_DIRECTORY}/hub/ && \
 git checkout ${VERSION}
 ```
 

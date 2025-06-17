@@ -24,7 +24,7 @@ sudo ufw status
 To install Sentinel Hub, please download the latest version from the [repository](https://github.com/sentinel-official/hub/releases) and proceed by executing the following commands:
 
 ```bash
-git clone https://github.com/sentinel-official/hub.git "${HOME}/sentinelhub"
+git clone https://github.com/sentinel-official/sentinelhub.git "${HOME}/sentinelhub"
 cd "${HOME}/sentinelhub"
 git checkout vX.X.X
 make install

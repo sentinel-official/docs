@@ -9,7 +9,7 @@ sidebar_position: 3
 When the upgrade is available clone the Sentinel Hub [repository](https://github.com/sentinel-official/hub), checkout at the new version and install it
 
 ```bash
-git clone https://github.com/sentinel-official/hub.git "${HOME}/sentinelhub"
+git clone https://github.com/sentinel-official/sentinelhub.git "${HOME}/sentinelhub"
 cd "${HOME}/sentinelhub"
 git checkout <new_version>
 make install
