@@ -37,7 +37,7 @@ export default function Homepage() {
             <p>
             The Sentinel P2P blockchain is a layer-one peer-to-peer bandwidth marketplace DePIN blockchain which is used to power services like decentralized VPNs (dVPNs) and training data acquisition for AI models. Ran by 80+ validators and full nodes, with many front-ends and development teams on it. Explore our docs and examples to quickly learn, develop & integrate with the Sentinel blockchain.
             </p>
-            <DyteButton onClick={() => router.push('getting-started/introduction')}>
+            <DyteButton onClick={() => router.push('get-started/introduction')}>
               Get Started &rarr;
             </DyteButton>
           </div>
@@ -46,7 +46,7 @@ export default function Homepage() {
             <Card
               title="What is Sentinel P2P?"
               description="Sentinel is a decentralized virtual private network (P2P) built on top of the Cosmos blockchain. It allows users to connect to the internet privately and securely by routing their traffic through a network of distributed nodes."
-              to="/getting-started/introduction"
+              to="/get-started/introduction"
               icon={<SentinelCore />}
             />
             <Card
@@ -59,7 +59,7 @@ export default function Homepage() {
             <Card
               title="Whitepaper"
               description="For a comprehensive examination of this subject and a detailed analysis, please feel free to review our white paper, which is accessible."
-              to="/getting-started/whitepaper"
+              to="/get-started/whitepaper"
               icon={<Whitepaper />}
             />
           </Section>
@@ -68,14 +68,14 @@ export default function Homepage() {
             <Card
               title="dVPN apps"
               description="A comprehensive list of decentralized solutions built on top of Sentinel blockchain. These solutions enable you to access hundreds of community-managed nodes worldwide, providing a private and secure gateway to the internet."
-              to="/getting-started/apps/"
+              to="/get-started/apps/"
               icon={<Download />}
               svgFile=""
             />
             <Card
               title="Wallets"
               description="Learn about how to start using blockchain apps, stake your coins and manage them in just one wallet."
-              to="/getting-started/wallets"
+              to="/get-started/wallets"
               icon={<Wallet />}
             />
             <Card
@@ -125,7 +125,7 @@ export default function Homepage() {
             <Card
               title="Run a dVPN Node"
               description="Learn how to deploy a dVPN Node to provide bandwidth and earn P2P coins."
-              to="/node-setup"
+              to="/dvpn-node-setup"
               icon={<Guide />}
               svgFile=""
             />

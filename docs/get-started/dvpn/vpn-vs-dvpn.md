@@ -25,4 +25,4 @@ To delve deeper into the ethos of the dVPN Alliance, please explore our dedicate
 
 For a comprehensive understanding of our guiding principles, peruse the manifesto crafted by the alliance: [https://dvpnalliance.org/manifesto](https://dvpnalliance.org/manifesto)
 
-![](/img/getting-started/dvpn-manifesto.png)
+![](/img/get-started/dvpn-manifesto.png)

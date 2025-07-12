@@ -25,10 +25,10 @@ By implementing this process, the Subscription Plan ensures a continuous assessm
 
 To check if your node has passed the health check, there are four ways to do it.
 
-- [Node Dashboard](/nodes/health-check/node-dashboard)
-- [Busurnode](/nodes/health-check/busurnode)
-- [Sentinel API](/nodes/health-check/sentinel-api)
-- [Planwizard API](/nodes/health-check/plan-wizard)
+- [Node Dashboard](/dvpn-nodes/health-check/node-dashboard)
+- [Busurnode](/dvpn-nodes/health-check/busurnode)
+- [Sentinel API](/dvpn-nodes/health-check/sentinel-api)
+- [Planwizard API](/dvpn-nodes/health-check/plan-wizard)
 
 ## Node Compliance Rules
 

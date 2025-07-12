@@ -11,4 +11,4 @@ The available bandwidth can be charged on a per-GB basis or on an hourly rate.
 
 Delving into the essence of this bandwidth selling feature lies the innovative 'proof of bandwidth protocol', meticulously designed to guarantee a trustless and transparent evaluation of bandwidth provision from community-based nodes to end-users. By prioritizing "bandwidth provability," the protocol seamlessly integrates with the Sentinel blockchain, thereby establishing a verifiable ledger documenting the quality of the bandwidth service provided and nurturing trust among all involved parties.
 
-![](/img/nodes/structure.png)
+![](/img/dvpn-nodes/structure.png)

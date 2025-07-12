@@ -26,7 +26,7 @@ Groups of information stored on a blockchain. Each block contains transactions t
 
 ## Bonded validator
 
-A validator in the [active set](../getting-started/glossary.md#active-set) participating in consensus. Bonded validators earn rewards.
+A validator in the [active set](../get-started/glossary.md#active-set) participating in consensus. Bonded validators earn rewards.
 
 ## Bonding
 
@@ -94,7 +94,7 @@ A written submission for a change or addition to the Sentinel protocol. Topics o
 
 ## Inactive set
 
-Validators that are not in the [active set](../getting-started/glossary.md#active-set). These validators do not participate in consensus and do not earn rewards.
+Validators that are not in the [active set](../get-started/glossary.md#active-set). These validators do not participate in consensus and do not earn rewards.
 
 ## IBC
 

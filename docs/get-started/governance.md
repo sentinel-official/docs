@@ -3,7 +3,7 @@ title: Governance
 sidebar_position: 6
 ---
 
-![](/img/getting-started/governance.png)
+![](/img/get-started/governance.png)
 
 # Governance
 
@@ -15,7 +15,7 @@ P2P holders who stake their tokens gain the opportunity to actively participate 
 
 [These proposals](https://www.mintscan.io/sentinel/proposals) cover a wide range of topics, including protocol upgrades, network improvements, funding allocations, and other important decisions that shape the future of the Sentinel ecosystem. By exploring the list of available proposals, staked P2P holders can leverage their coins to cast votes and influence the direction of the network. This active engagement not only empowers token holders to have a voice in decision-making but also fosters a sense of community involvement and ownership within the Sentinel ecosystem. Through their participation in governance, staked P2P holders contribute to the decentralization and democratization of decision-making, ultimately helping to build a stronger and more resilient network.
 
-![](/img/getting-started/voting.png)
+![](/img/get-started/voting.png)
 
 ## Proposals Management
 

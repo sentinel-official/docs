@@ -24,7 +24,7 @@
 
 - [About the Project](#about-the-project)
   - [Built With](#built-with)
-- [Getting Started](#getting-started)
+- [Get Started](#get-started)
   - [Prerequisites](#prerequisites)
   - [Installation](#installation)
 - [Usage](#usage)
@@ -44,9 +44,9 @@
 - [Docusaurus](https://docusaurus.io/)
 - [React](https://reactjs.org/)
 
-<!-- GETTING STARTED -->
+<!-- GET STARTED -->
 
-## Getting Started
+## Get Started
 
 This section describes how you can get our documentation portal up and running on your machine.
 

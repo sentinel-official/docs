@@ -10,7 +10,7 @@ Sentinel Node Monitor is a free Telegram bot designed for Sentinel dVPN Node ope
 It's a tool built by the community, for the community, with every development aligned with the requests and feedback of Sentinel node operators. The bot is currently operational and accessible in an open beta phase. We invite all community members to participate in testing the features and stability of the tool.
 
 
-![](/img/nodes/tools/node-monitor-bot-logo.png)
+![](/img/dvpn-nodes/tools/node-monitor-bot-logo.png)
 
 
 ## Bot Configuration
@@ -38,7 +38,7 @@ Now, you're ready to start monitoring the health check status. This way, if any 
 - Type the command `/monitor` to start monitoring the health check status.
 - Type the command `/stop_monitor` to halt the health check status monitoring.
 
-![](/img/nodes/tools/node-monitor-bot-screens.png)
+![](/img/dvpn-nodes/tools/node-monitor-bot-screens.png)
 
 
 ## Network Statistics

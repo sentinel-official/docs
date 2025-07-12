@@ -14,7 +14,7 @@ Private keys are stored locally. This removes the friction and risk of web pages
 
 As the user's private key is not managed by the website, users do not have to worry about the level of security of the website. The user only has to trust the security guarantees of Leap, and freely interact with various web applications as they wish (and verify the contents of the transaction).
 
-## Getting Started
+## Get Started
 
 You can begin your journey with Leap by visiting the Official [Website](https://www.leapwallet.io/) and/or referring to their official [Documentation](https://leapwallet.notion.site/Leap-Cosmos-Wallet-Support-ba1da3c05d3341eaa44a1850ed3260ee).
 Additionally, we've prepared a concise, step-by-step guide for your convenience. Just keep exploring!

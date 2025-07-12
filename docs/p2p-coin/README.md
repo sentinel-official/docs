@@ -3,7 +3,7 @@ title: Overview
 sidebar_position: 1
 ---
 
-![](/img/getting-started/p2p-coin.png)
+![](/img/get-started/p2p-coin.png)
 
 # P2P Coin
 

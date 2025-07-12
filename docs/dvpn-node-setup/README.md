@@ -16,11 +16,11 @@ In order to setup a dVPN node some basic Linux experience will come in handy, ho
 
 There are currenty 5 ways to get started with setting up a dVPN node:
 
-- [Automated](/node-setup/automated)
-- [Manual](node-setup/manual-setup)
-- [Linux Script](/node-setup/other/linux-script)
-- [Akash Network](/node-setup/akash)
-- [Node Spawner](/node-setup/other/node-spawner/overview)
+- [Automated](/dvpn-node-setup/automated)
+- [Manual](dvpn-node-setup/manual-setup)
+- [Linux Script](/dvpn-node-setup/other/linux-script)
+- [Akash Network](/dvpn-node-setup/akash)
+- [Node Spawner](/dvpn-node-setup/other/node-spawner/overview)
 
 ### dVPN Node Owners Groups
 

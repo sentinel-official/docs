@@ -38,14 +38,14 @@
       "selectors_key": "networks"
     },
     {
-      "url": "https://docs.sentinel.co/getting-started",
-      "tags": "getting-started",
-      "selectors_key": "getting-started"
+      "url": "https://docs.sentinel.co/get-started",
+      "tags": "get-started",
+      "selectors_key": "get-started"
     },
     {
-      "url": "https://docs.sentinel.co/node-setup",
-      "tags": "node-setup",
-      "selectors_key": "node-setup"
+      "url": "https://docs.sentinel.co/dvpn-node-setup",
+      "tags": "dvpn-node-setup",
+      "selectors_key": "dvpn-node-setup"
     },
     {
       "url": "https://docs.sentinel.co/full-node-setup",
@@ -146,11 +146,11 @@
       "lvl6": "article h6",
       "text": "article p, article li, article td:last-child"
     },
-    "getting-started": {
+    "get-started": {
       "lvl0": {
         "selector": "",
         "global": true,
-        "default_value": "getting-started"
+        "default_value": "get-started"
       },
       "lvl1": "article h1",
       "lvl2": "article h2",
@@ -188,11 +188,11 @@
       "lvl6": "article h6",
       "text": "article p, article li, article td:last-child"
     },
-    "nodes": {
+    "dvpn-nodes": {
       "lvl0": {
         "selector": "",
         "global": true,
-        "default_value": "nodes"
+        "default_value": "dvpn-nodes"
       },
       "lvl1": "article h1",
       "lvl2": "article h2",
@@ -202,11 +202,11 @@
       "lvl6": "article h6",
       "text": "article p, article li, article td:last-child"
     },
-    "node-setup": {
+    "dvpn-node-setup": {
       "lvl0": {
         "selector": "",
         "global": true,
-        "default_value": "node-setup"
+        "default_value": "dvpn-node-setup"
       },
       "lvl1": "article h1",
       "lvl2": "article h2",

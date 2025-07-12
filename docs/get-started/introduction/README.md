@@ -19,7 +19,7 @@ The purpose of the Sentinel ecosystem is to empower universal access to the inte
 
 We strongly encourage all interested parties to build on Sentinel—anyone from established VPN companies to startups to lone individuals in their bedroom. Sentinel's code is fully open-sourced, transparent, and readily available to all for this very reason.
 
-![](/img/getting-started/welcome.jpg)
+![](/img/get-started/welcome.jpg)
 
 
 ## Why Sentinel?

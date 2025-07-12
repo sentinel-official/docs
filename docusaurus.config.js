@@ -38,11 +38,11 @@ const SECTIONS = [
   defineSection('apis'),
   defineSection('p2p-coin'),
   defineSection('full-node-setup'),
-  defineSection('getting-started'),
+  defineSection('get-started'),
   defineSection('networks'),
-  defineSection('nodes'),
+  defineSection('dvpn-nodes'),
   defineSection('node-monitoring'),
-  defineSection('node-setup'),
+  defineSection('dvpn-node-setup'),
   defineSection('sdk'),
   defineSection('sentinel-cli'),
   defineSection('sentinel-hub'),
@@ -82,12 +82,8 @@ const config = {
       ({
         docs: {
           path: 'docs/home',
-          routeBasePath: '/',
           sidebarPath: require.resolve('./sidebars-home.js'),
           breadcrumbs: false,
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          //editUrl: 'https://github.com/sentinel-official/docs/tree/main/',
           ...defaultSettings,
         },
         blog: false,
@@ -137,7 +133,7 @@ const config = {
         items: [
           {
             label: 'Get Started',
-            to: 'getting-started/introduction',
+            to: 'get-started/introduction',
             position: 'left',
           },
           {
@@ -147,7 +143,7 @@ const config = {
           },
           {
             label: 'Apps',
-            to: 'getting-started/apps',
+            to: 'get-started/apps',
             position: 'left',
           },
           {
@@ -177,7 +173,7 @@ const config = {
           },
           {
             label: 'dVPN Nodes',
-            to: 'nodes',
+            to: 'dvpn-nodes',
             position: 'left',
           },
           {
@@ -186,7 +182,7 @@ const config = {
             position: 'left',
             items: [
               {
-                to: 'node-setup',
+                to: 'dvpn-node-setup',
                 label: 'Run a dVPN Node',
               },
               {
@@ -295,8 +291,8 @@ const config = {
             title: 'Docs',
             items: [
               {
-                label: 'Getting Started',
-                href: '/getting-started/introduction',
+                label: 'Get Started',
+                href: '/get-started/introduction',
               },
               {
                 label: 'Sentinel Hub',
@@ -308,7 +304,7 @@ const config = {
               },
               {
                 label: 'Run a dVPN Node',
-                href: '/node-setup',
+                href: '/dvpn-node-setup',
               },
             ],
           },
@@ -317,7 +313,7 @@ const config = {
             items: [
               {
                 label: 'dVPN Apps',
-                href: '/getting-started/apps',
+                href: '/get-started/apps',
               },
               {
                 label: 'GitHub',

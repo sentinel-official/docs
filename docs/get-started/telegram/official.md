@@ -34,6 +34,7 @@ sidebar_position: 1
 - [Meile dVPN](https://t.me/MathNodes): Everything regarding Meile dVPN is discussed in this very active group.
 - [Norse Labs](https://t.me/norselabs): Anything related to Norse Labs can be discussed in this group. 
 - [Independent dVPN](https://t.me/independentdvpn): The Turkish free dVPN that is becoming very popular.
+- [VALT](https://t.me/valt_group): A self custodial personal-data manager and decentralized VPN.
 
 
 ## Utility Bots

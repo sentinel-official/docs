@@ -48,7 +48,7 @@ const SECTIONS = [
   },
   {
     name: 'dVPN Nodes',
-    id: 'nodes',
+    id: 'dvpn-nodes',
     icon: Nodes,
     section: 'core-sdk',
   },
@@ -68,7 +68,7 @@ const SECTIONS = [
   // Dropdown Sentinel Guides
   {
     name: 'Run a dVPN Node',
-    id: 'node-setup',
+    id: 'dvpn-node-setup',
     icon: Guide,
     section: 'guides',
   },

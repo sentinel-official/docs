@@ -8,7 +8,7 @@ sidebar_position: 1
 This guide is intended for anyone who wishes to contribute to the Sentinel Network by installing a Full Node.
 
 :::warning
-Please note that if you intend to share your bandwidth, you must adhere to the [dVPN Node guide](/node-setup), as the Full Node serves distinct purposes.
+Please note that if you intend to share your bandwidth, you must adhere to the [dVPN Node guide](/dvpn-node-setup), as the Full Node serves distinct purposes.
 :::
 
 A full node is a participant in the network that maintains a complete copy of the blockchain.
