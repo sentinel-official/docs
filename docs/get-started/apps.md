@@ -59,6 +59,12 @@ The following dVPN apps are built on top of the Sentinel Protocol. This is why w
         svgFile="/icons/valt.svg"
     />
     <Card
+        title="encryptSIM"
+        description="encryptSIM are the creators of the world's first Web3 eSIMs. Their application, which is still in its public beta testing phase, provides no-cost dVPN service to anybody with an active eSIM plan."
+        to="https://www.encryptsim.com/"
+        svgFile="/icons/encryptsim.svg"
+    />
+    <Card
         title="DVPN Telegram Bot"
         description="An innovative mini-app created by Norse Labs and powered by the Sentinel blockchain. It lets you securely and privately connect to thousands of dVPN servers worldwide, all for free! Since it’s used via Telegram, there’s no need to download any additional apps."
         to="https://norselabs.io/products/dvpn-bot"
