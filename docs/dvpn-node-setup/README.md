@@ -26,5 +26,5 @@ There are currenty 5 ways to get started with setting up a dVPN node:
 
 If you are operating a dVPN node and require assistance, we invite you to become a part of the following groups.
 
-- Telegram: [Sentinel Node Network](https://t.me/SentinelNodeNetwork)
+- Telegram: [Sentinel P2P - dVPN Node Network](https://t.me/SentinelNodeNetwork)
 - Discord: [#dvpn-nodes](https://discord.com/channels/436630361313640469/436644009369403394)

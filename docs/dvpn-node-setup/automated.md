@@ -7,7 +7,7 @@ sidebar_position: 3
 
 To simplify the installation of a dVPN node, you can employ a `.deb` package tool called dVPN Node Manager that automates the process through an intuitive user interface (UI).
 
-This tool is available on [GitHub repository](https://github.com/sentinelgrowthdao/dvpn-node-manager), and a comprehensive article has also been published on [dvpn.news](https://dvpn.news), providing detailed instructions.
+This tool is available on [GitHub repository](https://github.com/sentinelgrowthdao/dvpn-node-manager), and a comprehensive article has also been published on [p2p.news](https://p2p.news), providing detailed instructions.
 
 The dVPN  Node Manager tool can be installed in three distinct ways, tailored to your specific requirements.
 
