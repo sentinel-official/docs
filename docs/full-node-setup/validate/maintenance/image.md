@@ -5,13 +5,9 @@ sidebar_position: 2
 
 # Add a Validator Image
 
-In order to have your validator profile image displayed on the most commonly used Cosmos blockchain explorers, you need to follow two different procedures
+By following this procedure using Keybase, your validator image will be displayed on popular Explorers and Wallets within the Cosmos Ecosystem.
 
-## First procedure
-
-By following this procedure, your validator image will be visible on [Keplr](https://wallet.keplr.app/chains/sentinel), [Ping.pub](https://ping.pub/sentinel/staking), [Cosmos.directory](https://cosmos.directory/sentinel/validators) and [ATOMScan](https://atomscan.com/sentinel/validators).
-
-Firstly, register on [keybase.io](https://keybase.io/), and create your profile by adding a profile image, which will be used as your validator image. Once your profile is created, access it and you will be prompted to create a PGP key.
+Firstly, register on [Keybase](https://keybase.io/), and create your profile by adding a profile image, which will be used as your validator image. Once your profile is created, access it and you will be prompted to create a PGP key.
 
 [Download](https://keybase.io/download) Keybase onto your machine and follow the installation guide for your operating system.
 
@@ -34,66 +30,3 @@ If you'd like to link your website and add a description of your validator, you 
 ```
 
 If the transaction is successful, you will see the edits immediately
-
-## Second procedure
-
-By following this procedure, your validator image will be visible on [Mintscan](https://www.mintscan.io/sentinel/validators).
-
-Here's what you'll need:
-- A GitHub account with a [PAT](https://github.com/settings/tokens) (Personal Access Token) enabled with all repo scopes
-- Your validator image in the format `<your_sentval_address>.png`
-
-Fork the [Chainlist Repository](https://github.com/cosmostation/chainlist)
-
-Clone the forked repository to your computer
-
-```bash
-git clone https://github.com/<your_account>/chainlist
-```
-
-Navigate to the directory from which you will execute the next commands
-
-```bash
-cd chainlist
-```
-
-Create a new branch named after your validator
-
-```bash
-git branch <your_validator_name>
-```
-
-Checkout to that branch
-
-```bash
-git checkout <your_validator_name>
-```
-
-Copy your validator image to the folder `/chainlist/chain/sentinel/moniker/`
-
-```bash
-cp /path/to/your/<your_sentval_address>.png ~/chainlist/chain/sentinel/moniker/
-```
-
-Set the necessary configuration parameters
-
-```bash
-git config --global user.name "Your Username"
-git config --global user.email "your.email@example.com"
-```
-
-Set access via your Personal Access Token (PAT)
-
-```bash
-git remote set-url origin https://<your_github_user>:<your_token>@github.com/<your_github_user>chainlist.git
-```
-
-Push your branch to your forked repository
-
-```bash
-git add .
-git commit -m "Add <your_validator_name> logo for Sentinel"
-git push origin <your_validator_name>
-```
-
-If the command is successful go to [https://github.com/cosmostation/chainlist](https://github.com/cosmostation/chainlist) and create a pull request. Once the pull request is created, wait for some time until your validator image is updated. When the update is complete, the pull request will be closed.
