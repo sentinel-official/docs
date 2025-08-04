@@ -9,7 +9,7 @@ You can earn P2P either through Staking and Node Revenue Sharing
 
 In Proof of Stake (PoS) blockchains, such as the Sentinel chain, you have the opportunity to stake your coins. By staking, you contribute to the security and operation of the network, and in return, you earn additional coins as rewards. These rewards come from a combination of inflation and transaction fees generated within the network. 
 
-To determine the current Annual Percentage Rate (APR) for staking on the Sentinel chain, you can refer to the onchain metrics section of this page: [Mintscan - Sentinel](https://www.mintscan.io/sentinel). This APR reflects the rate at which your staked coins will grow over the course of a year, providing you with valuable insight into the potential returns of your staking activities.
+To determine the current Annual Percentage Rate (APR) for staking on the Sentinel chain, you can refer to the onchain metrics section of this page: [Busurnode - Sentinel](https://explorer.busurnode.com/sentinel). This APR reflects the rate at which your staked coins will grow over the course of a year, providing you with valuable insight into the potential returns of your staking activities.
 
 
 ## Revenue Sharing: Empowering Sentinel Protocol

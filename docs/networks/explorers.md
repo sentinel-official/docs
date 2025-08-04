@@ -11,10 +11,10 @@ Here is a list of available Sentinel explorers. If you notice any missing, pleas
 
 | Explorer Name | URL                                       |
 |---------------|-------------------------------------------|
-| Official (Mintscan)      | https://explorer.sentinel.co           |
-| Busurnode      | https://explorer.busurnode.com/sentinel/                  |
-| Ping Pub      | https://ping.pub/sentinel/                  |
-| ATOMscan      | https://atomscan.com/sentinel           |
+| Busurnode     | https://explorer.busurnode.com/sentinel   |
+| Chainroot     | https://explorer.chainroot.io/sentinel    | 
+| Ping Pub      | https://ping.pub/sentinel                 |
+| ATOMscan      | https://atomscan.com/sentinel             |
 
 
 ### dVPN Node Explorers
@@ -23,6 +23,6 @@ Here is a list of available Sentinel explorers. If you notice any missing, pleas
 |---------------|-------------------------------------------|
 | Sentinel Map      | https://map.sentinel.co           |
 | Node Dashboard      | https://nodes.sentinel.co           |
-| Live Node Explorer      | https://suchnode.net/           |
-| Sentnodes      | https://sentnodes.com/           |
+| Live Node Explorer      | https://suchnode.net            |
+| Sentnodes      | https://sentnodes.com            |
 | Network Stats      | https://stats.sentinel.co           |

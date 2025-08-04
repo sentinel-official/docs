@@ -62,7 +62,7 @@ Compare the outputs of the old and new clients to verify they are identical.
 ### Handle Configuration Issues
 
 If the new client has a different max clock drift (or other mismatched parameters), creating the proposal may fail. For example:
-[Failed Proposal Example](https://www.mintscan.io/sentinel/tx/09BC809FE229DAB0458EBFAD9F48A7DD26F26C7FC958ABC1274CAE1FDA314DFB?height=19809320)
+[Failed Proposal Example](https://explorer.busurnode.com/sentinel/tx/09BC809FE229DAB0458EBFAD9F48A7DD26F26C7FC958ABC1274CAE1FDA314DFB?height=19809320)
 
 To fix this, create a new client with a custom `max clock drift`:
 

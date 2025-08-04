@@ -16,7 +16,7 @@ sudo systemctl stop sentinelhub.service
 
 ### Step 2 - Skip a few blocks
 
-Go to the [Validator page](https://www.mintscan.io/sentinel/validators), select yours and check if it is skipping blocks
+Go to the [Validator page](https://explorer.busurnode.com/sentinel/staking), select yours and check if it is skipping blocks
 
 ### Step 3 - Move back to your tmkms node and start tmkms.service
 
@@ -66,7 +66,7 @@ Your TMKMS node will now show logs like the following:
 ```
 
 ### Step 5 - Signing blocks
-Go to the [Validator page](https://www.mintscan.io/sentinel/validators), select yours and check if it is signing blocks
+Go to the [Validator page](https://explorer.busurnode.com/sentinel/staking), select yours and check if it is signing blocks
 
 ### Step 6 - Remove the private validator key from your validator node
 
