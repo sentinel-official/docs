@@ -27,6 +27,7 @@ To check if your node has passed the health check, there are four ways to do it.
 
 - [Node Dashboard](/dvpn-nodes/health-check/node-dashboard)
 - [Busurnode](/dvpn-nodes/health-check/busurnode)
+- [Suchnode](/dvpn-nodes/health-check/suchnode)
 - [Sentinel API](/dvpn-nodes/health-check/sentinel-api)
 - [Planwizard API](/dvpn-nodes/health-check/plan-wizard)
 

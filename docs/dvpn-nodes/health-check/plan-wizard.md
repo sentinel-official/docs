@@ -1,6 +1,6 @@
 ---
 title: Plan Wizard
-sidebar_position: 5
+sidebar_position: 6
 ---
 
 Plan Wizard was created by Alekandr Litreev at Norse Labs with the following aims:

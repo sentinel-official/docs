@@ -1,6 +1,6 @@
 ---
 title: Sentinel API
-sidebar_position: 4
+sidebar_position: 5
 ---
 
 To verify your Health Check status paste the following link into your browser: `https://api.health.sentinel.co/v1/records/<your_sent_node_address>`
