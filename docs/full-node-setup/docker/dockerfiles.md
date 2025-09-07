@@ -340,7 +340,7 @@ echo "****To see the status of the process type cat nohup****"
 </details>
 
 
-## Sentinel Testnet (bluenet-2-1)
+## Sentinel Testnet (bluenet-2-2)
 
 For Testnet, you can customize your setup based on whether you want to use Cosmovisor or not.
 
@@ -390,7 +390,7 @@ RUN git clone https://github.com/sentinel-official/sentinelhub.git "/home/sentin
 
 WORKDIR /home/sentinel/sentinelhub
 
-RUN git checkout v12.0.0-rc10 &&\
+RUN git checkout v12.0.0-rc12 &&\
 make install 
 
 # root must perform the symlink
@@ -401,8 +401,8 @@ RUN ln -s "/home/sentinel/go/bin/sentinelhub" /usr/bin/sentinelhub
 USER sentinel 
 
 # Initialize the chain and replace the genesis file
-RUN sentinelhub init --chain-id bluenet-2-1 "Bluenet | Docker" &&\
-curl -fsLS -o "${HOME}/genesis.json" "https://raw.githubusercontent.com/sentinel-official/networks/main/bluenet-2-1/genesis.json" &&\
+RUN sentinelhub init --chain-id bluenet-2-2 "Bluenet | Docker" &&\
+curl -fsLS -o "${HOME}/genesis.json" "https://raw.githubusercontent.com/sentinel-official/networks/main/bluenet-2-2/genesis.json" &&\
 cp "${HOME}/genesis.json" "${HOME}/.sentinelhub/config/genesis.json" &&\
 rm "${HOME}/genesis.json"
 
@@ -525,7 +525,7 @@ RUN git clone https://github.com/sentinel-official/sentinelhub.git "/home/sentin
 
 WORKDIR /home/sentinel/sentinelhub
 
-RUN git checkout v12.0.0-rc10 &&\
+RUN git checkout v12.0.0-rc12 &&\
 make install 
 
 #root must perform the symlink
@@ -536,8 +536,8 @@ RUN ln -s "/home/sentinel/go/bin/sentinelhub" /usr/bin/sentinelhub
 USER sentinel 
 
 # Initialize the chain and replace the genesis file
-RUN sentinelhub init --chain-id bluenet-2-1 "Bluenet | Docker" &&\
-curl -fsLS -o "${HOME}/genesis.json" "https://raw.githubusercontent.com/sentinel-official/networks/main/bluenet-2-1/genesis.json" &&\
+RUN sentinelhub init --chain-id bluenet-2-2 "Bluenet | Docker" &&\
+curl -fsLS -o "${HOME}/genesis.json" "https://raw.githubusercontent.com/sentinel-official/networks/main/bluenet-2-2/genesis.json" &&\
 cp "${HOME}/genesis.json" "${HOME}/.sentinelhub/config/genesis.json" &&\
 rm "${HOME}/genesis.json"
 

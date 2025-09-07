@@ -15,7 +15,7 @@ To install the Sentinel Hub, please download the latest version from the [reposi
 ```bash
 git clone https://github.com/sentinel-official/sentinelhub.git "${HOME}/sentinelhub"
 cd "${HOME}/sentinelhub"
-git checkout v12.0.0-rc10
+git checkout v12.0.0-rc12
 make install
 
 # For Ubuntu installation
@@ -32,8 +32,8 @@ sudo ln -s "${GOBIN}/sentinelhub" /usr/local/bin/sentinelhub
 Let's initialize the Sentinel Hub using the Genesis file, a JSON file which defines the initial state of Sentinel blockchain. The state defined in the genesis file contains all the necessary information, like initial coin allocation, genesis time, default parameters, and more
 
 ```bash
-sentinelhub init --chain-id bluenet-2-1 "Your Full Node Name"
-curl -fsLS -o "${HOME}/genesis.json" "https://raw.githubusercontent.com/sentinel-official/networks/main/bluenet-2-1/genesis.json"
+sentinelhub init --chain-id bluenet-2-2 "Your Full Node Name"
+curl -fsLS -o "${HOME}/genesis.json" "https://raw.githubusercontent.com/sentinel-official/networks/main/bluenet-2-2/genesis.json"
 cp "${HOME}/genesis.json" "${HOME}/.sentinelhub/config/genesis.json"
 rm "${HOME}/genesis.json"
 ```
@@ -43,7 +43,7 @@ You will be asked to replace the genesis file, type `[A]ll`
 In case you need a mirror because the official hosting site does not work, use this from `Busurnode`:
 
 ```bash
-wget -O genesis.json https://storage.busurnode.com/testnet/sentinel/bluenet-2-1/genesis.json --inet4-only
+wget -O genesis.json https://storage.busurnode.com/testnet/sentinel/bluenet-2-2/genesis.json --inet4-only
 mv genesis.json ~/.sentinelhub/config
 ```
 
