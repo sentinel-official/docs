@@ -10,7 +10,7 @@ sidebar_position: 3
 
 ### x86_64
 
-Pull the image (check your desired version from this [link](https://github.com/sentinel-official/dvpn-node/pkgs/container/dvpn-node))
+Pull the image (check your desired version from this [link](https://github.com/sentinel-official/sentinel-dvpnx/pkgs/container/dvpn-node))
 
 ```bash
 docker pull ghcr.io/sentinel-official/dvpn-node:latest
@@ -39,7 +39,7 @@ docker pull wajatmaka/sentinel-aarch64-alpine:v0.7.1
 ### Clone the GitHub repository
 
 ```bash
-git clone https://github.com/sentinel-official/dvpn-node.git \
+git clone https://github.com/sentinel-official/sentinel-dvpnx.git \
     ${HOME}/dvpn-node/
 ```
 
@@ -53,7 +53,7 @@ commit=$(git rev-list --tags --max-count=1) && \
 git checkout $(git describe --tags ${commit})
 ```
 
-- Option 2 - Manual (if the previous command does not work for some reasons). Check [here](https://github.com/sentinel-official/dvpn-node/releases) for the last current release
+- Option 2 - Manual (if the previous command does not work for some reasons). Check [here](https://github.com/sentinel-official/sentinel-dvpnx/releases) for the last current release
 
 ```bash
 cd ~/dvpn-node && \

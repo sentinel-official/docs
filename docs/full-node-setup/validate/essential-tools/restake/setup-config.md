@@ -10,23 +10,30 @@ sidebar_position: 2
 
 Install Docker Engine from official [site](https://docs.docker.com/engine/)
 
-## Create a mnemonic you will use only for Restake.app
+## Create a mnemonic
 
-Download `Sentinel CLI` from [here](https://github.com/sentinel-official/cli-client/releases) and install it by typing:
+This mnemonic will be used only for Restake.app.
+
+First, download and install the Sentinel dVPN CLI:
 
 ```bash
-wget https://github.com/sentinel-official/cli-client/releases/download/v0.X.X/sentinelcli_linux_x86_64.tar.gz
+wget https://github.com/sentinel-official/sentinel-dvpncli/releases/tag/v0.3.2/sentinelcli_linux_x86_64.tar.gz
 tar xvzf sentinelcli_linux_x86_64.tar.gz
 sudo mv ${HOME}/sentinelcli /usr/local/bin
 ```
 
-To create a mnemonic type:
+Now, create a new key and mnemonic by running:
 
 ```bash
 sentinelcli keys add keyname
 ```
 
-Create a passphrase and take note of both mnemonic and operator address (also make sure to **add funds** into it)
+You’ll be asked to set a passphrase.
+Make sure to write down and safely store both:
+- The mnemonic phrase
+- The operator address
+
+Finally, don’t forget to **add funds** to the operator address before using it.
 
 ## Clone and configure Restake
 
