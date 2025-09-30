@@ -11,7 +11,7 @@ These following API's are recommended for development purposes. For maximun cont
 
 |    /          | Mainnet                                     | Testnet                    |
 |---------------|---------------------------------------------|----------------------------|
-| Chain ID      | sentinelhub-2                               | bluenet-2-1
+| Chain ID      | sentinelhub-2                               | bluenet-2-3
 | Endpoints     | RPC: `https://rpc.sentinel.co` <br/> gRPC: `grpc.sentinel.co:9090`<br/> API: `https://lcd.sentinel.co` | RPC: `https://rpc-sentinel.busurnode.com:443` <br/> API: `https://api-sentinel.busurnode.com:443`  |
 | Explorer      | https://explorer.sentinel.co                | https://explorer.busurnode.com/sentinel-testnet          |
 | API Reference |  [RPC](/api?v=RPC), [LCD](/api?v=LCD)       |                            |
