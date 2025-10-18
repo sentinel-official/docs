@@ -3,11 +3,6 @@
   "sitemap_urls": ["https://docs.sentinel.co/sitemap.xml"],
   "start_urls": [
     {
-      "url": "https://docs.sentinel.co/guides",
-      "tags": "guides",
-      "selectors_key": "guides"
-    },
-    {
       "url": "https://docs.sentinel.co/apis",
       "tags": "apis",
       "selectors_key": "apis"
@@ -16,11 +11,6 @@
       "url": "https://docs.sentinel.co/p2p-coin",
       "tags": "p2p-coin",
       "selectors_key": "p2p-coin"
-    },
-    {
-      "url": "https://docs.sentinel.co/sentinel-core",
-      "tags": "sentinel-core",
-      "selectors_key": "sentinel-core"
     },
     {
       "url": "https://docs.sentinel.co/sdk",
@@ -52,11 +42,6 @@
       "tags": "full-node-setup",
       "selectors_key": "full-node-setup"
     },
-    {
-      "url": "https://docs.sentinel.co/validator-setup",
-      "tags": "validator-setup",
-      "selectors_key": "validator-setup"
-    },
     "https://docs.sentinel.co"
   ],
   "stop_urls": [],
@@ -67,34 +52,6 @@
         "selector": "",
         "global": true,
         "default_value": "Documentation"
-      },
-      "lvl1": "article h1",
-      "lvl2": "article h2",
-      "lvl3": "article h3",
-      "lvl4": "article h4",
-      "lvl5": "article h5, article td:first-child",
-      "lvl6": "article h6",
-      "text": "article p, article li, article td:last-child"
-    },
-    "guides": {
-      "lvl0": {
-        "selector": "",
-        "global": true,
-        "default_value": "guides"
-      },
-      "lvl1": "article h1",
-      "lvl2": "article h2",
-      "lvl3": "article h3",
-      "lvl4": "article h4",
-      "lvl5": "article h5, article td:first-child",
-      "lvl6": "article h6",
-      "text": "article p, article li, article td:last-child"
-    },
-    "sentinel-core": {
-      "lvl0": {
-        "selector": "",
-        "global": true,
-        "default_value": "sentinel-core"
       },
       "lvl1": "article h1",
       "lvl2": "article h2",
@@ -221,20 +178,6 @@
         "selector": "",
         "global": true,
         "default_value": "full-node-setup"
-      },
-      "lvl1": "article h1",
-      "lvl2": "article h2",
-      "lvl3": "article h3",
-      "lvl4": "article h4",
-      "lvl5": "article h5, article td:first-child",
-      "lvl6": "article h6",
-      "text": "article p, article li, article td:last-child"
-    },
-    "validator-setup": {
-      "lvl0": {
-        "selector": "",
-        "global": true,
-        "default_value": "validator-setup"
       },
       "lvl1": "article h1",
       "lvl2": "article h2",
