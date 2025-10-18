@@ -13,7 +13,6 @@ git clone https://github.com/sentinel-official/sentinelhub.git "${HOME}/sentinel
 cd "${HOME}/sentinelhub"
 git checkout <new_version>
 make install
-sudo ln -s "${GOBIN}/sentinelhub" /usr/local/bin/sentinelhub
 ```
 
 An upgrade to the blockchain can either be consensus-breaking or non-consensus-breaking. The procedural steps to be followed depend on the type of consensus involved.
@@ -23,7 +22,7 @@ An upgrade to the blockchain can either be consensus-breaking or non-consensus-b
 Create the upgrade directory inside Cosmovisor with the name of the version (for the last upgrade was **v11** as you can see [here](https://ping.pub/sentinel/gov/30) under the section plan, tab name)
 
 ```bash
-mkdir ~/.sentinelhub/cosmovisor/upgrades/<upgrade_name>/bin
+mkdir -p ~/.sentinelhub/cosmovisor/upgrades/<upgrade_name>/bin
 ```
 
 Copy `sentinelhub` binary in it
@@ -45,7 +44,7 @@ When the designated block height is reached, the blockchain temporarily halts it
 The content of this file will be the following, based on the last hub upgrade:
 
 ```bash title=".sentinelhub/cosmovisor/upgrades/<upgrade_name>/"
-{"name":"v11","time":"0001-01-01T00:00:00Z","height":12310005}
+{"name":"v12_0_0","time":"0001-01-01T00:00:00Z","height":23997755}
 ```
 
 The Cosmovisor system identifies the existence of this file and triggers the required sequence of actions. These actions include pausing the node, inserting the relevant binary into the specified directory, and subsequently restarting the node.
