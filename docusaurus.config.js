@@ -56,7 +56,11 @@ const config = {
   url: 'https://docs.sentinel.co',
   baseUrl: '/',
   onBrokenLinks: 'warn',
-  onBrokenMarkdownLinks: 'warn',
+  markdown: {
+    hooks: {
+      onBrokenMarkdownLinks: 'warn',
+    },
+  },
   favicon: '/logo/sentinel.svg',
   trailingSlash: false,
 

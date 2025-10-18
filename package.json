@@ -18,11 +18,11 @@
     "test": "jest --passWithNoTests"
   },
   "dependencies": {
-    "@docusaurus/core": "^3.8.1",
-    "@docusaurus/preset-classic": "^3.8.1",
-    "@docusaurus/remark-plugin-npm2yarn": "^3.8.1",
-    "@docusaurus/theme-classic": "^3.8.1",
-    "@docusaurus/theme-live-codeblock": "^3.8.1",
+    "@docusaurus/core": "^3.9.2",
+    "@docusaurus/preset-classic": "^3.9.2",
+    "@docusaurus/remark-plugin-npm2yarn": "^3.9.2",
+    "@docusaurus/theme-classic": "^3.9.2",
+    "@docusaurus/theme-live-codeblock": "^3.9.2",
     "@dytesdk/react-ui-kit": "^3.0.1",
     "@dytesdk/react-web-core": "^2.4.5",
     "@dytesdk/ui-kit": "^3.0.1",
@@ -53,7 +53,7 @@
   "devDependencies": {
     "@commitlint/cli": "^19.6.1",
     "@commitlint/config-conventional": "^19.6.0",
-    "@docusaurus/module-type-aliases": "^3.8.1",
+    "@docusaurus/module-type-aliases": "^3.9.2",
     "@semantic-release/changelog": "^6.0.3",
     "@semantic-release/commit-analyzer": "^13.0.1",
     "@semantic-release/git": "^10.0.1",

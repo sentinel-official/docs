@@ -16,6 +16,7 @@ This guide outlines the steps required to upgrade your Sentinel Hub software. Fo
 | upgrade-3     | v0.9.2  | `upgrade-3`    | 5,125,000    | [9](https://explorer.busurnode.com/sentinel/gov/9)   | [d04a400](https://github.com/sentinel-official/hub/commit/d04a4004600c9d19e326f61a13fcef853616e3ed) |
 | upgrade-4     | v0.10.1 | `upgrade-4`    | 9,348,475    | [19](https://explorer.busurnode.com/sentinel/gov/19) | [bbe6fab](https://github.com/sentinel-official/hub/commit/bbe6fab51c81863551a69aeb4977ec4c19fcd60a) |
 | upgrade-5     | v0.11.2 | `v11`          | 12,310,005   | [30](https://explorer.busurnode.com/sentinel/gov/30) | [54c28ae](https://github.com/sentinel-official/hub/commit/54c28ae02786b62b25303759da761e5ce1226029) |
+| upgrade-6     | v12.0.0| `v12_0_0`          | 23,997,755   | [64](https://explorer.busurnode.com/sentinel/gov/64) | [eb3c5c4](https://github.com/sentinel-official/sentinelhub/commit/eb3c5c4287674bd0a7e3180c5cec7d03196207b3) |
 
 
 ## Upgrade Steps
