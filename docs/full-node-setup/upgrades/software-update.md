@@ -5,6 +5,10 @@ sidebar_position: 2
 
 # Software Upgrade
 
+:::warning Node Specs
+For the hub upgrade v12.0.0, make sure your Full Node/Validator has at least 32GB RAM.
+:::
+
 This guide outlines the steps required to upgrade your Sentinel Hub software. Follow these instructions carefully to ensure a smooth process.
 
 ## Upgrade List
