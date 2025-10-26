@@ -46,10 +46,11 @@ cat ~/.ssh/authorized_keys
 
 ### Server Side
 
-Update the list of available software packages
+Update the list of available software packages and install dependencies
 
 ```bash
 sudo apt update && sudo apt upgrade -y
+sudo apt install -y curl git golang-github-pelletier-go-toml jq make
 ```
 
 ## Setting up the Firewall

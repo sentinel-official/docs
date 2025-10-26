@@ -6,22 +6,20 @@ sidebar_position: 3
 
 # Preparing Sentinel Docker Image
 
-## Method 1 - Prebuilt
+## Method 1 - Prebuilt for x86_64
 
-### x86_64
-
-Pull the image (check your desired version from this [link](https://github.com/sentinel-official/sentinel-dvpnx/pkgs/container/dvpn-node))
+Pull the image (check your desired version from this [link](https://github.com/sentinel-official/sentinel-dvpnx/pkgs/container/sentinel-dvpnx))
 
 ```bash
-docker pull ghcr.io/sentinel-official/dvpn-node:latest
+docker pull ghcr.io/sentinel-official/sentinel-dvpnx:latest
 ```
 
 Tag the image
 
 ```bash
-docker tag ghcr.io/sentinel-official/dvpn-node:latest sentinel-dvpn-node
+docker tag ghcr.io/sentinel-official/sentinel-dvpnx:latest sentinel-dvpn-node
 ```
-
+<!--
 ### ARM7
 
 ```bash
@@ -34,13 +32,15 @@ docker pull wajatmaka/sentinel-arm7-debian:v0.7.1
 docker pull wajatmaka/sentinel-aarch64-alpine:v0.7.1
 ```
 
+-->
+
 ## Method 2 - From Source
 
 ### Clone the GitHub repository
 
 ```bash
 git clone https://github.com/sentinel-official/sentinel-dvpnx.git \
-    ${HOME}/dvpn-node/
+    ${HOME}/sentinel-dvpnx/
 ```
 
 ### Checkout to the latest tag
@@ -48,7 +48,7 @@ git clone https://github.com/sentinel-official/sentinel-dvpnx.git \
 - Option 1 - Automatic to the latest tag
 
 ```bash
-cd ${HOME}/dvpn-node/ && \
+cd ${HOME}/sentinel-dvpnx/ && \
 commit=$(git rev-list --tags --max-count=1) && \
 git checkout $(git describe --tags ${commit})
 ```
@@ -56,37 +56,29 @@ git checkout $(git describe --tags ${commit})
 - Option 2 - Manual (if the previous command does not work for some reasons). Check [here](https://github.com/sentinel-official/sentinel-dvpnx/releases) for the last current release
 
 ```bash
-cd ~/dvpn-node && \
+cd ~/sentinel-dvpnx && \
 git fetch && \
 git checkout vX.X.X
 ```
 
 ### Build the image
 
+Run the following command to build the image:
+
 ```bash
-docker build --file Dockerfile \
-    --tag sentinel-dvpn-node \
-    --force-rm \
-    --no-cache \
-    --compress .
+make build-image
 ```
 
-## Create a self-signed TLS certificate
+### Verify the image
+
+After the build completes, check that the image was created successfully by running:
 
 ```bash
-openssl req -new \
-    -newkey ec \
-    -pkeyopt ec_paramgen_curve:prime256v1 \
-    -x509 \
-    -sha256 \
-    -days 365 \
-    -nodes \
-    -out ${HOME}/tls.crt \
-    -keyout ${HOME}/tls.key
+docker images | grep sentinel-dvpnx
 ```
 
-You will be asked to fill in some fields. Please insert the country while you can leave the others blank. If you want to automate this process, just add the following line to the command above:
+You should see an output similar to this:
 
-```bash
--subj "/C=NA/ST=NA/L=./O=NA/OU=./CN=." \
+```text
+sentinel-dvpnx           latest    0994666b4eed   44 seconds ago   118MB
 ```

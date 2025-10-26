@@ -1,9 +1,13 @@
 ---
 title: Automated Setup
-sidebar_position: 3
+sidebar_position: 4
 ---
 
 # Automated Setup
+
+:::warning
+The automated setup is maintained by a few community members. Since the hub was recently upgraded, it may not work as expected. Please allow some time for the images and software to be updated.
+:::
 
 To simplify the installation of a dVPN node, you can employ a `.deb` package tool called dVPN Node Manager that automates the process through an intuitive user interface (UI).
 

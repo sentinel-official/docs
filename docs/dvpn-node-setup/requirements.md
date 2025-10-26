@@ -21,10 +21,11 @@ It's recommended to avoid using widely known cloud providers like AWS, GCP, Azur
 ## Hardware Recommendations
 
 While running a dVPN node requires minimal hardware, optimal performance is ensured with the following specifications:
-- vCPU: 2
+- vCPU: 2 x 2GHz
 - RAM: 2GB
-- Hard Drive: 10GB SSD
+- Hard Drive: Minimum 10GB SSD
 - Operative System: Linux (preferably Debian or Ubuntu)
 - Bandwidth: Unmetered
+- Network: Public IP address required for node operation
 
 These recommended hardware configurations ensure a smoother and more efficient operation of your dVPN node.
