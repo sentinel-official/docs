@@ -296,7 +296,7 @@ const config = {
             items: [
               {
                 label: 'Get Started',
-                href: '/get-started/introduction',
+                href: '/get-started',
               },
               {
                 label: 'Sentinel Hub',

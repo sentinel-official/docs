@@ -37,7 +37,7 @@ export default function Homepage() {
             <p>
             The Sentinel P2P blockchain is a layer-one peer-to-peer bandwidth marketplace DePIN blockchain which is used to power services like decentralized VPNs (dVPNs) and training data acquisition for AI models. Ran by 80+ validators and full nodes, with many front-ends and development teams on it. Explore our docs and examples to quickly learn, develop & integrate with the Sentinel blockchain.
             </p>
-            <DyteButton onClick={() => router.push('get-started/introduction')}>
+            <DyteButton onClick={() => router.push('get-started')}>
               Get Started &rarr;
             </DyteButton>
           </div>
@@ -46,7 +46,7 @@ export default function Homepage() {
             <Card
               title="What is Sentinel P2P?"
               description="Sentinel is a decentralized virtual private network (P2P) built on top of the Cosmos blockchain. It allows users to connect to the internet privately and securely by routing their traffic through a network of distributed nodes."
-              to="/get-started/introduction"
+              to="/get-started"
               icon={<SentinelCore />}
             />
             <Card
