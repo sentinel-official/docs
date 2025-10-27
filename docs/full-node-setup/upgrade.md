@@ -1,9 +1,9 @@
 ---
-title: Software Upgrade
-sidebar_position: 1
+title: Chain Upgrade
+sidebar_position: 11
 ---
 
-# Software Upgrade
+# Chain Upgrade
 
 This guide outlines the steps required to upgrade your Sentinel Hub software. Follow these instructions carefully to ensure a smooth process.
 
@@ -154,7 +154,7 @@ sudo systemctl start sentinelhub.service
 
 ### In Case of Upgrade Failure
 
-- Roll back to the previous version (e.g., if `upgrade-6` fails, use version `v0.7.1`).
+- Roll back to the previous version (e.g., if `upgrade-6` fails, use version `v0.11.2`).
 
 - Confirm the rollback version matches the upgrade table above.
 
