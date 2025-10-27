@@ -16,8 +16,8 @@ Before creating the configuration files, set up a few variables by running the f
 APP_DIR="${HOME}/.sentinel-dvpnx"
 
 # Get your public IP addresses
-MY_IPv4_ADDR=$(dig -4 +short A myip.opendns.com @resolver1.opendns.com 2>/dev/null)
-MY_IPv6_ADDR=$(dig -6 +short AAAA myip.opendns.com @resolver1.opendns.com 2>/dev/null)
+MY_IPv4_ADDR=$(curl --silent ipv4.icanhazip.com 2>/dev/null)
+MY_IPv6_ADDR=$(curl --silent ipv6.icanhazip.com 2>/dev/null)
 
 REMOTE_ADDRS_FLAGS=()
 if [ -n "${MY_IPv4_ADDR}" ]; then REMOTE_ADDRS_FLAGS+=("--node.remote-addrs" \"${MY_IPv4_ADDR}\"); fi
