@@ -117,7 +117,7 @@ minimum-gas-prices = "0.01ibc/31FEE1A2A9F9C01113F90BD0BBCCE8FD6BBB8585FAF109A210
 
 ### Add a system unit file
 
-If you're using [Cosmovisor](/full-node-setup/upgrades/cosmovisor), you can skip this step.
+If you're using [Cosmovisor](/full-node-setup/validate/essential-tools/cosmovisor), you can skip this step.
 
 Open the sentinelhub.service with a text editor
 

@@ -1,13 +1,9 @@
 ---
 title: Software Upgrade
-sidebar_position: 2
+sidebar_position: 1
 ---
 
 # Software Upgrade
-
-:::warning Node Specs
-For the hub upgrade v12.0.0, make sure your Full Node/Validator has at least 32GB RAM.
-:::
 
 This guide outlines the steps required to upgrade your Sentinel Hub software. Follow these instructions carefully to ensure a smooth process.
 
@@ -23,19 +19,107 @@ This guide outlines the steps required to upgrade your Sentinel Hub software. Fo
 | upgrade-6     | v12.0.0| `v12_0_0`          | 23,997,755   | [64](https://explorer.busurnode.com/sentinel/gov/64) | [eb3c5c4](https://github.com/sentinel-official/sentinelhub/commit/eb3c5c4287674bd0a7e3180c5cec7d03196207b3) |
 
 
-## Upgrade Steps
+## Build the Binary
 
-At the specified block height, the blockchain will halt. Follow these steps only after the blockchain stops producing new blocks.
+When the upgrade is available clone the Sentinel Hub [repository](https://github.com/sentinel-official/hub), checkout at the new version and install it
+
+```bash
+git clone https://github.com/sentinel-official/sentinelhub.git "${HOME}/sentinelhub"
+cd "${HOME}/sentinelhub"
+git checkout <new_version>
+make install
+```
+
+## Automatic Upgrade: Cosmovisor
+
+If you’re using or planning to use Cosmovisor (see the [guide](/full-node-setup/validate/essential-tools/cosmovisor)), the upgrade process will be mostly automatic. Once the new binary is built and placed in the correct directory, Cosmovisor will take care of the rest.
+
+:::note
+Upgrades can be either consensus-breaking or non-consensus-breaking.
+Follow the appropriate section below depending on the upgrade type.
+:::
+
+### Consensus Breaking (Chain Upgrade)
+
+Create the upgrade directory inside Cosmovisor with the name of the version (for the last upgrade was **v12_0_0** as you can see [here](https://ping.pub/sentinel/gov/64) under the section plan, tab name)
+
+```bash
+mkdir -p ~/.sentinelhub/cosmovisor/upgrades/<upgrade_name>/bin
+```
+
+Copy `sentinelhub` binary in it
+
+```bash
+cp ~/go/bin/sentinelhub ~/.sentinelhub/cosmovisor/upgrades/<upgrade_name>/bin
+```
+
+Check if the `sentinelhub` binary upgrade was copied and if it is the correct version:
+
+```bash
+~/.sentinelhub/cosmovisor/upgrades/<upgrade_name>/bin/sentinelhub version
+```
+
+Now that you have prepared and deployed the new binary, the remaining steps will be managed by Cosmovisor when the upgrade is scheduled to take place. Here's a breakdown of the process:
+
+When the designated block height is reached, the blockchain temporarily halts its operations. Following this, an `upgrade-info.json` file is generated and put into the folder `.sentinelhub/cosmovisor/upgrades/<upgrade_name>/`.
+
+The content of this file will be the following, based on the last hub upgrade:
+
+```bash title=".sentinelhub/cosmovisor/upgrades/<upgrade_name>/"
+{"name":"v12_0_0","time":"0001-01-01T00:00:00Z","height":23997755}
+```
+
+The Cosmovisor system identifies the existence of this file and triggers the required sequence of actions. These actions include pausing the node, inserting the relevant binary into the specified directory, and subsequently restarting the node.
+
+This carefully orchestrated sequence guarantees a seamless transition and successful execution of the blockchain upgrade.
+
+### Non Consensus Breaking
+
+For non-consensus upgrades, you only need to replace the running binary with the new one.
+
+Stop cosmovisor
+
+```bash
+sudo systemctl stop cosmovisor.service
+```
+
+Copy the newly created Sentinel Hub binary into Cosmovisor
+
+```bash
+cp go/bin/sentinelhub .sentinelhub/cosmovisor/current/bin/
+```
+
+Verify that the cosmovisor version is current
+
+```bash
+cosmovisor version
+```
+
+Start cosmovisor
+
+```bash
+sudo systemctl start cosmovisor
+```
+
+Monitor the logs to confirm the successful execution of the process
+
+```bash
+journalctl -u cosmovisor.service -f --output=cat
+```
+
+## Manual Upgrade
+
+If you’re not using Cosmovisor, follow these manual steps once the blockchain halts at the upgrade block height.
 
 ### Stop the node
 
-Run the following command to verify the latest block height matches the upgrade height:
+Check the current block height to confirm it matches the upgrade height:
 
 ```bash
 curl -fsLS http://127.0.0.1:26657/status | jq -r '.result.sync_info.latest_block_height'
 ```
 
-Stop the running node to prepare for the upgrade.
+Then stop the Sentinel Hub service:
 
 ```bash
 sudo systemctl stop sentinelhub.service
@@ -43,48 +127,41 @@ sudo systemctl stop sentinelhub.service
 
 ### Install the new version
 
-Clone the source code and replace `<binary_version>` with the version from the table:
+Link the new binary:
 
 ```bash
-VERSION=<binary_version>
-BASE_DIRECTORY=${GOPATH}/src/github.com/sentinel-official
+# For Ubuntu installation
+sudo ln -s "${GOBIN}/sentinelhub" /usr/bin/sentinelhub
 
-rm -rf ${BASE_DIRECTORY}/hub/ && mkdir -p ${BASE_DIRECTORY} && cd ${BASE_DIRECTORY}/ && \
-git clone https://github.com/sentinel-official/sentinelhub.git && cd ${BASE_DIRECTORY}/hub/ && \
-git checkout ${VERSION}
-```
-
-Build and install the software
-
-```bash
-make install
+# For manual installation
+sudo ln -s "${GOBIN}/sentinelhub" /usr/local/bin/sentinelhub
 ```
 
 ### Start the node
 
-Confirm the new version is installed correctly:
+Verify the version:
 
 ```bash
 sentinelhub version --long
 ```
 
-Start the `sentinelhub` process
+Restart the service:
 
 ```bash
 sudo systemctl start sentinelhub.service
 ```
 
 
-## In Case of Upgrade Failure
+### In Case of Upgrade Failure
 
-- Use the version immediately before the failed upgrade (note: if you are installing software upgrade-1, use the version 0.6.3).
+- Roll back to the previous version (e.g., if `upgrade-6` fails, use version `v0.7.1`).
 
-- Confirm the installation matches the details in the table above.
+- Confirm the rollback version matches the upgrade table above.
 
-- Start the `sentinelhub` process with flag `unsafe-skip-upgrades` at the upgrade block height
+- Restart the node using the `--unsafe-skip-upgrades` flag at the upgrade height:
 
 ```bash
 sentinelhub start --unsafe-skip-upgrades <block_height>
 ```
 
-This process ensures minimal downtime and a smooth transition between software versions.
+This allows the node to continue syncing while minimizing downtime.

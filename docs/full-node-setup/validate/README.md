@@ -9,7 +9,7 @@ Once your full node is set up and running, you may choose to become a validator 
 Once you've [become a validator](/full-node-setup/validate/become-validator), it is strongly recommended to setup the following tools:
 
 - [TMKMS](/full-node-setup/category/tmkms): protect your private validator key with the Tendermint Key Managemet System
-- [Cosmovisor](/full-node-setup/upgrades/cosmovisor): a tool that assists in the smooth and safe upgrade of the blockchain software
+- [Cosmovisor](/full-node-setup/validate/essential-tools/cosmovisor): a tool that assists in the smooth and safe upgrade of the blockchain software
 - [REStake App](/full-node-setup/category/restake-app): a guide to join Restake.app and enable your Validator for autocompound
 
 
