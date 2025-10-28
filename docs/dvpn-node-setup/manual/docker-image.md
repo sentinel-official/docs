@@ -6,7 +6,9 @@ sidebar_position: 3
 
 # Preparing Sentinel Docker Image
 
-## Method 1 - Prebuilt for x86_64
+## Method 1 - Prebuilt
+
+### x86_64
 
 Pull the image (check your desired version from this [link](https://github.com/sentinel-official/sentinel-dvpnx/pkgs/container/sentinel-dvpnx))
 
