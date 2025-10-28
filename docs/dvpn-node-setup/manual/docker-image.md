@@ -19,7 +19,7 @@ docker pull ghcr.io/sentinel-official/sentinel-dvpnx:latest
 Tag the image
 
 ```bash
-docker tag ghcr.io/sentinel-official/sentinel-dvpnx:latest sentinel-dvpn-node
+docker tag ghcr.io/sentinel-official/sentinel-dvpnx:latest sentinel-dvpnx
 ```
 <!--
 ### ARM7
