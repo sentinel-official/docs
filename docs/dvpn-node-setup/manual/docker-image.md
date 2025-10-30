@@ -32,7 +32,7 @@ docker pull wajatmaka/sentinel-arm7-debian:v0.7.1
 ### AArch64 (ARM64)
 
 ```bash
-docker pull wajatmaka/sentinel-aarch64-alpine:v8.0.0
+docker pull wajatmaka/sentinel-aarch64-alpine:v8.2.0
 ```
 
 ## Method 2 - From Source
