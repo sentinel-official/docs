@@ -27,7 +27,102 @@ Alternatively, you can [sign up](https://sentnodes.com/register) on the website 
 
 ## SentNodes Public API
 
-Node List (Beta)*:
+### All Nodes Data
+
 GET https://api.sentnodes.com/v1/nodes
 
-* The API is currently in beta phase, and the returned data/format may change in the near future.
+<details>
+<summary>Sample Response</summary>
+<p>
+
+```json
+{
+  "success": true,
+  "data": [
+    {
+      "address": "sentnode1d6qqywlc47cnxt4gh7pjqvjw057s7qdf64zw0u",
+      "moniker": "BUSURNODE-US-016-V2RAY",
+      "version": "8.2.0",
+      "type": 2,
+      "api": "elpis.busur.cc:63116",
+      "asn": 12345,
+      "country": "United States",
+      "city": "North Bergen",
+      "isResidential": false,
+      "isActive": true,
+      "isHealthy": false,
+      "isDuplicate": false,
+      "isWhitelisted": true,
+      "subscriptions": 2,
+      "sessions": 4,
+      "peers": 4,
+      "fetchedAt": "2025-11-02 02:10:36"
+    },
+    {
+      "address": "sentnode1yjcp0uvg9qf6rjyj3a6zq2rywc44j5vukdpz6l",
+      "moniker": "P4O3K6K7",
+      "version": "8.2.0",
+      "type": 2,
+      "api": "206.217.140.45:57538",
+      "asn": 11111,
+      "country": "United States",
+      "city": "Elk Grove Village",
+      "isResidential": false,
+      "isActive": true,
+      "isHealthy": false,
+      "isDuplicate": false,
+      "isWhitelisted": true,
+      "subscriptions": 0,
+      "sessions": 0,
+      "peers": 0,
+      "fetchedAt": "2025-11-02 02:10:35"
+    }
+  ],
+  "errors": null
+}
+```
+
+</p>
+</details>
+
+### Single Node Data
+
+GET https://api.sentnodes.com/v2/node/{NODE_ADDRESS}
+
+<details>
+<summary>Sample Response</summary>
+<p>
+
+```json
+{
+  "success": true,
+  "data": {
+    "address": "sentnode1d6qqywlc47cnxt4gh7pjqvjw057s7qdf64zw0u",
+    "moniker": "BUSURNODE-US-016-V2RAY",
+    "version": "8.2.0",
+    "type": 2,
+    "api": "elpis.busur.cc:63116",
+    "asn": 12345,
+    "country": "United States",
+    "city": "North Bergen",
+    "isResidential": false,
+    "isActive": true,
+    "isHealthy": false,
+    "isDuplicate": false,
+    "isWhitelisted": true,
+    "subscriptions": 0,
+    "sessions": 4,
+    "peers": 4,
+    "fetchedAt": "2025-11-02 02:30:50"
+  },
+  "errors": null
+}
+
+```
+
+</p>
+</details>
+
+:::note
+More node information data will be added in near future.
+:::
