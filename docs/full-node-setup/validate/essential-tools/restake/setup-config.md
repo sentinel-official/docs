@@ -100,6 +100,21 @@ Replace the file with the following code block. For the `restUrl` field, choose 
 }
 ```
 
+If it doesn’t work, try changing the `restURL` field or use the default configuration below.
+
+```bash title=".networks.local.json (default config)"
+{
+  "sentinel": {
+    "prettyName": "Sentinel 881",
+    "autostake": {
+      "correctSlip44": false,
+      "batchPageSize": 50,
+      "delegationsTimeout": 50000
+    }
+  }
+}
+```
+
 ## Running the script
 
 Run this command adding as last word sentinel which is the network we are going to enable
