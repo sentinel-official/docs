@@ -5,12 +5,7 @@ sidebar_position: 2
 
 # Dockerfiles
 
-Here are the Docker files for Sentinel Mainnet and Sentinel Testnets, available with and without Cosmovisor.
-
-
-## Sentinel Mainnet (sentinelhub-2)
-
-For Mainnet, you can customize your setup based on whether you want to use Cosmovisor or not.
+Here are the Docker files for Sentinel Mainnet available with and without Cosmovisor.
 
 <details>
 <summary>Dockerfile</summary>
@@ -339,7 +334,7 @@ echo "****To see the status of the process type cat nohup****"
 </p>
 </details>
 
-
+<!--
 ## Sentinel Testnet (bluenet-2-3)
 
 For Testnet, you can customize your setup based on whether you want to use Cosmovisor or not.
@@ -645,3 +640,4 @@ echo "****To see the status of the process type cat nohup****"
 
 </p>
 </details>
+-->

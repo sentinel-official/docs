@@ -19,7 +19,7 @@ sidebar_position: 1
 
 - [Sentinel Growth DAO](https://t.me/SentinelGrowthDAO): A place for everyone to discuss and participate in the Sentinel Growth DAO.
 - [Sentinel Independent News (S.I.N.)](https://t.me/sentinel_independent): Unofficial Sentinel news channel.
-- [Sentinel Free Speech](https://t.me/entinelfreespeech): The Legendary Sentinel Free Speech Group. All are welcome. No malicous images or files allowed.
+- [Sentinel Free Speech](https://t.me/sentinelfreespeech): The Legendary Sentinel Free Speech Group. All are welcome. No malicous images or files allowed.
 - [Bluefren AI #P2P memes](https://t.me/Sentinelmemewar): A channel which posts OC Sentinel memes.
 
 
