@@ -12,7 +12,6 @@ Here is a list of available Sentinel explorers. If you notice any missing, pleas
 | Explorer Name | URL                                       |
 |---------------|-------------------------------------------|
 | Busurnode     | https://explorer.busurnode.com/sentinel   |
-| Chainroot     | https://explorer.chainroot.io/sentinel    | 
 | Ping Pub      | https://ping.pub/sentinel                 |
 | ATOMscan      | https://atomscan.com/sentinel             |
 
