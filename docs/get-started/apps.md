@@ -31,14 +31,7 @@ The following dVPN apps are built on top of the Sentinel Protocol. This is why w
         icon={<SentinelCore />}
         svgFile=""
     />
-    <Card
-        title="Meile dVPN"
-        description="Meile is a decentralized VPN solution built on top of the Sentinel Blockchain. Utilizing blockchain technology alongside community hosted decentralized nodes creates a private and censorship resistant network for everyone."
-        to="https://mathnodes.com/index.php/meile-dvpn-client-linux-os-x/"
-        icon={<Meile />}
-        svgFile=""
-    />
-    <Card
+     <Card
         title="DVPN by Norse Labs"
         description="DVPN is built with uncompromising privacy and security in mind. Leveraging the blockchain technology from Sentinel and advanced encryption, it follows a Zero Trust model — users don’t have to rely on us, as independent entities manage the servers, making tracking almost impossible."
         to="https://norselabs.io/"
@@ -50,6 +43,20 @@ The following dVPN apps are built on top of the Sentinel Protocol. This is why w
         to="https://independentdvpn.com"
         icon=""
         svgFile="/icons/independentdvpn.svg"
+    />
+    <Card
+        title="Ryn VPN"
+        description="The first Web2 cVPN that moved to Sentinel Blockchain. Browse anonymously, secure your connection, and access content from anywhere in the world with their fast and reliable dVPN service."
+        to="https://www.rynvpn.com/"
+        icon=""
+        svgFile="/icons/rynvpn.svg"
+    />
+    <Card
+        title="Meile dVPN"
+        description="Meile is a decentralized VPN solution built on top of the Sentinel Blockchain. Utilizing blockchain technology alongside community hosted decentralized nodes creates a private and censorship resistant network for everyone."
+        to="https://mathnodes.com/index.php/meile-dvpn-client-linux-os-x/"
+        icon={<Meile />}
+        svgFile=""
     />
     <Card
         title="VALT"
