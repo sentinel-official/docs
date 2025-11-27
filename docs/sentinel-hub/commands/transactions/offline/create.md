@@ -16,7 +16,6 @@ sentinelhub tx bank send \
     --gas-prices=0.5udvpn \
     --gas=300000 \
     --generate-only \
-    --offline \
     --account-number=<account_number> \
     --sequence=<sequence_number> \
     > unsigned.json
@@ -25,8 +24,7 @@ sentinelhub tx bank send \
 In comparison to online transactions, there are additional fields that require clarification:
 
 - `--generate-only`: This option generates the transaction without executing it.
-- `--offline`: This flag explicitly indicates that the transaction is intended to be conducted offline.
-- `--account-number`: Refers to the account number associated with your wallet
+- `--account-number`: Refers to the account number associated with your wallet.
 - `--sequence`: It represents the transaction number associated with the address up to that point.
 - `> unsigned.json`: This command directs the output to a file named unsigned.json.
 
