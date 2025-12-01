@@ -199,8 +199,66 @@ The final step is to check the [sync status](/full-node-setup/node-run#check-syn
 ## Block Sync
 
 Block Sync involves starting from the genesis block of the blockchain and then sequentially downloading and validating every block until the node is fully synchronized with the current state of the blockchain. This process can be time-consuming because it requires processing every transaction in the blockchain's history.
-Block sync is typically used when someone wants to host `archive nodes`, which are nodes that retain the full history of the blockchain, including all the blocks and their associated states from the genesis block to the current block. This means they have the entire blockchain's data and can provide historical data queries for any point in the blockchain's history. Detailed guidance on setting up and maintaining an archive node will be covered in the future.
+Block sync is typically used when someone wants to host `archive nodes`, which are nodes that retain the full history of the blockchain, including all the blocks and their associated states from the genesis block to the current block. This means they have the entire blockchain's data and can provide historical data queries for any point in the blockchain's history.
 
+:::note
+The latest genesis file is `v0.6.2`, which reflects the hard fork from `sentinelhub-1` to `sentinelhub-2` at block `901801`. Since there is no preserved block history from `sentinelhub-1`, earlier versions of the genesis file are not available
+:::
+
+### Install v0.6.2
+
+To begin from the genesis state, install [Sentinel Hub](/full-node-setup/node-setup#install-sentinel-hub) and make sure you use the `v0.6.2` binary.
+
+### Start the Node
+
+Start the node and let it sync until it reaches the next upgrade height (see the [upgrade table](/full-node-setup/upgrade#upgrade-list)).
+
+### Upgrade the Node
+
+When your node reaches an upgrade block, you can update it manually or let Cosmovisor handle upgrades automatically.
+
+#### 1) Manually
+
+When the node stops at an upgrade height:
+
+- Stop the node
+- Install the next binary version
+- Start the node again
+
+Repeat this process for each upgrade until the node reaches the current block height.
+
+#### 2) Cosmovisor
+
+If you use Cosmovisor, you must [prepare](/full-node-setup/upgrade#consensus-breaking-chain-upgrade) all the required binaries in advance, one for each upgrade.
+
+Your directory structure should look like this:
+
+```text
+$HOME/.sentinelhub
+└── cosmovisor/
+    ├── genesis/
+    │   └── bin/
+    │       └── sentinelhub  (v0.6.2)
+    └── upgrades/
+        ├── upgrade-1/
+        │   └── bin/
+        │       └── sentinelhub  (v0.7.0)
+        ├── upgrade-2/
+        │   └── bin/
+        │       └── sentinelhub  (v0.8.3)
+        ├── upgrade-3/
+        │   └── bin/
+        │       └── sentinelhub  (v0.9.2)
+        ├── upgrade-4/
+        │   └── bin/
+        │       └── sentinelhub (v0.10.1)
+        ├── v11/
+        │   └── bin/
+        │       └── sentinelhub (v0.11.2)
+        └── v12_0_0/
+            └── bin/
+                └── sentinelhub (v12.0.0)
+```
 
 ## Check Sync Status
 
