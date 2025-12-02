@@ -6,7 +6,7 @@ sidebar_position: 3
 The following commands will query nodes, plans and subscriptions.
 
 
-## Query Nodes
+## Query all Nodes
 
 Retrieve information regarding the node list.
 
@@ -65,7 +65,7 @@ sentinelcli query node \
 </details>
 
 
-## Query Subscriptions
+## Query all Subscriptions
 
 Retrieve information regarding the subscriptions.
 
@@ -129,158 +129,7 @@ sentinelcli query subscription \
 </details>
 
 
-## Query Allocations
-
-Retrieve information regarding a subscription allocations.
-
-```bash
-sentinelcli query allocations \
-  --home "${HOME}/.sentinelcli" \
-  --node https://rpc.sentinel.co:443 \
-  <subscription_id>
-```
-<details>
-<summary>Example Output</summary>
-<p>
-
-```bash title="Allocations for subscription 197707"
-+---------------------------------------------+---------------+----------------+
-|                   ADDRESS                   | GRANTED BYTES | UTILISED BYTES |
-+---------------------------------------------+---------------+----------------+
-| sent1qqxgu3qryt6yj53xlam3y7z0tstyxcu3mx2c38 | 1000.00GB     | 14.42MB        |
-| sent1qq5we70sgxgglmad35gelpw82rnc9yj45h59gy | 1000.00GB     | 0.00B          |
-| sent1qptr09devqujfgdnc2tnz0ffhm2c925tncjgw3 | 1000.00GB     | 0.00B          |
-| sent1qzk7hh2klp7jh7ualxqstsle6z4p9k5msdsxt0 | 1000.00GB     | 0.00B          |
-| sent1qrjhlhh784jgfcaxpaxnw0sgh5d9zg4nzmmt35 | 1000.00GB     | 0.00B          |
-| sent1qrcmgrtaas6c0u58u5kvw3m9hexstae33p4tt6 | 1000.00GB     | 0.00B          |
-| sent1q957jpenmxd30amul8a0qfrmk0mjdz4cvwfl0m | 1000.00GB     | 0.00B          |
-| sent1q9k8dd803xnydkx6thh8nqgxd6kgt5esvr9dt2 | 1000.00GB     | 0.00B          |
-| sent1qx03t9zrf82hgzm67arxuncmvr93rq0t5wunx8 | 1000.00GB     | 0.00B          |
-| sent1qgvm279pazayhyatr3720nkyuxz4efyqfnhvrq | 1000.00GB     | 0.00B          |
-| sent1qfqmvwav2gh6stgewj7mcmhwqhu6fduac56svs | 1000.00GB     | 0.00B          |
-| sent1qfr5q7cwzd4fedvgrxx3s7t28yxar6h6p5u6ss | 1000.00GB     | 0.00B          |
-| sent1qfcqztm6r92kd4w6nslusqhtvrkwmxakwrsdlt | 1000.00GB     | 0.00B          |
-| sent1q2rxk6pfc3xavt33ekdxgc9mjmxdjfut3te232 | 1000.00GB     | 0.00B          |
-| sent1qtrz4a60h0q00fl3nu5c0hmd9g8zquj59l65ju | 1000.00GB     | 0.00B          |
-| sent1qtvpnacazmnyltgce9v2y3c9mvq8m7qdau2kay | 1000.00GB     | 0.00B          |
-| sent1qt0962l78wwv5yyx4hlyzh5qxremk8s2jnv30u | 1000.00GB     | 0.00B          |
-| sent1qtullfe0la5dg0q73pe500esanzcgp8jdrwyfc | 1000.00GB     | 0.00B          |
-| sent1qv259d8nz2sznumvvnnljfq2gyqpw86hh3gm2h | 1000.00GB     | 0.00B          |
-| sent1qdgcp3yeymewteflqm6crkeulj9g5v4j6emj3d | 1000.00GB     | 893.03MB       |
-| sent1qd2ejw75t02y0ce02zalpeg5dt333dtva7krqg | 1000.00GB     | 0.00B          |
-| sent1qd0spew5akwmyypp2d3l8pxv6hrh9hpzsus3tg | 1000.00GB     | 12.34MB        |
-| sent1qdur49qs3n32jeu6tanjr2erq4fy3dweq80vtu | 1000.00GB     | 0.00B          |
-| sent1qwpvjamjzp4x80kcm5vfx55w6hctu99c9nngzv | 1000.00GB     | 0.00B          |
-| sent1qw8p9t7epssfcr8aucf0hlzu9t6tahz4pwprhm | 1000.00GB     | 0.00B          |
-| sent1q0837xq07yyydugktqnkud33vy3q2e0szgu6xe | 1000.00GB     | 0.00B          |
-| sent1q0f3gwy7kdp5zdljnl9y2vrtgaa6prgwhulu7k | 1000.00GB     | 0.00B          |
-| sent1q05hldfay4sj77070tynm9ea9mdg9dsvz4jl3r | 1000.00GB     | 0.00B          |
-| sent1qsh2dc2dtzttfm76gwfjq756fmy9kwyugf62kp | 1000.00GB     | 3.79MB         |
-| sent1q3tp6cj5waav9rpfelrlya8rlu92rletdg5rxg | 1000.00GB     | 0.00B          |
-| sent1q3txz3s79kcsyxsp0xj75rwdm6qjeghn055qpm | 1000.00GB     | 0.00B          |
-| sent1q36vyg9d3c7j5ckh8hvj774zswm70rggxukmc0 | 1000.00GB     | 0.00B          |
-| sent1qnplzvcex5ce4q6hkezc878ftuqrev0dvw4yds | 1000.00GB     | 0.00B          |
-| sent1qn2lncsecdf7df8r9mztdayu5ll6cj7c6s6ssc | 1000.00GB     | 0.00B          |
-| sent1q5mv9783ljc9tqxggacuu20rzusrrv3qvmmlt7 | 1000.00GB     | 0.00B          |
-| sent1q4paaeryx404t4k0sphjcvvz3wyd0hp8ndfcj8 | 1000.00GB     | 0.00B          |
-| sent1q4xcj9c7drf45ywxcflxv6jevjyjthndt5jk9x | 1000.00GB     | 4.17MB         |
-| sent1qhp3tmnqz06whxu37k00zrmveghprqwaqdqpqk | 1000.00GB     | 0.00B          |
-| sent1qhge0yfhxdz2hls2mvnvhjtqv93kw06ugmyx5g | 1000.00GB     | 0.00B          |
-| sent1qhhffrz0h6ms7r9m94l5k7v3kk9d4rnwu7wcng | 1000.00GB     | 0.00B          |
-| sent1qh6eyx5kz4cdrzttvrdgyemjkj7haetcaghe0c | 1000.00GB     | 0.00B          |
-| sent1q67vj72l0y7aquu33zlr5lj9uq3dwzv02cg8yk | 1000.00GB     | 0.00B          |
-| sent1q6lpg7y72nsnuen8rfu8st0d5f00727m0t4u8v | 1000.00GB     | 0.00B          |
-| sent1qmz36k9z70znfwduu34mnef8cdex7zksuu6pr0 | 1000.00GB     | 0.00B          |
-| sent1qu2e5p50nkege050rkjnnj5q2cgpdjw4yzlg2h | 1000.00GB     | 0.00B          |
-| sent1qa4lvy6kytz7hegl9ekypdma233wxhewh0uawp | 1000.00GB     | 441.73KB       |
-| sent1qlgvny02juu5rpujehy7xyr405fz0ujegck4mk | 1000.00GB     | 0.00B          |
-| sent1ppj04us683d8pzkdkqhtm3shsk8vct588xq6nj | 1000.00GB     | 0.00B          |
-| sent1pzrllj22ztvr8lpmg7w2xwchhmzeh0y28y28zx | 1000.00GB     | 0.00B          |
-| sent1pzg8x97h6hfdxq0w59azermvm3cuave4lrmr8q | 1000.00GB     | 0.00B          |
-| sent1prf8n5hmt72rjkcxnlxl6xa9nz0xjd843h925s | 1000.00GB     | 0.00B          |
-| sent1pyxnkunr3u29hv5tenelj3zqnlvvr2dv50rdfg | 1000.00GB     | 0.00B          |
-| sent1pysjt4wdhzhgukru94teahhel69k6c3z0ju82x | 1000.00GB     | 0.00B          |
-| sent1pyermd9kyrdw2rsshk3s9j8ssj0s2mfx6e3fn2 | 1000.00GB     | 0.00B          |
-| sent1pxyxve25jtfvwttk6fq8yy3eapw03n57w3zarl | 1000.00GB     | 0.00B          |
-| sent1p8vfaq50cqxlpt7ls0dw0g08t9gv076qjtxzmr | 1000.00GB     | 0.00B          |
-| sent1pgpd5ay64v09mas7h6p774pj5g27mw2r0zwc2x | 1000.00GB     | 0.00B          |
-| sent1pg00algyl6w5knugxf7xzraqvvcc33xslkx7p8 | 1000.00GB     | 0.00B          |
-| sent1pfy7uwcxs7age0nsqu6g7etanu535ukggzksd4 | 1000.00GB     | 0.00B          |
-| sent1pft6ah2twpdec244grlz3za4zmyqzctkajxpjh | 1000.00GB     | 0.00B          |
-| sent1pfsv2a27fddq5rzvmmhgwrcg29jn97v2vynnym | 1000.00GB     | 0.00B          |
-| sent1pfcpphdz0z0hzp3hah3ytjtrfe94xylpquxgpr | 1000.00GB     | 0.00B          |
-| sent1pfe0v6307heug7nwac8w3rc0q9ev2fmhxnayym | 1000.00GB     | 0.00B          |
-| sent1p2snmwhacr4t7m6fvyqdzgsnqtyl783dy4mk02 | 1000.00GB     | 0.00B          |
-| sent1p24jqmntwegefqwu7hqqpu4adsd6f2qmyw55j9 | 1000.00GB     | 160.18MB       |
-| sent1ptxyu26hpsu5rmk7xlkqp506gx87rhlmkvmu3m | 1000.00GB     | 0.00B          |
-| sent1ptft6yk7jnajlnawesnqch4fctlwgsxsndlzrh | 1000.00GB     | 0.00B          |
-| sent1pvzs0gawas4zreu75kjj8e40v68jph6wa955dg | 1000.00GB     | 0.00B          |
-| sent1pvkrq6meeuyr3550hqn0359hm34p23has5g9rk | 1000.00GB     | 0.00B          |
-| sent1pd4ed399m55hjghczutv0me5rnv6x7tkd0h8fq | 1000.00GB     | 0.00B          |
-| sent1pd7aefkyshuacduzpvjntmpnjjzuzcx6cw96rc | 1000.00GB     | 0.00B          |
-| sent1pw9mq04g4ngz9233cway4xcynt7a9p64era7a9 | 1000.00GB     | 0.00B          |
-| sent1p00agm380rcacf3yv5n0wkzg8qmwzspuuegnpr | 1000.00GB     | 0.00B          |
-| sent1p0mxulccrql982lzlkvyzg0cv96k86uur6u7lp | 1000.00GB     | 0.00B          |
-| sent1p0u84zc9gdnvtwpnkyzzxxenyqztqgmfylrht4 | 1000.00GB     | 0.00B          |
-| sent1psamck4peqvg6mg45unr0rssseash4twlpp4a5 | 1000.00GB     | 0.00B          |
-| sent1p3wllnde3jmvxvuec9wxzkwjdpndr0vv9257xq | 1000.00GB     | 0.00B          |
-| sent1pjxg6q9l73wz4vy37x4var9arfk8elnx0t6u5q | 1000.00GB     | 0.00B          |
-| sent1pjw70m5wcc3dyfzddut2gtnztc6rzs8st2cz2a | 1000.00GB     | 0.00B          |
-| sent1pnw4skhdqm8ucjlw90lcq2hecvkdg2m773aqgn | 1000.00GB     | 0.00B          |
-| sent1p5nygnjy456q5t2833heuxcu8vxk8nhncqpk0q | 1000.00GB     | 0.00B          |
-| sent1p5ktejyflsslhj3jm3nfhp008zw96xtren0cpj | 1000.00GB     | 170.83MB       |
-| sent1p5hxzkj8vlwajrxvr4llxjrfq9lzxkklvfhuz7 | 1000.00GB     | 0.00B          |
-| sent1p4pfuygtfhc90zt4ltfm09tmdsqqrzcsgsvpcm | 1000.00GB     | 0.00B          |
-| sent1pk4gelf028e4dhp83fw8fxjr8c2vrx9d5vkx7p | 1000.00GB     | 0.00B          |
-| sent1pk43c6cmnn9lp0saexgjsz5rh6n3fayl503duu | 1000.00GB     | 1.03GB         |
-| sent1phrhvk3p9mz2uuakygjlgjsdx4ewtv3udk4hen | 1000.00GB     | 0.00B          |
-| sent1pc8dp3zgqrjmzfv8hhgtyyy5k25pjs8dwj0ryc | 1000.00GB     | 0.00B          |
-| sent1pc38ccv6jc6t5fra0m93na6n8a0f8ulxl4ew8n | 1000.00GB     | 0.00B          |
-| sent1pc765euvpn67kw23d3hjq72we5zyddfcctcsry | 1000.00GB     | 0.00B          |
-| sent1pe6rjsz6vpw9njspa3a7j5f5hftrt65jl0u649 | 1000.00GB     | 0.00B          |
-| sent1pmzrl7r8dlvppfg568tef6xngx52zgzrug2t78 | 1000.00GB     | 0.00B          |
-| sent1pmv8z0vn3ptyc2476jc5pgytj0jljev43awnue | 1000.00GB     | 0.00B          |
-| sent1pm4pzrarsxa046dderhyae23wjwe5thnzj4h4s | 1000.00GB     | 0.00B          |
-| sent1puqlg2mjs9vdl0cz0c9cuwd8lrj3p6ta7zhjaq | 1000.00GB     | 0.00B          |
-| sent1punvr9euqqwvlnmyny9tyws5r9zngq24wsge0r | 1000.00GB     | 0.00B          |
-| sent1payfmn9ewmq5j2kq2k2hdmu4syn4hqdzhpnaxx | 1000.00GB     | 0.00B          |
-| sent1plsvmqlyq4lhn8dqcqzrc0c68efjv9n302x6nw | 1000.00GB     | 0.00B          |
-| sent1plm8gpyeqr7xltju32lphet0cg3ye52wku9qxq | 1000.00GB     | 0.00B          |
-| sent1zq084t5j2q7uhmwsewjsxsqkcdjmzex78clx6v | 1000.00GB     | 4.41MB         |
-+---------------------------------------------+---------------+----------------+
-```
-
-</p>
-</details>
-
-
-## Query an Allocation
-
-Retrieve information regarding an address subscription allocation.
-
-```bash
-sentinelcli query allocation \
-  --home "${HOME}/.sentinelcli" \
-  --node https://rpc.sentinel.co:443 \
-  <subscription_id> <address>
-```
-<details>
-<summary>Example Output</summary>
-<p>
-
-```bash title="Allocation for subscription 197707 and address sent1qqxgu3qryt6yj53xlam3y7z0tstyxcu3mx2c38"
-+---------------------------------------------+---------------+----------------+
-|                   ADDRESS                   | GRANTED BYTES | UTILISED BYTES |
-+---------------------------------------------+---------------+----------------+
-| sent1qqxgu3qryt6yj53xlam3y7z0tstyxcu3mx2c38 | 1000.00GB     | 14.42MB        |
-+---------------------------------------------+---------------+----------------+
-```
-
-</p>
-</details>
-
-
-## Query Sessions
+## Query all Sessions
 
 Retrieve information regarding the sessions.
 
@@ -337,7 +186,7 @@ sentinelcli query session \
 </details>
 
 
-## Query Deposits
+## Query all Deposits
 
 Retrieve information regarding the deposits.
 
@@ -393,7 +242,7 @@ sentinelcli query deposits \
 </details>
 
 
-## Query Plans
+## Query all Plans
 
 Retrieve information regarding the plans.
 
@@ -460,7 +309,7 @@ sentinelcli query plan \
 </details>
 
 
-## Query Providers
+## Query all Providers
 
 Retrieve information regarding the providers.
 

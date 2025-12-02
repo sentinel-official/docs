@@ -16,7 +16,7 @@ To sign with a multisig account, the transaction must be signed individually by 
 ## Generate a Multisig key
 
 ```bash
-sentinelcli keys add --multisig=name1,name2,name3[...] --multisig-threshold=K new_key_name
+sentinel-dvpncli keys add --multisig=name1,name2,name3[...] --multisig-threshold=K new_key_name
 ```
 
 `K` is the minimum number of private keys that must have signed the transactions that carry the public key's address as signer.
@@ -26,8 +26,8 @@ The `--multisig` flag must contain the name of public keys that will be combined
 Unless the flag `--nosort` is set, the order in which the keys are supplied on the command line does not matter, i.e. the following commands generate two identical keys:
 
 ```bash
-sentinelcli keys add --multisig=p1,p2,p3 --multisig-threshold=2 multisig_address
-sentinelcli keys add --multisig=p2,p3,p1 --multisig-threshold=2 multisig_address
+sentinel-dvpncli keys add --multisig=p1,p2,p3 --multisig-threshold=2 multisig_address
+sentinsentinel-dvpnclielcli keys add --multisig=p2,p3,p1 --multisig-threshold=2 multisig_address
 ```
 
 ## Create the multisig key
@@ -37,7 +37,7 @@ Let's assume that you have `test1` and `test2` and want to make a multisig accou
 First import the public keys of `test3` into your keyring.
 
 ```sh
-sentinelcli keys add \
+sentinel-dvpncli keys add \
     test3 \
     --pubkey=<pubkey>
 ```
@@ -45,7 +45,7 @@ sentinelcli keys add \
 Generate the multisig key with 2/3 threshold.
 
 ```sh
-sentinelcli keys add \
+sentinel-dvpncli keys add \
     multi \
     --multisig=test1,test2,test3 \
     --multisig-threshold=2
@@ -54,7 +54,7 @@ sentinelcli keys add \
 You can see its address and details:
 
 ```sh
-sentinelcli keys show multi
+sentinel-dvpncli keys show multi
 
 - name: multi
   type: multi

@@ -14,20 +14,20 @@ Open your terminal and type
 
 
 ```bash
-sentinelcli keys add <wallet_name>
+sentinel-dvpncli keys add <wallet_name>
 ```
 
 You can create a new key with the name `default` as in the following example:
 
 ```bash
-sentinelcli keys add default
+sentinel-dvpncli keys add default
 ```
 
 <details>
 <summary>Output</summary>
 <p>
 
-#### This is the output of `sentinelcli add key default`
+#### This is the output of `sentinel-dvpncli add key default`
 
 ```bash
 - name: default
@@ -56,7 +56,7 @@ It is important that you keep the mnemonic for address secure, as there is **no 
 If you already have a seed phrase, use the `--recover` flag after the command:
 
 ```bash
-sentinelcli keys add default_restore --recover
+sentinel-dvpncli keys add default_restore --recover
 ```
 
 You will be prompet to type your mnemonic
@@ -71,7 +71,7 @@ You will be prompet to type your mnemonic
 If you already have one or more keys, use the following command to list them:
 
 ```bash
-sentinelcli keys list
+sentinel-dvpncli keys list
 ```
 
 Multiple keys can be created when needed. You can list all keys saved under the storage path.
@@ -80,7 +80,7 @@ Multiple keys can be created when needed. You can list all keys saved under the 
 <summary>Output</summary>
 <p>
 
-#### This is the output of `sentinelcli add key default`
+#### This is the output of `sentinel-dvpncli add key default`
 
 ```bash
 - name: default
@@ -103,7 +103,7 @@ Multiple keys can be created when needed. You can list all keys saved under the 
 If you want to view the details of one of your keys, type this command:
 
 ```bash
-sentinelcli keys show <key_name>
+sentinel-dvpncli keys show <key_name>
 ```
 
 You will get the same output as of the first example where we created the key.
@@ -113,7 +113,7 @@ You will get the same output as of the first example where we created the key.
 If you want to delete one of your keys, type this command:
 
 ```bash
-sentinelcli keys delete <key_name>
+sentinel-dvpncli keys delete <key_name>
 ```
 
 You will get the following prompt:
@@ -127,35 +127,12 @@ Key deleted forever (uh oh!)
 Make sure you have backed up the key mnemonic before removing any of your keys, as there will be no way to recover your key without the mnemonic.
 :::
 
-## Export private keys
-
-If you want to export and backup one of your keys, type the following command:
-
-```bash
-sentinelcli keys export <key_name>
-```
-
-You will get the following prompt:
-
-```bash
-Enter passphrase to encrypt the exported key: ## Insert passphrase (must be at least 8 characters)##
------BEGIN TENDERMINT PRIVATE KEY-----
-kdf: bcrypt
-salt: ## Salt of the key ##
-type: secp256k1
-
-imwm2Q8jsWPBg5KfY1Lph5xzEH6UmFE2ovjKTrzST9zePDcuOYdQB7VAhsEP6kMo
-zWHbcVDvtfxF/sSn8lo1SZWVt+L5UP+BMG1VPAQ=
-=wSny
------END TENDERMINT PRIVATE KEY-----
-```
-
 ## The keyring-backend option
 
 Interacting with a node requires a public-private key pair. A keyring is the container that holds these keys, which can be stored in various locations, each with a specified backend type.
 
 ```
-sentinelcli keys [subcommands] --keyring-backend [backend type]
+sentinel-dvpncli keys [subcommands] --keyring-backend [backend type]
 ```
 ### Os backend
 

@@ -1,7 +1,11 @@
 ---
-title: List
-sidebar_position: 1
+title: Transactions
+sidebar_position: 4
 ---
+
+:::note
+This page is currently being updated post HUB upgrade and consequent Sentinel dVPN CLI v4.0.0
+:::
 
 Below is a list of transaction commands you can execute using the Sentinel dVPN CLI
 
@@ -14,7 +18,7 @@ Please ensure that you select one option between `<gigabytes>` and `<hours>`. Th
 :::
 
 ```bash
-sentinelcli tx node subscribe \
+sentinel-dvpncli tx node subscribe \
   <sentnode_address> \
   <gigabytes> \
   <hours> \
@@ -387,7 +391,7 @@ sentinelcli tx node subscribe \
 Update the status of a node
 
 ```bash
-sentinelcli tx node update-status \
+sentinel-dvpncli tx node update-status \
   <status> \
   --from test \
   --chain-id=sentinelhub-2 \
@@ -402,7 +406,7 @@ sentinelcli tx node update-status \
 Update the status of a provider
 
 ```bash
-sentinelcli tx provider update \
+sentinel-dvpncli tx provider update \
   --name <new_name> \
   --identity <new_identity> \
   --website <new_website> \
@@ -420,7 +424,7 @@ sentinelcli tx provider update \
 Initiate a session on a node with an existing subscription.
 
 ```bash
-sentinelcli tx session start \
+sentinel-dvpncli tx session-start \
   <subscription> \
   <sentnode_address> \
   --from test \
@@ -637,7 +641,7 @@ sentinelcli tx session start \
 Terminate a session on a node with an active subscription.
 
 ```bash
-sentinelcli tx session end \
+sentinel-dvpncli tx session-cancel \
   <session_id> \
   --from test \
   --chain-id=sentinelhub-2 \
@@ -855,20 +859,3 @@ sentinelcli tx session end \
 
 </p>
 </details>
-
-
-## Add Subscription Allocation
-
-Add an allocation to a subscription
-
-```bash
-sentinelcli tx subscription allocate \
-  <subscription_id> \
-  <address> \
-  <bytes> \
-  --from test \
-  --chain-id=sentinelhub-2 \
-  --node https://rpc.sentinel.co:443 \
-  --gas-prices=0.5udvpn \
-  --gas=300000
-```
