@@ -36,7 +36,6 @@ When a user delegates P2P to a validator to receive staking rewards and in turn 
 
 The permanent destruction of coins from the total supply.
 
-
 ## Commission
 
 The percentage of staking rewards a validator will keep before distributing the rest of the rewards to delegators. Commission is a validator’s income. Validators set their own commission rates which is not strrictly enforced by Sentinel.
@@ -69,7 +68,6 @@ Decentralized finance. A movement away from traditional finance and toward syste
 
 When a user bonds P2P to a validator to receive staking rewards and in turn obtain voting power. Validators never have ownership of the bonded P2P. Delegating, bonding, and staking generally refer to the same process.
 
-
 ## Delegator
 
 A user who delegates, bonds, or stakes P2P to a validator to earn rewards.
@@ -78,11 +76,9 @@ A user who delegates, bonds, or stakes P2P to a validator to earn rewards.
 
 - **Gas**: Computed fees added on to all transactions to avoid spamming. Validators set minimum gas prices and reject transactions that have implied gas prices below this threshold.
 
-
 ## Full node
 
 A computer connected to the Sentinel mainnet able to validate transactions and interact with the Sentinel blockchain. All active validators run full nodes.
-
 
 ## Governance
 
@@ -101,21 +97,17 @@ Validators that are not in the [active set](../get-started/glossary.md#active-se
 The inter-blockchain communication protocol (IBC) creates communication between independent blockchains. IBC achieves this by specifying a set of structures that can be implemented by any distributed ledger that satisfies a small number of requirements.
 IBC facilitates cross-chain applications for coin transfers, swaps, multi-chain contracts, and data sharding. Sentinel utilizes IBC for coin transfers and will add new features that are made possible through IBC.
 
-
 ## Jailed
 
 Validators who misbehave are jailed or excluded from the validator set for a period amount of time.
-
 
 ## Proof of Stake
 
 Proof of Stake. A style of blockchain where validators are chosen to propose blocks according to the number of coins they hold.
 
-
 ## Rewards
 
 Revenue generated from fees given to validators and delegators.
-
 
 ## Self-delegation
 
@@ -149,11 +141,9 @@ The official source code for the Sentinel protocol.
 
 The Sentinel protocol's blockchain network where all transactions take place.
 
-
-## Sentinel CLI
+## Sentinel dVPN CLI
 
 A command line interface for connecting to a Sentinel node.
-
 
 ## Testnet
 

@@ -44,7 +44,7 @@ const SECTIONS = [
   defineSection('node-monitoring'),
   defineSection('dvpn-node-setup'),
   defineSection('sdk'),
-  defineSection('sentinel-cli'),
+  defineSection('dvpn-cli'),
   defineSection('sentinel-hub'),
 ];
 
@@ -160,8 +160,8 @@ const config = {
                 label: 'Sentinel HUB',
               },
               {
-                to: 'sentinel-cli',
-                label: 'Sentinel CLI',
+                to: 'dvpn-cli',
+                label: 'Sentinel dVPN CLI',
               },
               {
                 to: 'sdk',

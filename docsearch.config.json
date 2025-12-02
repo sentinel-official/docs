@@ -18,9 +18,9 @@
       "selectors_key": "sdk"
     },
     {
-      "url": "https://docs.sentinel.co/sentinel-cli",
-      "tags": "sentinel-cli",
-      "selectors_key": "sentinel-cli"
+      "url": "https://docs.sentinel.co/dvpn-cli",
+      "tags": "dvpn-cli",
+      "selectors_key": "dvpn-cli"
     },
     {
       "url": "https://docs.sentinel.co/networks",
@@ -75,11 +75,11 @@
       "lvl6": "article h6",
       "text": "article p, article li, article td:last-child"
     },
-    "sentinel-cli": {
+    "dvpn-cli": {
       "lvl0": {
         "selector": "",
         "global": true,
-        "default_value": "sentinel-cli"
+        "default_value": "dvpn-cli"
       },
       "lvl1": "article h1",
       "lvl2": "article h2",

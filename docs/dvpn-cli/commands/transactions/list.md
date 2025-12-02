@@ -3,7 +3,7 @@ title: List
 sidebar_position: 1
 ---
 
-Below is a list of transaction commands you can execute using the Sentinel CLI
+Below is a list of transaction commands you can execute using the Sentinel dVPN CLI
 
 ## Subscribe to a Node
 

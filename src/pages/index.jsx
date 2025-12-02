@@ -105,9 +105,9 @@ export default function Homepage() {
                 icon={<SentinelCore />}
               />
               <Card
-                title="Sentinel CLI"
+                title="Sentinel dVPN CLI"
                 description="A command line tool to interact with Sentinel Blockchain"
-                to="/sentinel-cli"
+                to="/dvpn-cli"
                 icon={<TerminalIcon />}
                 svgFile=""
               />

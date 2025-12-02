@@ -4,7 +4,7 @@ sidebar_position: 4
 ---
 # Contributing
 
-The following information provides a set of guidelines for contributing to the Sentinel CLI dev repo. Use your best judgment, and, if you see room for improvement, please propose changes to this document.
+The following information provides a set of guidelines for contributing to the Sentinel dVPN CLI dev repo. Use your best judgment, and, if you see room for improvement, please propose changes to this document.
 
 Contributions come in the form of writing documentation, raising issues / PRs, and any other actions that help develop the Sentinel protocol documentation.
 
@@ -12,7 +12,7 @@ Contributions come in the form of writing documentation, raising issues / PRs, a
 
 To contribute a change proposal, use the following workflow:
 
-1. [Fork the repository](https://github.com/sentinel-official/cli-client).
+1. [Fork the repository](https://github.com/sentinel-official/sentinel-dvpncli).
 2. [Add an upstream](https://docs.github.com/en/github/collaborating-with-pull-requests/working-with-forks/syncing-a-fork) so that you can update your fork.
 3. Clone your fork to your computer.
 4. Create a branch and name it appropriately.

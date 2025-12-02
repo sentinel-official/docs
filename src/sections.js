@@ -41,8 +41,8 @@ const SECTIONS = [
     section: 'core-sdk',
   },
   {
-    name: 'Sentinel CLI',
-    id: 'sentinel-cli',
+    name: 'Sentinel dVPN CLI',
+    id: 'dvpn-cli',
     icon: TerminalIcon,
     section: 'core-sdk',
   },

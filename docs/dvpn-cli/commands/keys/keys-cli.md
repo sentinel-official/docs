@@ -6,7 +6,7 @@ sidebar_position: 1
 
 # Basic Key Management
 
-As you have now built Sentinel CLI, you can manage your keys.
+As you have now built Sentinel dVPN CLI, you can manage your keys.
 
 ## Create a new key
 
