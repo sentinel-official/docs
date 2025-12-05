@@ -1,9 +1,9 @@
 ---
-title: Register a Domain Name
+title: Register Your Domain
 sidebar_position: 3
 ---
 
-# Register a Domain Name
+# Register Your Domain
 
 First of all, you need to register a domain. It is recommended to prioritize privacy, so consider paying with Bitcoin and using services that accept it, such a [Njalla](https://njal.la/) or [NameCheap](https://www.namecheap.com/). We will use **NameCheap** for this guide.
 

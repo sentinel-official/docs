@@ -1,11 +1,10 @@
 ---
-title: RPC Port & Api Config
+title: Configure RPC & API
 sidebar_position: 2
 ---
 
 
-
-### Allow Port 26657 on the Firewall:
+## Allow Port 26657 on the Firewall:
 
 Set up the port 26657 on your firewall:
 
@@ -18,7 +17,7 @@ Check firewall status to see if the port has been enabled
 ```bash
 sudo ufw status
 ```
-### Update API Settings
+## Update API Settings
 
 Open the `app.toml` file
 
@@ -38,7 +37,7 @@ enable = true
 address = "tcp://0.0.0.0:1317"
 ```
 
-### Restart Sentinel Hub service
+## Restart Sentinel Hub service
 
 Finally, restart the Sentinel Hub service to apply the changes.
 

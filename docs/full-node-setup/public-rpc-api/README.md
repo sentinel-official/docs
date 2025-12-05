@@ -10,8 +10,7 @@ If you intend to validate, it is not recommended to make your RPC/API public and
 :::
 
 If you want to proceed, you should follow these steps in the order:
-- [RPC Port & API Config](/full-node-setup/public-rpc-api/config)
-- [Register a Domain name](/full-node-setup/public-rpc-api/domain)
-- [Install NGINX](/full-node-setup/public-rpc-api/nginx) to be used as reverse proxy server
-- [Install Certbot](/full-node-setup/public-rpc-api/certbot)
+- [Configur RPC & API](/full-node-setup/public-rpc-api/config)
+- [Register Your Domain](/full-node-setup/public-rpc-api/domain)
+- [Install NGINX & Certbot](/full-node-setup/public-rpc-api/nginx-certbot) to be used as reverse proxy server
 - [Add RPC to ChainRegistry](/full-node-setup/public-rpc-api/chain-registry)

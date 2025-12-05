@@ -1,9 +1,9 @@
 ---
-title: NGINX
+title: Install NGINX & Certbot
 sidebar_position: 4
 ---
 
-# NGINX
+# NGINX & Certbot
 
 NGINX (pronounced "engine-x") is a high-performance, open-source web server and reverse proxy server. It's known for its efficient handling of web traffic and its ability to serve as a load balancer. NGINX is widely used to improve website performance, security, and scalability. It can also function as a proxy server for applications and offers features like SSL/TLS termination, caching, and content delivery. NGINX is popular for its speed and reliability in serving web content.
 
@@ -13,7 +13,7 @@ Install the dependencies:
 
 ```bash
 sudo apt update
-sudo apt install curl gnupg2 ca-certificates lsb-release lsof psmisc
+sudo apt install curl gnupg2 ca-certificates lsb-release lsof psmisc -y
 ```
 
 Import an official Nginx signing key:
@@ -40,12 +40,12 @@ http://nginx.org/packages/debian `lsb_release -cs` nginx" \
 Install NGINX:
 
 ```bash
-sudo apt install nginx
+sudo apt install nginx -y
 ```
 
 ## Launch test
 
-After installation check the NGINX status (it will probably be enabled but inactive):
+Check the NGINX service status; it may be inactive initially
 
 ```bash
 sudo systemctl status nginx
@@ -63,11 +63,45 @@ To test the setup, open your browser and enter `localhost` in the URL bar, or ty
 curl localhost
 ```
 
-If you receive a successful message, you can now stop NGINX
+You should receive a successful message like the one below
+
+<details>
+<summary>Output</summary>
+<p>
+
+```bash
+<!DOCTYPE html>
+<html>
+<head>
+<title>Welcome to nginx!</title>
+<style>
+html { color-scheme: light dark; }
+body { width: 35em; margin: 0 auto;
+font-family: Tahoma, Verdana, Arial, sans-serif; }
+</style>
+</head>
+<body>
+<h1>Welcome to nginx!</h1>
+<p>If you see this page, the nginx web server is successfully installed and
+working. Further configuration is required.</p>
+
+<p>For online documentation and support please refer to
+<a href="http://nginx.org/">nginx.org</a>.<br/>
+Commercial support is available at
+<a href="http://nginx.com/">nginx.com</a>.</p>
+
+<p><em>Thank you for using nginx.</em></p>
+</body>
+</html>
+```
+
+</p>
+</details>
+
+Once verified, stop NGINX. Certbot will start and reload it automatically during SSL configuration:
 
 ```bash
 sudo systemctl stop nginx.service
-sudo killall nginx
 ```
 
 ## Configuration
@@ -92,7 +126,7 @@ Copy the following template into the `rpc.conf` and replace `mynodename` with yo
 <summary>rpc.conf</summary>
 <p>
 
-```bash
+```nginx
 server {
     server_name rpc.sentinel.mynodename.com;
 
@@ -124,7 +158,7 @@ Copy the following template into the `api.conf` and replace mynodename with your
 <summary>api.conf</summary>
 <p>
 
-```bash
+```nginx
 server {
     server_name api.sentinel.mynodename.com;
 
@@ -144,20 +178,21 @@ server {
 </p>
 </details>
 
-Now, install the Certbot plugin
+## Certbot & SSL
+
+Install the NGINX Certbot plugin:
 
 ```bash
-sudo apt install python3-certbot-nginx
+sudo apt install python3-certbot-nginx -y
 ```
 
-Enable port 80 and 443 on your firewall
+Allow HTTP and HTTPS through the firewall:
 
 ```bash
-sudo ufw allow 80/tcp
-sudo ufw allow 443/tcp
+sudo ufw allow 80,443/tcp
 ```
 
-Apply Certbot plugin to the rpc.conf file to enable redirection to HTTPS and select the number corresponding to your Full Node
+Run Certbot to automatically configure HTTPS and automatically reload NGINX:
 
 ```bash
 sudo certbot --nginx
@@ -168,19 +203,25 @@ You will be prompted to:
 - accept terms and conditions
 - Press Enter to select all the listed domains (rpc and api)
 
-Before restarting NGINX the following command to test the configuration for syntax errors:
+## Validate NGINX Configuration
+
+:::note
+Optional: Skip this section if you haven’t changed any NGINX configs since running `sudo certbot --nginx`.
+:::
+
+Check the configuration syntax:
 
 ```bash
 sudo nginx -t
 ```
 
-Restart NGINX
+If the test is successful, reload NGINX to apply changes cleanly:
 
 ```bash
-sudo systemctl restart nginx
+sudo systemctl reload nginx
 ```
 
-If anyhing goes wrong, run this command to check the logs:
+If anything goes wrong, check the logs:
 
 ```bash
 sudo tail -n 50 /var/log/nginx/error.log
@@ -191,3 +232,69 @@ If you encounter no errors, you can finally test whether your RPC is now public:
 ```bash
 https://rpc.sentinel.mynodename.com
 ```
+
+## Renew an SSL Certificate
+
+:::note
+Optional: Certbot automatically handles SSL renewal and NGINX reloads. Use this section only if you want to verify the process manually.
+:::
+
+If you want to verify that everything is working correctly, you can:
+
+- Check the systemd timer that triggers automatic renewals:
+
+```bash
+systemctl status certbot.timer
+```
+
+<details>
+<summary>Expected output</summary>
+<p>
+
+```bash
+● certbot.timer - Run certbot twice daily
+     Loaded: loaded (/lib/systemd/system/certbot.timer; enabled; preset: enabled)
+     Active: active (waiting) since Thu 2025-12-04 23:22:57 UTC; 28min ago
+    Trigger: Fri 2025-12-05 01:21:39 UTC; 1h 30min left
+   Triggers: ● certbot.service
+```
+
+</p>
+</details>
+
+If you see this, automatic renewal is already configured.
+
+- Perform a simulated renewal (safe test that does not replace your certificates):
+
+```bash
+sudo certbot renew --dry-run
+```
+
+<details>
+<summary>Expected output</summary>
+<p>
+
+```bash
+Saving debug log to /var/log/letsencrypt/letsencrypt.log
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Processing /etc/letsencrypt/renewal/api.sentinel.mynodename.com.conf
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Account registered.
+Simulating renewal of an existing certificate for api.sentinel.mynodename.com and rpc.sentinel.mynodename.com
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Congratulations, all simulated renewals succeeded: 
+  /etc/letsencrypt/live/api.sentinel.mynodename.com/fullchain.pem (success)
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+```
+
+</p>
+</details>
+
+This optional step ensures that:
+
+- Certificates can be renewed
+- NGINX reload works
+- No configuration errors are present
+- This test does not replace your certificates.
