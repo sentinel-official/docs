@@ -143,7 +143,7 @@ Type=simple
 # For Ubuntu installation
 ExecStart=/usr/bin/sentinelhub start
 # For Manual installation
-ExecStart=/usr/local/bin/sentinelhub start --skip-overwrite-config
+ExecStart=/usr/local/bin/sentinelhub start
 
 Restart=on-failure
 StartLimitInterval=0

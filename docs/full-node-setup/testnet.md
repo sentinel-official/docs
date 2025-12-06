@@ -16,7 +16,7 @@ To install the Sentinel Hub, please download the latest version from the [reposi
 ```bash
 git clone https://github.com/sentinel-official/sentinelhub.git "${HOME}/sentinelhub"
 cd "${HOME}/sentinelhub"
-git checkout v12.0.0-rc.13
+git checkout v12.0.1
 make install
 
 # For Ubuntu installation
