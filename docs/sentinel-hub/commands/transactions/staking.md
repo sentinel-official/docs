@@ -105,7 +105,7 @@ sentinelhub tx staking create-validator \
     --amount=<self_delegation_amount>udvpn \
     --commission-max-change-rate=0.01 \
     --commission-max-rate=0.2 \
-    --commission-rate=0.05 \
+    --commission-rate=0.07 \
     --moniker="<validator_name>" \
     --pubkey="<full_node_public_key>" \
     --from="<validator_key_name>" \

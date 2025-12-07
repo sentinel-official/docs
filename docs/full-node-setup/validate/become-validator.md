@@ -29,7 +29,7 @@ sentinelhub tx staking create-validator \
     --min-self-delegation=1 \
     --commission-max-change-rate=0.01 \
     --commission-max-rate=0.2 \
-    --commission-rate=0.05 \
+    --commission-rate=0.07 \
     --amount=${DELEGATION_AMOUNT} \
     --moniker="${MONIKER}" \
     --pubkey="${CONSENSUS_PUBLIC_KEY}" \
@@ -43,6 +43,6 @@ sentinelhub tx staking create-validator \
 
 The commission rate plays a crucial role in the decision-making process when executing the create-validator transaction.
 
-- `--commission-rate=0.05`: the current commission rate that the validator receives from delegators. In this example it is **5%**. This value is adjustable in the future.
+- `--commission-rate=0.07`: This is the percentage of rewards the validator keeps from the rewards earned by delegators. The minimum you can set is **5%**, according to **Cosmos SDK v0.47**.
 - `--commission-max-change-rate=0.01`: the max commission rate a validator can change. In this example it will be **1%** and it is **cannot be changed** once set. This means that if a Validator wishes to raise its commissions from 5% to 8% in the future, it can achieve this by making adjustments three times, with a 24-hour interval between each transaction.
 - `--commission-max-rate=0.2`: the max commission rate a validator can set. In this example it will be **20%** and it **cannot be changed** once set
