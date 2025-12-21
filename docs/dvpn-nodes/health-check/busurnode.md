@@ -29,7 +29,7 @@ Alternatively, you can [sign up](https://sentnodes.com/register) on the website 
 
 ### All Nodes Data
 
-GET https://api.sentnodes.com/v1/nodes
+GET https://api.sentnodes.com/v2/nodes
 
 <details>
 <summary>Sample Response</summary>
@@ -40,42 +40,68 @@ GET https://api.sentnodes.com/v1/nodes
   "success": true,
   "data": [
     {
-      "address": "sentnode1d6qqywlc47cnxt4gh7pjqvjw057s7qdf64zw0u",
-      "moniker": "BUSURNODE-US-016-V2RAY",
-      "version": "8.2.0",
+      "address": "sentnode1zejvt2pmlstpayd7sex8y2e323ddfmpg0kylnd",
+      "moniker": "SuchNode-TDfvls0Mp6v7",
+      "version": "8.3.1",
       "type": 2,
-      "api": "elpis.busur.cc:63116",
-      "asn": 12345,
-      "country": "United States",
-      "city": "North Bergen",
-      "isResidential": false,
+      "api": "104.238.23.218:6636",
+      "asn": null,
+      "country": "Türkiye",
+      "city": "Çekmeköy",
+      "isResidential": null,
       "isActive": true,
       "isHealthy": false,
       "isDuplicate": false,
-      "isWhitelisted": true,
-      "subscriptions": 2,
-      "sessions": 4,
-      "peers": 4,
-      "fetchedAt": "2025-11-02 02:10:36"
+      "isWhitelisted": null,
+      "gigabytePrices": [
+        {
+          "denom": "udvpn",
+          "value": "26041666"
+        }
+      ],
+      "hourlyPrices": [
+        {
+          "denom": "udvpn",
+          "value": "52083333"
+        }
+      ],
+      "subscriptions": 0,
+      "sessions": 2,
+      "peers": 2,
+      "healthCheck": [],
+      "fetchedAt": "2025-12-21T11:01:11+00:00"
     },
     {
-      "address": "sentnode1yjcp0uvg9qf6rjyj3a6zq2rywc44j5vukdpz6l",
-      "moniker": "P4O3K6K7",
-      "version": "8.2.0",
+      "address": "sentnode1vg9qh7j3wwv3wfyn6g8ddvgar2kqhy0lq4cn2r",
+      "moniker": "SuchNode-j2YkeAgA8Win",
+      "version": "8.3.1",
       "type": 2,
-      "api": "206.217.140.45:57538",
-      "asn": 11111,
-      "country": "United States",
-      "city": "Elk Grove Village",
-      "isResidential": false,
+      "api": "104.238.23.222:6636",
+      "asn": null,
+      "country": "Türkiye",
+      "city": "Çekmeköy",
+      "isResidential": null,
       "isActive": true,
       "isHealthy": false,
       "isDuplicate": false,
-      "isWhitelisted": true,
+      "isWhitelisted": null,
+      "gigabytePrices": [
+        {
+          "denom": "udvpn",
+          "value": "26315789"
+        }
+      ],
+      "hourlyPrices": [
+        {
+          "denom": "udvpn",
+          "value": "52631578"
+        }
+      ],
       "subscriptions": 0,
-      "sessions": 0,
-      "peers": 0,
-      "fetchedAt": "2025-11-02 02:10:35"
+      "sessions": 1,
+      "peers": 1,
+      "healthCheck": [],
+      "fetchedAt": "2025-12-21T11:01:11+00:00"
     }
   ],
   "errors": null
@@ -97,27 +123,39 @@ GET https://api.sentnodes.com/v2/node/{NODE_ADDRESS}
 {
   "success": true,
   "data": {
-    "address": "sentnode1d6qqywlc47cnxt4gh7pjqvjw057s7qdf64zw0u",
-    "moniker": "BUSURNODE-US-016-V2RAY",
-    "version": "8.2.0",
-    "type": 2,
-    "api": "elpis.busur.cc:63116",
-    "asn": 12345,
-    "country": "United States",
-    "city": "North Bergen",
-    "isResidential": false,
+    "address": "sentnode1pzvzxy6tf2ec6cdpa808ykch8d7aamlzvqqh39",
+    "moniker": "Roomit-Fin-Helsinki-Hetzner-WG",
+    "version": "8.3.1",
+    "type": 1,
+    "api": "65.109.99.157:13902",
+    "asn": null,
+    "country": "Finland",
+    "city": "Helsinki",
+    "isResidential": null,
     "isActive": true,
     "isHealthy": false,
     "isDuplicate": false,
-    "isWhitelisted": true,
+    "isWhitelisted": null,
+    "gigabytePrices": [
+      {
+        "denom": "udvpn",
+        "value": "26315789"
+      }
+    ],
+    "hourlyPrices": [
+      {
+        "denom": "udvpn",
+        "value": "52631578"
+      }
+    ],
     "subscriptions": 0,
-    "sessions": 4,
-    "peers": 4,
-    "fetchedAt": "2025-11-02 02:30:50"
+    "sessions": 0,
+    "peers": 0,
+    "healthCheck": [],
+    "fetchedAt": "2025-12-21T11:01:11+00:00"
   },
   "errors": null
 }
-
 ```
 
 </p>
