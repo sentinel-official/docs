@@ -472,6 +472,20 @@ html[data-theme='dark']
   border-radius: 6px;
   padding: 6px 0;
   box-shadow: 0 3px 12px rgba(0, 0, 0, 0.2);
+
+  /*
+   * Mobile fix:
+   * Docusaurus mobile docs sidebar uses an overlay with a high z-index.
+   * Radix Select renders its dropdown in a portal (attached to <body>).
+   * Without an explicit z-index, the dropdown can end up *behind* the
+   * sidebar overlay on small screens, making items impossible to tap.
+   */
+  z-index: 10000;
+}
+
+/* Radix wraps popper content in a positioned wrapper; ensure it is above overlays. */
+[data-radix-popper-content-wrapper] {
+  z-index: 10000 !important;
 }
 
 .sections-menu-trigger.compact {
