@@ -9,7 +9,7 @@ sidebar_position: 2
 Install dependencies
 
 ```bash
-sudo apt-get install --yes curl git openssl
+sudo apt install --yes curl git openssl
 ```
 
 Get the official Docker installation script

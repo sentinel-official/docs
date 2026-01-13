@@ -8,7 +8,7 @@ sidebar_position: 3
 First of all install some required packages
 
 ```bash
-sudo apt-get install curl git jq make unzip gcc -y
+sudo apt install curl git jq make unzip gcc -y
 ```
 
 You now have two methods for installing Golang.
@@ -26,7 +26,7 @@ sudo add-apt-repository ppa:longsleep/golang-backports
 Install Golang
 
 ```bash
-sudo apt-get install -y golang-go
+sudo apt install -y golang-go
 ```
 
 ## Manually

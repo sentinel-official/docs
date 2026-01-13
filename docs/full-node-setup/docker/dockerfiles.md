@@ -23,11 +23,11 @@ FROM ubuntu:latest
 WORKDIR /
 
 # Install all of the basics we need to perform the install includes wget, nano, curl, git, jq, make, unzip and gcc
-RUN apt-get update -y &&\
-apt-get install software-properties-common -y &&\
-apt-get install nano -y &&\
-apt-get install wget -y &&\
-apt-get install curl git jq make unzip gcc -y
+RUN apt update -y &&\
+apt install software-properties-common -y &&\
+apt install nano -y &&\
+apt install wget -y &&\
+apt install curl git jq make unzip gcc -y
 
 
 # Perform some user housekeeping. Please change these if you use this image in production
@@ -40,7 +40,7 @@ WORKDIR /home/sentinel
 
 # Install Golang and put variables in .bashrc
 RUN yes '' | add-apt-repository ppa:longsleep/golang-backports &&\
-apt-get install golang-go -y  &&\
+apt install golang-go -y  &&\
 echo 'export GOROOT=/usr/lib/go' >> .bashrc &&\
 echo 'export GOPATH=${HOME}/go' >> .bashrc &&\
 echo 'export GOBIN=${GOPATH}/bin' >> .bashrc &&\
@@ -178,11 +178,11 @@ FROM ubuntu:latest
 WORKDIR /
 
 # Install all of the basics we need to perform the install includes wget, nano, curl, git, jq, make, unzip and gcc
-RUN apt-get update -y &&\
-apt-get install software-properties-common -y &&\
-apt-get install nano -y &&\
-apt-get install wget -y &&\
-apt-get install curl git jq make unzip gcc -y
+RUN apt update -y &&\
+apt install software-properties-common -y &&\
+apt install nano -y &&\
+apt install wget -y &&\
+apt install curl git jq make unzip gcc -y
 
 
 # Perform some user housekeeping. Please change these if you use this image in production
@@ -195,7 +195,7 @@ WORKDIR /home/sentinel
 
 # Install Golang and put variables in .bashrc
 RUN yes '' | add-apt-repository ppa:longsleep/golang-backports &&\
-apt-get install golang-go -y  &&\
+apt install golang-go -y  &&\
 echo 'export GOROOT=/usr/lib/go' >> .bashrc &&\
 echo 'export GOPATH=${HOME}/go' >> .bashrc &&\
 echo 'export GOBIN=${GOPATH}/bin' >> .bashrc &&\
@@ -354,11 +354,11 @@ FROM ubuntu:latest
 WORKDIR /
 
 # Install all of the basics we need to perform the install includes wget, nano, curl, git, jq, make, unzip and gcc
-RUN apt-get update -y &&\
-apt-get install software-properties-common -y &&\
-apt-get install nano -y &&\
-apt-get install wget -y &&\
-apt-get install curl git jq make unzip gcc -y
+RUN apt update -y &&\
+apt install software-properties-common -y &&\
+apt install nano -y &&\
+apt install wget -y &&\
+apt install curl git jq make unzip gcc -y
 
 
 # Perform some user housekeeping. Please change these if you use this image in production
@@ -371,7 +371,7 @@ WORKDIR /home/sentinel
 
 # Install Golang
 RUN yes '' | add-apt-repository ppa:longsleep/golang-backports &&\
-apt-get install golang-go -y  &&\
+apt install golang-go -y  &&\
 echo 'export GOROOT=/usr/lib/go' >> .bashrc &&\
 echo 'export GOPATH=${HOME}/go' >> .bashrc &&\
 echo 'export GOBIN=${GOPATH}/bin' >> .bashrc &&\
@@ -489,11 +489,11 @@ FROM ubuntu:latest
 WORKDIR /
 
 # Install all of the basics we need to perform the install
-RUN apt-get update -y &&\
-apt-get install software-properties-common -y &&\
-apt-get install nano -y &&\
-apt-get install wget -y &&\
-apt-get install curl git jq make unzip gcc -y
+RUN apt update -y &&\
+apt install software-properties-common -y &&\
+apt install nano -y &&\
+apt install wget -y &&\
+apt install curl git jq make unzip gcc -y
 
 
 # Perform some user housekeeping. Please change these if you use this image in production
@@ -506,7 +506,7 @@ WORKDIR /home/sentinel
 
 # Install Golang
 RUN yes '' | add-apt-repository ppa:longsleep/golang-backports &&\
-apt-get install golang-go -y  &&\
+apt install golang-go -y  &&\
 echo 'export GOROOT=/usr/lib/go' >> .bashrc &&\
 echo 'export GOPATH=${HOME}/go' >> .bashrc &&\
 echo 'export GOBIN=${GOPATH}/bin' >> .bashrc &&\

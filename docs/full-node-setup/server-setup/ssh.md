@@ -64,7 +64,7 @@ grep 2222 /etc/services
 On your server machine, install the firewall
 
 ```bash
-sudo apt-get install ufw
+sudo apt install ufw
 ```
 
 If the port is not already being used by another service, you can add it to your firewall

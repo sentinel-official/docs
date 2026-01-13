@@ -58,7 +58,7 @@ sudo apt install -y curl git golang-github-pelletier-go-toml jq make
 On your server machine, install the firewall
 
 ```bash
-sudo apt-get install ufw
+sudo apt install ufw
 ```
 
 Allow Port 22

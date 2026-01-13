@@ -23,11 +23,11 @@ passwd root
 ## Update the system
 
 ```bash
-apt-get update && apt-get upgrade -y
+apt update && apt upgrade -y
 ```
 
 Install sudo package
 
 ```bash
-apt-get install sudo
+apt install sudo
 ```
