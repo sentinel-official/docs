@@ -11809,17 +11809,73 @@ components:
           type: string
       type: object
 info:
-  description: A REST interface for state queries, legacy transactions
-  title: Sentinel LCD
+  title: Sentinel LCD API
+  description: |
+    REST API for querying the Sentinel blockchain (sentinelhub-2).
+    Provides access to all on-chain state including dVPN nodes,
+    subscriptions, sessions, plans, providers, and standard Cosmos SDK modules.
   version: 1.0.0
+  contact:
+    name: Sentinel
+    url: https://github.com/sentinel-official
+  license:
+    name: Apache 2.0
+    url: https://github.com/sentinel-official/hub/blob/master/LICENSE
 openapi: 3.0.0
+tags:
+  - name: accounts
+    description: Account-related queries (payouts, sessions, subscriptions)
+  - name: nodes
+    description: dVPN node registration, status, and management
+  - name: plans
+    description: Subscription plans offered by providers
+  - name: providers
+    description: dVPN service provider management
+  - name: sessions
+    description: Active dVPN session queries
+  - name: subscriptions
+    description: User subscription management and allocations
+  - name: deposits
+    description: Deposit queries for nodes and accounts
+  - name: payouts
+    description: Payout tracking for node operators
+  - name: swaps
+    description: Token swap queries
+  - name: auth
+    description: Authentication and account queries
+  - name: authz
+    description: Authorization grant queries
+  - name: bank
+    description: Token balance, supply, and metadata queries
+  - name: base
+    description: Tendermint base queries (blocks, node info, validators)
+  - name: distribution
+    description: Staking reward distribution queries
+  - name: evidence
+    description: Evidence of misbehavior queries
+  - name: feegrant
+    description: Fee allowance queries
+  - name: gov
+    description: Governance proposal and voting queries
+  - name: mint
+    description: Minting and inflation parameter queries
+  - name: params
+    description: Module parameter queries
+  - name: slashing
+    description: Validator slashing and signing info queries
+  - name: staking
+    description: Delegation, validator, and staking pool queries
+  - name: tx
+    description: Transaction broadcast, simulation, and search
+  - name: upgrade
+    description: Chain upgrade plan queries
 paths:
   /sentinel/accounts/{account_address}/payouts:
     get:
       operationId: AccountPayoutsList
       parameters:
       - description: 'account_address defines the unique address of the account'
-        in: query
+        in: path
         name: account_address
         required: true
         schema:
@@ -11863,7 +11919,7 @@ paths:
       responses:
         '200':
           content:
-            '*/*':
+            application/json:
               schema:
                 description: QueryPayoutResponse is response type for the Query/Payout
                   RPC method.
@@ -11919,7 +11975,7 @@ paths:
           description: A successful response.
         default:
           content:
-            '*/*':
+            application/json:
               schema:
                 properties:
                   code:
@@ -11941,16 +11997,15 @@ paths:
                     type: string
                 type: object
           description: An unexpected error response.
-      summary: ''
+      summary: List payouts for an account
       tags:
       - accounts
-      - Query
   /sentinel/accounts/{account_address}/sessions:
     get:
       operationId: AccountSessionsList
       parameters:
       - description: 'account_address defines the unique address of the account'
-        in: query
+        in: path
         name: account_address
         required: true
         schema:
@@ -11994,7 +12049,7 @@ paths:
       responses:
         '200':
           content:
-            '*/*':
+            application/json:
               schema:
                 description: QuerySessionResponse is response type for the Query/Session
                   RPC method.
@@ -12059,7 +12114,7 @@ paths:
           description: A successful response.
         default:
           content:
-            '*/*':
+            application/json:
               schema:
                 properties:
                   code:
@@ -12081,16 +12136,15 @@ paths:
                     type: string
                 type: object
           description: An unexpected error response.
-      summary: ''
+      summary: List sessions for an account
       tags:
       - accounts
-      - Query
   /sentinel/accounts/{account_address}/subscriptions:
     get:
       operationId: AccountSubscriptionsList
       parameters:
       - description: 'account_address defines the unique address of the account'
-        in: query
+        in: path
         name: account_address
         required: true
         schema:
@@ -12134,7 +12188,7 @@ paths:
       responses:
         '200':
           content:
-            '*/*':
+            application/json:
               schema:
                 description: QuerySubscriptionResponse is response type for the Query/Subscription
                   RPC method.
@@ -12193,7 +12247,7 @@ paths:
           description: A successful response.
         default:
           content:
-            '*/*':
+            application/json:
               schema:
                 properties:
                   code:
@@ -12215,10 +12269,9 @@ paths:
                     type: string
                 type: object
           description: An unexpected error response.
-      summary: ''
+      summary: List subscriptions for an account
       tags:
       - accounts
-      - Query
   /cosmos/auth/v1beta1/accounts:
     get:
       description: 'Since: cosmos-sdk 0.43'
@@ -12282,7 +12335,7 @@ paths:
       responses:
         '200':
           content:
-            '*/*':
+            application/json:
               schema:
                 description: 'QueryAccountsResponse is the response type for the Query/Accounts
                   RPC method.
@@ -12386,7 +12439,7 @@ paths:
           description: A successful response.
         default:
           content:
-            '*/*':
+            application/json:
               schema:
                 properties:
                   code:
@@ -12472,10 +12525,9 @@ paths:
                     type: string
                 type: object
           description: An unexpected error response.
-      summary: ''
+      summary: List all accounts
       tags:
       - auth
-      - Query
   /cosmos/auth/v1beta1/accounts/{address}:
     get:
       operationId: Account
@@ -12489,7 +12541,7 @@ paths:
       responses:
         '200':
           content:
-            '*/*':
+            application/json:
               schema:
                 description: QueryAccountResponse is the response type for the Query/Account
                   RPC method.
@@ -12566,7 +12618,7 @@ paths:
           description: A successful response.
         default:
           content:
-            '*/*':
+            application/json:
               schema:
                 properties:
                   code:
@@ -12652,17 +12704,16 @@ paths:
                     type: string
                 type: object
           description: An unexpected error response.
-      summary: ''
+      summary: Get account by address
       tags:
       - auth
-      - Query
   /cosmos/auth/v1beta1/module_accounts:
     get:
       operationId: ModuleAccounts
       responses:
         '200':
           content:
-            '*/*':
+            application/json:
               schema:
                 description: QueryModuleAccountsResponse is the response type for
                   the Query/ModuleAccounts RPC method.
@@ -12745,7 +12796,7 @@ paths:
           description: A successful response.
         default:
           content:
-            '*/*':
+            application/json:
               schema:
                 properties:
                   code:
@@ -12831,17 +12882,16 @@ paths:
                     type: string
                 type: object
           description: An unexpected error response.
-      summary: ''
+      summary: List all module accounts
       tags:
       - auth
-      - Query
   /cosmos/auth/v1beta1/params:
     get:
       operationId: AuthParams
       responses:
         '200':
           content:
-            '*/*':
+            application/json:
               schema:
                 description: QueryParamsResponse is the response type for the Query/Params
                   RPC method.
@@ -12869,7 +12919,7 @@ paths:
           description: A successful response.
         default:
           content:
-            '*/*':
+            application/json:
               schema:
                 properties:
                   code:
@@ -12955,10 +13005,9 @@ paths:
                     type: string
                 type: object
           description: An unexpected error response.
-      summary: ''
+      summary: Get auth module parameters
       tags:
       - auth
-      - Query
   /cosmos/authz/v1beta1/grants:
     get:
       operationId: Grants
@@ -13038,7 +13087,7 @@ paths:
       responses:
         '200':
           content:
-            '*/*':
+            application/json:
               schema:
                 description: QueryGrantsResponse is the response type for the Query/Authorizations
                   RPC method.
@@ -13150,7 +13199,7 @@ paths:
           description: A successful response.
         default:
           content:
-            '*/*':
+            application/json:
               schema:
                 properties:
                   code:
@@ -13236,10 +13285,9 @@ paths:
                     type: string
                 type: object
           description: An unexpected error response.
-      summary: ''
+      summary: Query authorization grants
       tags:
       - authz
-      - Query
   /cosmos/authz/v1beta1/grants/grantee/{grantee}:
     get:
       operationId: GranteeGrants
@@ -13307,7 +13355,7 @@ paths:
       responses:
         '200':
           content:
-            '*/*':
+            application/json:
               schema:
                 description: QueryGranteeGrantsResponse is the response type for the
                   Query/GranteeGrants RPC method.
@@ -13423,7 +13471,7 @@ paths:
           description: A successful response.
         default:
           content:
-            '*/*':
+            application/json:
               schema:
                 properties:
                   code:
@@ -13509,10 +13557,9 @@ paths:
                     type: string
                 type: object
           description: An unexpected error response.
-      summary: ''
+      summary: List grants for a grantee
       tags:
       - authz
-      - Query
   /cosmos/authz/v1beta1/grants/granter/{granter}:
     get:
       operationId: GranterGrants
@@ -13580,7 +13627,7 @@ paths:
       responses:
         '200':
           content:
-            '*/*':
+            application/json:
               schema:
                 description: QueryGranterGrantsResponse is the response type for the
                   Query/GranterGrants RPC method.
@@ -13696,7 +13743,7 @@ paths:
           description: A successful response.
         default:
           content:
-            '*/*':
+            application/json:
               schema:
                 properties:
                   code:
@@ -13782,10 +13829,9 @@ paths:
                     type: string
                 type: object
           description: An unexpected error response.
-      summary: ''
+      summary: List grants by a granter
       tags:
       - authz
-      - Query
   /cosmos/bank/v1beta1/balances/{address}:
     get:
       operationId: AllBalances
@@ -13854,7 +13900,7 @@ paths:
       responses:
         '200':
           content:
-            '*/*':
+            application/json:
               schema:
                 description: 'QueryAllBalancesResponse is the response type for the
                   Query/AllBalances RPC
@@ -13900,7 +13946,7 @@ paths:
           description: A successful response.
         default:
           content:
-            '*/*':
+            application/json:
               schema:
                 properties:
                   code:
@@ -13922,10 +13968,9 @@ paths:
                     type: string
                 type: object
           description: An unexpected error response.
-      summary: ''
+      summary: Get all balances for an address
       tags:
       - bank
-      - Query
   /cosmos/bank/v1beta1/balances/{address}/by_denom:
     get:
       operationId: Balance
@@ -13945,7 +13990,7 @@ paths:
       responses:
         '200':
           content:
-            '*/*':
+            application/json:
               schema:
                 description: QueryBalanceResponse is the response type for the Query/Balance
                   RPC method.
@@ -13969,7 +14014,7 @@ paths:
           description: A successful response.
         default:
           content:
-            '*/*':
+            application/json:
               schema:
                 properties:
                   code:
@@ -13991,10 +14036,9 @@ paths:
                     type: string
                 type: object
           description: An unexpected error response.
-      summary: ''
+      summary: Get balance for a specific denomination
       tags:
       - bank
-      - Query
   /cosmos/bank/v1beta1/base_denom:
     get:
       operationId: BaseDenom
@@ -14007,7 +14051,7 @@ paths:
       responses:
         '200':
           content:
-            '*/*':
+            application/json:
               schema:
                 description: QueryBaseDenomResponse defines the response type for
                   the BaseDenom gRPC method.
@@ -14018,7 +14062,7 @@ paths:
           description: A successful response.
         default:
           content:
-            '*/*':
+            application/json:
               schema:
                 properties:
                   code:
@@ -14040,10 +14084,9 @@ paths:
                     type: string
                 type: object
           description: An unexpected error response.
-      summary: ''
+      summary: Get the base denomination
       tags:
       - bank
-      - Query
   /cosmos/bank/v1beta1/denoms_metadata:
     get:
       operationId: DenomsMetadata
@@ -14106,7 +14149,7 @@ paths:
       responses:
         '200':
           content:
-            '*/*':
+            application/json:
               schema:
                 description: 'QueryDenomsMetadataResponse is the response type for
                   the Query/DenomsMetadata RPC
@@ -14205,7 +14248,7 @@ paths:
           description: A successful response.
         default:
           content:
-            '*/*':
+            application/json:
               schema:
                 properties:
                   code:
@@ -14227,10 +14270,9 @@ paths:
                     type: string
                 type: object
           description: An unexpected error response.
-      summary: ''
+      summary: List all denomination metadata
       tags:
       - bank
-      - Query
   /cosmos/bank/v1beta1/denoms_metadata/{denom}:
     get:
       operationId: DenomMetadata
@@ -14244,7 +14286,7 @@ paths:
       responses:
         '200':
           content:
-            '*/*':
+            application/json:
               schema:
                 description: 'QueryDenomMetadataResponse is the response type for
                   the Query/DenomMetadata RPC
@@ -14322,7 +14364,7 @@ paths:
           description: A successful response.
         default:
           content:
-            '*/*':
+            application/json:
               schema:
                 properties:
                   code:
@@ -14344,17 +14386,16 @@ paths:
                     type: string
                 type: object
           description: An unexpected error response.
-      summary: ''
+      summary: Get metadata for a specific denomination
       tags:
       - bank
-      - Query
   /cosmos/bank/v1beta1/params:
     get:
       operationId: BankParams
       responses:
         '200':
           content:
-            '*/*':
+            application/json:
               schema:
                 description: QueryParamsResponse defines the response type for querying
                   x/bank parameters.
@@ -14382,7 +14423,7 @@ paths:
           description: A successful response.
         default:
           content:
-            '*/*':
+            application/json:
               schema:
                 properties:
                   code:
@@ -14404,10 +14445,9 @@ paths:
                     type: string
                 type: object
           description: An unexpected error response.
-      summary: ''
+      summary: Get bank module parameters
       tags:
       - bank
-      - Query
   /cosmos/bank/v1beta1/supply:
     get:
       operationId: TotalSupply
@@ -14470,7 +14510,7 @@ paths:
       responses:
         '200':
           content:
-            '*/*':
+            application/json:
               schema:
                 properties:
                   pagination:
@@ -14519,7 +14559,7 @@ paths:
           description: A successful response.
         default:
           content:
-            '*/*':
+            application/json:
               schema:
                 properties:
                   code:
@@ -14541,10 +14581,9 @@ paths:
                     type: string
                 type: object
           description: An unexpected error response.
-      summary: ''
+      summary: Get total supply of all coins
       tags:
       - bank
-      - Query
   /cosmos/bank/v1beta1/supply/{denom}:
     get:
       operationId: SupplyOf
@@ -14558,7 +14597,7 @@ paths:
       responses:
         '200':
           content:
-            '*/*':
+            application/json:
               schema:
                 description: QuerySupplyOfResponse is the response type for the Query/SupplyOf
                   RPC method.
@@ -14582,7 +14621,7 @@ paths:
           description: A successful response.
         default:
           content:
-            '*/*':
+            application/json:
               schema:
                 properties:
                   code:
@@ -14604,10 +14643,9 @@ paths:
                     type: string
                 type: object
           description: An unexpected error response.
-      summary: ''
+      summary: Get supply of a specific denomination
       tags:
       - bank
-      - Query
   /cosmos/bank/v1beta1/supply_without_offset:
     get:
       operationId: TotalSupplyWithoutOffset
@@ -14670,7 +14708,7 @@ paths:
       responses:
         '200':
           content:
-            '*/*':
+            application/json:
               schema:
                 properties:
                   pagination:
@@ -14719,7 +14757,7 @@ paths:
           description: A successful response.
         default:
           content:
-            '*/*':
+            application/json:
               schema:
                 properties:
                   code:
@@ -14741,10 +14779,9 @@ paths:
                     type: string
                 type: object
           description: An unexpected error response.
-      summary: ''
+      summary: Get total supply without offset
       tags:
       - bank
-      - Query
   /cosmos/bank/v1beta1/supply_without_offset/{denom}:
     get:
       operationId: SupplyOfWithoutOffset
@@ -14758,7 +14795,7 @@ paths:
       responses:
         '200':
           content:
-            '*/*':
+            application/json:
               schema:
                 description: QuerySupplyOfWithoutOffsetResponse is the response type
                   for the Query/SupplyOfWithoutOffset RPC method.
@@ -14782,7 +14819,7 @@ paths:
           description: A successful response.
         default:
           content:
-            '*/*':
+            application/json:
               schema:
                 properties:
                   code:
@@ -14804,17 +14841,16 @@ paths:
                     type: string
                 type: object
           description: An unexpected error response.
-      summary: ''
+      summary: Get supply of a denomination without offset
       tags:
       - bank
-      - Query
   /cosmos/base/tendermint/v1beta1/blocks/latest:
     get:
       operationId: GetLatestBlock
       responses:
         '200':
           content:
-            '*/*':
+            application/json:
               schema:
                 description: GetLatestBlockResponse is the response type for the Query/GetLatestBlock
                   RPC method.
@@ -15359,7 +15395,7 @@ paths:
           description: A successful response.
         default:
           content:
-            '*/*':
+            application/json:
               schema:
                 properties:
                   code:
@@ -15445,10 +15481,9 @@ paths:
                     type: string
                 type: object
           description: An unexpected error response.
-      summary: ''
+      summary: Get the latest block
       tags:
       - base
-      - Query
   /cosmos/base/tendermint/v1beta1/blocks/{height}:
     get:
       operationId: GetBlockByHeight
@@ -15462,7 +15497,7 @@ paths:
       responses:
         '200':
           content:
-            '*/*':
+            application/json:
               schema:
                 description: GetBlockByHeightResponse is the response type for the
                   Query/GetBlockByHeight RPC method.
@@ -16007,7 +16042,7 @@ paths:
           description: A successful response.
         default:
           content:
-            '*/*':
+            application/json:
               schema:
                 properties:
                   code:
@@ -16093,17 +16128,16 @@ paths:
                     type: string
                 type: object
           description: An unexpected error response.
-      summary: ''
+      summary: Get block by height
       tags:
       - base
-      - Query
   /cosmos/base/tendermint/v1beta1/node_info:
     get:
       operationId: GetNodeInfo
       responses:
         '200':
           content:
-            '*/*':
+            application/json:
               schema:
                 description: GetNodeInfoResponse is the request type for the Query/GetNodeInfo
                   RPC method.
@@ -16182,7 +16216,7 @@ paths:
           description: A successful response.
         default:
           content:
-            '*/*':
+            application/json:
               schema:
                 properties:
                   code:
@@ -16268,17 +16302,16 @@ paths:
                     type: string
                 type: object
           description: An unexpected error response.
-      summary: ''
+      summary: Get node information
       tags:
       - base
-      - Query
   /cosmos/base/tendermint/v1beta1/syncing:
     get:
       operationId: GetSyncing
       responses:
         '200':
           content:
-            '*/*':
+            application/json:
               schema:
                 description: GetSyncingResponse is the response type for the Query/GetSyncing
                   RPC method.
@@ -16289,7 +16322,7 @@ paths:
           description: A successful response.
         default:
           content:
-            '*/*':
+            application/json:
               schema:
                 properties:
                   code:
@@ -16375,10 +16408,9 @@ paths:
                     type: string
                 type: object
           description: An unexpected error response.
-      summary: ''
+      summary: Get node syncing status
       tags:
       - base
-      - Query
   /cosmos/base/tendermint/v1beta1/validatorsets/latest:
     get:
       operationId: GetLatestValidatorSet
@@ -16441,7 +16473,7 @@ paths:
       responses:
         '200':
           content:
-            '*/*':
+            application/json:
               schema:
                 description: GetLatestValidatorSetResponse is the response type for
                   the Query/GetValidatorSetByHeight RPC method.
@@ -16557,7 +16589,7 @@ paths:
           description: A successful response.
         default:
           content:
-            '*/*':
+            application/json:
               schema:
                 properties:
                   code:
@@ -16643,10 +16675,9 @@ paths:
                     type: string
                 type: object
           description: An unexpected error response.
-      summary: ''
+      summary: Get the latest validator set
       tags:
       - base
-      - Query
   /cosmos/base/tendermint/v1beta1/validatorsets/{height}:
     get:
       operationId: GetValidatorSetByHeight
@@ -16715,7 +16746,7 @@ paths:
       responses:
         '200':
           content:
-            '*/*':
+            application/json:
               schema:
                 description: GetValidatorSetByHeightResponse is the response type
                   for the Query/GetValidatorSetByHeight RPC method.
@@ -16831,7 +16862,7 @@ paths:
           description: A successful response.
         default:
           content:
-            '*/*':
+            application/json:
               schema:
                 properties:
                   code:
@@ -16917,10 +16948,9 @@ paths:
                     type: string
                 type: object
           description: An unexpected error response.
-      summary: ''
+      summary: Get validator set by height
       tags:
       - base
-      - Query
   /sentinel/deposits:
     get:
       operationId: DepositsList
@@ -16963,7 +16993,7 @@ paths:
       responses:
         '200':
           content:
-            '*/*':
+            application/json:
               schema:
                 description: QueryDepositResponse is response type for the Query/Deposit
                   RPC method.
@@ -17005,7 +17035,7 @@ paths:
           description: A successful response.
         default:
           content:
-            '*/*':
+            application/json:
               schema:
                 properties:
                   code:
@@ -17027,16 +17057,15 @@ paths:
                     type: string
                 type: object
           description: An unexpected error response.
-      summary: ''
+      summary: List all deposits
       tags:
       - deposits
-      - Query
   /sentinel/deposits/{deposit_address}:
     get:
       operationId: DepositInfo
       parameters:
       - description: 'Address defines the unique address of the depositor'
-        in: query
+        in: path
         name: deposit_address
         required: true
         schema:
@@ -17045,7 +17074,7 @@ paths:
       responses:
         '200':
           content:
-            '*/*':
+            application/json:
               schema:
                 description: QueryDepositResponse is response type for the Query/Deposit
                   RPC method.
@@ -17070,7 +17099,7 @@ paths:
           description: A successful response.
         default:
           content:
-            '*/*':
+            application/json:
               schema:
                 properties:
                   code:
@@ -17092,17 +17121,16 @@ paths:
                     type: string
                 type: object
           description: An unexpected error response.
-      summary: ''
+      summary: Get deposit information by address
       tags:
       - deposits
-      - Query
   /cosmos/distribution/v1beta1/community_pool:
     get:
       operationId: CommunityPool
       responses:
         '200':
           content:
-            '*/*':
+            application/json:
               schema:
                 description: 'QueryCommunityPoolResponse is the response type for
                   the Query/CommunityPool
@@ -17131,7 +17159,7 @@ paths:
           description: A successful response.
         default:
           content:
-            '*/*':
+            application/json:
               schema:
                 properties:
                   code:
@@ -17153,10 +17181,9 @@ paths:
                     type: string
                 type: object
           description: An unexpected error response.
-      summary: ''
+      summary: Get the community pool balance
       tags:
       - distribution
-      - Query
   /cosmos/distribution/v1beta1/delegators/{delegator_address}/rewards:
     get:
       operationId: DelegationTotalRewards
@@ -17170,7 +17197,7 @@ paths:
       responses:
         '200':
           content:
-            '*/*':
+            application/json:
               schema:
                 description: 'QueryDelegationTotalRewardsResponse is the response
                   type for the
@@ -17227,7 +17254,7 @@ paths:
           description: A successful response.
         default:
           content:
-            '*/*':
+            application/json:
               schema:
                 properties:
                   code:
@@ -17249,10 +17276,9 @@ paths:
                     type: string
                 type: object
           description: An unexpected error response.
-      summary: ''
+      summary: Get total delegation rewards for a delegator
       tags:
       - distribution
-      - Query
   /cosmos/distribution/v1beta1/delegators/{delegator_address}/rewards/{validator_address}:
     get:
       operationId: DelegationRewards
@@ -17272,7 +17298,7 @@ paths:
       responses:
         '200':
           content:
-            '*/*':
+            application/json:
               schema:
                 description: 'QueryDelegationRewardsResponse is the response type
                   for the
@@ -17301,7 +17327,7 @@ paths:
           description: A successful response.
         default:
           content:
-            '*/*':
+            application/json:
               schema:
                 properties:
                   code:
@@ -17323,10 +17349,9 @@ paths:
                     type: string
                 type: object
           description: An unexpected error response.
-      summary: ''
+      summary: Get delegation rewards for a specific validator
       tags:
       - distribution
-      - Query
   /cosmos/distribution/v1beta1/delegators/{delegator_address}/validators:
     get:
       operationId: DelegatorValidators
@@ -17340,7 +17365,7 @@ paths:
       responses:
         '200':
           content:
-            '*/*':
+            application/json:
               schema:
                 description: 'QueryDelegatorValidatorsResponse is the response type
                   for the
@@ -17357,7 +17382,7 @@ paths:
           description: A successful response.
         default:
           content:
-            '*/*':
+            application/json:
               schema:
                 properties:
                   code:
@@ -17379,10 +17404,9 @@ paths:
                     type: string
                 type: object
           description: An unexpected error response.
-      summary: ''
+      summary: List validators for a delegator
       tags:
       - distribution
-      - Query
   /cosmos/distribution/v1beta1/delegators/{delegator_address}/withdraw_address:
     get:
       operationId: DelegatorWithdrawAddress
@@ -17396,7 +17420,7 @@ paths:
       responses:
         '200':
           content:
-            '*/*':
+            application/json:
               schema:
                 description: 'QueryDelegatorWithdrawAddressResponse is the response
                   type for the
@@ -17411,7 +17435,7 @@ paths:
           description: A successful response.
         default:
           content:
-            '*/*':
+            application/json:
               schema:
                 properties:
                   code:
@@ -17433,17 +17457,16 @@ paths:
                     type: string
                 type: object
           description: An unexpected error response.
-      summary: ''
+      summary: Get delegator withdraw address
       tags:
       - distribution
-      - Query
   /cosmos/distribution/v1beta1/params:
     get:
       operationId: DistributionParams
       responses:
         '200':
           content:
-            '*/*':
+            application/json:
               schema:
                 description: QueryParamsResponse is the response type for the Query/Params
                   RPC method.
@@ -17464,7 +17487,7 @@ paths:
           description: A successful response.
         default:
           content:
-            '*/*':
+            application/json:
               schema:
                 properties:
                   code:
@@ -17486,10 +17509,9 @@ paths:
                     type: string
                 type: object
           description: An unexpected error response.
-      summary: ''
+      summary: Get distribution module parameters
       tags:
       - distribution
-      - Query
   /cosmos/distribution/v1beta1/validators/{validator_address}/commission:
     get:
       operationId: ValidatorCommission
@@ -17503,7 +17525,7 @@ paths:
       responses:
         '200':
           content:
-            '*/*':
+            application/json:
               schema:
                 properties:
                   commission:
@@ -17535,7 +17557,7 @@ paths:
           description: A successful response.
         default:
           content:
-            '*/*':
+            application/json:
               schema:
                 properties:
                   code:
@@ -17557,10 +17579,9 @@ paths:
                     type: string
                 type: object
           description: An unexpected error response.
-      summary: ''
+      summary: Get validator commission
       tags:
       - distribution
-      - Query
   /cosmos/distribution/v1beta1/validators/{validator_address}/outstanding_rewards:
     get:
       operationId: ValidatorOutstandingRewards
@@ -17574,7 +17595,7 @@ paths:
       responses:
         '200':
           content:
-            '*/*':
+            application/json:
               schema:
                 description: 'QueryValidatorOutstandingRewardsResponse is the response
                   type for the
@@ -17609,7 +17630,7 @@ paths:
           description: A successful response.
         default:
           content:
-            '*/*':
+            application/json:
               schema:
                 properties:
                   code:
@@ -17631,10 +17652,9 @@ paths:
                     type: string
                 type: object
           description: An unexpected error response.
-      summary: ''
+      summary: Get validator outstanding rewards
       tags:
       - distribution
-      - Query
   /cosmos/distribution/v1beta1/validators/{validator_address}/slashes:
     get:
       operationId: ValidatorSlashes
@@ -17719,7 +17739,7 @@ paths:
       responses:
         '200':
           content:
-            '*/*':
+            application/json:
               schema:
                 description: 'QueryValidatorSlashesResponse is the response type for
                   the
@@ -17767,7 +17787,7 @@ paths:
           description: A successful response.
         default:
           content:
-            '*/*':
+            application/json:
               schema:
                 properties:
                   code:
@@ -17789,10 +17809,9 @@ paths:
                     type: string
                 type: object
           description: An unexpected error response.
-      summary: ''
+      summary: Get validator slashing events
       tags:
       - distribution
-      - Query
   /cosmos/evidence/v1beta1/evidence:
     get:
       operationId: AllEvidence
@@ -17855,7 +17874,7 @@ paths:
       responses:
         '200':
           content:
-            '*/*':
+            application/json:
               schema:
                 description: 'QueryAllEvidenceResponse is the response type for the
                   Query/AllEvidence RPC
@@ -17958,7 +17977,7 @@ paths:
           description: A successful response.
         default:
           content:
-            '*/*':
+            application/json:
               schema:
                 properties:
                   code:
@@ -18044,10 +18063,9 @@ paths:
                     type: string
                 type: object
           description: An unexpected error response.
-      summary: ''
+      summary: List all evidence
       tags:
       - evidence
-      - Query
   /cosmos/evidence/v1beta1/evidence/{evidence_hash}:
     get:
       operationId: Evidence
@@ -18062,7 +18080,7 @@ paths:
       responses:
         '200':
           content:
-            '*/*':
+            application/json:
               schema:
                 description: QueryEvidenceResponse is the response type for the Query/Evidence
                   RPC method.
@@ -18139,7 +18157,7 @@ paths:
           description: A successful response.
         default:
           content:
-            '*/*':
+            application/json:
               schema:
                 properties:
                   code:
@@ -18225,10 +18243,9 @@ paths:
                     type: string
                 type: object
           description: An unexpected error response.
-      summary: ''
+      summary: Get evidence by hash
       tags:
       - evidence
-      - Query
   /cosmos/feegrant/v1beta1/allowance/{granter}/{grantee}:
     get:
       operationId: Allowance
@@ -18250,7 +18267,7 @@ paths:
       responses:
         '200':
           content:
-            '*/*':
+            application/json:
               schema:
                 description: QueryAllowanceResponse is the response type for the Query/Allowance
                   RPC method.
@@ -18310,7 +18327,7 @@ paths:
           description: A successful response.
         default:
           content:
-            '*/*':
+            application/json:
               schema:
                 properties:
                   code:
@@ -18396,10 +18413,9 @@ paths:
                     type: string
                 type: object
           description: An unexpected error response.
-      summary: ''
+      summary: Get fee allowance for a grantee from a granter
       tags:
       - feegrant
-      - Query
   /cosmos/feegrant/v1beta1/allowances/{grantee}:
     get:
       operationId: Allowances
@@ -18467,7 +18483,7 @@ paths:
       responses:
         '200':
           content:
-            '*/*':
+            application/json:
               schema:
                 description: QueryAllowancesResponse is the response type for the
                   Query/Allowances RPC method.
@@ -18548,7 +18564,7 @@ paths:
           description: A successful response.
         default:
           content:
-            '*/*':
+            application/json:
               schema:
                 properties:
                   code:
@@ -18634,10 +18650,9 @@ paths:
                     type: string
                 type: object
           description: An unexpected error response.
-      summary: ''
+      summary: List all fee allowances for a grantee
       tags:
       - feegrant
-      - Query
   /cosmos/gov/v1beta1/params/{params_type}:
     get:
       operationId: GovParams
@@ -18654,7 +18669,7 @@ paths:
       responses:
         '200':
           content:
-            '*/*':
+            application/json:
               schema:
                 description: QueryParamsResponse is the response type for the Query/Params
                   RPC method.
@@ -18769,7 +18784,7 @@ paths:
           description: A successful response.
         default:
           content:
-            '*/*':
+            application/json:
               schema:
                 properties:
                   code:
@@ -18855,10 +18870,9 @@ paths:
                     type: string
                 type: object
           description: An unexpected error response.
-      summary: ''
+      summary: Get governance parameters
       tags:
       - gov
-      - Query
   /cosmos/gov/v1beta1/proposals:
     get:
       operationId: Proposals
@@ -18956,7 +18970,7 @@ paths:
       responses:
         '200':
           content:
-            '*/*':
+            application/json:
               schema:
                 description: 'QueryProposalsResponse is the response type for the
                   Query/Proposals RPC
@@ -19134,7 +19148,7 @@ paths:
           description: A successful response.
         default:
           content:
-            '*/*':
+            application/json:
               schema:
                 properties:
                   code:
@@ -19220,10 +19234,9 @@ paths:
                     type: string
                 type: object
           description: An unexpected error response.
-      summary: ''
+      summary: List all governance proposals
       tags:
       - gov
-      - Query
   /cosmos/gov/v1beta1/proposals/{proposal_id}:
     get:
       operationId: Proposal
@@ -19238,7 +19251,7 @@ paths:
       responses:
         '200':
           content:
-            '*/*':
+            application/json:
               schema:
                 description: QueryProposalResponse is the response type for the Query/Proposal
                   RPC method.
@@ -19394,7 +19407,7 @@ paths:
           description: A successful response.
         default:
           content:
-            '*/*':
+            application/json:
               schema:
                 properties:
                   code:
@@ -19480,10 +19493,9 @@ paths:
                     type: string
                 type: object
           description: An unexpected error response.
-      summary: ''
+      summary: Get a governance proposal by ID
       tags:
       - gov
-      - Query
   /cosmos/gov/v1beta1/proposals/{proposal_id}/deposits:
     get:
       operationId: Deposits
@@ -19553,7 +19565,7 @@ paths:
       responses:
         '200':
           content:
-            '*/*':
+            application/json:
               schema:
                 description: QueryDepositsResponse is the response type for the Query/Deposits
                   RPC method.
@@ -19610,7 +19622,7 @@ paths:
           description: A successful response.
         default:
           content:
-            '*/*':
+            application/json:
               schema:
                 properties:
                   code:
@@ -19696,10 +19708,9 @@ paths:
                     type: string
                 type: object
           description: An unexpected error response.
-      summary: ''
+      summary: List deposits for a proposal
       tags:
       - gov
-      - Query
   /cosmos/gov/v1beta1/proposals/{proposal_id}/deposits/{depositor}:
     get:
       operationId: Deposit
@@ -19720,7 +19731,7 @@ paths:
       responses:
         '200':
           content:
-            '*/*':
+            application/json:
               schema:
                 description: QueryDepositResponse is the response type for the Query/Deposit
                   RPC method.
@@ -19758,7 +19769,7 @@ paths:
           description: A successful response.
         default:
           content:
-            '*/*':
+            application/json:
               schema:
                 properties:
                   code:
@@ -19844,10 +19855,9 @@ paths:
                     type: string
                 type: object
           description: An unexpected error response.
-      summary: ''
+      summary: Get a specific deposit for a proposal
       tags:
       - gov
-      - Query
   /cosmos/gov/v1beta1/proposals/{proposal_id}/tally:
     get:
       operationId: TallyResult
@@ -19862,7 +19872,7 @@ paths:
       responses:
         '200':
           content:
-            '*/*':
+            application/json:
               schema:
                 description: QueryTallyResultResponse is the response type for the
                   Query/Tally RPC method.
@@ -19884,7 +19894,7 @@ paths:
           description: A successful response.
         default:
           content:
-            '*/*':
+            application/json:
               schema:
                 properties:
                   code:
@@ -19970,10 +19980,9 @@ paths:
                     type: string
                 type: object
           description: An unexpected error response.
-      summary: ''
+      summary: Get tally result for a proposal
       tags:
       - gov
-      - Query
   /cosmos/gov/v1beta1/proposals/{proposal_id}/votes:
     get:
       operationId: Votes
@@ -20043,7 +20052,7 @@ paths:
       responses:
         '200':
           content:
-            '*/*':
+            application/json:
               schema:
                 description: QueryVotesResponse is the response type for the Query/Votes
                   RPC method.
@@ -20132,7 +20141,7 @@ paths:
           description: A successful response.
         default:
           content:
-            '*/*':
+            application/json:
               schema:
                 properties:
                   code:
@@ -20218,10 +20227,9 @@ paths:
                     type: string
                 type: object
           description: An unexpected error response.
-      summary: ''
+      summary: List votes for a proposal
       tags:
       - gov
-      - Query
   /cosmos/gov/v1beta1/proposals/{proposal_id}/votes/{voter}:
     get:
       operationId: Vote
@@ -20242,7 +20250,7 @@ paths:
       responses:
         '200':
           content:
-            '*/*':
+            application/json:
               schema:
                 description: QueryVoteResponse is the response type for the Query/Vote
                   RPC method.
@@ -20309,7 +20317,7 @@ paths:
           description: A successful response.
         default:
           content:
-            '*/*':
+            application/json:
               schema:
                 properties:
                   code:
@@ -20395,17 +20403,16 @@ paths:
                     type: string
                 type: object
           description: An unexpected error response.
-      summary: ''
+      summary: Get a specific vote for a proposal
       tags:
       - gov
-      - Query
   /cosmos/mint/v1beta1/annual_provisions:
     get:
       operationId: AnnualProvisions
       responses:
         '200':
           content:
-            '*/*':
+            application/json:
               schema:
                 description: 'QueryAnnualProvisionsResponse is the response type for
                   the
@@ -20421,7 +20428,7 @@ paths:
           description: A successful response.
         default:
           content:
-            '*/*':
+            application/json:
               schema:
                 properties:
                   code:
@@ -20443,17 +20450,16 @@ paths:
                     type: string
                 type: object
           description: An unexpected error response.
-      summary: ''
+      summary: Get current annual provisions
       tags:
       - mint
-      - Query
   /cosmos/mint/v1beta1/inflation:
     get:
       operationId: Inflation
       responses:
         '200':
           content:
-            '*/*':
+            application/json:
               schema:
                 description: 'QueryInflationResponse is the response type for the
                   Query/Inflation RPC
@@ -20468,7 +20474,7 @@ paths:
           description: A successful response.
         default:
           content:
-            '*/*':
+            application/json:
               schema:
                 properties:
                   code:
@@ -20490,17 +20496,16 @@ paths:
                     type: string
                 type: object
           description: An unexpected error response.
-      summary: ''
+      summary: Get current inflation rate
       tags:
       - mint
-      - Query
   /cosmos/mint/v1beta1/params:
     get:
       operationId: CosmosMintParams
       responses:
         '200':
           content:
-            '*/*':
+            application/json:
               schema:
                 description: QueryParamsResponse is the response type for the Query/Params
                   RPC method.
@@ -20532,7 +20537,7 @@ paths:
           description: A successful response.
         default:
           content:
-            '*/*':
+            application/json:
               schema:
                 properties:
                   code:
@@ -20554,10 +20559,9 @@ paths:
                     type: string
                 type: object
           description: An unexpected error response.
-      summary: ''
+      summary: Get mint module parameters
       tags:
       - mint
-      - Query
   /sentinel/nodes:
     get:
       operationId: NodesList
@@ -20600,7 +20604,7 @@ paths:
       responses:
         '200':
           content:
-            '*/*':
+            application/json:
               schema:
                 description: QueryNodeResponse is response type for the Query/Plan
                   RPC method.
@@ -20663,7 +20667,7 @@ paths:
           description: A successful response.
         default:
           content:
-            '*/*':
+            application/json:
               schema:
                 properties:
                   code:
@@ -20685,16 +20689,15 @@ paths:
                     type: string
                 type: object
           description: An unexpected error response.
-      summary: ''
+      summary: List all registered nodes
       tags:
       - nodes
-      - Query
   /sentinel/nodes/{node_address}:
     get:
       operationId: NodeInfo
       parameters:
       - description: 'Node Address defines the unique address of the node'
-        in: query
+        in: path
         name: node_address
         required: true
         schema:
@@ -20703,7 +20706,7 @@ paths:
       responses:
         '200':
           content:
-            '*/*':
+            application/json:
               schema:
                 description: QueryNodeResponse is response type for the Query/Plan
                   RPC method.
@@ -20749,7 +20752,7 @@ paths:
           description: A successful response.
         default:
           content:
-            '*/*':
+            application/json:
               schema:
                 properties:
                   code:
@@ -20771,17 +20774,16 @@ paths:
                     type: string
                 type: object
           description: An unexpected error response.
-      summary: ''
+      summary: Get node information by address
       tags:
       - nodes
-      - Query
   /sentinel/modules/node/params:
     get:
       operationId: NodeParams
       responses:
         '200':
           content:
-            '*/*':
+            application/json:
               schema:
                 description: QueryNodeParamsResponse is response type for the Query/NodeParams
                   RPC method.
@@ -20854,7 +20856,7 @@ paths:
           description: A successful response.
         default:
           content:
-            '*/*':
+            application/json:
               schema:
                 properties:
                   code:
@@ -20876,16 +20878,15 @@ paths:
                     type: string
                 type: object
           description: An unexpected error response.
-      summary: ''
+      summary: Get node module parameters
       tags:
       - nodes
-      - Query
   /sentinel/nodes/{node_address}/payouts:
     get:
       operationId: NodePayouts
       parameters:
       - description: 'Node Payouts defines the payouts of the node'
-        in: query
+        in: path
         name: node_address
         required: true
         schema:
@@ -20894,7 +20895,7 @@ paths:
       responses:
         '200':
           content:
-            '*/*':
+            application/json:
               schema:
                 description: QueryNodeResponse is response type for the Query/Plan
                   RPC method.
@@ -20950,7 +20951,7 @@ paths:
           description: A successful response.
         default:
           content:
-            '*/*':
+            application/json:
               schema:
                 properties:
                   code:
@@ -20972,16 +20973,15 @@ paths:
                     type: string
                 type: object
           description: An unexpected error response.
-      summary: ''
+      summary: List payouts for a node
       tags:
       - nodes
-      - Query
   /sentinel/nodes/{node_address}/sessions:
     get:
       operationId: NodeSessions
       parameters:
       - description: 'Node Sessions defines the sessions of the node'
-        in: query
+        in: path
         name: node_address
         required: true
         schema:
@@ -21025,7 +21025,7 @@ paths:
       responses:
         '200':
           content:
-            '*/*':
+            application/json:
               schema:
                 description: QueryNodeResponse is response type for the Query/Plan
                   RPC method.
@@ -21090,7 +21090,7 @@ paths:
           description: A successful response.
         default:
           content:
-            '*/*':
+            application/json:
               schema:
                 properties:
                   code:
@@ -21112,16 +21112,15 @@ paths:
                     type: string
                 type: object
           description: An unexpected error response.
-      summary: ''
+      summary: List sessions for a node
       tags:
       - nodes
-      - Query
   /sentinel/nodes/{node_address}/subscriptions:
     get:
       operationId: NodeSubscriptions
       parameters:
       - description: 'Node Subscriptions defines the subscriptions of the node'
-        in: query
+        in: path
         name: node_address
         required: true
         schema:
@@ -21165,7 +21164,7 @@ paths:
       responses:
         '200':
           content:
-            '*/*':
+            application/json:
               schema:
                 description: QueryNodeResponse is response type for the Query/Plan
                   RPC method.
@@ -21237,7 +21236,7 @@ paths:
           description: A successful response.
         default:
           content:
-            '*/*':
+            application/json:
               schema:
                 properties:
                   code:
@@ -21259,10 +21258,9 @@ paths:
                     type: string
                 type: object
           description: An unexpected error response.
-      summary: ''
+      summary: List subscriptions for a node
       tags:
       - nodes
-      - Query
   /cosmos/params/v1beta1/params:
     get:
       operationId: Params
@@ -21282,7 +21280,7 @@ paths:
       responses:
         '200':
           content:
-            '*/*':
+            application/json:
               schema:
                 description: QueryParamsResponse is response type for the Query/Params
                   RPC method.
@@ -21301,7 +21299,7 @@ paths:
           description: A successful response.
         default:
           content:
-            '*/*':
+            application/json:
               schema:
                 properties:
                   code:
@@ -21323,10 +21321,9 @@ paths:
                     type: string
                 type: object
           description: An unexpected error response.
-      summary: ''
+      summary: Query module parameters by subspace and key
       tags:
       - params
-      - Query
   /sentinel/payouts:
     get:
       operationId: PayoutsList
@@ -21369,7 +21366,7 @@ paths:
       responses:
         '200':
           content:
-            '*/*':
+            application/json:
               schema:
                 description: QueryPayoutResponse is response type for the Query/Payout
                   RPC method.
@@ -21425,7 +21422,7 @@ paths:
           description: A successful response.
         default:
           content:
-            '*/*':
+            application/json:
               schema:
                 properties:
                   code:
@@ -21447,16 +21444,15 @@ paths:
                     type: string
                 type: object
           description: An unexpected error response.
-      summary: ''
+      summary: List all payouts
       tags:
       - payouts
-      - Query
   /sentinel/payouts/{payout_id}:
     get:
       operationId: PayoutInfo
       parameters:
       - description: 'payout_id defines the unique id of the payout'
-        in: query
+        in: path
         name: payout_id
         required: true
         schema:
@@ -21465,7 +21461,7 @@ paths:
       responses:
         '200':
           content:
-            '*/*':
+            application/json:
               schema:
                 description: QueryPayoutResponse is response type for the Query/Payout
                   RPC method.
@@ -21504,7 +21500,7 @@ paths:
           description: A successful response.
         default:
           content:
-            '*/*':
+            application/json:
               schema:
                 properties:
                   code:
@@ -21526,10 +21522,9 @@ paths:
                     type: string
                 type: object
           description: An unexpected error response.
-      summary: ''
+      summary: Get payout information by ID
       tags:
       - payouts
-      - Query
   /sentinel/plans:
     get:
       operationId: PlansList
@@ -21592,7 +21587,7 @@ paths:
       responses:
         '200':
           content:
-            '*/*':
+            application/json:
               schema:
                 description: QueryPlanResponse is response type for the Query/Plan
                   RPC method.
@@ -21646,7 +21641,7 @@ paths:
           description: A successful response.
         default:
           content:
-            '*/*':
+            application/json:
               schema:
                 properties:
                   code:
@@ -21668,16 +21663,15 @@ paths:
                     type: string
                 type: object
           description: An unexpected error response.
-      summary: ''
+      summary: List all plans
       tags:
       - plans
-      - Query
   /sentinel/plans/{plan_id}:
     get:
       operationId: PlanInfo
       parameters:
       - description: 'plan_id defines the unique id of the plan'
-        in: query
+        in: path
         name: plan_id
         required: true
         schema:
@@ -21686,7 +21680,7 @@ paths:
       responses:
         '200':
           content:
-            '*/*':
+            application/json:
               schema:
                 description: QueryPlanResponse is response type for the Query/Plan
                   RPC method.
@@ -21727,7 +21721,7 @@ paths:
           description: A successful response.
         default:
           content:
-            '*/*':
+            application/json:
               schema:
                 properties:
                   code:
@@ -21749,10 +21743,9 @@ paths:
                     type: string
                 type: object
           description: An unexpected error response.
-      summary: ''
+      summary: Get plan information by ID
       tags:
       - plans
-      - Query
   /sentinel/plans/{plan_id}/nodes:
     get:
       operationId: PlanNodes
@@ -21803,7 +21796,7 @@ paths:
       responses:
         '200':
           content:
-            '*/*':
+            application/json:
               schema:
                 description: QueryPlanResponse is response type for the Query/Plan
                   RPC method.
@@ -21866,7 +21859,7 @@ paths:
           description: A successful response.
         default:
           content:
-            '*/*':
+            application/json:
               schema:
                 properties:
                   code:
@@ -21888,10 +21881,9 @@ paths:
                     type: string
                 type: object
           description: An unexpected error response.
-      summary: ''
+      summary: List nodes for a plan
       tags:
       - plans
-      - Query
   /sentinel/plans/{plan_id}/subscriptions:
     get:
       operationId: PlanSubscriptions
@@ -21942,7 +21934,7 @@ paths:
       responses:
         '200':
           content:
-            '*/*':
+            application/json:
               schema:
                 description: QueryPlanResponse is response type for the Query/Plan
                   RPC method.
@@ -21994,7 +21986,7 @@ paths:
           description: A successful response.
         default:
           content:
-            '*/*':
+            application/json:
               schema:
                 properties:
                   code:
@@ -22016,10 +22008,9 @@ paths:
                     type: string
                 type: object
           description: An unexpected error response.
-      summary: ''
+      summary: List subscriptions for a plan
       tags:
       - plans
-      - Query
   /sentinel/providers:
     get:
       operationId: ProvidersList
@@ -22062,7 +22053,7 @@ paths:
       responses:
         '200':
           content:
-            '*/*':
+            application/json:
               schema:
                 description: QueryProviderResponse is response type for the Query/Provider
                   RPC method.
@@ -22113,7 +22104,7 @@ paths:
           description: A successful response.
         default:
           content:
-            '*/*':
+            application/json:
               schema:
                 properties:
                   code:
@@ -22135,16 +22126,15 @@ paths:
                     type: string
                 type: object
           description: An unexpected error response.
-      summary: ''
+      summary: List all providers
       tags:
       - providers
-      - Query
   /sentinel/providers/{provider_address}:
     get:
       operationId: ProviderInfo
       parameters:
       - description: 'Provider Address defines the unique address of the provider'
-        in: query
+        in: path
         name: provider_address
         required: true
         schema:
@@ -22153,7 +22143,7 @@ paths:
       responses:
         '200':
           content:
-            '*/*':
+            application/json:
               schema:
                 description: QueryProviderResponse is response type for the Query/Provider
                   RPC method.
@@ -22187,7 +22177,7 @@ paths:
           description: A successful response.
         default:
           content:
-            '*/*':
+            application/json:
               schema:
                 properties:
                   code:
@@ -22209,17 +22199,16 @@ paths:
                     type: string
                 type: object
           description: An unexpected error response.
-      summary: ''
+      summary: Get provider information by address
       tags:
       - providers
-      - Query
   /sentinel/params/provider:
     get:
       operationId: ProviderParams
       responses:
         '200':
           content:
-            '*/*':
+            application/json:
               schema:
                 description: QueryParamsResponse is response type for the Query/Params
                   RPC method.
@@ -22244,7 +22233,7 @@ paths:
           description: A successful response.
         default:
           content:
-            '*/*':
+            application/json:
               schema:
                 properties:
                   code:
@@ -22266,16 +22255,15 @@ paths:
                     type: string
                 type: object
           description: An unexpected error response.
-      summary: ''
+      summary: Get provider module parameters
       tags:
       - providers
-      - Query
   /sentinel/providers/{provider_address}/plans:
     get:
       operationId: ProviderPlans
       parameters:
       - description: 'Provider Address defines the unique address of the provider'
-        in: query
+        in: path
         name: provider_address
         required: true
         schema:
@@ -22319,7 +22307,7 @@ paths:
       responses:
         '200':
           content:
-            '*/*':
+            application/json:
               schema:
                 description: QueryProviderResponse is response type for the Query/Provider
                   RPC method.
@@ -22376,7 +22364,7 @@ paths:
           description: A successful response.
         default:
           content:
-            '*/*':
+            application/json:
               schema:
                 properties:
                   code:
@@ -22398,10 +22386,9 @@ paths:
                     type: string
                 type: object
           description: An unexpected error response.
-      summary: ''
+      summary: List plans for a provider
       tags:
       - providers
-      - Query
   /sentinel/sessions:
     get:
       operationId: SessionsList
@@ -22444,7 +22431,7 @@ paths:
       responses:
         '200':
           content:
-            '*/*':
+            application/json:
               schema:
                 description: QuerySessionResponse is response type for the Query/Session
                   RPC method.
@@ -22509,7 +22496,7 @@ paths:
           description: A successful response.
         default:
           content:
-            '*/*':
+            application/json:
               schema:
                 properties:
                   code:
@@ -22531,16 +22518,15 @@ paths:
                     type: string
                 type: object
           description: An unexpected error response.
-      summary: ''
+      summary: List all sessions
       tags:
       - sessions
-      - Query
   /sentinel/sessions/{session_id}:
     get:
       operationId: SessionInfo
       parameters:
       - description: 'session_id defines the unique id of the session'
-        in: query
+        in: path
         name: session_id
         required: true
         schema:
@@ -22549,7 +22535,7 @@ paths:
       responses:
         '200':
           content:
-            '*/*':
+            application/json:
               schema:
                 description: QuerySessionResponse is response type for the Query/Session
                   RPC method.
@@ -22597,7 +22583,7 @@ paths:
           description: A successful response.
         default:
           content:
-            '*/*':
+            application/json:
               schema:
                 properties:
                   code:
@@ -22619,17 +22605,16 @@ paths:
                     type: string
                 type: object
           description: An unexpected error response.
-      summary: ''
+      summary: Get session information by ID
       tags:
       - sessions
-      - Query
   /sentinel/modules/session/params:
     get:
       operationId: SessionParams
       responses:
         '200':
           content:
-            '*/*':
+            application/json:
               schema:
                 description: QuerySessionParamsResponse is response type for the Query/SessionParams
                   RPC method.
@@ -22648,7 +22633,7 @@ paths:
           description: A successful response.
         default:
           content:
-            '*/*':
+            application/json:
               schema:
                 properties:
                   code:
@@ -22670,17 +22655,16 @@ paths:
                     type: string
                 type: object
           description: An unexpected error response.
-      summary: ''
+      summary: Get session module parameters
       tags:
       - sessions
-      - Query
   /cosmos/slashing/v1beta1/params:
     get:
       operationId: SlashingParams
       responses:
         '200':
           content:
-            '*/*':
+            application/json:
               schema:
                 properties:
                   params:
@@ -22708,7 +22692,7 @@ paths:
           description: A successful response.
         default:
           content:
-            '*/*':
+            application/json:
               schema:
                 properties:
                   code:
@@ -22730,10 +22714,9 @@ paths:
                     type: string
                 type: object
           description: An unexpected error response.
-      summary: ''
+      summary: Get slashing module parameters
       tags:
       - slashing
-      - Query
   /cosmos/slashing/v1beta1/signing_infos:
     get:
       operationId: SigningInfos
@@ -22796,7 +22779,7 @@ paths:
       responses:
         '200':
           content:
-            '*/*':
+            application/json:
               schema:
                 properties:
                   info:
@@ -22874,7 +22857,7 @@ paths:
           description: A successful response.
         default:
           content:
-            '*/*':
+            application/json:
               schema:
                 properties:
                   code:
@@ -22896,10 +22879,9 @@ paths:
                     type: string
                 type: object
           description: An unexpected error response.
-      summary: ''
+      summary: List all validator signing infos
       tags:
       - slashing
-      - Query
   /cosmos/slashing/v1beta1/signing_infos/{cons_address}:
     get:
       operationId: SigningInfo
@@ -22913,7 +22895,7 @@ paths:
       responses:
         '200':
           content:
-            '*/*':
+            application/json:
               schema:
                 properties:
                   val_signing_info:
@@ -22968,7 +22950,7 @@ paths:
           description: A successful response.
         default:
           content:
-            '*/*':
+            application/json:
               schema:
                 properties:
                   code:
@@ -22990,10 +22972,9 @@ paths:
                     type: string
                 type: object
           description: An unexpected error response.
-      summary: ''
+      summary: Get signing info for a validator
       tags:
       - slashing
-      - Query
   /cosmos/staking/v1beta1/delegations/{delegator_addr}:
     get:
       operationId: DelegatorDelegations
@@ -23062,7 +23043,7 @@ paths:
       responses:
         '200':
           content:
-            '*/*':
+            application/json:
               schema:
                 description: 'QueryDelegatorDelegationsResponse is response type for
                   the
@@ -23138,7 +23119,7 @@ paths:
           description: A successful response.
         default:
           content:
-            '*/*':
+            application/json:
               schema:
                 properties:
                   code:
@@ -23224,10 +23205,9 @@ paths:
                     type: string
                 type: object
           description: An unexpected error response.
-      summary: ''
+      summary: List all delegations for a delegator
       tags:
       - staking
-      - Query
   /cosmos/staking/v1beta1/delegators/{delegator_addr}/redelegations:
     get:
       operationId: Redelegations
@@ -23310,7 +23290,7 @@ paths:
       responses:
         '200':
           content:
-            '*/*':
+            application/json:
               schema:
                 description: 'QueryRedelegationsResponse is response type for the
                   Query/Redelegations RPC
@@ -23433,7 +23413,7 @@ paths:
           description: A successful response.
         default:
           content:
-            '*/*':
+            application/json:
               schema:
                 properties:
                   code:
@@ -23519,10 +23499,9 @@ paths:
                     type: string
                 type: object
           description: An unexpected error response.
-      summary: ''
+      summary: List redelegations for a delegator
       tags:
       - staking
-      - Query
   /cosmos/staking/v1beta1/delegators/{delegator_addr}/unbonding_delegations:
     get:
       operationId: DelegatorUnbondingDelegations
@@ -23591,7 +23570,7 @@ paths:
       responses:
         '200':
           content:
-            '*/*':
+            application/json:
               schema:
                 description: 'QueryUnbondingDelegatorDelegationsResponse is response
                   type for the
@@ -23662,7 +23641,7 @@ paths:
           description: A successful response.
         default:
           content:
-            '*/*':
+            application/json:
               schema:
                 properties:
                   code:
@@ -23748,10 +23727,9 @@ paths:
                     type: string
                 type: object
           description: An unexpected error response.
-      summary: ''
+      summary: List unbonding delegations for a delegator
       tags:
       - staking
-      - Query
   /cosmos/staking/v1beta1/delegators/{delegator_addr}/validators:
     get:
       operationId: StakingDelegatorValidators
@@ -23820,7 +23798,7 @@ paths:
       responses:
         '200':
           content:
-            '*/*':
+            application/json:
               schema:
                 description: 'QueryDelegatorValidatorsResponse is response type for
                   the
@@ -24038,7 +24016,7 @@ paths:
           description: A successful response.
         default:
           content:
-            '*/*':
+            application/json:
               schema:
                 properties:
                   code:
@@ -24124,10 +24102,9 @@ paths:
                     type: string
                 type: object
           description: An unexpected error response.
-      summary: ''
+      summary: List validators for a delegator
       tags:
       - staking
-      - Query
   /cosmos/staking/v1beta1/delegators/{delegator_addr}/validators/{validator_addr}:
     get:
       operationId: DelegatorValidator
@@ -24147,7 +24124,7 @@ paths:
       responses:
         '200':
           content:
-            '*/*':
+            application/json:
               schema:
                 description: 'QueryDelegatorValidatorResponse response type for the
 
@@ -24341,7 +24318,7 @@ paths:
           description: A successful response.
         default:
           content:
-            '*/*':
+            application/json:
               schema:
                 properties:
                   code:
@@ -24427,10 +24404,9 @@ paths:
                     type: string
                 type: object
           description: An unexpected error response.
-      summary: ''
+      summary: Get a specific validator for a delegator
       tags:
       - staking
-      - Query
   /cosmos/staking/v1beta1/historical_info/{height}:
     get:
       operationId: HistoricalInfo
@@ -24445,7 +24421,7 @@ paths:
       responses:
         '200':
           content:
-            '*/*':
+            application/json:
               schema:
                 description: 'QueryHistoricalInfoResponse is response type for the
                   Query/HistoricalInfo RPC
@@ -24736,7 +24712,7 @@ paths:
           description: A successful response.
         default:
           content:
-            '*/*':
+            application/json:
               schema:
                 properties:
                   code:
@@ -24822,17 +24798,16 @@ paths:
                     type: string
                 type: object
           description: An unexpected error response.
-      summary: ''
+      summary: Get historical info at a given height
       tags:
       - staking
-      - Query
   /cosmos/staking/v1beta1/params:
     get:
       operationId: StakingParams
       responses:
         '200':
           content:
-            '*/*':
+            application/json:
               schema:
                 description: QueryParamsResponse is response type for the Query/Params
                   RPC method.
@@ -24873,7 +24848,7 @@ paths:
           description: A successful response.
         default:
           content:
-            '*/*':
+            application/json:
               schema:
                 properties:
                   code:
@@ -24959,17 +24934,16 @@ paths:
                     type: string
                 type: object
           description: An unexpected error response.
-      summary: ''
+      summary: Get staking module parameters
       tags:
       - staking
-      - Query
   /cosmos/staking/v1beta1/pool:
     get:
       operationId: StakingPool
       responses:
         '200':
           content:
-            '*/*':
+            application/json:
               schema:
                 description: QueryPoolResponse is response type for the Query/Pool
                   RPC method.
@@ -24986,7 +24960,7 @@ paths:
           description: A successful response.
         default:
           content:
-            '*/*':
+            application/json:
               schema:
                 properties:
                   code:
@@ -25072,10 +25046,9 @@ paths:
                     type: string
                 type: object
           description: An unexpected error response.
-      summary: ''
+      summary: Get the staking pool info
       tags:
       - staking
-      - Query
   /cosmos/staking/v1beta1/validators:
     get:
       operationId: Validators
@@ -25144,7 +25117,7 @@ paths:
       responses:
         '200':
           content:
-            '*/*':
+            application/json:
               schema:
                 properties:
                   pagination:
@@ -25359,7 +25332,7 @@ paths:
           description: A successful response.
         default:
           content:
-            '*/*':
+            application/json:
               schema:
                 properties:
                   code:
@@ -25445,10 +25418,9 @@ paths:
                     type: string
                 type: object
           description: An unexpected error response.
-      summary: ''
+      summary: List all validators
       tags:
       - staking
-      - Query
   /cosmos/staking/v1beta1/validators/{validator_addr}:
     get:
       operationId: Validator
@@ -25462,7 +25434,7 @@ paths:
       responses:
         '200':
           content:
-            '*/*':
+            application/json:
               schema:
                 properties:
                   validator:
@@ -25655,7 +25627,7 @@ paths:
           description: A successful response.
         default:
           content:
-            '*/*':
+            application/json:
               schema:
                 properties:
                   code:
@@ -25741,10 +25713,9 @@ paths:
                     type: string
                 type: object
           description: An unexpected error response.
-      summary: ''
+      summary: Get validator by address
       tags:
       - staking
-      - Query
   /cosmos/staking/v1beta1/validators/{validator_addr}/delegations:
     get:
       operationId: ValidatorDelegations
@@ -25813,7 +25784,7 @@ paths:
       responses:
         '200':
           content:
-            '*/*':
+            application/json:
               schema:
                 properties:
                   delegation_responses:
@@ -25886,7 +25857,7 @@ paths:
           description: A successful response.
         default:
           content:
-            '*/*':
+            application/json:
               schema:
                 properties:
                   code:
@@ -25972,10 +25943,9 @@ paths:
                     type: string
                 type: object
           description: An unexpected error response.
-      summary: ''
+      summary: List delegations for a validator
       tags:
       - staking
-      - Query
   /cosmos/staking/v1beta1/validators/{validator_addr}/delegations/{delegator_addr}:
     get:
       operationId: Delegation
@@ -25995,7 +25965,7 @@ paths:
       responses:
         '200':
           content:
-            '*/*':
+            application/json:
               schema:
                 description: QueryDelegationResponse is response type for the Query/Delegation
                   RPC method.
@@ -26048,7 +26018,7 @@ paths:
           description: A successful response.
         default:
           content:
-            '*/*':
+            application/json:
               schema:
                 properties:
                   code:
@@ -26134,10 +26104,9 @@ paths:
                     type: string
                 type: object
           description: An unexpected error response.
-      summary: ''
+      summary: Get a specific delegation by delegator and validator
       tags:
       - staking
-      - Query
   /cosmos/staking/v1beta1/validators/{validator_addr}/delegations/{delegator_addr}/unbonding_delegation:
     get:
       operationId: UnbondingDelegation
@@ -26157,7 +26126,7 @@ paths:
       responses:
         '200':
           content:
-            '*/*':
+            application/json:
               schema:
                 description: 'QueryDelegationResponse is response type for the Query/UnbondingDelegation
 
@@ -26208,7 +26177,7 @@ paths:
           description: A successful response.
         default:
           content:
-            '*/*':
+            application/json:
               schema:
                 properties:
                   code:
@@ -26294,10 +26263,9 @@ paths:
                     type: string
                 type: object
           description: An unexpected error response.
-      summary: ''
+      summary: Get unbonding delegation by delegator and validator
       tags:
       - staking
-      - Query
   /cosmos/staking/v1beta1/validators/{validator_addr}/unbonding_delegations:
     get:
       operationId: ValidatorUnbondingDelegations
@@ -26366,7 +26334,7 @@ paths:
       responses:
         '200':
           content:
-            '*/*':
+            application/json:
               schema:
                 description: 'QueryValidatorUnbondingDelegationsResponse is response
                   type for the
@@ -26437,7 +26405,7 @@ paths:
           description: A successful response.
         default:
           content:
-            '*/*':
+            application/json:
               schema:
                 properties:
                   code:
@@ -26523,10 +26491,9 @@ paths:
                     type: string
                 type: object
           description: An unexpected error response.
-      summary: ''
+      summary: List unbonding delegations for a validator
       tags:
       - staking
-      - Query
   /sentinel/subscriptions:
     get:
       operationId: SubscriptionsList
@@ -26569,7 +26536,7 @@ paths:
       responses:
         '200':
           content:
-            '*/*':
+            application/json:
               schema:
                 description: QuerySubscriptionResponse is response type for the Query/Subscription
                   RPC method.
@@ -26641,7 +26608,7 @@ paths:
           description: A successful response.
         default:
           content:
-            '*/*':
+            application/json:
               schema:
                 properties:
                   code:
@@ -26663,16 +26630,15 @@ paths:
                     type: string
                 type: object
           description: An unexpected error response.
-      summary: ''
+      summary: List all subscriptions
       tags:
       - subscriptions
-      - Query
   /sentinel/subscriptions/{subscription_id}:
     get:
       operationId: SubscriptionInfo 
       parameters:
       - description: 'subscription_id defines the unique id of the subscription'
-        in: query
+        in: path
         name: subscription_id
         required: true
         schema:
@@ -26681,7 +26647,7 @@ paths:
       responses:
         '200':
           content:
-            '*/*':
+            application/json:
               schema:
                 description: QuerySubscriptionResponse is response type for the Query/Subscription
                   RPC method.
@@ -26736,7 +26702,7 @@ paths:
           description: A successful response.
         default:
           content:
-            '*/*':
+            application/json:
               schema:
                 properties:
                   code:
@@ -26758,16 +26724,15 @@ paths:
                     type: string
                 type: object
           description: An unexpected error response.
-      summary: ''
+      summary: Get subscription information by ID
       tags:
       - subscriptions
-      - Query
   /sentinel/subscriptions/{subscription_id}/allocations:
     get:
       operationId: SubscriptionAllocations
       parameters:
       - description: 'subscription_id defines the unique id of the subscription'
-        in: query
+        in: path
         name: subscription_id
         required: true
         schema:
@@ -26811,7 +26776,7 @@ paths:
       responses:
         '200':
           content:
-            '*/*':
+            application/json:
               schema:
                 description: QuerySubscriptionResponse is response type for the Query/Subscription
                   RPC method.
@@ -26855,7 +26820,7 @@ paths:
           description: A successful response.
         default:
           content:
-            '*/*':
+            application/json:
               schema:
                 properties:
                   code:
@@ -26877,17 +26842,230 @@ paths:
                     type: string
                 type: object
           description: An unexpected error response.
-      summary: ''
+      summary: List allocations for a subscription
       tags:
       - subscriptions
-      - Query
+  /sentinel/subscriptions/{subscription_id}/allocations/{address}:
+    get:
+      operationId: SubscriptionAllocation
+      parameters:
+      - description: 'subscription_id defines the unique id of the subscription'
+        in: path
+        name: subscription_id
+        required: true
+        schema:
+          format: uint64
+          type: string
+      - description: 'address defines the account address to query the allocation for'
+        in: path
+        name: address
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                description: QueryAllocationResponse is response type for the Query/Allocation
+                  RPC method.
+                properties:
+                  allocation:
+                    description: allocation defines the queried allocation.
+                    properties:
+                      id:
+                        description: the id field specifies the subscription id
+                        type: string
+                        format: uint64
+                      address:
+                        description: the subscriber's operator address
+                        type: string
+                        format: string
+                      granted_bytes:
+                        type: string
+                        format: string
+                      utilised_bytes:
+                        type: string
+                        format: uint64
+                    type: object
+                type: object
+          description: A successful response.
+        default:
+          content:
+            application/json:
+              schema:
+                properties:
+                  code:
+                    format: int32
+                    type: integer
+                  details:
+                    items:
+                      properties:
+                        type_url:
+                          type: string
+                        value:
+                          format: byte
+                          type: string
+                      type: object
+                    type: array
+                  error:
+                    type: string
+                  message:
+                    type: string
+                type: object
+          description: An unexpected error response.
+      summary: Get a specific allocation for a subscription
+      tags:
+      - subscriptions
+  /sentinel/subscriptions/{subscription_id}/allocations/{address}/sessions:
+    get:
+      operationId: SubscriptionAllocationSessions
+      parameters:
+      - description: 'subscription_id defines the unique id of the subscription'
+        in: path
+        name: subscription_id
+        required: true
+        schema:
+          format: uint64
+          type: string
+      - description: 'address defines the account address of the allocation'
+        in: path
+        name: address
+        required: true
+        schema:
+          type: string
+      - description: 'count_total is set to true  to indicate that the result set
+          should include a count of the total number of items available for pagination in UIs.
+          count_total is only respected when offset is used. It is ignored when key is set.'
+        in: query
+        name: pagination.count_total
+        required: false
+        schema:
+          type: boolean
+      - description: 'limit is the total number of results to be returned in the result page. If left empty it will default to a value to be set by each app.'
+        in: query
+        name: pagination.limit
+        required: false
+        schema:
+          format: uint64
+          type: string
+      - description: 'key is a value returned in PageResponse.next_key to begin querying the next page most efficiently. Only one of offset or key hould be set.'
+        in: query
+        name: pagination.key
+        required: false
+        schema:
+          format: byte
+          type: string
+      - description: 'offset is a numeric offset that can be used when key is unavailable. It is less efficient than using key. Only one of offset or key should be set.'
+        in: query
+        name: pagination.offset
+        required: false
+        schema:
+          format: uint64
+          type: string
+      - description: 'reverse is set to true if results are to be returned in the descending order. Since: cosmos-sdk 0.43'
+        in: query
+        name: pagination.reverse
+        required: false
+        schema:
+          type: boolean
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                description: QuerySessionsForAllocationResponse is response type for the
+                  Query/SessionsForAllocation RPC method.
+                properties:
+                  sessions:
+                    description: sessions defines the queried sessions.
+                    items:
+                      properties:
+                        id:
+                          type: string
+                          format: uint64
+                        subscription_id:
+                          type: string
+                          format: uint64
+                        node_address:
+                          type: string
+                          format: string
+                        address:
+                          type: string
+                          format: string
+                        duration:
+                          type: string
+                          format: string
+                        bandwidth:
+                          properties:
+                            upload:
+                              type: string
+                              format: string
+                            download:
+                              type: string
+                              format: string
+                          type: object
+                        status:
+                          type: string
+                          format: string
+                        status_at:
+                          type: string
+                          format: date-time
+                      type: object
+                    type: array
+                  pagination:
+                    description: pagination defines the pagination in the response.
+                    properties:
+                      next_key:
+                        format: byte
+                        title: 'next_key is the key to be passed to PageRequest.key
+                          to
+
+                          query the next page most efficiently'
+                        type: string
+                      total:
+                        format: uint64
+                        title: 'total is total number of results available if PageRequest.count_total
+
+                          was set, its value is undefined otherwise'
+                        type: string
+                    type: object
+                type: object
+          description: A successful response.
+        default:
+          content:
+            application/json:
+              schema:
+                properties:
+                  code:
+                    format: int32
+                    type: integer
+                  details:
+                    items:
+                      properties:
+                        type_url:
+                          type: string
+                        value:
+                          format: byte
+                          type: string
+                      type: object
+                    type: array
+                  error:
+                    type: string
+                  message:
+                    type: string
+                type: object
+          description: An unexpected error response.
+      summary: List sessions for a subscription allocation
+      tags:
+      - subscriptions
   /sentinel/modules/subscription/params:
     get:
       operationId: SubscriptionParams
       responses:
         '200':
           content:
-            '*/*':
+            application/json:
               schema:
                 description: QuerySubscriptionParamsResponse is response type for the Query/SubscriptionParams
                   RPC method.
@@ -26903,7 +27081,7 @@ paths:
           description: A successful response.
         default:
           content:
-            '*/*':
+            application/json:
               schema:
                 properties:
                   code:
@@ -26925,16 +27103,15 @@ paths:
                     type: string
                 type: object
           description: An unexpected error response.
-      summary: ''
+      summary: Get subscription module parameters
       tags:
       - subscriptions
-      - Query
   /sentinel/subscriptions/{subscription_id}/sessions:
     get:
       operationId: SubscriptionSessions
       parameters:
       - description: 'subscription_id defines the unique id of the subscription'
-        in: query
+        in: path
         name: subscription_id
         required: true
         schema:
@@ -26978,7 +27155,7 @@ paths:
       responses:
         '200':
           content:
-            '*/*':
+            application/json:
               schema:
                 description: QuerySubscriptionResponse is response type for the Query/Subscription
                   RPC method.
@@ -27043,7 +27220,7 @@ paths:
           description: A successful response.
         default:
           content:
-            '*/*':
+            application/json:
               schema:
                 properties:
                   code:
@@ -27065,10 +27242,9 @@ paths:
                     type: string
                 type: object
           description: An unexpected error response.
-      summary: ''
+      summary: List sessions for a subscription
       tags:
       - subscriptions
-      - Query
   /sentinel/swaps:
     get:
       operationId: SwapsList
@@ -27111,7 +27287,7 @@ paths:
       responses:
         '200':
           content:
-            '*/*':
+            application/json:
               schema:
                 description: QuerySwapResponse is response type for the Query/Swap
                   RPC method.
@@ -27156,7 +27332,7 @@ paths:
           description: A successful response.
         default:
           content:
-            '*/*':
+            application/json:
               schema:
                 properties:
                   code:
@@ -27178,16 +27354,15 @@ paths:
                     type: string
                 type: object
           description: An unexpected error response.
-      summary: ''
+      summary: List all swaps
       tags:
       - swaps
-      - Query
   /sentinel/swaps/{tx_hash}:
     get:
       operationId: SwapInfo
       parameters:
       - description: 'tx_hash defines the unique hash of the swap'
-        in: query
+        in: path
         name: tx_hash
         required: true
         schema:
@@ -27196,7 +27371,7 @@ paths:
       responses:
         '200':
           content:
-            '*/*':
+            application/json:
               schema:
                 description: QuerySwapResponse is response type for the Query/Swap
                   RPC method.
@@ -27224,7 +27399,7 @@ paths:
           description: A successful response.
         default:
           content:
-            '*/*':
+            application/json:
               schema:
                 properties:
                   code:
@@ -27246,17 +27421,16 @@ paths:
                     type: string
                 type: object
           description: An unexpected error response.
-      summary: ''
+      summary: Get swap information by transaction hash
       tags:
       - swaps
-      - Query
   /sentinel/modules/swap/params:
     get:
       operationId: SwapParams
       responses:
         '200':
           content:
-            '*/*':
+            application/json:
               schema:
                 description: QuerySwapParamsResponse is response type for the Query/SwapParams
                   RPC method.
@@ -27278,7 +27452,7 @@ paths:
           description: A successful response.
         default:
           content:
-            '*/*':
+            application/json:
               schema:
                 properties:
                   code:
@@ -27300,10 +27474,9 @@ paths:
                     type: string
                 type: object
           description: An unexpected error response.
-      summary: ''
+      summary: Get swap module parameters
       tags:
       - swaps
-      - Query
   /cosmos/tx/v1beta1/simulate:
     post:
       operationId: Simulate
@@ -27316,7 +27489,7 @@ paths:
       responses:
         '200':
           content:
-            '*/*':
+            application/json:
               schema:
                 description: 'SimulateResponse is the response type for the
 
@@ -27389,7 +27562,7 @@ paths:
           description: A successful response.
         default:
           content:
-            '*/*':
+            application/json:
               schema:
                 properties:
                   code:
@@ -27561,13 +27734,13 @@ paths:
       responses:
         '200':
           content:
-            '*/*':
+            application/json:
               schema:
                 $ref: '#/components/schemas/cosmos.tx.v1beta1.GetTxsEventResponse'
           description: A successful response.
         default:
           content:
-            '*/*':
+            application/json:
               schema:
                 properties:
                   code:
@@ -27656,7 +27829,6 @@ paths:
       summary: GetTxsEvent fetches txs by event.
       tags:
       - tx
-      - Query
     post:
       operationId: BroadcastTx
       requestBody:
@@ -27693,7 +27865,7 @@ paths:
       responses:
         '200':
           content:
-            '*/*':
+            application/json:
               schema:
                 description: 'BroadcastTxResponse is the response type for the
 
@@ -27910,7 +28082,7 @@ paths:
           description: A successful response.
         default:
           content:
-            '*/*':
+            application/json:
               schema:
                 properties:
                   code:
@@ -28010,13 +28182,13 @@ paths:
       responses:
         '200':
           content:
-            '*/*':
+            application/json:
               schema:
                 $ref: '#/components/schemas/cosmos.tx.v1beta1.GetTxResponse'
           description: A successful response.
         default:
           content:
-            '*/*':
+            application/json:
               schema:
                 properties:
                   code:
@@ -28105,7 +28277,6 @@ paths:
       summary: GetTx fetches a tx by hash.
       tags:
       - tx
-      - Query
   /cosmos/upgrade/v1beta1/applied_plan/{name}:
     get:
       operationId: AppliedPlan
@@ -28119,7 +28290,7 @@ paths:
       responses:
         '200':
           content:
-            '*/*':
+            application/json:
               schema:
                 description: 'QueryAppliedPlanResponse is the response type for the
                   Query/AppliedPlan RPC
@@ -28135,7 +28306,7 @@ paths:
           description: A successful response.
         default:
           content:
-            '*/*':
+            application/json:
               schema:
                 properties:
                   code:
@@ -28221,17 +28392,16 @@ paths:
                     type: string
                 type: object
           description: An unexpected error response.
-      summary: ''
+      summary: Get applied upgrade plan by name
       tags:
       - upgrade
-      - Query
   /cosmos/upgrade/v1beta1/current_plan:
     get:
       operationId: CurrentPlan
       responses:
         '200':
           content:
-            '*/*':
+            application/json:
               schema:
                 description: 'QueryCurrentPlanResponse is the response type for the
                   Query/CurrentPlan RPC
@@ -28361,7 +28531,7 @@ paths:
           description: A successful response.
         default:
           content:
-            '*/*':
+            application/json:
               schema:
                 properties:
                   code:
@@ -28447,10 +28617,9 @@ paths:
                     type: string
                 type: object
           description: An unexpected error response.
-      summary: ''
+      summary: Get current upgrade plan
       tags:
       - upgrade
-      - Query
   /cosmos/upgrade/v1beta1/module_versions:
     get:
       description: 'Since: cosmos-sdk 0.43'
@@ -28469,7 +28638,7 @@ paths:
       responses:
         '200':
           content:
-            '*/*':
+            application/json:
               schema:
                 description: 'QueryModuleVersionsResponse is the response type for
                   the Query/ModuleVersions
@@ -28502,7 +28671,7 @@ paths:
           description: A successful response.
         default:
           content:
-            '*/*':
+            application/json:
               schema:
                 properties:
                   code:
@@ -28588,10 +28757,9 @@ paths:
                     type: string
                 type: object
           description: An unexpected error response.
-      summary: ''
+      summary: Get module version information
       tags:
       - upgrade
-      - Query
   /cosmos/upgrade/v1beta1/upgraded_consensus_state/{last_height}:
     get:
       operationId: UpgradedConsensusState
@@ -28608,7 +28776,7 @@ paths:
       responses:
         '200':
           content:
-            '*/*':
+            application/json:
               schema:
                 description: 'QueryUpgradedConsensusStateResponse is the response
                   type for the Query/UpgradedConsensusState
@@ -28623,7 +28791,7 @@ paths:
           description: A successful response.
         default:
           content:
-            '*/*':
+            application/json:
               schema:
                 properties:
                   code:
@@ -28709,10 +28877,11 @@ paths:
                     type: string
                 type: object
           description: An unexpected error response.
-      summary: ''
+      summary: Get upgraded consensus state
       tags:
       - upgrade
-      - Query
 servers:
-- description: Sentinel Mainnet Node
+- description: Sentinel Mainnet LCD
   url: https://lcd.sentinel.co
+- description: Local LCD endpoint
+  url: http://localhost:1317
