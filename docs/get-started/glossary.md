@@ -1,5 +1,6 @@
 ---
 title: Glossary
+sidebar_label: "📖 Glossary"
 sidebar_position: 8
 ---
 

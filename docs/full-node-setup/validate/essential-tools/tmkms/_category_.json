@@ -1,7 +1,8 @@
 {
-  "label": "TMKMS",
+  "label": "🔑 TMKMS",
   "position": 1,
   "link": {
-    "type": "generated-index"
+    "type": "generated-index",
+    "slug": "/category/tmkms"
   }
 }

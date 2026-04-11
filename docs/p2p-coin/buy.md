@@ -1,5 +1,6 @@
 ---
 title: Buy P2P
+sidebar_label: "💰 Buy P2P"
 sidebar_position: 3
 ---
 

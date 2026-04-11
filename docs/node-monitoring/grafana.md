@@ -1,5 +1,6 @@
 ---
 title: Grafana
+sidebar_label: "📈 Grafana"
 description: A tool used for visualizing and analyzing metrics
 sidebar_position: 4
 ---

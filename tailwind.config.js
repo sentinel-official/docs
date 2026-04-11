@@ -40,6 +40,26 @@ module.exports = {
         text: {
           400: 'rgb(var(--docs-color-text-400, 153 153 153) / <alpha-value>)',
         },
+        sentinel: {
+          primary: '#322DC2',
+          'primary-light': '#4540D8',
+          secondary: '#db5224',
+          surface: '#1c1c1c',
+        },
+      },
+      animation: {
+        'glow-pulse': 'glow-pulse 4s ease-in-out infinite',
+        'fade-in-up': 'fade-in-up 0.5s ease-out both',
+      },
+      keyframes: {
+        'glow-pulse': {
+          '0%, 100%': { opacity: '0.4' },
+          '50%': { opacity: '0.7' },
+        },
+        'fade-in-up': {
+          from: { opacity: '0', transform: 'translateY(16px)' },
+          to: { opacity: '1', transform: 'translateY(0)' },
+        },
       },
     },
   },

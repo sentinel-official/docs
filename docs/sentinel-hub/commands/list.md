@@ -195,15 +195,18 @@ sentinelhub keys [command]
 #### This is the output of `sentinelhub keys`
 
 ```bash
-add         Add an encrypted private key (either newly generated or recovered), encrypt it, and save to <name> file
-delete      Delete the given keys
-export      Export private keys
-import      Import private keys into the local keybase
-list        List all keys
-migrate     Migrate keys from the legacy (db-based) Keybase
-mnemonic    Compute the bip39 mnemonic for some input entropy
-parse       Parse address from hex to bech32 and vice versa
-show        Retrieve key information by name or address
+add            Add an encrypted private key (either newly generated or recovered), encrypt it, and save to <name> file
+delete         Delete the given keys
+export         Export private keys
+import         Import private keys into the local keybase
+import-hex     Import private keys into the local keybase
+list           List all keys
+list-key-types List all key types
+migrate        Migrate keys from amino to proto serialization format
+mnemonic       Compute the bip39 mnemonic for some input entropy
+parse          Parse address from hex to bech32 and vice versa
+rename         Rename an existing key
+show           Retrieve key information by name or address
 ```
 
 </p>
@@ -231,30 +234,33 @@ sentinelhub query [subcommand]
 #### This is the output of `sentinelhub query`
 
 ```bash
-authz               Authorization transactions subcommands
-bank                Bank transaction subcommands
-broadcast           Broadcast transactions generated offline
-crisis              Crisis transactions subcommands
-decode              Decode a binary encoded transaction string
-distribution        Distribution transactions subcommands
-encode              Encode transactions generated offline
-evidence            Evidence transaction subcommands
-feegrant            Feegrant transactions subcommands
-gov                 Governance transactions subcommands
-ibc                 IBC transaction subcommands
-ibc-fee             IBC relayer incentivization transaction subcommands
-ibc-transfer        IBC fungible token transfer transaction subcommands
-multisign           Generate multisig signatures for transactions generated offline
-multisign-batch     Assemble multisig transactions in batch from batch signatures
-sign                Sign a transaction generated offline
-sign-batch          Sign transaction batch files
-slashing            Slashing transaction subcommands
-staking             Staking transaction subcommands
-swap                Swap module sub-commands
-validate-signatures validate transactions signatures
-vesting             Vesting transaction subcommands
-vpn                 VPN transactions subcommands
-wasm                Wasm transaction subcommands
+account                  Query for account by address
+auth                     Querying commands for the auth module
+authz                    Querying commands for the authz module
+bank                     Querying commands for the bank module
+block                    Get verified data for the block at given height
+distribution             Querying commands for the distribution module
+evidence                 Query for evidence by hash or for all (paginated) submitted evidence
+feegrant                 Querying commands for the feegrant module
+gov                      Querying commands for the governance module
+group                    Querying commands for the group module
+ibc                      Querying commands for the IBC module
+ibc-fee                  IBC relayer incentivization query subcommands
+ibc-transfer             IBC fungible token transfer query subcommands
+interchain-accounts      IBC interchain accounts query subcommands
+mint                     Querying commands for the minting module
+nft                      Querying commands for the nft module
+oracle                   Querying commands for the Oracle module
+params                   Querying commands for the params module
+slashing                 Querying commands for the slashing module
+staking                  Querying commands for the staking module
+swap                     Querying commands for the swap module
+tendermint-validator-set Get the full tendermint validator set at given height
+tx                       Query for a transaction by hash
+txs                      Query for paginated transactions that match a set of events
+upgrade                  Querying commands for the upgrade module
+vpn                      Querying commands for the VPN module
+wasm                     Querying commands for the wasm module
 ```
 
 </p>
@@ -428,11 +434,14 @@ encode              Encode transactions generated offline
 evidence            Evidence transaction subcommands
 feegrant            Feegrant transactions subcommands
 gov                 Governance transactions subcommands
+group               Group transaction subcommands
 ibc                 IBC transaction subcommands
 ibc-fee             IBC relayer incentivization transaction subcommands
 ibc-transfer        IBC fungible token transfer transaction subcommands
-multisign           Generate multisig signatures for transactions generated offline
+interchain-accounts IBC interchain accounts transaction subcommands
+multi-sign          Generate multisig signatures for transactions generated offline
 multisign-batch     Assemble multisig transactions in batch from batch signatures
+nft                 nft transactions subcommands
 sign                Sign a transaction generated offline
 sign-batch          Sign transaction batch files
 slashing            Slashing transaction subcommands

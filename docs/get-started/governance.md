@@ -1,5 +1,6 @@
 ---
 title: Governance
+sidebar_label: "🏛️ Governance"
 sidebar_position: 6
 ---
 

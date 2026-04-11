@@ -1,5 +1,6 @@
 ---
 title: Missed Blocks Checker
+sidebar_label: "⚠️ Missed Blocks Checker"
 sidebar_position: 5
 ---
 

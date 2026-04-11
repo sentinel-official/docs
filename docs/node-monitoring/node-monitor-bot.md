@@ -1,5 +1,6 @@
 ---
 title: Node Monitor Telegram Bot
+sidebar_label: "🤖 Node Monitor Telegram Bot"
 sidebar_position: 7
 ---
 

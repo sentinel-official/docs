@@ -1,5 +1,6 @@
 ---
 title: Contributing
+sidebar_label: "🤝 Contributing"
 sidebar_position: 4
 ---
 # Contributing

@@ -1,5 +1,6 @@
 ---
 title: Explorers
+sidebar_label: "🔍 Explorers"
 sidebar_position: 5
 ---
 

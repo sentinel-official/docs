@@ -1,5 +1,6 @@
 ---
 title: Python
+sidebar_label: "🐍 Python"
 sidebar_position: 4
 ---
 

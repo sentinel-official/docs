@@ -1,5 +1,6 @@
 ---
 title: Earnings
+sidebar_label: "💰 Earnings"
 sidebar_position: 3
 ---
 

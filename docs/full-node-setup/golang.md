@@ -1,5 +1,6 @@
 ---
 title: Golang Setup
+sidebar_label: "⚙️ Golang Setup"
 sidebar_position: 3
 ---
 

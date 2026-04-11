@@ -1,5 +1,6 @@
 ---
 title: Golang
+sidebar_label: "🔧 Golang"
 sidebar_position: 2
 ---
 

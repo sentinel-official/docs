@@ -1,5 +1,6 @@
 ---
 title: RPC List
+sidebar_label: "📡 RPC List"
 sidebar_position: 6
 ---
 

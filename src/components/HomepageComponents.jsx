@@ -11,34 +11,69 @@ export function HomepageSection({
   className,
   hasSubSections = false,
   HeadingTag = 'h3',
+  accentColor,
 }) {
+  const headingId = id ?? (title ? paramCase(title) : undefined);
+
   return (
-    <div
+    <section
       className={clsx(
         'homepage-section',
         hasSubSections && 'has-sub-sections',
         className
       )}
+      aria-labelledby={headingId}
+      style={accentColor ? { '--section-accent': accentColor } : undefined}
     >
-      {title && <HeadingTag id={id ?? paramCase(title)}>{title}</HeadingTag>}
-      {description && <p className="section-description">{description}</p>}
+      {title && (
+        <div className="section-header">
+          <div>
+            <HeadingTag id={headingId}>{title}</HeadingTag>
+            {description && (
+              <p className="section-description">{description}</p>
+            )}
+          </div>
+        </div>
+      )}
+      {!title && description && (
+        <p className="section-description">{description}</p>
+      )}
       <div className="section-content">{children}</div>
-    </div>
+    </section>
   );
 }
 
-export function HomepageCard({ id, icon, svgFile, title, description, to }) {
+const ChevronRight = () => (
+  <svg
+    className="card-arrow"
+    viewBox="0 0 16 16"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    aria-hidden="true"
+  >
+    <path
+      d="M6 3l5 5-5 5"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+);
+
+export function HomepageCard({ id, icon, svgFile, title, description, to, badge }) {
   return (
     <Link to={to} className="homepage-card">
-      {svgFile
-        ?  <div className="icon"><img src={svgFile}/></div>
-        :  icon && <div className="icon">{icon}</div>
-      }
+      <div className="card-icon-wrapper" aria-hidden="true">
+        {svgFile ? <img src={svgFile} alt="" /> : icon}
+      </div>
       <div className="card-content">
-        <div className="title" id={id && paramCase(title)}>
-          {title}
+        {badge && <span className="card-badge">{badge}</span>}
+        <div className="card-title" id={id && paramCase(title)}>
+          <span>{title}</span>
+          <ChevronRight />
         </div>
-        <div className="description">{description}</div>
+        <div className="card-description">{description}</div>
       </div>
     </Link>
   );

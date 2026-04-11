@@ -301,70 +301,32 @@ params:
 </p>
 </details>
 
-## Query Payouts
+## Query Leases
 
-Retrieve information regarding the payouts.
+Retrieve information regarding all leases with optional filters and pagination.
 
 ```bash
-sentinelhub query vpn payouts \
+sentinelhub query vpn leases \
   --node https://rpc.sentinel.co:443
 ```
-<details>
-<summary>Example Output</summary>
-<p>
+
+## Query Lease Info
+
+Retrieve information regarding a specific lease by ID.
 
 ```bash
-pagination:
-  next_key: AAAAAAAIL3E=
-  total: "0"
-payouts:
-- address: sent17h00cnhccphxftsxm98s88n3s20quqkj4jg6dv
-  hours: "167"
-  id: "536435"
-  next_at: "2024-05-27T08:49:44.604790891Z"
-  node_address: sentnode13vvhuzz9s3jf2sltqmrj2w0ad0043vth4yxc5u
-  price:
-    amount: "4160000"
-    denom: udvpn
-- address: sent17h00cnhccphxftsxm98s88n3s20quqkj4jg6dv
-  hours: "167"
-  id: "536434"
-  next_at: "2024-05-27T08:49:38.730268717Z"
-  node_address: sentnode1n0gcfcnfefgta26ynqq33dvscvsxdyf944xqdv
-  price:
-    amount: "4160000"
-    denom: udvpn
-```
-
-</p>
-</details>
-
-## Query Payout Info
-
-Retrieve information regarding a specific payout.
-
-```bash
-sentinelhub query vpn payout [payout_id] \
+sentinelhub query vpn lease [lease_id] \
   --node https://rpc.sentinel.co:443
 ```
-<details>
-<summary>Example Output</summary>
-<p>
+
+## Query Lease Params
+
+Retrieve information regarding the lease module params.
 
 ```bash
-payout:
-  address: sent17h00cnhccphxftsxm98s88n3s20quqkj4jg6dv
-  hours: "167"
-  id: "536435"
-  next_at: "2024-05-27T08:49:44.604790891Z"
-  node_address: sentnode13vvhuzz9s3jf2sltqmrj2w0ad0043vth4yxc5u
-  price:
-    amount: "4160000"
-    denom: udvpn
+sentinelhub query vpn lease-params \
+  --node https://rpc.sentinel.co:443
 ```
-
-</p>
-</details>
 
 ## Query Plans
 

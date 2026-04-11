@@ -1,155 +1,370 @@
 ---
-title: Subscription Plan
+title: VPN
 sidebar_position: 4
 ---
 
-# Subscription Plan
+# VPN Transactions
 
-Here are the instructions for creating a Subscription Plan in the dVPN application creator. Additionally, you may refer to the [Medium article](https://medium.com/sentinel/introduction-of-on-chain-subscriptions-and-time-based-payments-sentinels-biggest-dvpn-protocol-a2b240199f18) for more detailed information.
+Commands for interacting with the Sentinel VPN modules: providers, plans, nodes, subscriptions, sessions, and leases.
 
-## Create a dVPN Application Provider ID
+## Provider
 
-Begin by registering an on-chain provider ID using the following command:
+### Register a Provider
+
+Register a new provider with a name and optional details.
 
 ```bash
-sentinelhub tx vpn provider register \
+sentinelhub tx vpn provider register-provider \
   <provider_name> \
   --description "<provider_description>" \
   --identity "<provider_identity>" \
-  --website https://test.provider.com \
-  --broadcast-mode block \
+  --website "https://example.com" \
   --from <key_name> \
   --chain-id sentinelhub-2 \
   --gas-prices 0.5udvpn \
-  --gas=300000 \
+  --gas 300000 \
   --node https://rpc.sentinel.co:443
 ```
 
-## Create a Subscription Plan
+### Update Provider Details
 
-Next, the dVPN application creator should proceed to establish an on-chain subscription plan, specifying the duration, data allowance, and associated prices:
+Update the details of an existing provider.
 
 ```bash
-sentinelhub tx vpn plan create \
-  <plan_duration> \
-  <gigabytes> \
-  <plan_prices> \
-  --broadcast-mode block \
+sentinelhub tx vpn provider update-provider-details \
+  --description "<new_description>" \
+  --identity "<new_identity>" \
+  --website "https://new-website.com" \
   --from <key_name> \
   --chain-id sentinelhub-2 \
   --gas-prices 0.5udvpn \
-  --gas=300000 \
+  --gas 300000 \
   --node https://rpc.sentinel.co:443
 ```
 
-## Activate the Subscription Plan
+### Update Provider Status
 
-To activate the subscription plan, execute the following command
+Update the operational status of an existing provider.
 
 ```bash
-sentinelhub tx vpn plan update-status \
-  <plan_id> active \
-  --broadcast-mode block \
+sentinelhub tx vpn provider update-provider-status \
+  <active|inactive> \
   --from <key_name> \
   --chain-id sentinelhub-2 \
   --gas-prices 0.5udvpn \
-  --gas=300000 \
+  --gas 300000 \
   --node https://rpc.sentinel.co:443
 ```
 
-## Create a Time Based Subscription with a Node
+## Plan
 
-To create a time-based subscription with a node, execute the following command
+### Create a Plan
+
+Create a new subscription plan with bytes, duration, pricing details, and privacy setting.
 
 ```bash
-sentinelhub tx vpn node subscribe \
-  <sentnode_address> \
-  <denom> \
-  <hours> \
-  --broadcast-mode block \
+sentinelhub tx vpn plan create-plan \
+  <bytes> \
+  <duration> \
   --from <key_name> \
   --chain-id sentinelhub-2 \
   --gas-prices 0.5udvpn \
-  --gas=300000 \
+  --gas 300000 \
   --node https://rpc.sentinel.co:443
 ```
 
-Ensure accurate configuration by replacing `<sentnode_address`>, `<denom>` (udvpn), and `<key_name>` with your specific values. Adjust other parameters as needed for your use case.
+### Update Plan Details
 
-## Add a Community Hosted Node
-
-To add a community-hosted node to the subscription plan, execute the following command
+Update the details of an existing subscription plan.
 
 ```bash
-sentinelhub tx vpn plan add-node \
+sentinelhub tx vpn plan update-plan-details \
+  <plan_id> \
+  --from <key_name> \
+  --chain-id sentinelhub-2 \
+  --gas-prices 0.5udvpn \
+  --gas 300000 \
+  --node https://rpc.sentinel.co:443
+```
+
+### Update Plan Status
+
+Activate or deactivate a subscription plan.
+
+```bash
+sentinelhub tx vpn plan update-plan-status \
+  <plan_id> <active|inactive> \
+  --from <key_name> \
+  --chain-id sentinelhub-2 \
+  --gas-prices 0.5udvpn \
+  --gas 300000 \
+  --node https://rpc.sentinel.co:443
+```
+
+### Link a Node to a Plan
+
+Link a community-hosted node to a subscription plan.
+
+```bash
+sentinelhub tx vpn plan link-node \
   <plan_id> \
   <sentnode_address> \
-  --broadcast-mode block \
   --from <key_name> \
   --chain-id sentinelhub-2 \
   --gas-prices 0.5udvpn \
-  --gas=300000 \
+  --gas 300000 \
   --node https://rpc.sentinel.co:443
 ```
 
-## Remove a Node
+### Unlink a Node from a Plan
 
-To remove a node from the subscription plan, execute the following command
+Remove a node from a subscription plan.
 
 ```bash
-sentinelhub tx vpn plan remove-node \
+sentinelhub tx vpn plan unlink-node \
   <plan_id> \
   <sentnode_address> \
-  --broadcast-mode block \
   --from <key_name> \
   --chain-id sentinelhub-2 \
   --gas-prices 0.5udvpn \
-  --gas=300000 \
+  --gas 300000 \
   --node https://rpc.sentinel.co:443
 ```
 
-## Share Subscription with Another Account
+## Node
 
-To facilitate subscription sharing with another account, this applies to dVPN apps categorized as follows: free dVPN, paid with non-IBC supported tokens, and paid with fiat payment gateway.
+### Register a Node
+
+Register a new node with remote addresses and pricing details.
 
 ```bash
-sentinelhub tx vpn subscription allocate \
+sentinelhub tx vpn node register-node \
+  <remote_addrs> \
+  --from <key_name> \
+  --chain-id sentinelhub-2 \
+  --gas-prices 0.5udvpn \
+  --gas 300000 \
+  --node https://rpc.sentinel.co:443
+```
+
+### Update Node Details
+
+Update the pricing and remote URL details of an existing node.
+
+```bash
+sentinelhub tx vpn node update-node-details \
+  --from <key_name> \
+  --chain-id sentinelhub-2 \
+  --gas-prices 0.5udvpn \
+  --gas 300000 \
+  --node https://rpc.sentinel.co:443
+```
+
+### Update Node Status
+
+Update the operational status of a node.
+
+```bash
+sentinelhub tx vpn node update-node-status \
+  <active|inactive> \
+  --from <key_name> \
+  --chain-id sentinelhub-2 \
+  --gas-prices 0.5udvpn \
+  --gas 300000 \
+  --node https://rpc.sentinel.co:443
+```
+
+### Start a Session with a Node
+
+Start a session directly with a node.
+
+```bash
+sentinelhub tx vpn node start-session \
+  <sentnode_address> \
+  --from <key_name> \
+  --chain-id sentinelhub-2 \
+  --gas-prices 0.5udvpn \
+  --gas 300000 \
+  --node https://rpc.sentinel.co:443
+```
+
+## Subscription
+
+### Start a Subscription
+
+Start a subscription for a plan.
+
+```bash
+sentinelhub tx vpn subscription start-subscription \
+  <plan_id> \
+  --denom udvpn \
+  --from <key_name> \
+  --chain-id sentinelhub-2 \
+  --gas-prices 0.5udvpn \
+  --gas 300000 \
+  --node https://rpc.sentinel.co:443
+```
+
+### Renew a Subscription
+
+Renew an existing subscription.
+
+```bash
+sentinelhub tx vpn subscription renew-subscription \
+  <subscription_id> \
+  --denom udvpn \
+  --from <key_name> \
+  --chain-id sentinelhub-2 \
+  --gas-prices 0.5udvpn \
+  --gas 300000 \
+  --node https://rpc.sentinel.co:443
+```
+
+### Cancel a Subscription
+
+Cancel an active subscription.
+
+```bash
+sentinelhub tx vpn subscription cancel-subscription \
+  <subscription_id> \
+  --from <key_name> \
+  --chain-id sentinelhub-2 \
+  --gas-prices 0.5udvpn \
+  --gas 300000 \
+  --node https://rpc.sentinel.co:443
+```
+
+### Update a Subscription
+
+Update the details of an existing subscription.
+
+```bash
+sentinelhub tx vpn subscription update-subscription \
+  <subscription_id> \
+  --from <key_name> \
+  --chain-id sentinelhub-2 \
+  --gas-prices 0.5udvpn \
+  --gas 300000 \
+  --node https://rpc.sentinel.co:443
+```
+
+### Share a Subscription
+
+Share a subscription with another account by allocating bytes.
+
+```bash
+sentinelhub tx vpn subscription share-subscription \
   <subscription_id> \
   <account_address> \
   <bytes> \
-  --broadcast-mode block \
   --from <key_name> \
   --chain-id sentinelhub-2 \
   --gas-prices 0.5udvpn \
-  --gas=300000 \
+  --gas 300000 \
   --node https://rpc.sentinel.co:443
 ```
 
-## Query Subscription Plan
+### Start a Session for a Subscription
 
-To query about the subscriptions associated with an account address, use the following command:
-
-```bash
-sentinelhub query vpn subscription allocate \
-  --account-addr <account_address> \
-  --node https://rpc.sentinel.co:443
-```
-
-## Subscription-Associated User Account Query
-
-To query a list of all user accounts linked to a specific subscription, use the following command:
+Start a session for a subscription and node.
 
 ```bash
-sentinelhub query vpn allocations \
+sentinelhub tx vpn subscription start-session \
   <subscription_id> \
+  <sentnode_address> \
+  --from <key_name> \
+  --chain-id sentinelhub-2 \
+  --gas-prices 0.5udvpn \
+  --gas 300000 \
   --node https://rpc.sentinel.co:443
 ```
 
-## List of Available Subscription Plans
+## Session
 
-To query a list of all subscription plans available,  use the following command:
+### Cancel a Session
+
+Cancel an active session.
 
 ```bash
-sentinelhub query vpn plans \
+sentinelhub tx vpn session cancel-session \
+  <session_id> \
+  --from <key_name> \
+  --chain-id sentinelhub-2 \
+  --gas-prices 0.5udvpn \
+  --gas 300000 \
+  --node https://rpc.sentinel.co:443
+```
+
+### Update a Session
+
+Update the details of an existing session (download bytes, upload bytes, duration).
+
+```bash
+sentinelhub tx vpn session update-session \
+  <session_id> <download_bytes> <upload_bytes> <duration> \
+  --from <key_name> \
+  --chain-id sentinelhub-2 \
+  --gas-prices 0.5udvpn \
+  --gas 300000 \
+  --node https://rpc.sentinel.co:443
+```
+
+## Lease
+
+### Start a Lease
+
+Start a lease with a node for the specified duration.
+
+```bash
+sentinelhub tx vpn lease start-lease \
+  <sentnode_address> \
+  <hours> \
+  --from <key_name> \
+  --chain-id sentinelhub-2 \
+  --gas-prices 0.5udvpn \
+  --gas 300000 \
+  --node https://rpc.sentinel.co:443
+```
+
+### Renew a Lease
+
+Renew an existing lease for a specified duration.
+
+```bash
+sentinelhub tx vpn lease renew-lease \
+  <lease_id> \
+  <hours> \
+  --from <key_name> \
+  --chain-id sentinelhub-2 \
+  --gas-prices 0.5udvpn \
+  --gas 300000 \
+  --node https://rpc.sentinel.co:443
+```
+
+### Update a Lease
+
+Update the details of an existing lease.
+
+```bash
+sentinelhub tx vpn lease update-lease \
+  <lease_id> \
+  --from <key_name> \
+  --chain-id sentinelhub-2 \
+  --gas-prices 0.5udvpn \
+  --gas 300000 \
+  --node https://rpc.sentinel.co:443
+```
+
+### End a Lease
+
+End an existing lease.
+
+```bash
+sentinelhub tx vpn lease end-lease \
+  <lease_id> \
+  --from <key_name> \
+  --chain-id sentinelhub-2 \
+  --gas-prices 0.5udvpn \
+  --gas 300000 \
   --node https://rpc.sentinel.co:443
 ```

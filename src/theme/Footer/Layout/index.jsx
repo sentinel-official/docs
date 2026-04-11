@@ -31,11 +31,12 @@ export default function FooterLayout({ style, links, logo, copyright }) {
       })}
     >
       <div className="container container-fluid">
-        {logo && <div className="margin-bottom--sm">{logo}</div>}
-
         <div className="footer__row">
           <div className="footer__data">
-            <div className="footer__cta"></div>
+            {logo && <div className="footer__logo-wrap">{logo}</div>}
+            <p className="footer__tagline">
+              Decentralized bandwidth for a free internet
+            </p>
           </div>
           <div className="links">{links}</div>
         </div>

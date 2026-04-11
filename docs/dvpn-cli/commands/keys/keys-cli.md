@@ -127,13 +127,14 @@ Key deleted forever (uh oh!)
 Make sure you have backed up the key mnemonic before removing any of your keys, as there will be no way to recover your key without the mnemonic.
 :::
 
-## The keyring-backend option
+## The keyring backend option
 
 Interacting with a node requires a public-private key pair. A keyring is the container that holds these keys, which can be stored in various locations, each with a specified backend type.
 
 ```
-sentinel-dvpncli keys [subcommands] --keyring-backend [backend type]
+sentinel-dvpncli keys [subcommands] --keyring.backend [backend type]
 ```
+
 ### Os backend
 
 The default `os` backend stores the keys in operating system's credential subsystem, which is convenient for most users without compromising on security. 
@@ -152,3 +153,7 @@ The `file` backend stores the encrypted keys inside the app's configuration dire
 ### Test backend
 
 The `test` backend is a password-less variation of the `file` backend. It stores unencrypted keys inside the app's configuration directory and should only be used in testing environments. It should never be used in production.
+
+### Memory backend
+
+The `memory` backend stores keys only in volatile memory for the duration of the process. Keys are never written to disk and are lost when the command ends. This is useful for ephemeral key usage in automated scripts or CI environments.

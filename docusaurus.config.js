@@ -139,6 +139,7 @@ const config = {
             label: 'Get Started',
             to: 'get-started',
             position: 'left',
+            activeBaseRegex: 'get-started(?!/apps)(/.*)?$',
           },
           {
             label: '$P2P Coin',

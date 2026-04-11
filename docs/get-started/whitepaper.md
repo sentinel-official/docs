@@ -1,5 +1,6 @@
 ---
 title: White Paper
+sidebar_label: "📄 White Paper"
 sidebar_position: 3
 ---
 

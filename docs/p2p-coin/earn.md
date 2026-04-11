@@ -1,5 +1,6 @@
 ---
 title: Earn P2P
+sidebar_label: "🪙 Earn P2P"
 sidebar_position: 4
 ---
 

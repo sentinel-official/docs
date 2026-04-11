@@ -5,7 +5,7 @@ sidebar_position: 1
 
 # Commands
 
-This section describes the commands available from `sentinel-dvpncli`, the command line interface that connects a running `sentinel-dvpncli` process.
+This section describes the commands available from `sentinel-dvpncli`, the command line interface for the Sentinel dVPN network.
 
 ### `connect`
 
@@ -15,6 +15,32 @@ Connect to a Sentinel node using an existing active session and start the client
 ```bash
 sentinel-dvpncli connect [id] [flags]
 ```
+
+<details>
+<summary>Notable flags</summary>
+<p>
+
+**WireGuard options**
+
+```bash
+--wireguard.name string                      name of the wireguard network interface (default "wg0")
+--wireguard.port uint16                      port number for the wireguard interface (default 53826)
+--wireguard.mtu uint16                       maximum transmission unit size (default 1420)
+--wireguard.dns-addrs stringArray            DNS servers to use while connected (default [208.67.222.222,208.67.220.220])
+--wireguard.exclude-addrs stringArray        exclude IP addresses/subnets from the tunnel (default [127.0.0.0/8,192.168.0.0/16,...])
+--wireguard.peer.allow-addrs stringArray     allowed IP addresses to route through peer (default [0.0.0.0/0,::/0])
+--wireguard.peer.persistent-keepalive uint   keepalive interval in seconds (default 30)
+```
+
+**V2Ray options**
+
+```bash
+--v2ray.api.port uint16     port for v2ray statistics and management (default 2323)
+--v2ray.proxy.port uint16   port for v2ray socks5 proxy server (default 1080)
+```
+
+</p>
+</details>
 
 ### `help`
 
@@ -28,13 +54,24 @@ sentinel-dvpncli help [command] [flags]
 
 ### `inspect`
 
-Inspect the status, connectivity, and location info of a node.
-Simply type `sentinel-dvpncli inspect [node-addr] [flags]` for full details.
+Evaluate a Sentinel node by checking its status, verifying connectivity, and retrieving location details. It ensures the node is active, assesses its availability, and establishes a temporary session to gather network-related information. Additionally, it fetches geolocation data and then gracefully terminates the session.
 
 **Syntax**
 ```bash
-sentinel-dvpncli help [command] [flags]
+sentinel-dvpncli inspect [node-addr] [flags]
 ```
+
+<details>
+<summary>Notable flags</summary>
+<p>
+
+```bash
+--max-price string      maximum price per gigabyte for the session
+--timeout duration      maximum duration to wait for inspection (default 30s)
+```
+
+</p>
+</details>
 
 ### `keys`
 
@@ -75,21 +112,21 @@ The pass backend requires GnuPG: https://gnupg.org
 
 #### This is the output of `sentinel-dvpncli keys`
 ```bash
-add         Add an encrypted private key (either newly generated or recovered), encrypt it, and save to <name> file
-delete      Delete the given keys
-list        List all keys
-show        Retrieve key information by name or address
+add         Add a new key with the specified name and optional mnemonic
+delete      Delete the key with the specified name
+list        List all available keys
+show        Show details of the key with the specified name
 ```
 
 </p>
 </details>
 
-For a more detailed explaination of the subcommand, plese visit the [Basic Key Management](/dvpn-cli/commands/keys/keys-cli) section.
+For a more detailed explanation of the subcommands, please visit the [Basic Key Management](/dvpn-cli/commands/keys/keys-cli) section.
 
 
 ### `query`
 
-Transaction command
+Query commands for fetching data from the Sentinel network.
 
 **Syntax**
 ```bash
@@ -121,10 +158,27 @@ subscriptions Query all subscriptions
 </p>
 </details>
 
+<details>
+<summary>Shared query flags</summary>
+<p>
+
+```bash
+--output-format string        format for query output (text/json) (default "text")
+--query.prove                 include proof in query results
+--query.retry-attempts uint   number of retry attempts for the query (default 5)
+--query.retry-delay string    delay between query retries (default "1s")
+--rpc.addrs strings           addresses of the RPC servers (default [https://rpc.sentinel.co:443])
+--rpc.chain-id string         identifier of the blockchain network (default "sentinelhub-2")
+--rpc.timeout string          timeout for the RPC requests (default "5s")
+```
+
+</p>
+</details>
+
 
 ### `tx`
 
-Transaction command
+Transaction commands for interacting with the Sentinel network.
 
 **Syntax**
 ```bash
@@ -150,12 +204,47 @@ subscription-update Update a subscription
 </p>
 </details>
 
+<details>
+<summary>Shared transaction flags</summary>
+<p>
+
+```bash
+--keyring.backend string             backend to use for the keyring (default "os")
+--keyring.name string                name identifier for the keyring (default "sentinel")
+--tx.from-name string                name of the sender's account (default "main")
+--tx.gas uint                        gas limit for the transaction (default 200000)
+--tx.gas-adjustment float            adjustment factor for gas estimation (default 1.15)
+--tx.gas-prices string               price of gas for the transaction (default "0.1udvpn")
+--tx.simulate-and-execute            simulate the transaction before execution (default true)
+--tx.authz-granter-addr string       address of the entity granting authorization
+--tx.fee-granter-addr string         address of the entity granting fees
+--tx.broadcast-retry-attempts uint   number of times to retry broadcasting (default 1)
+--tx.broadcast-retry-delay string    delay between broadcast retries (default "5s")
+--tx.query-retry-attempts uint       number of times to retry querying a tx (default 30)
+--tx.query-retry-delay string        delay between tx query retries (default "1s")
+```
+
+</p>
+</details>
+
 
 ### `version`
 
-Print the application binary version information
+Print the application binary version information.
 
 **Syntax**
 ```bash
 sentinel-dvpncli version
+```
+
+---
+
+## Global Flags
+
+The following flags are available on all commands:
+
+```bash
+--home string         home directory for application config and data (default "$HOME/.sentinel-dvpncli")
+--log.format string   format of the log output (json or text) (default "text")
+--log.level string    log level for output (debug, error, info, none, warn) (default "info")
 ```

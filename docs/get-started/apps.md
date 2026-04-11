@@ -1,5 +1,6 @@
 ---
 title: dVPN Apps
+sidebar_label: "📱 dVPN Apps"
 description: A list of apps entirely built on Sentinel
 sidebar_position: 4
 ---

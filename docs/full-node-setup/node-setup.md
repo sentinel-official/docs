@@ -1,5 +1,6 @@
 ---
 title: Full Node Setup
+sidebar_label: "🔧 Full Node Setup"
 sidebar_position: 4
 ---
 

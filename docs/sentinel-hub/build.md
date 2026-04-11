@@ -1,5 +1,6 @@
 ---
 title: Build
+sidebar_label: "🔨 Build"
 sidebar_position: 2
 ---
 

@@ -1,5 +1,6 @@
 ---
 title: Endpoints
+sidebar_label: "🔌 Endpoints"
 sidebar_position: 2
 ---
 

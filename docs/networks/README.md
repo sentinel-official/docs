@@ -1,5 +1,6 @@
 ---
 title: Sentinel Network
+sidebar_label: "🌐 Sentinel Network"
 sidebar_position: 1
 ---
 

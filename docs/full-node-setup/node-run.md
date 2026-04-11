@@ -1,5 +1,6 @@
 ---
 title: Run the Full Node
+sidebar_label: "▶️ Run the Full Node"
 sidebar_position: 5
 ---
 
