@@ -3,7 +3,7 @@ info:
   title: Sentinel RPC
   contact:
     name: Sentinel RPC
-    url: https://github.com/tendermint/tendermint/issues/new/choose
+    url: https://github.com/sentinel-official/hub/issues
   description: |
     Tendermint supports the following RPC protocols:
 
@@ -54,10 +54,10 @@ info:
 
         ws ws://localhost:26657/websocket
         > { "jsonrpc": "2.0", "method": "subscribe", "params": ["tm.event='NewBlock'"], "id": 1 }
-  version: "Master"
+  version: "1.0.0"
   license:
     name: Apache 2.0
-    url: https://github.com/tendermint/tendermint/blob/master/LICENSE
+    url: https://github.com/sentinel-official/hub/blob/master/LICENSE
 servers:
   - url: https://rpc.sentinel.co
     description: Sentinel Tendermint RPC
@@ -67,7 +67,7 @@ tags:
   - name: Websocket
     description: Subscribe/unsubscribe are reserved for websocket events.
   - name: Info
-    description: Informations about the node APIs
+    description: Information about the node APIs
   - name: Tx
     description: Transactions broadcast APIs
   - name: ABCI
@@ -278,7 +278,7 @@ paths:
     get:
       summary: Removes a transaction from the mempool.
       tags:
-        - TxKey
+        - Tx
       operationId: remove_tx
       parameters:
         - in: query
@@ -1608,7 +1608,7 @@ components:
           example: "tcp://0.0.0.0:26656"
         network:
           type: string
-          example: "cosmoshub-2"
+          example: "sentinelhub-2"
         version:
           type: string
           example: "0.32.1"
@@ -1964,7 +1964,6 @@ components:
             result:
               $ref: "#/components/schemas/BlockHeader"
 
-    ################## FROM NOW ON NEEDS REFACTOR ##################
     BlockResultsResponse:
       type: object
       required:
@@ -2210,7 +2209,7 @@ components:
                   example: "2019-04-22T17:00:00Z"
                 chain_id:
                   type: string
-                  example: "cosmoshub-2"
+                  example: "sentinelhub-2"
                 initial_height:
                   type: string
                   example: "2"
@@ -3298,7 +3297,7 @@ components:
           type: object
         chain_id:
           type: string
-          example: "cosmoshub-2"
+          example: "sentinelhub-2"
         height:
           type: string
           example: "12"

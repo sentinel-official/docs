@@ -6,9 +6,7 @@ sidebar_position: 3
 
 # Javascript SDK
 
-With the Javascript SDK, developers can harness the power of Sentinel's decentralized network infrastructure to create secure and private communication solutions seamlessly within their JavaScript-based projects.
-
-The Sentinel JavaScript SDK relies on [CosmJS](https://github.com/cosmos/cosmjs) and was developed following the official [tutorial](https://tutorials.cosmos.network/tutorials/7-cosmjs/). It also draws inspiration from other open-source Cosmos SDK projects.
+The JavaScript SDK lets you interact with the Sentinel blockchain from any browser or Node.js environment. It extends [CosmJS](https://github.com/cosmos/cosmjs), the standard JavaScript library for Cosmos chains - adding Sentinel-specific queries, transactions, and VPN session management on top. If you've worked with CosmJS before, you'll feel right at home.
 
 You can access the Sentinel Javascript SDK from:
 - [GitHub repository](https://github.com/sentinel-official/sentinel-js-sdk)

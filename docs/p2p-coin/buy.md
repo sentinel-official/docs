@@ -11,7 +11,8 @@ You can get P2P either from Centralized and Decentralized exchanges.
 
 ### Centralized Exchanges (CEX)
 
-- Kucoin: [https://trade.kucoin.com/DVPN-USDT](https://trade.kucoin.com/DVPN-USDT)
+- Kucoin: [https://www.kucoin.com/trade/P2P-USDT](https://www.kucoin.com/trade/P2P-USDT)
+- MEXC: [https://www.mexc.com/exchange/P2P_USDT](https://www.mexc.com/exchange/P2P_USDT)
 
 ### Decentralized Exchanges (DEX)
 
