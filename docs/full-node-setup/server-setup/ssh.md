@@ -61,10 +61,10 @@ Check if the port is not already being used by another service
 grep 2222 /etc/services
 ```
 
-On your server machine, install the firewall
+On your server machine, install the firewall and openssh
 
 ```bash
-sudo apt install ufw
+sudo apt install ufw openssh-server
 ```
 
 If the port is not already being used by another service, you can add it to your firewall
@@ -108,10 +108,13 @@ PubkeyAuthentication  yes
 PasswordAuthentication  no
 ```
 
-Restart the service
+Reload and restart the ssh service
 
 ```bash
-sudo service sshd restart
+sudo systemctl daemon-reload
+sudo systemctl enable ssh
+sudo systemctl start ssh
+sudo systemctl status ssh
 ```
 
 Connect to your machine via SSH using the new port
