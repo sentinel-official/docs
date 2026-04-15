@@ -537,9 +537,19 @@ ul.menu__list > li > a.menu__link--active {
   font-size: 14px;
 }
 
-/* Navbar sidebar modernization */
+/* Mobile drawer - cosmetic overrides only. Layout is the default
+   Docusaurus two-panel flex; do not set display / width / transform
+   / height on .navbar-sidebar__items or .navbar-sidebar__item. */
 .navbar-sidebar {
   background: var(--sentinel-surface-solid, #1c1c1c);
+  bottom: auto;
+  height: auto;
+  max-height: 100dvh;
+}
+
+.navbar-sidebar__items {
+  height: auto;
+  min-height: 0;
 }
 
 .navbar-sidebar .menu__link {
