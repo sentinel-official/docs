@@ -15,6 +15,12 @@ To install Cosmovisor, use the following command:
 go install cosmossdk.io/tools/cosmovisor/cmd/cosmovisor@latest
 ```
 
+If you encounter a sonic-related error during installation, retry with the following command:
+
+```bash
+go install -ldflags="-checklinkname=0" cosmossdk.io/tools/cosmovisor/cmd/cosmovisor@latest
+```
+
 This command will generate the Cosmovisor binary in the `go/bin/` folder.
 
 Add a symbolic link to the `/usr/local/bin/` directory for system-wide access to Cosmovisor:
