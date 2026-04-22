@@ -18,10 +18,14 @@ import {
 
 # Sentinel SDKs
 
-Three SDKs are available for building on Sentinel. Each one covers a different language and use case, but they all let you query chain state, manage subscriptions and sessions, and connect to dVPN nodes.
+Sentinel ships official SDKs for Go, JavaScript, and Python - each covering a different language and use case, but all letting you query chain state, manage subscriptions and sessions, and connect to dVPN nodes. The community has also built additional SDKs and libraries that extend support to other languages and use cases; those are listed under **Community SDKs** below and are not officially maintained by the Sentinel team.
 
-<Section id="web-sdks" hasSubSections >
-  <Section>
+<Section id="web-sdks" hasSubSections>
+  <Section
+    title="⚙️ Official SDKs"
+    id="official-sdks"
+    HeadingTag="h4"
+  >
     <Card
       title="Golang SDK"
       description="Full-stack SDK built on Cosmos SDK. Blockchain client, node communication, and native WireGuard/V2Ray/OpenVPN tunnel management."
@@ -39,6 +43,33 @@ Three SDKs are available for building on Sentinel. Each one covers a different l
       description="gRPC-based SDK for scripting and backend services. Node queries, subscription management, and session handling."
       to="/sdk/python"
       svgFile="/icons/python.svg"
+    />
+  </Section>
+  <Section
+    title="🌐 Community SDKs"
+    id="community-sdks"
+    HeadingTag="h4"
+  >
+    <Card
+      title=".NET / C# SDK"
+      description="Community-built .NET 8 SDK with WireGuard + V2Ray tunnel support, Cosmos blockchain integration, and a full WPF desktop client example."
+      to="https://github.com/Sentinel-Autonomybuilder/blue-csharp-sdk"
+      icon={<SentinelCore />}
+      svgFile=""
+    />
+    <Card
+      title="Blue JavaScript SDK"
+      description="Community-built JavaScript SDK for Sentinel dVPN with WireGuard + V2Ray tunnel support and Cosmos blockchain integration."
+      to="https://github.com/Sentinel-Autonomybuilder/blue-js-sdk"
+      icon={<SentinelCore />}
+      svgFile=""
+    />
+    <Card
+      title="AI Connect"
+      description="Community-built JavaScript library for integrating Sentinel dVPN connectivity into AI agents and automation workflows."
+      to="/sdk/ai-connect"
+      icon={<SentinelCore />}
+      svgFile=""
     />
   </Section>
 </Section>

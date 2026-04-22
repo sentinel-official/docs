@@ -13,6 +13,7 @@ Here is a list of available Sentinel explorers. If you notice any missing, pleas
 | Explorer Name | URL                                       |
 |---------------|-------------------------------------------|
 | Busurnode     | https://explorer.busurnode.com/sentinel   |
+| P2P scan      | https://p2pscan.com/                      |
 | Ping Pub      | https://ping.pub/sentinel                 |
 | ATOMscan      | https://atomscan.com/sentinel             |
 
@@ -26,3 +27,4 @@ Here is a list of available Sentinel explorers. If you notice any missing, pleas
 | Live Node Explorer      | https://suchnode.net            |
 | Sentnodes      | https://sentnodes.com            |
 | Network Stats      | https://stats.sentinel.co           |
+| Node Peers      | https://peers.suchnode.net/           |

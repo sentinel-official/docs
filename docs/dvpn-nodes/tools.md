@@ -22,6 +22,14 @@ The following statistical tools, developed by the Sentinel team, provide detaile
 - [Suchnode](https://suchnode.net): this node dashboard shows detailed statistics for individual nodes such as health check status, payouts and whitelisting, as well as the overall network.
 - [dVPN Node Faucet](https://busurnode.com/network/sentinel/faucet): To kickstart your dVPN node, ensure your operator address has sufficient P2P. For testing, use the Sentinel dVPN Node Faucet by entering your node operator address. The faucet will send 0.3 P2P, sample for verifying your dVPN node's online status. Consider adding more DVPN for prolonged online presence.
 - [dVPN Node Monitor Telegram Bot](/node-monitoring/node-monitor-bot): A convenient Telegram bot designed to assist you in monitoring your dVPN nodes, providing comprehensive details about each dVPN node's status and performance.
+- [Sentinel dVPN Client guide by Tkd-Alex](https://alessandromaggio.it/sentinel-dvpn-client/): community write-up walking through the Sentinel dVPN client setup.
+
+## Sentinel Autonomy Builder
+
+- [Sentinel Autonomy Builder](https://github.com/Sentinel-Autonomybuilder): community GitHub organization hosting builder and testing utilities for Sentinel dVPN node operators.
+- [Sentinel Node Tester](https://github.com/Sentinel-Autonomybuilder/sentinel-node-tester): network audit dashboard built on blue-js-sdk that tests every node on the blockchain for real VPN throughput, speed, and protocol compliance.
+- [Sentinel Plan Manager](https://github.com/Sentinel-Autonomybuilder/sentinel-plan-manager): the commerce layer for Sentinel dVPN — create on-chain subscription plans, curate node pools, manage subscribers, and issue fee grants.
+- [x402](https://github.com/Sentinel-Autonomybuilder/x402): payments layer that lets AI agents pay USDC on Base/Solana for private VPN access through Sentinel nodes.
 
 ## Uptime
 

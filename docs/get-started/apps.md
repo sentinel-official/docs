@@ -78,6 +78,13 @@ The following dVPN apps are built on top of the Sentinel Protocol. This is why w
         to="https://norselabs.io/products/dvpn-bot"
         svgFile="/icons/dvpn-telegram-bot.svg"
     />
+    <Card
+        title="Sentinel dVPN Client by Tkd-Alex"
+        description="A community-built dVPN client and setup walkthrough by Alessandro Maggio, covering how to connect to the Sentinel network end-to-end."
+        to="https://alessandromaggio.it/sentinel-dvpn-client/"
+        icon=""
+        svgFile="/icons/tkd-alex.png"
+    />
     </Section>
 </Section>
 
