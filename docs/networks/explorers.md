@@ -17,14 +17,4 @@ Here is a list of available Sentinel explorers. If you notice any missing, pleas
 | Ping Pub      | https://ping.pub/sentinel                 |
 | ATOMscan      | https://atomscan.com/sentinel             |
 
-
-### dVPN Node Explorers
-
-| Explorer Name | URL                                       |
-|---------------|-------------------------------------------|
-| Sentinel Map      | https://map.sentinel.co           |
-| Node Dashboard      | https://nodes.sentinel.co           |
-| Live Node Explorer      | https://suchnode.net            |
-| Sentnodes      | https://sentnodes.com            |
-| Network Stats      | https://stats.sentinel.co           |
-| Node Peers      | https://peers.suchnode.net/           |
+Looking for dVPN node explorers (Sentinel Map, Node Dashboard, Suchnode, Sentnodes, Node Peers, Network Stats)? See [dVPN Node Tools](/dvpn-nodes/tools).

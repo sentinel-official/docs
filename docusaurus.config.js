@@ -42,7 +42,6 @@ const SECTIONS = [
   defineSection('networks'),
   defineSection('dvpn-nodes'),
   defineSection('node-monitoring'),
-  defineSection('dvpn-node-setup'),
   defineSection('sdk'),
   defineSection('dvpn-cli'),
   defineSection('sentinel-hub'),
@@ -187,7 +186,7 @@ const config = {
             position: 'left',
             items: [
               {
-                to: 'dvpn-node-setup',
+                to: '/dvpn-nodes/setup',
                 label: 'Run a dVPN Node',
               },
               {
@@ -309,7 +308,7 @@ const config = {
               },
               {
                 label: 'Run a dVPN Node',
-                href: '/dvpn-node-setup',
+                href: '/dvpn-nodes/setup',
               },
             ],
           },

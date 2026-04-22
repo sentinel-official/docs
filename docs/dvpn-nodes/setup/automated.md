@@ -252,3 +252,11 @@ To display the help message, you can execute the script with the help parameter:
 ```bash
 sudo bash dvpn-node-manager.sh help
 ```
+
+## Next Steps
+
+Once your node is running:
+
+1. [Pass the Health Check](/dvpn-nodes/health-check/overview) to become eligible for rewards.
+2. [Set up Node Monitoring](/node-monitoring) to track uptime and performance.
+3. Review [Earnings](/dvpn-nodes/earnings) to understand how the revenue system works.

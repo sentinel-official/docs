@@ -128,7 +128,7 @@ export default function Homepage() {
             <Card
               title="Run a dVPN Node"
               description="Learn how to deploy a dVPN Node to provide bandwidth and earn P2P coins."
-              to="/dvpn-node-setup"
+              to="/dvpn-nodes/setup"
               icon={<Guide />}
             />
             <Card

@@ -7,6 +7,10 @@ sidebar_position: 1
 
 Operating a Sentinel node and profiting from its ecosystem requires adherence to specific guidelines to maintain node health and network decentralization. This guide details the health check process, optimization techniques, and solutions to common issues.
 
+:::info Haven't set up a node yet?
+See [Run a dVPN Node](/dvpn-nodes/setup) for setup instructions before working through the health check.
+:::
+
 ## Overview
 
 To be added into the Subscription Plan and consequently be eligible to Node Revenue System, the node is required to pass the `Node Health Check`.

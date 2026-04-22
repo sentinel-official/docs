@@ -376,14 +376,19 @@ ul.menu__list > li > a.menu__link--active {
   border-right: none;
 }
 
-/* Caret arrow color */
-.menu__link--sublist-caret::after {
+/* Caret arrow — unify size/opacity across both sidebar caret variants
+   (`.menu__link--sublist-caret` is used when the category has no own link;
+   `.menu__caret` is the separate toggle button used when the category is
+   itself a link). Docusaurus' default 2rem makes the latter look oversized. */
+.menu__link--sublist-caret::after,
+.menu__caret::before {
   background-size: 1.2em 1.2em;
   opacity: 0.5;
   transition: opacity 0.2s ease;
 }
 
-.menu__link--sublist-caret:hover::after {
+.menu__link--sublist-caret:hover::after,
+.menu__caret:hover::before {
   opacity: 0.8;
 }
 

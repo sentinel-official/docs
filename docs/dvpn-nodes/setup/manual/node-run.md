@@ -6,7 +6,7 @@ sidebar_position: 5
 
 :::danger Important
  Before starting the node, remember to send a few P2P (**50** should suffice) to the operator address otherwise the node will not start!
- To accomplish this, import the seed you generated or recovered in [**this step**](/dvpn-node-setup/manual/node-config#add-a-mnemonic) into a wallet such as [**Keplr**](/get-started/wallets/keplr/import-seed).
+ To accomplish this, import the seed you generated or recovered in [**this step**](/dvpn-nodes/setup/manual/node-config#add-a-mnemonic) into a wallet such as [**Keplr**](/get-started/wallets/keplr/import-seed).
  
  If you are running your node for testing purposes you can use the [**Node Faucet**](https://busurnode.com/network/sentinel/faucet)
 :::
@@ -130,3 +130,11 @@ Remove a node
 ```bash
 docker rm -f dvpnx
 ```
+
+## Next Steps
+
+With the node running:
+
+1. [Pass the Health Check](/dvpn-nodes/health-check/overview) to become eligible for rewards.
+2. [Set up Node Monitoring](/node-monitoring) to track uptime and performance.
+3. Review [Earnings](/dvpn-nodes/earnings) to understand how the revenue system works.

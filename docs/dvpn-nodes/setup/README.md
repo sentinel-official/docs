@@ -14,8 +14,8 @@ Setting up a dVPN node doesn’t require advanced Linux knowledge, just some bas
 
 There are currenty 2 ways to get started with setting up a dVPN node:
 
-- [Manual](dvpn-node-setup/manual-setup)
-- [Automated](/dvpn-node-setup/automated)
+- [Manual](/dvpn-nodes/manual-setup)
+- [Automated](/dvpn-nodes/setup/automated)
 
 
 ## dVPN Node Owners Groups

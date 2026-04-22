@@ -1,7 +1,7 @@
 ---
 title: Earnings
 sidebar_label: "💰 Earnings"
-sidebar_position: 3
+sidebar_position: 5
 ---
 
 # Node Earnings
