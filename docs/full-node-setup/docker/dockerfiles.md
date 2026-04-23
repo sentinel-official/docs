@@ -54,7 +54,7 @@ RUN git clone https://github.com/sentinel-official/sentinelhub.git "/home/sentin
 
 WORKDIR /home/sentinel/sentinelhub
 
-RUN git checkout v12.0.1 &&\
+RUN git checkout v12.0.2 &&\
 make install 
 
 #root must perform the symlink to enable sentinelhub commands
@@ -209,7 +209,7 @@ RUN git clone https://github.com/sentinel-official/sentinelhub.git "/home/sentin
 
 WORKDIR /home/sentinel/sentinelhub
 
-RUN git checkout v12.0.1 &&\
+RUN git checkout v12.0.2 &&\
 make install 
 
 #root must perform the symlink to enable sentinelhub commands
@@ -385,7 +385,7 @@ RUN git clone https://github.com/sentinel-official/sentinelhub.git "/home/sentin
 
 WORKDIR /home/sentinel/sentinelhub
 
-RUN git checkout v12.0.1 &&\
+RUN git checkout v12.0.2 &&\
 make install 
 
 # root must perform the symlink
@@ -520,7 +520,7 @@ RUN git clone https://github.com/sentinel-official/sentinelhub.git "/home/sentin
 
 WORKDIR /home/sentinel/sentinelhub
 
-RUN git checkout v12.0.1 &&\
+RUN git checkout v12.0.2 &&\
 make install 
 
 #root must perform the symlink
