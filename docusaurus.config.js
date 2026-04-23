@@ -186,7 +186,7 @@ const config = {
               },
               {
                 to: 'full-node-setup',
-                label: 'Run a Full Node & Validate',
+                label: 'Full Nodes & Validators',
               },
               {
                 to: 'node-monitoring',
