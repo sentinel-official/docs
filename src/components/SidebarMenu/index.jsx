@@ -27,7 +27,7 @@ export default function SidebarMenu() {
         const path = page + (hash && hash.length > 0 ? '#' + hash : '')
         router.push(path);
       } else {
-        router.push(selectedSectionDocs[0].path)
+        router.push(`/${selectedSection}/`);
       }
     }
   };
