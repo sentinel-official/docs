@@ -1,7 +1,8 @@
 ---
 title: Javascript
 sidebar_label: "📦 Javascript"
-sidebar_position: 3
+sidebar_position: 2
+slug: /javascript
 ---
 
 # Javascript SDK
