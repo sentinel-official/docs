@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-export default function DvpnAkt() {
+export default function P2pCoin() {
       const svgStyles = `enable-background:new 0 0 884.41 911.37;`;
 
       const clipPathStyles = `overflow: visible;`;

@@ -76,8 +76,6 @@ const config = {
     locales: ['en'],
   },
 
-  clientModules: [require.resolve('./src/client/define-ui-kit.js')],
-
   presets: [
     [
       'classic',

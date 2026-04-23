@@ -19,7 +19,6 @@ Full nodes are important for decentralization as they help in distributing the b
 A Sentinel P2P Full Node can be deployed on various platforms, including:
 - Dedicated server (as explained in this guide)
 - Your home setup
-- The Akash Network
 
 To set up a Full Node successfully, you should possess a moderate level of proficiency in Linux and networking. This guide has been designed to assist users in comprehending all the necessary steps required for setting up a full node.
 
