@@ -60,17 +60,20 @@ export default function SidebarMenu() {
 
   return (
     <div className={styles.multiSectionContainer}>
-      <div
-        className={clsx(styles.section, styles.sectionActive)}
-        onClick={navigateToFirstSection}
-        onKeyDown={(e) => {
-          if (e.code === 'Space' || e.code === 'Enter') {
-            navigateToFirstSection();
-          }
-        }}
-        tabIndex={0}
-      >
-        <div>{name}</div>
+      <div className={clsx(styles.section, styles.sectionActive)}>
+        <div
+          className={styles.sectionLabel}
+          onClick={navigateToFirstSection}
+          onKeyDown={(e) => {
+            if (e.code === 'Space' || e.code === 'Enter') {
+              navigateToFirstSection();
+            }
+          }}
+          tabIndex={0}
+          role="link"
+        >
+          {name}
+        </div>
         <div className={styles.row}>
           <SectionsMenu
             defaultValue={id}

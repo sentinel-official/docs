@@ -28,10 +28,19 @@ html[data-theme='dark'] {
 
 .section {
   padding: 0.75rem;
-  cursor: pointer;
   background-color: var(--docs-sections-menu-background-color);
   --ifm-navbar-link-color: var(--docs-sections-menu-active-color);
   --ifm-navbar-link-hover-color: var(--docs-sections-menu-active-color);
+}
+
+.sectionLabel {
+  cursor: pointer;
+  margin-bottom: 0.25rem;
+}
+
+.sectionLabel:focus-visible {
+  outline: 2px solid var(--docs-sections-menu-active-color);
+  outline-offset: 2px;
 }
 
 .sectionActive {
