@@ -176,18 +176,13 @@ const config = {
             //activeBaseRegex: '(.*ui-kit|.*web-core)',
           },
           {
-            label: 'dVPN Nodes',
-            to: 'dvpn-nodes',
-            position: 'left',
-          },
-          {
-            label: 'User Guides',
+            label: 'Node Operators',
             type: 'dropdown',
             position: 'left',
             items: [
               {
-                to: '/dvpn-nodes/setup',
-                label: 'Run a dVPN Node',
+                to: 'dvpn-nodes',
+                label: 'dVPN Nodes',
               },
               {
                 to: 'full-node-setup',
@@ -227,8 +222,8 @@ const config = {
                 label: 'Reddit',
               },
               {
-                href: 'https://commonwealth.im/sentinel/',
-                label: 'Commonwealth',
+                href: 'https://common.xyz/sentinel/',
+                label: 'Common',
               },
               {
                 href: 'https://medium.com/@sentinel',
@@ -349,8 +344,8 @@ const config = {
                 href: 'https://discord.com/invite/mmAA8qF',
               },
               {
-                label: 'Commonwealth',
-                href: 'https://commonwealth.im/sentinel/',
+                label: 'Common',
+                href: 'https://common.xyz/sentinel/',
               },
             ],
           },

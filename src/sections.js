@@ -15,9 +15,9 @@ const MULTI_SECTIONS = [
       description: 'Sentinel Chain Development documentation.',
     },
     {
-      name: 'User Guides',
+      name: 'Node Operators',
       section: 'guides',
-      description: 'Guides to provide bandwidth and validate',
+      description: 'Guides for running dVPN nodes, full nodes, and monitoring.',
     },
   ],
 ];
@@ -28,12 +28,8 @@ const SECTIONS = [
     id: 'default',
     section: false,
   },
-  // {
-  //   id: 'guides',
-  //   section: false,
-  // },
 
-  // Dropdown Sentinel Core
+  // Dropdown Sentinel Core — developer / integrator docs
   {
     name: 'Sentinel Hub',
     id: 'sentinel-hub',
@@ -44,12 +40,6 @@ const SECTIONS = [
     name: 'Sentinel dVPN CLI',
     id: 'dvpn-cli',
     icon: TerminalIcon,
-    section: 'core-sdk',
-  },
-  {
-    name: 'dVPN Nodes',
-    id: 'dvpn-nodes',
-    icon: Nodes,
     section: 'core-sdk',
   },
   {
@@ -65,7 +55,13 @@ const SECTIONS = [
     section: 'core-sdk',
   },
 
-  // Dropdown Sentinel Guides
+  // Dropdown Node Operators — operational guides
+  {
+    name: 'dVPN Nodes',
+    id: 'dvpn-nodes',
+    icon: Nodes,
+    section: 'guides',
+  },
   {
     name: 'Run a Full Node',
     id: 'full-node-setup',

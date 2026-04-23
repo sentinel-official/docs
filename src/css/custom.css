@@ -542,19 +542,15 @@ ul.menu__list > li > a.menu__link--active {
   font-size: 14px;
 }
 
-/* Mobile drawer - cosmetic overrides only. Layout is the default
-   Docusaurus two-panel flex; do not set display / width / transform
-   / height on .navbar-sidebar__items or .navbar-sidebar__item. */
+/* Mobile drawer. Layout is the default Docusaurus two-panel flex; do
+   not set display / width / transform on .navbar-sidebar__items or
+   .navbar-sidebar__item. Height is forced to the full viewport here
+   because Safari iOS and some Android browsers do not compute height
+   correctly from top:0 + bottom:0 alone on position:fixed elements. */
 .navbar-sidebar {
   background: var(--sentinel-surface-solid, #1c1c1c);
-  bottom: auto;
-  height: auto;
-  max-height: 100dvh;
-}
-
-.navbar-sidebar__items {
-  height: auto;
-  min-height: 0;
+  height: 100vh;
+  height: 100dvh;
 }
 
 .navbar-sidebar .menu__link {
