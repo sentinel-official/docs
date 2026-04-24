@@ -18,9 +18,10 @@ You can access the Sentinel Python SDK from:
 The SDK is organized into the following modules, accessible as properties on the main `SDKInstance`:
 
 - **`nodes`** - Query nodes, check node status, register nodes, subscribe, and post VPN sessions
-- **`subscriptions`** - Manage subscription lifecycle, allocations, and payouts
+- **`subscriptions`** - Manage subscription lifecycle (start, renew, share, update, cancel) and query node/plan subscriptions
 - **`sessions`** - Start, end, and update VPN sessions with proof submission
 - **`plans`** - Create and manage subscription plans, link/unlink nodes
+- **`lease`** - Start, end, renew, and update provider-side leases against nodes
 - **`providers`** - Register and update provider profiles
 - **`deposits`** - Query deposit information
 - **`swaps`** - Execute and query token swaps
@@ -36,10 +37,16 @@ pip install sentinel-sdk
 **Requirements:** Python 3.10+
 
 **Dependencies:**
-- `sentinel-protobuf` (0.3.3) - Protobuf definitions for the Sentinel network
+- `sentinel-protobuf` (0.5.1) - Protobuf definitions for the Sentinel network
 - `grpcio` (>=1.51.1) - gRPC framework
 - `bip-utils` (2.9.0) - BIP39/BIP44 wallet derivation
 - `mospy-wallet` (0.6.0) - Cosmos transaction building
+
+On Debian/Ubuntu, install the build tooling required by some native dependencies before running `pip install`:
+
+```bash
+sudo apt install build-essential autoconf automake libtool pkg-config python3-dev
+```
 
 ## SDK Instance
 
@@ -87,6 +94,13 @@ sdk.renew_account(secret="new mnemonic or private key")
 sdk.renew_grpc(grpcaddr="grpc.other-endpoint.co", grpcport=9090, use_ssl=False)
 ```
 
+The currently configured endpoint is exposed through read-only properties:
+
+```python
+sdk.grpcaddr  # current gRPC host
+sdk.grpcport  # current gRPC port
+```
+
 ## Types
 
 The SDK provides several types used throughout the modules:
@@ -109,6 +123,7 @@ from sentinel_sdk.types import NodeType
 
 NodeType.WIREGUARD  # 1
 NodeType.V2RAY      # 2
+NodeType.OPENVPN    # 3
 ```
 
 ### TxParams
@@ -120,7 +135,7 @@ from sentinel_sdk.types import TxParams
 
 params = TxParams(
     denom="udvpn",         # Token denomination (default: "udvpn")
-    fee_amount=314159,     # Fee amount (default: 314159)
+    fee_amount=31415,      # Fee amount (default: 31415)
     gas=0,                 # Gas limit, 0 = auto-estimate (default: 0)
     gas_multiplier=1.5     # Gas estimation multiplier (default: 1.5)
 )
@@ -193,31 +208,29 @@ for address, status_json in statuses.items():
 ### Querying Subscriptions
 
 ```python
+# All subscriptions (paginated)
+subs = sdk.subscriptions.QuerySubscriptions(
+    pagination=PageRequest(limit=100)
+)
+
 # All subscriptions for the current account
 subs = sdk.subscriptions.QuerySubscriptionsForAccount(sdk.nodes._account.address)
-
-# Subscriptions for a specific node
-subs = sdk.subscriptions.QuerySubscriptionsForNode("sentnode1...")
 
 # Subscriptions for a plan
 subs = sdk.subscriptions.QuerySubscriptionsForPlan(plan_id=1)
 
 # A single subscription by ID
 sub = sdk.subscriptions.QuerySubscription(subscription_id=42)
-
-# Allocation for an address within a subscription
-alloc = sdk.subscriptions.QueryAllocation(
-    address="sent1...",
-    subscription_id=42
-)
-
-# Query payouts
-payouts = sdk.subscriptions.QueryPayoutsForAccount("sent1...")
 ```
 
 ### Querying Sessions
 
 ```python
+# All sessions (paginated)
+sessions = sdk.sessions.QuerySessions(
+    pagination=PageRequest(limit=100)
+)
+
 # Sessions for the current account
 sessions = sdk.sessions.QuerySessionsForAccount(sdk.nodes._account.address)
 
@@ -226,6 +239,12 @@ sessions = sdk.sessions.QuerySessionsForSubscription(subscription_id=42)
 
 # Sessions for a specific node
 sessions = sdk.sessions.QuerySessionsForNode("sentnode1...")
+
+# Sessions for a specific allocation
+sessions = sdk.sessions.QuerySessionsForAllocation(
+    allocation_id=42,
+    address="sent1..."
+)
 
 # A single session by ID
 session = sdk.sessions.QuerySession(session_id=1)
@@ -258,51 +277,90 @@ Once the SDK is initialized with a secret, every module can sign and broadcast t
 
 ### Subscribing to a Node
 
+`SubscribeToNode` now takes a `Price` object (from `sentinel_protobuf`) as the maximum price the caller is willing to pay, rather than a bare `denom` string:
+
 ```python
+from sentinel_protobuf.sentinel.types.v1.price_pb2 import Price
 from sentinel_sdk.types import TxParams
+
+max_price = Price(denom="udvpn", value="1000000")
 
 tx = sdk.nodes.SubscribeToNode(
     node_address="sentnode1...",
+    price=max_price,
     gigabytes=1,
     hours=0,
-    denom="udvpn",
-    tx_params=TxParams()
+    tx_params=TxParams(),
 )
 
 # Wait for the transaction to be confirmed
 tx_response = sdk.nodes.wait_for_tx(tx["hash"])
 ```
 
-### Starting and Ending Sessions
+### Starting, Updating, and Ending Sessions
+
+Starting a session from an existing subscription is now exposed on the `subscriptions` module. Updating and ending a session stay on the `sessions` module:
 
 ```python
 # Start a session for a subscription
-tx = sdk.sessions.StartSession(
+tx = sdk.subscriptions.StartSession(
     subscription_id=42,
     address="sentnode1..."
 )
+tx_response = sdk.subscriptions.wait_for_tx(tx["hash"])
+
+# Submit a bandwidth / duration proof for an active session
+tx = sdk.sessions.UpdateSession(
+    session_id=1,
+    download_bytes=12345,
+    upload_bytes=6789,
+    duration_seconds=3600,
+    signature=signed_proof,
+)
 tx_response = sdk.sessions.wait_for_tx(tx["hash"])
 
-# End a session with a rating
-tx = sdk.sessions.EndSession(session_id=1, rating=5)
+# End (cancel) a session
+tx = sdk.sessions.EndSession(session_id=1)
 tx_response = sdk.sessions.wait_for_tx(tx["hash"])
 ```
 
 ### Subscribing to a Plan
 
+Subscribing to a plan is now handled by the `subscriptions` module via `StartSubscription`. The caller can optionally pick a renewal price policy:
+
 ```python
-tx = sdk.plans.Subscribe(plan_id=1, denom="udvpn")
-tx_response = sdk.plans.wait_for_tx(tx["hash"])
+from sentinel_protobuf.sentinel.types.v1.renewal_pb2 import RenewalPricePolicy
+
+tx = sdk.subscriptions.StartSubscription(
+    plan_id=1,
+    denom="udvpn",
+    renewal=RenewalPricePolicy.RENEWAL_PRICE_POLICY_IF_LESSER_OR_EQUAL,
+)
+tx_response = sdk.subscriptions.wait_for_tx(tx["hash"])
 ```
 
 ### Managing Subscriptions
 
 ```python
-# Allocate bandwidth to an address
-tx = sdk.subscriptions.Allocate(
-    address="sent1...",
+from sentinel_protobuf.sentinel.types.v1.renewal_pb2 import RenewalPricePolicy
+
+# Renew a subscription
+tx = sdk.subscriptions.RenewSubscription(
+    subscription_id=42,
+    denom="udvpn",
+)
+
+# Share part of a subscription's bandwidth with another account
+tx = sdk.subscriptions.ShareSubscription(
+    subscription_id=42,
+    wallet_address="sent1...",
     bytes="1000000000",
-    id=42
+)
+
+# Update the renewal policy of a subscription
+tx = sdk.subscriptions.UpdateSubscription(
+    subscription_id=42,
+    renewal=RenewalPricePolicy.RENEWAL_PRICE_POLICY_IF_LESSER_OR_EQUAL,
 )
 
 # Cancel a subscription
@@ -347,6 +405,64 @@ tx = sdk.plans.UnlinkNode(plan_id=1, node_address="sentnode1...")
 tx = sdk.plans.UpdateStatus(plan_id=1, status=Status.INACTIVE.value)
 ```
 
+### Node Management (Provider)
+
+Registering and maintaining a node is exposed on the `nodes` module:
+
+```python
+# Register a new node
+tx = sdk.nodes.RegisterNode(
+    gigabyte_prices=gigabyte_prices,
+    hourly_prices=hourly_prices,
+    remote_url="https://node.example.com:8585",
+)
+
+# Update node details
+tx = sdk.nodes.UpdateNodeDetails(
+    gigabyte_prices=gigabyte_prices,
+    hourly_prices=hourly_prices,
+    remote_url="https://node.example.com:8585",
+)
+
+# Update node status
+tx = sdk.nodes.UpdateNodeStatus(status=Status.ACTIVE)
+```
+
+### Lease Management (Provider)
+
+The `lease` module lets providers manage leases that back plan-based subscriptions against their nodes:
+
+```python
+from sentinel_protobuf.sentinel.types.v1.price_pb2 import Price
+from sentinel_protobuf.sentinel.types.v1.renewal_pb2 import RenewalPricePolicy
+
+max_price = Price(denom="udvpn", value="1000000")
+
+# Start a lease against a node
+tx = sdk.lease.StartLease(
+    node="sentnode1...",
+    hours=720,
+    max_price=max_price,
+    renewal=RenewalPricePolicy.RENEWAL_PRICE_POLICY_IF_LESSER_OR_EQUAL,
+)
+
+# Renew an existing lease
+tx = sdk.lease.RenewLease(
+    subscription_id=42,
+    hours=720,
+    max_price=max_price,
+)
+
+# Update a lease's renewal price policy
+tx = sdk.lease.UpdateLease(
+    subscription_id=42,
+    renewal=RenewalPricePolicy.RENEWAL_PRICE_POLICY_IF_LESSER_OR_EQUAL,
+)
+
+# End a lease
+tx = sdk.lease.EndLease(subscription_id=42)
+```
+
 ## Event Parsing
 
 After broadcasting a transaction, use the `search_attribute` utility to extract specific event attributes from the response:
@@ -357,14 +473,14 @@ from sentinel_sdk.utils import search_attribute
 # Extract the subscription ID from a subscribe transaction
 subscription_id = search_attribute(
     tx_response,
-    "sentinel.node.v2.EventCreateSubscription",
+    "sentinel.node.v3.EventCreateSubscription",
     "id"
 )
 
 # Extract the session ID from a session start transaction
 session_id = search_attribute(
     tx_response,
-    "sentinel.session.v2.EventStart",
+    "sentinel.session.v3.EventStart",
     "id"
 )
 ```
@@ -426,6 +542,7 @@ Below is a complete workflow demonstrating how to query a node, subscribe, start
 
 ```python
 import json
+from sentinel_protobuf.sentinel.types.v1.price_pb2 import Price
 from sentinel_sdk.sdk import SDKInstance
 from sentinel_sdk.types import Status, NodeType, TxParams
 from sentinel_sdk.utils import search_attribute
@@ -444,28 +561,29 @@ node_status = json.loads(sdk.nodes.QueryNodeStatus(node))
 print(f"Node: {node.address}, Type: {node_status['result']['type']}")
 
 # 3. Subscribe to the node
+max_price = Price(denom="udvpn", value="1000000")
 tx = sdk.nodes.SubscribeToNode(
     node_address=node.address,
+    price=max_price,
     gigabytes=1,
     hours=0,
-    denom="udvpn",
-    tx_params=TxParams()
+    tx_params=TxParams(),
 )
 tx_response = sdk.nodes.wait_for_tx(tx["hash"])
 
 subscription_id = search_attribute(
-    tx_response, "sentinel.node.v2.EventCreateSubscription", "id"
+    tx_response, "sentinel.node.v3.EventCreateSubscription", "id"
 )
 
-# 4. Start a session
-tx = sdk.sessions.StartSession(
+# 4. Start a session from the subscription
+tx = sdk.subscriptions.StartSession(
     subscription_id=int(subscription_id),
-    address=node.address
+    address=node.address,
 )
-tx_response = sdk.sessions.wait_for_tx(tx["hash"])
+tx_response = sdk.subscriptions.wait_for_tx(tx["hash"])
 
 session_id = search_attribute(
-    tx_response, "sentinel.session.v2.EventStart", "id"
+    tx_response, "sentinel.session.v3.EventStart", "id"
 )
 
 # 5. Post the session to establish VPN connection
