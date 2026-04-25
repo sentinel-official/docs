@@ -11,7 +11,7 @@ You might need to migrate your validator to a new server for reasons such as har
 The first crucial step is to set up and **fully synchronize** your new node on the new server. To verify the sync status of your node, simply click [here](/full-node-setup/node-run#check-sync-status)
 :::
 
-Once the new node is synchronized, you can proceed with one of two methods depending on whether you are using [TMKMS](/full-node-setup/category/tmkms).
+Once the new node is synchronized, you can proceed with one of two methods depending on whether you are using [TMKMS](/full-node-setup/validate/essential-tools/tmkms/overview).
 
 
 ## Using TMKMS

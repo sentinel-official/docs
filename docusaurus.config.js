@@ -37,7 +37,9 @@ function defineSection(section, options = {}) {
 const SECTIONS = [
   defineSection('apis'),
   defineSection('p2p-coin'),
-  defineSection('full-node-setup'),
+  defineSection('full-node-setup', {
+    sidebarPath: require.resolve('./sidebars-full-node-setup.js'),
+  }),
   defineSection('get-started'),
   defineSection('networks'),
   defineSection('dvpn-nodes'),
@@ -184,7 +186,7 @@ const config = {
               },
               {
                 to: 'full-node-setup',
-                label: 'Full Nodes & Validators',
+                label: 'Full Nodes',
               },
               {
                 to: 'node-monitoring',

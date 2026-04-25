@@ -17,25 +17,9 @@ Check firewall status to see if the port has been enabled
 ```bash
 sudo ufw status
 ```
-## Update API Settings
+## Verify API is enabled
 
-Open the `app.toml` file
-
-```bash
-sudo nano ${HOME}/.sentinelhub/config/app.toml
-```
-
-Find the `[api]` section and set the following options:
-
-```bash
-[api]
-
-# Enable defines if the API server should be enabled.
-enable = true
-
-# Address defines the API server to listen on.
-address = "tcp://0.0.0.0:1317"
-```
+If you used the [RPC/API node app.toml reference](/full-node-setup/node-setup#apptoml) on the Install & Configure Full Node page, `[api] enable = true` and `address = "tcp://0.0.0.0:1317"` are already in place. If you started from a different baseline, set those two values in `${HOME}/.sentinelhub/config/app.toml` before continuing.
 
 ## Restart Sentinel Hub service
 

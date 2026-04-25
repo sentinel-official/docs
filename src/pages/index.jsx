@@ -132,7 +132,7 @@ export default function Homepage() {
               icon={<Guide />}
             />
             <Card
-              title="Full Nodes & Validators"
+              title="Full Nodes"
               description="Learn how to set up a Full Node and effectively communicate with the Sentinel Blockchain."
               to="/full-node-setup"
               icon={<Guide />}

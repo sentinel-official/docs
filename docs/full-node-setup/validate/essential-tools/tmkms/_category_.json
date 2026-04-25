@@ -2,7 +2,7 @@
   "label": "🔑 TMKMS",
   "position": 1,
   "link": {
-    "type": "generated-index",
-    "slug": "/category/tmkms"
+    "type": "doc",
+    "id": "validate/essential-tools/tmkms/overview"
   }
 }

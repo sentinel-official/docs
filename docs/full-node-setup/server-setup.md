@@ -1,8 +1,72 @@
 ---
-title: SSH
-description: Setting up SSH for secure remote access and communication
-sidebar_position: 3
+title: Server Setup
+sidebar_label: "🖥️ Server Setup"
+sidebar_position: 2
 ---
+
+# Server Setup
+
+Before installing Sentinel Hub, prepare the host. Skip this section if you've already set up a Linux server you maintain elsewhere.
+
+## Requirements
+
+### Home or Dedicated Server
+
+To run a Full Node, the recommended minimum hardware requirements are as follows:
+- CPU: 8+ cores with a clock speed of 3.5 GHz or higher
+- RAM: At least 32GB DDR4
+- Storage: 500GB NVMe in RAID 1 configuration
+- Bandwidth: Unmetered connection with a speed of 1Gbps
+- Operating System: Linux (Debian or Ubuntu preferred)
+
+### Change Root Password
+
+Assuming you are logged into your server as root, first of all, let's change the root password and add a new one.
+
+```bash
+passwd root
+```
+
+### Update the system
+
+```bash
+apt update && apt upgrade -y
+```
+
+Install sudo package
+
+```bash
+apt install sudo
+```
+
+## Create New User
+
+Creating a new user is crucial because you should avoid managing your full node under the root user account.
+Our user will be named `sentinel`, and you will be asked to create a new password for this user.
+
+```bash
+adduser sentinel
+```
+
+Grant sudo access to sentinel user. Open the sudoers file
+
+```bash
+nano /etc/sudoers
+```
+
+Add the following line
+
+```bash title="/etc/sudoers"
+sentinel ALL=(ALL:ALL) ALL
+```
+
+Switch to the newly created user
+
+```bash
+su - sentinel
+```
+
+## SSH
 
 To securely access your server, you will use an SSH connection.
 

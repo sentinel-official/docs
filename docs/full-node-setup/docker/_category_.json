@@ -1,5 +1,6 @@
 {
   "label": "🐳 Run by using Docker",
   "position": 13,
-  "className": "releaseSidebarHeading"
+  "className": "releaseSidebarHeading",
+  "link": { "type": "doc", "id": "docker/overview" }
 }

@@ -63,7 +63,7 @@ const SECTIONS = [
     section: 'guides',
   },
   {
-    name: 'Full Nodes & Validators',
+    name: 'Full Nodes',
     id: 'full-node-setup',
     icon: Guide,
     section: 'guides',

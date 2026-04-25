@@ -2,8 +2,7 @@
   "label": "♻️ REStake App",
   "position": 3,
   "link": {
-    "type": "generated-index",
-    "slug": "/category/restake-app",
-    "description": "An auto-compounding tool that uses the authz module, enabling one wallet to grant authorization to another for executing specific actions on its behalf."
+    "type": "doc",
+    "id": "validate/essential-tools/restake/overview"
   }
 }
