@@ -86,28 +86,24 @@ Source the file to reflect changes in the current Terminal session.
 source ${HOME}/.bashrc
 ```
 
-## Enable ports on Firewall
-
-Set up these ports on your firewall:
-
-```bash
-sudo ufw allow 26656/tcp
-```
-
-Check firewall status to see if the port has been enabled
-
-```bash
-sudo ufw status
-```
-
 ## Install Sentinel Hub
 
-To install Sentinel Hub, please download the latest version from the [repository](https://github.com/sentinel-official/hub/releases) and proceed by executing the following commands:
+To install Sentinel Hub, clone the GitHub [repository](https://github.com/sentinel-official/hub/releases):
 
 ```bash
 git clone https://github.com/sentinel-official/sentinelhub.git "${HOME}/sentinelhub"
-cd "${HOME}/sentinelhub"
-git checkout vX.X.X
+```
+
+Checkout to the latest tag:
+
+```bash
+cd ${HOME}/sentinelhub/ && \
+commit=$(git rev-list --tags --max-count=1) && \
+git checkout $(git describe --tags ${commit})
+```
+Build the Binary
+
+```bash
 make install
 
 # For Ubuntu installation

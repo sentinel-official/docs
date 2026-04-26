@@ -64,6 +64,18 @@ What both flavors have in common:
 - **Seeds vs peers**, in case you're new to Tendermint:
     - **Seeds** are short-lived entry points used during bootstrap to discover the network topology.
     - **Persistent peers** are long-lived connections you trust to stay reachable.
+- **Gossip P2P** is bound on `:26656` via `[p2p] laddr`. This port must be reachable from peers, so open it on your firewall:
+
+```bash
+sudo ufw allow 26656/tcp
+```
+
+Check the firewall status to confirm:
+
+```bash
+sudo ufw status
+```
+
 - **Prometheus** is enabled on `:26660`. Open the port on your firewall, restricted to your monitoring machine:
 
 ```bash
