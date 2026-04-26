@@ -71,7 +71,7 @@ In this example, my validator has the IP address of validator_ip and we will be 
 [[chain]]
 id = "sentinelhub-2"
 key_format = { type = "bech32", account_key_prefix = "sentpub", consensus_key_prefix = "sentvalconspub" }
-state_file = "home/<your_user>/tmkms/config/state/priv_validator_state.json"
+state_file = "home/sentinel/tmkms/config/state/priv_validator_state.json"
 
 ## Signing Provider Configuration
 
@@ -80,14 +80,14 @@ state_file = "home/<your_user>/tmkms/config/state/priv_validator_state.json"
 [[providers.softsign]]
 chain_ids = ["sentinelhub-2"]
 key_type = "consensus"
-path = "/home/<your_user>/tmkms/config/secrets/priv_validator_key"
+path = "/home/sentinel/tmkms/config/secrets/priv_validator_key"
 
 ## Validator Configuration
 
 [[validator]]
 chain_id = "sentinelhub-2"
 addr = "tcp://validator_ip:26659" #insert validator ip
-secret_key = "/home/<your_user>/tmkms/config/secrets/kms-identity.key"
+secret_key = "/home/sentinel/tmkms/config/secrets/kms-identity.key"
 protocol_version = "v0.34" #check the version match with the one of your validator
 reconnect = true
 ```
@@ -115,9 +115,9 @@ Description=TMKMS Daemon
 After=network.target
 
 [Service]
-User=<your_user>
+User=sentinel
 Type=simple
-ExecStart=tmkms start -c /home/<your_user>/tmkms/config/tmkms.toml
+ExecStart=tmkms start -c /home/sentinel/tmkms/config/tmkms.toml
 Restart=on-failure
 StartLimitInterval=0
 RestartSec=5

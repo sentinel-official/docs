@@ -178,11 +178,11 @@ Description=Cosmos Validator Exporter
 After=network-online.target
 ​
 [Service]
-User=<your_user> #modify this field with your user
+User=sentinel #modify this field with your user
 TimeoutStartSec=0
 CPUWeight=95
 IOWeight=95
-ExecStart=cosmos-validators-exporter --config /home/<your-user>/cosmos-validators-exporter/config.toml
+ExecStart=cosmos-validators-exporter --config /home/sentinel/cosmos-validators-exporter/config.toml
 Restart=always
 RestartSec=2
 LimitNOFILE=800000

@@ -1,10 +1,14 @@
 ---
-title: Golang Setup
-sidebar_label: "⚙️ Golang Setup"
+title: Sentinel Hub Setup
+sidebar_label: "⚙️ Hub Setup"
 sidebar_position: 3
 ---
 
-# Install Golang
+# Sentinel Hub Setup
+
+Install the Go toolchain, open the gossip port, and build the `sentinelhub` binary.
+
+## Install Golang
 
 First of all install some required packages
 
@@ -14,7 +18,7 @@ sudo apt install curl git jq make unzip gcc -y
 
 You now have two methods for installing Golang.
 
-## Ubuntu
+### Ubuntu
 
 To install Go on Ubuntu, you can easily follow the steps provided.
 
@@ -30,7 +34,7 @@ Install Golang
 sudo apt install -y golang-go
 ```
 
-## Manually
+### Manually
 
 This method should work on all Linux systems, although it is intended for more experienced users.
 
@@ -48,7 +52,7 @@ Copy the extracted go into `/usr/local/lib/go`
 sudo cp -r ${HOME}/go /usr/local/lib/go
 ```
 
-## Export Golang environment variables
+### Export Golang environment variables
 
 Now that you've successfully installed Golang, it's essential to configure its environmental variables.
 
@@ -80,4 +84,35 @@ Source the file to reflect changes in the current Terminal session.
 
 ```bash
 source ${HOME}/.bashrc
+```
+
+## Enable ports on Firewall
+
+Set up these ports on your firewall:
+
+```bash
+sudo ufw allow 26656/tcp
+```
+
+Check firewall status to see if the port has been enabled
+
+```bash
+sudo ufw status
+```
+
+## Install Sentinel Hub
+
+To install Sentinel Hub, please download the latest version from the [repository](https://github.com/sentinel-official/hub/releases) and proceed by executing the following commands:
+
+```bash
+git clone https://github.com/sentinel-official/sentinelhub.git "${HOME}/sentinelhub"
+cd "${HOME}/sentinelhub"
+git checkout vX.X.X
+make install
+
+# For Ubuntu installation
+sudo ln -s "${GOBIN}/sentinelhub" /usr/bin/sentinelhub
+
+# For manual installation
+sudo ln -s "${GOBIN}/sentinelhub" /usr/local/bin/sentinelhub
 ```

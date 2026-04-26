@@ -208,7 +208,7 @@ The latest genesis file is `v0.6.2`, which reflects the hard fork from `sentinel
 
 ### Install v0.6.2
 
-To begin from the genesis state, install [Sentinel Hub](/full-node-setup/node-setup#install-sentinel-hub) and make sure you use the `v0.6.2` binary.
+To begin from the genesis state, install [Sentinel Hub](/full-node-setup/hub-setup#install-sentinel-hub) and make sure you use the `v0.6.2` binary.
 
 ### Start the Node
 
@@ -275,4 +275,10 @@ To monitor the logs in real-time, use the following command:
 
 ```bash
 sudo journalctl -u sentinelhub.service -f --output=cat
+```
+
+Or the one below in case you use Cosmovisor:
+
+```bash
+sudo journalctl -u cosmovisor.service -f --output=cat
 ```

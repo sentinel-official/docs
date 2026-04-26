@@ -1,13 +1,78 @@
 ---
-title: Cosmovisor
-sidebar_position: 1
+title: Add a System Unit File
+sidebar_label: "🧩 System Unit File"
+sidebar_position: 5
 ---
 
-# Cosmovisor
+# Add a System Unit File
+
+:::tip Pick your service unit
+Choose one of two systemd units to run the daemon. They are mutually exclusive:
+
+- **`sentinelhub.service`**: runs the `sentinelhub` binary directly. You handle each chain upgrade by hand.
+- **`cosmovisor.service`**: wraps the binary with [Cosmovisor](https://github.com/cosmos/cosmos-sdk/tree/main/tools/cosmovisor), which swaps in the new binary automatically at the upgrade height.
+
+Both are valid for any full node, validator or RPC/API. Pick one and follow only that subsection.
+:::
+
+## Option 1: sentinelhub.service
+
+Open the sentinelhub.service with a text editor
+
+```bash
+sudo nano /etc/systemd/system/sentinelhub.service
+```
+
+Paste the below text
+
+<details>
+<summary>sentinelhub.service</summary>
+<p>
+
+```bash title="/etc/systemd/system/sentinelhub.service"
+[Unit]
+Description=Sentinel Hub Daemon
+After=network.target
+
+[Service]
+User=sentinel
+Type=simple
+
+# For Ubuntu installation
+ExecStart=/usr/bin/sentinelhub start
+# For Manual installation
+ExecStart=/usr/local/bin/sentinelhub start
+
+Restart=on-failure
+StartLimitInterval=0
+RestartSec=5
+LimitNOFILE=1048576
+LimitMEMLOCK=2048132
+
+[Install]
+WantedBy=multi-user.target
+```
+
+</p>
+</details>
+
+Reload the systemd Daemon
+
+```bash
+sudo systemctl daemon-reload
+```
+
+Enable autostart of Sentinel Hub service
+
+```bash
+sudo systemctl enable sentinelhub.service
+```
+
+## Option 2: cosmovisor.service
 
 Cosmovisor is a tool within the Cosmos ecosystem that assists in the smooth and safe upgrade of the blockchain software. It helps automate the process of updating the software to a new version while ensuring a seamless transition and minimal disruptions to the network. This is crucial in maintaining the security and efficiency of the network as it evolves over time.
 
-## Installation
+### Install Cosmovisor
 
 To install Cosmovisor, use the following command:
 
@@ -31,7 +96,7 @@ sudo ln -s /home/sentinel/go/bin/cosmovisor /usr/local/bin/
 
 (You may also refer to the Cosmovisor [installation instructions](https://github.com/cosmos/cosmos-sdk/tree/main/tools/cosmovisor#installation))
 
-## Environment Setup
+### Environment Setup
 
 Create the required directories inside your `~/.sentinelhub` folder:
 
@@ -93,7 +158,7 @@ sentinelhub version
 
 If you get `12.0.1` (which is the current version at the time of writing) everything went fine
 
-## Set Up Cosmovisor Service
+### Create the cosmovisor.service file
 
 Set up a service to allow Cosmovisor to run in the background as well as restart automatically if it runs into any problems:
 
@@ -114,12 +179,12 @@ After=network-online.target
 
 [Service]
 Environment="DAEMON_NAME=sentinelhub"
-Environment="DAEMON_HOME=/home/your-user/.sentinelhub"
+Environment="DAEMON_HOME=/home/sentinel/.sentinelhub"
 Environment="DAEMON_RESTART_AFTER_UPGRADE=true"
 Environment="DAEMON_ALLOW_DOWNLOAD_BINARIES=false"
 Environment="DAEMON_LOG_BUFFER_SIZE=512"
 Environment="UNSAFE_SKIP_BACKUP=true"
-User=your-user
+User=sentinel
 ExecStart=/usr/local/bin/cosmovisor run start
 Restart=always
 RestartSec=3
@@ -133,32 +198,16 @@ WantedBy=multi-user.target
 </p>
 </details>
 
-## Start Cosmovisor Service
+### Reload and enable
 
-Reload the daemon, stop `sentinelhub.service`, enable and start `cosmovisor.service`:
+Reload the systemd Daemon
 
 ```bash
 sudo systemctl daemon-reload
+```
+
+Enable autostart of Cosmovisor service
+
+```bash
 sudo systemctl enable cosmovisor.service
-sudo systemctl stop sentinelhub.service
-sudo systemctl start cosmovisor.service
-```
-
-Check the status of the service:
-
-```bash
-sudo systemctl status cosmovisor.service
-```
-
-To see live logs of the service:
-
-```bash
-journalctl -u cosmovisor.service -f --output=cat
-```
-
-If everything went fine you can either disable or remove `sentinelhub.service` as you do not need it anymore
-
-```bash
-sudo systemctl disable sentinelhub.service
-sudo rm -f sentinelhub.service
 ```

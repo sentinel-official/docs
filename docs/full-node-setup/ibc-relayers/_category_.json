@@ -1,5 +1,5 @@
 {
-  "label": "🔗 IBC Relayers",
+  "label": "🌉 IBC Relayers",
   "position": 14,
   "className": "releaseSidebarHeading",
   "link": { "type": "doc", "id": "ibc-relayers/README" }

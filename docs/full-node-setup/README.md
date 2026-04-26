@@ -26,10 +26,10 @@ To set up a Full Node successfully, you should possess a moderate level of profi
 
 A Full Node can be specialized for one of two roles. The same machine should not run both, for security and performance reasons.
 
-- **Validator**: signs blocks and earns staking rewards. Requires secure key management ([TMKMS](/full-node-setup/validate/essential-tools/tmkms/overview)), upgrade automation ([Cosmovisor](/full-node-setup/validate/essential-tools/cosmovisor)), and tight peer hygiene.
+- **Validator**: signs blocks and earns staking rewards. Requires secure key management ([TMKMS](/full-node-setup/validate/tmkms/overview)) and tight peer hygiene.
 - **RPC/API node**: serves clients (wallets, explorers, applications) over HTTP/gRPC. Requires open inbound connectivity, historical state retention, and a reverse proxy.
 
-Both roles start from the same **🛠️ Install & Run** steps (server prep, install, init, run). The configuration step in [Install & Configure Full Node](/full-node-setup/node-setup) is the bifurcation point: pick the reference matching the role you've chosen.
+Both roles start from the same **🛠️ Install & Run** steps (server prep, install, init, run). The configuration step in [Configure Sentinel Hub](/full-node-setup/hub-config) is the bifurcation point: pick the reference matching the role you've chosen.
 
 If you're operating an **IBC relayer**, that's a separate role; see the [🔗 IBC Relayers](/full-node-setup/ibc-relayers) section.
 

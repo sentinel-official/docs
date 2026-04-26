@@ -1,49 +1,17 @@
 ---
-title: Install & Configure Full Node
-sidebar_label: "🔧 Install & Configure"
+title: Configure Sentinel Hub
+sidebar_label: "🔧 Hub Configuration"
 sidebar_position: 4
 ---
 
-# Install & Configure Full Node
+# Configure Sentinel Hub
 
 :::tip Pick your role first
-The configuration step below has two flavors: **Validator** and **RPC/API node**. Decide which role this machine will play before editing `config.toml` and `app.toml`. The pre-config steps (firewall, install, genesis) are identical for both.
+The configuration step below has two flavors: **Validator** and **RPC/API node**. Decide which role this machine will play before editing `config.toml` and `app.toml`. The genesis file step is identical for both.
 :::
 
-## Enable ports on Firewall
 
-Set up these ports on your firewall:
-
-```bash
-sudo ufw allow 26656/tcp
-```
-
-Check firewall status to see if the port has been enabled
-
-```bash
-sudo ufw status
-```
-
-## Install Sentinel Hub
-
-To install Sentinel Hub, please download the latest version from the [repository](https://github.com/sentinel-official/hub/releases) and proceed by executing the following commands:
-
-```bash
-git clone https://github.com/sentinel-official/sentinelhub.git "${HOME}/sentinelhub"
-cd "${HOME}/sentinelhub"
-git checkout vX.X.X
-make install
-
-# For Ubuntu installation
-sudo ln -s "${GOBIN}/sentinelhub" /usr/bin/sentinelhub
-
-# For manual installation
-sudo ln -s "${GOBIN}/sentinelhub" /usr/local/bin/sentinelhub
-```
-
-## Configure Sentinel Hub
-
-### Genesis File
+## Genesis File
 
 Let's initialize the Sentinel Hub using the Genesis file, a JSON file which defines the initial state of Sentinel blockchain. The state defined in the genesis file contains all the necessary information, like initial coin allocation, genesis time, default parameters, and more
 
@@ -63,7 +31,7 @@ wget -O genesis.json https://snapshots.polkachu.com/genesis/sentinel/genesis.jso
 mv genesis.json ~/.sentinelhub/config
 ```
 
-### Edit the Node configuration file
+## Edit the Node configuration file
 
 A Sentinel Hub node is configured through two TOML files in `${HOME}/.sentinelhub/config/`:
 
@@ -77,7 +45,7 @@ The right tuning depends on the role your node plays. Two reference flavors are 
 
 > The references are tuned for `sentinelhub-2`. Review them against your installed SDK version before copying, since defaults shift between releases.
 
-#### config.toml
+### config.toml
 
 Open the file
 
@@ -1126,7 +1094,7 @@ namespace = "cometbft"
 </p>
 </details>
 
-#### app.toml
+### app.toml
 
 Open the file
 
@@ -1701,63 +1669,3 @@ max-txs = 5000
 </p>
 </details>
 
-### Add a system unit file
-
-If you're using [Cosmovisor](/full-node-setup/validate/essential-tools/cosmovisor), you can skip this step.
-
-Open the sentinelhub.service with a text editor
-
-```bash
-sudo nano /etc/systemd/system/sentinelhub.service
-```
-
-Paste the below text
-
-<details>
-<summary>sentinelhub.service</summary>
-<p>
-
-```bash title="/etc/systemd/system/sentinelhub.service"
-[Unit]
-Description=Sentinel Hub Daemon
-After=network.target
-
-[Service]
-User=sentinel
-Type=simple
-
-# For Ubuntu installation
-ExecStart=/usr/bin/sentinelhub start
-# For Manual installation
-ExecStart=/usr/local/bin/sentinelhub start
-
-Restart=on-failure
-StartLimitInterval=0
-RestartSec=5
-LimitNOFILE=1048576
-LimitMEMLOCK=2048132
-
-[Install]
-WantedBy=multi-user.target
-```
-
-</p>
-</details>
-
-Let's make sure to assign ownership of all sentinelhub files to the current user (in our case, 'sentinel')
-
-```bash
-sudo chown -R sentinel:sentinel ~/.sentinelhub
-```
-
-Reload the systemd Daemon
-
-```bash
-sudo systemctl daemon-reload
-```
-
-Enable autostart of Sentinel Hub service
-
-```bash
-sudo systemctl enable sentinelhub.service
-```

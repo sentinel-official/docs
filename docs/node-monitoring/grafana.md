@@ -50,12 +50,12 @@ Description=Grafana
 After=network-online.target
 
 [Service]
-User=<your_user> #modify this field with your user
+User=sentinel #modify this field with your user
 TimeoutStartSec=0
 CPUWeight=95
 IOWeight=95
-WorkingDirectory=/home/<your_user>/grafana
-ExecStart=grafana-server web --config.file=/home/<your_user>/grafana/conf/defaults.ini
+WorkingDirectory=/home/sentinel/grafana
+ExecStart=grafana-server web --config.file=/home/sentinel/grafana/conf/defaults.ini
 Restart=always
 RestartSec=2
 LimitNOFILE=800000

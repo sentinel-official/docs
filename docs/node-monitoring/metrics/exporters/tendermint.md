@@ -14,7 +14,7 @@ Tendermint Metrics can be enabled by simply editing your validator `config.toml`
 Open your config file
 
 ```bash
-sudo nano /home/<your-user>/.sentinelhub/config/config.toml
+sudo nano /home/sentinel/.sentinelhub/config/config.toml
 ```
 
 Edit the followinf fields like below

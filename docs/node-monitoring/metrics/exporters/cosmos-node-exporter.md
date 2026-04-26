@@ -72,7 +72,7 @@ tendermint = { enabled = true, address = "http://localhost:26657", query-upgrade
 # 2. chain-folder. Path to folder storing fullnode data and configs (like ~/.gaia for cosmoshub).
 # 3. chain-binary-name. Binary name (like gaiad for cosmoshub)
 # 4. cosmovisor-path. Cosmovisor path (usually located at ~/go/bin/cosmovisor)
-cosmovisor = { enabled = true, chain-folder = "/home/<your_username>/.sentinelhub", chain-binary-name = "sentinelhub", cosmovisor-path = "/home/<your_username>/go/bin/cosmovisor" }
+cosmovisor = { enabled = true, chain-folder = "/home/sentinel/.sentinelhub", chain-binary-name = "sentinelhub", cosmovisor-path = "/home/sentinel/go/bin/cosmovisor" }
 
 # gRPC configuration. Has the following fields:
 # 1) enabled. If set to false, the metrics related to upgrades would be disabled. Defaults to true.
@@ -110,11 +110,11 @@ Description=Cosmos Node Exporter
 After=network-online.target
 ​
 [Service]
-User=<your_user> #modify this field with your user
+User=sentinel #modify this field with your user
 TimeoutStartSec=0
 CPUWeight=95
 IOWeight=95
-ExecStart=cosmos-node-exporter --config /home/<your-user>/cosmos-node-exporter/config.toml
+ExecStart=cosmos-node-exporter --config /home/sentinel/cosmos-node-exporter/config.toml
 Restart=always
 RestartSec=2
 LimitNOFILE=800000

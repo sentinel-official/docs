@@ -1,5 +1,6 @@
 ---
 title: Chain Upgrade
+sidebar_label: "🔗 Chain Upgrade"
 sidebar_position: 11
 ---
 
@@ -33,7 +34,7 @@ make install
 
 ## Automatic Upgrade: Cosmovisor
 
-If you’re using or planning to use Cosmovisor (see the [guide](/full-node-setup/validate/essential-tools/cosmovisor)), the upgrade process will be mostly automatic. Once the new binary is built and placed in the correct directory, Cosmovisor will take care of the rest.
+If you’re using or planning to use Cosmovisor (see the [setup guide](/full-node-setup/system-unit#option-2-cosmovisorservice)), the upgrade process will be mostly automatic. Once the new binary is built and placed in the correct directory, Cosmovisor will take care of the rest.
 
 :::note
 Upgrades can be either consensus-breaking or non-consensus-breaking.

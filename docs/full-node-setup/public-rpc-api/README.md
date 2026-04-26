@@ -1,5 +1,6 @@
 ---
 title: Set Public RPC/API
+sidebar_label: "📘 Overview"
 sidebar_position: 1
 ---
 
@@ -16,7 +17,7 @@ The [Full Node guide](/full-node-setup) recommends running this on a separate ma
 - **Attack surface.** A public RPC/API is reachable by everyone on the internet. Validators sign blocks for the chain, so exposing one as an open endpoint multiplies the ways an attacker can disrupt or compromise it.
 - **DDoS vulnerability.** A query flood that just slows down an RPC node can cause a validator to miss blocks, get jailed, and lose stake.
 - **Resource contention.** Serving a large mempool, historical state queries, and TLS handshakes consumes CPU, memory, and disk I/O that the validator needs for consensus.
-- **Different config tunings.** Validators want a tight peer set and minimal historical state; RPC nodes want broad peer fan-in and historical retention. The two `config.toml`/`app.toml` flavors documented in [Install & Configure Full Node](/full-node-setup/node-setup#edit-the-node-configuration-file) reflect this divergence.
+- **Different config tunings.** Validators want a tight peer set and minimal historical state; RPC nodes want broad peer fan-in and historical retention. The two `config.toml`/`app.toml` flavors documented in [Configure Sentinel Hub](/full-node-setup/hub-config#edit-the-node-configuration-file) reflect this divergence.
 
 :::danger Don't expose your validator's RPC publicly
 Set up a separate full node configured for the RPC/API role, then follow the pages in this section in order.

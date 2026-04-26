@@ -58,7 +58,7 @@ Description=Loki
 After=network-online.target
 
 [Service]
-User=<your_user>
+User=sentinel
 TimeoutStartSec=0
 CPUWeight=95
 IOWeight=95

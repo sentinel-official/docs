@@ -164,11 +164,11 @@ Description=Preometheus
 After=network-online.target
 ​
 [Service]
-User=<your_user> #modify this field with your user
+User=sentinel #modify this field with your user
 TimeoutStartSec=0
 CPUWeight=95
 IOWeight=95
-ExecStart=prometheus --config.file=/home/<your_user>/prometheus/prometheus.yml --web.config.file=/home/<your_user>/prometheus/web.yml --storage.tsdb.path=/home/<your_user>/prometheus/data
+ExecStart=prometheus --config.file=/home/sentinel/prometheus/prometheus.yml --web.config.file=/home/sentinel/prometheus/web.yml --storage.tsdb.path=/home/sentinel/prometheus/data
 Restart=always
 RestartSec=2
 LimitNOFILE=800000

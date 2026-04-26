@@ -583,11 +583,11 @@ Description=Alertmanager
 After=network-online.target
 ​
 [Service]
-User=<your_user> #modify this field with your user
+User=sentinel #modify this field with your user
 TimeoutStartSec=0
 CPUWeight=95
 IOWeight=95
-ExecStart=alertmanager --config.file=/home/<your_user>/alertmanager/alertmanager.yml --storage.path=/home/<your_user>/alertmanager/data
+ExecStart=alertmanager --config.file=/home/sentinel/alertmanager/alertmanager.yml --storage.path=/home/sentinel/alertmanager/data
 Restart=always
 RestartSec=2
 LimitNOFILE=800000
