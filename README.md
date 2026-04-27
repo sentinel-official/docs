@@ -119,7 +119,7 @@ Distributed under the Apache License, Version 2.0. See [`LICENSE`](LICENSE) for 
 ## Find Sentinel
 
 - Website &nbsp;·&nbsp; <https://sentinel.co>
-- Explorer &nbsp;·&nbsp; <https://explorer.sentinel.co>
+- Explorer &nbsp;·&nbsp; <https://p2pscan.com>
 - GitHub &nbsp;·&nbsp; <https://github.com/sentinel-official>
 - X &nbsp;·&nbsp; <https://x.com/sentinelp2p>
 - Telegram &nbsp;·&nbsp; <https://t.me/sentinelp2p>

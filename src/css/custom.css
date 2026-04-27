@@ -214,12 +214,27 @@ html[data-theme='dark'] {
   --docusaurus-highlighted-code-line-bg: rgba(105, 105, 105, 0.3);
 }
 
+/* Backdrop-filter is hosted on ::before instead of nav.navbar itself.
+   Setting backdrop-filter directly on nav.navbar would make it a containing
+   block for position:fixed descendants, which collapses the mobile sidebar's
+   click-to-close backdrop (.navbar-sidebar__backdrop) into the navbar's
+   bounding box and prevents tapping outside the open drawer from closing it. */
 nav.navbar {
+  background: transparent;
+  border-bottom: none;
+  position: relative;
+  isolation: isolate;
+}
+
+nav.navbar::before {
+  content: '';
+  position: absolute;
+  inset: 0;
   background: var(--sentinel-surface, rgba(28, 28, 28, 0.8));
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border-bottom: none;
-  position: relative;
+  z-index: -1;
+  pointer-events: none;
 }
 
 nav.navbar::after {

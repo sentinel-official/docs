@@ -245,7 +245,7 @@ const config = {
                 label: 'Website',
               },
               {
-                href: 'https://explorer.sentinel.co',
+                href: 'https://p2pscan.com',
                 label: 'Explorer',
               },
               {

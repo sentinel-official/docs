@@ -14,6 +14,6 @@ These following API's are recommended for development purposes. For maximun cont
 |---------------|---------------------------------------------|----------------------------|
 | Chain ID      | sentinelhub-2                               | bluenet-2-3
 | Endpoints     | RPC: `https://rpc.sentinel.co` <br/> gRPC: `grpc.sentinel.co:9090`<br/> API: `https://lcd.sentinel.co` | RPC: `https://rpc-sentinel.busurnode.com:443` <br/> API: `https://api-sentinel.busurnode.com:443`  |
-| Explorer      | https://explorer.sentinel.co                | https://explorer.busurnode.com/sentinel-testnet          |
+| Explorer      | https://p2pscan.com                | https://explorer.busurnode.com/sentinel-testnet          |
 | API Reference |  [RPC](/api?v=RPC), [LCD](/api?v=LCD)       |                            |
 | Swagger       | [LCD Endpoints](https://app.swaggerhub.com/apis-docs/sentinelgrowthdao/sentinel-lcd/1.0.0) |                      |
