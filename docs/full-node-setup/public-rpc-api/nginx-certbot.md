@@ -16,6 +16,12 @@ sudo apt update
 sudo apt install curl gnupg2 ca-certificates lsb-release lsof psmisc -y
 ```
 
+Initialize GPG:
+
+```bash
+gpg --list-keys
+```
+
 Import an official Nginx signing key:
 
 ```bash
@@ -51,7 +57,7 @@ Check the NGINX service status; it may be inactive initially
 sudo systemctl status nginx
 ```
 
-Start the service:
+If the servce is not running start the service:
 
 ```bash
 sudo systemctl start nginx.service
