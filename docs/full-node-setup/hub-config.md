@@ -91,10 +91,7 @@ What differs between the two flavors:
 | `[mempool] size` | `5000` | `1000` |
 | `[mempool] cache_size` | `20000` | `5000` |
 | `[mempool] max_txs_bytes` | `134217728` | `67108864` |
-| `[consensus] timeout_commit` | `"3s"` | `"1s"` |
 | `[consensus] skip_timeout_commit` | `false` | `true` |
-| `[consensus] peer_gossip_sleep_duration` | `"100ms"` | `"25ms"` |
-| `[consensus] peer_query_maj23_sleep_duration` | `"2s"` | `"500ms"` |
 
 <details>
 <summary>Validator config.toml reference</summary>
@@ -523,7 +520,7 @@ timeout_precommit_delta = "500ms"
 # How long we wait after committing a block, before starting on the new
 # height (this gives us a chance to receive some more precommits, even
 # though we already have +2/3).
-timeout_commit = "3s"
+timeout_commit = "1s"
 
 # How many blocks to look back to check existence of the node's consensus votes before joining consensus
 # When non-zero, the node will panic upon restart
@@ -539,8 +536,8 @@ create_empty_blocks = true
 create_empty_blocks_interval = "0s"
 
 # Reactor sleep duration parameters
-peer_gossip_sleep_duration = "100ms"
-peer_query_maj23_sleep_duration = "2s"
+peer_gossip_sleep_duration = "25ms"
+peer_query_maj23_sleep_duration = "500ms"
 
 #######################################################
 ###         Storage Configuration Options           ###
