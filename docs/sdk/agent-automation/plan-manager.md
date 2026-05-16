@@ -10,7 +10,7 @@ slug: /plan-manager
 Sentinel Plan Manager is a community-built commerce layer for the Sentinel decentralized VPN. It is a full-stack web studio for creating on-chain subscription plans, curating node pools, managing subscribers, and issuing fee grants - turning the raw Sentinel protocol into a revenue-generating bandwidth business that anyone can run from a laptop. It is built on top of the [Blue JavaScript SDK](/sdk/blue-js).
 
 You can access Plan Manager from:
-- [GitHub repository](https://github.com/Sentinel-Autonomybuilder/sentinel-plan-manager)
+- [GitHub repository](https://github.com/Sentinel-Bluebuilder/sentinel-plan-manager)
 - [NPM package `sentinel-plan-manager`](https://www.npmjs.com/package/sentinel-plan-manager)
 
 :::info
@@ -33,7 +33,7 @@ This is not an admin panel. It is a blockchain business studio - every feature e
 
 Plan Manager operates Sentinel v3 subscription plans - the chain-native model where an operator creates a plan (duration + data cap + price), links nodes, and subscribers consume bandwidth across those nodes without paying each node per session. Operators can fee-grant subscribers so end users hold zero P2P tokens.
 
-See [PLANS.md in the repo](https://github.com/Sentinel-Autonomybuilder/sentinel-plan-manager/blob/master/PLANS.md) for the full breakdown: plan lifecycle, plan-based vs P2P sessions, fee grants, operator economics, and when to use this dashboard versus the SDK directly.
+See [PLANS.md in the repo](https://github.com/Sentinel-Bluebuilder/sentinel-plan-manager/blob/master/PLANS.md) for the full breakdown: plan lifecycle, plan-based vs P2P sessions, fee grants, operator economics, and when to use this dashboard versus the SDK directly.
 
 ## Who It's For
 
@@ -62,7 +62,7 @@ npx sentinel-plan-manager                   # or: node $(npm root -g)/sentinel-p
 ### Option B - git clone (for contributors)
 
 ```bash
-git clone https://github.com/Sentinel-Autonomybuilder/sentinel-plan-manager.git
+git clone https://github.com/Sentinel-Bluebuilder/sentinel-plan-manager.git
 cd sentinel-plan-manager
 npm install
 cp .env.example .env    # then edit .env and paste your mnemonic

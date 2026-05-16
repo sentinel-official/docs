@@ -25,10 +25,10 @@ The following statistical tools, developed by the Sentinel team, provide detaile
 - [dVPN Node Monitor Telegram Bot](/node-monitoring/node-monitor-bot): A convenient Telegram bot designed to assist you in monitoring your dVPN nodes, providing comprehensive details about each dVPN node's status and performance.
 - [Sentinel dVPN Client guide by Tkd-Alex](https://alessandromaggio.it/sentinel-dvpn-client/): community write-up walking through the Sentinel dVPN client setup.
 
-## Sentinel Autonomy Builder
+## Sentinel Blue Builder
 
-- [Sentinel Autonomy Builder](https://github.com/Sentinel-Autonomybuilder): community GitHub organization hosting builder and testing utilities for Sentinel dVPN node operators.
-- [Sentinel Node Tester](https://github.com/Sentinel-Autonomybuilder/sentinel-node-tester): network audit dashboard built on blue-js-sdk that tests every node on the blockchain for real VPN throughput, speed, and protocol compliance.
+- [Sentinel Blue Builder](https://github.com/Sentinel-Bluebuilder/): community GitHub organization hosting builder and testing utilities for Sentinel dVPN node operators.
+- [Sentinel Node Tester](https://github.com/Sentinel-Bluebuilder/sentinel-node-tester): network audit dashboard built on blue-js-sdk that tests every node on the blockchain for real VPN throughput, speed, and protocol compliance.
 
 For developer libraries from the same group (AI Connect, x402, Plan Manager), see the [Agent & Automation libraries under SDKs](/sdk).
 

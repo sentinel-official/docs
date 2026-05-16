@@ -10,7 +10,7 @@ slug: /dotnet
 The Blue C# SDK is a community-built protocol library for building decentralized VPN applications on the Sentinel network with C# and .NET 8. It covers WireGuard and V2Ray tunnels, wallet management, session handling, and every chain message type for Sentinel v3. The repository ships with 814+ tests, has zero external service dependencies, and includes a full WPF desktop client as a worked reference.
 
 You can access the .NET / C# SDK from:
-- [GitHub repository](https://github.com/Sentinel-Autonomybuilder/blue-csharp-sdk)
+- [GitHub repository](https://github.com/Sentinel-Bluebuilder/blue-csharp-sdk)
 - [NuGet meta-package `Sentinel.SDK`](https://www.nuget.org/packages/Sentinel.SDK)
 
 :::info
@@ -230,4 +230,4 @@ LCD failover endpoints (rotated automatically):
 | Google.Protobuf   | Protobuf message encoding |
 | NSec.Cryptography | X25519 (Curve25519) for WireGuard key generation |
 
-For a full WPF desktop client reference, the complete API catalog, edge cases, and protocol specs (V3 handshake, V2Ray config, WireGuard config, LCD API), see the [GitHub repository](https://github.com/Sentinel-Autonomybuilder/blue-csharp-sdk).
+For a full WPF desktop client reference, the complete API catalog, edge cases, and protocol specs (V3 handshake, V2Ray config, WireGuard config, LCD API), see the [GitHub repository](https://github.com/Sentinel-Bluebuilder/blue-csharp-sdk).

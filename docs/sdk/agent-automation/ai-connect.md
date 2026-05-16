@@ -10,7 +10,7 @@ slug: /ai-connect
 Sentinel AI Connect (`blue-agent-connect`) is a community-maintained JavaScript library that gives AI agents one-call decentralized VPN connectivity. Zero accounts, zero servers, zero centralized dependencies. One function call to an encrypted P2P tunnel - no API keys, no terms of service, no human approval required. It is built on top of the [Blue JavaScript SDK](/sdk/blue-js).
 
 You can access Sentinel AI Connect from:
-- [GitHub repository](https://github.com/Sentinel-Autonomybuilder/blue-agent-connect)
+- [GitHub repository](https://github.com/Sentinel-Bluebuilder/blue-agent-connect)
 - [NPM package](https://www.npmjs.com/package/sentinel-ai-connect)
 - [Libraries.io](https://libraries.io/npm/sentinel-ai-connect)
 

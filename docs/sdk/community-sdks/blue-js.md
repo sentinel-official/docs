@@ -10,7 +10,7 @@ slug: /blue-js
 Blue JS SDK is a community-maintained JavaScript/TypeScript SDK for the Sentinel decentralized VPN network. It supports WireGuard and V2Ray tunnels, talks to the Cosmos blockchain, and works against the live network of 900+ nodes. Queries are RPC-based, events are typed, and the package is CosmJS compatible.
 
 You can access the Blue JavaScript SDK from:
-- [GitHub repository](https://github.com/Sentinel-Autonomybuilder/blue-js-sdk)
+- [GitHub repository](https://github.com/Sentinel-Bluebuilder/blue-js-sdk)
 - [NPM package](https://www.npmjs.com/package/blue-js-sdk)
 
 :::info
@@ -76,6 +76,6 @@ If your use case is an autonomous AI agent that needs encrypted connectivity wit
 - All private keys are zeroed with `Buffer.fill(0)` after use
 - Credentials are encrypted at rest using AES-256-GCM
 - File permissions are set to `0o600` on every sensitive file
-- Full security policy: [SECURITY.md](https://github.com/Sentinel-Autonomybuilder/blue-js-sdk/blob/master/SECURITY.md)
+- Full security policy: [SECURITY.md](https://github.com/Sentinel-Bluebuilder/blue-js-sdk/blob/master/SECURITY.md)
 
-For protocol specs, the full export reference, and additional examples, see the [GitHub repository](https://github.com/Sentinel-Autonomybuilder/blue-js-sdk).
+For protocol specs, the full export reference, and additional examples, see the [GitHub repository](https://github.com/Sentinel-Bluebuilder/blue-js-sdk).
