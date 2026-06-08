@@ -81,7 +81,7 @@ grpc = { enabled = true, address = "localhost:9090" }
 
 # Git configuration. Has the following fields:
 # 1. repository. Repository path. Omitting it will result in disabling Git metrics.
-# Can be either a link to Github repo (like below), or a Gitopia repo (see below for example).
+# Can a link to Github repo (like below).
 # 2. token. Github token. Useful if you want to make requests often, as Github rate-limits requests
 # if no token is specified. Only used for Github.
 git = { repository = "https://github.com/sentinel-official/hub", token = "<your_github_token>" }
