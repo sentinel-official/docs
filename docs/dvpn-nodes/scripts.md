@@ -40,7 +40,7 @@ Provides the status of the specified `sentnode` address.
 #!/bin/bash
 
 # Fetching the JSON data from the API
-api_response=$(curl -s https://api.sentinelgrowthdao.com/sentinel/nodes/sentnode1rx7kjsvhvklcluhu9zl6hswrau06vh3ll7gthr)
+api_response=$(curl -s https://api.sentineldao.com/sentinel/nodes/sentnode1rx7kjsvhvklcluhu9zl6hswrau06vh3ll7gthr)
 
 # Extracting the remote URL from the JSON response
 remote_url=$(echo "$api_response" | jq -r '.node.remote_url')

@@ -261,7 +261,7 @@ const config = {
                 label: 'Gitopia',
               },
               {
-                href: 'https://sentinelgrowthdao.com',
+                href: 'https://sentineldao.com',
                 label: 'Growth DAO',
               },
             ],
