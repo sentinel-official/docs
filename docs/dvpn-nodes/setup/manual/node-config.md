@@ -12,16 +12,19 @@ Before creating the configuration files, set up a few variables by running the f
 
 ```bash
 # Define application directory
-# Define application directory
 APP_DIR="${HOME}/.sentinel-dvpnx"
 
 # Get your public IP addresses
 MY_IPv4_ADDR=$(curl --silent ipv4.icanhazip.com 2>/dev/null)
 MY_IPv6_ADDR=$(curl --silent ipv6.icanhazip.com 2>/dev/null)
 
-REMOTE_ADDRS_FLAGS=()
-if [ -n "${MY_IPv4_ADDR}" ]; then REMOTE_ADDRS_FLAGS+=("--node.remote-addrs" \"${MY_IPv4_ADDR}\"); fi
-if [ -n "${MY_IPv6_ADDR}" ]; then REMOTE_ADDRS_FLAGS+=("--node.remote-addrs" \"${MY_IPv6_ADDR}\"); fi
+REMOTE_ADDRS_FLAGS=""
+if [ -n "${MY_IPv4_ADDR}" ]; then
+    REMOTE_ADDRS_FLAGS="${REMOTE_ADDRS_FLAGS} --node.remote-addrs ${MY_IPv4_ADDR}"
+fi
+if [ -n "${MY_IPv6_ADDR}" ]; then
+    REMOTE_ADDRS_FLAGS="${REMOTE_ADDRS_FLAGS} --node.remote-addrs ${MY_IPv6_ADDR}"
+fi
 
 # Set Docker volume mapping
 VOLUME="${APP_DIR}:/root/.sentinel-dvpnx"
@@ -58,7 +61,7 @@ sudo docker run \
   --keyring.backend "test" \
   --node.service-type "wireguard" \
   --tx.from-name "${TX_FROM_NAME}" \
-  "${REMOTE_ADDRS_FLAGS[@]}"
+  ${REMOTE_ADDRS_FLAGS}
 ```
 
 Expected output:
