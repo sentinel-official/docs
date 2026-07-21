@@ -1,6 +1,6 @@
 ---
 title: Node Configuration
-description: config.toml, wireguard.toml, and v2ray.toml
+description: config.toml and the per-service config files for WireGuard, AmneziaWG, V2Ray, Xray, OpenVPN, and Hysteria2
 sidebar_position: 4
 ---
 
@@ -42,8 +42,9 @@ echo "Key Name: $TX_FROM_NAME"
 You should see something like this:
 
 ```text
-App Directory: /home/<you_user>/.sentinel-dvpnx
-Public IPv4: <your_ip>
+App Directory: /home/<your_user>/.sentinel-dvpnx
+Public IPv4: <your_ipv4>
+Public IPv6: <your_ipv6>
 Key Name: key-1
 ```
 
@@ -51,7 +52,7 @@ Key Name: key-1
 
 The following command creates the configuration files, which you can later customise.
 
-Be sure to choose your preferred node type using the `--node.service-type` flag — options are `wireguard`, `v2ray`, or `openvpn`.
+Be sure to choose your preferred node type using the `--node.service-type` flag — options are `amneziawg`, `hysteria2`, `openvpn`, `v2ray`, `wireguard`, or `xray`.
 
 ```bash
 sudo docker run \
@@ -74,6 +75,10 @@ Issuing certificate and key name=tls
 Initializing service force=false type=wireguard
 Configuration initialized successfully
 ```
+
+:::note
+Re-running `init` won't overwrite an existing configuration unless you pass `--force`. You can also skip parts of initialization with `--skip-tls` (don't generate the API TLS certificate) or `--skip-service` (don't write the service-specific config). Besides the files listed below, `init` also writes the API TLS material (`tls.crt`, `tls.key`) and a local session database (`data.db`) under `${APP_DIR}`.
+:::
 
 ### The created files are:
 
@@ -221,9 +226,15 @@ enable = false
 
 # Number of peer connections to maintain within the Handshake DNS network.
 # More peers provide better reliability but consume more network resources.
-# Allowed: Any positive integer
-# Example: 12
+# Allowed: Integer between 1 and 8
+# Example: 8
 peers = 8
+
+# Maximum number of times the Handshake DNS (hnsd) daemon may be restarted before the node stops.
+# Use 0 to disable automatic restarts, or -1 to allow unlimited restarts.
+# Allowed: Integer (-1, 0, or any positive integer)
+# Example: 5
+max_restarts = 5
 
 # Node Configuration
 [node]
@@ -306,17 +317,17 @@ interval_status_update = "55m0s"
 # Choose a unique, descriptive name to distinguish your node.
 # Allowed: Any string
 # Example: "my-node-moniker"
-moniker = "<your_node_moniket>"
+moniker = "<your_node_moniker>"
 
 # Addresses that clients use to reach this node for service connections.
 # Can include IP addresses with ports or domain names with ports for flexible client connectivity.
 # Allowed: Comma-separated address list
 # Example: ["192.168.1.100:8080", "node.example.com:9090"]
-remote_addrs = ["123.456.7.8"]
+remote_addrs = ["1.2.3.4"]
 
 # Type of VPN or proxy service protocol this node provides.
 # Each type has different capabilities, security features, and client compatibility.
-# Allowed: openvpn, v2ray, wireguard
+# Allowed: amneziawg, hysteria2, openvpn, v2ray, wireguard, xray
 # Example: "wireguard"
 service_type = "wireguard"
 
@@ -360,10 +371,17 @@ max_peers = 250
 </p>
 </details>
 
+:::warning
+Handshake DNS (`[handshake_dns] enable = true`) only takes effect when `service_type` is `wireguard` or `amneziawg` — these are the protocols that push a DNS resolver to connected clients. It has no effect for `openvpn`, `v2ray`, `xray`, or `hysteria2`.
+:::
+
 Service-Specific Configurations:
 - WireGuard: `${APP_DIR}/wireguard/config.toml`
+- AmneziaWG: `${APP_DIR}/amneziawg/config.toml`
 - V2Ray: `${APP_DIR}/v2ray/config.toml`
+- Xray: `${APP_DIR}/xray/config.toml`
 - OpenVPN: `${APP_DIR}/openvpn/config.toml`
+- Hysteria2: `${APP_DIR}/hysteria2/config.toml`
 
 <details>
 <summary>Wireguard</summary>
@@ -399,7 +417,69 @@ port = "25068"
 # The cryptographic private key used for establishing secure connections with clients.
 # Allowed: Valid WireGuard private key
 # Example: "AMuDADXXc5S1b8J6wxKhX29AiNKgNej6k6/Ol+Fof0g="
-private_key = "# Example: "AMuDADXXc5S1b8J6wxKhX29AiNKgNej6k6/Ol+Fof0g="
+private_key = ""
+```
+
+</p>
+</details>
+
+<details>
+<summary>AmneziaWG</summary>
+<p>
+
+```bash
+# Specifies the IPv4 address block for routing and networking.
+# Used to define the network range that clients will be assigned addresses from for VPN connectivity.
+# Allowed: Valid IPv4 CIDR notation
+# Example: "10.0.0.1/24"
+ipv4_addr = "10.0.0.1/24"
+
+# Specifies the IPv6 address block for routing and networking.
+# Used to define the IPv6 network range that clients will be assigned addresses from for VPN connectivity.
+# Allowed: Valid IPv6 CIDR notation
+# Example: "fd00::/64"
+ipv6_addr = ""
+
+# Specifies the outbound network interface for NAT and routing.
+# Defines which network interface the VPN traffic should be routed through for internet access.
+# Allowed: Valid network interface name
+# Example: "eth0"
+out_interface = "eth0"
+
+# Port for incoming connections as a single port number or "in_port:out_port" mapping format.
+# The mapping format allows the VPN service to run internally on in_port while being available to clients on out_port.
+# Typically, UDP for AmneziaWG protocol.
+# Allowed: Single port or port mapping format
+# Example: "51820" or "51820:51820"
+port = "42891"
+
+# Specifies the private key for AmneziaWG encryption.
+# The cryptographic private key used for establishing secure connections with clients.
+# Allowed: Valid AmneziaWG private key
+# Example: "AMuDADXXc5S1b8J6wxKhX29AiNKgNej6k6/Ol+Fof0g="
+private_key = ""
+
+# AmneziaWG obfuscation parameters (auto-generated on init).
+# Handshake-affecting parameters (S1-S4, H1-H4, I1-I5) must match on both server and client.
+# Local-only junk parameters (Jc, Jmin, Jmax) need not match the remote peer.
+[obfs]
+jc = 4
+jmin = 40
+jmax = 70
+s1 = 15
+s2 = 62
+s3 = 0
+s4 = 0
+h1 = 1148195868
+h2 = 1783849485
+h3 = 1400453623
+h4 = 693281700
+i1 = ""
+i2 = ""
+i3 = ""
+i4 = ""
+i5 = ""
+advanced_security = false
 ```
 
 </p>
@@ -410,26 +490,19 @@ private_key = "# Example: "AMuDADXXc5S1b8J6wxKhX29AiNKgNej6k6/Ol+Fof0g="
 <p>
 
 ```bash
-# Port for incoming connections as a single port number or "in_port:out_port" mapping format.
-# The mapping format allows the V2Ray service to run internally on in_port while being available to clients on out_port.
-# Must be unique and not conflict with other services on the same machine.
-# Allowed: Single port or port mapping format
-# Example: "10086" or "10086:10086"
+# Each [[inbounds]] block defines one V2Ray inbound listener with the four fields below.
 
-# Proxy protocol type for communication on the inbound connection.
-# Determines the protocol used for establishing connections with clients connecting to this V2Ray instance.
-# Allowed: vmess, vless
-# Example: "vmess"
+# port: Port for incoming connections as a single port number or "in_port:out_port" mapping format.
+# Allowed: Single port or port mapping format — Example: "10086" or "10086:10086"
 
-# Transport protocol type for handling incoming requests and data transmission.
-# Determines the underlying transport mechanism used for communication between client and server.
-# Allowed: domainsocket, gun, grpc, http, mkcp, quic, tcp, websocket
-# Example: "tcp"
+# proxy_protocol: Proxy protocol used for the inbound connection.
+# Allowed: vmess, vless — Example: "vmess"
 
-# Transport Security setting for the inbound connection encryption.
-# Determines whether the connection uses encryption and what type of security protocol is applied.
-# Allowed: none, tls
-# Example: "tls"
+# transport_protocol: Underlying transport used for handling requests and data transmission.
+# Allowed: domainsocket, gun, grpc, http, mkcp, quic, tcp, websocket — Example: "tcp"
+
+# transport_security: Transport encryption applied to the inbound connection.
+# Allowed: none, tls — Example: "tls"
 
 [[inbounds]]
 port = "54556"
@@ -442,6 +515,62 @@ port = "13860"
 proxy_protocol = "vless"
 transport_protocol = "grpc"
 transport_security = "none"
+```
+
+</p>
+</details>
+
+<details>
+<summary>Xray</summary>
+<p>
+
+```bash
+# Each [[inbounds]] block defines one Xray inbound listener with the fields below.
+
+# port: Port for incoming connections as a single port number or "in_port:out_port" mapping format.
+# Allowed: Single port or port mapping format — Example: "10086" or "10086:10086"
+
+# proxy_protocol: Proxy protocol used for the inbound connection.
+# Allowed: vless, vmess, trojan, shadowsocks-2022 — Example: "vless"
+
+# transport_protocol: Underlying transport used for the connection.
+# Allowed: tcp, websocket, grpc, httpupgrade, xhttp — Example: "tcp"
+
+# transport_security: Transport encryption applied to the connection.
+# Allowed: none, tls, reality — Example: "reality"
+
+# flow: Flow control for the inbound connection (VLESS only).
+# Allowed: none, xtls-rprx-vision — Example: "xtls-rprx-vision"
+
+# method: Encryption method for the inbound connection (Shadowsocks-2022 only).
+# Example: "2022-blake3-aes-128-gcm"
+
+# When transport_security = "reality", Xray dials out to an internally-configured target
+# host (e.g. "www.microsoft.com:443") using a uTLS fingerprint (e.g. "chrome").
+
+[[inbounds]]
+port = "24816"
+proxy_protocol = "vless"
+transport_protocol = "tcp"
+transport_security = "reality"
+flow = "xtls-rprx-vision"
+method = ""
+
+[[inbounds]]
+port = "38200"
+proxy_protocol = "vmess"
+transport_protocol = "websocket"
+transport_security = "tls"
+flow = "none"
+method = ""
+
+[[inbounds]]
+port = "51900"
+proxy_protocol = "shadowsocks-2022"
+transport_protocol = "tcp"
+transport_security = "none"
+flow = "none"
+method = "2022-blake3-aes-128-gcm"
 ```
 
 </p>
@@ -482,6 +611,47 @@ port = "11608"
 # Allowed: udp, tcp
 # Example: "udp"
 protocol = "udp"
+```
+
+</p>
+</details>
+
+<details>
+<summary>Hysteria2</summary>
+<p>
+
+```bash
+# Port for incoming client connections.
+# The UDP port the Hysteria2 server listens on for incoming QUIC connections from clients.
+# Allowed: Non-zero uint16
+# Example: 36712
+port = 36712
+
+# Salamander obfuscation password for masking QUIC traffic.
+# Both the server and client must share this password; an empty value disables obfuscation.
+# Allowed: Any string, or empty to disable
+# Example: "a-strong-obfs-password"
+obfs_password = "a-strong-obfs-password"
+
+# Loopback port for the SDK-hosted HTTP authentication backend.
+# Hysteria2 calls this local endpoint to validate each connecting client's credential.
+# Bound to loopback only — it does not need to be exposed through your firewall.
+# Allowed: Non-zero uint16
+# Example: 8080
+auth_port = 8080
+
+# Loopback port for Hysteria2's Traffic Stats API.
+# Used by the service to collect per-user traffic usage and to kick disconnected peers.
+# Bound to loopback only — it does not need to be exposed through your firewall.
+# Allowed: Non-zero uint16
+# Example: 8081
+stats_port = 8081
+
+# Authorization secret protecting the Traffic Stats API.
+# Sent as the Authorization header on every request to the Traffic Stats API.
+# Allowed: Any non-empty string
+# Example: "a-strong-stats-secret"
+stats_secret = "a-strong-stats-secret"
 ```
 
 </p>
@@ -576,11 +746,22 @@ sudo ufw allow 11608,13860,19781,25068,54556/udp
 
 If you’re running your node from home, you’ll need to enable port forwarding on your router so others can connect to it.
 
+Forward **every port** your node uses — the same ports you detected above and opened with UFW. Add one rule per port, and if your router lets you pick a protocol, create both a **TCP** and a **UDP** rule for each (exactly like the UFW step), so the rules work for any service type.
+
 In your router’s WAN settings, add entries like this:
 
-```bash
-Name            ProtocolWAN     Port                    LAN port                Destination IP
-TCP_PORT        TCP             <tcp_port>              <tcp_port>              your_local_ip
-WIREGUARD_PORT  UDP             <wireguard_udp_port>    <wireguard_udp_port>    your_local_ip
-V2RAY_PORT      TCP             <v2ray_tcp_port>        <v2ray_tcp_port>        your_local_ip
+```text
+Name       Protocol     WAN Port          LAN Port          Destination IP
+API        TCP + UDP    <api_port>        <api_port>        <your_local_ip>
+SERVICE    TCP + UDP    <service_port>    <service_port>    <your_local_ip>
 ```
+
+If your router only allows one protocol per rule, use the transport each port actually needs:
+
+| Port                    | Protocol                                          |
+| ----------------------- | ------------------------------------------------- |
+| Node API (`api_port`)   | TCP                                               |
+| WireGuard / AmneziaWG   | UDP                                               |
+| Hysteria2               | UDP (QUIC)                                         |
+| OpenVPN                 | UDP or TCP — matches its `protocol` setting        |
+| V2Ray / Xray            | TCP or UDP — depends on each inbound’s transport   |

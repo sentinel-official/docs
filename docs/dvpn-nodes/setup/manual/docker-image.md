@@ -35,6 +35,10 @@ docker pull wajatmaka/sentinel-arm7-debian:v0.7.1
 docker pull wajatmaka/sentinel-aarch64-alpine:v8.3.1
 ```
 
+:::note
+This is a community-maintained ARM64 build and may lag behind the latest release (its newest published tag is `v8.3.1`). Check the [available tags](https://hub.docker.com/r/wajatmaka/sentinel-aarch64-alpine/tags) for a newer version, or build from source (Method 2) to run the current v9.0.0 on ARM64.
+:::
+
 ## Method 2 - From Source
 
 ### Clone the GitHub repository
