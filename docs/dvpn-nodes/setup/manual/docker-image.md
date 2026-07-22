@@ -13,31 +13,14 @@ sidebar_position: 3
 Pull the image (check your desired version from this [link](https://github.com/sentinel-official/sentinel-dvpnx/pkgs/container/sentinel-dvpnx))
 
 ```bash
-docker pull ghcr.io/sentinel-official/sentinel-dvpnx:latest
+docker pull ghcr.io/sentinel-official/sentinel-dvpnx:v9.0.0@sha256:49f7a11ae56baaa2c43de4384b56beff787e8d408bc37196cf63e3f6c10beca5
 ```
-
-Tag the image
-
-```bash
-docker tag ghcr.io/sentinel-official/sentinel-dvpnx:latest sentinel-dvpnx
-```
-<!--
-### ARM7
-
-```bash
-docker pull wajatmaka/sentinel-arm7-debian:v0.7.1
-```
--->
 
 ### AArch64 (ARM64)
 
 ```bash
-docker pull wajatmaka/sentinel-aarch64-alpine:v8.3.1
+docker pull ghcr.io/sentinel-official/sentinel-dvpnx:v9.0.0@sha256:44ad033534485d34c823aff676f7696f35ee0c460ad64b231af93d42b6acd741
 ```
-
-:::note
-This is a community-maintained ARM64 build and may lag behind the latest release (its newest published tag is `v8.3.1`). Check the [available tags](https://hub.docker.com/r/wajatmaka/sentinel-aarch64-alpine/tags) for a newer version, or build from source (Method 2) to run the current v9.0.0 on ARM64.
-:::
 
 ## Method 2 - From Source
 
