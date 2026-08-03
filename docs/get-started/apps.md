@@ -27,30 +27,17 @@ The following dVPN apps are built on top of the Sentinel Protocol. This is why w
             >
     <Card
         title="Sentinel Shield dVPN"
-        description="Open source, p2p, trustless architecture powers one of the most decentralized consumer-facing DePIN applications ever created. Everything from peer discovery to connection authorization is through the blockchain; encrypted and safely in your hands, not in a VPN company's database."
+        description="Open source, p2p, trustless architecture powers one of the most decentralized consumer-facing DePIN applications ever created. Everything from peer discovery to connection authorization is through the blockchain."
         to="https://shield.sentinel.co/"
         icon={<SentinelCore />}
         svgFile=""
     />
-     <Card
-        title="DVPN by Norse Labs"
-        description="DVPN is built with uncompromising privacy and security in mind. Leveraging the blockchain technology from Sentinel and advanced encryption, it follows a Zero Trust model — users don’t have to rely on us, as independent entities manage the servers, making tracking almost impossible."
-        to="https://norselabs.io/"
-        svgFile="/icons/norse-labs.svg"
-    />
     <Card
-        title="Independent dVPN"
-        description="Independent dVPN is a Turkish free and fully decentralized service created by volunteers who prioritize digital human rights, offering powerful features like WireGuard and V2Ray support."
-        to="https://independentdvpn.com"
+        title="Katacomb VPN"
+        description="Katacomb VPN is an open source dVPN client built by Trinity, core community member and creator of this website. It supports 6 protocols: WireGuard, AmneziaWG, OpenVPN, V2Ray, XRAY, and Hysteria2"
+        to="https://github.com/trinitystake/katacomb-vpn"
         icon=""
-        svgFile="/icons/independentdvpn.svg"
-    />
-    <Card
-        title="Ryn VPN"
-        description="The first Web2 cVPN that moved to Sentinel Blockchain. Browse anonymously, secure your connection, and access content from anywhere in the world with their fast and reliable dVPN service."
-        to="https://www.rynvpn.com/"
-        icon=""
-        svgFile="/icons/rynvpn.svg"
+        svgFile="/icons/katacomb-vpn.svg"
     />
     <Card
         title="Meile dVPN"
@@ -60,12 +47,33 @@ The following dVPN apps are built on top of the Sentinel Protocol. This is why w
         svgFile=""
     />
     <Card
+        title="Independent dVPN"
+        description="Independent dVPN is a Turkish free and fully decentralized service created by volunteers who prioritize digital human rights, offering powerful features like WireGuard and V2Ray support."
+        to="https://independentdvpn.com"
+        icon=""
+        svgFile="/icons/independentdvpn.svg"
+    />
+     <Card
+        title="DVPN by Norse Labs"
+        description="DVPN is built with uncompromising privacy and security in mind. Leveraging the blockchain technology from Sentinel and advanced encryption, it follows a Zero Trust model, users don’t have to rely on us."
+        to="https://norselabs.io/"
+        svgFile="/icons/norse-labs.svg"
+    />
+    <Card
+        title="ChibaTunnel"
+        description="ChibaTunnel is a community-built dVPN client for connecting to the Sentinel network. Source code and setup instructions are available on GitHub."
+        to="https://chibatunnel.xyz/"
+        icon=""
+        svgFile="/icons/chiba-tunnel.svg"
+    />
+    <Card
         title="VALT"
         description="Take charge of your online privacy with VALT. Protect your digital footprint and earn rewards for your data. Our advanced VPN, powered by Sentinel, ensures top-notch security, keeping your information safe and inaccessible to prying eyes."
         to="http://valtdata.com/"
         icon=""
         svgFile="/icons/valt.svg"
     />
+    <!--
     <Card
         title="encryptSIM"
         description="encryptSIM are the creators of the world's first Web3 eSIMs. Their application, which is still in its public beta testing phase, provides no-cost dVPN service to anybody with an active eSIM plan."
@@ -79,27 +87,12 @@ The following dVPN apps are built on top of the Sentinel Protocol. This is why w
         svgFile="/icons/dvpn-telegram-bot.svg"
     />
     <Card
-        title="Sentinel dVPN Client by Tkd-Alex"
-        description="A community-built dVPN client and setup walkthrough by Alessandro Maggio, covering how to connect to the Sentinel network end-to-end."
-        to="https://alessandromaggio.it/sentinel-dvpn-client/"
+        title="Ryn VPN"
+        description="The first Web2 cVPN that moved to Sentinel Blockchain. Browse anonymously, secure your connection, and access content from anywhere in the world with their fast and reliable dVPN service."
+        to="https://www.rynvpn.com/"
         icon=""
-        svgFile="/icons/tkd-alex.png"
+        svgFile="/icons/rynvpn.svg"
     />
+    -->
     </Section>
 </Section>
-
-<!-- <Section id="web-sdks" hasSubSections>
-    <Section
-              title="⚙️ 3rd party apps that have Sentinel integrated"
-              id="core-sdks"
-              HeadingTag="h4"
-            >
-    <Card
-        title="Decentr Browser"
-        description="Decentr is a browser with unparalleled speed, security and utility. Included in the browser release is Sentinel dVPN and Adblock."
-        to="https://decentr.net/"
-        icon={<Decentr />}
-        svgFile=""
-    />
-    </Section>
-</Section> -->
