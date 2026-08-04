@@ -346,7 +346,7 @@ const config = {
             ],
           },
         ],
-        copyright: "Copyright © Sentinel P2P - Built and maintained by <a href='https://trinitystake.io'>Trinity Stake</a>",
+        copyright: "Copyright © Sentinel P2P - Built and maintained by <a href='https://trinitystake.github.io/website/'>Trinity</a>",
       },
       prism: {
         theme: prismThemes.github,

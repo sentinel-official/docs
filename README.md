@@ -128,5 +128,5 @@ Distributed under the Apache License, Version 2.0. See [`LICENSE`](LICENSE) for 
 ---
 
 <p align="center">
-  © Sentinel P2P. Built and maintained by <a href="https://trinitystake.io">Trinity Stake</a>.
+  © Sentinel P2P. Built and maintained by <a href="https://trinitystake.github.io/website/">Trinity</a>.
 </p>
