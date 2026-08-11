@@ -33,7 +33,6 @@ To check if your node has passed the health check, there are four ways to do it.
 - [Busurnode](/dvpn-nodes/health-check/busurnode)
 - [Suchnode](/dvpn-nodes/health-check/suchnode)
 - [Sentinel API](/dvpn-nodes/health-check/sentinel-api)
-- [Planwizard API](/dvpn-nodes/health-check/plan-wizard)
 
 ## Node Compliance Rules
 
@@ -55,7 +54,7 @@ Nodes must adhere to specific compliance rules to ensure fair distribution and m
 - Overcrowding excludes nodes from subscription plans.
 
 :::tip
-Use tools like Planwizard to verify subnets and ASNs.
+Use tools like Busurnode to verify subnets and ASNs.
 :::
 
 ## Passing Health Check

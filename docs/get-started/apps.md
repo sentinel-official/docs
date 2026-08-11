@@ -25,6 +25,7 @@ The following dVPN apps are built on top of the Sentinel Protocol. This is why w
               id="core-sdks"
               HeadingTag="h4"
             >
+    <!--
     <Card
         title="Sentinel Shield dVPN"
         description="Open source, p2p, trustless architecture powers one of the most decentralized consumer-facing DePIN applications ever created. Everything from peer discovery to connection authorization is through the blockchain."
@@ -32,6 +33,7 @@ The following dVPN apps are built on top of the Sentinel Protocol. This is why w
         icon={<SentinelCore />}
         svgFile=""
     />
+    -->
     <Card
         title="Katacomb VPN"
         description="Katacomb VPN is an open source dVPN client built by Trinity, core community member and creator of this website. It supports 6 protocols: WireGuard, AmneziaWG, OpenVPN, V2Ray, XRAY, and Hysteria2"
@@ -53,12 +55,6 @@ The following dVPN apps are built on top of the Sentinel Protocol. This is why w
         icon=""
         svgFile="/icons/independentdvpn.svg"
     />
-     <Card
-        title="DVPN by Norse Labs"
-        description="DVPN is built with uncompromising privacy and security in mind. Leveraging the blockchain technology from Sentinel and advanced encryption, it follows a Zero Trust model, users don’t have to rely on us."
-        to="https://norselabs.io/"
-        svgFile="/icons/norse-labs.svg"
-    />
     <Card
         title="ChibaTunnel"
         description="ChibaTunnel is a community-built dVPN client for connecting to the Sentinel network. Source code and setup instructions are available on GitHub."
@@ -72,6 +68,12 @@ The following dVPN apps are built on top of the Sentinel Protocol. This is why w
         to="http://valtdata.com/"
         icon=""
         svgFile="/icons/valt.svg"
+    />
+     <Card
+        title="DVPN by Norse Labs"
+        description="DVPN is built with uncompromising privacy and security in mind. Leveraging the blockchain technology from Sentinel and advanced encryption, it follows a Zero Trust model, users don’t have to rely on us."
+        to="https://norselabs.io/"
+        svgFile="/icons/norse-labs.svg"
     />
     <!--
     <Card
