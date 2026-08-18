@@ -36,10 +36,17 @@ The following dVPN apps are built on top of the Sentinel Protocol. This is why w
     -->
     <Card
         title="Katacomb VPN"
-        description="Katacomb VPN is an open source dVPN client built by Trinity, core community member and creator of this website. It supports 6 protocols: WireGuard, AmneziaWG, OpenVPN, V2Ray, XRAY, and Hysteria2"
+        description="Katacomb VPN is an open source dVPN client built by Trinity, core community member and creator of this docs website. It supports 6 protocols: WireGuard, AmneziaWG, OpenVPN, V2Ray, XRAY, and Hysteria2"
         to="https://github.com/trinitystake/katacomb-vpn"
         icon=""
         svgFile="/icons/katacomb-vpn.svg"
+    />
+    <Card
+        title="Veil DVPN"
+        description="A native Android dVPN app built on Sentinel, designed to make decentralized privacy simple, fast, and usable for everyone. Instead of relying on a single corporate VPN provider, users can route traffic through independent nodes operated by a global community."
+        to="https://bitveil.com/veildvpn"
+        icon=""
+        svgFile="/icons/veil-dvpn.svg"
     />
     <Card
         title="Meile dVPN"
@@ -57,7 +64,7 @@ The following dVPN apps are built on top of the Sentinel Protocol. This is why w
     />
     <Card
         title="ChibaTunnel"
-        description="ChibaTunnel is a community-built dVPN client for connecting to the Sentinel network. Source code and setup instructions are available on GitHub."
+        description="ChibaTunnel is an open source dVPN client built by community member Tkd-Alex for connecting to the Sentinel network. Source code and setup instructions are available on GitHub."
         to="https://chibatunnel.xyz/"
         icon=""
         svgFile="/icons/chiba-tunnel.svg"
@@ -75,18 +82,18 @@ The following dVPN apps are built on top of the Sentinel Protocol. This is why w
         to="https://norselabs.io/"
         svgFile="/icons/norse-labs.svg"
     />
+    <Card
+        title="DVPN Telegram Bot"
+        description="An innovative mini-app created by Norse Labs and powered by the Sentinel blockchain. It lets you securely and privately connect to thousands of dVPN servers worldwide, all for free! Since it’s used via Telegram, there’s no need to download any additional apps."
+        to="https://norselabs.io/products/dvpn-bot"
+        svgFile="/icons/dvpn-telegram-bot.svg"
+    />
     <!--
     <Card
         title="encryptSIM"
         description="encryptSIM are the creators of the world's first Web3 eSIMs. Their application, which is still in its public beta testing phase, provides no-cost dVPN service to anybody with an active eSIM plan."
         to="https://www.encryptsim.com/"
         svgFile="/icons/encryptsim.svg"
-    />
-    <Card
-        title="DVPN Telegram Bot"
-        description="An innovative mini-app created by Norse Labs and powered by the Sentinel blockchain. It lets you securely and privately connect to thousands of dVPN servers worldwide, all for free! Since it’s used via Telegram, there’s no need to download any additional apps."
-        to="https://norselabs.io/products/dvpn-bot"
-        svgFile="/icons/dvpn-telegram-bot.svg"
     />
     <Card
         title="Ryn VPN"
