@@ -1,0 +1,43 @@
+# Groups dependency updates into a few predictable PRs instead of one per
+# package. Without this file Dependabot runs on defaults, which is how the
+# repo accumulated 11 separate lockfile PRs that all conflicted with each other.
+version: 2
+updates:
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+    open-pull-requests-limit: 5
+    commit-message:
+      # Matches the repo's commitlint (@commitlint/config-conventional) rules.
+      prefix: "build(deps)"
+      prefix-development: "build(deps-dev)"
+    # Major bumps of Docusaurus/React/webpack are breaking changes that need a
+    # human deciding when to take them, not an automated PR.
+    ignore:
+      - dependency-name: "*"
+        update-types: ["version-update:semver-major"]
+    groups:
+      npm-production:
+        applies-to: version-updates
+        dependency-type: "production"
+        update-types: ["minor", "patch"]
+      npm-development:
+        applies-to: version-updates
+        dependency-type: "development"
+        update-types: ["minor", "patch"]
+      npm-security:
+        applies-to: security-updates
+        patterns: ["*"]
+
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+    commit-message:
+      prefix: "ci(deps)"
+    groups:
+      github-actions:
+        patterns: ["*"]
