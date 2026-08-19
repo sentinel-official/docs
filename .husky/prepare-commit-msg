@@ -1,1 +1,9 @@
-exec < /dev/tty && npx git-cz --hook || true
+# git-cz prompts for the commit message, which needs a controlling terminal.
+# Probe for one in a subshell first: husky runs hooks under /bin/sh (dash here),
+# where a failed `exec` redirect aborts the script immediately -- so a trailing
+# `|| true` never runs and every non-interactive commit (CI, agents, editors,
+# `git commit -m` over ssh) fails with "cannot open /dev/tty".
+if ( exec < /dev/tty ) 2>/dev/null; then
+  exec < /dev/tty
+  npx git-cz --hook || true
+fi
