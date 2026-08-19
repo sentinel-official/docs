@@ -105,5 +105,8 @@
     "extends": [
       "@commitlint/config-conventional"
     ]
+  },
+  "overrides": {
+    "lodash": "4.18.0"
   }
 }
