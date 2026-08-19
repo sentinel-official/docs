@@ -1,3 +1,5 @@
+const react = require("eslint-plugin-react");
+
 module.exports = [
   {
     ignores: [
@@ -8,6 +10,9 @@ module.exports = [
     ],
   },
   {
+    plugins: {
+      react,
+    },
     settings: {
       react: {
         version: "detect",
@@ -27,6 +32,10 @@ module.exports = [
     },
     rules: {
       "react/prop-types": "off",
+      // Marks variables referenced only inside JSX as used, so no-unused-vars
+      // does not flag components like <StatusBadge />.
+      "react/jsx-uses-vars": "error",
+      "react/jsx-uses-react": "error",
       "no-unused-vars": ["warn", { "varsIgnorePattern": "^React$" }],
     },
   },
