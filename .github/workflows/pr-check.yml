@@ -1,0 +1,41 @@
+# Runs on every pull request so a PR that cannot install or build is caught
+# before it reaches master. Dependabot PR #51 bumped TypeScript past the peer
+# range of typedoc and would have landed a non-installable master, because
+# nothing ran on pull_request at the time.
+name: PR Check
+
+on:
+  pull_request:
+    branches:
+      - master
+
+permissions:
+  contents: read
+
+concurrency:
+  # A new push to the PR cancels the previous run.
+  group: pr-check-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: Install, lint and build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4.4.0
+
+      - uses: actions/setup-node@v4.4.0
+        with:
+          node-version: 23
+          cache: npm
+
+      # Plain `npm install` (not `npm ci`), matching deploy.yml. This is the
+      # step that surfaces peer-dependency conflicts such as ERESOLVE.
+      - name: Install dependencies
+        run: npm install
+
+      - name: Lint
+        run: npx eslint . -c eslint.config.js
+
+      - name: Build website
+        run: npm run build
