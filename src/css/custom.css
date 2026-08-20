@@ -585,25 +585,21 @@ ul.menu__list > li > a.menu__link--active {
   background: rgba(26, 144, 255, 0.08);
 }
 
-/* DocSearch overrides */
-.DocSearch-Button {
-  border: 1px solid var(--sentinel-border, #2e2e2e) !important;
-  border-radius: var(--card-radius, 12px) !important;
-  background: transparent !important;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease !important;
+/* Search bar overrides (docusaurus-search-local).
+   The suggestion dropdown ships hashed CSS-module classes, so only the
+   stable Infima navbar classes are styled here. Background is left alone:
+   it carries the magnifier icon. */
+.navbar__search-input {
+  border: 1px solid var(--sentinel-border, #2e2e2e);
+  border-radius: var(--card-radius, 12px);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
-.DocSearch-Button:hover {
-  border-color: var(--sentinel-border-hover, rgba(26, 144, 255, 0.6)) !important;
-  box-shadow: 0 0 8px var(--sentinel-glow, rgba(26, 144, 255, 0.35)) !important;
-}
-
-.DocSearch-Modal {
-  border-radius: var(--card-radius, 12px) !important;
-}
-
-.DocSearch-SearchBar {
-  border-bottom: 1px solid var(--sentinel-border, #2e2e2e) !important;
+.navbar__search-input:hover,
+.navbar__search-input:focus {
+  border-color: var(--sentinel-border-hover, rgba(26, 144, 255, 0.6));
+  box-shadow: 0 0 8px var(--sentinel-glow, rgba(26, 144, 255, 0.35));
+  outline: none;
 }
 
 .ping::after {

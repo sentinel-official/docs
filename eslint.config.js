@@ -4,6 +4,7 @@ module.exports = [
   {
     ignores: [
       "build/",
+      ".docusaurus/",
       "node_modules/",
       "*.cjs",
       "sidebars-*.js"

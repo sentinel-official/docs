@@ -97,7 +97,7 @@ The dev server starts on `http://localhost:3000`. Edits to any markdown or compo
 - **[Tailwind CSS 3](https://tailwindcss.com/)** &nbsp;·&nbsp; styling.
 - **[Stoplight Elements](https://stoplight.io/open-source/elements)** &nbsp;·&nbsp; interactive REST and RPC API reference.
 - **[`prism-react-renderer`](https://github.com/FormidableLabs/prism-react-renderer)** + **[`@docusaurus/theme-live-codeblock`](https://docusaurus.io/docs/api/themes/@docusaurus/theme-live-codeblock)** &nbsp;·&nbsp; syntax highlighting and live code blocks.
-- **[Algolia DocSearch](https://docsearch.algolia.com/)** &nbsp;·&nbsp; site-wide search.
+- **[`@easyops-cn/docusaurus-search-local`](https://github.com/easyops-cn/docusaurus-search-local)** &nbsp;·&nbsp; site-wide search, indexed at build time and served as a static file (no external search service).
 
 ## Project layout
 

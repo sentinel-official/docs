@@ -34,20 +34,33 @@ function defineSection(section, options = {}) {
   ];
 }
 
-const SECTIONS = [
-  defineSection('apis'),
-  defineSection('p2p-coin'),
-  defineSection('full-node-setup', {
-    sidebarPath: require.resolve('./sidebars-full-node-setup.js'),
-  }),
-  defineSection('get-started'),
-  defineSection('networks'),
-  defineSection('dvpn-nodes'),
-  defineSection('node-monitoring'),
-  defineSection('sdk'),
-  defineSection('dvpn-cli'),
-  defineSection('sentinel-hub'),
+const SECTION_NAMES = [
+  'apis',
+  'p2p-coin',
+  'full-node-setup',
+  'get-started',
+  'networks',
+  'dvpn-nodes',
+  'node-monitoring',
+  'sdk',
+  'dvpn-cli',
+  'sentinel-hub',
 ];
+
+/** Per-section overrides, keyed by section name. */
+const SECTION_OPTIONS = {
+  'full-node-setup': {
+    sidebarPath: require.resolve('./sidebars-full-node-setup.js'),
+  },
+};
+
+const SECTIONS = SECTION_NAMES.map((section) =>
+  defineSection(section, SECTION_OPTIONS[section]),
+);
+
+// The preset's docs instance (docs/home) is served at /docs.
+const HOME_DOCS_ROUTE = 'docs';
+const HOME_DOCS_DIR = 'docs/home';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -106,7 +119,32 @@ const config = {
     webpackPlugin
   ],
 
-  themes: ['@docusaurus/theme-live-codeblock'],
+  themes: [
+    '@docusaurus/theme-live-codeblock',
+    [
+      require.resolve('@easyops-cn/docusaurus-search-local'),
+      /** @type {import('@easyops-cn/docusaurus-search-local').PluginOptions} */
+      ({
+        hashed: true,
+        language: ['en'],
+        indexDocs: true,
+        indexBlog: false,
+        indexPages: true,
+        // Every docs instance: the preset's /docs plus one route per section.
+        docsRouteBasePath: [HOME_DOCS_ROUTE, ...SECTION_NAMES],
+        docsDir: [
+          HOME_DOCS_DIR,
+          ...SECTION_NAMES.map((section) => `docs/${section}`),
+        ],
+        // Stoplight renders /api* client-side, so it holds no indexable HTML.
+        // Routes are matched with the baseUrl stripped, hence no leading slash.
+        ignoreFiles: [/^api(\/|$)/],
+        highlightSearchTermsOnTargetPage: true,
+        searchResultLimits: 8,
+        searchResultContextMaxLength: 50,
+      }),
+    ],
+  ],
 
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
@@ -362,15 +400,6 @@ const config = {
       },
       liveCodeBlock: {
         playgroundPosition: 'bottom',
-      },
-      algolia: {
-        // Algolia Application ID
-        appId: '8LDAK2HFBK',
-        // Algolia Search-Only API Key
-        apiKey: 'c9d8f3352bff883ef5cec536ca8ba591',
-        indexName: 'Docs',
-        contextualSearch: true,
-        searchParameters: {},
       },
     }),
   };
