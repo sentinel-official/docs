@@ -16,7 +16,7 @@ import Link from '@docusaurus/Link';
   <Section>
     <Card
       title="RPC endpoints"
-      description="Sentinel Tendermint RPC endpoints"
+      description="Sentinel CometBFT RPC endpoints"
       to="/api/?v=RPC"
       icon=""
       svgFile="/icons/api.svg"
@@ -25,14 +25,26 @@ import Link from '@docusaurus/Link';
 
 ## Interacting with RPC endpoints
 
-As shown on the RPC specifications, there are different endpoints to communicate with the Sentinel chain. Unlike the LCD rest api, the RPC endpoints provide generic endpoints to communicate with the various modules available. For example the ABCI Query allows you the query different data from Sentinel.
+As shown in the RPC specifications, there are different endpoints for communicating with the Sentinel chain. Unlike the LCD REST API, the RPC endpoints are generic: rather than one route per module query, they expose the consensus engine itself — blocks, transactions, validators, the mempool and the ABCI interface. `abci_query`, for example, lets you read any module's state through a single endpoint.
 
-For more information please read [generating, signing and broadcasting transactions](https://docs.cosmos.network/v0.46/run-node/txs.html) on the cosmos-sdk docs.
+The RPC interface is served by **CometBFT v0.37**, the consensus engine bundled with hub v12. Three protocols are available:
 
+* URI over HTTP — `https://rpc.sentinel.co/block?height=5`
+* JSON-RPC 2.0 over HTTP — POST to `https://rpc.sentinel.co`
+* JSON-RPC 2.0 over websockets at `/websocket`, which is the only way to reach the event-subscription methods (`subscribe`, `unsubscribe`, `unsubscribe_all`)
 
-## Generating docs
+:::note
+`dial_seeds`, `dial_peers` and `unsafe_flush_mempool` are only routed when a node is started with unsafe RPC methods enabled, so they are not available on the public endpoint.
+:::
 
+For more information please read [generating, signing and broadcasting transactions](https://docs.cosmos.network/sdk/latest/node/txs) in the Cosmos SDK docs.
+
+## Generating the specification
+
+`static/api/RPC.yaml` is generated, not hand-written. It is derived from the OpenAPI document of the CometBFT commit that the hub pins in its `go.mod`. To regenerate it after a hub release:
+
+```bash
+./scripts/api-specs/generate.sh v12.0.2
 ```
-brew install protobuf
-brew install protoc-gen-go-grpc
-```
+
+See `scripts/api-specs/README.md` for details.

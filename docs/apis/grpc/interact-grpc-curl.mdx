@@ -5,27 +5,45 @@ sidebar_position: 1
 
 [grpcurl](https://github.com/fullstorydev/grpcurl) is like `curl` but for gRPC. It is also available as a Go library, but we will use it only as a CLI command for debugging and testing purposes. Follow the instructions in the previous link to install it.
 
-Assuming you already installed sentinelhub, you should be able to run the following command to list the Protobuf services available (you can replace `grpc.sentinel.co:9090` by the gRPC server endpoint of another node such as another provider or your own node).
+## Choosing an endpoint
 
-Listing all the methods from the mainnet
+The public gRPC endpoint is served over TLS on port `443`, so no `-plaintext` flag is needed:
 
 ```bash
-grpcurl -plaintext grpc.sentinel.co:9090 list
+grpcurl fullgrpc-sentinel.busurnode.com:443 list
 ```
 
-Output will look like: 
+:::caution
+The older `grpc.sentinel.co:9090` address no longer accepts connections. Port `9090` is closed and requests to `grpc.sentinel.co` are answered with an HTTP redirect that gRPC clients do not follow.
+:::
+
+If you are running your own node, use its address with `-plaintext`:
+
+```bash
+grpcurl -plaintext localhost:9090 list
+```
+
+## Listing the available services
+
+Output of `list` against the mainnet:
+
 ```
 cosmos.auth.v1beta1.Query
 cosmos.authz.v1beta1.Query
 cosmos.bank.v1beta1.Query
+cosmos.base.node.v1beta1.Service
 cosmos.base.reflection.v1beta1.ReflectionService
 cosmos.base.reflection.v2alpha1.ReflectionService
 cosmos.base.tendermint.v1beta1.Service
+cosmos.consensus.v1.Query
 cosmos.distribution.v1beta1.Query
 cosmos.evidence.v1beta1.Query
 cosmos.feegrant.v1beta1.Query
+cosmos.gov.v1.Query
 cosmos.gov.v1beta1.Query
+cosmos.group.v1.Query
 cosmos.mint.v1beta1.Query
+cosmos.nft.v1beta1.Query
 cosmos.params.v1beta1.Query
 cosmos.slashing.v1beta1.Query
 cosmos.staking.v1beta1.Query
@@ -41,38 +59,45 @@ ibc.core.channel.v1.Query
 ibc.core.client.v1.Query
 ibc.core.connection.v1.Query
 sentinel.deposit.v1.QueryService
-sentinel.node.v2.QueryService
-sentinel.plan.v2.QueryService
+sentinel.lease.v1.QueryService
+sentinel.node.v3.QueryService
+sentinel.oracle.v1.QueryService
+sentinel.plan.v3.QueryService
 sentinel.provider.v2.QueryService
-sentinel.session.v2.QueryService
+sentinel.provider.v3.QueryService
+sentinel.session.v3.QueryService
 sentinel.subscription.v2.QueryService
+sentinel.subscription.v3.QueryService
 sentinel.swap.v1.QueryService
 ```
 
-You should see a list of gRPC services, such as `cosmos.bank.v1beta1.Query`. This is called reflection, which is a Protobuf endpoint returning a description of all available endpoints. Each of these represents a different Protobuf service, and each service exposes multiple RPC methods you can query against.
+This is called reflection: a Protobuf endpoint that returns a description of all available endpoints. Each entry is a different Protobuf service, and each service exposes multiple RPC methods you can query against.
 
-In order to get a description of the service you can run the following command:
+:::info
+Sentinel query services are **version-namespaced**. On hub v12, `node`, `session` and `subscription` are served at **v3**, and `deposit`, `lease`, `oracle` and `swap` at **v1**. The v1 and v2 services from earlier hub releases have been removed, with the two partial exceptions noted below.
+:::
+
+To get a description of a service, run:
 
 ```bash
-grpcurl -plaintext \
-    grpc.sentinel.co:9090 \
-    describe <grpc_service>              
+grpcurl \
+    fullgrpc-sentinel.busurnode.com:443 \
+    describe <grpc_service>
 ```
 
-The methods for every gRPC service are the followings:
+## Methods of the Sentinel services
 
 <details>
 <summary>sentinel.deposit.v1.QueryService</summary>
 <p>
 
-#### These are the methods of `sentinel.deposit.v1.QueryService`
-```bash
+```protobuf
 service QueryService {
-  rpc QueryDeposit ( .sentinel.deposit.v1.QueryDepositRequest ) returns ( .sentinel.deposit.v1.QueryDepositResponse ) {
-    option (.google.api.http) = { get: "/sentinel/deposits/{address}" };
-  }
   rpc QueryDeposits ( .sentinel.deposit.v1.QueryDepositsRequest ) returns ( .sentinel.deposit.v1.QueryDepositsResponse ) {
-    option (.google.api.http) = { get: "/sentinel/deposits" };
+    option (.google.api.http) = { get: "/sentinel/deposit/v1/deposits" };
+  }
+  rpc QueryDeposit ( .sentinel.deposit.v1.QueryDepositRequest ) returns ( .sentinel.deposit.v1.QueryDepositResponse ) {
+    option (.google.api.http) = { get: "/sentinel/deposit/v1/deposits/{address}" };
   }
 }
 ```
@@ -81,23 +106,27 @@ service QueryService {
 </details>
 
 <details>
-<summary>sentinel.node.v2.QueryService</summary>
+<summary>sentinel.lease.v1.QueryService</summary>
 <p>
 
-#### These are the methods of `sentinel.node.v2.QueryService`
-```bash
+Added in hub v12.
+
+```protobuf
 service QueryService {
-  rpc QueryNode ( .sentinel.node.v2.QueryNodeRequest ) returns ( .sentinel.node.v2.QueryNodeResponse ) {
-    option (.google.api.http) = { get: "/sentinel/nodes/{address}" };
+  rpc QueryLeases ( .sentinel.lease.v1.QueryLeasesRequest ) returns ( .sentinel.lease.v1.QueryLeasesResponse ) {
+    option (.google.api.http) = { get: "/sentinel/lease/v1/leases" };
   }
-  rpc QueryNodes ( .sentinel.node.v2.QueryNodesRequest ) returns ( .sentinel.node.v2.QueryNodesResponse ) {
-    option (.google.api.http) = { get: "/sentinel/nodes" };
+  rpc QueryLeasesForNode ( .sentinel.lease.v1.QueryLeasesForNodeRequest ) returns ( .sentinel.lease.v1.QueryLeasesForNodeResponse ) {
+    option (.google.api.http) = { get: "/sentinel/lease/v1/nodes/{address}/leases" };
   }
-  rpc QueryNodesForPlan ( .sentinel.node.v2.QueryNodesForPlanRequest ) returns ( .sentinel.node.v2.QueryNodesForPlanResponse ) {
-    option (.google.api.http) = { get: "/sentinel/plans/{id}/nodes" };
+  rpc QueryLeasesForProvider ( .sentinel.lease.v1.QueryLeasesForProviderRequest ) returns ( .sentinel.lease.v1.QueryLeasesForProviderResponse ) {
+    option (.google.api.http) = { get: "/sentinel/lease/v1/providers/{address}/leases" };
   }
-  rpc QueryParams ( .sentinel.node.v2.QueryParamsRequest ) returns ( .sentinel.node.v2.QueryParamsResponse ) {
-    option (.google.api.http) = { get: "/sentinel/modules/node/params" };
+  rpc QueryLease ( .sentinel.lease.v1.QueryLeaseRequest ) returns ( .sentinel.lease.v1.QueryLeaseResponse ) {
+    option (.google.api.http) = { get: "/sentinel/lease/v1/leases/{id}" };
+  }
+  rpc QueryParams ( .sentinel.lease.v1.QueryParamsRequest ) returns ( .sentinel.lease.v1.QueryParamsResponse ) {
+    option (.google.api.http) = { get: "/sentinel/lease/v1/params" };
   }
 }
 ```
@@ -106,20 +135,22 @@ service QueryService {
 </details>
 
 <details>
-<summary>sentinel.plan.v2.QueryService</summary>
+<summary>sentinel.node.v3.QueryService</summary>
 <p>
 
-#### These are the methods of `sentinel.plan.v2.QueryService`
-```bash
+```protobuf
 service QueryService {
-  rpc QueryPlan ( .sentinel.plan.v2.QueryPlanRequest ) returns ( .sentinel.plan.v2.QueryPlanResponse ) {
-    option (.google.api.http) = { get: "/sentinel/plans/{id}" };
+  rpc QueryNodes ( .sentinel.node.v3.QueryNodesRequest ) returns ( .sentinel.node.v3.QueryNodesResponse ) {
+    option (.google.api.http) = { get: "/sentinel/node/v3/nodes" };
   }
-  rpc QueryPlans ( .sentinel.plan.v2.QueryPlansRequest ) returns ( .sentinel.plan.v2.QueryPlansResponse ) {
-    option (.google.api.http) = { get: "/sentinel/plans" };
+  rpc QueryNodesForPlan ( .sentinel.node.v3.QueryNodesForPlanRequest ) returns ( .sentinel.node.v3.QueryNodesForPlanResponse ) {
+    option (.google.api.http) = { get: "/sentinel/node/v3/plans/{id}/nodes" };
   }
-  rpc QueryPlansForProvider ( .sentinel.plan.v2.QueryPlansForProviderRequest ) returns ( .sentinel.plan.v2.QueryPlansForProviderResponse ) {
-    option (.google.api.http) = { get: "/sentinel/providers/{address}/plans" };
+  rpc QueryNode ( .sentinel.node.v3.QueryNodeRequest ) returns ( .sentinel.node.v3.QueryNodeResponse ) {
+    option (.google.api.http) = { get: "/sentinel/node/v3/nodes/{address}" };
+  }
+  rpc QueryParams ( .sentinel.node.v3.QueryParamsRequest ) returns ( .sentinel.node.v3.QueryParamsResponse ) {
+    option (.google.api.http) = { get: "/sentinel/node/v3/params" };
   }
 }
 ```
@@ -128,20 +159,67 @@ service QueryService {
 </details>
 
 <details>
-<summary>sentinel.sentinel.provider.v2.QueryService</summary>
+<summary>sentinel.oracle.v1.QueryService</summary>
 <p>
 
-#### These are the methods of `sentinel.provider.v2.QueryService`
-```bash
+Added in hub v12.
+
+```protobuf
 service QueryService {
-  rpc QueryParams ( .sentinel.provider.v2.QueryParamsRequest ) returns ( .sentinel.provider.v2.QueryParamsResponse ) {
-    option (.google.api.http) = { get: "/sentinel/params/provider" };
+  rpc QueryAssets ( .sentinel.oracle.v1.QueryAssetsRequest ) returns ( .sentinel.oracle.v1.QueryAssetsResponse ) {
+    option (.google.api.http) = { get: "/sentinel/oracle/v1/assets" };
+  }
+  rpc QueryAsset ( .sentinel.oracle.v1.QueryAssetRequest ) returns ( .sentinel.oracle.v1.QueryAssetResponse ) {
+    option (.google.api.http) = { get: "/sentinel/oracle/v1/assets/{denom}" };
+  }
+  rpc QueryParams ( .sentinel.oracle.v1.QueryParamsRequest ) returns ( .sentinel.oracle.v1.QueryParamsResponse ) {
+    option (.google.api.http) = { get: "/sentinel/oracle/v1/params" };
+  }
+}
+```
+
+</p>
+</details>
+
+<details>
+<summary>sentinel.plan.v3.QueryService</summary>
+<p>
+
+**gRPC only.** Hub v12 registers this query service on the gRPC server but not on the REST gateway, so the HTTP paths below are not reachable — query these methods over gRPC.
+
+```protobuf
+service QueryService {
+  rpc QueryPlans ( .sentinel.plan.v3.QueryPlansRequest ) returns ( .sentinel.plan.v3.QueryPlansResponse ) {
+    option (.google.api.http) = { get: "/sentinel/plan/v3/plans" };
+  }
+  rpc QueryPlansForProvider ( .sentinel.plan.v3.QueryPlansForProviderRequest ) returns ( .sentinel.plan.v3.QueryPlansForProviderResponse ) {
+    option (.google.api.http) = { get: "/sentinel/plan/v3/providers/{address}/plans" };
+  }
+  rpc QueryPlan ( .sentinel.plan.v3.QueryPlanRequest ) returns ( .sentinel.plan.v3.QueryPlanResponse ) {
+    option (.google.api.http) = { get: "/sentinel/plan/v3/plans/{id}" };
+  }
+}
+```
+
+</p>
+</details>
+
+<details>
+<summary>sentinel.provider.v2.QueryService</summary>
+<p>
+
+Retained for backwards compatibility. `QueryProviders` and `QueryProvider` still work; `QueryParams` returns `Unimplemented` — use `sentinel.provider.v3.QueryService/QueryParams` instead.
+
+```protobuf
+service QueryService {
+  rpc QueryProviders ( .sentinel.provider.v2.QueryProvidersRequest ) returns ( .sentinel.provider.v2.QueryProvidersResponse ) {
+    option (.google.api.http) = { get: "/sentinel/provider/v2/providers" };
   }
   rpc QueryProvider ( .sentinel.provider.v2.QueryProviderRequest ) returns ( .sentinel.provider.v2.QueryProviderResponse ) {
-    option (.google.api.http) = { get: "/sentinel/providers/{address}" };
+    option (.google.api.http) = { get: "/sentinel/provider/v2/providers/{address}" };
   }
-  rpc QueryProviders ( .sentinel.provider.v2.QueryProvidersRequest ) returns ( .sentinel.provider.v2.QueryProvidersResponse ) {
-    option (.google.api.http) = { get: "/sentinel/providers" };
+  rpc QueryParams ( .sentinel.provider.v2.QueryParamsRequest ) returns ( .sentinel.provider.v2.QueryParamsResponse ) {
+    option (.google.api.http) = { get: "/sentinel/provider/v2/params" };
   }
 }
 ```
@@ -150,34 +228,50 @@ service QueryService {
 </details>
 
 <details>
-<summary>sentinel.session.v2.QueryService</summary>
+<summary>sentinel.provider.v3.QueryService</summary>
 <p>
 
-#### These are the methods of `sentinel.session.v2.QueryService`
-```bash
+**gRPC only.** Registered on the gRPC server but not on the REST gateway in hub v12.
+
+```protobuf
 service QueryService {
-  rpc QueryParams ( .sentinel.session.v2.QueryParamsRequest ) returns ( .sentinel.session.v2.QueryParamsResponse ) {
-    option (.google.api.http) = { get: "/sentinel/modules/session/params" };
+  rpc QueryParams ( .sentinel.provider.v3.QueryParamsRequest ) returns ( .sentinel.provider.v3.QueryParamsResponse ) {
+    option (.google.api.http) = { get: "/sentinel/provider/v3/params" };
   }
-  rpc QuerySession ( .sentinel.session.v2.QuerySessionRequest ) returns ( .sentinel.session.v2.QuerySessionResponse ) {
-    option (.google.api.http) = { get: "/sentinel/sessions/{id}" };
+}
+```
+
+</p>
+</details>
+
+<details>
+<summary>sentinel.session.v3.QueryService</summary>
+<p>
+
+```protobuf
+service QueryService {
+  rpc QuerySessions ( .sentinel.session.v3.QuerySessionsRequest ) returns ( .sentinel.session.v3.QuerySessionsResponse ) {
+    option (.google.api.http) = { get: "/sentinel/session/v3/sessions" };
   }
-  rpc QuerySessions ( .sentinel.session.v2.QuerySessionsRequest ) returns ( .sentinel.session.v2.QuerySessionsResponse ) {
-    option (.google.api.http) = { get: "/sentinel/sessions" };
+  rpc QuerySessionsForAccount ( .sentinel.session.v3.QuerySessionsForAccountRequest ) returns ( .sentinel.session.v3.QuerySessionsForAccountResponse ) {
+    option (.google.api.http) = { get: "/sentinel/session/v3/accounts/{address}/sessions" };
   }
-  rpc QuerySessionsForAccount ( .sentinel.session.v2.QuerySessionsForAccountRequest ) returns ( .sentinel.session.v2.QuerySessionsForAccountResponse ) {
-    option (.google.api.http) = { get: "/sentinel/accounts/{address}/sessions" };
+  rpc QuerySessionsForNode ( .sentinel.session.v3.QuerySessionsForNodeRequest ) returns ( .sentinel.session.v3.QuerySessionsForNodeResponse ) {
+    option (.google.api.http) = { get: "/sentinel/session/v3/nodes/{address}/sessions" };
   }
-  rpc QuerySessionsForAllocation ( .sentinel.session.v2.QuerySessionsForAllocationRequest ) returns ( .sentinel.session.v2.QuerySessionsForAllocationResponse ) {
+  rpc QuerySessionsForSubscription ( .sentinel.session.v3.QuerySessionsForSubscriptionRequest ) returns ( .sentinel.session.v3.QuerySessionsForSubscriptionResponse ) {
+    option (.google.api.http) = { get: "/sentinel/session/v3/subscriptions/{id}/sessions" };
+  }
+  rpc QuerySessionsForAllocation ( .sentinel.session.v3.QuerySessionsForAllocationRequest ) returns ( .sentinel.session.v3.QuerySessionsForAllocationResponse ) {
     option (.google.api.http) = {
-      get: "/sentinel/subscriptions/{id}/allocations/{address}/sessions"
+      get: "/sentinel/session/v3/subscriptions/{id}/allocations/{address}/sessions"
     };
   }
-  rpc QuerySessionsForNode ( .sentinel.session.v2.QuerySessionsForNodeRequest ) returns ( .sentinel.session.v2.QuerySessionsForNodeResponse ) {
-    option (.google.api.http) = { get: "/sentinel/nodes/{address}/sessions" };
+  rpc QuerySession ( .sentinel.session.v3.QuerySessionRequest ) returns ( .sentinel.session.v3.QuerySessionResponse ) {
+    option (.google.api.http) = { get: "/sentinel/session/v3/sessions/{id}" };
   }
-  rpc QuerySessionsForSubscription ( .sentinel.session.v2.QuerySessionsForSubscriptionRequest ) returns ( .sentinel.session.v2.QuerySessionsForSubscriptionResponse ) {
-    option (.google.api.http) = { get: "/sentinel/subscriptions/{id}/sessions" };
+  rpc QueryParams ( .sentinel.session.v3.QueryParamsRequest ) returns ( .sentinel.session.v3.QueryParamsResponse ) {
+    option (.google.api.http) = { get: "/sentinel/session/v3/params" };
   }
 }
 ```
@@ -189,50 +283,44 @@ service QueryService {
 <summary>sentinel.subscription.v2.QueryService</summary>
 <p>
 
-#### These are the methods of `sentinel.subscription.v2.QueryService`
-```bash
+Retained for backwards compatibility, but **only `QueryAllocation` and `QueryAllocations` are implemented**. Every other method on this service returns `Unimplemented`; use `sentinel.subscription.v3.QueryService` instead.
+
+The payout methods have no replacement. In hub v12 the v2 payout records were migrated into the `lease` module, where the payout schedule is a property of a lease rather than a separately queryable record — query `sentinel.lease.v1.QueryService` instead.
+
+```protobuf
 service QueryService {
-  rpc QueryAllocation ( .sentinel.subscription.v2.QueryAllocationRequest ) returns ( .sentinel.subscription.v2.QueryAllocationResponse ) {
-    option (.google.api.http) = {
-      get: "/sentinel/subscriptions/{id}/allocations/{address}"
-    };
-  }
   rpc QueryAllocations ( .sentinel.subscription.v2.QueryAllocationsRequest ) returns ( .sentinel.subscription.v2.QueryAllocationsResponse ) {
-    option (.google.api.http) = {
-      get: "/sentinel/subscriptions/{id}/allocations"
-    };
+    option (.google.api.http) = { get: "/sentinel/subscription/v2/subscriptions/{id}/allocations" };
   }
-  rpc QueryParams ( .sentinel.subscription.v2.QueryParamsRequest ) returns ( .sentinel.subscription.v2.QueryParamsResponse ) {
-    option (.google.api.http) = { get: "/sentinel/modules/subscription/params" };
+  rpc QueryAllocation ( .sentinel.subscription.v2.QueryAllocationRequest ) returns ( .sentinel.subscription.v2.QueryAllocationResponse ) {
+    option (.google.api.http) = { get: "/sentinel/subscription/v2/subscriptions/{id}/allocations/{address}" };
   }
-  rpc QueryPayout ( .sentinel.subscription.v2.QueryPayoutRequest ) returns ( .sentinel.subscription.v2.QueryPayoutResponse ) {
-    option (.google.api.http) = { get: "/sentinel/payouts/{id}" };
+}
+```
+
+</p>
+</details>
+
+<details>
+<summary>sentinel.subscription.v3.QueryService</summary>
+<p>
+
+```protobuf
+service QueryService {
+  rpc QuerySubscriptions ( .sentinel.subscription.v3.QuerySubscriptionsRequest ) returns ( .sentinel.subscription.v3.QuerySubscriptionsResponse ) {
+    option (.google.api.http) = { get: "/sentinel/subscription/v3/subscriptions" };
   }
-  rpc QueryPayouts ( .sentinel.subscription.v2.QueryPayoutsRequest ) returns ( .sentinel.subscription.v2.QueryPayoutsResponse ) {
-    option (.google.api.http) = { get: "/sentinel/payouts" };
+  rpc QuerySubscriptionsForAccount ( .sentinel.subscription.v3.QuerySubscriptionsForAccountRequest ) returns ( .sentinel.subscription.v3.QuerySubscriptionsForAccountResponse ) {
+    option (.google.api.http) = { get: "/sentinel/subscription/v3/accounts/{address}/subscriptions" };
   }
-  rpc QueryPayoutsForAccount ( .sentinel.subscription.v2.QueryPayoutsForAccountRequest ) returns ( .sentinel.subscription.v2.QueryPayoutsForAccountResponse ) {
-    option (.google.api.http) = { get: "/sentinel/accounts/{address}/payouts" };
+  rpc QuerySubscriptionsForPlan ( .sentinel.subscription.v3.QuerySubscriptionsForPlanRequest ) returns ( .sentinel.subscription.v3.QuerySubscriptionsForPlanResponse ) {
+    option (.google.api.http) = { get: "/sentinel/subscription/v3/plans/{id}/subscriptions" };
   }
-  rpc QueryPayoutsForNode ( .sentinel.subscription.v2.QueryPayoutsForNodeRequest ) returns ( .sentinel.subscription.v2.QueryPayoutsForNodeResponse ) {
-    option (.google.api.http) = { get: "/sentinel/nodes/{address}/payouts" };
+  rpc QuerySubscription ( .sentinel.subscription.v3.QuerySubscriptionRequest ) returns ( .sentinel.subscription.v3.QuerySubscriptionResponse ) {
+    option (.google.api.http) = { get: "/sentinel/subscription/v3/subscriptions/{id}" };
   }
-  rpc QuerySubscription ( .sentinel.subscription.v2.QuerySubscriptionRequest ) returns ( .sentinel.subscription.v2.QuerySubscriptionResponse ) {
-    option (.google.api.http) = { get: "/sentinel/subscriptions/{id}" };
-  }
-  rpc QuerySubscriptions ( .sentinel.subscription.v2.QuerySubscriptionsRequest ) returns ( .sentinel.subscription.v2.QuerySubscriptionsResponse ) {
-    option (.google.api.http) = { get: "/sentinel/subscriptions" };
-  }
-  rpc QuerySubscriptionsForAccount ( .sentinel.subscription.v2.QuerySubscriptionsForAccountRequest ) returns ( .sentinel.subscription.v2.QuerySubscriptionsForAccountResponse ) {
-    option (.google.api.http) = {
-      get: "/sentinel/accounts/{address}/subscriptions"
-    };
-  }
-  rpc QuerySubscriptionsForNode ( .sentinel.subscription.v2.QuerySubscriptionsForNodeRequest ) returns ( .sentinel.subscription.v2.QuerySubscriptionsForNodeResponse ) {
-    option (.google.api.http) = { get: "/sentinel/nodes/{address}/subscriptions" };
-  }
-  rpc QuerySubscriptionsForPlan ( .sentinel.subscription.v2.QuerySubscriptionsForPlanRequest ) returns ( .sentinel.subscription.v2.QuerySubscriptionsForPlanResponse ) {
-    option (.google.api.http) = { get: "/sentinel/plans/{id}/subscriptions" };
+  rpc QueryParams ( .sentinel.subscription.v3.QueryParamsRequest ) returns ( .sentinel.subscription.v3.QueryParamsResponse ) {
+    option (.google.api.http) = { get: "/sentinel/subscription/v3/params" };
   }
 }
 ```
@@ -244,17 +332,16 @@ service QueryService {
 <summary>sentinel.swap.v1.QueryService</summary>
 <p>
 
-#### These are the methods of `sentinel.swap.v1.QueryService`
-```bash
+```protobuf
 service QueryService {
-  rpc QueryParams ( .sentinel.swap.v1.QueryParamsRequest ) returns ( .sentinel.swap.v1.QueryParamsResponse ) {
-    option (.google.api.http) = { get: "/sentinel/modules/swap/params" };
+  rpc QuerySwaps ( .sentinel.swap.v1.QuerySwapsRequest ) returns ( .sentinel.swap.v1.QuerySwapsResponse ) {
+    option (.google.api.http) = { get: "/sentinel/swap/v1/swaps" };
   }
   rpc QuerySwap ( .sentinel.swap.v1.QuerySwapRequest ) returns ( .sentinel.swap.v1.QuerySwapResponse ) {
-    option (.google.api.http) = { get: "/sentinel/swaps/{tx_hash}" };
+    option (.google.api.http) = { get: "/sentinel/swap/v1/swaps/{tx_hash}" };
   }
-  rpc QuerySwaps ( .sentinel.swap.v1.QuerySwapsRequest ) returns ( .sentinel.swap.v1.QuerySwapsResponse ) {
-    option (.google.api.http) = { get: "/sentinel/swaps" };
+  rpc QueryParams ( .sentinel.swap.v1.QueryParamsRequest ) returns ( .sentinel.swap.v1.QueryParamsResponse ) {
+    option (.google.api.http) = { get: "/sentinel/swap/v1/params" };
   }
 }
 ```
@@ -262,19 +349,24 @@ service QueryService {
 </p>
 </details>
 
-The list of all available gRPC query endpoints and API exploration is possible with the help of buf studio. 
-
-
-#### Query for historical state using grpcurl
-
-You may also query for historical data by passing some [gRPC metadata](https://github.com/grpc/grpc-go/blob/master/Documentation/grpc-metadata.md) to the query: the `x-cosmos-block-height` metadata should contain the block to query. Using grpcurl as above, the command looks like:
+## Making a query
 
 ```bash
 grpcurl \
-    -plaintext \
-    -H "x-sentinel-block-height: 13000000" \
+    -d '{"status":"STATUS_ACTIVE","pagination":{"limit":"5"}}' \
+    fullgrpc-sentinel.busurnode.com:443 \
+    sentinel.node.v3.QueryService/QueryNodes
+```
+
+## Query for historical state using grpcurl
+
+You may also query for historical data by passing some [gRPC metadata](https://github.com/grpc/grpc-go/blob/master/Documentation/grpc-metadata.md) to the query: the `x-cosmos-block-height` metadata should contain the block to query.
+
+```bash
+grpcurl \
+    -H "x-cosmos-block-height: 30000000" \
     -d '{"address":"sent1uddk4mfqq3uyu2yzhym8spheqatqs30fzh5tmr"}' \
-    grpc.sentinel.co:9090 \
+    fullgrpc-sentinel.busurnode.com:443 \
     cosmos.bank.v1beta1.Query/AllBalances
 ```
 

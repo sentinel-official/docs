@@ -6,9 +6,9 @@ sidebar_position: 4
 
 ## Using the REST Endpoints
 
-All gRPC services on the Cosmos SDK  and Sentinel are made available for more convenient REST-based queries through gRPC-gateway. The format of the URL path is based on the Protobuf service method's full-qualified name, but may contain small customizations so that final URLs look more idiomatic. For example, the REST endpoint for the `cosmos.bank.v1beta1.Query/AllBalances` method is `GET /cosmos/bank/v1beta1/balances/{address}`. Request arguments are passed as query parameters.
+All gRPC services on the Cosmos SDK and Sentinel are made available for more convenient REST-based queries through gRPC-gateway. The format of the URL path is based on the Protobuf service method's fully-qualified name, but may contain small customizations so that final URLs look more idiomatic. For example, the REST endpoint for the `cosmos.bank.v1beta1.Query/AllBalances` method is `GET /cosmos/bank/v1beta1/balances/{address}`. Request arguments are passed as query parameters.
 
-As a concrete example, the `curl` command to make balances request is:
+As a concrete example, the `curl` command to make a balances request is:
 
 ```bash
 curl \
@@ -17,7 +17,13 @@ curl \
     https://lcd.sentinel.co/cosmos/bank/v1beta1/balances/<your_address>
 ```
 
-The list of all available REST endpoints is available as a Swagger specification file, it can be viewed at `localhost:1317/swagger`. Make sure that the `api.swagger` field is set to true in your `app.toml` file.
+The full list of available REST endpoints is published as an OpenAPI specification: see the [LCD API reference](/api/?v=LCD). It is generated from the hub's Protobuf definitions and verified against the live chain, so it lists only routes the chain actually serves.
+
+:::info
+The Sentinel query services are **version-namespaced**. On hub v12, `node`, `session` and `subscription` are served at **v3** (`/sentinel/node/v3/nodes`), and `deposit`, `lease`, `oracle` and `swap` at **v1**. The unversioned paths used by older hub releases — `/sentinel/nodes`, `/sentinel/modules/node/params`, `/sentinel/params/provider` and friends — no longer exist and return `501 Not Implemented`.
+
+The `plan` v3 and `provider` v3 query services have **no REST equivalent** on hub v12: they are registered on the gRPC server but not on the REST gateway. Query them over [gRPC](/apis/grpc) instead.
+:::
 
 ### Query for historical state using REST
 
@@ -27,22 +33,32 @@ Querying for historical state is done using the HTTP header `x-cosmos-block-heig
 curl \
     -X GET \
     -H "Content-Type: application/json" \
-    -H "x-cosmos-block-height: 13000000"
-    http://localhost:1317/cosmos/bank/v1beta1/balances/<your_validator>
+    -H "x-cosmos-block-height: 30000000" \
+    https://lcd.sentinel.co/cosmos/bank/v1beta1/balances/<your_address>
 ```
 
 Assuming the state at that block has not yet been pruned by the node, this query should return a non-empty response.
 
+### Running your own REST server
+
+The REST API is served by the node itself. Enable it in `~/.sentinelhub/config/app.toml`:
+
+```toml
+[api]
+enable = true
+address = "tcp://0.0.0.0:1317"
+```
+
+Note that `sentinelhub` does not embed a Swagger UI, so the `api.swagger` option serves nothing — use the [LCD API reference](/api/?v=LCD) on this site instead.
+
 ### Cross-Origin Resource Sharing (CORS)
 
-[CORS policies](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS) are not enabled by default to help with security. 
+[CORS policies](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS) are not enabled by default to help with security. For testing and development purposes there is an `enabled-unsafe-cors` field inside `app.toml`.
 
 ### Setting up a public rest server
-If you would like to use the rest-server in a public environment we recommend you provide a reverse proxy. We can share our Terraform infrastructurefor setting up rest servers in DigitalOcean. We will write a guide soon and publish a repo soon. In the meantime feel free to reachout in Discord. s
 
-For testing and development purposes there is an `enabled-unsafe-cors` field inside `app.toml`.
-
+If you would like to run the REST server in a public environment we recommend putting a reverse proxy in front of it. We can share our Terraform infrastructure for setting up REST servers on DigitalOcean; a guide and repository are on the way. In the meantime, feel free to reach out on Discord.
 
 ### Signing transactions
 
-Sending transactions using gRPC and REST requires some additional steps: generating the transaction, signing it, and finally broadcasting it. Read about [generating and signing transactions](https://docs.cosmos.network/v0.46/run-node/txs.html).
+Sending transactions using gRPC and REST requires some additional steps: generating the transaction, signing it, and finally broadcasting it. Read about [generating and signing transactions](https://docs.cosmos.network/sdk/latest/node/txs) in the Cosmos SDK docs.

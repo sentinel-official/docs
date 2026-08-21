@@ -5,11 +5,12 @@ sidebar_position: 3
 
 The following snippet shows how to query the state using gRPC inside a Go program. The idea is to create a gRPC connection, and use the Protobuf-generated client code to query the gRPC server.
 
-#### Install Cosmos SDK
+#### Install the Cosmos SDK
 
+Hub v12 is built against Cosmos SDK v0.47, so pin the same minor version:
 
 ```bash
-go get github.com/cosmos/cosmos-sdk@main
+go get github.com/cosmos/cosmos-sdk@v0.47.17
 ```
 
 ```go
@@ -18,6 +19,7 @@ import (
     "fmt"
 
     "google.golang.org/grpc"
+    "google.golang.org/grpc/credentials"
 
     "github.com/cosmos/cosmos-sdk/codec"
     sdk "github.com/cosmos/cosmos-sdk/types"
@@ -25,19 +27,20 @@ import (
 )
 
 func queryState() error {
-    myAddress, err := sdk.AccAddressFromBech32("cosmos1...")
+    myAddress, err := sdk.AccAddressFromBech32("sent1...")
     if err != nil {
         return err
     }
 
-    // Create a connection to the gRPC server.
+    // Create a connection to the gRPC server. The public endpoint is served over
+    // TLS on port 443; for a local node use insecure.NewCredentials() and :9090.
     grpcConn, err := grpc.Dial(
-        "127.0.0.1:9090", // your gRPC server address.
-        grpc.WithInsecure(), // The Cosmos SDK doesn't support any transport security mechanism. 
+        "fullgrpc-sentinel.busurnode.com:443",
+        grpc.WithTransportCredentials(credentials.NewClientTLSFromCert(nil, "")),
         // This instantiates a general gRPC codec which handles proto bytes. We pass in a nil interface registry
         // if the request/response types contain interface instead of 'nil' you should pass the application specific codec.
-		grpc.WithDefaultCallOptions(grpc.ForceCodec(codec.NewProtoCodec(nil).GRPCCodec())),
-	)
+        grpc.WithDefaultCallOptions(grpc.ForceCodec(codec.NewProtoCodec(nil).GRPCCodec())),
+    )
     if err != nil {
         return err
     }
@@ -47,7 +50,7 @@ func queryState() error {
     bankClient := banktypes.NewQueryClient(grpcConn)
     bankRes, err := bankClient.Balance(
         context.Background(),
-        &banktypes.QueryBalanceRequest{Address: myAddress.String(), Denom: "atom"},
+        &banktypes.QueryBalanceRequest{Address: myAddress.String(), Denom: "udvpn"},
     )
     if err != nil {
         return err
@@ -59,7 +62,21 @@ func queryState() error {
 }
 ```
 
-You can replace the query client (here we are using `x/bank`'s) with one generated from any other Protobuf service. The list of all available gRPC query endpoints is [coming soon](https://github.com/cosmos/cosmos-sdk/issues/7786).
+You can replace the query client (here we are using `x/bank`'s) with one generated from any other Protobuf service. For the Sentinel modules, import the generated types from the hub — for example `nodetypes "github.com/sentinel-official/sentinelhub/v12/x/node/types/v3"` — and call `nodetypes.NewQueryServiceClient(grpcConn)`. The [gRPCurl page](/apis/grpc/interact-grpc-curl) lists every service the chain serves.
+
+#### Connecting to a local node
+
+A node you run yourself exposes plaintext gRPC on port `9090`:
+
+```go
+import "google.golang.org/grpc/credentials/insecure"
+
+grpcConn, err := grpc.Dial(
+    "localhost:9090",
+    grpc.WithTransportCredentials(insecure.NewCredentials()),
+    grpc.WithDefaultCallOptions(grpc.ForceCodec(codec.NewProtoCodec(nil).GRPCCodec())),
+)
+```
 
 #### Query for historical state using Go
 
@@ -84,8 +101,8 @@ func queryState() error {
 
     var header metadata.MD
     bankRes, err = bankClient.Balance(
-        metadata.AppendToOutgoingContext(context.Background(), grpctypes.GRPCBlockHeightHeader, "12"), // Add metadata to request
-        &banktypes.QueryBalanceRequest{Address: myAddress.String(), Denom: "atom"},
+        metadata.AppendToOutgoingContext(context.Background(), grpctypes.GRPCBlockHeightHeader, "30000000"), // Add metadata to request
+        &banktypes.QueryBalanceRequest{Address: myAddress.String(), Denom: "udvpn"},
         grpc.Header(&header), // Retrieve header from response
     )
     if err != nil {
@@ -93,8 +110,10 @@ func queryState() error {
     }
     blockHeight := header.Get(grpctypes.GRPCBlockHeightHeader)
 
-    fmt.Println(blockHeight) // Prints the block height (12)
+    fmt.Println(blockHeight) // Prints the block height (30000000)
 
     return nil
 }
 ```
+
+Assuming the state at that block has not yet been pruned by the node, this query should return a non-empty response.

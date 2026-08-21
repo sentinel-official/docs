@@ -3,15 +3,23 @@ title: Buf Studio
 sidebar_position: 1
 ---
 
-An interactive web UI for all the Protobuf services is stored on the Sentinel [Buf Schema Registry](https://buf.build/sentinel-official/sentinelhub)
+The Sentinel Protobuf schema is published to the [Buf Schema Registry](https://buf.build/sentinel-official/sentinelhub), where you can browse every service, method and message type, and read the generated documentation.
 
-Things you can do with buf Studio: 
-- Select an endpoint from any BSR module to send requests to gRPC
-- Use the editor with schema-based autocompletion, validation and documentation to draft JSON based request messages.
+[Buf Studio](https://buf.build/studio) is an interactive web UI built on top of that registry. Things you can do with it:
+
+- Select an endpoint from any BSR module to send requests to a gRPC server.
+- Use the editor with schema-based autocompletion, validation and documentation to draft JSON request messages.
 - Configure headers to further customize outgoing requests.
-- Optionally include cookies in outgoing request to send authenticated requests to private APIs (or Buf Studio Agent instances).
-- Create shareable links for requests defined on Buf Studio to team members with access.
+- Optionally include cookies in outgoing requests, to reach private APIs or Buf Studio Agent instances.
+- Create shareable links for requests to team members with access.
 
-#### How does Buf Studio work with Sentinel 
+## Sending live requests
 
-We will be having a Buf agent running at [https://buf.sentinel.co](#) which will allow you to use the buf data studio to explore the available methods. 
+Buf Studio runs in your browser, so it can only call a server that speaks gRPC-web and allows cross-origin requests. The Sentinel public gRPC endpoint does neither, and there is no public Buf Studio Agent for Sentinel.
+
+To send live requests you therefore need one of:
+
+- **[grpcurl](/apis/grpc/interact-grpc-curl)** — the simplest option, and what the rest of these docs use.
+- **Your own [Buf Studio Agent](https://buf.build/docs/bsr/studio/#via-buf-studio-agent)**, run locally or alongside your node, pointed at a Sentinel gRPC endpoint. Buf Studio will then proxy requests through it.
+
+The registry itself needs neither: browsing the schema and reading the docs works without any agent.

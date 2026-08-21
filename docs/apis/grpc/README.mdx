@@ -21,10 +21,18 @@ import {
   Chain
 } from '../../../src/icons';
 
-A gRPC endpoint is availble on the public Sentinel Nodes so that you can start playing and intreacting with it right away.
+A gRPC endpoint is available on the public Sentinel nodes, so you can start interacting with the chain right away. The public endpoint is served over TLS on port `443`:
+
+```bash
+grpcurl fullgrpc-sentinel.busurnode.com:443 list
+```
+
+:::caution
+The older `grpc.sentinel.co:9090` address no longer accepts connections. Port `9090` is closed, and requests to `grpc.sentinel.co` are answered with an HTTP redirect that gRPC clients do not follow.
+:::
 
 ## Enabling gRPC on a node
-If you are running your own node. It's also possible to enable them by editing  `~/.sentinelhub/config/app.toml`: 
+If you are running your own node, enable gRPC by editing `~/.sentinelhub/config/app.toml`:
 
 * `grpc.enable = true|false` field defines if the gRPC server should be enabled. Defaults to `true`.
 * `grpc.address = {string}` field defines the address (really, the port, since the host should be kept at `0.0.0.0`) the server should bind to. Defaults to `0.0.0.0:9090`.
@@ -32,7 +40,13 @@ If you are running your own node. It's also possible to enable them by editing  
 
 
 ### Grpc endpoints
-An overview of all available gRPC endpoints shipped with Sentinel are be available in the [Sentinel Protobuf documentation](https://buf.build/sentinel-official/hub). There is also a Cosmos SDK in [Protobuf documentation](https://buf.build/cosmos/cosmos-sdk).
+An overview of all gRPC endpoints shipped with Sentinel is available in the [Sentinel Protobuf documentation](https://buf.build/sentinel-official/sentinelhub). The Cosmos SDK publishes [its own Protobuf documentation](https://buf.build/cosmos/cosmos-sdk).
+
+On hub v12 the Sentinel query services are version-namespaced: `node`, `session` and `subscription` are served at **v3**, and `deposit`, `lease`, `oracle` and `swap` at **v1**. The full live list is on the [gRPCurl page](/apis/grpc/interact-grpc-curl).
+
+:::note
+The `plan` v3 and `provider` v3 query services are registered on the gRPC server but **not** on the REST gateway, so they can only be reached over gRPC.
+:::
 
 You can send requests to the gRPC server using a gRPC client such as [grpcurl](/apis/grpc/interact-grpc-curl) or from [Buf Studio](/apis/grpc/interact-grpc-buf-studio).
 
@@ -65,9 +79,12 @@ Since the code generation library largely depends on your own tech stack, we wil
 </Section>
 
 
-## Generating docs
+## Generating the Protobuf code
 
-```
-brew install protobuf
-brew install protoc-gen-go-grpc
+The hub generates its own Go bindings with [buf](https://buf.build/). From a checkout of
+[sentinel-official/hub](https://github.com/sentinel-official/hub):
+
+```bash
+make tools     # installs buf and the protoc plugins
+make proto-gen
 ```
