@@ -219,10 +219,18 @@ html[data-theme='dark'] {
    block for position:fixed descendants, which collapses the mobile sidebar's
    click-to-close backdrop (.navbar-sidebar__backdrop) into the navbar's
    bounding box and prevents tapping outside the open drawer from closing it. */
+/* position:sticky rather than relative: Docusaurus puts `navbar--fixed-top` on the
+   navbar, and `nav.navbar` outranks it, so `relative` here silently un-stuck the
+   navbar site-wide. That left `.api-reference .header` — which sticks at
+   top: var(--ifm-navbar-height) — stranded over a navbar-height band of scrolling
+   content. Sticky still establishes a containing block for the pseudo-elements
+   below, and unlike backdrop-filter it does not capture position:fixed
+   descendants, so the mobile sidebar backdrop keeps working. */
 nav.navbar {
   background: transparent;
   border-bottom: none;
-  position: relative;
+  position: sticky;
+  top: 0;
   isolation: isolate;
 }
 
