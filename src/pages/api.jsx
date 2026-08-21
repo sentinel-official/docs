@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React, { startTransition, useEffect, useState } from 'react';
 import Layout from '@theme/Layout';
 import Head from '@docusaurus/Head';
 import BrowserOnly from '@docusaurus/BrowserOnly';
-import { DyteSpinner, DyteTooltip } from '@dytesdk/react-ui-kit';
+import { DyteTooltip } from '@dytesdk/react-ui-kit';
 import { useHistory } from '@docusaurus/router';
 import clsx from 'clsx';
 
@@ -96,7 +96,7 @@ function useApiDescription(specUrl) {
         if (!response.ok) {
           throw new Error(`${response.status} ${response.statusText}`);
         }
-        return response.text();
+        return response.json();
       })
       .then((text) => {
         if (!cancelled) {
@@ -149,60 +149,59 @@ function useStoplightApi() {
 }
 
 /**
- * Holds back the mount until the browser has painted at least one frame.
+ * Mounts the expensive tree inside a React transition.
  *
- * Stoplight renders the whole spec synchronously — a few thousand nodes, 300ms
- * for the RPC spec and around 800ms for the larger LCD one — which blocks paint
- * for the duration. Mounting it in the same commit that stops showing the
- * spinner means the spinner never reaches the screen and the page just freezes
- * on an empty panel. Yielding two frames first guarantees the loading state is
- * visible while that work happens.
+ * Rendering the spec is a few thousand nodes — several hundred milliseconds of
+ * pure render work. Committed synchronously it freezes the page: the spinner
+ * stops animating and nothing can paint until the whole tree is done. Flipping
+ * the mount flag inside startTransition lets React 18 time-slice that render,
+ * so the page stays alive while the document is prepared and the content
+ * appears in one commit at the end.
  */
-function usePaintedBefore(ready) {
-  const [painted, setPainted] = useState(false);
+function useMountedInTransition(ready) {
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
     if (!ready) {
-      setPainted(false);
-      return undefined;
+      setMounted(false);
+      return;
     }
 
-    let cancelled = false;
-    let frame = window.requestAnimationFrame(() => {
-      frame = window.requestAnimationFrame(() => {
-        if (!cancelled) {
-          setPainted(true);
-        }
-      });
+    startTransition(() => {
+      setMounted(true);
     });
-
-    return () => {
-      cancelled = true;
-      window.cancelAnimationFrame(frame);
-    };
   }, [ready]);
 
-  return painted;
+  return mounted;
 }
 
+/**
+ * Plain CSS rather than <DyteSpinner>: the web component draws nothing until its
+ * library hydrates, and its animation runs on the main thread, so during this
+ * page's heavy mount it appeared either blank or frozen. A transform animation
+ * runs on the compositor and keeps spinning through the final commit stall.
+ */
 function Spinner() {
   return (
     <div className="loading-container">
-      <DyteSpinner />
+      <div className="api-loading-spinner" aria-label="Loading" role="status" />
     </div>
   );
 }
 
 function APIDocument({ layout, currentVersion }) {
-  const specUrl = `/api/${currentVersion}.yaml`;
+  // The JSON twin of the YAML spec: handing Stoplight a parsed object skips its
+  // YAML parse, which happens synchronously on the main thread.
+  const specUrl = `/api/${currentVersion}.json`;
+  const exportUrl = `/api/${currentVersion}.yaml`;
   const { loaded: cssLoaded, wasReadyAtMount } = useElementsCssLoaded();
   const description = useApiDescription(wasReadyAtMount ? null : specUrl);
   const API = useStoplightApi();
 
   const ready = Boolean(API) && cssLoaded && description.status !== 'loading';
-  const painted = usePaintedBefore(ready);
+  const mounted = useMountedInTransition(ready);
 
-  if (!ready || !painted) {
+  if (!ready || !mounted) {
     return <Spinner />;
   }
 
@@ -210,8 +209,8 @@ function APIDocument({ layout, currentVersion }) {
   // fetches it when no document is given, and the Export menu links to it.
   const source =
     description.status === 'ready'
-      ? { apiDescriptionDocument: description.document, apiDescriptionUrl: specUrl }
-      : { apiDescriptionUrl: specUrl };
+      ? { apiDescriptionDocument: description.document, apiDescriptionUrl: exportUrl }
+      : { apiDescriptionUrl: exportUrl };
 
   return (
     <div className={clsx('elements-container', layout)}>

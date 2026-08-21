@@ -105,6 +105,17 @@ else
     mv "$WORK_DIR/RPC.yaml" "$REPO_DIR/static/api/RPC.yaml"
 fi
 
+echo "==> writing JSON twins for the docs site"
+# The API reference page fetches these and hands Stoplight a parsed object,
+# skipping a main-thread YAML parse of the full spec on every visit.
+python3 - "$REPO_DIR" <<'PYEOF'
+import json, sys, yaml
+repo = sys.argv[1]
+for name in ("LCD", "RPC"):
+    doc = yaml.safe_load(open(f"{repo}/static/api/{name}.yaml"))
+    json.dump(doc, open(f"{repo}/static/api/{name}.json", "w"), separators=(",", ":"))
+PYEOF
+
 echo "==> validating"
 "$OAS_VALIDATE" --quiet "$REPO_DIR/static/api/LCD.yaml"
 "$OAS_VALIDATE" --quiet "$REPO_DIR/static/api/RPC.yaml"

@@ -92,3 +92,24 @@ html[data-theme='dark'] .elements-container :is(.token.boolean, .token.number) {
   font-weight: 600;
   margin: 0;
 }
+
+.api-loading-spinner {
+  width: 44px;
+  height: 44px;
+  border: 3px solid var(--docs-color-border, rgba(128, 128, 128, 0.25));
+  border-top-color: var(--docs-color-primary-100, #1a90ff);
+  border-radius: 50%;
+  animation: api-loading-rotate 0.9s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .api-loading-spinner {
+    animation-duration: 2.5s;
+  }
+}
+
+@keyframes api-loading-rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
