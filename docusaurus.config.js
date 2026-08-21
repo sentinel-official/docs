@@ -78,6 +78,8 @@ const config = {
   favicon: '/logo/sentinel.svg',
   trailingSlash: false,
 
+  clientModules: [require.resolve('./src/clientModules/prefetchApiReference.js')],
+
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   organizationName: 'sentinel-official', // Usually your GitHub org/user name.
