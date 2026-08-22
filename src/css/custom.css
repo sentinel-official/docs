@@ -15,6 +15,24 @@
   inherits: false;
 }
 
+/* Full-page navigations between our own pages: let the browser keep showing a
+   snapshot of the old page until the new one has rendered, instead of clearing
+   to its default background between documents. That clear is the white blink
+   visible when an extension (an ad blocker, say) delays the incoming page's
+   first paint past the browser's paint-holding window. Chromium-only for now;
+   browsers without cross-document view transitions ignore the rule. Reloads
+   are excluded by the spec, so F5 keeps the browser's native behavior. */
+@view-transition {
+  navigation: auto;
+}
+
+/* During the transition the page root is lifted into a snapshot layer, so the
+   canvas behind the crossfade is the browser default — white. Paint the
+   transition backdrop dark or the crossfade itself becomes a white flash. */
+::view-transition {
+  background-color: #161616;
+}
+
 /* Reduced motion: disable all animations/transitions */
 @media (prefers-reduced-motion: reduce) {
   *,
