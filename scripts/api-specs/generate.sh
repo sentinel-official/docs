@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# Regenerate static/api/LCD.yaml and static/api/RPC.yaml for a hub release.
+# Regenerate static/specs/LCD.yaml and static/specs/RPC.yaml for a hub release.
 #
 #   ./scripts/api-specs/generate.sh v12.0.2
 #
@@ -87,7 +87,7 @@ echo "==> writing LCD.yaml"
 python3 "$SCRIPT_DIR/build_lcd.py" finalize \
     --spec "$WORK_DIR/lcd.openapi3.json" \
     --description "$SCRIPT_DIR/lcd-description.md" \
-    --version "$VERSION" --out "$REPO_DIR/static/api/LCD.yaml"
+    --version "$VERSION" --out "$REPO_DIR/static/specs/LCD.yaml"
 
 echo "==> writing RPC.yaml"
 COMETBFT_REF="$(grep -oP 'github.com/cometbft/cometbft => github.com/sentinel-official/cometbft \S+-\K[0-9a-f]{12}' \
@@ -99,10 +99,10 @@ else
         "https://raw.githubusercontent.com/sentinel-official/cometbft/$COMETBFT_REF/rpc/openapi/openapi.yaml"
     python3 "$SCRIPT_DIR/build_rpc.py" \
         --upstream "$WORK_DIR/cometbft-openapi.yaml" \
-        --previous "$REPO_DIR/static/api/RPC.yaml" \
+        --previous "$REPO_DIR/static/specs/RPC.yaml" \
         --description "$SCRIPT_DIR/rpc-description.md" \
         --version "$VERSION" --out "$WORK_DIR/RPC.yaml"
-    mv "$WORK_DIR/RPC.yaml" "$REPO_DIR/static/api/RPC.yaml"
+    mv "$WORK_DIR/RPC.yaml" "$REPO_DIR/static/specs/RPC.yaml"
 fi
 
 echo "==> writing JSON twins for the docs site"
@@ -112,13 +112,13 @@ python3 - "$REPO_DIR" <<'PYEOF'
 import json, sys, yaml
 repo = sys.argv[1]
 for name in ("LCD", "RPC"):
-    doc = yaml.safe_load(open(f"{repo}/static/api/{name}.yaml"))
-    json.dump(doc, open(f"{repo}/static/api/{name}.json", "w"), separators=(",", ":"))
+    doc = yaml.safe_load(open(f"{repo}/static/specs/{name}.yaml"))
+    json.dump(doc, open(f"{repo}/static/specs/{name}.json", "w"), separators=(",", ":"))
 PYEOF
 
 echo "==> validating"
-"$OAS_VALIDATE" --quiet "$REPO_DIR/static/api/LCD.yaml"
-"$OAS_VALIDATE" --quiet "$REPO_DIR/static/api/RPC.yaml"
+"$OAS_VALIDATE" --quiet "$REPO_DIR/static/specs/LCD.yaml"
+"$OAS_VALIDATE" --quiet "$REPO_DIR/static/specs/RPC.yaml"
 
 echo
 echo "Done. Remember to update the version strings in:"

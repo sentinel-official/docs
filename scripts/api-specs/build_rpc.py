@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Assemble static/api/RPC.yaml from the CometBFT spec the hub pins.
+"""Assemble static/specs/RPC.yaml from the CometBFT spec the hub pins.
 
 CometBFT ships an OpenAPI document for its JSON-RPC interface, but it leaves out
 the websocket-only and unsafe methods that its own route table registers. This

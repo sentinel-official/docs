@@ -32,7 +32,7 @@ function warmStylesheet() {
 }
 
 function warmSpec(version) {
-  const url = `/api/${version}.json`;
+  const url = `/specs/${version}.json`;
   if (warmed.has(url)) {
     return;
   }

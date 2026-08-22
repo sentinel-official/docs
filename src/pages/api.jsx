@@ -263,10 +263,17 @@ function useContentRevealed(active) {
 }
 
 function APIDocument({ layout, currentVersion }) {
+  // Served from /specs, not /api. A static/api directory would make /api both a
+  // page and a folder, and a static file server answers a folder request with a
+  // 301 to /api/ — which the trailing-slash guard in plugins/webpack-plugin.cjs
+  // sends straight back to /api, looping until the browser gives up and the page
+  // never renders. Keeping the specs out of the page's own path is what stops
+  // that; do not move them back under /api.
+  //
   // The JSON twin of the YAML spec: handing Stoplight a parsed object skips its
   // YAML parse, which happens synchronously on the main thread.
-  const specUrl = `/api/${currentVersion}.json`;
-  const exportUrl = `/api/${currentVersion}.yaml`;
+  const specUrl = `/specs/${currentVersion}.json`;
+  const exportUrl = `/specs/${currentVersion}.yaml`;
   useElementsStylesheet();
   const cssLoaded = useElementsCssLoaded();
   const description = useApiDescription(specUrl);

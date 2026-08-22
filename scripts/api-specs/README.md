@@ -1,6 +1,6 @@
 # API spec generation
 
-`static/api/LCD.yaml` and `static/api/RPC.yaml` back the `/api?v=LCD` and
+`static/specs/LCD.yaml` and `static/specs/RPC.yaml` back the `/api?v=LCD` and
 `/api?v=RPC` pages, and `LCD.json` / `RPC.json` are their generated twins — the
 reference page fetches the JSON so Stoplight gets a pre-parsed object instead of
 YAML to parse on the main thread. All four are generated — don't hand-edit them.

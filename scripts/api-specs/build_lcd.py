@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Assemble static/api/LCD.yaml from generated Protobuf swagger.
+"""Assemble static/specs/LCD.yaml from generated Protobuf swagger.
 
 The pipeline runs in stages so that the slow part (probing a live node) can be
 inspected and re-run on its own:
