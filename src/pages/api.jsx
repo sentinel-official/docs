@@ -192,6 +192,48 @@ function Spinner() {
   );
 }
 
+/**
+ * True once the mounted panel contains real content.
+ *
+ * Stoplight may take more than one commit to go from mounting to showing the
+ * document, and anything it paints in between is its light placeholder layout —
+ * on this dark site, a flash of white structure. How long that window lasts
+ * depends on the machine, which is why it looked random. Rather than trust the
+ * handoff, the panel stays covered by the loading overlay until the reference
+ * has actually rendered, checked once per frame; a failsafe uncovers after 15s
+ * so a failed load can still show Stoplight's own error state.
+ */
+function useContentRevealed(active) {
+  const [revealed, setRevealed] = useState(false);
+
+  useEffect(() => {
+    if (!active) {
+      setRevealed(false);
+      return undefined;
+    }
+
+    const startedAt = Date.now();
+    let frame;
+    const check = () => {
+      const container = document.querySelector('.elements-container');
+      const hasContent =
+        container &&
+        (container.querySelector('h1') ||
+          container.querySelectorAll('[class*="sl-"]').length > 300);
+      if (hasContent || Date.now() - startedAt > 15000) {
+        setRevealed(true);
+        return;
+      }
+      frame = window.requestAnimationFrame(check);
+    };
+    check();
+
+    return () => window.cancelAnimationFrame(frame);
+  }, [active]);
+
+  return revealed;
+}
+
 function APIDocument({ layout, currentVersion }) {
   // The JSON twin of the YAML spec: handing Stoplight a parsed object skips its
   // YAML parse, which happens synchronously on the main thread.
@@ -203,6 +245,7 @@ function APIDocument({ layout, currentVersion }) {
 
   const ready = Boolean(API) && cssLoaded && description.status !== 'loading';
   const mounted = useMountedInTransition(ready);
+  const revealed = useContentRevealed(ready && mounted);
 
   if (!ready || !mounted) {
     return <Spinner />;
@@ -216,15 +259,22 @@ function APIDocument({ layout, currentVersion }) {
       : { apiDescriptionUrl: exportUrl };
 
   return (
-    <div className={clsx('elements-container', layout)}>
-      <API
-        {...source}
-        basePath="/"
-        router="hash"
-        layout={layout}
-        hideSchemas={false}
-        className="stacked"
-      />
+    <div className="elements-host">
+      <div className={clsx('elements-container', layout)}>
+        <API
+          {...source}
+          basePath="/"
+          router="hash"
+          layout={layout}
+          hideSchemas={false}
+          className="stacked"
+        />
+      </div>
+      {!revealed && (
+        <div className="api-loading-cover">
+          <div className="api-loading-spinner" aria-label="Loading" role="status" />
+        </div>
+      )}
     </div>
   );
 }

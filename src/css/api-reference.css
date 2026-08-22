@@ -113,3 +113,24 @@ html[data-theme='dark'] .elements-container :is(.token.boolean, .token.number) {
     transform: rotate(360deg);
   }
 }
+
+/* Hosts the API panel plus the loading cover. The cover hides Stoplight's own
+   pre-content commits, which paint light placeholder structure on this dark
+   site; it is removed only once the reference has actually rendered. */
+.elements-host {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  min-height: 0;
+}
+
+.api-loading-cover {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--ifm-background-color, #161616);
+}
