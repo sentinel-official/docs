@@ -17,7 +17,7 @@ curl \
     https://lcd.sentinel.co/cosmos/bank/v1beta1/balances/<your_address>
 ```
 
-The full list of available REST endpoints is published as an OpenAPI specification: see the [LCD API reference](/api/?v=LCD). It is generated from the hub's Protobuf definitions and verified against the live chain, so it lists only routes the chain actually serves.
+The full list of available REST endpoints is published as an OpenAPI specification: see the [LCD API reference](/api?v=LCD). It is generated from the hub's Protobuf definitions and verified against the live chain, so it lists only routes the chain actually serves.
 
 :::info
 The Sentinel query services are **version-namespaced**. On hub v12, `node`, `session` and `subscription` are served at **v3** (`/sentinel/node/v3/nodes`), and `deposit`, `lease`, `oracle` and `swap` at **v1**. The unversioned paths used by older hub releases — `/sentinel/nodes`, `/sentinel/modules/node/params`, `/sentinel/params/provider` and friends — no longer exist and return `501 Not Implemented`.
@@ -49,7 +49,7 @@ enable = true
 address = "tcp://0.0.0.0:1317"
 ```
 
-Note that `sentinelhub` does not embed a Swagger UI, so the `api.swagger` option serves nothing — use the [LCD API reference](/api/?v=LCD) on this site instead.
+Note that `sentinelhub` does not embed a Swagger UI, so the `api.swagger` option serves nothing — use the [LCD API reference](/api?v=LCD) on this site instead.
 
 ### Cross-Origin Resource Sharing (CORS)
 

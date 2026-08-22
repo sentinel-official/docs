@@ -26,6 +26,34 @@ function isElementsCssLoaded() {
 }
 
 /**
+ * Attaches Stoplight's stylesheet from script rather than shipping it as a
+ * render-blocking <link>.
+ *
+ * At 190KB it is the slowest thing this page needs, and a stylesheet in the
+ * markup blocks the first paint until it arrives. That gap is this page's white
+ * flash: while a document has not painted, the browser shows the previous page,
+ * and when it gives up waiting it shows its own canvas instead, which is white.
+ * The gap is only long enough to lose that race on a slow connection or a busy
+ * CPU, which is why the flash came and went and why it was worse on a phone.
+ *
+ * The <Head> preload still starts the download as the document is parsed, so
+ * this costs nothing, and useElementsCssLoaded below keeps Stoplight unmounted
+ * until the sheet is in place, so nothing can render unstyled.
+ */
+function useElementsStylesheet() {
+  useEffect(() => {
+    const href = ELEMENTS_CSS;
+    if (document.querySelector(`link[rel="stylesheet"][href="${href}"]`)) {
+      return;
+    }
+    const link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.href = href;
+    document.head.appendChild(link);
+  }, []);
+}
+
+/**
  * Stoplight ships its own stylesheet, which the <Head> below pulls in. On a direct
  * hit to /api that link is part of the pre-rendered HTML and blocks the first
  * paint, so it is already loaded by the time we get here. On a client-side
@@ -239,6 +267,7 @@ function APIDocument({ layout, currentVersion }) {
   // YAML parse, which happens synchronously on the main thread.
   const specUrl = `/api/${currentVersion}.json`;
   const exportUrl = `/api/${currentVersion}.yaml`;
+  useElementsStylesheet();
   const cssLoaded = useElementsCssLoaded();
   const description = useApiDescription(specUrl);
   const API = useStoplightApi();
@@ -315,9 +344,10 @@ export default function Home() {
       wrapperClassName="api-reference"
     >
       <Head>
-        {/* Load styles for Stoplight Elements */}
+        {/* Starts Stoplight's stylesheet downloading with the document. It is
+            attached as a stylesheet from script (useElementsStylesheet) rather
+            than linked here, so it cannot block this page's first paint. */}
         <link rel="preload" href={ELEMENTS_CSS} as="style" />
-        <link rel="stylesheet" href={ELEMENTS_CSS} />
         {/* No preload for the spec itself: this page is pre-rendered once for both
             versions, so SSR always emits the default (RPC) and a ?v=LCD visitor
             would download the wrong file while still waiting on the right one. */}
@@ -350,7 +380,7 @@ export default function Home() {
                   setShowV2Tooltip(false);
                   localStorage.setItem(API_TOOLTIP_KEY, 'true');
                 }
-                router.push(`/api/?v=${version}`);
+                router.push(`/api?v=${version}`);
               }}
               className="compact"
               slot="trigger"
