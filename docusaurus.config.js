@@ -151,7 +151,7 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
-      image: '/img/sentinel-docs-card.png',
+      image: '/img/sentinel-docs-card-v2.png',
       colorMode: {
         defaultMode: 'dark',
         disableSwitch: true,

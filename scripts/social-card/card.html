@@ -1,0 +1,117 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>
+@font-face{font-family:'InterVar';src:url('../../static/static/fonts/Inter-roman.var.woff2') format('woff2');font-weight:100 900;font-display:block}
+@font-face{font-family:'FiraVar';src:url('../../static/static/fonts/FiraCode-VF.woff2') format('woff2');font-weight:300 700;font-display:block}
+
+:root{
+  --ink:#ffffff;
+  --muted:#98a2b0;
+  --dim:#66707d;
+  --blue:#1a90ff;
+  --blue-lt:#4dabff;
+  --blue-deep:#0156fb;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1200px;height:630px}
+body{
+  font-family:'InterVar',system-ui,sans-serif;
+  background:#101215;
+  color:var(--ink);
+  overflow:hidden;
+}
+.card{position:relative;width:1200px;height:630px;overflow:hidden;
+  background:
+    radial-gradient(120% 90% at 8% 108%, rgba(26,144,255,.22) 0%, rgba(26,144,255,0) 58%),
+    radial-gradient(80% 70% at 96% -10%, rgba(1,86,251,.16) 0%, rgba(1,86,251,0) 60%),
+    linear-gradient(180deg,#15181c 0%,#0d0f12 100%);
+}
+/* hairline grid: the network's substrate, very faint */
+.grid{position:absolute;inset:0;
+  background-image:linear-gradient(90deg,rgba(255,255,255,.022) 1px,transparent 1px);
+  background-size:60px 100%;
+  mask-image:linear-gradient(180deg,rgba(0,0,0,.75),transparent 48%);
+}
+.ghost{position:absolute;right:-170px;top:-80px;width:620px;opacity:.05;
+  mask-image:radial-gradient(70% 70% at 30% 45%,#000 30%,transparent 78%);
+  -webkit-mask-image:radial-gradient(70% 70% at 30% 45%,#000 30%,transparent 78%)}
+
+.inner{position:relative;padding:56px 72px 176px;height:100%;display:flex;flex-direction:column}
+
+.top{display:flex;align-items:center;justify-content:space-between}
+.lockup{display:flex;align-items:center;gap:18px}
+.lockup img{height:46px;display:block}
+.url{font-family:'FiraVar',monospace;font-weight:450;font-size:19px;letter-spacing:.06em;color:var(--dim)}
+.url b{color:var(--blue-lt);font-weight:450}
+
+.body{margin-top:auto;margin-bottom:0}
+h1{font-size:86px;line-height:1.0;letter-spacing:-.036em;font-weight:750;}
+h1 .g{background:linear-gradient(96deg,var(--blue) 8%,var(--blue-lt) 52%,#9ecbff 96%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;}
+p.sub{margin-top:24px;font-size:28px;line-height:1.36;letter-spacing:-.012em;color:var(--muted);max-width:740px;font-weight:420}
+
+.facts{margin-top:28px;display:flex;align-items:center;gap:20px;
+  font-family:'FiraVar',monospace;font-size:16px;font-weight:450;letter-spacing:.16em;text-transform:uppercase;color:#98a2b0}
+.facts s{width:4px;height:4px;border-radius:50%;background:#3d4652;display:block}
+.facts em{font-style:normal;color:#4dabff}
+
+.ribbon{position:absolute;left:0;right:0;bottom:0;height:164px;
+  mask-image:linear-gradient(180deg,transparent 0%,rgba(0,0,0,.55) 26%,#000 62%);
+  -webkit-mask-image:linear-gradient(180deg,transparent 0%,rgba(0,0,0,.55) 26%,#000 62%)}
+</style></head>
+<body>
+<div class="card">
+  <img class="ghost" src="../../static/logo/sentinel.svg">
+
+  <div class="inner">
+    <div class="top">
+      <div class="lockup"><img src="../../static/logo/sentinel-logo-dark.svg"></div>
+      <div class="url">docs.<b>sentinel</b>.co</div>
+    </div>
+
+    <div class="body">
+      <h1>Build on the<br><span class="g">bandwidth layer</span></h1>
+      <p class="sub">Sentinel P2P documentation: run a dVPN node, use the hub, ship against the API.</p>
+      <div class="facts">
+        <span>Get started</span><s></s><span>Node setup</span><s></s><span>API reference</span><s></s><span><em>80+ validators</em></span>
+      </div>
+    </div>
+  </div>
+
+  <svg class="ribbon" id="ribbon" viewBox="0 0 1200 164" preserveAspectRatio="none"></svg>
+</div>
+
+<script>
+// Bandwidth ribbon: quantized throughput bars across the bottom edge, with three
+// relay markers sitting on the baseline (client -> relay -> exit).
+(function(){
+  const svg=document.getElementById('ribbon');
+  const W=1200,H=164,BASE=H-34,PITCH=13,BW=3,STEP=10.5,MAX=9;
+  let seed=20260822;
+  const rnd=()=>(seed=(seed*1664525+1013904223)%4294967296)/4294967296;
+  const nodes=[0.18,0.52,0.83];
+  let out='';
+  out+=`<line x1="0" y1="${BASE}" x2="${W}" y2="${BASE}" stroke="rgba(255,255,255,.09)" stroke-width="1"/>`;
+  out+=`<line x1="${nodes[0]*W}" y1="${BASE}" x2="${nodes[2]*W}" y2="${BASE}" stroke="rgba(77,171,255,.55)" stroke-width="1.6"/>`;
+  for(let x=0;x<=W;x+=PITCH){
+    const t=x/W;
+    // envelope: traffic peaks around each relay node, quiet between hops
+    let env=0.18;
+    nodes.forEach(n=>{env=Math.max(env,Math.exp(-Math.pow((t-n)/0.13,2)))});
+    const q=Math.max(1,Math.round((env*0.72+rnd()*0.42*env)*MAX));
+    const h=q*STEP;
+    const near=Math.min(...nodes.map(n=>Math.abs(t-n)));
+    const a=(0.10+0.62*env)*(near<0.06?1:0.72);
+    const col=near<0.09?'77,171,255':'26,144,255';
+    out+=`<rect x="${x}" y="${BASE-h}" width="${BW}" height="${h}" fill="rgba(${col},${a.toFixed(3)})"/>`;
+  }
+  nodes.forEach((n,i)=>{
+    const x=n*W, r=i===1?9:6.5;
+    out+=`<circle cx="${x}" cy="${BASE}" r="${r*2.9}" fill="rgba(26,144,255,.13)"/>`;
+    out+=`<circle cx="${x}" cy="${BASE}" r="${r}" fill="#0d0f12" stroke="#4dabff" stroke-width="2.4"/>`;
+    if(i===1)out+=`<circle cx="${x}" cy="${BASE}" r="3" fill="#4dabff"/>`;
+  });
+  svg.innerHTML=out;
+})();
+</script>
+</body></html>
