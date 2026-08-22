@@ -35,10 +35,6 @@ function isElementsCssLoaded() {
  */
 function useElementsCssLoaded() {
   const [loaded, setLoaded] = useState(isElementsCssLoaded);
-  // Whether the sheet was already in place on the very first render, which is
-  // true exactly when this was a fresh page load: nothing can paint unstyled, so
-  // no flash is possible and Stoplight can be left to load the spec itself.
-  const [wasReadyAtMount] = useState(loaded);
 
   useEffect(() => {
     if (loaded) {
@@ -61,51 +57,58 @@ function useElementsCssLoaded() {
     return () => window.cancelAnimationFrame(frame);
   }, [loaded]);
 
-  return { loaded, wasReadyAtMount };
+  return loaded;
 }
 
-/**
- * Fetches the spec ourselves rather than letting Stoplight do it from a URL.
- * Handed `apiDescriptionDocument`, Stoplight skips its own fetch and renders on
- * mount; left to fetch the ~500KB YAML itself it mounts empty first, which put a
- * blank gap between the spinner disappearing and the content appearing.
- *
- * Only worth doing when the page is going to wait on the stylesheet anyway. On a
- * fresh page load the fetch would instead serialise behind mount, costing roughly
- * 200ms that Stoplight would otherwise spend fetching in parallel with its own
- * start-up. Pass a null url there to leave the spec to Stoplight.
- */
-function useApiDescription(specUrl) {
-  const [state, setState] = useState(() =>
-    specUrl
-      ? { status: 'loading', document: null }
-      : { status: 'skipped', document: null }
-  );
+// One in-flight/settled promise per spec URL. Starting the fetch the moment the
+// component first renders (rather than from an effect) lets it overlap with the
+// Stoplight module import and, on full page loads, with hydration itself.
+const specRequests = new Map();
 
-  useEffect(() => {
-    if (!specUrl) {
-      setState({ status: 'skipped', document: null });
-      return undefined;
-    }
-
-    let cancelled = false;
-    setState({ status: 'loading', document: null });
-
-    fetch(specUrl)
-      .then((response) => {
+function requestSpec(specUrl) {
+  if (!specRequests.has(specUrl)) {
+    specRequests.set(
+      specUrl,
+      fetch(specUrl).then((response) => {
         if (!response.ok) {
           throw new Error(`${response.status} ${response.statusText}`);
         }
         return response.json();
       })
-      .then((text) => {
+    );
+  }
+  return specRequests.get(specUrl);
+}
+
+/**
+ * Fetches the spec ourselves rather than letting Stoplight do it from a URL.
+ * Handed `apiDescriptionDocument`, Stoplight renders complete on its first
+ * commit. Handed only a URL it mounts empty and shows its light skeleton
+ * placeholders while it fetches — the "white structure" flash. That is why the
+ * document is always fetched here, on every kind of navigation, and the mount
+ * waits for it.
+ */
+function useApiDescription(specUrl) {
+  const [state, setState] = useState({ status: 'loading', document: null });
+
+  // Kick the download off during render; the promise cache makes this idempotent.
+  requestSpec(specUrl);
+
+  useEffect(() => {
+    let cancelled = false;
+    setState({ status: 'loading', document: null });
+
+    requestSpec(specUrl)
+      .then((doc) => {
         if (!cancelled) {
-          setState({ status: 'ready', document: text });
+          setState({ status: 'ready', document: doc });
         }
       })
       .catch(() => {
-        // Fall back to letting Stoplight load the URL, so it can surface its own
-        // error UI rather than us leaving the page on a spinner forever.
+        // Let a failed download be retried on the next mount, and fall back to
+        // Stoplight loading the URL so it can surface its own error UI rather
+        // than this page holding a spinner forever.
+        specRequests.delete(specUrl);
         if (!cancelled) {
           setState({ status: 'error', document: null });
         }
@@ -194,8 +197,8 @@ function APIDocument({ layout, currentVersion }) {
   // YAML parse, which happens synchronously on the main thread.
   const specUrl = `/api/${currentVersion}.json`;
   const exportUrl = `/api/${currentVersion}.yaml`;
-  const { loaded: cssLoaded, wasReadyAtMount } = useElementsCssLoaded();
-  const description = useApiDescription(wasReadyAtMount ? null : specUrl);
+  const cssLoaded = useElementsCssLoaded();
+  const description = useApiDescription(specUrl);
   const API = useStoplightApi();
 
   const ready = Boolean(API) && cssLoaded && description.status !== 'loading';
