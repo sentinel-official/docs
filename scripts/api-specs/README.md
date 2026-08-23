@@ -1,9 +1,9 @@
 # API spec generation
 
 `static/specs/LCD.yaml` and `static/specs/RPC.yaml` back the `/api?v=LCD` and
-`/api?v=RPC` pages, and `LCD.json` / `RPC.json` are their generated twins — the
+`/api?v=RPC` pages, and `LCD.json` / `RPC.json` are their generated twins: the
 reference page fetches the JSON so Stoplight gets a pre-parsed object instead of
-YAML to parse on the main thread. All four are generated — don't hand-edit them.
+YAML to parse on the main thread. All four are generated, so don't hand-edit them.
 
 ```bash
 ./scripts/api-specs/generate.sh v12.0.2
@@ -30,7 +30,7 @@ and adds the tags and prose from `lcd-description.md`.
 
 **RPC.yaml.** Taken from the `rpc/openapi/openapi.yaml` of whichever CometBFT
 commit the hub pins in `go.mod`, re-branded, with the websocket-only and unsafe
-methods carried over from the previous file — CometBFT registers those in its
+methods carried over from the previous file, since CometBFT registers those in its
 route table but leaves them out of its OpenAPI document.
 
 ## Things worth knowing
@@ -42,7 +42,7 @@ route table but leaves them out of its OpenAPI document.
   templates in registration order, so two routes differing only in parameter name
   collide and the loser can never be called. `SHADOWED` in `build_lcd.py` lists
   them; `/cosmos/auth/v1beta1/bech32/{address_string}` is the current example.
-- **v12.0.2 serves `plan` and `provider` v3 over gRPC only** — the hub registers
+- **v12.0.2 serves `plan` and `provider` v3 over gRPC only**: the hub registers
   those query services but not their gateway routes, so they have no REST
   equivalent and correctly do not appear in LCD.yaml.
 - **Adding a module?** `TAGS` and `TAG_DESCRIPTIONS` in `build_lcd.py` are

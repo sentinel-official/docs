@@ -3,7 +3,7 @@
  *
  * /api is expensive to mount: a large Stoplight module graph to evaluate, a 130KB
  * stylesheet, and a spec of up to ~500KB. Paying all of that after the route
- * mounts leaves the page sitting on an empty shell for a moment — the flash this
+ * mounts leaves the page sitting on an empty shell for a moment, the flash this
  * exists to remove. Pointing at a link is a reliable signal that the navigation
  * is coming, and buys a few hundred milliseconds of head start.
  *
@@ -23,7 +23,7 @@ function warmStylesheet() {
   warmed.add(ELEMENTS_CSS);
 
   // preload rather than stylesheet: applying Stoplight's CSS here would restyle
-  // the page the user is still looking at — it ships a global element reset.
+  // the page the user is still looking at: it ships a global element reset.
   const link = document.createElement('link');
   link.rel = 'preload';
   link.as = 'style';

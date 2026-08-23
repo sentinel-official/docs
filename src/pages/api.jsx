@@ -57,7 +57,7 @@ function useElementsStylesheet() {
  * Stoplight ships its own stylesheet, which the <Head> below pulls in. On a direct
  * hit to /api that link is part of the pre-rendered HTML and blocks the first
  * paint, so it is already loaded by the time we get here. On a client-side
- * navigation — clicking the LCD card on /apis, say — the link is only injected
+ * navigation (clicking the LCD card on /apis, say), the link is only injected
  * once this route mounts, and Stoplight would otherwise paint a few thousand
  * unstyled nodes for as long as the 130KB stylesheet takes to arrive.
  */
@@ -112,7 +112,7 @@ function requestSpec(specUrl) {
  * Fetches the spec ourselves rather than letting Stoplight do it from a URL.
  * Handed `apiDescriptionDocument`, Stoplight renders complete on its first
  * commit. Handed only a URL it mounts empty and shows its light skeleton
- * placeholders while it fetches — the "white structure" flash. That is why the
+ * placeholders while it fetches: the "white structure" flash. That is why the
  * document is always fetched here, on every kind of navigation, and the mount
  * waits for it.
  */
@@ -182,7 +182,7 @@ function useStoplightApi() {
 /**
  * Mounts the expensive tree inside a React transition.
  *
- * Rendering the spec is a few thousand nodes — several hundred milliseconds of
+ * Rendering the spec is a few thousand nodes, several hundred milliseconds of
  * pure render work. Committed synchronously it freezes the page: the spinner
  * stops animating and nothing can paint until the whole tree is done. Flipping
  * the mount flag inside startTransition lets React 18 time-slice that render,
@@ -224,7 +224,7 @@ function Spinner() {
  * True once the mounted panel contains real content.
  *
  * Stoplight may take more than one commit to go from mounting to showing the
- * document, and anything it paints in between is its light placeholder layout —
+ * document, and anything it paints in between is its light placeholder layout:
  * on this dark site, a flash of white structure. How long that window lasts
  * depends on the machine, which is why it looked random. Rather than trust the
  * handoff, the panel stays covered by the loading overlay until the reference
@@ -265,7 +265,7 @@ function useContentRevealed(active) {
 function APIDocument({ layout, currentVersion }) {
   // Served from /specs, not /api. A static/api directory would make /api both a
   // page and a folder, and a static file server answers a folder request with a
-  // 301 to /api/ — which the trailing-slash guard in plugins/webpack-plugin.cjs
+  // 301 to /api/, which the trailing-slash guard in plugins/webpack-plugin.cjs
   // sends straight back to /api, looping until the browser gives up and the page
   // never renders. Keeping the specs out of the page's own path is what stops
   // that; do not move them back under /api.

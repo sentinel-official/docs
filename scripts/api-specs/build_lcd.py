@@ -359,9 +359,9 @@ def stage_finalize(args):
         ("description", description),
         ("version", args.version),
         ("contact", {"name": "Sentinel",
-                     "url": "https://github.com/sentinel-official/hub/issues"}),
+                     "url": "https://github.com/sentinel-official/sentinelhub/issues"}),
         ("license", {"name": "Apache 2.0",
-                     "url": "https://github.com/sentinel-official/hub/blob/master/LICENSE"}),
+                     "url": "https://github.com/sentinel-official/sentinelhub/blob/master/LICENSE"}),
     ])
     output["servers"] = [
         {"url": "https://lcd.sentinel.co",

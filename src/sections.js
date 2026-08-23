@@ -29,7 +29,7 @@ const SECTIONS = [
     section: false,
   },
 
-  // Dropdown Sentinel Core — developer / integrator docs
+  // Dropdown Sentinel Core: developer / integrator docs
   {
     name: 'Sentinel Hub',
     id: 'sentinel-hub',
@@ -55,7 +55,7 @@ const SECTIONS = [
     section: 'core-sdk',
   },
 
-  // Dropdown Node Operators — operational guides
+  // Dropdown Node Operators: operational guides
   {
     name: 'dVPN Nodes',
     id: 'dvpn-nodes',

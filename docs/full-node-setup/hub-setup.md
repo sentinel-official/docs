@@ -88,7 +88,7 @@ source ${HOME}/.bashrc
 
 ## Install Sentinel Hub
 
-To install Sentinel Hub, clone the GitHub [repository](https://github.com/sentinel-official/hub/releases):
+To install Sentinel Hub, clone the GitHub [repository](https://github.com/sentinel-official/sentinelhub/releases):
 
 ```bash
 git clone https://github.com/sentinel-official/sentinelhub.git "${HOME}/sentinelhub"

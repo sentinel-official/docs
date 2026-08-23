@@ -84,7 +84,7 @@ grpc = { enabled = true, address = "localhost:9090" }
 # Can a link to Github repo (like below).
 # 2. token. Github token. Useful if you want to make requests often, as Github rate-limits requests
 # if no token is specified. Only used for Github.
-git = { repository = "https://github.com/sentinel-official/hub", token = "<your_github_token>" }
+git = { repository = "https://github.com/sentinel-official/sentinelhub", token = "<your_github_token>" }
 ```
 
 </p>

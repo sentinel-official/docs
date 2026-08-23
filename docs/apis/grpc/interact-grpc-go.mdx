@@ -3,15 +3,18 @@ title: gRPC Go
 sidebar_position: 3
 ---
 
-The following snippet shows how to query the state using gRPC inside a Go program. The idea is to create a gRPC connection, and use the Protobuf-generated client code to query the gRPC server.
+This page shows how to query the chain, and how to broadcast a transaction, from a Go program. The pattern is the same in both cases: open a gRPC connection, then use the Protobuf-generated client for the service you want.
 
-#### Install the Cosmos SDK
+## Setting up
 
 Hub v12 is built against Cosmos SDK v0.47, so pin the same minor version:
 
 ```bash
 go get github.com/cosmos/cosmos-sdk@v0.47.17
+go get github.com/sentinel-official/sentinelhub/v12
 ```
+
+## Querying state
 
 ```go
 import (
@@ -62,9 +65,9 @@ func queryState() error {
 }
 ```
 
-You can replace the query client (here we are using `x/bank`'s) with one generated from any other Protobuf service. For the Sentinel modules, import the generated types from the hub — for example `nodetypes "github.com/sentinel-official/sentinelhub/v12/x/node/types/v3"` — and call `nodetypes.NewQueryServiceClient(grpcConn)`. The [gRPCurl page](/apis/grpc/interact-grpc-curl) lists every service the chain serves.
+Swap the query client for one generated from any other Protobuf service. For the Sentinel modules, import the generated types from the hub, for example `nodetypes "github.com/sentinel-official/sentinelhub/v12/x/node/types/v3"`, and call `nodetypes.NewQueryServiceClient(grpcConn)`. The [gRPCurl page](/apis/grpc/interact-grpc-curl#service-reference) lists every service the chain serves and the version each module is on.
 
-#### Connecting to a local node
+### Connecting to a local node
 
 A node you run yourself exposes plaintext gRPC on port `9090`:
 
@@ -78,9 +81,9 @@ grpcConn, err := grpc.Dial(
 )
 ```
 
-#### Query for historical state using Go
+### Querying historical state
 
-Querying for historical blocks is done by adding the block height metadata in the gRPC request.
+Add the block height metadata to the request:
 
 ```go
 import (
@@ -101,7 +104,7 @@ func queryState() error {
 
     var header metadata.MD
     bankRes, err = bankClient.Balance(
-        metadata.AppendToOutgoingContext(context.Background(), grpctypes.GRPCBlockHeightHeader, "30000000"), // Add metadata to request
+        metadata.AppendToOutgoingContext(context.Background(), grpctypes.GRPCBlockHeightHeader, "30810000"), // Add metadata to request
         &banktypes.QueryBalanceRequest{Address: myAddress.String(), Denom: "udvpn"},
         grpc.Header(&header), // Retrieve header from response
     )
@@ -110,10 +113,59 @@ func queryState() error {
     }
     blockHeight := header.Get(grpctypes.GRPCBlockHeightHeader)
 
-    fmt.Println(blockHeight) // Prints the block height (30000000)
+    fmt.Println(blockHeight) // Prints the block height the query was answered at
 
     return nil
 }
 ```
 
-Assuming the state at that block has not yet been pruned by the node, this query should return a non-empty response.
+The public endpoints prune old state, so pick a recent height. See the [caveat on the gRPCurl page](/apis/grpc/interact-grpc-curl#query-historical-state).
+
+## Sending transactions
+
+The hub does not serve `MsgService` over gRPC, so there is no `nodetypes.NewMsgServiceClient(grpcConn)` to call. Messages are assembled into a transaction, signed locally, encoded, and submitted through the Cosmos `Tx` service:
+
+```go
+import (
+    "context"
+
+    txtypes "github.com/cosmos/cosmos-sdk/types/tx"
+)
+
+func broadcast(grpcConn *grpc.ClientConn, txBytes []byte) error {
+    txClient := txtypes.NewServiceClient(grpcConn)
+
+    // Estimate gas first. Simulate runs the transaction without committing it.
+    sim, err := txClient.Simulate(
+        context.Background(),
+        &txtypes.SimulateRequest{TxBytes: txBytes},
+    )
+    if err != nil {
+        return err
+    }
+    _ = sim.GasInfo.GasUsed
+
+    res, err := txClient.BroadcastTx(
+        context.Background(),
+        &txtypes.BroadcastTxRequest{
+            Mode:    txtypes.BroadcastMode_BROADCAST_MODE_SYNC,
+            TxBytes: txBytes,
+        },
+    )
+    if err != nil {
+        return err
+    }
+
+    // res.TxResponse.Code == 0 means the transaction passed CheckTx and entered
+    // the mempool. Poll txClient.GetTx with res.TxResponse.TxHash for the result.
+    _ = res
+
+    return nil
+}
+```
+
+Sentinel message types live next to the query types, in the module that owns the action rather than the one named after it: `MsgRegisterNodeRequest` and `MsgStartSessionRequest` are both in `x/node/types/v3`, while `x/session/types/v3` holds `MsgUpdateSessionRequest` and `MsgCancelSessionRequest`. Building `txBytes` from them (account number, sequence, fee, signature) is the standard Cosmos SDK flow, documented under [Generating, signing and broadcasting transactions](https://docs.cosmos.network/sdk/v0.47/user/run-node/txs).
+
+:::tip Let an SDK do the signing
+Unless you specifically need to drive the wire protocol yourself, the [official SDKs](/sdk) already handle key management, fee estimation, signing and broadcasting for Go, JavaScript and Python.
+:::

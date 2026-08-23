@@ -4,11 +4,9 @@ sidebar_label: "🔌 Rest Endpoints"
 sidebar_position: 4
 ---
 
-## Using the REST Endpoints
+## Using the REST endpoints
 
-All gRPC services on the Cosmos SDK and Sentinel are made available for more convenient REST-based queries through gRPC-gateway. The format of the URL path is based on the Protobuf service method's fully-qualified name, but may contain small customizations so that final URLs look more idiomatic. For example, the REST endpoint for the `cosmos.bank.v1beta1.Query/AllBalances` method is `GET /cosmos/bank/v1beta1/balances/{address}`. Request arguments are passed as query parameters.
-
-As a concrete example, the `curl` command to make a balances request is:
+The Cosmos SDK and Sentinel gRPC query services are also exposed as REST routes through gRPC-gateway, which is usually the easiest way to read chain state: plain HTTP GETs, JSON responses, no client library. The URL path follows the Protobuf method's fully-qualified name with small customizations so the result reads idiomatically. The REST equivalent of `cosmos.bank.v1beta1.Query/AllBalances`, for instance, is `GET /cosmos/bank/v1beta1/balances/{address}`, with the remaining request fields passed as query parameters.
 
 ```bash
 curl \
@@ -17,31 +15,65 @@ curl \
     https://lcd.sentinel.co/cosmos/bank/v1beta1/balances/<your_address>
 ```
 
-The full list of available REST endpoints is published as an OpenAPI specification: see the [LCD API reference](/api?v=LCD). It is generated from the hub's Protobuf definitions and verified against the live chain, so it lists only routes the chain actually serves.
+The full list of routes is published as an OpenAPI specification: see the [LCD API reference](/api?v=LCD). It is generated from the hub's Protobuf definitions and verified against the live chain, so it lists only routes the chain actually serves.
 
-:::info
-The Sentinel query services are **version-namespaced**. On hub v12, `node`, `session` and `subscription` are served at **v3** (`/sentinel/node/v3/nodes`), and `deposit`, `lease`, `oracle` and `swap` at **v1**. The unversioned paths used by older hub releases — `/sentinel/nodes`, `/sentinel/modules/node/params`, `/sentinel/params/provider` and friends — no longer exist and return `501 Not Implemented`.
+## Endpoints
 
-The `plan` v3 and `provider` v3 query services have **no REST equivalent** on hub v12: they are registered on the gRPC server but not on the REST gateway. Query them over [gRPC](/apis/grpc) instead.
+The examples on this page use `https://lcd.sentinel.co`, the official endpoint. Five more public REST providers are listed under [Endpoints](/networks/endpoints#rest-lcd).
+
+:::info Service versions differ per module
+The Sentinel query services are **version-namespaced**. On hub v12, `node`, `session` and `subscription` are served at **v3** (`/sentinel/node/v3/nodes`), and `deposit`, `lease`, `oracle` and `swap` at **v1**. The unversioned paths used by older hub releases (`/sentinel/nodes`, `/sentinel/modules/node/params`, `/sentinel/params/provider` and friends) no longer exist and return `501 Not Implemented`.
+
+The `plan` v3 and `provider` v3 query services have **no REST equivalent** on hub v12: they are registered on the gRPC server but not on the REST gateway, so their paths also answer `501`. Query them over [gRPC](/apis/grpc) instead.
+:::
+
+### Pagination
+
+List routes accept the standard Cosmos page parameters as `pagination.limit`, `pagination.offset`, `pagination.key`, `pagination.reverse` and `pagination.count_total`. The default page size is 100, and `total` is only populated when you ask for it:
+
+```bash
+curl -s "https://lcd.sentinel.co/sentinel/node/v3/nodes?pagination.limit=1&pagination.count_total=true" \
+    | jq '.pagination'
+# { "next_key": "ARQAFGJlT...", "total": "76525" }
+```
+
+Follow `next_key` by passing it back as `pagination.key` to walk the rest of the set.
+
+:::caution Enums are numbers over REST, names over gRPC
+The gateway parses enum query parameters as integers, so `?status=STATUS_ACTIVE` fails with `strconv.ParseInt: parsing "STATUS_ACTIVE": invalid syntax`. Pass the ordinal instead: `0` unspecified, `1` active, `2` inactive-pending, `3` inactive. The string form works only over gRPC.
+
+```bash
+curl -s "https://lcd.sentinel.co/sentinel/node/v3/nodes?status=1&pagination.count_total=true&pagination.limit=1" \
+    | jq -r '.pagination.total'
+```
 :::
 
 ### Query for historical state using REST
 
-Querying for historical state is done using the HTTP header `x-cosmos-block-height`. For example, a curl command would look like:
+Pass the block height in the `x-cosmos-block-height` header. Every response also reports the height it was answered at, in the `grpc-metadata-x-cosmos-block-height` response header:
 
 ```bash
+HEIGHT=$(curl -s https://lcd.sentinel.co/cosmos/base/tendermint/v1beta1/blocks/latest \
+    | jq -r '.block.header.height')
+
 curl \
     -X GET \
     -H "Content-Type: application/json" \
-    -H "x-cosmos-block-height: 30000000" \
+    -H "x-cosmos-block-height: $((HEIGHT - 10000))" \
     https://lcd.sentinel.co/cosmos/bank/v1beta1/balances/<your_address>
 ```
 
-Assuming the state at that block has not yet been pruned by the node, this query should return a non-empty response.
+:::caution Public endpoints are not archive nodes
+They prune old state. A height outside the retention window fails with `failed to load state at height …; version does not exist`. The public endpoints held roughly the last 100,000 blocks when this page was checked, about a week of history. For anything older you need an archive node, which you can [run yourself](/full-node-setup) with `pruning = "nothing"`.
+:::
+
+### Sending transactions
+
+The REST gateway is read-only in practice: it exposes query services, and the Sentinel `MsgService` definitions are not served over gRPC or its gateway. A signed transaction is submitted either through the Cosmos `Tx` service at `POST /cosmos/tx/v1beta1/txs`, or through the [CometBFT RPC broadcast methods](/apis/rpc#broadcasting-transactions). Generating and signing the bytes first is the standard Cosmos SDK flow, described under [generating, signing and broadcasting transactions](https://docs.cosmos.network/sdk/v0.47/user/run-node/txs). The [official SDKs](/sdk) handle all of it for you.
 
 ### Running your own REST server
 
-The REST API is served by the node itself. Enable it in `~/.sentinelhub/config/app.toml`:
+The REST API is served by the node itself, and is **disabled by default**. Enable it in `~/.sentinelhub/config/app.toml`:
 
 ```toml
 [api]
@@ -49,16 +81,14 @@ enable = true
 address = "tcp://0.0.0.0:1317"
 ```
 
-Note that `sentinelhub` does not embed a Swagger UI, so the `api.swagger` option serves nothing — use the [LCD API reference](/api?v=LCD) on this site instead.
+The default address is `tcp://localhost:1317`, which only accepts connections from the machine itself; `0.0.0.0` above is what makes it reachable from elsewhere, so pair it with a firewall and a reverse proxy.
+
+Note that `sentinelhub` does not embed a Swagger UI, so the `api.swagger` option serves nothing and `/swagger/` answers `501`. Use the [LCD API reference](/api?v=LCD) on this site instead.
 
 ### Cross-Origin Resource Sharing (CORS)
 
-[CORS policies](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS) are not enabled by default to help with security. For testing and development purposes there is an `enabled-unsafe-cors` field inside `app.toml`.
+[CORS policies](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS) are not enabled by default, to help with security. For testing and development there is an `enabled-unsafe-cors` field in the `[api]` section of `app.toml`. In production, set the response headers at your reverse proxy rather than opening CORS on the node.
 
-### Setting up a public rest server
+### Setting up a public REST server
 
-If you would like to run the REST server in a public environment we recommend putting a reverse proxy in front of it. We can share our Terraform infrastructure for setting up REST servers on DigitalOcean; a guide and repository are on the way. In the meantime, feel free to reach out on Discord.
-
-### Signing transactions
-
-Sending transactions using gRPC and REST requires some additional steps: generating the transaction, signing it, and finally broadcasting it. Read about [generating and signing transactions](https://docs.cosmos.network/sdk/latest/node/txs) in the Cosmos SDK docs.
+If you want to run the REST server in a public environment, put a reverse proxy in front of it. [Set Public RPC/API](/full-node-setup/public-rpc-api) walks through the whole path: node configuration, a domain, nginx with certbot for TLS, and registering the endpoint in the Cosmos chain registry.

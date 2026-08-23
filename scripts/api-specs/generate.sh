@@ -47,9 +47,9 @@ BUF="$WORK_DIR/tools/node_modules/.bin/buf"
 S2O="$WORK_DIR/tools/node_modules/.bin/swagger2openapi"
 OAS_VALIDATE="$WORK_DIR/tools/node_modules/.bin/oas-validate"
 
-echo "==> cloning sentinel-official/hub $HUB_VERSION"
+echo "==> cloning sentinel-official/sentinelhub $HUB_VERSION"
 git clone --depth 1 --branch "$HUB_VERSION" \
-    https://github.com/sentinel-official/hub.git "$WORK_DIR/hub" >/dev/null 2>&1
+    https://github.com/sentinel-official/sentinelhub.git "$WORK_DIR/hub" >/dev/null 2>&1
 
 echo "==> building proto images"
 (cd "$WORK_DIR/hub" && "$BUF" build proto -o "$WORK_DIR/hub.binpb")

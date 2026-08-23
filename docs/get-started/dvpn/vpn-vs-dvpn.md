@@ -19,7 +19,7 @@ In essence, a dVPN negates the necessity to trust a centralized organization, as
 
 ## dVPN Alliance
 
-In pursuit of establishing industry benchmarks within the VPN sector and the broader privacy realm, Sentinel proudly stands as a founding member of the dVPN Alliance. This collaborative initiative aims to propel us towards a liberated internet accessible to all. We extend a warm invitation to all entities—be they organizations, foundations, or companies—with a vested interest in championing human rights on the internet.
+In pursuit of establishing industry benchmarks within the VPN sector and the broader privacy realm, Sentinel proudly stands as a founding member of the dVPN Alliance. This collaborative initiative aims to propel us towards a liberated internet accessible to all. We extend a warm invitation to all entities (organizations, foundations, or companies) with a vested interest in championing human rights on the internet.
 
 To delve deeper into the ethos of the dVPN Alliance, please explore our dedicated website: [https://dvpnalliance.org](https://dvpnalliance.org)
 

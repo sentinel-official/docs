@@ -8,36 +8,102 @@ import {
   HomepageCard as Card,
   HomepageSection as Section,
 } from '../../../src/components/HomepageComponents';
-import Link from '@docusaurus/Link';
 
+The RPC interface is served by **CometBFT v0.37**, the consensus engine bundled with hub v12. Unlike the LCD REST API, its endpoints are generic: rather than one route per module query, they expose the consensus engine itself, meaning blocks, transactions, validators, the mempool and the ABCI interface. It is also the only interface that can broadcast a transaction to the mempool.
 
-## RPC Specifications
+For reading module state (nodes, plans, subscriptions, balances) use the [LCD REST API](/apis/interact-rest) or [gRPC](/apis/grpc) instead. Those return decoded JSON, whereas the RPC `abci_query` method returns protobuf-encoded bytes you have to decode yourself.
+
+## RPC specification
 
   <Section>
     <Card
       title="RPC endpoints"
       description="Sentinel CometBFT RPC endpoints"
       to="/api?v=RPC"
-      icon=""
       svgFile="/icons/api.svg"
     />
   </Section>
 
-## Interacting with RPC endpoints
+## Endpoints
 
-As shown in the RPC specifications, there are different endpoints for communicating with the Sentinel chain. Unlike the LCD REST API, the RPC endpoints are generic: rather than one route per module query, they expose the consensus engine itself — blocks, transactions, validators, the mempool and the ABCI interface. `abci_query`, for example, lets you read any module's state through a single endpoint.
+The examples on this page use `https://rpc.sentinel.co`, the official endpoint. Five more public RPC providers are listed under [Endpoints](/networks/endpoints#rpc), and [sentnodes.com/public-rpc](https://sentnodes.com/public-rpc) reports their live health, block height and uptime.
 
-The RPC interface is served by **CometBFT v0.37**, the consensus engine bundled with hub v12. Three protocols are available:
-
-* URI over HTTP — `https://rpc.sentinel.co/block?height=5`
-* JSON-RPC 2.0 over HTTP — POST to `https://rpc.sentinel.co`
-* JSON-RPC 2.0 over websockets at `/websocket`, which is the only way to reach the event-subscription methods (`subscribe`, `unsubscribe`, `unsubscribe_all`)
-
-:::note
-`dial_seeds`, `dial_peers` and `unsafe_flush_mempool` are only routed when a node is started with unsafe RPC methods enabled, so they are not available on the public endpoint.
+:::caution Block history varies per node
+`/status` reports each node's `earliest_block_height`, and the value differs widely: the official endpoint keeps everything from `901801`, while others start tens of millions of blocks later. Query an old block on the wrong node and you get an internal error rather than an empty result. State pruning is separate and stricter still, as described under [historical state](/apis/interact-rest#query-for-historical-state-using-rest).
 :::
 
-For more information please read [generating, signing and broadcasting transactions](https://docs.cosmos.network/sdk/latest/node/txs) in the Cosmos SDK docs.
+## Protocols
+
+Three transports are available:
+
+* URI over HTTP, for example `https://rpc.sentinel.co/block?height=30820000`
+* JSON-RPC 2.0 over HTTP, POSTed to `https://rpc.sentinel.co`
+* JSON-RPC 2.0 over websockets at `/websocket`, which is the only way to reach the event-subscription methods (`subscribe`, `unsubscribe`, `unsubscribe_all`)
+
+The same call in the first two forms:
+
+```bash
+curl "https://rpc.sentinel.co/abci_info"
+
+curl -X POST https://rpc.sentinel.co \
+    -H "Content-Type: application/json" \
+    -d '{"jsonrpc":"2.0","id":1,"method":"abci_info","params":{}}'
+```
+
+:::note
+`dial_seeds`, `dial_peers` and `unsafe_flush_mempool` are only routed when a node is started with unsafe RPC methods enabled, so they return `404` on the public endpoints.
+:::
+
+## Common calls
+
+**Chain and node health.** `/status` reports the chain ID, the CometBFT version, and the block range the node holds:
+
+```bash
+curl -s https://rpc.sentinel.co/status \
+    | jq '.result.node_info.network, .result.sync_info.latest_block_height'
+```
+
+**The application version**, as opposed to the consensus engine version reported by `/status`. Note that `data` holds the application name and `version` the hub release:
+
+```bash
+curl -s https://rpc.sentinel.co/abci_info | jq -c '.result.response | {data, version}'
+# {"data":"Sentinel Hub","version":"12.0.2"}
+```
+
+**A block.** `sentinelhub-2` began at the height-`901801` hard fork, so heights below that never existed on this chain and return an error rather than an empty block:
+
+```bash
+curl "https://rpc.sentinel.co/block?height=901801"
+```
+
+**Transactions in a block**, via the indexer:
+
+```bash
+curl -s 'https://rpc.sentinel.co/tx_search?query="tx.height=30821023"&per_page=1' \
+    | jq -r '.result.total_count'
+```
+
+## Broadcasting transactions
+
+CometBFT RPC is where a signed transaction enters the network. Build and sign it first, then submit the encoded bytes to one of three methods, which differ only in how long they wait:
+
+| Method | Returns after |
+|---|---|
+| `broadcast_tx_async` | the transaction is accepted into the local mempool queue, without any checks |
+| `broadcast_tx_sync` | `CheckTx` runs, so you learn immediately if it is malformed or underfunded |
+| `broadcast_tx_commit` | the transaction is included in a block, which can time out on a slow block |
+
+`broadcast_tx_sync` is the usual choice: it catches the common errors straight away, and you then poll `/tx?hash=0x...` for the result. The URI form takes the transaction as `0x`-prefixed hex, while the JSON-RPC form takes it as base64.
+
+```bash
+curl -s "https://rpc.sentinel.co/broadcast_tx_sync?tx=0x$(cat signed_tx.hex)"
+```
+
+A `code` of `0` in the response means the transaction passed `CheckTx` and is in the mempool, not that it succeeded on chain. Generating and signing the bytes is the standard Cosmos SDK flow, described under [generating, signing and broadcasting transactions](https://docs.cosmos.network/sdk/v0.47/user/run-node/txs).
+
+## Running your own RPC endpoint
+
+The RPC server is part of the node. See [Set Public RPC/API](/full-node-setup/public-rpc-api) for the full walkthrough covering configuration, a domain, nginx with certbot, and registering in the chain registry.
 
 ## Generating the specification
 

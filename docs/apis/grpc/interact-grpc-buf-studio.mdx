@@ -1,25 +1,52 @@
 ---
-title: Buf Studio
-sidebar_position: 1
+title: "Protobuf schema & Buf"
+sidebar_position: 2
 ---
 
-The Sentinel Protobuf schema is published to the [Buf Schema Registry](https://buf.build/sentinel-official/sentinelhub), where you can browse every service, method and message type, and read the generated documentation.
+The Sentinel Protobuf schema is published to the [Buf Schema Registry](https://buf.build/sentinel-official/sentinelhub) as the module `sentinel-official/sentinelhub`. Browsing it there is the fastest way to read the full type graph: every service, method, message and enum, with the comments from the source `.proto` files.
 
-[Buf Studio](https://buf.build/studio) is an interactive web UI built on top of that registry. Things you can do with it:
+:::info The module tracks `development`, not the released tag
+The registry is pushed from the hub's `development` branch, so its `go_package` options point at the unreleased `sentinelhub/v13` line rather than the `v12` running on mainnet. At the time of writing the two are identical on the wire (the only differences are the Go package path and two `gogoproto.customtype` annotations in long-deprecated v1 files), so the schema is safe to generate clients from today. It is still a moving target: if you need to pin the exact schema mainnet is running, take the `proto/` directory from the [v12.0.2 tag](https://github.com/sentinel-official/sentinelhub/tree/v12.0.2/proto) instead.
+:::
 
-- Select an endpoint from any BSR module to send requests to a gRPC server.
-- Use the editor with schema-based autocompletion, validation and documentation to draft JSON request messages.
-- Configure headers to further customize outgoing requests.
-- Optionally include cookies in outgoing requests, to reach private APIs or Buf Studio Agent instances.
-- Create shareable links for requests to team members with access.
+## Calling the chain with `buf curl`
 
-## Sending live requests
+The [buf CLI](https://buf.build/docs/reference/cli/buf/curl/) can call a gRPC server directly, using the registry as its schema source, with no local `.proto` files and no code generation:
 
-Buf Studio runs in your browser, so it can only call a server that speaks gRPC-web and allows cross-origin requests. The Sentinel public gRPC endpoint does neither, and there is no public Buf Studio Agent for Sentinel.
+```bash
+buf curl --schema buf.build/sentinel-official/sentinelhub --protocol grpc \
+    -d '{"pagination":{"limit":"1"}}' \
+    https://fullgrpc-sentinel.busurnode.com:443/sentinel.node.v3.QueryService/QueryNodes
+```
 
-To send live requests you therefore need one of:
+Drop `--schema` and it falls back to server reflection, exactly like [grpcurl](/apis/grpc/interact-grpc-curl):
 
-- **[grpcurl](/apis/grpc/interact-grpc-curl)** — the simplest option, and what the rest of these docs use.
-- **Your own [Buf Studio Agent](https://buf.build/docs/bsr/studio/#via-buf-studio-agent)**, run locally or alongside your node, pointed at a Sentinel gRPC endpoint. Buf Studio will then proxy requests through it.
+```bash
+buf curl --protocol grpc -d '{}' \
+    https://fullgrpc-sentinel.busurnode.com:443/sentinel.lease.v1.QueryService/QueryParams
+```
 
-The registry itself needs neither: browsing the schema and reading the docs works without any agent.
+## Buf Studio
+
+[Buf Studio](https://buf.build/studio) is a web UI on top of the registry: pick a method, draft the request JSON with schema-aware autocompletion and validation, set headers, and share a link to a request with your team.
+
+It cannot send live requests to Sentinel, though. Studio runs in your browser, so it can only reach servers that speak gRPC-web and allow cross-origin requests, and the public Sentinel endpoints do neither, and there is no public [Buf Studio Agent](https://buf.build/docs/bsr/studio/) for Sentinel. Use it to compose and understand requests, and send them with `buf curl` or `grpcurl`; or run your own Studio Agent alongside a node and have Studio proxy through it.
+
+## Generating client code
+
+**From the registry**, without cloning anything. Export the `.proto` files and run them through your own toolchain:
+
+```bash
+buf export buf.build/sentinel-official/sentinelhub -o proto
+```
+
+**From a hub checkout**, which regenerates the Go bindings exactly as the chain does. `make tools` installs the pinned toolchain (buf, `protoc-gen-gocosmos`, `protoc-gen-grpc-gateway`) and `make proto-gen` runs it over `proto/` using `proto/buf.gen.yaml`:
+
+```bash
+git clone https://github.com/sentinel-official/sentinelhub.git
+cd sentinelhub
+make tools      # installs buf and the protoc plugins
+make proto-gen
+```
+
+If you only want to *use* the generated Go types, you do not need either. Import them straight from the hub module, as shown on the [gRPC Go](/apis/grpc/interact-grpc-go) page. For JavaScript and Python, the [official SDKs](/sdk) already ship generated types.

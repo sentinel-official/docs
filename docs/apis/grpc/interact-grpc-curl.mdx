@@ -3,29 +3,25 @@ title: gRPCurl
 sidebar_position: 1
 ---
 
-[grpcurl](https://github.com/fullstorydev/grpcurl) is like `curl` but for gRPC. It is also available as a Go library, but we will use it only as a CLI command for debugging and testing purposes. Follow the instructions in the previous link to install it.
+[grpcurl](https://github.com/fullstorydev/grpcurl) is `curl` for gRPC. It is the quickest way to explore the chain: because the hub answers reflection requests, grpcurl can discover every service and message type on its own, with no `.proto` files on your machine. Install it by following the instructions in the link above.
 
-## Choosing an endpoint
+## Point it at an endpoint
 
-The public gRPC endpoint is served over TLS on port `443`, so no `-plaintext` flag is needed:
-
-```bash
-grpcurl fullgrpc-sentinel.busurnode.com:443 list
-```
-
-:::caution
-The older `grpc.sentinel.co:9090` address no longer accepts connections. Port `9090` is closed and requests to `grpc.sentinel.co` are answered with an HTTP redirect that gRPC clients do not follow.
-:::
-
-If you are running your own node, use its address with `-plaintext`:
+Every example on this page reads the endpoint from `$GRPC`, so you can run them against any node by changing one line:
 
 ```bash
-grpcurl -plaintext localhost:9090 list
+export GRPC=fullgrpc-sentinel.busurnode.com:443
 ```
 
-## Listing the available services
+The public endpoints are served over TLS on port `443`, so no `-plaintext` flag is needed. Against a node you run yourself, use `export GRPC=localhost:9090` and add `-plaintext` to each command. [Endpoints](/networks/endpoints#grpc) lists the public gRPC endpoints that are currently up.
 
-Output of `list` against the mainnet:
+## Explore the API in three commands
+
+**List the services the node serves:**
+
+```bash
+grpcurl $GRPC list
+```
 
 ```
 cosmos.auth.v1beta1.Query
@@ -71,21 +67,98 @@ sentinel.subscription.v3.QueryService
 sentinel.swap.v1.QueryService
 ```
 
-This is called reflection: a Protobuf endpoint that returns a description of all available endpoints. Each entry is a different Protobuf service, and each service exposes multiple RPC methods you can query against.
+Every entry is a Protobuf service, and each service exposes RPC methods you can call. The [Service reference](#service-reference) below covers the `sentinel.*` ones.
 
-:::info
-Sentinel query services are **version-namespaced**. On hub v12, `node`, `session` and `subscription` are served at **v3**, and `deposit`, `lease`, `oracle` and `swap` at **v1**. The v1 and v2 services from earlier hub releases have been removed, with the two partial exceptions noted below.
-:::
+**Describe a service** to see its methods:
 
-To get a description of a service, run:
+```bash
+grpcurl $GRPC describe sentinel.node.v3.QueryService
+```
+
+**Describe a message** to see the fields a request takes:
+
+```bash
+grpcurl $GRPC describe sentinel.node.v3.QueryNodesRequest
+```
+
+```protobuf
+message QueryNodesRequest {
+  .sentinel.types.v1.Status status = 1;
+  .cosmos.base.query.v1beta1.PageRequest pagination = 2;
+}
+```
+
+These three commands are enough to work out any call on the chain without leaving the terminal.
+
+## Make a query
+
+Pass the request as JSON with `-d`:
 
 ```bash
 grpcurl \
-    fullgrpc-sentinel.busurnode.com:443 \
-    describe <grpc_service>
+    -d '{"status":"STATUS_ACTIVE","pagination":{"limit":"5"}}' \
+    $GRPC \
+    sentinel.node.v3.QueryService/QueryNodes
 ```
 
-## Methods of the Sentinel services
+`status` accepts `STATUS_ACTIVE`, `STATUS_INACTIVE`, `STATUS_INACTIVE_PENDING` or `STATUS_UNSPECIFIED` (which matches every node).
+
+### Pagination
+
+List queries take the standard Cosmos `PageRequest`: `limit`, `offset`, `key`, `count_total` and `reverse`. Ask for the total on the first call, then follow `nextKey`:
+
+```bash
+grpcurl \
+    -d '{"status":"STATUS_ACTIVE","pagination":{"limit":"1","countTotal":true}}' \
+    $GRPC \
+    sentinel.node.v3.QueryService/QueryNodes
+```
+
+```json
+  "pagination": {
+    "nextKey": "FAAUYmVP7gSlwnk0D7ZGEcXX3IpS",
+    "total": "1311"
+  }
+```
+
+Field names may be given in either `snake_case` or `lowerCamelCase`; responses always come back in `lowerCamelCase`.
+
+## Query historical state
+
+Pass the block height as the `x-cosmos-block-height` [gRPC metadata](https://github.com/grpc/grpc-go/blob/master/Documentation/grpc-metadata.md) header:
+
+```bash
+HEIGHT=$(grpcurl $GRPC cosmos.base.tendermint.v1beta1.Service/GetLatestBlock \
+    | jq -r '.block.header.height')
+
+grpcurl \
+    -H "x-cosmos-block-height: $((HEIGHT - 10000))" \
+    -d '{"address":"sent1uddk4mfqq3uyu2yzhym8spheqatqs30fzh5tmr"}' \
+    $GRPC \
+    cosmos.bank.v1beta1.Query/AllBalances
+```
+
+:::caution Public endpoints are not archive nodes
+They prune old state. A height outside the retention window fails with `failed to load state at height …; version does not exist`. The public endpoints held roughly the last 100,000 blocks when this page was checked, about a week of history. For anything older you need an archive node, which you can [run yourself](/full-node-setup) with `pruning = "nothing"`.
+:::
+
+## Sending transactions
+
+You cannot invoke a `MsgService` here: the hub does not register them on its gRPC server, and grpcurl answers *target server does not expose service*. Transactions are signed offline and submitted as encoded bytes through `cosmos.tx.v1beta1.Service/BroadcastTx`; see [Sending transactions](/apis/grpc/interact-grpc-go#sending-transactions).
+
+The same service is also how you read transactions back: `GetTx`, `GetTxsEvent` and `GetBlockWithTxs` all work over gRPC:
+
+```bash
+grpcurl -d '{"hash":"<tx_hash>"}' $GRPC cosmos.tx.v1beta1.Service/GetTx
+```
+
+## Service reference
+
+Every method of every Sentinel service on hub v12, with the HTTP path the REST gateway maps it to. The annotations below record which legacy methods no longer answer, which reflection alone will not tell you. To regenerate any block yourself:
+
+```bash
+grpcurl $GRPC describe <service>
+```
 
 <details>
 <summary>sentinel.deposit.v1.QueryService</summary>
@@ -185,7 +258,7 @@ service QueryService {
 <summary>sentinel.plan.v3.QueryService</summary>
 <p>
 
-**gRPC only.** Hub v12 registers this query service on the gRPC server but not on the REST gateway, so the HTTP paths below are not reachable — query these methods over gRPC.
+**gRPC only.** Hub v12 registers this query service on the gRPC server but not on the REST gateway, so the HTTP paths below are not reachable. Query these methods over gRPC.
 
 ```protobuf
 service QueryService {
@@ -208,7 +281,7 @@ service QueryService {
 <summary>sentinel.provider.v2.QueryService</summary>
 <p>
 
-Retained for backwards compatibility. `QueryProviders` and `QueryProvider` still work; `QueryParams` returns `Unimplemented` — use `sentinel.provider.v3.QueryService/QueryParams` instead.
+Retained for backwards compatibility. `QueryProviders` and `QueryProvider` still work; `QueryParams` returns `Unimplemented`, so use `sentinel.provider.v3.QueryService/QueryParams` instead.
 
 ```protobuf
 service QueryService {
@@ -285,7 +358,7 @@ service QueryService {
 
 Retained for backwards compatibility, but **only `QueryAllocation` and `QueryAllocations` are implemented**. Every other method on this service returns `Unimplemented`; use `sentinel.subscription.v3.QueryService` instead.
 
-The payout methods have no replacement. In hub v12 the v2 payout records were migrated into the `lease` module, where the payout schedule is a property of a lease rather than a separately queryable record — query `sentinel.lease.v1.QueryService` instead.
+The payout methods have no replacement. In hub v12 the v2 payout records were migrated into the `lease` module, where the payout schedule is a property of a lease rather than a separately queryable record. Query `sentinel.lease.v1.QueryService` instead.
 
 ```protobuf
 service QueryService {
@@ -348,26 +421,3 @@ service QueryService {
 
 </p>
 </details>
-
-## Making a query
-
-```bash
-grpcurl \
-    -d '{"status":"STATUS_ACTIVE","pagination":{"limit":"5"}}' \
-    fullgrpc-sentinel.busurnode.com:443 \
-    sentinel.node.v3.QueryService/QueryNodes
-```
-
-## Query for historical state using grpcurl
-
-You may also query for historical data by passing some [gRPC metadata](https://github.com/grpc/grpc-go/blob/master/Documentation/grpc-metadata.md) to the query: the `x-cosmos-block-height` metadata should contain the block to query.
-
-```bash
-grpcurl \
-    -H "x-cosmos-block-height: 30000000" \
-    -d '{"address":"sent1uddk4mfqq3uyu2yzhym8spheqatqs30fzh5tmr"}' \
-    fullgrpc-sentinel.busurnode.com:443 \
-    cosmos.bank.v1beta1.Query/AllBalances
-```
-
-Assuming the state at that block has not yet been pruned by the node, this query should return a non-empty response.

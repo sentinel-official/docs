@@ -448,4 +448,4 @@ The `libs/` directory contains standalone utility packages:
 
 ## Protobuf
 
-The SDK uses Protocol Buffers for all blockchain message types, built on the [Sentinel Hub](https://github.com/sentinel-official/hub) proto definitions (`sentinelhub/v12`). Proto types are compiled with the standard Go protobuf toolchain (`protoc` with `gogoproto`). The generated types are used throughout the `core/` and `types/` packages for queries and transactions.
+The SDK uses Protocol Buffers for all blockchain message types, built on the [Sentinel Hub](https://github.com/sentinel-official/sentinelhub) proto definitions (`sentinelhub/v12`). Proto types are compiled with the standard Go protobuf toolchain (`protoc` with `gogoproto`). The generated types are used throughout the `core/` and `types/` packages for queries and transactions.

@@ -60,7 +60,7 @@ Pick the reference matching your node's role and copy it. Before saving, in eith
 
 What both flavors have in common:
 
-- **Peer connectivity** uses `persistent_peers` (a curated list of Sentinel Hub validators and RPC nodes) plus matching `unconditional_peer_ids`. `seeds` is left empty and `pex` is disabled, so connections are limited to the listed peers. If you'd rather discover peers dynamically or mix in additional sources, [Polkachu](https://polkachu.com/live_peers/sentinel) and [AutoStake](https://autostake.com/networks/sentinel/) maintain alternative seed/peer lists.
+- **Peer connectivity** uses `persistent_peers` (a curated list of Sentinel Hub validators and RPC nodes) plus matching `unconditional_peer_ids`. `seeds` is left empty and `pex` is disabled, so connections are limited to the listed peers. If you'd rather discover peers dynamically or mix in additional sources, [Polkachu](https://polkachu.com/live_peers/sentinel) and [AutoStake](https://autostake.com/networks/sentinel/) maintain alternative seed/peer lists. [Node Peers](https://peers.suchnode.net) audits the peers it observes on the network and grades them on responsiveness and block-height progression, which is useful when a node syncs slowly and you suspect the peer set. Its own advice is not to ban or firewall peers purely on those scores, since a low grade can just as easily mean a transient outage.
 - **Seeds vs peers**, in case you're new to Tendermint:
     - **Seeds** are short-lived entry points used during bootstrap to discover the network topology.
     - **Persistent peers** are long-lived connections you trust to stay reachable.

@@ -4,9 +4,9 @@
  *
  *   node scripts/scope-elements-css.mjs <in.css> <out.css>
  *
- * The stylesheet ships a global reset — `html { font-family: … }`,
+ * The stylesheet ships a global reset (`html { font-family: … }`,
  * `button { background-color: initial }`, `* { border: 0 solid currentColor }`,
- * `:focus { outline: none }` — that applies to the whole site the moment the
+ * `:focus { outline: none }`) that applies to the whole site the moment the
  * file loads. On every visit to /api that restyles the navbar, search box and
  * every other piece of chrome for as long as the page lives, and during the
  * route transition it is what made the site flash restyled before the API

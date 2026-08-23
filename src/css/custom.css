@@ -27,7 +27,7 @@
 }
 
 /* During the transition the page root is lifted into a snapshot layer, so the
-   canvas behind the crossfade is the browser default — white. Paint the
+   canvas behind the crossfade is the browser default: white. Paint the
    transition backdrop dark or the crossfade itself becomes a white flash. */
 ::view-transition {
   background-color: #161616;
@@ -239,8 +239,8 @@ html[data-theme='dark'] {
    bounding box and prevents tapping outside the open drawer from closing it. */
 /* position:sticky rather than relative: Docusaurus puts `navbar--fixed-top` on the
    navbar, and `nav.navbar` outranks it, so `relative` here silently un-stuck the
-   navbar site-wide. That left `.api-reference .header` — which sticks at
-   top: var(--ifm-navbar-height) — stranded over a navbar-height band of scrolling
+   navbar site-wide. That left `.api-reference .header`, which sticks at
+   top: var(--ifm-navbar-height), stranded over a navbar-height band of scrolling
    content. Sticky still establishes a containing block for the pseudo-elements
    below, and unlike backdrop-filter it does not capture position:fixed
    descendants, so the mobile sidebar backdrop keeps working. */
@@ -376,7 +376,7 @@ nav.menu {
   background-color: rgba(26, 144, 255, 0.06);
 }
 
-/* Active link — sentinel blue left border */
+/* Active link: sentinel blue left border */
 .menu__link--active:not(.menu__link--sublist) {
   border-left: 2px solid var(--sentinel-primary, #1a90ff);
   color: var(--sentinel-primary-light, #4dabff);
@@ -400,7 +400,7 @@ nav.menu {
   letter-spacing: 0.01em;
 }
 
-/* Active/expanded category — left border accent */
+/* Active/expanded category: left border accent */
 .menu__list-item-collapsible:has(.menu__link--sublist-caret[aria-expanded='true']) {
   border-left: 2px solid var(--sentinel-primary, #1a90ff);
 }
@@ -412,12 +412,12 @@ nav.menu {
   padding-left: 0.5rem;
 }
 
-/* Right border removal — we use left border now */
+/* Right border removal: we use left border now */
 ul.menu__list > li > a.menu__link--active {
   border-right: none;
 }
 
-/* Caret arrow — unify size/opacity across both sidebar caret variants
+/* Caret arrow: unify size/opacity across both sidebar caret variants
    (`.menu__link--sublist-caret` is used when the category has no own link;
    `.menu__caret` is the separate toggle button used when the category is
    itself a link). Docusaurus' default 2rem makes the latter look oversized. */
@@ -444,7 +444,7 @@ ul.menu__list > li > a.menu__link--active {
   border-radius: 6px;
 }
 
-/* Footer — modern treatment */
+/* Footer: modern treatment */
 
 .footer {
   position: relative;
@@ -1257,7 +1257,7 @@ img[src$='#terminal'] {
 }
 
 /* =============================================
-   Cards — Modern Glassmorphism + Gradient Border
+   Cards: Modern Glassmorphism + Gradient Border
    ============================================= */
 
 .homepage-card {

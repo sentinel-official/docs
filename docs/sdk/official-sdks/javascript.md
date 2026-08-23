@@ -225,7 +225,7 @@ if (status.service_type === NodeVPNType.WIREGUARD) {
 
 ## Protobuf
 
-All `.proto` files are compiled using [protoc](https://grpc.io/docs/protoc-installation/) with [ts-proto](https://github.com/stephenh/ts-proto) as a plugin. The resulting `.ts` proto files can be found in the `src/protobuf` directory. If you need to compile them again, you can simply run the [scripts/generate-proto.sh](https://github.com/sentinel-official/sentinel-js-sdk/blob/main/scripts/generate-proto.sh). This script requires `git` and `protoc` to be installed, and it will handle downloading all the `.proto` definitions from [Sentinel Hub](https://github.com/sentinel-official/hub/tree/development/proto/sentinel) and other related third-party sources automatically.
+All `.proto` files are compiled using [protoc](https://grpc.io/docs/protoc-installation/) with [ts-proto](https://github.com/stephenh/ts-proto) as a plugin. The resulting `.ts` proto files can be found in the `src/protobuf` directory. If you need to compile them again, you can simply run the [scripts/generate-proto.sh](https://github.com/sentinel-official/sentinel-js-sdk/blob/main/scripts/generate-proto.sh). This script requires `git` and `protoc` to be installed, and it will handle downloading all the `.proto` definitions from [Sentinel Hub](https://github.com/sentinel-official/sentinelhub/tree/development/proto/sentinel) and other related third-party sources automatically.
 
 ## Examples
 
