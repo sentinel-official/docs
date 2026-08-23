@@ -44,9 +44,9 @@ Your public key will be visible on your server by typing
 cat ~/.ssh/authorized_keys
 ```
 
-### Server Side
+## Install Dependencies
 
-Update the list of available software packages and install dependencies
+On the server, update the list of available software packages and install dependencies
 
 ```bash
 sudo apt update && sudo apt upgrade -y

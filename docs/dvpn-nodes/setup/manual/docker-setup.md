@@ -44,7 +44,7 @@ sudo -i -u $(whoami)
 
 ## Install Portainer (optional)
 
-If you want a nice graphic view to manager your Node container, you can install [Portainer](https://docs.portainer.io/start/install-ce/server/docker/linux):
+If you want a nice graphic view to manage your node container, you can install [Portainer](https://docs.portainer.io/start/install-ce/server/docker/linux):
 
 ```bash
 docker volume create portainer_data

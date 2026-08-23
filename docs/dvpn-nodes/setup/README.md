@@ -12,7 +12,7 @@ If you want to contribute to the Sentinel network and share your internet bandwi
 
 Setting up a dVPN node doesn’t require advanced Linux knowledge, just some basic familiarity. The process is straightforward and easy to follow. We recommend having at least **50 P2P** in your node account, as a small amount is periodically used to send a transaction to the blockchain to confirm that your node is still active.
 
-There are currenty 2 ways to get started with setting up a dVPN node:
+There are currently 2 ways to get started with setting up a dVPN node:
 
 - [Manual](/dvpn-nodes/manual-setup)
 - [Automated](/dvpn-nodes/setup/automated)

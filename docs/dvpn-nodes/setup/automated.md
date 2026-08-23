@@ -6,7 +6,7 @@ sidebar_position: 4
 # Automated Setup
 
 :::warning
-The automated setup is maintained by a few community members. Since the hub was recently upgraded, it may not work as expected. Please allow some time for the images and software to be updated.
+The automated setup is maintained by a few community members and can lag behind the latest node software, so it may not work as expected after network upgrades. If you run into problems, use the [manual setup](/dvpn-nodes/manual-setup) instead.
 :::
 
 To simplify the installation of a dVPN node, you can employ a `.deb` package tool called dVPN Node Manager that automates the process through an intuitive user interface (UI).
@@ -87,10 +87,10 @@ For users on Debian-based systems, the `dvpn-node-manager` is available as a `.d
 
 ### Downloading the Package
 
-You can manually download the `.deb` file of your choice by consulting the available [releases](https://github.com/sentinelgrowthdao/dvpn-node-manager/releases).
+You can manually download the `.deb` file of your choice by consulting the available [releases](https://github.com/sentinelgrowthdao/dvpn-node-manager/releases). Packages are built per Ubuntu version and architecture, so pick the one matching your system. For example, on Ubuntu 24.04:
 
 ```bash
-sudo wget -O /var/cache/apt/archives/dvpn-node-manager_latest.deb https://github.com/sentinelgrowthdao/dvpn-node-manager/releases/download/v1.0.0-alpha13/dvpn-node-manager_1.0.0-alpha13_$(dpkg --print-architecture).deb && sudo chmod 644 /var/cache/apt/archives/dvpn-node-manager_latest.deb && sudo chown _apt:root /var/cache/apt/archives/dvpn-node-manager_latest.deb
+sudo wget -O /var/cache/apt/archives/dvpn-node-manager_latest.deb https://github.com/sentinelgrowthdao/dvpn-node-manager/releases/download/v1.0.0-alpha19/dvpn-node-manager_1.0.0-alpha19.ppa1.ubuntu24.04.1_$(dpkg --print-architecture).deb && sudo chmod 644 /var/cache/apt/archives/dvpn-node-manager_latest.deb && sudo chown _apt:root /var/cache/apt/archives/dvpn-node-manager_latest.deb
 ```
 
 ### Installing the Package

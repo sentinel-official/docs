@@ -32,7 +32,7 @@ Ensure the following fields meet the specified conditions:
 - `ok` must be true
 - `status` must be 1
 - `info_fetch_timestamp` should not be a zero timestamp
-- `config_exchange_timestamp` should not be a timestamp
+- `config_exchange_timestamp` should not be a zero timestamp
 - `location_fetch_timestamp` should not be a zero timestamp
 
 For a comprehensive list of nodes, you can also explore the [Sentinel API Records](https://api.health.sentinel.co/v1/records) main page

@@ -17,8 +17,7 @@ To be added into the Subscription Plan and consequently be eligible to Node Reve
 This check tests:
 - the node endpoint
 - the node configuration
-- the node gigabyte price (less than 20 P2P)
-- the node hourly price (15 P2P for datacenters and 31,5 P2P for residentials nodes, both expressed in udvpn)
+- the node gigabyte and hourly prices (they must fall within the limits accepted by the subscription plan operators)
 - the node connectivity
 
 :::note
@@ -89,7 +88,7 @@ If running other Docker containers, prioritize your node’s CPU allocation by s
 
 ## Troubleshooting Health Check Issues
 
-Common problems for Healch Check issues con be various:
+Health check failures can have several causes:
 
 ### High Load
 
@@ -103,11 +102,14 @@ Address this by optimizing resources or upgrading hardware.
 
 ### RPC Configuration
 
-Use load-balanced RPC servers for better node health:
+Use multiple load-balanced RPC servers for better node health. In the `[rpc]` section of your node's `config.toml`:
 
-```bash
-rpc_addresses = "https://rpc.sentineldao.com:443,https://rpc-sentinel.busurnode.com:443,https://sentinel-rpc.publicnode.com:443"
+```toml
+[rpc]
+addrs = ["https://rpc.sentineldao.com:443", "https://rpc-sentinel.busurnode.com:443", "https://sentinel-rpc.publicnode.com:443"]
 ```
+
+The node periodically evaluates the listed endpoints and switches to the best performing one. See the [RPC List](/dvpn-nodes/rpc-list) page for up-to-date public endpoints.
 
 ### Kernel Upgrades
 

@@ -38,10 +38,10 @@ docker run -d \
 
 ## After Starting the Node
 
-Check if the node is running and visible to everyone. Open your browser and type the following URL
+Check if the node is running and visible to everyone. Open your browser and type the following URL, where `api_port` is the one set in your `config.toml` (`19781` in this guide)
 
 ```bash
-https://ip_node:tcp_port
+https://<node_ip>:<api_port>
 ```
 
 Node logs. You can specify a different number of logs if you need to view more or fewer entries

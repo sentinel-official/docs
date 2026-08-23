@@ -52,7 +52,7 @@ Key Name: key-1
 
 The following command creates the configuration files, which you can later customise.
 
-Be sure to choose your preferred node type using the `--node.service-type` flag — options are `amneziawg`, `hysteria2`, `openvpn`, `v2ray`, `wireguard`, or `xray`.
+Be sure to choose your preferred node type using the `--node.service-type` flag. Options are `amneziawg`, `hysteria2`, `openvpn`, `v2ray`, `wireguard`, or `xray`.
 
 ```bash
 sudo docker run \
@@ -372,7 +372,7 @@ max_peers = 250
 </details>
 
 :::warning
-Handshake DNS (`[handshake_dns] enable = true`) only takes effect when `service_type` is `wireguard` or `amneziawg` — these are the protocols that push a DNS resolver to connected clients. It has no effect for `openvpn`, `v2ray`, `xray`, or `hysteria2`.
+Handshake DNS (`[handshake_dns] enable = true`) only takes effect when `service_type` is `wireguard` or `amneziawg`, the protocols that push a DNS resolver to connected clients. It has no effect for `openvpn`, `v2ray`, `xray`, or `hysteria2`.
 :::
 
 Service-Specific Configurations:
@@ -493,16 +493,16 @@ advanced_security = false
 # Each [[inbounds]] block defines one V2Ray inbound listener with the four fields below.
 
 # port: Port for incoming connections as a single port number or "in_port:out_port" mapping format.
-# Allowed: Single port or port mapping format — Example: "10086" or "10086:10086"
+# Allowed: Single port or port mapping format. Example: "10086" or "10086:10086"
 
 # proxy_protocol: Proxy protocol used for the inbound connection.
-# Allowed: vmess, vless — Example: "vmess"
+# Allowed: vmess, vless. Example: "vmess"
 
 # transport_protocol: Underlying transport used for handling requests and data transmission.
-# Allowed: domainsocket, gun, grpc, http, mkcp, quic, tcp, websocket — Example: "tcp"
+# Allowed: domainsocket, gun, grpc, http, mkcp, quic, tcp, websocket. Example: "tcp"
 
 # transport_security: Transport encryption applied to the inbound connection.
-# Allowed: none, tls — Example: "tls"
+# Allowed: none, tls. Example: "tls"
 
 [[inbounds]]
 port = "54556"
@@ -528,19 +528,19 @@ transport_security = "none"
 # Each [[inbounds]] block defines one Xray inbound listener with the fields below.
 
 # port: Port for incoming connections as a single port number or "in_port:out_port" mapping format.
-# Allowed: Single port or port mapping format — Example: "10086" or "10086:10086"
+# Allowed: Single port or port mapping format. Example: "10086" or "10086:10086"
 
 # proxy_protocol: Proxy protocol used for the inbound connection.
-# Allowed: vless, vmess, trojan, shadowsocks-2022 — Example: "vless"
+# Allowed: vless, vmess, trojan, shadowsocks-2022. Example: "vless"
 
 # transport_protocol: Underlying transport used for the connection.
-# Allowed: tcp, websocket, grpc, httpupgrade, xhttp — Example: "tcp"
+# Allowed: tcp, websocket, grpc, httpupgrade, xhttp. Example: "tcp"
 
 # transport_security: Transport encryption applied to the connection.
-# Allowed: none, tls, reality — Example: "reality"
+# Allowed: none, tls, reality. Example: "reality"
 
 # flow: Flow control for the inbound connection (VLESS only).
-# Allowed: none, xtls-rprx-vision — Example: "xtls-rprx-vision"
+# Allowed: none, xtls-rprx-vision. Example: "xtls-rprx-vision"
 
 # method: Encryption method for the inbound connection (Shadowsocks-2022 only).
 # Example: "2022-blake3-aes-128-gcm"
@@ -635,14 +635,14 @@ obfs_password = "a-strong-obfs-password"
 
 # Loopback port for the SDK-hosted HTTP authentication backend.
 # Hysteria2 calls this local endpoint to validate each connecting client's credential.
-# Bound to loopback only — it does not need to be exposed through your firewall.
+# Bound to loopback only. It does not need to be exposed through your firewall.
 # Allowed: Non-zero uint16
 # Example: 8080
 auth_port = 8080
 
 # Loopback port for Hysteria2's Traffic Stats API.
 # Used by the service to collect per-user traffic usage and to kick disconnected peers.
-# Bound to loopback only — it does not need to be exposed through your firewall.
+# Bound to loopback only. It does not need to be exposed through your firewall.
 # Allowed: Non-zero uint16
 # Example: 8081
 stats_port = 8081
@@ -746,7 +746,7 @@ sudo ufw allow 11608,13860,19781,25068,54556/udp
 
 If you’re running your node from home, you’ll need to enable port forwarding on your router so others can connect to it.
 
-Forward **every port** your node uses — the same ports you detected above and opened with UFW. Add one rule per port, and if your router lets you pick a protocol, create both a **TCP** and a **UDP** rule for each (exactly like the UFW step), so the rules work for any service type.
+Forward **every port** your node uses: the same ports you detected above and opened with UFW. Add one rule per port, and if your router lets you pick a protocol, create both a **TCP** and a **UDP** rule for each (exactly like the UFW step), so the rules work for any service type.
 
 In your router’s WAN settings, add entries like this:
 
@@ -763,5 +763,5 @@ If your router only allows one protocol per rule, use the transport each port ac
 | Node API (`api_port`)   | TCP                                               |
 | WireGuard / AmneziaWG   | UDP                                               |
 | Hysteria2               | UDP (QUIC)                                         |
-| OpenVPN                 | UDP or TCP — matches its `protocol` setting        |
-| V2Ray / Xray            | TCP or UDP — depends on each inbound’s transport   |
+| OpenVPN                 | UDP or TCP, matching its `protocol` setting        |
+| V2Ray / Xray            | TCP or UDP, depending on each inbound’s transport  |
