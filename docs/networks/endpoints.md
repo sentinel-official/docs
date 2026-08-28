@@ -27,6 +27,8 @@ Chain ID **`sentinelhub-2`**. Every endpoint below was verified against the live
 
 :::tip Check liveness before you blame your code
 [sentnodes.com/public-rpc](https://sentnodes.com/public-rpc) monitors the public Sentinel RPC endpoints and refreshes every 30 seconds, reporting health, current block height, uptime percentage and region for each provider. It is the fastest way to tell a dead endpoint from a bug. It covers RPC only, not REST or gRPC.
+
+For measured latency trends — p50/p90/p99 percentiles over 24 h from three global probe regions — [OpenChainBench](https://openchainbench.com/benchmarks/sentinel-rpc) continuously benchmarks the same public RPC providers and ranks them by response time.
 :::
 
 Nodes differ widely in how much history they keep. `curl <endpoint>/status` reports `earliest_block_height`, and the values range from `901801` on the official endpoint to tens of millions of blocks later on others. State pruning is stricter still, as explained under [historical state](/apis/interact-rest#query-for-historical-state-using-rest).
