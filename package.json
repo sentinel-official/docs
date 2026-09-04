@@ -14,7 +14,7 @@
     "write-heading-ids": "docusaurus write-heading-ids",
     "lint": "eslint . -c eslint.config.js --fix",
     "lint:fix": "npm run lint -- --fix",
-    "prepare": "is-ci || husky install",
+    "prepare": "is-ci || husky",
     "test": "jest --passWithNoTests"
   },
   "dependencies": {
