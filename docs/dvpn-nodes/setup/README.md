@@ -17,7 +17,7 @@ There are currently 2 ways to get started with setting up a dVPN node:
 - [Manual](/dvpn-nodes/manual-setup): the official `sentinel-dvpnx` node, run with Docker
 - [dvpnd (Community Node)](/dvpn-nodes/setup/dvpnd): a community-maintained, Apache-2.0 node program installed on the host with one script, on a VPS or at home
 
-`sentinel-dvpnx` and `dvpnd` are two different programs that both work with today's client apps. The `dvpnd` page explains how they relate to each other and to the original `dvpn-node`.
+`sentinel-dvpnx` and `dvpnd` are two different programs that both work with today's client apps. The `dvpnd` page explains how they relate to each other and to the original `dvpn-node`, what changes if you switch, and how to move an existing node to `dvpnd`.
 
 
 ## dVPN Node Owners Groups
