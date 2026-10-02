@@ -41,7 +41,7 @@ If you have never followed the Manual Setup, skip to [Before you start](#before-
 |---|---|---|
 | Installing | Install Docker, get the image, run `init`, add the key, open the ports, start the container | Run one installer script, which does all of these |
 | Docker | Required | Not used (an image exists, see [Run it with Docker instead](#run-it-with-docker-instead)) |
-| How the node runs | A container named `dvpnx` | A system service named `dvpnd`, started at boot |
+| How the node runs | A container named `dvpnx` | A system service named `dvpnd`, started at boot and sandboxed by systemd |
 | Node files | `~/.sentinel-dvpnx`, in your user's home | `/root/.dvpnd`, owned by root (use `sudo`) |
 | Main settings file | `config.toml` | `config.toml`, with different sections and key names ([where each setting went](#coming-from-sentinel-dvpnx-where-each-setting-went)) |
 | Protocol settings file | `wireguard/config.toml`: a folder per protocol | `wireguard.toml`: a file next to `config.toml` |
@@ -126,7 +126,9 @@ Every option has a default except the moniker, which is asked for if you do not 
 | `--openvpn-proto` | OpenVPN only: `udp` or `tcp` | `udp` |
 | `--v3-listen-port` | AmneziaWG only: port of the optional AmneziaWG 3.1 tier | random |
 | `--recover` | Import an existing mnemonic instead of creating a new key | off |
-| `--version` | Release to build, for example `v9.2.1` | latest release |
+| `--version` | Release to build, for example `v9.3.0` | latest release |
+| `--home` | Folder for the node's files; the service is set up to use it | `/root/.dvpnd` |
+| `--source` | Build from a copy of the source code already on the machine instead of downloading a release | off |
 | `--force` | Rewrite `config.toml` and the protocol file; the key and certificate are kept | off |
 | `--no-firewall` | Leave `ufw` alone | off |
 | `--no-start` | Install the service without starting it | off |
@@ -251,7 +253,7 @@ The installer sets the keys below. Everything else can stay at its default.
 | `[node] listen_on` | Address and port the node API listens on | `0.0.0.0:8585` |
 | `[node] remote_url` | Public address of the node API, published on chain; clients connect to it | `https://<public-ip>:8585` |
 | `[keyring] backend`, `from` | Where the key is stored, and its name | `test`, `operator` |
-| `[handshake] enable` | Handshake DNS, which needs the separate `hnsd` program | `false` |
+| `[handshake] enable` | Handshake DNS, which needs the separate `hnsd` program. It answers only inside the tunnel (WireGuard, AmneziaWG and OpenVPN nodes); with `ufw`, also run `sudo ufw allow in on wg0 to any port 53` (`awg0`, `ovpn0` for those types) | `false` |
 
 Two more sections are worth knowing:
 
@@ -731,6 +733,27 @@ The service starts at boot and restarts on its own if it stops unexpectedly.
   ```bash
   curl -fsSL https://raw.githubusercontent.com/trinitystake/dvpnd/main/scripts/install.sh -o install.sh
   sudo bash install.sh
+  ```
+
+- **Debug logging**: at the normal log level the node writes no client IP addresses, and client keys appear only as a short tag. To chase a problem, switch on debug logging for a while:
+
+  ```bash
+  sudo systemctl edit dvpnd
+  ```
+
+  In the editor, add these lines in the space the comments point to, then save:
+
+  ```text
+  [Service]
+  ExecStart=
+  ExecStart=/usr/local/bin/dvpnd start --home /root/.dvpnd --log_level debug
+  ```
+
+  Run `sudo systemctl restart dvpnd`. The log now shows each request with the client's address, and the protocol program logs connections too. When you are done, switch back:
+
+  ```bash
+  sudo rm -r /etc/systemd/system/dvpnd.service.d
+  sudo systemctl daemon-reload && sudo systemctl restart dvpnd
   ```
 
 - **Move to another machine**: stop the node, copy `/root/.dvpnd` to the same place on the new machine, and run the installer there with `--no-start` (it keeps the copied files and reads the node type from them). Set `remote_url` to the new address, then `sudo systemctl start dvpnd`. The node publishes its new address on chain.
