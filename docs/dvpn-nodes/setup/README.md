@@ -12,12 +12,7 @@ If you want to contribute to the Sentinel network and share your internet bandwi
 
 Setting up a dVPN node doesn’t require advanced Linux knowledge, just some basic familiarity. The process is straightforward and easy to follow. We recommend having at least **50 P2P** in your node account, as a small amount is periodically used to send a transaction to the blockchain to confirm that your node is still active.
 
-There are currently 2 ways to get started with setting up a dVPN node:
-
-- [Manual](/dvpn-nodes/manual-setup): the official `sentinel-dvpnx` node, run with Docker
-- [dvpnd (Community Node)](/dvpn-nodes/setup/dvpnd): a community-maintained, Apache-2.0 node program installed on the host with one script, on a VPS or at home
-
-`sentinel-dvpnx` and `dvpnd` are two different programs that both work with today's client apps. The `dvpnd` page explains how they relate to each other and to the original `dvpn-node`, what changes if you switch, and how to move an existing node to `dvpnd`.
+To get started, follow the [Manual Setup](/dvpn-nodes/manual-setup), which runs the official `sentinel-dvpnx` node with Docker.
 
 
 ## dVPN Node Owners Groups

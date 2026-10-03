@@ -35,20 +35,6 @@ The following dVPN apps are built on top of the Sentinel Protocol. This is why w
     />
     -->
     <Card
-        title="Katacomb VPN"
-        description="Katacomb VPN is an open source dVPN client built by Trinity, core community member and creator of this docs website. It supports 6 protocols: WireGuard, AmneziaWG, OpenVPN, V2Ray, XRAY, and Hysteria2"
-        to="https://github.com/trinitystake/katacomb-vpn"
-        icon=""
-        svgFile="/icons/katacomb-vpn.svg"
-    />
-    <Card
-        title="Veil DVPN"
-        description="A native Android dVPN app built on Sentinel, designed to make decentralized privacy simple, fast, and usable for everyone. Instead of relying on a single corporate VPN provider, users can route traffic through independent nodes operated by a global community."
-        to="https://bitveil.com/veildvpn"
-        icon=""
-        svgFile="/icons/veil-dvpn.svg"
-    />
-    <Card
         title="Meile dVPN"
         description="Meile is a decentralized VPN solution built on top of the Sentinel Blockchain. Utilizing blockchain technology alongside community hosted decentralized nodes creates a private and censorship resistant network for everyone."
         to="https://mathnodes.com/index.php/meile-dvpn-client-linux-os-x/"
