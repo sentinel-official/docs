@@ -41,7 +41,7 @@ If you have never followed the Manual Setup, skip to [Before you start](#before-
 |---|---|---|
 | Installing | Install Docker, get the image, run `init`, add the key, open the ports, start the container | Run one installer script, which does all of these |
 | Docker | Required | Not used (an image exists, see [Run it with Docker instead](#run-it-with-docker-instead)) |
-| How the node runs | A container named `dvpnx` | A system service named `dvpnd`, started at boot and sandboxed by systemd |
+| How the node runs | A container named `dvpnx` | A system service named `dvpnd`, started at boot and sandboxed by systemd; V2Ray, Xray, Hysteria2 and OpenVPN run as an unprivileged account |
 | Node files | `~/.sentinel-dvpnx`, in your user's home | `/root/.dvpnd`, owned by root (use `sudo`) |
 | Main settings file | `config.toml` | `config.toml`, with different sections and key names ([where each setting went](#coming-from-sentinel-dvpnx-where-each-setting-went)) |
 | Protocol settings file | `wireguard/config.toml`: a folder per protocol | `wireguard.toml`: a file next to `config.toml` |
@@ -55,7 +55,7 @@ If you have never followed the Manual Setup, skip to [Before you start](#before-
 What stays the same:
 
 - **The wallet.** An operator address starting with `sent1` that you fund with P2P and that collects earnings, and a node address starting with `sentnode1` under which the node is listed. Both come from the same key.
-- **The key is stored unencrypted** (the `test` keyring) so that the node can sign transactions on its own.
+- **The key is stored unencrypted** (the `test` keyring) so that the node can sign transactions on its own. With `dvpnd` you can instead [keep the operator key off the server](#keep-the-operator-key-off-the-server).
 - **Prices are in `udvpn`** (1 P2P = 1,000,000 udvpn), and both price formats you know are accepted.
 - **The node API uses a self-signed TLS certificate.** Browsers warn about it; client apps expect it.
 - **One protocol per node.**
@@ -67,7 +67,7 @@ You need:
 
 - **A machine** that meets the [general requirements](/dvpn-nodes/setup/requirements), running Ubuntu 22.04 or 24.04, or Debian 12 or 13. The project builds and tests on x86_64. A Raspberry Pi 4 or 5 with a 64-bit OS also works but is not tested by the project (see [Home nodes](#home-nodes)).
 - **A public IPv4 address that reaches the machine.** Every VPS has one. At home, read [Home nodes](#home-nodes) first: with some internet providers a home node cannot work at all.
-- **Root access** (`sudo`). The node creates a tunnel interface and firewall rules, so it runs as root.
+- **Root access** (`sudo`). The node creates a tunnel interface and firewall rules, so it runs as root. The V2Ray, Xray, Hysteria2 and OpenVPN programs run as an unprivileged account the installer creates.
 - **A dedicated machine.** The node keeps an unencrypted signing key and sends strangers' traffic out of the machine's IP address, so abuse complaints come to that address. Never run it on a validator or next to anything that holds secrets.
 - **About 50 P2P** for transaction fees, sent after the install to the wallet the installer creates. For a first test, the [Node Faucet](https://busurnode.com/network/sentinel/faucet) is enough.
 
@@ -98,12 +98,12 @@ The moniker is the name client apps show, 4 to 32 characters. Without `--type` y
 What the installer does, in order:
 
 1. Installs the system packages, Go, and the tools your protocol needs.
-2. Downloads the latest `dvpnd` release and builds it. This takes a few minutes the first time.
+2. Downloads the latest `dvpnd` release, checks that the maintainer signed it, and builds it. This takes a few minutes the first time.
 3. Looks up your public IP address and writes `config.toml` and the protocol file in `/root/.dvpnd`.
 4. Creates the operator key and shows its mnemonic (see [Step 3](#step-3-save-the-mnemonic-and-fund-the-wallet)).
 5. Creates a self-signed TLS certificate for the node API.
 6. Opens the firewall (`ufw`): your SSH port, the node API port and the protocol port.
-7. Installs the `dvpnd` service and starts it.
+7. Creates the unprivileged `dvpnd-proxy` account that V2Ray, Xray, Hysteria2 and OpenVPN run as, then installs the `dvpnd` service and starts it.
 
 It asks you two things at most: the moniker, if you did not pass `--moniker`, and to press Enter once you have written down the mnemonic.
 
@@ -126,9 +126,10 @@ Every option has a default except the moniker, which is asked for if you do not 
 | `--openvpn-proto` | OpenVPN only: `udp` or `tcp` | `udp` |
 | `--v3-listen-port` | AmneziaWG only: port of the optional AmneziaWG 3.1 tier | random |
 | `--recover` | Import an existing mnemonic instead of creating a new key | off |
-| `--version` | Release to build, for example `v9.3.0` | latest release |
+| `--granter` | Your operator wallet's `sent1` address: the server gets a hot key instead of the operator key (see [Keep the operator key off the server](#keep-the-operator-key-off-the-server)). Not with `--recover` | off |
+| `--version` | Release to build, for example `v9.4.0`; the installer builds only a release the maintainer signed | latest release |
 | `--home` | Folder for the node's files; the service is set up to use it | `/root/.dvpnd` |
-| `--source` | Build from a copy of the source code already on the machine instead of downloading a release | off |
+| `--source` | Build from a copy of the source code already on the machine instead of downloading a release; the signature check does not apply, so use only a copy you checked | off |
 | `--force` | Rewrite `config.toml` and the protocol file; the key and certificate are kept | off |
 | `--no-firewall` | Leave `ufw` alone | off |
 | `--no-start` | Install the service without starting it | off |
@@ -171,7 +172,7 @@ Then send P2P to the **operator wallet**: the address starting with `sent1` in t
 
 You can fund the wallet now or later. Until it holds P2P the node cannot register: the log shows `failed to register the node` and the service tries again every 15 seconds.
 
-To see the balance and move earnings later, import the mnemonic into a wallet such as [Keplr](/get-started/wallets/keplr/import-seed). Because the key on the server is unencrypted, keep only working funds in this wallet and move earnings to a wallet you keep elsewhere.
+To see the balance and move earnings later, import the mnemonic into a wallet such as [Keplr](/get-started/wallets/keplr/import-seed). Because the key on the server is unencrypted, keep only working funds in this wallet and move earnings to a wallet you keep elsewhere, or [keep the operator key off the server](#keep-the-operator-key-off-the-server) altogether.
 
 To show both addresses again at any time:
 
@@ -228,6 +229,34 @@ https://<your-public-ip>:8585/status
 
 The browser warns about the self-signed certificate, which is expected; continue, and it shows your node's status as JSON. Client apps list the node a few minutes after it is reachable. You can also look it up on [Sentnodes](https://sentnodes.com) or [Suchnode](https://suchnode.net) by its `sentnode1` address.
 
+## Keep the operator key off the server
+
+By default the server holds the operator key, unencrypted: whoever breaks into the server takes the operator wallet and everything it has earned. Instead, you can keep the operator key in a wallet on another machine and give the server a **hot key**. The hot key may only send the node's own messages for the operator wallet (registering the node, updating its details and status, reporting sessions) and have their fees paid from it. The chain still knows the node by the operator wallet, earnings still go there, and the hot key holds nothing.
+
+You need the `sentinelhub` command-line program ([releases](https://github.com/sentinel-official/sentinelhub/releases)) on the machine that holds the operator key, with the key imported into its keyring. The grants are transactions that a wallet like Keplr does not offer.
+
+1. Run the installer with your operator wallet's `sent1` address (a new node also needs `--moniker` and the other options as usual):
+
+   ```bash
+   sudo bash install.sh --granter sent1...
+   ```
+
+   The installer creates a hot key on the server and, at the end, prints five `sentinelhub` commands.
+
+2. Run those commands on the machine with the operator key, adding your own keyring options (for example `--keyring-backend os`). Four of them let the hot key send the node's messages; the fifth lets it spend up to 100 P2P of the operator wallet on the fees of those messages. They last a year.
+
+3. Until the grants exist, the node does not start: the log names each missing grant and the service tries again every 15 seconds. Once they are on chain it comes up by itself, and the log shows `Signing with a hot key`.
+
+Keep some P2P on the operator wallet for the fees. Two weeks before a grant expires, or before the fee allowance runs out, the log warns you; to renew, run `sudo dvpnd --home /root/.dvpnd keys authz-commands` on the server and run the commands it prints again.
+
+**An existing node** switches the same way: run the installer again with `--granter`, then run the commands it prints. When the log shows `Signing with a hot key` and a successful status update, delete the operator key from the server, after making sure you hold its mnemonic elsewhere:
+
+```bash
+sudo dvpnd --home /root/.dvpnd keys delete operator
+```
+
+The node address, its listing and its sessions stay the same.
+
 ## The configuration files
 
 Everything the node uses is in `/root/.dvpnd`. The folder belongs to root, so use `sudo` to look inside: `sudo ls /root/.dvpnd`.
@@ -252,13 +281,15 @@ The installer sets the keys below. Everything else can stay at its default.
 | `[node] gigabyte_prices`, `hourly_prices` | Your prices, in `udvpn` | `--gigabyte-price`, `--hourly-price` |
 | `[node] listen_on` | Address and port the node API listens on | `0.0.0.0:8585` |
 | `[node] remote_url` | Public address of the node API, published on chain; clients connect to it | `https://<public-ip>:8585` |
-| `[keyring] backend`, `from` | Where the key is stored, and its name | `test`, `operator` |
+| `[keyring] backend`, `from` | Where the key is stored, and its name | `test`, `operator` (`hot` with `--granter`) |
+| `[keyring] granter` | The operator wallet, when the server holds a hot key | `--granter`, otherwise empty |
 | `[handshake] enable` | Handshake DNS, which needs the separate `hnsd` program. It answers only inside the tunnel (WireGuard, AmneziaWG and OpenVPN nodes); with `ufw`, also run `sudo ufw allow in on wg0 to any port 53` (`awg0`, `ovpn0` for those types) | `false` |
 
-Two more sections are worth knowing:
+Three more sections are worth knowing:
 
 - **`[bandwidth]`**: leave both values at `0` and the node measures its link. If you know what your provider sells you, set `download_mbps` and `upload_mbps` (a 1 Gbit/s port is `1000`) and the speed test is skipped. Clients use this figure to choose a node and nothing verifies it, so do not overstate it.
 - **`[geoip]`**: the node looks up its location from its IP address at each start. Only if the result is wrong, set `city`, `country`, `latitude` and `longitude` to the server's real location.
+- **`[egress]`**: what clients can reach through your node. They reach the internet, and nothing on or around the server: not the server itself, its local and private networks (your provider's metadata service included) or other clients. Outgoing mail (TCP port 25) is blocked too, because a node that relays anyone's mail ends up on block lists and its provider may suspend it; set `allow_smtp = true` only if you accept that.
 
 <details>
 <summary>The full config.toml after the install</summary>
@@ -293,7 +324,7 @@ gas_prices = "0.1udvpn"
 # The network chain ID
 id = "sentinelhub-2"
 
-# Comma separated Tendermint RPC addresses for the chain
+# Comma separated Tendermint RPC addresses for the chain; https, or http on loopback only
 rpc_addresses = "https://sentinel-rpc.publicnode.com:443,https://sentinel-rpc.polkachu.com:443,https://rpc-sentinel.busurnode.com:443,https://rpc.sentineldao.com:443"
 
 # Timeout seconds for querying the data from the RPC server
@@ -304,6 +335,13 @@ rpc_tx_timeout = 30
 
 # Calculate the transaction fee by simulating it
 simulate_and_execute = true
+
+[egress]
+# Clients never reach the node host itself, private, shared or link-local networks (the
+# provider's metadata service among them), or each other. Outgoing mail (TCP port 25) is
+# blocked too, because a node that relays anyone's mail ends up on block lists and its
+# provider may suspend it. Set to true only if you accept that.
+allow_smtp = false
 
 [geoip]
 # Service that discovers the node's public IP and location. All of them are free of
@@ -351,6 +389,12 @@ backend = "test"
 # Name of the key with which to sign
 from = "operator"
 
+# The node account, when the key above is a hot key: the address (sent1...) that granted
+# it the right to send the node's messages (authz) and pays its fees (feegrant). The
+# operator key and the earnings then stay off this server. Empty: the key above is the
+# node account itself. "dvpnd keys authz-commands" prints the grants to make.
+granter = ""
+
 [node]
 # Time interval between each set_sessions operation
 interval_set_sessions = "10s"
@@ -383,6 +427,12 @@ remote_url = "https://203.0.113.10:8585"
 
 # Type of node
 type = "wireguard"
+
+# Also accept handshakes on the legacy endpoint POST /accounts/<address>/sessions/<id>,
+# which only old clients use. Its signature covers the session id alone, so a captured
+# request can be replayed with another key and cut the real client off. Leave it off
+# unless a client you serve still needs it.
+legacy_handshake = false
 
 [qos]
 # Limit max number of concurrent peers
@@ -563,11 +613,6 @@ uplink = ""
 # Hand each peer an IPv6 tunnel address next to the IPv4 one; the host must
 # then reach the IPv6 internet. Set it false for an IPv4-only tunnel
 enable_ipv6 = true
-
-[management]
-# Loopback port of OpenVPN's management interface, over which the node admits
-# clients and reads their traffic; nothing else may bind it
-port = 58791
 ```
 
 On the first start the node also creates its own certificate authority in `/root/.dvpnd/openvpn/`. Keep that folder: clients' profiles depend on it.
@@ -589,6 +634,10 @@ tls = false
 
 # Transport protocol for the VMess inbound (tcp is the only one confirmed with current client apps)
 transport = "tcp"
+
+[api]
+# Loopback port on which the node drives v2ray; nothing else may bind it
+port = 47213
 ```
 
 </p>
@@ -728,12 +777,19 @@ For the protocol file, WireGuard as an example (AmneziaWG and OpenVPN follow the
 
 The service starts at boot and restarts on its own if it stops unexpectedly.
 
-- **Upgrade**: download the installer again and run it. It reads the node type from your configuration, builds the latest release and keeps your configuration and key. Add `--version vX.Y.Z` for a specific release.
+- **Upgrade**: download the installer again and run it. It reads the node type from your configuration, builds the latest release (only a release the maintainer signed) and keeps your configuration and key. Add `--version vX.Y.Z` for a specific release.
 
   ```bash
   curl -fsSL https://raw.githubusercontent.com/trinitystake/dvpnd/main/scripts/install.sh -o install.sh
   sudo bash install.sh
   ```
+
+  Upgrading from 9.3 or earlier to 9.4 changes a few things, all handled by the installer:
+  - V2Ray, Xray, Hysteria2 and OpenVPN run as the unprivileged `dvpnd-proxy` account, and clients can no longer reach the server or the networks around it through the node, nor send mail (see `[egress]` above).
+  - Every address in `rpc_addresses` must start with `https://`, unless it is on the server itself.
+  - The node signs its handshake replies; client apps that check the signature can tell your node from an impostor.
+  - The legacy handshake endpoint is off; only very old clients used it (`[node] legacy_handshake`).
+  - On OpenVPN nodes, the `[management]` section of `openvpn.toml` is no longer used and can be deleted.
 
 - **Debug logging**: at the normal log level the node writes no client IP addresses, and client keys appear only as a short tag. To chase a problem, switch on debug logging for a while:
 
