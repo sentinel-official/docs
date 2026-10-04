@@ -17,7 +17,6 @@ export { default as Guide } from './Guide';
 export { default as Whitepaper } from './Whitepaper';
 
 export { default as Decentr } from './Decentr';
-export { default as Meile } from './Meile';
 export { default as GrowthDao } from './GrowthDao';
 export { default as Wallet } from './Wallet';
 export { default as Download } from './Download';

@@ -35,23 +35,3 @@ For developer libraries from the same group (AI Connect, x402, Plan Manager), se
 ## Uptime
 
 - [Uptime Kuma](/node-monitoring/uptime-kuma): Uptime Kuma: A great selfhosted tool for continuously monitoring your node’s uptime, helping you maximize your dVPN node P2P earnings.
-
-## dVPN Node Metabase Analytics
-
-This tool, created by MathNodes, provides a range of statistics regarding Sentinel dVPN Nodes within the ecosystem.
-
-- Website: [https://metabase.mathnodes.com](https://metabase.mathnodes.com)
-- dVPN Node Leaderboard: [https://dvpn.cc/leaderboard](https://dvpn.cc/leaderboard)
-- dVPN Node Type Distribution: [https://dvpn.cc/nodetype](https://dvpn.cc/nodetype)
-- dVPN Node Uptime Reporting: [https://dvpn.cc/uptime](https://dvpn.cc/uptime)
-- Residential dVPN Nodes: [https://dvpn.cc/residential](https://dvpn.cc/residential)
-- dVPN Node Percentage by ISP: [https://dvpn.cc/nodeisps](https://dvpn.cc/nodeisps)
-- dVPN Node Revenue: [https://dvpn.cc/revenue](https://dvpn.cc/revenue)
-- dVPN Node List Subs/Month by Country: [https://dvpn.cc/countrysubschart](https://dvpn.cc/countrysubs)
-- dVPN Node Chart Subs/Month by Country: [https://dvpn.cc/countrysubschart](https://dvpn.cc/countrysubschart)
-- dVPN Node Subscriptions/Day: [https://dvpn.cc/subsperday](https://dvpn.cc/subsperday)
-- dVPN Node Subscriptions/Hour: [https://dvpn.cc/subsbyhour](https://dvpn.cc/subsbyhour)
-- dVPN Node Subscriptions Last 40 Weeks: [https://dvpn.cc/sub40](https://dvpn.cc/sub40)
-- dVPN Node Rankings: [https://dvpn.cc/nodeformula](https://dvpn.cc/nodeformula)
-- dVPN Node Sessions/Week: [https://dvpn.cc/sessions](https://dvpn.cc/sessions)
-- V2Ray dVPN Nodes by Country: [https://dvpn.cc/v2ray](https://dvpn.cc/v2ray)

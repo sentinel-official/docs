@@ -13,7 +13,6 @@ import {
 import {
   Decentr,
   Carbon,
-  Meile,
   SentinelCore,
 } from '../../src/icons';
 
@@ -34,13 +33,6 @@ The following dVPN apps are built on top of the Sentinel Protocol. This is why w
         svgFile=""
     />
     -->
-    <Card
-        title="Meile dVPN"
-        description="Meile is a decentralized VPN solution built on top of the Sentinel Blockchain. Utilizing blockchain technology alongside community hosted decentralized nodes creates a private and censorship resistant network for everyone."
-        to="https://mathnodes.com/index.php/meile-dvpn-client-linux-os-x/"
-        icon={<Meile />}
-        svgFile=""
-    />
     <Card
         title="Independent dVPN"
         description="Independent dVPN is a Turkish free and fully decentralized service created by volunteers who prioritize digital human rights, offering powerful features like WireGuard and V2Ray support."

@@ -10,7 +10,7 @@ Operating a dVPN node incurs expenses for the owner, including the acquisition o
 
 ## How the Node Revenue System works
 
-dVPN apps built on the Sentinel protocol, such as [Meile dVPN and Independent dVPN](/get-started/apps), pay node hosts for the bandwidth their users consume. This makes **Sentinel a revenue generating ecosystem**. Payments reach a node in two ways:
+dVPN apps built on the Sentinel protocol, such as those listed on the [dVPN Apps](/get-started/apps) page, pay node hosts for the bandwidth their users consume. This makes **Sentinel a revenue generating ecosystem**. Payments reach a node in two ways:
 
 - **Subscription plans**: the creator of a plan (a dVPN app owner) selects nodes from the public list and locks tokens against each node added into the plan. Payment from these tokens is deducted for every hour of successful uptime, so a node included in a plan earns a predictable hourly rate.
 - **Pay-as-you-go**: users pay a node host directly, per gigabyte or per hour, at the prices the host has set.
