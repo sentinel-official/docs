@@ -94,7 +94,6 @@ The dev server starts on `http://localhost:3000`. Edits to any markdown or compo
 - **[Docusaurus 3.10](https://docusaurus.io/)** &nbsp;·&nbsp; static site generator.
 - **[React 18](https://react.dev/)** + **[MDX 3](https://mdxjs.com/)** &nbsp;·&nbsp; components inside markdown.
 - **[TypeScript](https://www.typescriptlang.org/)** &nbsp;·&nbsp; type safety for custom components and plugins.
-- **[Tailwind CSS 3](https://tailwindcss.com/)** &nbsp;·&nbsp; styling.
 - **[Stoplight Elements](https://stoplight.io/open-source/elements)** &nbsp;·&nbsp; interactive REST and RPC API reference.
 - **[`prism-react-renderer`](https://github.com/FormidableLabs/prism-react-renderer)** + **[`@docusaurus/theme-live-codeblock`](https://docusaurus.io/docs/api/themes/@docusaurus/theme-live-codeblock)** &nbsp;·&nbsp; syntax highlighting and live code blocks.
 - **[`@easyops-cn/docusaurus-search-local`](https://github.com/easyops-cn/docusaurus-search-local)** &nbsp;·&nbsp; site-wide search, indexed at build time and served as a static file (no external search service).
