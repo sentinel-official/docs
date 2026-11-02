@@ -1,0 +1,1 @@
+"use strict";(globalThis.webpackChunksentinel_docs||=[]).push([[2119],{18102(s){s.exports=JSON.parse('{"name":"docusaurus-plugin-content-docs","id":"solana"}')}}]);
