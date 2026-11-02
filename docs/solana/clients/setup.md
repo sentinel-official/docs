@@ -78,7 +78,7 @@ Save the `public_key` value from the output. The client daemon signs channel tra
 
 ## 6. Set the passphrase and run the daemon
 
-Init encrypts the daemon key by default. The daemon never prompts, so create a passphrase file and point the client config at it, as in [Set up the daemon](/solana/node-operators/setup#2-set-the-passphrase-and-rpc-endpoint):
+Init encrypts the daemon key by default. The daemon never prompts, so create a passphrase file and point the client config at it, as in [Save the passphrase](/solana/node-operators/setup#4-save-the-passphrase):
 
 ```toml
 # /var/lib/sentinel-dvpn/c0/config.toml

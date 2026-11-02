@@ -1,114 +1,109 @@
 ---
-title: Set Up the Daemon
-sidebar_label: "🛠 Set Up the Daemon"
-sidebar_position: 2
+title: Configure the Node
+sidebar_label: "🛠 Configure the Node"
+sidebar_position: 4
 ---
 
-# Set Up the Node Daemon
+# Configure the Node
 
-`sentinel-dvpnd` runs your node. `init` creates the instance folder, the config file, the operator key, and a TLS certificate.
+Run these commands **on the server**, unless a step says **on your computer**. Finish [Prepare the Server](/solana/node-operators/server) first.
 
-Build the binaries first, as shown in [Build the binaries](/solana/node-operators#build-the-binaries).
+## 1. Choose a protocol
 
-## 1. Initialize the instance
+The node runs one protocol. Use the one you installed in [Prepare the Server, step 7](/solana/node-operators/server#7-install-the-vpn-software): `wireguard`, `amneziawg`, `v2ray`, `xray`, `openvpn`, or `hysteria2`. The next steps call it `<PROTOCOL>`.
 
-Run as root. Node instance tags start with `n`.
+## 2. Add the operator key (optional)
+
+Skip this step to let `init` create a new key.
+
+To use a key file you already have (a Solana keypair JSON), copy it in **before** `init`.
+
+On your computer:
+
+```bash
+cd <FOLDER_WITH_OPERATOR_JSON>
+scp operator.json <USER>@<SERVER_IP>:~/operator.json
+```
+
+On the server:
+
+```bash
+sudo install -d -m 700 /var/lib/sentinel-dvpn/n0/keys
+sudo install -m 600 ~/operator.json /var/lib/sentinel-dvpn/n0/keys/operator.json
+rm ~/operator.json
+```
+
+## 3. Initialize the node
+
+`<OWNER_PUBLIC_KEY>` comes from [Prepare Your Computer](/solana/node-operators/computer). Prices are in base units: **1 tDVPN = 1,000,000**. The example sets every price to 50 tDVPN.
 
 ```bash
 sudo sentinel-dvpnd init \
   --instance n0 \
   --owner <OWNER_PUBLIC_KEY> \
-  --country US \
-  --api-hosts node.example.com \
-  --prices.channel-per-gb <BASE_UNITS> \
-  --prices.channel-per-hour <BASE_UNITS> \
-  --prices.lease-per-hour <BASE_UNITS>
+  --country <COUNTRY_CODE> \
+  --api-hosts <SERVER_IP> \
+  --api-port 8443 \
+  --service <PROTOCOL> \
+  --prices.channel-per-gb 50000000 \
+  --prices.channel-per-hour 50000000 \
+  --prices.lease-per-hour 50000000
 ```
 
-| Flag | Meaning |
-| --- | --- |
-| `--owner` | Owner wallet public key (base58). Required. |
-| `--country` | Two-letter country code. |
-| `--api-hosts` | Public hostname(s) where users reach the node API. |
-| `--api-port` | Optional. Leave it out or pass `0` to let init pick a free port. The chosen port is written to the config and shown in the output. |
-| `--service` | VPN service driver. Defaults to `wireguard`. Init saves a config for every driver. |
-| `--plain-key` | Writes the operator key unencrypted. Leave it off to keep the key encrypted. |
-| `--prices.*` | Prices in base units. Use the same units as `node open-node`. |
-| `--force` | Overwrites an existing instance. |
+- `<COUNTRY_CODE>`: two capital letters, for example `SG`.
+- Write down `id` and `public_key` from the output. You need them on-chain.
+- If `init` asks for a passphrase, choose one for a new key, or type your key file's passphrase. Then do step 4.
 
-Init also creates the `sentinel-dvpn` system group if it doesn't exist.
+## 4. Save the passphrase
 
-Init prints a JSON summary. Save the `id` and `public_key` values. `id` is the node ID for `open-node`. `public_key` is the operator key you fund in the next steps.
-
-```json
-{
-  "api_port": <PORT_CHOSEN_BY_INIT>,
-  "dir": "/var/lib/sentinel-dvpn/n0",
-  "id": "<64 hex characters>",
-  "key_name": "operator",
-  "public_key": "<operator public key>",
-  "role": "node",
-  "tag": "n0",
-  "tls_sha256": "<hex>"
-}
-```
-
-## 2. Set the passphrase and RPC endpoint
-
-The operator key is encrypted unless you passed `--plain-key`. The daemon never prompts for a passphrase. When it starts, it reads one of these:
-
-- `passphrase_file`, a file readable by root. Set it in the `[key]` section of `config.toml`, as shown below.
-- The `SENTINEL_DVPND_PASSPHRASE` environment variable.
-
-The service needs `passphrase_file` because it can't prompt. Create the file with restricted permissions, and type the passphrase into the editor. Don't pass it on the command line, where it would end up in your shell history:
+Skip this step if `init` didn't ask for a passphrase.
 
 ```bash
 sudo mkdir -p /etc/sentinel-dvpn
-sudo touch /etc/sentinel-dvpn/n0.pass
-sudo chmod 600 /etc/sentinel-dvpn/n0.pass
+sudo install -m 600 /dev/null /etc/sentinel-dvpn/n0.pass
 sudoedit /etc/sentinel-dvpn/n0.pass
 ```
 
-Then edit `/var/lib/sentinel-dvpn/n0/config.toml`:
-
-```toml
-[key]
-name = "operator"
-passphrase_file = "/etc/sentinel-dvpn/n0.pass"
-
-[rpc]
-url = "<SOLANA_RPC_URL>"
-ws_url = "<SOLANA_WS_URL>"
-```
-
-For devnet builds, the RPC defaults to `https://api.devnet.solana.com` and `wss://api.devnet.solana.com`. Set `[rpc]` only if you use another endpoint.
-
-## 3. Run the preflight checks
+Type the passphrase. To save in `nano`, press `Ctrl+O`, `Enter`, then `Ctrl+X`. Point the config at the file:
 
 ```bash
-sudo sentinel-dvpnd doctor --instance n0
+sudo sed -i "s|^passphrase_file = ''|passphrase_file = '/etc/sentinel-dvpn/n0.pass'|" /var/lib/sentinel-dvpn/n0/config.toml
 ```
 
-`doctor` runs the preflight checks without starting the daemon. Fix every failure it reports before you continue.
+## 5. Back up the operator key
 
-## 4. Run the daemon
+Keep a copy of the operator key off the server.
 
-For a test run in the foreground:
+On the server:
 
 ```bash
-sudo sentinel-dvpnd run --instance n0
+sudo install -m 600 -o "$USER" /var/lib/sentinel-dvpn/n0/keys/operator.json ~/operator-n0.json
 ```
 
-To run it as a system service:
+On your computer:
 
 ```bash
-sudo sentinel-dvpnd service install --instance n0
-sudo sentinel-dvpnd service start --instance n0
-sudo sentinel-dvpnd service status --instance n0
+cd <FOLDER_FOR_BACKUPS>
+scp <USER>@<SERVER_IP>:~/operator-n0.json .
 ```
 
-`service install` registers the service but does not start it. Keep the binary at the path where you installed it. If you move it, run `service install` again.
+On the server:
 
-Daemon commands in the CLI take `--instance` too, for example `sentinel-dvpn node status --instance n0`.
+```bash
+rm ~/operator-n0.json
+```
 
-Next: [open and manage the node on-chain](/solana/node-operators/on-chain).
+If `init` asked for a passphrase, keep it with the backup.
+
+## 6. Use your own RPC (optional)
+
+The public devnet RPC limits requests. Your own RPC avoids `429` errors.
+
+```bash
+sudo sed -i \
+  -e "s|^url = 'https://api.devnet.solana.com'|url = '<RPC_URL>'|" \
+  -e "s|^ws_url = 'wss://api.devnet.solana.com'|ws_url = '<WS_URL>'|" \
+  /var/lib/sentinel-dvpn/n0/config.toml
+```
+
+Next: [register the node on-chain](/solana/node-operators/on-chain).
