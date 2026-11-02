@@ -45,6 +45,7 @@ const SECTION_NAMES = [
   'sdk',
   'dvpn-cli',
   'sentinel-hub',
+  'solana',
 ];
 
 /** Per-section overrides, keyed by section name. */
@@ -234,6 +235,29 @@ const config = {
               },
             ],
             // className: 'new-badge',
+          },
+          {
+            label: 'Solana',
+            type: 'dropdown',
+            position: 'left',
+            items: [
+              {
+                to: 'solana',
+                label: 'Overview',
+              },
+              {
+                to: 'solana/node-operators',
+                label: 'Node Operators',
+              },
+              {
+                to: 'solana/clients',
+                label: 'Clients',
+              },
+              {
+                to: 'solana/dvpn-program',
+                label: 'dVPN Program',
+              },
+            ],
           },
           {
             label: 'API',
